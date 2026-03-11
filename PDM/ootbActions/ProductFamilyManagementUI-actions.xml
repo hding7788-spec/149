@@ -1,0 +1,687 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+
+<listofactions>
+	<objecttype name="productfamily" class="wt.productfamily.ProductFamilyMember" resourceBundle="com.ptc.windchill.enterprise.productfamily.productFamilyManagementUIActionsRB">
+	
+		<action name="createProductFamily" uicomponent="CREATE_PRODUCT_FAMILY" ajax="row">
+			<command class="com.ptc.windchill.enterprise.productfamily.forms.CreateProductFamilyFormProcessor" method="execute" url="/netmarkets/jsp/productfamily/createProductFamily.jsp" onClick="validateCreateLocation(event)" windowType="popup"/>
+			<includeFilter name="showNewActionPreValidation"/>
+			<includeFilter name="hideProductFamilyFilter"/>
+		</action>
+	
+      <action name="edit" ajax="row">
+         <command class="com.ptc.windchill.enterprise.productfamily.forms.EditProductFamilyMemberFormProcessor" method="execute" windowType="popup"/>
+         <includeFilter name="sandboxSharingValidationSimple"/>
+         <includeFilter name="hideForAdminLocked"/>
+      </action>
+
+		<action name="productFamilies">
+          <component name="productFamily.table"/>
+		  <includeFilter name="hideProductFamilyFilter"/>
+    	</action>
+
+		<action name="productFamilyProductSubTab">
+		    <component name="wt.pdmlink.PDMLinkProduct.infoPage" windowType="page" urlParams="tabType=object&amp;tabAction=productFamiliesTab"/>
+			<includeFilter name="hideProductFamilyFilter"/>
+        </action>
+
+		<action name="productFamilyLibrarySubTab">
+		    <component name="wt.inf.library.WTLibrary.infoPage" windowType="page" urlParams="tabType=object&amp;tabAction=productFamiliesTab"/>
+			<includeFilter name="hideProductFamilyFilter"/>
+        </action>
+	
+	
+    <!-- PFSB GWT actions BEGIN -->
+		
+		<action name="productFamilyStructureGWT" resourceBundle="com.ptc.windchill.enterprise.productfamily.productFamilyManagementUIActionsRB">
+			<command url="netmarkets/jsp/pfsb/PFSB.jsp"/>
+			<supportedTypes>
+                 <type value="wt.productfamily.ProductFamily"/>
+             </supportedTypes>
+		</action>
+
+		
+		<action name="insertNewProductFamilyObjectsGWT" ajax="row" uicomponent="INSERT_PRODUCT_FAMILY_OBJECTS">
+             <command class="com.ptc.windchill.enterprise.productfamily.pfsb.client.action.InsertNewProductFamilyMemberAction" method="execute" url="/ptc1/productfamily/createProductFamilyMember" windowType="popup"/>
+             <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+             <includeFilter name="com.ptc.cat.ui.client.internal.action.OriginalCopyFilter"/>
+             <includeFilter name="disableForAdminLocked"/>
+             <includeFilter name="hideProductFamilyFilter"/>
+             <supportedTypes>
+                 <type value="wt.productfamily.ProductFamilyMember"/>
+                 <type value="wt.productfamily.ProductFamilyMemberUsageLink"/>
+             </supportedTypes>
+        </action>
+		
+		<action name="defineItemAttributesWizStepForProductFamily" afterVK="setAttributesWizStep" preloadWizardPage="true" required="true">
+			<command url="netmarkets/jsp/productfamily/defineItemAttributesWizStep.jsp" windowType="wizard_step"/>
+		</action>
+
+        <action name="PFMRemoveGWT">
+           <command class="com.ptc.windchill.enterprise.productfamily.pfsb.client.action.PFMRemoveAction"/>
+           <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+           <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotRootStructureModelFilter"/>
+           <includeFilter name="com.ptc.cat.ui.client.internal.action.CheckinFilter"/>
+           <includeFilter name="disableForParentInTreeAdminLocked"/>
+           <includeFilter name="managedVariantSpecFilter"/>
+           <supportedTypes>
+                <type value="wt.productfamily.ProductFamilyMember"/>
+                <type value="com.ptc.wpcfg.doc.VariantSpec"/>
+
+      		</supportedTypes>
+      </action>
+
+      <action name="editFamilyMemberSplitGWT" ajax="row">
+         <command class="com.ptc.windchill.enterprise.productfamily.pfsb.client.action.EditProductFamilyMemberAction" method="execute" url="/ptc1/productfamily/edit" windowType="popup"/>
+         <supportedTypes>
+            <type value="wt.productfamily.ProductFamilyMember"/>
+            <type value="com.ptc.wpcfg.doc.VariantSpec"/>
+            <type value="wt.lotbaseline.LotBaseline"/>
+         </supportedTypes>
+      </action>
+      
+      <action name="editFamilyMemberGWT" ajax="row">
+         <command class="com.ptc.windchill.enterprise.productfamily.pfsb.client.action.EditProductFamilyMemberAction" method="execute" url="/ptc1/productfamily/edit" windowType="popup"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+         <supportedTypes>
+            <type value="wt.productfamily.ProductFamilyMember"/>
+            <type value="com.ptc.wpcfg.doc.VariantSpec"/>
+         </supportedTypes>
+          </action>
+	
+        <action name="relatedObjectsGWT"  ajax="row">
+            <command class="com.ptc.cat.gxt.client.action.RelatedObjectsAction"/>
+            <includeFilter name="enableForProductModelInMultiSelectFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+        </action>
+		
+        <action name="showDefaultRelatedObjectsGWT" ajax="row">
+			<command
+				class="com.ptc.cat.gxt.client.action.ShowDefaultRelatedObjectsAction" />
+			<includeFilter name="enableForProductModelInMultiSelectFilter" />
+		</action>
+	
+		<action name="hideAllRelatedObjectsGWT" ajax="row">
+			<command class="com.ptc.cat.gxt.client.action.HideAllRelatedObjectsAction" />
+			<includeFilter name="enableForProductModelInMultiSelectFilter" />
+		</action>
+		
+        <action name="showAllRelatedObjectsAction"  ajax="row">
+            <command class="com.ptc.cat.gxt.client.action.ShowDefaultRelatedObjectsAction"/>
+            <includeFilter name="enableForProductModelInMultiSelectFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+        </action>
+	      
+       <action name="configurableModuleGroupGWT">
+            <command class="com.ptc.cat.ui.client.action.NoAction"/>
+       </action>
+       
+       <action name="assignConfigurableModuleGWT">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfsb.client.action.AssignConfigurableModuleJCAAction" method="execute" url="/ptc1/productfamily/assignConfigurableModuleWizard" windowType="popup"/>
+             <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+             <includeFilter name="disableForNonProductModelInMultiSelect"/>
+             <includeFilter name="disableForAdminLocked"/>
+             <supportedTypes>
+                     <type value="wt.productfamily.ProductFamily"/>
+                     <type value="wt.productfamily.ProductModel"/>
+             </supportedTypes>
+       </action>
+       
+       <action name="insertExistingProductFamilyObjectsStructureJCA">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfsb.client.action.InsertExistingProductFamilyMemberJCAAction"
+                    method="execute" url="/ptc1/productfamily/insertExistingProductFamilyObjectsWizard"
+                    windowType="popup"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <supportedTypes>
+                <type value="wt.productfamily.ProductFamily"/>
+                <type value="wt.productfamily.ProductModelGroup"/>
+                <type value="wt.productfamily.ProductModel"/>
+            </supportedTypes>
+        </action>
+
+       <action name="convertToManaged">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfsb.client.action.ConvertToManagedAction" />
+            <includeFilter name="managedVariantSpecFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.CheckinFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="editActionAccessFilter"/>
+            <supportedTypes>
+                <type value="com.ptc.wpcfg.doc.VariantSpec"/>
+            </supportedTypes>
+        </action>
+
+       <action name="unassignConfigurableModuleGWT">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfsb.client.action.UnassignConfigurableModuleAction" />
+             <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+             <includeFilter name="disableForNonProductModelInMultiSelect"/>
+             <includeFilter name="disableForAdminLocked"/>
+             <supportedTypes>
+                     <type value="wt.productfamily.ProductFamily"/>
+                     <type value="wt.productfamily.ProductModel"/>
+             </supportedTypes>
+       </action>
+
+       <!-- PFSB Rename actions -->
+        <action name="rename">
+               <command class="com.ptc.windchill.uwgm.cadx.client.action.RenameObjectAction" windowType="popup" url="/servlet/WindchillAuthGW/wt.enterprise.URLProcessor/URLTemplateAction" method="execute"/>
+               <includeFilter name="sandboxSharingValidationSimple"/>
+               <includeFilter name="hideFromNonAgreementMgrs"/>
+               <includeFilter name="hideSBHiddenFilter"/>
+               <supportedTypes>
+                     <type value="wt.productfamily.ProductFamilyMember"/>
+                     <type value="com.ptc.wpcfg.doc.VariantSpec"/>
+                     <type value="wt.lotbaseline.LotBaseline"/>
+               </supportedTypes>
+        </action>
+
+        <action name="createPARFromVariantSpecRMCGWT" ajax="row">
+                <command class="com.ptc.windchill.enterprise.productfamily.pfsb.client.action.CreatePARFromVariantSpecRMCAction" method="execute" url="/ptc1/par/createPARWizard?portlet=poppedup" windowType="popup"/>
+                <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                <includeFilter name="hideForObjectInProject"/>
+                <includeFilter name="disableForAdminLocked"/>
+                <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+                <includeFilter name="disableForNewObjectInWorkspace"/>
+                <includeFilter name="createPARFromVariantSpec"/>
+                <includeFilter name="hideForVariantSpecUsesSupplierPart"/>
+                <supportedTypes>
+                    <type value="com.ptc.wpcfg.doc.VariantSpec"/>
+                </supportedTypes>
+        </action>
+
+	<!-- PFSB GWT actions END -->
+      	
+      
+    <!--  PFB/MatrixBOM GWT actions BEGIN -->
+      
+		<action name="openProductFamilyGWT">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfb.client.action.OpenProductFamilyAction"/>
+        </action>
+        
+        <action name="launchMatrixEditor" ajax="component" uicomponent="PFM_MATRIX_EDITOR" >
+            <command url="netmarkets/jsp/pfb/launchPFB.jsp" windowType="popup"/>
+            <supportedTypes>
+              <type value="wt.productfamily.ProductFamily"/>
+            </supportedTypes>
+        </action>
+        
+        <action name="openInMatrixEditor" ajax="component" selectRequired="true" multiselect="true" uicomponent="PFM_MATRIX_EDITOR" >
+            <command url="netmarkets/jsp/pfb/launchPFB.jsp" windowType="popup"/>
+            <supportedTypes>
+              <type value="wt.productfamily.ProductFamily"/>
+              <type value="com.ptc.wpcfg.doc.VariantSpec"/>
+              <type value="wt.lotbaseline.LotBaseline"/>
+            </supportedTypes>
+        </action>
+        
+        <action name="openInMatrixEditorRMB" ajax="component" selectRequired="true" uicomponent="PFM_MATRIX_EDITOR" >
+            <command url="netmarkets/jsp/pfb/launchPFB.jsp" windowType="popup"/>
+            <includeFilter name="enableForManagedVariantSpec"/>
+        </action>
+        
+        <action name="launchMatrixEditorGWT" ajax="component" uicomponent="PFM_MATRIX_EDITOR" >
+            <command class="com.ptc.windchill.enterprise.productfamily.pfsb.client.action.LaunchMatrixEditorAction" method="execute" url="/netmarkets/jsp/pfb/launchPFB.jsp"/>
+        </action>
+        
+        <action name="launchMatrixEditorGWTRMC" ajax="component" uicomponent="PFM_MATRIX_EDITOR" >
+            <command class="com.ptc.windchill.enterprise.productfamily.pfsb.client.action.LaunchMatrixEditorAction" method="execute" url="/netmarkets/jsp/pfb/launchPFB.jsp"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <supportedTypes>
+              <type value="wt.productfamily.ProductFamily"/>
+            </supportedTypes>
+        </action>
+        
+        <action name="pfbViewInfoGWT">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfb.client.action.PFBViewInfoAction" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>  
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForEmptyMatrixCellFilter"/>
+        </action>
+        
+        <action name="displayMatrixRowsGWT">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfb.client.action.DisplayBomTreeModelsAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForMatrixCellFilter"/>
+        </action>
+        
+        <action name="displayMatrixCellsGWT">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfb.client.action.DisplayMatrixCellModelsAction"/>
+            <includeFilter name="com.ptc.windchill.enterprise.productfamily.pfb.client.action.internal.DisableForPFBBomTreeFilter"/>
+        </action>
+        
+         
+        <action name="pfbLaunchCustomUrlGWT" ajax="component">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfb.client.action.PFBLaunchCustomURLAction" method="execute" url="/ptc1/pfb/customURLAction" windowType="popup"/>
+<!--             <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForMatrixCellFilter"/> -->
+<!--             <includeFilter name="com.ptc.windchill.enterprise.productfamily.pfb.client.action.internal.DisableForPFBBomTreeFilter"/> -->
+        </action>
+    
+          
+        
+    <!--  PFB/MatrixBOM GWT actions END -->  
+    
+        <action name="pfPasteFromClipboardToTreeGWT" uicomponent="PASTE">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfsb.client.action.PasteAction"
+                method="execute" url="/ptc1/productfamily/pasteVariantSpec" windowType="popup"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <supportedTypes>
+                <type value="wt.productfamily.ProductModel"/>
+            </supportedTypes>
+        </action>
+
+        <action name="pfPasteFromClipboardToTreeWithLargeIconGWT" uicomponent="PASTE">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfsb.client.action.PasteAction"
+                method="execute" url="/ptc1/productfamily/pasteVariantSpec" windowType="popup"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <supportedTypes>
+                <type value="wt.productfamily.ProductModel"/>
+            </supportedTypes>
+        </action>
+
+        <action name="pfPasteSelectToTreeGWT" uicomponent="PASTE" ajax="row">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfsb.client.action.PasteSelectVariantSpecsAction" method="execute" 
+                url="/ptc1/productfamily/pasteSelection?wizardType=multiPart&amp;invokedfrom=folder" windowType="popup"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <supportedTypes>
+                <type value="wt.productfamily.ProductModel"/>
+            </supportedTypes>
+        </action>
+        
+        <action name="pasteVariantSpecWizStep" afterJS="validateDuplicateNameForPasteAndCopy" >
+             <description>Only step for PasteAsCopy UI</description>
+             <command class="" method="" windowType="wizard_step" url="netmarkets/jsp/productfamily/pasteVariantSpecWizStep.jsp"/>
+        </action>
+        
+        <action name="pasteSelection" multiselect="false" uicomponent="PASTE" ajax="row">
+            <command method="execute" windowType="popup"/>
+        </action>
+        
+        
+      
+	</objecttype>
+
+	<!-- Definition of PFM-specific actions on variant specs -->
+	<objecttype name="variantspec" class="com.ptc.wpcfg.doc.VariantSpec" resourceBundle="com.ptc.windchill.enterprise.productfamily.productFamilyManagementUIActionsRB">
+    
+        <action name="viewConfigurableStructureBaselineObjects" ajex="row">
+          <command class="com.ptc.windchill.enterprise.productfamily.ConfigurableStructureBaselineCommand" method="getUrlToConfigurableStructureBaselineMembers"/>
+        </action>
+
+		<action name="editOptionFilterGWT" ajax="row" uicomponent="FILTER_CONFIGURABLE_STRUCTURES">
+			<command class="com.ptc.windchill.enterprise.productfamily.pfsb.client.action.EditOptionFilterAction"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.CheckinOrCheckoutFilter"/>
+			<includeFilter name="standaloneVariantSpecFilter"/>
+            <includeFilter name="organizedVariantSpecFilter"/>
+			<supportedTypes>
+				<type value="com.ptc.wpcfg.doc.VariantSpec"/>
+			</supportedTypes>
+        </action>
+
+		<action name="editOptionFilter" uicomponent="FILTER_CONFIGURABLE_STRUCTURES">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfsb.server.forms.EditOptionFilterFormProcessor" url="netmarkets/jsp/variantspec/editOptionFilter.jsp" method="execute" windowType="popup"/>
+            <includeFilter name="variantSpecEditOptionFilterActionFilter"/>
+            <includeFilter name="standaloneVariantSpecFilter"/>
+            <includeFilter name="organizedVariantSpecFilter"/>
+		    <supportedTypes>
+    	        <type value="com.ptc.wpcfg.doc.VariantSpec"/>
+    	    </supportedTypes>
+    	</action>
+		
+		<action name="editOptionFilterStep">
+            <command class="" method="" windowType="wizard_step"/>
+        </action>
+		
+		<action name="editOptionFilterSaveBtn" id="PJL_wizard_ok">
+            <command class="" method="" windowType="page" url="javascript:EditOptionFilter.submitEditOptionFilterForm()"/>
+        </action>
+        <action name="editOptionFilterCancelBtn" id="PJL_wizard_cancel">
+            <command class="" method="" windowType="page" url="javascript:EditOptionFilter.cancel()"/>
+        </action>
+
+	</objecttype>
+    
+    <!-- Definition of actions used in the Overloaded BOM tree inside the Matrix Editor -->
+    <objecttype name="overloadedBOM" class="wt.part.WTPart" resourceBundle="com.ptc.windchill.enterprise.productfamily.productFamilyManagementUIActionsRB">
+
+        <action name="pfbInsertNewPartStructureGWT" uicomponent="CREATE_PART" ajax="row">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfb.client.action.PFBInsertNewPartAction" method="execute" url="/ptc1/part/createPartWizard?revisionMode=create&amp;invokedfrom=folder&amp;showNewCADDocStep=true&amp;hideAssociatePart=true" windowType="popup"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OriginalCopyFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForMatrixCellFilter"/>
+            <includeFilter name="disableForAdminLocked"/>
+            <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+            <includeFilter name="disableForNewObjectInWorkspace"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+                <type value="wt.part.WTPartUsageLink"/>
+                <type value="wt.part.PartUsesOccurrence"/>
+                <type value="wt.part.RTPartPathOccurrence"/>
+            </supportedTypes>
+        </action>
+        
+        <action name="pfbInsertNewPartUsesGWT" uicomponent="CREATE_PART" ajax="row">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfb.client.action.PFBInsertNewPartAction" method="execute" url="/ptc1/part/createPartWizard?revisionMode=create&amp;invokedfrom=folder&amp;showNewCADDocStep=true&amp;hideAssociatePart=true" windowType="popup"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentOriginalCopyFilter"/>
+            <includeFilter name="disableForNewObjectInWorkspace"/>
+            <includeFilter name="disableForTableContextAdminLocked"/>
+            <includeFilter name="disableForPartToCadBuildTableContextAdminLocked"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+                <type value="wt.part.WTPartMaster"/>
+                <type value="wt.part.WTPartUsageLink"/>
+                <type value="wt.part.PartUsesOccurrence"/>
+                <type value="wt.part.RTPartPathOccurrence"/>
+            </supportedTypes>
+        </action>
+        
+        <action name="pfbInsertMultiNewPartStructureGWT" uicomponent="CREATE_PART" ajax="row">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfb.client.action.PFBInsertNewPartsAction" method="execute" url="/ptc1/part/createPartWizard?wizardType=multiPart&amp;invokedfrom=folder" windowType="popup"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OriginalCopyFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForMatrixCellFilter"/>
+            <includeFilter name="disableForAdminLocked"/>
+            <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+            <includeFilter name="disableForNewObjectInWorkspace"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+                <type value="wt.part.WTPartUsageLink"/>
+                <type value="wt.part.PartUsesOccurrence"/>
+                <type value="wt.part.RTPartPathOccurrence"/>
+            </supportedTypes>
+        </action>
+        
+        <action name="pfbInsertMultiNewPartUsesGWT" uicomponent="CREATE_PART" ajax="row">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfb.client.action.PFBInsertNewPartsAction" method="execute" url="/ptc1/part/createPartWizard?wizardType=multiPart&amp;invokedfrom=folder" windowType="popup" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentOriginalCopyFilter" />
+            <includeFilter name="disableForNewObjectInWorkspace" />
+            <includeFilter name="disableForTableContextAdminLocked" />
+            <includeFilter name="disableForPartToCadBuildTableContextAdminLocked" />
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+                <type value="wt.part.WTPartMaster" />
+                <type value="wt.part.WTPartUsageLink" />
+                <type value="wt.part.PartUsesOccurrence" />
+                <type value="wt.part.RTPartPathOccurrence" />
+            </supportedTypes>
+        </action>
+        
+        <action name="pfbInsertExistingPartStructureGWT">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfb.client.action.PFBAdvancedAddAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OriginalCopyFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForMatrixCellFilter"/>
+            <includeFilter name="disableForAdminLocked"/>
+            <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+            <includeFilter name="disableForNewObjectInWorkspace"/>
+            <includeFilter name="insertExistingPartImplementationChooser"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+                <type value="wt.part.WTPartUsageLink"/>
+                <type value="wt.part.PartUsesOccurrence"/>
+                <type value="wt.part.RTPartPathOccurrence"/>
+            </supportedTypes>
+        </action>
+
+        <action name="pfbInsertExistingPartUsesGWT">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfb.client.action.PFBAdvancedAddAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentOriginalCopyFilter"/>
+            <includeFilter name="disableForNewObjectInWorkspace"/>
+            <includeFilter name="disableForTableContextAdminLocked"/>
+            <includeFilter name="disableForPartToCadBuildTableContextAdminLocked"/>
+            <supportedTypes>
+                    <type value="wt.part.WTPart"/>
+                    <type value="wt.part.WTPartMaster"/>
+                    <type value="wt.part.WTPartUsageLink"/>
+                    <type value="wt.part.PartUsesOccurrence"/>
+                    <type value="wt.part.RTPartPathOccurrence"/>
+            </supportedTypes>
+        </action>
+        
+        <action name="pfbEditAttrValuesUsageLinksGWT">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfb.client.action.PFBEditAttributeValuesAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentOriginalCopyFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForEmptyMatrixCellFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.productfamily.pfb.client.action.internal.DisableForPFBTreeAndCellSelectionFilter"/>
+            <includeFilter name="disableForAdminLocked"/>
+            <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+            <includeFilter name="disableForNewObjectInWorkspace"/>
+            <includeFilter name="disableForNewParentObjectInWorkspace"/>
+        </action>
+        
+        <action name="pfbEditUsageLinkTreeGWT">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfb.client.action.PFBEditUsagesAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.SupplierPartTypeFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentOriginalCopyFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForEmptyMatrixCellFilter"/>
+            <includeFilter name="disableForParentInTreeAdminLocked"/>
+            <includeFilter name="disableForPartToCadBuildParentInTreeAdminLocked"/>
+            <includeFilter name="disableForNewParentObjectInWorkspace"/>
+            <supportedTypes>
+                    <type value="wt.part.WTPart"/>
+                    <type value="wt.part.WTPartUsageLink"/>
+                    <type value="wt.part.PartUsesOccurrence"/>
+                    <type value="wt.part.RTPartPathOccurrence"/>
+            </supportedTypes>
+        </action>
+                
+         <action name="pfbEditUsageLinkGWT">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfb.client.action.PFBEditUsagesAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentOriginalCopyFilter"/>
+            <includeFilter name="disableForNewObjectInWorkspace"/>
+            <includeFilter name="disableForTableContextAdminLocked"/>
+            <includeFilter name="disableForPartToCadBuildTableContextAdminLocked"/>
+            <includeFilter name="disableForNewParentObjectInWorkspace"/>
+            <supportedTypes>
+                    <type value="wt.part.WTPart"/>
+                    <type value="wt.part.WTPartMaster"/>
+                    <type value="wt.part.WTPartUsageLink"/>
+                    <type value="wt.part.PartUsesOccurrence"/>
+                    <type value="wt.part.RTPartPathOccurrence"/>
+            </supportedTypes>
+        </action>
+
+        <action name="pfbExpandAllLevelsGWT">
+            <command class="com.ptc.cat.gxt.client.action.ExpandAllLevelsAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HasChildrenFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotFilteredFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForMatrixCellFilter"/>
+        </action>
+
+        <action name="pfbEditGWT" ajax="component">
+            <command class="com.ptc.cat.ui.client.action.EditAction" method="execute" url="/ptc1/part/edit" windowType="popup"/>
+                <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForEmptyMatrixCellFilter"/>
+                <includeFilter name="disableForNewObjectInWorkspace"/>
+                <includeFilter name="disableForAdminLocked"/>
+                <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+                <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+                <supportedTypes>
+                    <type value="wt.part.WTPart"/>
+                    <type value="wt.part.WTPartUsageLink"/>
+                    <type value="wt.part.PartUsesOccurrence"/>
+                    <type value="wt.part.RTPartPathOccurrence"/>
+                </supportedTypes>
+        </action>
+
+        <action name="pfbIncludeModuleVariantsGWT">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfb.client.action.IncludeModuleVariantsAction"/>
+            <includeFilter name="com.ptc.windchill.enterprise.productfamily.pfb.client.action.internal.DisableForPFBTreeAndCellSelectionFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.productfamily.pfb.client.action.internal.ShowForExcludedModuleVariantsFilter"/>
+        </action>
+        
+        <action name="pfbExcludeConfigurableModulesGWT">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfb.client.action.ExcludeConfigurableModulesAction"/>  
+            <includeFilter name="com.ptc.windchill.enterprise.productfamily.pfb.client.action.internal.DisableForPFBTreeAndCellSelectionFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.productfamily.pfb.client.action.internal.ShowForIncludedConfigurableModulesFilter"/>
+        </action>
+        
+        <action name="pfbBOMexcludeModuleVariantsGWT">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfb.client.action.ExcludeModuleVariantsAction"/> 
+            <includeFilter name="com.ptc.windchill.enterprise.productfamily.pfb.client.action.internal.DisableForPFBTreeAndCellSelectionFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.productfamily.pfb.client.action.internal.ShowForIncludedModuleVariantsFilter"/>
+        </action>
+        
+        <action name="pfbIncludeConfigurableModulesGWT">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfb.client.action.PFBIncludeConfigurableModulesAction"/>  
+            <includeFilter name="com.ptc.windchill.enterprise.productfamily.pfb.client.action.internal.DisableForPFBTreeAndCellSelectionFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.productfamily.pfb.client.action.internal.ShowForExcludedConfigurableModulesFilter"/>
+        </action>
+
+        <action name="pfbUseOptionFilterGWT">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfb.client.action.UseOptionFilterAction" />  
+            <includeFilter name="com.ptc.windchill.enterprise.productfamily.pfb.client.action.internal.DisableForPFBTreeAndCellSelectionFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.productfamily.pfb.client.action.internal.ShowForChildManuallySelectedFilter"/>
+        </action>
+
+        <action name="pfbRemovePartsFromBaselineGWT"  multiselect="true">
+           <command class="com.ptc.windchill.enterprise.productfamily.pfsb.client.action.BaselinePartsRemoveAction"/>
+           <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+           <includeFilter name="com.ptc.windchill.enterprise.productfamily.pfb.client.action.internal.DisableForPFBBomTreeFilter"/>
+           <includeFilter name="com.ptc.windchill.enterprise.productfamily.pfb.client.action.internal.DisableForPFBTreeAndCellSelectionFilter" />
+           <includeFilter name="com.ptc.windchill.enterprise.productfamily.pfb.client.action.internal.ShowForMultiLotMode"/>
+           <includeFilter name="com.ptc.windchill.enterprise.productfamily.pfb.client.action.internal.ShowForRemoveBaselineObjectsFilter"/>
+           <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotRootStructureModelFilter"/>
+           <includeFilter name="disableForParentInTreeAdminLocked"/>
+        </action>
+
+        <action name="pfbEditMultiObjectsGWT">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfb.client.action.PFBEditMultiObjectsAction" method="execute" windowType="popup" url="netmarkets/jsp/pfb/editMultiObjects.jsp"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForEmptyMatrixCellFilter"/>
+            <includeFilter name="disableForAdminLocked"/>
+            <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+                <type value="wt.part.WTPartMaster"/>
+                <type value="wt.part.WTPartUsageLink"/>
+                <type value="wt.part.PartUsesOccurrence"/>
+                <type value="wt.part.RTPartPathOccurrence"/>
+            </supportedTypes>
+        </action>
+        
+        <action name="pfbCheckinButton" id="edit_wizard_checkin">
+            <command onClick="onEditSubmit('pfbCheckinButton')"/>
+        </action>
+
+        <action name="pfbAssignUsesOptionalityGWT">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfb.client.action.PFBEditOptionRulesAction" method="execute" url="/ptc1/optionality/assignUsesOptionality" windowType="popup"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HasGenericParentFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotProjectContainer"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForMatrixCellFilter"/>
+            <includeFilter name="createEditExpressionFilter"/>
+            <includeFilter name="createEditIndependentExpressionFilter"/>
+        </action>
+
+        <action name="pfbAssignItemOptionalityGWT">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfb.client.action.PFBEditItemOptionRulesAction" method="execute" url="/ptc1/optionality/assignItemOptionalityGWT" windowType="popup"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotProjectContainer"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForEmptyMatrixCellFilter"/>
+            <includeFilter name="AssignItemOptionalityFilter"/>
+            <includeFilter name="createEditIndependentExpressionFilter"/>
+            <nonSupportedTypes>
+                <type value="wt.epm.EPMDocument"/>
+            </nonSupportedTypes>
+        </action>
+
+        <action name="pfbUndoCheckoutGWT">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfb.client.action.PFBUndoCheckoutAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.DisableForBlankStructureModelsInSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForEmptyMatrixCellFilter"/>
+            <includeFilter name="disableForCheckedoutObjectInWorkspace"/>
+            <nonSupportedTypes>
+                <type value="wt.epm.EPMDocument"/>
+            </nonSupportedTypes>
+        </action>
+        
+         <action name="pfbRemovePartsFromBaselineSingleLotGWT">
+            <command class="com.ptc.windchill.enterprise.productfamily.pfsb.client.action.RemoveBaselineObjectsSingleLotAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+             <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForMatrixCellFilter"/>
+             <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotRootStructureModelFilter"/>
+             <includeFilter name="com.ptc.windchill.enterprise.productfamily.pfsb.client.action.SingleLotModeFilter"/>
+             <includeFilter name="com.ptc.windchill.enterprise.productfamily.pfsb.client.action.RemoveBaselineObjectsSingleLotFilter"/>
+        </action>
+
+        
+    
+        
+             <!-- New actions added under the model Replace with add existing and add new part :start-->
+                 <action name="pfbReplaceWithExistingPart" ajax="true">
+                      <command class="com.ptc.windchill.enterprise.productfamily.pfb.client.action.PFBAdvancedReplacementAddPartAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+                        <includeFilter name="hideForObjectInProject"/>
+                        <includeFilter name="disableForParentInTreeAdminLocked"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                        <nonSupportedTypes>
+                                <type value="com.ptc.windchill.suma.part.SupplierPart"/> 
+                        </nonSupportedTypes>
+                </action>
+
+               <action name="pfbReplaceWithAddingNewPart" ajax="true">
+                        <command class="com.ptc.windchill.enterprise.productfamily.pfb.client.action.PFBReplacementAddNewPartAction" method="execute" url="/ptc1/part/createPartWizard?revisionMode=create&amp;invokedfrom=folder&amp;showNewCADDocStep=true&amp;hideAssociatePart=true" windowType="popup"/>
+                         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+                        <includeFilter name="hideForObjectInProject"/>
+                        <includeFilter name="disableForParentInTreeAdminLocked"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                        <nonSupportedTypes>
+                                <type value="com.ptc.windchill.suma.part.SupplierPart"/> 
+                        </nonSupportedTypes>
+                </action>
+               <!-- New actions added under the model Replace with add existing and add new part :end-->
+
+               <!-- New action added under the model Replace with Replace with Alternate/Substitute:start-->
+                <action name="pfbReplaceWithAlternateSubstitute" ajax="true">
+                      <command class="com.ptc.windchill.enterprise.productfamily.pfb.client.action.PFBReplaceWithAlternateSubstituteAction" method="execute" url="/ptc1/part/replaceWithAlternateSubstitute" windowType="popup"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+                        <includeFilter name="hideForObjectInProject"/>
+                        <includeFilter name="disableForParentInTreeAdminLocked"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                        <nonSupportedTypes>
+                                <type value="com.ptc.windchill.suma.part.SupplierPart"/> 
+                        </nonSupportedTypes>
+                </action>
+                
+        
+
+    </objecttype>
+    
+</listofactions>

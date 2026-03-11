@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<listofactions>
+   <objecttype name="structurecomponent" resourceBundle="com.ptc.windchill.enterprise.structurecomponent.structurecomponentActionsRB">
+      <action name="spatialFilter">
+         <command class="com.ptc.cat.ui.client.action.NoAction"/>
+         <includeFilter name="showHideSpatialFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.object.alternaterep.client.filters.PARLatestIterationFilter"/>
+      </action>
+      <action name="setBoxSpatialFilter">
+         <command class="com.ptc.windchill.enterprise.structurecomponent.client.action.SetBoxSpatialFilterAction"/>
+         <includeFilter name="hideForObjectInProject"/>
+         <includeFilter name="showHideSpatialFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.object.alternaterep.client.filters.PARLatestIterationFilter"/>
+      </action>
+      <action name="setSphereSpatialFilter">
+         <command class="com.ptc.windchill.enterprise.structurecomponent.client.action.SetSphereSpatialFilterAction"/>
+         <includeFilter name="hideForObjectInProject"/>
+         <includeFilter name="showHideSpatialFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.object.alternaterep.client.filters.PARLatestIterationFilter"/>
+      </action>
+      <action name="setProximitySpatialFilter">
+         <command class="com.ptc.windchill.enterprise.structurecomponent.client.action.SetProximitySpatialFilterAction"/>
+         <includeFilter name="hideForObjectInProject"/>
+         <includeFilter name="showHideSpatialFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.structurecomponent.client.filters.OneSelectionInPVFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.object.alternaterep.client.filters.PARLatestIterationFilter"/>
+      </action>
+      <action name="updateSpatialFilter">
+         <command class="com.ptc.windchill.enterprise.structurecomponent.client.action.UpdateSpatialFilterAction"/>
+         <includeFilter name="hideForObjectInProject"/>
+         <includeFilter name="showHideSpatialFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.HasSpatialFilterFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.object.alternaterep.client.filters.PARLatestIterationFilter"/>
+      </action>      
+      <action name="selectAllGWT">
+      	<command class="com.ptc.windchill.enterprise.structurecomponent.client.action.SelectAllVizAction"/>
+      </action>
+   </objecttype>
+</listofactions>

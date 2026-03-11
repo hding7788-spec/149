@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+<listofactions>
+    <!-- actions for QueryBuilder  wt.query.template.ReportTemplate -->
+    <objecttype name="queryBuilder" class="wt.query.template.ReportTemplate" resourceBundle="com.ptc.windchill.enterprise.queryBuilder.queryBuilderActionsRB" >              
+        <action name="createReportTemplate">
+             <command method="execute" class="" windowType="popup"    
+                     url="apps/queryBuilder/index.jsp#/reportTemplateProperties"/>                      
+        </action>        
+        
+        <action name="importReportTemplate">
+            <command class="com.ptc.windchill.enterprise.queryBuilder.processors.ImportReportTemplateFormProcessor" method="execute" windowType="popup" 
+                     url="netmarkets/jsp/queryBuilder/importReportTemplate.jsp"/>
+        </action>
+        
+        <action name="importReportTemplate_step" afterJS="validateFileInput">
+            <command class="com.ptc.windchill.enterprise.queryBuilder.processors.ImportReportTemplateFormProcessor" windowType="wizard_step"/>
+        </action>
+        
+        <action name="importReportTemplateStatus_step" preloadWizardPage="false">
+            <command windowType="wizard_step"/>
+        </action>
+        
+        <action name="exportReportTemplates">
+            <command method="execute" windowType="popup" 
+                     url="netmarkets/jsp/queryBuilder/exportReportTemplate.jsp"/>
+        </action>
+         
+        <action name="exportReportTemplate" ajax="row" >
+            <command method="execute" windowType="popup" 
+                     url="netmarkets/jsp/queryBuilder/exportReportTemplate.jsp"/>
+        </action>
+        
+        <action name="saveReportTemplateAsQML"  multiselect="false" selectRequired="true" >
+            <command method="execute" windowType="popup" 
+                     url="netmarkets/jsp/queryBuilder/saveReportTemplateAsQML.jsp"/>
+        </action>
+        
+        <action name="uploadReportTemplateFromQML"  multiselect="false" selectRequired="false">
+            <command method="execute" class="" windowType="popup"
+                     url="apps/queryBuilderFileManagement/index.jsp#/uploadReportTemplateFromQML"/>
+        </action>
+        
+        <action name="editReportTemplate" renderType="PDM">
+            <command class="wt.query.template.ReportTemplate" windowType="popup" method="execute" />
+        </action>       
+
+	    <action name="deleteReportTemplate" multiselect="true" selectRequired="true">
+		    <command class="com.ptc.windchill.enterprise.queryBuilder.QueryBuilderCommands"
+			         method="deleteReportTemplates" onClick="postSelectValidation(event,'deleteReportTemplate')" />
+	    </action> 
+
+        <action name="viewReportTemplate" ajax="row" >
+            <command method="execute" url="wtcore/jsp/report/runReportTemplate.jsp" windowType="new" />
+        </action> 
+         
+        <action name="upgradeDashboard">
+             <command method="execute" class="" windowType="popup"    
+                     url="apps/queryBuilderUpgradeDashboard/index.jsp#/upgradeDashboard"/>                      
+        </action> 
+              
+        <action name="legacyQueryBuilder"  >
+            <command method="execute" class="" windowType="popup"    
+                     url="netmarkets/jsp/queryBuilder/legacyQueryBuilder.jsp"/>   
+        </action>
+              
+    </objecttype>
+</listofactions>

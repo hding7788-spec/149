@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../../../../../ClientArchitecture/CommonComponents/src_web/config/actions/actions.dtd'>
+<listofactions>
+
+  <objecttype name="contentControl" resourceBundle="com.ptc.windchill.contentcontrol.contentControlResource">
+    
+    <action name="contentFilesTable" enabledwhensuspended="true">
+    	<description>Content Control Info table for the package's content page.</description>
+		<command windowType="wizard_step" />
+    </action>
+      
+    <action name="contentControlWizard">
+    	<description>launch the content control wizard.</description>
+        <command class="com.ptc.windchill.contentcontrol.commands.ContentFileCommand" method="saveWizard" windowType="popup"/>
+    </action>
+            
+    <action name="doRedline" multiselect="true" ajax="component" uicomponent="DELETE"  selectRequired="true" id="_doRedline" >
+      	<description>
+      		Remove multiple objects from members of a package collection
+		</description>
+		<command onClick="confirmRedline()"/>
+    </action>
+      
+      
+    <action name="undoRedline" multiselect="true" ajax="component" uicomponent="DELETE" selectRequired="true" id="_undoRedline">
+      	<description>
+      		Remove multiple objects from members of a package collection
+      	</description>
+      	<command  onClick="confirmUndoRedline();"/>
+    </action>
+   
+   	
+   	<action name="createFilesInfo" ajax="page">
+         <!-- Create Files Information -->
+         <command class="com.ptc.windchill.contentcontrol.commands.ContentFileCommand" method="createFilesInfo" onClick="JCAConfirm(event,&apos;com.ptc.windchill.contentcontrol.contentControlResource.CREATE_FILES_INFO&apos;)"/>
+      </action>
+      
+    <action name="finishButton" id="finishButton">
+         <command class="" method="" windowType="page" url="javascript:doFinishChangedCC();"/>
+    </action>
+    
+     <action name="applyButton" id="contentcontrol.contentFilesTable_applyButton" ajax="row" >
+         <command onClick="saveChangedCC()"/> 
+	</action>
+      
+   </objecttype>
+   
+</listofactions>

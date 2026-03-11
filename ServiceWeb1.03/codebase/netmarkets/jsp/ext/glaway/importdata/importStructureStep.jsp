@@ -1,0 +1,56 @@
+<%@ include file="/netmarkets/jsp/util/begin.jspf"%>
+
+<%@ page import="java.util.ResourceBundle"%>
+<%@ page import="com.glaway.mpm.importdata.*"%>
+<jsp:useBean id="localeBean2"
+	class="com.ptc.netmarkets.util.beans.NmLocaleBean" scope="request" />
+
+<%!private static final String PART_RESOURCE = "com.glaway.mpm.importdata.productRB";%>
+<%
+    ResourceBundle resourceRB = ResourceBundle.getBundle(PART_RESOURCE,localeBean2.getLocale());
+%>
+
+<script language="javascript">
+
+
+	function checkZIPFile() {
+		var file = document.getElementById("file").value;
+		if (file == null || file == "") {
+			alert("file is null,please input file.");
+		}
+		var pos = file.lastIndexOf(".");
+		var lastname = file.substring(pos, file.length);
+		if (lastname != ".zip") {
+			alert("Please input zip file.");
+			document.getElementById("span1").innerHTML="<input id=\"file\" name=\"file\" size=\"60\" type=\"file\" onchange=\"checkZIPFile();\" />";
+		}
+	}
+
+	function checkEXCELFile() {
+		var file = document.getElementById("file2").value;
+		if (file == null || file == "") {
+			alert("file is null,please input file.");
+		}
+		var pos = file.lastIndexOf(".");
+		var lastname = file.substring(pos, file.length);
+		if (lastname != ".xls") {
+			alert("Please input excel file.");
+			document.getElementById("span2").innerHTML="<input id=\"file2\" name=\"file2\" size=\"60\" type=\"file\" onchange=\"checkEXCELFile();\" />";
+		}
+	}
+
+</script>
+
+<table>
+	<tr>
+		<td align="left" colspan="2"><h3><%=resourceRB.getString(productRB.IMPORTDATA_NOTICE)%></h3></td>
+	</tr>
+	</br>
+	<tr>
+		<td align="right"><FONT CLASS="wizardlabel"><%=resourceRB.getString(productRB.IMPORTDATA_EXCEL_TITLE)%></Font></td>
+		</br>
+		<td><span id="span2"><input id="file2" name="file2" size="60" type="file" onchange="checkEXCELFile();" /></span></td>
+	</tr>
+</table>
+
+<%@ include file="/netmarkets/jsp/util/end.jspf"%>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+
+<actionmodels>
+    <model name="Configurable Link Table Toolbar">
+        <action shortcut="true" name="configurableLink_add"         	 type="object" /> 		 <!-- Find and add objects -->
+        <action shortcut="true" name="configurableLink_newDoc"      	 type="document" /> 	 <!-- Create new document and add link -->
+        <action shortcut="true" name="configurableLink_newPart"     	 type="part" /> 		 <!-- Create new part and add link -->
+        <action shortcut="true" name="configurableLink_newChangeRequest" type="changeRequest" /> <!-- Create new change request and add link -->
+		<action shortcut="true" name="configurableLink_newProblemReport" type="problemReport" /> <!-- Create new problem report and add link -->
+		<action shortcut="true" name="configurableLink_newChangeNotice"  type="changeNotice" />  <!-- Create new change notice and add link -->
+        <action shortcut="true" name="configurableLink_remove"      	 type="object" /> 		 <!-- Remove selected objects -->
+        <action shortcut="true" name="configurableLink_editMulti"   	 type="object" /> 		 <!-- Edit multiple rows -->
+        <action 				name="separator" 						 type="separator"/>
+        <action 				name="configurableLink_copy"        	 type="object" /> 		 <!-- Copy objects to clipboard -->
+        <action 				name="configurableLink_paste"       	 type="object" /> 		 <!-- Paste objects from clipboard -->
+        <action 				name="configurableLink_pasteSelect" 	 type="object" /> 		 <!-- Paste-select objects from clipboard -->
+    </model>
+
+    <model name="Configurable Link Edit Table Toolbar">
+        <action name="editProperties" type="object" shortcut="true" />
+    </model>
+
+</actionmodels>

@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM "http://www.ptc.com/Windchill/config/actions/actionmodels.dtd">
+
+<actionmodels resourceBundle="com.ptc.core.managedcollection.ManagedCollectionActionsRB">
+   <model name="more managedcollection actions" menufor="wt.facade.persistedcollection.ManagedCollection">
+      <description>Managed Collection row level Actions menu</description>
+      <action name="view" type="object"/>
+      <action name="separator" type="separator"/>
+      <action name="edit_managedcollection" type="managedcollection"/>
+      <action name="separator" type="separator"/>
+      <action name="copy" type="object"/>
+      <action name="renameObjectWizard" type="object"/>
+      <action name="CONTAINERMOVE"  type="pdmObject"/>
+      <action name="delete_object" type="object"/>
+      <action name="separator" type="separator"/>
+      <submodel name="more managedcollection toolbar actions add"/>
+      <action name="wtObjCompare" type="ocmp"/>
+      <action name="ManageSecurity" type="accessPermission"/>
+      <action name="createSubscription" type="subscription"/>
+   </model>
+
+   <model name="more managedcollection toolbar actions add">
+      <action name="addToManagedCollection" type="managedcollection"/>
+      <action name="addToPackageSingle" type="wpcollection"/>
+   </model>
+
+   <model name="third level nav menubar managedcollection">
+      <submodel name="general"/>
+      <submodel name="relatedItems"/>
+      <submodel name="history"/>
+      <submodel name="collaboration"/> 
+   </model>
+
+   <model name="managedCollectionDefaultTabSet" >
+      <!-- Managed Collection info page default tabs -->
+      <submodel name="managedCollectionDetailsTab"/>
+      <action name="mc_content" type="managedcollection"/>
+   </model>
+
+   <model name="managedCollectionDetailsTab" resourceBundle="com.ptc.core.managedcollection.ManagedCollectionActionsRB">
+      <action name="primaryAttributes"     type="object"/>
+      <action name="attributes" type="object"/>
+   </model>
+
+   <model name="managed collection content row actions">
+      <!-- Row level Actions menu for objects within a Managed Collection -->
+      <action name="removeMembers" type="wpcollection"/>
+      <action name="addToManagedCollection" type="managedcollection"/>
+   </model>
+   
+   <model name="managedcollection content list table toolbar actions">
+      <action name="removeMembers" type="wpcollection" shortcut="true"/>
+      <action name="addToManagedCollection" type="managedcollection" shortcut="true"/>
+      <action name="refreshManagedCollection" type="managedcollection" shortcut="true"/>
+      <action name="explode" type="folder" shortcut="true"/>
+      <action name="implode" type="folder" shortcut="true"/>
+   </model>
+
+   <model name="tombstoneDetailsTab" resourceBundle="com.ptc.core.managedcollection.ManagedCollectionActionsRB">
+       <action name="primaryAttributes" type="object"/>
+   </model>
+
+   <model name="tombstoneDefaultTab">
+       <submodel name="tombstoneDetailsTab"/>
+   </model>
+
+   <model name="tombstoneCustomization">
+      <action name="primaryAttributes" type="object"/>
+   </model>
+   
+</actionmodels>

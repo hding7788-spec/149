@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<listofactions>
+   <objecttype name="cisb" resourceBundle="com.ptc.windchill.enterprise.part.configinstance.cisbActionsRB">
+   
+        <action name="addToGroupGWT">
+            <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+   
+      <action name="overridePartVersionGWT">
+         <command class="com.ptc.windchill.enterprise.part.configinstance.client.action.OverrideVersionAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OccurrenceModeFilter"/>  
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotRootNodeFilter"/>
+		 <includeFilter name="com.ptc.windchill.enterprise.part.configinstance.client.filters.AssignOverrideVersionFilter"/>
+      </action>
+      
+      <action name="assignPartVersionGWT">
+         <command class="com.ptc.windchill.enterprise.part.configinstance.client.action.AssignVersionAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+		 <includeFilter name="com.ptc.windchill.enterprise.part.configinstance.client.filters.AssignOverrideVersionFilter"/>
+      </action>
+
+      <action name="configInstanceStructureGWT" resourceBundle="com.ptc.windchill.enterprise.part.configinstance.cisbActionsRB">
+         <command url="netmarkets/jsp/cisb/cisb.jsp"/>
+      </action>
+
+      <action name="cisbDisplayOccurrencesGWT">
+         <command class="com.ptc.windchill.enterprise.part.configinstance.client.action.DisplayOccurrencesAction"/>
+      </action>
+
+      <action name="allocateNewPartInstanceGWT">
+         <command class="com.ptc.windchill.enterprise.part.configinstance.client.action.AllocateNewPartInstanceAction"/>
+         <includeFilter name="com.ptc.windchill.enterprise.part.configinstance.client.action.AllocateFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+      </action>
+
+      <action name="allocateExistingPartInstanceGWT">
+         <command class="com.ptc.windchill.enterprise.part.configinstance.client.action.AllocateExistingPartInstanceAction"/>
+         <includeFilter name="com.ptc.windchill.enterprise.part.configinstance.client.action.AllocateFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+      </action>
+
+      <action name="deallocatePartInstanceGWT">
+         <command class="com.ptc.windchill.enterprise.part.configinstance.client.action.DeallocatePartInstanceAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>  
+      </action>
+
+      <action name="replacePartInstanceGWT">
+         <command class="com.ptc.windchill.enterprise.part.configinstance.client.action.ReplacePartInstanceAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>  
+      </action>
+
+      <action name="undoReplacePartInstanceGWT">
+         <command class="com.ptc.windchill.enterprise.part.configinstance.client.action.UndoReplacePartInstanceAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>  
+      </action>
+      
+      <action name="ciViewInfoActionGWT">
+         <command class="com.ptc.windchill.enterprise.part.configinstance.client.action.CIViewInfoAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>  
+      </action>
+
+      <action name="ciRefreshGWT">
+         <command class="com.ptc.windchill.enterprise.part.configinstance.client.action.CIRefreshAction"/>
+      </action>
+
+      <action name="incorporatePartInstanceGWT">
+         <command class="com.ptc.windchill.enterprise.part.configinstance.client.action.IncorporatePartInstanceAction"/>
+       	<includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>  
+       	<includeFilter name="com.ptc.windchill.enterprise.part.configinstance.client.action.IncorporateFilter"/>
+        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+      </action>
+      <action name="ciEditFilterWithLargeIconGWT">
+         <command class="com.ptc.windchill.enterprise.part.configinstance.client.action.CIEditECAction"/>
+         <includeFilter name="hideForObjectInProject"/>
+      </action>
+	  <action name="ciRepopulateWithLargeIconGWT">
+         <command class="com.ptc.windchill.enterprise.part.configinstance.client.action.RepopulateAction"/>
+         <includeFilter name="hideForObjectInProject"/>
+      </action> 
+      <action name="ciFilterPropertiesWithLargeIconGWT">
+         <command class="com.ptc.windchill.enterprise.part.configinstance.client.action.CIMiniInfoECAction"/>
+         <includeFilter name="hideForObjectInProject"/>
+      </action>  
+      <action name="launchPartConfigurationCompareGWT" ajax="row">
+           <command class="com.ptc.windchill.enterprise.part.configinstance.client.action.PartConfigurationCompareAction" method="execute" url="/ptc1/partConfigCompare/launchPartConfigurationCompare" windowType="popup"/>
+           <includeFilter name="hideForObjectInProject"/>
+      </action>
+      <action name="launchPartInstanceCompareGWT" ajax="row">
+           <command class="com.ptc.windchill.enterprise.part.configinstance.client.action.PartInstanceCompareAction" method="execute" url="/ptc1/partInstanceCompare/launchPartInstanceCompare" windowType="popup"/>
+           <includeFilter name="hideForObjectInProject"/>
+      </action>
+    <action name="ciFilterPropertiesGWT">
+        <command class="com.ptc.windchill.enterprise.part.configinstance.client.action.CIMiniInfoECAction"/>
+        <includeFilter name="hideForObjectInProject"/>
+    </action>  
+    </objecttype>
+</listofactions>

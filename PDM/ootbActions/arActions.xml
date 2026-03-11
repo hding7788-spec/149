@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+
+    <objecttype name="arpublish" resourceBundle="com.ptc.windchill.arpublish.ui.arPublishRB">
+       <action name="myARExperiences" enabledwhensuspended="true">
+              <includeFilter name="hideARPublishActions"/>
+            <command windowType="popup" onClick="PTC.arPublish.ARExperience.open()"/>
+        </action>
+
+        <action name="publishARExperience" selectRequired="true" uicomponent="AR_PUBLISH">
+            <includeFilter name="hideARPublishActions"/>
+            <includeFilter name="disableForWorkingCopyWorkInProgress"  />
+            <includeFilter name="disableForNoDefaultRepresentation"/>
+            <command windowType="popup" url="apps/arpublish/index.jsp" />
+	    <moreurlinfo>height=270,width=780</moreurlinfo>
+        </action>
+    </objecttype>
+  
+</listofactions>

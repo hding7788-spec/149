@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+<!-- define the actions on the UI components -->
+<actionmodels>
+   <model name="report query row actions" resourceBundle="com.ptc.core.auditing.auditingResource">
+      <action name="auditReportGenerator" type="auditing"/>
+      <action name="object" type="view"/>
+      <action name="deleteReportQuery" type="auditing"/>
+      <action name="exportReportQuery" type="auditing"/>
+   </model>
+   
+   <model name="report query schedule row actions" resourceBundle="com.ptc.core.auditing.auditingResource">
+      <action name="auditReportGenerator" type="auditing"/>
+      <action name="object" type="view"/>
+      <action name="delete" type="object"/>
+      <action name="exportReportQuery" type="auditing"/>
+      <action name="scheduleReportQuery" type="auditing"/>
+      <action name="cancelReportQuerySchedule" type="auditing"/>
+   </model>
+
+   <model name="report query info actions" resourceBundle="com.ptc.core.auditing.auditingResource">
+      <action name="auditReportGenerator" type="auditing"/>
+      <action name="deleteReportQueryInfo" type="auditing"/>
+      <action name="exportReportQuery" type="auditing"/>
+   </model>
+   
+   <model name="report query schedule info actions" resourceBundle="com.ptc.core.auditing.auditingResource">
+      <action name="auditReportGenerator" type="auditing"/>
+      <action name="deleteReportQueryInfo" type="auditing"/>
+      <action name="exportReportQuery" type="auditing"/>
+      <action name="scheduleReportQuery" type="auditing"/>
+      <action name="cancelReportQuerySchedule" type="auditing"/>
+   </model>
+   
+   <!-- customized nav menu bar for report query -->
+   <model name="report_query_customized_nav" defaultActionName="attributes" defaultActionType="object">
+      <action name="attributes" type="object"/>  
+      <action name="primaryAttributes"  type="object"/>
+   </model>
+
+   <model name="ReportQueryInfoDefaultDetailsTab" resourceBundle="com.ptc.core.auditing.auditingResource">
+      <action name="primaryAttributes" type="object"/>
+      <action name="attributes" type="object"/>
+   </model>
+ 
+   <model name="ReportQueryInfoPageTabset" resourceBundle="com.ptc.core.auditing.auditingResource">
+      <submodel name="ReportQueryInfoDefaultDetailsTab"/> 
+   </model>
+
+   <model name="report query toolbar actions">
+      <action name="list_delete" type="object" shortcut="true"/>
+   </model>
+   
+   <model name="license count change history toolbar actions">
+      <action name="separator" type="separator"/>
+      <action name="editLicenseCount" type="auditing"/>
+   </model>
+   
+   <model name="license usage toolbar actions">
+      <action name="exportLicenseUsageReport" type="auditing" shortcut="true"/>
+      <action name="editReportDistribution" type="auditing" shortcut="true"/>
+   </model>
+
+   <model name="ProI license usage toolbar actions">
+      <action name="exportLicenseUsageReport" type="auditing" shortcut="true"/>
+      <action name="editLicenseCount" type="auditing" shortcut="true"/>
+      <action name="editReportDistribution" type="auditing" shortcut="true"/>
+      <action name="licenseCountChangeHistory" type="auditing" shortcut="true"/>
+   </model>
+   
+   <model name="license usage row actions">
+      <action name="viewLicenseUsageDrillDown" type="auditing"/>
+   </model>
+
+   <model name="license usage info page navigation">
+      <action name="usage_reporting" type="auditing"/>
+      <action name="view_print_license_reporting" type="auditing"/>
+      <action name="importable_zip_licenses_reporting" type="auditing"/>     
+      <action name="windchill_MES_integration_licenses_reporting" type="auditing"/>
+   </model>
+   
+   <model name="ProI license usage info page navigation">
+      <action name="license_usage_reporting" type="auditing"/>
+   </model>
+   
+   <model name="view print license group row actions">
+      <action name="view_print_member_size" type="auditing" shortcut="true"/>
+      <submodel name="folderbrowser_toolbar_exportlisttofile_submenu"/>
+   </model>
+   
+   <model name="organization usage toolbar actions">
+      <action name="exportLicenseUsageReport" type="auditing" shortcut="true"/>
+   </model>
+   
+   <model name="organization usage row actions">
+      <action name="viewOrganizationUsageDrillDown" type="auditing"/>
+   </model>
+   
+   <model name="purge manager toolbar actions">
+      <action name="purgeAuditLog" type="auditing" shortcut="true"/>
+   </model>
+   
+   <model name="importable zip license group row actions">
+      <action name="importable_zip_licenses_group_size" type="auditing" shortcut="true"/>
+      <submodel name="folderbrowser_toolbar_exportlisttofile_submenu"/>
+   </model>   
+</actionmodels>

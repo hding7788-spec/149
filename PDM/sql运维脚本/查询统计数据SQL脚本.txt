@@ -1,0 +1,9 @@
+//流程受控的工艺文件数量
+select count(1) from WfAssignedActivity where STATE='CLOSED_COMPLETED_EXECUTED' and  NAME = '批准' and  Modifystampa2
+                    between TO_TIMESTAMP('2021-01-12 00:00:00', 'YYYY-MM-DD HH24:MI:SS')
+                     AND  TO_TIMESTAMP('2025-02-20 23:59:59', 'YYYY-MM-DD HH24:MI:SS');
+
+//材料定额受控的工艺文件数量
+select COUNT(1) from StringValue A,StringDefinition B,WTDocument C   WHERE A.IDA3A4=C.IDA2A2 AND C.LATESTITERATIONINFO=1  AND  A.IDA3A6=B.IDA2A2 AND B.NAME='CLDEZT' AND A.CLASSNAMEKEYA4='wt.doc.WTDocument' AND VALUE2='已批准' AND A.Modifystampa2
+                  between TO_TIMESTAMP('2025-02-20 00:00:00', 'YYYY-MM-DD HH24:MI:SS')
+                     AND  TO_TIMESTAMP('2025-02-20 23:59:59', 'YYYY-MM-DD HH24:MI:SS');

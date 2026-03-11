@@ -1,0 +1,30 @@
+ext.ases.changepackaged.ChangePackaged=ext.ases.changepackaged.ChangePackagedAffectLink
+ext.ases.changepackaged.ChangePackaged=ext.ases.changepackaged.ChangePackagedResultLink
+ext.ases.envelope.ProcessEnvelope=ext.ases.envelope.EnvelopeMemberLink
+ext.ases.envelope.ProcessEnvelope=ext.ases.envelope.EnvelopeTopObjLink
+ext.ases.part.ASESHuiqianSignature=ext.ases.part.SignActivityLink
+ext.ases.part.ASESHuiqianSignature=ext.ases.part.SignLink
+wt.enterprise.RevisionControlled=ext.ases.envelope.EnvelopeMemberLink
+wt.enterprise.RevisionControlled=ext.ases.envelope.EnvelopeTopObjLink
+wt.enterprise.RevisionControlled=ext.ases.technotice.TechNoticeBeforeLink
+wt.enterprise.RevisionControlled=ext.ases.technotice.TechNoticeAfterLink
+wt.enterprise.RevisionControlled=ext.ases.changepackaged.ChangePackagedAffectLink
+wt.enterprise.RevisionControlled=ext.ases.changepackaged.ChangePackagedResultLink
+wt.fc.WTObject=ext.ases.part.SignLink
+wt.workflow.engine.WfActivity=ext.ases.part.SignActivityLink
+ext.casc.process.ProcessTask=ext.casc.process.ProcessTaskLink
+wt.fc.WTObject=ext.casc.process.ProcessTaskLink
+
+# add by liaojun
+ext.ases.changerequest.ChangeRequest=ext.ases.changerequest.ChangeRequestAffectLink
+wt.enterprise.RevisionControlled=ext.ases.changerequest.ChangeRequestAffectLink
+
+
+#add by longxiuchuan 2014/12/9
+ext.sast.supply.GLSupply=ext.sast.supply.GLSupplyDescLink
+wt.enterprise.RevisionControlled=ext.sast.supply.GLSupplyDescLink
+
+#add by hding 2016/01/19
+
+wt.change2.WTAnalysisActivity=ext.casc.analysisActivity.bean.AnalysisToSourceLink
+wt.fc.WTObject=ext.casc.analysisActivity.bean.AnalysisToSourceLink

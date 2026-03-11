@@ -1,0 +1,309 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+   <objecttype name="pdmObject" class="wt.fc.WTObject">
+      <action name="ADDSINGLETOBASELINE" checkaccess="true" renderType="PDM">
+         <command windowType="popup" class="java.lang.Object" method="ADDSINGLETOBASELINE"/>
+      </action>
+      <action name="AUTOASSOCIATE" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+      <command windowType="page" class="wt.epm.EPMDocument" method="AUTOASSOCIATE"/>
+      </action>
+      <action name="Associate" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="page" class="java.lang.Object" method="Associate"/>
+      </action>
+      <action name="AssociatedChanges_plm" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="page" method="URLTemplateAction"/>
+      </action>
+      <action name="ASSOCIATEDISTTARGETS" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="popup" class="java.lang.Object" method="ASSOCIATEDISTTARGETS"/>
+         <includeFilter name="sandboxSharingValidationSimple"/>
+         <includeFilter name="hideForNonLatestFilter"/>
+         <includeFilter name="hideForCheckedOutOriginalCopy"/>
+      </action>
+      <action name="ASSOCIATEDOCS" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="popup" class="java.lang.Object" method="ASSOCIATEDOCS"/>
+      </action>
+      <action name="CHECKEDOUTTOWORKSPACE" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="page" class="java.lang.Object" method="CHECKEDOUTTOWORKSPACE"/>
+      </action>
+      <action name="CHECKINDOCUMENT_PLM" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="popup" class="java.lang.Object" method="CHECKINDOCUMENT_PLM"/>
+      </action>
+      <action name="CHECKINPART" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="popup" class="" method="CHECKINPART"/>
+      </action>
+      <action name="BOMNOTECHECKOUT" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="page" class="" method="BOMNOTECHECKOUT"/>
+      </action>
+      <action name="BOMNOTECHECKIN" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="page" class="" method="BOMNOTECHECKIN"/>
+      </action>
+      <action name="BOMNOTECANCELCHECKOUT" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="page" class="" method="BOMNOTECANCELCHECKOUT" onClick="confirmAndClosePopup(&apos;com.ptc.netmarkets.util.utilResource.CONFIRM_UNDO_CHECKOUT&apos;)"/>
+      </action>
+      <action name="CHECKOUTDOCUMENT" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="popup" class="java.lang.Object" method="CHECKOUTDOCUMENT"/>
+      </action>
+      <action name="CHECKOUTPART" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="popup" class="java.lang.Object" method="CHECKOUTPART"/>
+      </action>
+      <action name="CLASSICPIE" checkaccess="true" enabledwhensuspended="true" renderType="PDM" installType="PDM" uicomponent="PSE">
+         <command windowType="popup" class="java.lang.Object" method="CLASSICPIE"/>
+      </action>
+      <action name="createPromotionRequest" checkaccess="true" enabledwhensuspended="true" renderType="PDM" uicomponent="PROMOTE" selectRequired="true">
+         <command windowType="popup" class="java.lang.Object" method="createPromotionRequest"/>
+      </action>
+      <action name="CREATEBASELINEFORM" enabledwhensuspended="true" renderType="PDM" uicomponent="CREATE_BASELINE">
+         <command windowType="popup" class="" method="CREATEBASELINEFORM"/>
+      </action>
+      <action name="CREATEPART1" enabledwhensuspended="true" renderType="PDM" installType="PDM" uicomponent="CREATE_PART">
+         <command windowType="popup" class="" method="CREATEPART1"/>
+      </action>
+      <action name="CREATEMULTIPART1" enabledwhensuspended="true" renderType="PDM" installType="PDM" uicomponent="CREATE_PART">
+         <command windowType="popup" class="" method="CREATEMULTIPART1"/>
+      </action>
+      <action name="CREATE_CN" enabledwhensuspended="true" renderType="PDM" installType="PDM" uicomponent="CREATE_CN">
+         <command windowType="popup" class="" method="CREATE_CN"/>
+      </action>
+      <action name="createCADDocTemplate">
+         <command  class="com.ptc.windchill.uwgm.cadx.newcaddoctemplate.CreateCADDocTemplateFormProcessor"
+                method="execute" url="netmarkets/jsp/cadDocTemplate/createCADDocTemplate.jsp"
+                windowType="popup"/>
+      </action>
+      <action name="DELETE_PROMOTIONNOTICE" uicomponent="DELETE">
+         <command class="com.ptc.netmarkets.model.NmObjectCommands" method="delete" onClick="JCAConfirm(event,&apos;com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE&apos;)"/>
+         <access name="delete"/>
+      </action>
+      <action name="DeleteBaseline" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="popup" class="java.lang.Object" method="DeleteBaseline"/>
+      </action>
+      <action name="DELETEOBJECT" checkaccess="true" enabledwhensuspended="true" renderType="PDM" uicomponent="DELETE">
+         <command windowType="popup" class="java.lang.Object" method="DELETEOBJECT"/>
+      </action>
+      <action name="DISASSOCIATE" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="page" class="java.lang.Object" method="DISASSOCIATE"/>
+      </action>
+      <action name="DISCUSS_PLM" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="page" class="java.lang.Object" method="DISCUSS_PLM"/>
+      </action>
+      <action name="MULTIREVISE" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="page" class="java.lang.Object" method="MULTIREVISE"/>
+         <includeFilter name="disableForAdminLocked"/>
+         <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+      </action>
+      <action name="MULTIREVISEITEMS_FROMFOLDERS" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="popup" class="java.lang.Object" method="MULTIREVISEITEMS_FROMFOLDERS" onClick="validateSomethingSelected(event)"/>
+         <includeFilter name="disableForAdminLocked"/>
+         <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+      </action>
+      <action name="REVISEITEMS" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="popup" class="java.lang.Object" method="REVISEITEMS"/>
+         <includeFilter name="sandboxSharingValidationSimple"/>
+         <includeFilter name="hideFromNonAgreementMgrs"/>
+         <includeFilter name="hideForAdminLocked"/>
+         <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+         <includeFilter name="scheduledDeliverablesActionSimpleFilter"/>
+      </action>
+      <action name="REVISEITEMSFROMCHANGE" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="popup" class="java.lang.Object" method="REVISEITEMS"/>
+         <includeFilter name="hideForAdminLocked"/>
+         <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+      </action>
+
+      <action name="EDITATTACHMENTS" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+        <command windowType="page" class="java.lang.Object" method="URLTemplateAction"/>
+      </action>
+
+      <action name="MULTIEDITATTR" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="page" class="java.lang.Object" method="MULTIEDITATTR"/>
+         <includeFilter name="hideSBHiddenFilter"/>
+      </action>
+      <action name="EXPORT" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="popup" class="java.lang.Object" method="EXPORT"/>
+      </action>
+      <action name="WSEXPORT" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="page" class="java.lang.Object" method="WSEXPORT"/>
+      </action>
+      <action name="GETCONTENT_PLM" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="popup" class="java.lang.Object" method="GETCONTENT_PLM"/>
+      </action>
+      <action name="ObjProps" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="page" class="java.lang.Object" method="ObjProps"/>
+      </action>
+      <action name="PendingChanges" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="page" method="URLTemplateAction"/>
+      </action>
+      <action name="ADDPLACEHOLDER" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+          <command windowType="page" class="java.lang.Object" method="ADDPLACEHOLDER"/>
+      </action>
+      <action name="RENAMEOBJECT" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="popup" class="java.lang.Object" method="RENAMEOBJECT"/>
+      </action>
+      <action name="REPLACEMISSDEP" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="page" class="java.lang.Object" method="REPLACEMISSDEP"/>
+      </action>
+      <action name="REVISE_PLM" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="popup" class="java.lang.Object" method="REVISE_PLM"/>
+      </action>
+      <action name="SETLIFECYCLESTATE" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="popup" class="java.lang.Object" method="SETLIFECYCLESTATE"/>
+      </action>
+      <action name="SETSTATE" checkaccess="true" enabledwhensuspended="true" renderType="PDM" uicomponent="SET_STATE">
+         <command windowType="page" class="java.lang.Object" method="SETSTATE"/>
+      </action>
+      <action name="SETSTATE_FROMFOLDERS" checkaccess="true" enabledwhensuspended="true" renderType="PDM" uicomponent="SET_STATE">
+         <command windowType="popup" class="java.lang.Object" method="SETSTATE_FROMFOLDERS" onClick="validateSomethingSelected(event)"/>
+      </action>
+      <action name="SETSTATE_FROMCHANGE" checkaccess="true" enabledwhensuspended="true" renderType="PDM"  uicomponent="SET_STATE">
+         <command windowType="popup" class="java.lang.Object" method="SETSTATE_FROMCHANGE" onClick="validateSomethingSelected(event)"/>
+      </action>
+      <action name="SUBSCRIBE_PLM" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="popup" class="java.lang.Object" method="SUBSCRIBE_PLM"/>
+      </action>
+      <action name="UNDOCHECKOUT_PLM" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command class="java.lang.Object" method="invokeAction"/>
+      </action>
+      <action name="UPDATEBASELINE" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="popup" class="" method="UPDATEBASELINE"/>
+      </action>
+      <action name="UPDATEPART1" enabledwhensuspended="true" checkaccess="true" renderType="PDM">
+         <command windowType="popup" class="java.lang.Object" method="UPDATEPART1"/>
+      </action>
+      <action name="WFCANCELCHECKOUT" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="page" class="java.lang.Object" method="WFCANCELCHECKOUT"/>
+         <includeFilter name="hideForNewObjectInWorkspace"/>
+         <includeFilter name="hideForObjectNotCheckedoutInWorkspace"/>
+         <includeFilter name="scheduledDeliverablesActionSimpleFilter"/>         
+      </action>
+      <action name="WFCHECKIN" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+          <command windowType="page" class="java.lang.Object" method="WFCHECKIN"/>
+          <includeFilter name="hideForObjectNotCheckedoutInWorkspace"/>
+          <includeFilter name="scheduledDeliverablesActionSimpleFilter"/>          
+      </action>
+    <action name="WFRMBCHECKOUT" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+          <command windowType="page" class="java.lang.Object" method="WFCHECKOUT"/>  
+          <includeFilter name="scheduledDeliverablesActionSimpleFilter"/>                  
+      </action>
+     <action name="WFBUILD" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+          <command windowType="page" class="java.lang.Object" method="WFBUILD"/>
+      </action>
+      <action name="WFDELETE" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="page" class="java.lang.Object" method="WFDELETE"/>
+      </action>
+      <action name="WFMOVE" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="page" class="java.lang.Object" method="WFMOVE"/>
+      </action>
+      <action name="MULTIRENAME" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="page" class="java.lang.Object" method="MULTIRENAME"/>
+         <includeFilter name="hideSBHiddenFilter"/>
+         <includeFilter name="sandboxSharingValidationSimple" />
+      </action>
+      <action name="MULTIRENAMEFROMSEARCH" checkaccess="true" multiselect="true" selectRequired="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="page" class="java.lang.Object" method="MULTIRENAME" onClick="validateMultiRenameSelection(event)"/>
+         <includeFilter name="hideSBHiddenFilter"/>
+         <includeFilter name="sandboxSharingValidationSimple" />
+      </action>
+      <action name="WFSAVEAS" checkaccess="true" enabledwhensuspended="true" renderType="PDM" uicomponent="SAVE_AS">
+         <command windowType="popup" class="java.lang.Object" method="WFSAVEAS"/>
+         <includeFilter name="hideFromNonAgreementMgrs"/>
+      </action>
+      <action name="WFSAVEASFROMSEARCH" checkaccess="true" multiselect="true" selectRequired="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="popup" class="java.lang.Object" method="WFSAVEASFROMSEARCH" onClick="validateMultiSaveAsSelection(event)"/>
+      </action>
+
+      <action name="WFUPLOAD" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="page" class="java.lang.Object" method="WFUPLOAD"/>
+      </action>
+      <action name="CONTAINERMOVE" selectRequired="true" checkaccess="true" enabledwhensuspended="true" renderType="PDM" uicomponent="CONTAINERMOVE">
+         <command windowType="popup" class="java.lang.Object" method="CONTAINERMOVE"/>
+         <includeFilter name="sandboxSharingValidationSimple"/>
+         <includeFilter name="hideFromNonAgreementMgrs"/>
+         <includeFilter name="hideForNoteTemplates"/>
+         <includeFilter name="hideForNoteTemplates"/>
+         <includeFilter name="hideForChangeTemplates"/> 
+      </action>
+      <action name="MULTI_OBJ_DELETE" checkaccess="true" enabledwhensuspended="true" renderType="PDM" uicomponent="DELETE">
+         <command windowType="popup" class="java.lang.Object" method="MULTI_OBJ_DELETE"/>
+         <includeFilter name="sandboxSharingValidationSimple"/>
+         <includeFilter name="manAuthorized" />
+      </action>
+      <action name="MULTI_OBJ_DELETE_DETAILS" checkaccess="true" enabledwhensuspended="true" renderType="PDM" uicomponent="DELETE">
+         <command windowType="popup" class="java.lang.Object" method="MULTI_OBJ_DELETE_DETAILS"/>
+         <includeFilter name="sandboxSharingValidationSimple"/>
+         <includeFilter name="manAuthorized" />
+      </action>
+      <action name="MULTI_OBJ_DELETE_ITEMS" checkaccess="true" enabledwhensuspended="true" renderType="PDM" uicomponent="DELETE">
+         <command windowType="popup" class="java.lang.Object" method="MULTI_OBJ_DELETE_ITEMS"/>
+      </action>
+      <action name="UPDATEPROMOTIONNOTICEDETAILS" checkaccess="true" renderType="PDM">
+         <command windowType="popup" class="java.lang.Object" method="UPDATEPROMOTIONNOTICEDETAILS"/>
+      </action>
+      <action name="PROECOMPARE" renderType="PDM">
+         <command windowType="popup" method="PROECOMPARE"/>
+      </action>
+
+      <action name="OPENINCADTOOL" renderType="PDM">
+         <command windowType="popup" method="OPENINCADTOOL"/>
+      </action>
+           <!-- The following actions do not represent real actions, but need to be defined (and associate to a toolbar)
+           so that their respective icons will appear in action menus.
+           The toolbar is defined but not used (ie, not displayed); see UwgmCadx-actionmodels.xml
+           See http://rdwiki.ptcnet.ptc.com/mediawiki/index.php?title=DR129_New_Naming_Conventions_for_Toolbar_and_Menubar_Action_Model
+           See SPR 2043906
+           -->
+      <action name="OPENINCADTOOL_ACAD"/>
+      <action name="OPENINCADTOOL_CADDS5"/>
+      <action name="OPENINCADTOOL_COCRMOD"/>
+      <action name="OPENINCADTOOL_COCRDRAFT"/>
+      <action name="OPENINCADTOOL_ECADBRD"/>
+      <action name="OPENINCADTOOL_ECADSCH"/>
+      <action name="OPENINCADTOOL_ECADDOC"/>
+      <action name="OPENINCADTOOL_ECADMANUFACT"/>
+      <action name="OPENINCADTOOL_INVENTOR"/>
+      <action name="OPENINCADTOOL_ISODRAW"/>
+      <action name="OPENINCADTOOL_MATHCAD"/>
+      <action name="OPENINCADTOOL_RSDSCH"/>
+      <action name="OPENINCADTOOL_GALAXY"/>
+      <action name="OPENINCADTOOL_SEDGE"/>
+
+      <action name="OPEN_WITH" renderType="PDM" >
+        <command windowType="popup" method="OPEN_WITH"/>
+      </action>
+      <action name="OPENINPROE" renderType="PDM">
+         <command windowType="popup" method="OPENINPROE"/>
+      </action>
+      <action name="OPEN_COCRDRAFT_IN_COCRMOD" renderType="PDM">
+         <command windowType="popup" method="OPEN_COCRDRAFT_IN_COCRMOD"/>
+      </action>
+      <action name="OPEN_COCRMOD_IN_COCRDRAFT" renderType="PDM">
+         <command windowType="popup" method="OPEN_COCRMOD_IN_COCRDRAFT"/>
+      </action>
+      <action name="WFDOWNLOAD" renderType="PDM" uicomponent="ADD_TO_WORKSPACE">
+         <command windowType="popup" method="WFDOWNLOAD"/>
+         <includeFilter name="disableSBHiddenFilter"/>
+      </action>
+      <action name="VIEW_MANUFACTURER" renderType="PDM">
+         <command class="wt.part.WTPart" method="VIEW_MANUFACTURER" windowType="page"/>
+         <access name="read"/>
+      </action>
+      <action name="VIEW_VENDOR" renderType="PDM">
+         <command class="wt.part.WTPart" method="VIEW_VENDOR" windowType="page"/>
+         <access name="read"/>
+      </action>
+     <action name="EDITASSOCIATION" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+            <command windowType="page" class="java.lang.Object" method="EDITASSOCIATION"/>
+         <includeFilter name="disableForDeprecatedObjectFilter"/>
+     </action>
+      <action name="AUTO_ASSOCIATE" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+        <command windowType="page" class="java.lang.Object" method="AUTO_ASSOCIATE"/>
+      <includeFilter name="disableForDeprecatedObjectFilter"/>
+     </action>
+   </objecttype>
+
+ <objecttype name="cadDocTemplate">
+  <action name="createCADDocTemplateStep" afterVK="setAttributesWizStep">
+    <command url="netmarkets/jsp/cadDocTemplate/createCADDocTemplateStep.jsp"
+      windowType="wizard_step"/>
+    </action>
+ </objecttype>
+</listofactions>

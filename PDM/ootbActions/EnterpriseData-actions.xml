@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+
+<listofactions>
+    
+    <objecttype name="enterprisedata" class="com.ptc.windchill.enterprise.data.EnterpriseData" resourceBundle="com.ptc.windchill.enterprise.data.enterpriseDataResource">
+        <!-- Edit Enterprise Data Actions - Start -->
+        <action name="checkoutAndEdit" ajax="row">
+            <command class="com.ptc.core.components.forms.EditWorkableFormProcessor" method="execute" windowType="popup" url="/netmarkets/jsp/enterprisedata/edit.jsp"/>
+            <includeFilter name="scheduledDeliverablesActionSimpleFilter"/>
+        </action>
+        
+        <action name="edit" ajax="row">
+            <command class="com.ptc.core.components.forms.EditWorkableFormProcessor" method="execute" windowType="popup"/>
+        </action>
+        
+        <action name="editEnterpriseDataWizStep" id="editEnterpriseDataWizStep" required="true">
+            <command windowType="wizard_step"/>
+        </action>
+        <!-- Edit Enterprise Data Actions - End -->
+        
+        <!-- Enterprise Data table in part info page - START -->
+        <action name="relatedPartsEnterpriseData">
+            <component name = "relatedParts.enterpriseData"/>
+            <includeFilter name="enterpriseDataEnabledFilter"/>
+        </action>
+        <!-- Enterprise Data table in part info page - END -->
+        
+        <!-- Enterprise Data Related document tables - Start -->
+        <action name="relatedEnterpriseDatasDocuments" uicomponent="THIRD_LEVEL_RELATED_DOCUMENTS">
+            <component name = "relatedEnterpriseData.DescribedByDocuments" />
+        </action>
+        <action name="relatedEnterpriseDatasReferences" uicomponent="THIRD_LEVEL_RELATED_DOCUMENTS">
+            <component name = "relatedEnterpriseData.ReferencesDocuments" />
+        </action>
+        <action name="relatedEnterpriseDatasCADDocuments" uicomponent="THIRD_LEVEL_RELATED_DOCUMENTS">
+            <component name = "relatedEnterpriseData.CadDynamicDocuments" />
+        </action>
+        <action name="enterpriseDataAssociatedPartVersion" uicomponent="THIRD_LEVEL_RELATED_DOCUMENTS">
+            <component name = "relatedEnterpriseData.AssociatedPartVersion" />
+        </action>
+        
+        <!-- Enterprise Data Related document tables - END -->
+        <action name="ed_related_add_described" multiselect="true" ajax="component">
+            <command class="com.ptc.windchill.enterprise.data.form.EnterpriseDataDocDescRelationFormProcessor" method="execute" onClick="onClickValidation(event,&apos;ed_related_add_described&apos;)" windowType="popup"/>
+        </action>
+        <action name="ed_related_delete_described" multiselect="true" ajax="component">
+            <command class="com.ptc.windchill.enterprise.data.form.EnterpriseDataDocDescDeleteRelationFormProcessor" method="execute" onClick="onClickValidation(event,&apos;ed_related_delete_described&apos;)"/>
+        </action>
+        <action name="related_copy_enterprisedata" multiselect="true">
+            <command class="com.ptc.netmarkets.model.NmObjectCommands" method="list_copy" windowType="no_content"/>
+        </action>
+        <action name="ed_related_paste_described" ajax="component">
+            <command class="com.ptc.windchill.enterprise.data.form.EnterpriseDataDocDescPasteRelationFormProcessor" method="execute" onClick="onClickValidation(event,&apos;ed_related_paste_described&apos;)"/>
+        </action>
+        <action name="ed_related_paste_select_described" multiselect="true" uicomponent="PASTE" ajax="component">
+            <command class="com.ptc.windchill.enterprise.data.form.EnterpriseDataDocDescPasteRelationFormProcessor" method="execute" onClick="onClickValidation(event,&apos;ed_related_paste_select_described&apos;)" windowType="popup"/>
+        </action>
+        
+        <action name="ed_related_add_references" multiselect="true" ajax="component">
+            <command class="com.ptc.windchill.enterprise.data.form.EnterpriseDataDocRefRelationFormProcessor" method="execute" onClick="onClickValidation(event,&apos;ed_related_add_references&apos;)" windowType="popup"/>
+        </action>
+        <action name="ed_related_delete_references" multiselect="true" ajax="component">
+            <command class="com.ptc.windchill.enterprise.data.form.EnterpriseDataDocRefDeleteRelationFormProcessor" method="execute" onClick="onClickValidation(event,&apos;ed_related_delete_references&apos;)"/>
+        </action>
+        <action name="ed_related_paste_references" ajax="component">
+            <command class="com.ptc.windchill.enterprise.data.form.EnterpriseDataDocRefPasteRelationFormProcessor" method="execute" onClick="onClickValidation(event,&apos;ed_related_paste_references&apos;)"/>
+        </action>
+        <action name="ed_related_paste_select_references" multiselect="true" uicomponent="PASTE" ajax="component">
+            <command class="com.ptc.windchill.enterprise.data.form.EnterpriseDataDocRefPasteRelationFormProcessor" method="execute" onClick="onClickValidation(event,&apos;ed_related_paste_select_references&apos;)" windowType="popup"/>
+        </action>
+        
+        <action name="ed_related_add_epmdoc" multiselect="true" ajax="component">
+            <command class="com.ptc.windchill.enterprise.data.form.EnterpriseDataCADDocRelationFormProcessor" method="execute" onClick="onClickValidation(event,&apos;ed_related_add_epmdoc&apos;)" windowType="popup"/>
+        </action>
+        <action name="ed_related_delete_epmdoc" multiselect="true" ajax="component">
+            <command class="com.ptc.windchill.enterprise.data.form.EnterpriseDataCADDocDeleteRelationFormProcessor" method="execute" onClick="onClickValidation(event,&apos;ed_related_delete_epmdoc&apos;)"/>
+        </action>
+        <action name="ed_related_paste_epmdoc" ajax="component">
+            <command class="com.ptc.windchill.enterprise.data.form.EnterpriseDataCADDocPasteRelationFormProcessor" method="execute" onClick="onClickValidation(event,&apos;ed_related_paste_references&apos;)"/>
+        </action>
+        <action name="ed_related_paste_select_epmdoc" multiselect="true" uicomponent="PASTE" ajax="component">
+            <command class="com.ptc.windchill.enterprise.data.form.EnterpriseDataCADDocPasteRelationFormProcessor" method="execute" onClick="onClickValidation(event,&apos;ed_related_paste_select_epmdoc&apos;)" windowType="popup"/>
+        </action>
+    </objecttype>
+    
+    <objecttype name="document" class="wt.doc.WTDocument" resourceBundle="com.ptc.windchill.enterprise.data.enterpriseDataDocumentResource">
+        <action name="related_doc_create_wizard_enterprisedata_references" ajax="component">
+            <command class="com.ptc.windchill.enterprise.data.form.EnterpriseDataDocRefCreateRelationFormProcessor" method="execute" 
+                     onClick="onClickValidation(event,&apos;related_doc_create_wizard_enterprisedata_references&apos;)" windowType="popup"/>
+        </action>
+        <action name="related_doc_create_wizard_enterprisedata_described" ajax="component">
+            <command class="com.ptc.windchill.enterprise.data.form.EnterpriseDataDocDescCreateRelationFormProcessor" method="execute" 
+                     onClick="onClickValidation(event,&apos;related_doc_create_wizard_enterprisedata_described&apos;)" windowType="popup" url="?noRefDoc=true"/>
+        </action>
+    </objecttype>
+    
+</listofactions>

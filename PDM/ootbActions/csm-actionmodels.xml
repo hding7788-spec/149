@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+<!-- define the actions on the UI components -->
+<actionmodels>
+	<model name="csm_clfnodetree_actions_toolbar"> <!--This action model is used for csm node tree -->
+		<action name="expandAllClfNode" type="csm" /> <!-- Expand All -->
+		<action name="collapseAllClfNode" type="csm" /> <!-- Collapse All -->
+		<action name="insertClfNode" type="csm" shortcut="true" /> <!-- Insert -->
+		<action name="deleteClfNode" type="csm" shortcut="true" /> <!-- Delete -->
+		<action name="copyClfNode" type="csm" shortcut="true" /> <!-- Copy -->
+		<action name="pasteClfNode" type="csm" shortcut="true" /> <!-- Paste -->
+		<submodel name="csmExport"/> <!-- Export submenu actions -->
+		<action name="csmImport" type="csm" /> <!-- Import -->
+	</model>
+
+	<model name="csm_clfnodetree_row_toolbar"> <!--This action model is used for csm row level action -->
+		<action name="expandClfNode" type="csm" /> <!-- Expand All -->
+		<action name="collapseClfNode" type="csm" /> <!-- Collapse All -->
+		<action name="insertClfNodeRow" type="csm" shortcut="true" /> <!-- Insert -->
+		<action name="deleteClfNodeRow" type="csm" shortcut="true" /> <!-- Delete -->
+		<action name="copyClfNodeRow" type="csm" /> <!-- Copy -->
+		<action name="pasteClfNodeRow" type="csm" shortcut="true" /> <!-- Paste -->
+	</model>
+
+
+	<!-- The top tab set in the node info page. -->
+	<model name="csmnode_infoPage_tabSet">
+		<action name="clfNodeProperties" type="csm" />
+		<action name="typeLayouts" type="lwcType" />
+		<action name="node.attribute.multiedit" type="csm" />
+		<action name="clfNodeAutonamingProperties" type="csm" />
+	</model>
+
+	<!-- the reason "toolbar" is in the name is so that icons will appear for
+		all the actions -->
+	<model name="csmnode actions toolbar">
+		<action name="insertClfNodeDetails" type="csm" shortcut="true" />
+		<action name="editCSMNode" type="csm" />
+		<action name="infoPageDeleteClfNode" type="csm" /> <!-- Delete -->
+	</model>
+
+	<!-- This action model is used for attribute table level actions -->
+	<model name="csmattribute table actions toolbar">
+		<action name="addAttribute" type="csm" shortcut="true" />
+		<action name="deleteAttribute" type="csm" shortcut="true" />
+		<action name="collectAttributes" type="csm" shortcut="true" />
+		<action name="moveAttributeToParent" type="csm" shortcut="true" />
+	</model>
+
+	<model name="clf admin toolbar">
+		<description>Toolbar actions for the classification administrators
+			table</description>
+		<action name="addToClfAdmin" type="csm" shortcut="true" />
+		<action name="removeFromClfAdmin" type="csm" shortcut="true" />
+	</model>
+
+	<model name="clf_admin_row_toolbar">
+		<description>Row actions for the classification administrators table</description>
+		<action name="removeRowFromClfAdmin" type="csm" />
+	</model>
+
+
+	<!-- The top tab set in the attribute info page. -->
+	<model name="csmattribute_infoPage_tabSet">
+		<action name="attributeProperties" type="csm" />
+		<action name="attributeValues" type="lwcType" />
+		<!-- action name="attributeLegalTypes" type="lwcType"/ -->
+        <action name="attributeVisibility" type="csm" />
+		<action name="attributeConstraints" type="lwcType" />
+	</model>
+
+	<model name="csmattribute row level actions">
+		<action name="attributeInfo" type="csm" />
+		<action name="deleteAttribute" type="csm" />
+		<action name="moveAttributeToParentRow" type="csm" />
+	</model>
+
+	<model name="csmExport" resourceBundle="com.ptc.windchill.csm.client.csmClientResource">
+		<description>Actions in Export submenu</description>
+		<action name="exportToCSV" type="csm" /> <!-- Export To CSV -->
+		<action name="exportToXML" type="csm" /> <!-- Export To XML -->
+	</model>
+
+</actionmodels>

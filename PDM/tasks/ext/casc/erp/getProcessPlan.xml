@@ -1,0 +1,77 @@
+
+<%@page language="java" session="false" access="http|soap" contentType="text/xml"%>
+
+<%@taglib uri="http://www.ptc.com/infoengine/taglib/core" prefix="ie"%>
+<%@page import="java.io.*"%>
+<%@page import="java.util.*"%>
+<%@page import="ext.casc.integrate.process.ProcessService"%>
+<%@page import=" java.lang.Exception"%>
+
+
+<!--com.infoengine.soap.rpc.def
+ ��������: NRIETQueryTree
+ ����obid��ѯPart�ṹ��
+ Inputs:
+   obid  		    Required
+   instance         Required. The adapter instance to run this webject.
+   depth            ��ѡ���������������Ĭ��ֵΪ1
+   mode				��ѡ���������ؽṹ��ģʽ��[FLAT: ֻ������һ���Part | NESTED:Ƕ�׷��ض༶Part, ��ദ������depth����], 	Ĭ��ֵΪ��FLAT
+   selectby		    ��ѡ���������ؽṹ��ģʽ��[LATEST: �����µİ汾 | BASELINE:������], 	Ĭ��ֵΪ��LATEST
+   baselineobid     ���߶����obid, ���selectbyֵΪBASELINE�� ��������øò���
+
+@param string instance Argument number 1.
+@param string obid Argument number 2.
+@param string depth Argument number 3.
+@param string mode Argument number 4.
+@param string selectby Argument number 5.
+@param string attributes Argument number 6.
+@param string baselineobid Argument number 7.
+-->
+
+
+<%
+
+
+
+String processplanType = (String)getParam("processplanType");
+String productNumber = (String)getParam("productNumber");
+String productVersionType = (String)getParam("productVersionType");
+String productVersion = (String)getParam("productVersion");
+String processPlanNumber = (String)getParam("processPlanNumber");
+String processPlanversionType = (String)getParam("processPlanversionType");
+String processPlanversion = (String)getParam("processPlanversion");
+String guid = (String)getParam("guid");
+
+/*
+String processplanType = "";
+String productNumber = "";
+String productVersionType = "";
+String productVersion = "";
+String processPlanNumber = "";
+String processPlanversionType = "";
+String processPlanversion = "";
+String guid =  "";
+*/
+
+String result = "";
+
+ProcessService process = new ProcessService();
+try{
+         result =process.getProcessPlan( processplanType,  productNumber,productVersionType, productVersion, processPlanNumber, processPlanversionType,processPlanversion, guid);
+}
+catch (Exception e) {
+            // TODO Auto-generated catch block
+           result = e.getLocalizedMessage();
+}
+System.out.println("----result----"+result);
+%>
+
+      <ie:webject name="Create-Group" type="GRP">
+            <ie:param name="ELEMENT" data="<%=result%>"/>
+           <ie:param name="CLASS" data="Status"/>
+           <ie:param name="GROUP_OUT" data="${@FORM[]group_out[]}"  default="output"/>
+        </ie:webject>
+
+
+
+

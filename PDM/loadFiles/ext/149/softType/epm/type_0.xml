@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE NmLoader
+  SYSTEM "standardX20.dtd">
+<NmLoader>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>ADW_DM_Attributes</csvname>
+      <csvhierarchyDisplayName>ADW_DM_Attributes</csvhierarchyDisplayName>
+      <csvorganizerPaths></csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name/>
+      <csvdescription/>
+      <csvdata_type>ORG</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier/>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>ADWType</csvname>
+      <csvhierarchyDisplayName>ADW Type</csvhierarchyDisplayName>
+      <csvorganizerPaths>ADW_DM_Attributes</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>ADW Type</csvdisplay_name>
+      <csvdescription>ADW Type</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>ADWType</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>149IBA</csvname>
+      <csvhierarchyDisplayName>149IBA</csvhierarchyDisplayName>
+      <csvorganizerPaths></csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name/>
+      <csvdescription/>
+      <csvdata_type>ORG</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier/>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>PTC_MATERIA_NAME</csvname>
+      <csvhierarchyDisplayName>材料名称</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>材料名称</csvdisplay_name>
+      <csvdescription>材料名称</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>PTC_MATERIA_NAME</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>PTC_SYSTEM_ATTRIBUTES</csvname>
+      <csvhierarchyDisplayName>PTC_SYSTEM_ATTRIBUTES</csvhierarchyDisplayName>
+      <csvorganizerPaths></csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name/>
+      <csvdescription/>
+      <csvdata_type>ORG</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier/>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>PTC_NOTE_TEXT</csvname>
+      <csvhierarchyDisplayName>Note Text</csvhierarchyDisplayName>
+      <csvorganizerPaths>PTC_SYSTEM_ATTRIBUTES</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>Note Text</csvdisplay_name>
+      <csvdescription>Note Text</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>PTC_NOTE_TEXT</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>KEYCOMPONENT</csvname>
+      <csvhierarchyDisplayName>关重件标识</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>关重件标识</csvdisplay_name>
+      <csvdescription>关重件标识</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>KEYCOMPONENT</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>REMARK</csvname>
+      <csvhierarchyDisplayName>备注</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>备注</csvdisplay_name>
+      <csvdescription>备注</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>REMARK</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>PRODUCT_CODE</csvname>
+      <csvhierarchyDisplayName>产品代号</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>产品代号</csvdisplay_name>
+      <csvdescription>产品代号</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>PRODUCT_CODE</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>MINDEX</csvname>
+      <csvhierarchyDisplayName>所属型号</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>所属型号</csvdisplay_name>
+      <csvdescription>所属型号</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>MINDEX</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>PTC_DD_EXTENDED_DOC_TYPE</csvname>
+      <csvhierarchyDisplayName>PTC_DD_EXTENDED_DOC_TYPE</csvhierarchyDisplayName>
+      <csvorganizerPaths>PTC_SYSTEM_ATTRIBUTES</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>PTC_DD_EXTENDED_DOC_TYPE</csvdisplay_name>
+      <csvdescription>PTC_DD_EXTENDED_DOC_TYPE</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>PTC_DD_EXTENDED_DOC_TYPE</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>FirstPiece</csvname>
+      <csvhierarchyDisplayName>先行件</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>先行件</csvdisplay_name>
+      <csvdescription>先行件</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>FirstPiece</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>CurrentStage</csvname>
+      <csvhierarchyDisplayName>当前阶段</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>当前阶段</csvdisplay_name>
+      <csvdescription>当前阶段</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>CurrentStage</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>CTYPE</csvname>
+      <csvhierarchyDisplayName>零部件分类</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>零部件分类</csvdisplay_name>
+      <csvdescription>零部件分类</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>CTYPE</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>UWGMECAD_Organizer</csvname>
+      <csvhierarchyDisplayName>UWGMECAD_Organizer</csvhierarchyDisplayName>
+      <csvorganizerPaths></csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name/>
+      <csvdescription/>
+      <csvdata_type>ORG</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier/>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>PTC_ECAD_ASSEMBLY_PART_NAME</csvname>
+      <csvhierarchyDisplayName>ECAD Assembly Part Name</csvhierarchyDisplayName>
+      <csvorganizerPaths>UWGMECAD_Organizer</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>ECAD Assembly Part Name</csvdisplay_name>
+      <csvdescription>ECAD Assembly Part Name</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>PTC_ECAD_ASSEMBLY_PART_NAME</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>PRO_MP_MASS</csvname>
+      <csvhierarchyDisplayName>质量</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>质量</csvdisplay_name>
+      <csvdescription>质量</csvdescription>
+      <csvdata_type>FLOAT</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>PRO_MP_MASS</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>PTC_ECAD_BOARD_PART_NAME</csvname>
+      <csvhierarchyDisplayName>ECAD Board Part Name</csvhierarchyDisplayName>
+      <csvorganizerPaths>UWGMECAD_Organizer</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>ECAD Board Part Name</csvdisplay_name>
+      <csvdescription>ECAD Board Part Name</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>PTC_ECAD_BOARD_PART_NAME</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>ECAD_DESIGN_ITEM</csvname>
+      <csvhierarchyDisplayName>ECAD Desin Item</csvhierarchyDisplayName>
+      <csvorganizerPaths>UWGMECAD_Organizer</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>ECAD Desin Item</csvdisplay_name>
+      <csvdescription>ECAD Desin Item</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>ECAD_DESIGN_ITEM</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>CINDEX</csvname>
+      <csvhierarchyDisplayName>图号</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>图号</csvdisplay_name>
+      <csvdescription>图号</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>CINDEX</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>PTC_ECAD_ADW_MANAGED_DESIGN</csvname>
+      <csvhierarchyDisplayName>ADW Managed Design</csvhierarchyDisplayName>
+      <csvorganizerPaths>ADW_DM_Attributes</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>ADW Managed Design</csvdisplay_name>
+      <csvdescription>ADW Managed Design</csvdescription>
+      <csvdata_type>BOOL</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>PTC_ECAD_ADW_MANAGED_DESIGN</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>ChineseName</csvname>
+      <csvhierarchyDisplayName>中文名称</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>中文名称</csvdisplay_name>
+      <csvdescription>中文名称</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>ChineseName</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>PTC_ECAD_BOARD_PART_NUMBER</csvname>
+      <csvhierarchyDisplayName>ECAD Board Part Number</csvhierarchyDisplayName>
+      <csvorganizerPaths>UWGMECAD_Organizer</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>ECAD Board Part Number</csvdisplay_name>
+      <csvdescription>ECAD Board Part Number</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>PTC_ECAD_BOARD_PART_NUMBER</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>ADWBlockLibPath</csvname>
+      <csvhierarchyDisplayName>ADW Block Library Path</csvhierarchyDisplayName>
+      <csvorganizerPaths>ADW_DM_Attributes</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>ADW Block Library Path</csvdisplay_name>
+      <csvdescription>ADW Block Library Path</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>ADWBlockLibPath</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>SECRET</csvname>
+      <csvhierarchyDisplayName>密级</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>密级</csvdisplay_name>
+      <csvdescription>密级</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>SECRET</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>ADWRootDesign</csvname>
+      <csvhierarchyDisplayName>ADW Root Design</csvhierarchyDisplayName>
+      <csvorganizerPaths>ADW_DM_Attributes</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>ADW Root Design</csvdisplay_name>
+      <csvdescription>ADW Root Design</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>ADWRootDesign</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>ECADAssemblies</csvname>
+      <csvhierarchyDisplayName>ECAD Assemblies</csvhierarchyDisplayName>
+      <csvorganizerPaths>UWGMECAD_Organizer</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>ECAD Assemblies</csvdisplay_name>
+      <csvdescription>ECAD Assemblies</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>ECADAssemblies</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>SETMARK</csvname>
+      <csvhierarchyDisplayName>成套件标识</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>成套件标识</csvdisplay_name>
+      <csvdescription>成套件标识</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>SETMARK</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>MATERIA</csvname>
+      <csvhierarchyDisplayName>材料</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>材料</csvdisplay_name>
+      <csvdescription>材料</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>MATERIA</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>ECAD_NEUTRAL_FORMAT_FILE</csvname>
+      <csvhierarchyDisplayName>ECAD Neutral Format File</csvhierarchyDisplayName>
+      <csvorganizerPaths>UWGMECAD_Organizer</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>ECAD Neutral Format File</csvdisplay_name>
+      <csvdescription>ECAD Neutral Format File</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>ECAD_NEUTRAL_FORMAT_FILE</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>CSIZE</csvname>
+      <csvhierarchyDisplayName>规格</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>规格</csvdisplay_name>
+      <csvdescription>规格</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>CSIZE</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>size</csvname>
+      <csvhierarchyDisplayName>二维工程图的图幅</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>二维工程图的图幅</csvdisplay_name>
+      <csvdescription>二维工程图的图幅</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>size</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>DEPT</csvname>
+      <csvhierarchyDisplayName>编制部门</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>编制部门</csvdisplay_name>
+      <csvdescription>编制部门</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>DEPT</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>CMATDOWN</csvname>
+      <csvhierarchyDisplayName>材料（双行标注下）</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>材料（双行标注下）</csvdisplay_name>
+      <csvdescription>材料（双行标注下）</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>CMATDOWN</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>ADWFlowType</csvname>
+      <csvhierarchyDisplayName>ADW Flow Type</csvhierarchyDisplayName>
+      <csvorganizerPaths>ADW_DM_Attributes</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>ADW Flow Type</csvdisplay_name>
+      <csvdescription>ADW Flow Type</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>ADWFlowType</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>PTC_ECAD_ASSEMBLY_PART_NUMBER</csvname>
+      <csvhierarchyDisplayName>ECAD Assembly Part Number</csvhierarchyDisplayName>
+      <csvorganizerPaths>UWGMECAD_Organizer</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>ECAD Assembly Part Number</csvdisplay_name>
+      <csvdescription>ECAD Assembly Part Number</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>PTC_ECAD_ASSEMBLY_PART_NUMBER</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>CMATUP</csvname>
+      <csvhierarchyDisplayName>材料（双行标注上）</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>材料（双行标注上）</csvdisplay_name>
+      <csvdescription>材料（双行标注上）</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>CMATUP</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>ADWMetadataVersion</csvname>
+      <csvhierarchyDisplayName>ADW Metadata Version</csvhierarchyDisplayName>
+      <csvorganizerPaths>ADW_DM_Attributes</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>ADW Metadata Version</csvdisplay_name>
+      <csvdescription>ADW Metadata Version</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>ADWMetadataVersion</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>CPDEX</csvname>
+      <csvhierarchyDisplayName>所属成品</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>所属成品</csvdisplay_name>
+      <csvdescription>所属成品</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>CPDEX</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+</NmLoader>

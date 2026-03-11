@@ -1,0 +1,710 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE NmLoader SYSTEM "standardX20.dtd">
+<NmLoader>
+  <csvLifeCycleTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createLifeCycleTemplate">
+    <csvname>149_Doc_LC</csvname>
+    <csvdescription>null</csvdescription>
+    <csvsupportedClass>wt.fc.WTObject</csvsupportedClass>
+    <csvfolderLocation>/System</csvfolderLocation>
+    <csvenabled>true</csvenabled>
+    <csvrouting>false</csvrouting>
+    <csvbasic>false</csvbasic>
+  </csvLifeCycleTemplateBegin>
+  <csvPhaseTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateBegin">
+    <csvname>正在工作</csvname>
+    <csvphaseState>INWORK</csvphaseState>
+    <csvphaseWorkflow>Submit</csvphaseWorkflow>
+    <csvgateWorkflow>Review</csvgateWorkflow>
+    <csvseriesSelector></csvseriesSelector>
+  </csvPhaseTemplateBegin>
+  <csvRoleHolder handler="wt.project.LoadProject.createRoleHolder">
+    <csvroleToAssign>REVIEWER</csvroleToAssign>
+    <csvassignedPrincipal></csvassignedPrincipal>
+  </csvRoleHolder>
+  <csvPhaseTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateEnd"></csvPhaseTemplateEnd>
+  <csvPhaseTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateBegin">
+    <csvname>修改</csvname>
+    <csvphaseState>XIUGAI</csvphaseState>
+    <csvphaseWorkflow>Submit</csvphaseWorkflow>
+    <csvgateWorkflow>Review</csvgateWorkflow>
+    <csvseriesSelector></csvseriesSelector>
+  </csvPhaseTemplateBegin>
+  <csvRoleHolder handler="wt.project.LoadProject.createRoleHolder">
+    <csvroleToAssign>REVIEWER</csvroleToAssign>
+    <csvassignedPrincipal></csvassignedPrincipal>
+  </csvRoleHolder>
+  <csvPhaseTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateEnd"></csvPhaseTemplateEnd>
+  <csvPhaseTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateBegin">
+    <csvname>校对</csvname>
+    <csvphaseState>XIAODUI</csvphaseState>
+    <csvphaseWorkflow>Submit</csvphaseWorkflow>
+    <csvgateWorkflow>Review</csvgateWorkflow>
+    <csvseriesSelector></csvseriesSelector>
+  </csvPhaseTemplateBegin>
+  <csvRoleHolder handler="wt.project.LoadProject.createRoleHolder">
+    <csvroleToAssign>REVIEWER</csvroleToAssign>
+    <csvassignedPrincipal></csvassignedPrincipal>
+  </csvRoleHolder>
+  <csvPhaseTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateEnd"></csvPhaseTemplateEnd>
+  <csvPhaseTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateBegin">
+    <csvname>审核</csvname>
+    <csvphaseState>SHENHE</csvphaseState>
+    <csvphaseWorkflow>Submit</csvphaseWorkflow>
+    <csvgateWorkflow>Review</csvgateWorkflow>
+    <csvseriesSelector></csvseriesSelector>
+  </csvPhaseTemplateBegin>
+  <csvRoleHolder handler="wt.project.LoadProject.createRoleHolder">
+    <csvroleToAssign>REVIEWER</csvroleToAssign>
+    <csvassignedPrincipal></csvassignedPrincipal>
+  </csvRoleHolder>
+  <csvPhaseTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateEnd"></csvPhaseTemplateEnd>
+  <csvPhaseTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateBegin">
+    <csvname>内部会签</csvname>
+    <csvphaseState>NEIBUHUIQIAN</csvphaseState>
+    <csvphaseWorkflow>Submit</csvphaseWorkflow>
+    <csvgateWorkflow>Review</csvgateWorkflow>
+    <csvseriesSelector></csvseriesSelector>
+  </csvPhaseTemplateBegin>
+  <csvRoleHolder handler="wt.project.LoadProject.createRoleHolder">
+    <csvroleToAssign>REVIEWER</csvroleToAssign>
+    <csvassignedPrincipal></csvassignedPrincipal>
+  </csvRoleHolder>
+  <csvPhaseTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateEnd"></csvPhaseTemplateEnd>
+  <csvPhaseTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateBegin">
+    <csvname>外部会签</csvname>
+    <csvphaseState>WAIBUHUIQIAN</csvphaseState>
+    <csvphaseWorkflow>Submit</csvphaseWorkflow>
+    <csvgateWorkflow>Review</csvgateWorkflow>
+    <csvseriesSelector></csvseriesSelector>
+  </csvPhaseTemplateBegin>
+  <csvRoleHolder handler="wt.project.LoadProject.createRoleHolder">
+    <csvroleToAssign>REVIEWER</csvroleToAssign>
+    <csvassignedPrincipal></csvassignedPrincipal>
+  </csvRoleHolder>
+  <csvPhaseTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateEnd"></csvPhaseTemplateEnd>
+  <csvPhaseTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateBegin">
+    <csvname>标审</csvname>
+    <csvphaseState>BIAOSHEN</csvphaseState>
+    <csvphaseWorkflow>Submit</csvphaseWorkflow>
+    <csvgateWorkflow>Review</csvgateWorkflow>
+    <csvseriesSelector></csvseriesSelector>
+  </csvPhaseTemplateBegin>
+  <csvRoleHolder handler="wt.project.LoadProject.createRoleHolder">
+    <csvroleToAssign>REVIEWER</csvroleToAssign>
+    <csvassignedPrincipal></csvassignedPrincipal>
+  </csvRoleHolder>
+  <csvPhaseTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateEnd"></csvPhaseTemplateEnd>
+  <csvPhaseTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateBegin">
+    <csvname>批准</csvname>
+    <csvphaseState>PIZHUN</csvphaseState>
+    <csvphaseWorkflow>Submit</csvphaseWorkflow>
+    <csvgateWorkflow>Review</csvgateWorkflow>
+    <csvseriesSelector></csvseriesSelector>
+  </csvPhaseTemplateBegin>
+  <csvRoleHolder handler="wt.project.LoadProject.createRoleHolder">
+    <csvroleToAssign>REVIEWER</csvroleToAssign>
+    <csvassignedPrincipal></csvassignedPrincipal>
+  </csvRoleHolder>
+  <csvPhaseTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateEnd"></csvPhaseTemplateEnd>
+  <csvPhaseTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateBegin">
+    <csvname>已批准</csvname>
+    <csvphaseState>APPROVED</csvphaseState>
+    <csvphaseWorkflow>Submit</csvphaseWorkflow>
+    <csvgateWorkflow></csvgateWorkflow>
+    <csvseriesSelector></csvseriesSelector>
+  </csvPhaseTemplateBegin>
+  <csvRoleHolder handler="wt.project.LoadProject.createRoleHolder">
+    <csvroleToAssign>REVIEWER</csvroleToAssign>
+    <csvassignedPrincipal></csvassignedPrincipal>
+  </csvRoleHolder>
+  <csvPhaseTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateEnd"></csvPhaseTemplateEnd>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>REVISE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>XIUGAI</csvsuccessorPhaseState>
+    <csvphaseTransition>NEXT</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>XIUGAI</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>XIAODUI</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>SHENHE</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>NEIBUHUIQIAN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>WAIBUHUIQIAN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>BIAOSHEN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PIZHUN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>XIUGAI</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>XIUGAI</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>REVISE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>XIUGAI</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>XIUGAI</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>XIUGAI</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>XIAODUI</csvsuccessorPhaseState>
+    <csvphaseTransition>NEXT</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>XIUGAI</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>XIAODUI</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>XIUGAI</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>SHENHE</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>XIUGAI</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>NEIBUHUIQIAN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>XIUGAI</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>WAIBUHUIQIAN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>XIUGAI</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>BIAOSHEN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>XIUGAI</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PIZHUN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>XIUGAI</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>XIAODUI</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>XIAODUI</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>REVISE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>XIAODUI</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>XIUGAI</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>XIAODUI</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>XIAODUI</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>XIAODUI</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>SHENHE</csvsuccessorPhaseState>
+    <csvphaseTransition>NEXT</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>XIAODUI</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>SHENHE</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>XIAODUI</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>NEIBUHUIQIAN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>XIAODUI</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>WAIBUHUIQIAN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>XIAODUI</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>BIAOSHEN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>XIAODUI</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PIZHUN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>XIAODUI</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>SHENHE</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>REVISE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>SHENHE</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>SHENHE</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>XIUGAI</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>SHENHE</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>XIAODUI</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>SHENHE</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>SHENHE</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>SHENHE</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>NEIBUHUIQIAN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>SHENHE</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>NEIBUHUIQIAN</csvsuccessorPhaseState>
+    <csvphaseTransition>NEXT</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>SHENHE</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>WAIBUHUIQIAN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>SHENHE</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>BIAOSHEN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>SHENHE</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PIZHUN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>SHENHE</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>NEIBUHUIQIAN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>NEIBUHUIQIAN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>REVISE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>NEIBUHUIQIAN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>XIUGAI</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>NEIBUHUIQIAN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>XIAODUI</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>NEIBUHUIQIAN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>SHENHE</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>NEIBUHUIQIAN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>NEIBUHUIQIAN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>NEIBUHUIQIAN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>WAIBUHUIQIAN</csvsuccessorPhaseState>
+    <csvphaseTransition>NEXT</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>NEIBUHUIQIAN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>WAIBUHUIQIAN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>NEIBUHUIQIAN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>BIAOSHEN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>NEIBUHUIQIAN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PIZHUN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>NEIBUHUIQIAN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>WAIBUHUIQIAN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>REVISE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>WAIBUHUIQIAN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>WAIBUHUIQIAN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>XIUGAI</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>WAIBUHUIQIAN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>XIAODUI</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>WAIBUHUIQIAN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>SHENHE</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>WAIBUHUIQIAN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>NEIBUHUIQIAN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>WAIBUHUIQIAN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>WAIBUHUIQIAN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>WAIBUHUIQIAN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>BIAOSHEN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>WAIBUHUIQIAN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>BIAOSHEN</csvsuccessorPhaseState>
+    <csvphaseTransition>NEXT</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>WAIBUHUIQIAN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PIZHUN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>WAIBUHUIQIAN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>BIAOSHEN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>BIAOSHEN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>REVISE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>BIAOSHEN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>XIUGAI</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>BIAOSHEN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>XIAODUI</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>BIAOSHEN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>SHENHE</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>BIAOSHEN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>NEIBUHUIQIAN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>BIAOSHEN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>WAIBUHUIQIAN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>BIAOSHEN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>BIAOSHEN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>BIAOSHEN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PIZHUN</csvsuccessorPhaseState>
+    <csvphaseTransition>NEXT</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>BIAOSHEN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PIZHUN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>BIAOSHEN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PIZHUN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>REVISE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PIZHUN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PIZHUN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>XIUGAI</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PIZHUN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>XIAODUI</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PIZHUN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>SHENHE</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PIZHUN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>NEIBUHUIQIAN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PIZHUN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>WAIBUHUIQIAN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PIZHUN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>BIAOSHEN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PIZHUN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PIZHUN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PIZHUN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PIZHUN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>NEXT</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>REVISE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>XIUGAI</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>XIAODUI</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>SHENHE</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>NEIBUHUIQIAN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>WAIBUHUIQIAN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>BIAOSHEN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PIZHUN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Doc_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvLifeCycleTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createLifeCycleTemplateEnd"></csvLifeCycleTemplateEnd>
+</NmLoader>

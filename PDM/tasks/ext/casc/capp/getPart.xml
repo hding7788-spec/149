@@ -1,0 +1,34 @@
+<%@page language="java" access="http|soap" %>
+<%@taglib uri="http://www.ptc.com/infoengine/taglib/core" prefix="ie"%>
+
+<%
+
+ String num= (String)getParam("number");
+ System.out.println("-----num:"+num);
+
+ String setmarket = new String("是".getBytes("iso-8859-1"),"GBK");
+  String nam= (String)getParam("name");
+ System.out.println("-----nam:"+nam);
+
+ 
+%>
+<ie:webject name="Query-Objects" type="OBJ">
+    <ie:param name="INSTANCE" data="$(@FORM[]supporting-adapter[*])" delim="!" valueSeparator="!" default="<%=com.infoengine.au.NamingService.getVMName()%>"/>
+    <ie:param name="ATTRIBUTE" data="name"/>
+    <ie:param name="TYPE" data="wt.vc.views.View"/>
+    <ie:param name="GROUP_OUT" data="viewRef"/>
+    <ie:param name="WHERE" data="(name=Manufacturing)"/>
+</ie:webject>
+
+<ie:webject name="Query-Objects" type="OBJ">
+    <ie:param name="INSTANCE" data="$(@FORM[]supporting-adapter[*])" delim="!" valueSeparator="!" default="<%=com.infoengine.au.NamingService.getVMName()%>"/>
+    <ie:param name="ATTRIBUTE" data="number"/>
+    <ie:param name="ATTRIBUTE" data="name"/>
+    <ie:param name="ATTRIBUTE" data="version"/>
+    <ie:param name="TYPE" data="wt.part.WTPart"/>
+    <ie:param name="WHERE" data="(number=*<%=num%>*)"/>
+    <ie:param name="WHERE" data="(name=*<%=nam%>*)"/>
+	<ie:param name="WHERE" data="(SETMARK=<%=setmarket%>)"/> 
+	 <ie:param name="WHERE" data="(checkoutInfo.state=c/i)"/>
+    <ie:param name="WHERE" data="(view.id=$(viewRef[0]obid[0]))"/> 
+</ie:webject>

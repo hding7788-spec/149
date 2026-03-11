@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="GBK"?>
+<mpmpplantypes>
+	<pplantype name="Process_MP" display="机加工艺">
+		<!--  <ibaattribute name="MINDEX" display="产品型号代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PINDEX" display="产品代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partNumber" display="设计图样代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partName" display="设计图样名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="KEYCOMPONENT" display="关重件标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PHASE_CODE" display="产品阶段标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANTYPE" display="工艺文件类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="TEMPNO" display="临时工艺顺序号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="ZFFLAG" display="主辅制类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsType" display="工艺类型" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANID" display="工艺特征编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsNumber" display="工艺文件编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsName" display="工艺文件名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="SECRET" display="文件密级" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PCNO" display="批次号" default="" valueSet="" dataType="string"/>
+
+		<ibaattribute name="MATERIAL" display="材料牌号" default="" valueSet="" dataType="string" copyPartAttr="CMAT" isEditor="false"/>
+		<ibaattribute name="PTC_MATERIAL_NAME" display="材料名称" default="" valueSet="" dataType="string" copyPartAttr="PTC_MATERIAL_NAME" isEditor="false"/>
+		<ibaattribute name="CSIZE" display="材料规格" default="" valueSet="" dataType="string" copyPartAttr="CMAT_UP" isEditor="false"/>
+		<ibaattribute name="CSIZE_REQUIRE" display="规格要求" default="" valueSet="" dataType="string" copyPartAttr="CMAT_DOWN" isEditor="false"/>
+		<ibaattribute name="JSYQ" display="技术要求" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+
+		<ibaattribute name="Product_QTY" display="产品数量" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="CPMPCC" display="产品毛坯尺寸" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="CPKZJS" display="产品可制件数" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="SJ_QTY" display="试件数量" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="SJMPCC" display="试件毛坯尺寸" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="SJKZJS" display="试件可制件数" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>-->
+
+		<step name="standardStep" display="标准工序">
+			<ibaattribute name="GXBZ" display="备注" default="" valueSet="" dataType="string"/>
+			<!--  <ibaattribute name="ZJGS" display="准结工时" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="DJGS" display="单结工时" default="" valueSet="" dataType="string"/> -->
+		</step>
+	</pplantype>
+
+	<pplantype name="Process_DAOGUAN" display="导管工艺">
+		<!--  <ibaattribute name="MINDEX" display="产品型号代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PINDEX" display="产品代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partNumber" display="设计图样代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partName" display="设计图样名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="KEYCOMPONENT" display="关重件标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PHASE_CODE" display="产品阶段标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANTYPE" display="工艺文件类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="TEMPNO" display="临时工艺顺序号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="ZFFLAG" display="主辅制类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsType" display="工艺类型" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANID" display="工艺特征编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsNumber" display="工艺文件编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsName" display="工艺文件名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="SECRET" display="文件密级" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PCNO" display="批次号" default="" valueSet="" dataType="string"/>
+
+		<ibaattribute name="MATERIAL" display="材料牌号" default="" valueSet="" dataType="string" copyPartAttr="CMAT" isEditor="false"/>
+		<ibaattribute name="PTC_MATERIAL_NAME" display="材料名称" default="" valueSet="" dataType="string" copyPartAttr="PTC_MATERIAL_NAME" isEditor="false"/>
+		<ibaattribute name="CSIZE" display="材料规格" default="" valueSet="" dataType="string" copyPartAttr="CMAT_UP" isEditor="false"/>
+		<ibaattribute name="CSIZE_REQUIRE" display="规格要求" default="" valueSet="" dataType="string" copyPartAttr="CMAT_DOWN" isEditor="false"/>
+		<ibaattribute name="JSYQ" display="技术要求" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+
+		<ibaattribute name="Product_QTY" display="产品数量" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="CPMPCC" display="产品毛坯尺寸" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="CPKZJS" display="产品可制件数" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="SJ_QTY" display="试件数量" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="SJMPCC" display="试件毛坯尺寸" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="SJKZJS" display="试件可制件数" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>-->
+
+		<step name="standardStep" display="标准工序">
+			<ibaattribute name="GXBZ" display="备注" default="" valueSet="" dataType="string"/>
+			<!--  <ibaattribute name="ZJGS" display="准结工时" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="DJGS" display="单结工时" default="" valueSet="" dataType="string"/> -->
+		</step>
+	</pplantype>
+
+	<pplantype name="Process_BANJIN" display="钣金工艺">
+		<!--  <ibaattribute name="MINDEX" display="产品型号代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PINDEX" display="产品代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partNumber" display="设计图样代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partName" display="设计图样名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="KEYCOMPONENT" display="关重件标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PHASE_CODE" display="产品阶段标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANTYPE" display="工艺文件类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="TEMPNO" display="临时工艺顺序号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="ZFFLAG" display="主辅制类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsType" display="工艺类型" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANID" display="工艺特征编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsNumber" display="工艺文件编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsName" display="工艺文件名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="SECRET" display="文件密级" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PCNO" display="批次号" default="" valueSet="" dataType="string"/>
+
+		<ibaattribute name="MATERIAL" display="材料牌号" default="" valueSet="" dataType="string" copyPartAttr="CMAT" isEditor="false"/>
+		<ibaattribute name="PTC_MATERIAL_NAME" display="材料名称" default="" valueSet="" dataType="string" copyPartAttr="PTC_MATERIAL_NAME" isEditor="false"/>
+		<ibaattribute name="CSIZE" display="材料规格" default="" valueSet="" dataType="string" copyPartAttr="CMAT_UP" isEditor="false"/>
+		<ibaattribute name="CSIZE_REQUIRE" display="规格要求" default="" valueSet="" dataType="string" copyPartAttr="CMAT_DOWN" isEditor="false"/>
+		<ibaattribute name="JSYQ" display="技术要求" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+
+		<ibaattribute name="Product_QTY" display="产品数量" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="CPMPCC" display="产品毛坯尺寸" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="CPKZJS" display="产品可制件数" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="SJ_QTY" display="试件数量" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="SJMPCC" display="试件毛坯尺寸" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="SJKZJS" display="试件可制件数" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>-->
+
+		<step name="standardStep" display="标准工序">
+			<ibaattribute name="GXBZ" display="备注" default="" valueSet="" dataType="string"/>
+			<!--  <ibaattribute name="ZJGS" display="准结工时" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="DJGS" display="单结工时" default="" valueSet="" dataType="string"/> -->
+		</step>
+	</pplantype>
+
+	<pplantype name="Process_TANHUANG" display="弹簧工艺">
+		<!--  <ibaattribute name="MINDEX" display="产品型号代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PINDEX" display="产品代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partNumber" display="设计图样代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partName" display="设计图样名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="KEYCOMPONENT" display="关重件标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PHASE_CODE" display="产品阶段标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANTYPE" display="工艺文件类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="TEMPNO" display="临时工艺顺序号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="ZFFLAG" display="主辅制类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsType" display="工艺类型" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANID" display="工艺特征编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsNumber" display="工艺文件编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsName" display="工艺文件名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="SECRET" display="文件密级" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PCNO" display="批次号" default="" valueSet="" dataType="string"/>
+
+		<ibaattribute name="MATERIAL" display="材料牌号" default="" valueSet="" dataType="string" copyPartAttr="CMAT" isEditor="false"/>
+		<ibaattribute name="PTC_MATERIAL_NAME" display="材料名称" default="" valueSet="" dataType="string" copyPartAttr="PTC_MATERIAL_NAME" isEditor="false"/>
+		<ibaattribute name="CSIZE" display="材料规格" default="" valueSet="" dataType="string" copyPartAttr="CMAT_UP" isEditor="false"/>
+		<ibaattribute name="CSIZE_REQUIRE" display="规格要求" default="" valueSet="" dataType="string" copyPartAttr="CMAT_DOWN" isEditor="false"/>
+		<ibaattribute name="JSYQ" display="技术要求" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+
+		<ibaattribute name="Product_QTY" display="产品数量" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="CPMPCC" display="产品毛坯尺寸" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="CPKZJS" display="产品可制件数" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="SJ_QTY" display="试件数量" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="SJMPCC" display="试件毛坯尺寸" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="SJKZJS" display="试件可制件数" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>-->
+
+		<step name="standardStep" display="标准工序">
+			<ibaattribute name="GXBZ" display="备注" default="" valueSet="" dataType="string"/>
+			<!--  <ibaattribute name="ZJGS" display="准结工时" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="DJGS" display="单结工时" default="" valueSet="" dataType="string"/> -->
+		</step>
+	</pplantype>
+
+	<pplantype name="Process_FJSJJG" display="非金属机加工工艺">
+		<!--  <ibaattribute name="MINDEX" display="产品型号代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PINDEX" display="产品代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partNumber" display="设计图样代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partName" display="设计图样名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="KEYCOMPONENT" display="关重件标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PHASE_CODE" display="产品阶段标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANTYPE" display="工艺文件类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="TEMPNO" display="临时工艺顺序号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="ZFFLAG" display="主辅制类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsType" display="工艺类型" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANID" display="工艺特征编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsNumber" display="工艺文件编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsName" display="工艺文件名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="SECRET" display="文件密级" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PCNO" display="批次号" default="" valueSet="" dataType="string"/>
+
+		<ibaattribute name="MATERIAL" display="材料牌号" default="" valueSet="" dataType="string" copyPartAttr="CMAT" isEditor="false"/>
+		<ibaattribute name="PTC_MATERIAL_NAME" display="材料名称" default="" valueSet="" dataType="string" copyPartAttr="PTC_MATERIAL_NAME" isEditor="false"/>
+		<ibaattribute name="CSIZE" display="材料规格" default="" valueSet="" dataType="string" copyPartAttr="CMAT_UP" isEditor="false"/>
+		<ibaattribute name="CSIZE_REQUIRE" display="规格要求" default="" valueSet="" dataType="string" copyPartAttr="CMAT_DOWN" isEditor="false"/>
+		<ibaattribute name="JSYQ" display="技术要求" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+
+		<ibaattribute name="Product_QTY" display="产品数量" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="CPMPCC" display="产品毛坯尺寸" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="CPKZJS" display="产品可制件数" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="SJ_QTY" display="试件数量" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="SJMPCC" display="试件毛坯尺寸" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="SJKZJS" display="试件可制件数" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>-->
+
+		<step name="standardStep" display="标准工序">
+			<ibaattribute name="GXBZ" display="备注" default="" valueSet="" dataType="string"/>
+			<!--  <ibaattribute name="ZJGS" display="准结工时" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="DJGS" display="单结工时" default="" valueSet="" dataType="string"/> -->
+		</step>
+	</pplantype>
+
+	<pplantype name="Process_SHUKONG" display="数控工艺">
+		<!--  <ibaattribute name="MINDEX" display="产品型号代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PINDEX" display="产品代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partNumber" display="设计图样代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partName" display="设计图样名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="KEYCOMPONENT" display="关重件标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PHASE_CODE" display="产品阶段标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANTYPE" display="工艺文件类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="TEMPNO" display="临时工艺顺序号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="ZFFLAG" display="主辅制类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsType" display="工艺类型" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANID" display="工艺特征编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsNumber" display="工艺文件编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsName" display="工艺文件名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="SECRET" display="文件密级" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PCNO" display="批次号" default="" valueSet="" dataType="string"/>
+
+		<ibaattribute name="MATERIAL" display="材料牌号" default="" valueSet="" dataType="string" copyPartAttr="CMAT" isEditor="false"/>
+		<ibaattribute name="PTC_MATERIAL_NAME" display="材料名称" default="" valueSet="" dataType="string" copyPartAttr="PTC_MATERIAL_NAME" isEditor="false"/>
+		<ibaattribute name="CSIZE" display="材料规格" default="" valueSet="" dataType="string" copyPartAttr="CMAT_UP" isEditor="false"/>
+		<ibaattribute name="CSIZE_REQUIRE" display="规格要求" default="" valueSet="" dataType="string" copyPartAttr="CMAT_DOWN" isEditor="false"/>
+		<ibaattribute name="JSYQ" display="技术要求" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+
+		<ibaattribute name="Product_QTY" display="产品数量" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="CPMPCC" display="产品毛坯尺寸" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="CPKZJS" display="产品可制件数" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="SJ_QTY" display="试件数量" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="SJMPCC" display="试件毛坯尺寸" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="SJKZJS" display="试件可制件数" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>-->
+
+		<step name="standardStep" display="标准工序">
+			<ibaattribute name="GXBZ" display="备注" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="PROGRAMNO" display="程序号" default="" valueSet="" dataType="string"/>
+			<!--  <ibaattribute name="ZJGS" display="准结工时" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="DJGS" display="单结工时" default="" valueSet="" dataType="string"/> -->
+		</step>
+	</pplantype>
+
+	<pplantype name="Process_DIANZHUANG" display="电装工艺">
+		<!--  <ibaattribute name="MINDEX" display="产品型号代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PINDEX" display="产品代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partNumber" display="设计图样代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partName" display="设计图样名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="KEYCOMPONENT" display="关重件标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PHASE_CODE" display="产品阶段标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANTYPE" display="工艺文件类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="TEMPNO" display="临时工艺顺序号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="ZFFLAG" display="主辅制类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsType" display="工艺类型" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANID" display="工艺特征编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsNumber" display="工艺文件编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsName" display="工艺文件名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="SECRET" display="文件密级" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PCNO" display="批次号" default="" valueSet="" dataType="string"/> -->
+
+		<step name="standardStep" display="标准工序">
+			<ibaattribute name="GXBZ" display="备注" default="" valueSet="" dataType="string"/>
+			<!--  <ibaattribute name="ZJGS" display="准结工时" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="DJGS" display="单结工时" default="" valueSet="" dataType="string"/> -->
+		</step>
+	</pplantype>
+
+	<pplantype name="Process_DUANZAO" display="锻造工艺">
+		<!--  <ibaattribute name="MINDEX" display="产品型号代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PINDEX" display="产品代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partNumber" display="设计图样代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partName" display="设计图样名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="KEYCOMPONENT" display="关重件标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PHASE_CODE" display="产品阶段标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANTYPE" display="工艺文件类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="TEMPNO" display="临时工艺顺序号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="ZFFLAG" display="主辅制类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsType" display="工艺类型" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANID" display="工艺特征编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsNumber" display="工艺文件编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsName" display="工艺文件名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="SECRET" display="文件密级" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PCNO" display="批次号" default="" valueSet="" dataType="string"/>
+
+		<ibaattribute name="MATERIAL" display="材料牌号" default="" valueSet="" dataType="string" copyPartAttr="CMAT" isEditor="false"/>
+		<ibaattribute name="PTC_MATERIAL_NAME" display="材料名称" default="" valueSet="" dataType="string" copyPartAttr="PTC_MATERIAL_NAME" isEditor="false"/>
+		<ibaattribute name="CSIZE" display="材料规格" default="" valueSet="" dataType="string" copyPartAttr="CMAT_UP" isEditor="false"/>
+		<ibaattribute name="CSIZE_REQUIRE" display="规格要求" default="" valueSet="" dataType="string" copyPartAttr="CMAT_DOWN" isEditor="false"/> -->
+
+		<ibaattribute name="WEIGHT" display="毛坯重量" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="MPKZDJS" display="毛坯可制锻件数" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="YGDJKZLJS" display="一个锻件可做零件数" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="SDDZWD" display="始端锻造温度" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="ZDDZWD" display="终锻锻造温度" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+
+		<step name="standardStep" display="标准工序">
+			<ibaattribute name="GXBZ" display="备注" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="ZLWD" display="装炉温度" default="" valueSet="" dataType="string" copyPartAttr="MATERIAL" isEditor="true"/>
+			<ibaattribute name="JRSJ" display="加热时间" default="" valueSet="" dataType="string" copyPartAttr="MATERIAL" isEditor="true"/>
+			<ibaattribute name="LQFF" display="冷却方法" default="" valueSet="" dataType="string" copyPartAttr="MATERIAL" isEditor="true"/>
+			<!--  <ibaattribute name="ZJGS" display="准结工时" default="" valueSet="" dataType="string" copyPartAttr="MATERIAL" isEditor="true"/>
+			<ibaattribute name="DJGS" display="单结工时" default="" valueSet="" dataType="string" copyPartAttr="MATERIAL" isEditor="true"/> -->
+		</step>
+	</pplantype>
+
+	<pplantype name="Process_RCL" display="热处理工艺">
+		<!--  <ibaattribute name="MINDEX" display="产品型号代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PINDEX" display="产品代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partNumber" display="设计图样代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partName" display="设计图样名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="KEYCOMPONENT" display="关重件标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PHASE_CODE" display="产品阶段标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANTYPE" display="工艺文件类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="TEMPNO" display="临时工艺顺序号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="ZFFLAG" display="主辅制类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsType" display="工艺类型" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANID" display="工艺特征编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsNumber" display="工艺文件编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsName" display="工艺文件名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="SECRET" display="文件密级" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PCNO" display="批次号" default="" valueSet="" dataType="string"/>
+
+		<ibaattribute name="MATERIAL" display="材料牌号" default="" valueSet="" dataType="string" copyPartAttr="CMAT" isEditor="false"/>
+		<ibaattribute name="JSYQ" display="技术条件" default="" valueSet="" dataType="string" copyPartAttr="MATERIAL" isEditor="true"/> -->
+
+		<ibaattribute name="HXRCLZL" display="化学热处理种类" default="" valueSet="" dataType="string" copyPartAttr="MATERIAL" isEditor="true"/>
+		<ibaattribute name="HXRCLSD" display="化学热处理深度" default="" valueSet="" dataType="string" copyPartAttr="MATERIAL" isEditor="true"/>
+		<ibaattribute name="HXRCLYD" display="化学热处理硬度" default="" valueSet="" dataType="string" copyPartAttr="MATERIAL" isEditor="true"/>
+		<ibaattribute name="RCLYD" display="热处理硬度" default="" valueSet="" dataType="string" copyPartAttr="MATERIAL" isEditor="true"/>
+		<ibaattribute name="CJL" display="抽检率" default="" valueSet="" dataType="string" copyPartAttr="MATERIAL" isEditor="true"/>
+		<ibaattribute name="ProcessStatus" display="工艺状态" default="" valueSet="" dataType="string" copyPartAttr="MATERIAL" isEditor="true"/>
+		<ibaattribute name="YXBXL" display="允许变形量" default="" valueSet="" dataType="string" copyPartAttr="MATERIAL" isEditor="true"/>
+		<ibaattribute name="THICKNESS" display="有效厚度" default="" valueSet="" dataType="string" copyPartAttr="MATERIAL" isEditor="true"/>
+		<ibaattribute name="LJCC" display="零件尺寸" default="" valueSet="" dataType="string" copyPartAttr="MATERIAL" isEditor="true"/>
+		<ibaattribute name="MATERIAL" display="材料" default="" valueSet="" dataType="string" copyPartAttr="MATERIAL" isEditor="true"/>
+		<ibaattribute name="JSTJ" display="技术条件" default="" valueSet="" dataType="string" copyPartAttr="MATERIAL" isEditor="true"/>
+
+
+		<step name="standardStep" display="标准工序">
+			<ibaattribute name="GXBZ" display="备注" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="RLWD" display="入炉温度" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="SWSJ" display="升温时间min" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="JRWD" display="加热温度" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="BWSJ" display="保温时间min" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="LQJZ" display="冷却介质" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="LQWD" display="冷却温度" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="LQSJ" display="冷却时间min" default="" valueSet="" dataType="string"/>
+			<!--  <ibaattribute name="ZJGS" display="准结工时" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="DJGS" display="单结工时" default="" valueSet="" dataType="string"/> -->
+		</step>
+	</pplantype>
+
+	<pplantype name="Process_BMCLL" display="表面处理工艺">
+		<!--  <ibaattribute name="MINDEX" display="产品型号代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PINDEX" display="产品代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partNumber" display="设计图样代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partName" display="设计图样名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="KEYCOMPONENT" display="关重件标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PHASE_CODE" display="产品阶段标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANTYPE" display="工艺文件类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="TEMPNO" display="临时工艺顺序号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="ZFFLAG" display="主辅制类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsType" display="工艺类型" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANID" display="工艺特征编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsNumber" display="工艺文件编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsName" display="工艺文件名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="SECRET" display="文件密级" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PCNO" display="批次号" default="" valueSet="" dataType="string"/> -->
+
+		<ibaattribute name="TFBJ" display="涂覆标记" default="" valueSet="" dataType="string" copyPartAttr="MATERIAL" isEditor="true"/>
+
+		<!--  <ibaattribute name="MATERIAL" display="材料牌号" default="" valueSet="" dataType="string" copyPartAttr="CMAT" isEditor="false"/>
+		<ibaattribute name="PTC_MATERIAL_NAME" display="材料名称" default="" valueSet="" dataType="string" copyPartAttr="MATERIAL" isEditor="true"/> -->
+
+		<ibaattribute name="LJCC" display="零件尺寸" default="" valueSet="" dataType="string" copyPartAttr="MATERIAL" isEditor="true"/>
+		<ibaattribute name="LJWXMJ" display="零件外形面积cm2" default="" valueSet="" dataType="string" copyPartAttr="MATERIAL" isEditor="true"/>
+		<ibaattribute name="TFQBMJSZT" display="涂覆前表面技术状态" default="" valueSet="" dataType="string" copyPartAttr="MATERIAL" isEditor="true"/>
+		<ibaattribute name="TFHBMJSZT" display="涂覆后表面技术状态" default="" valueSet="" dataType="string" copyPartAttr="MATERIAL" isEditor="true"/>
+		<ibaattribute name="MATERIAL" display="材料" default="" valueSet="" dataType="string" copyPartAttr="MATERIAL" isEditor="true"/>
+
+		<step name="standardStep" display="标准工序">
+			<ibaattribute name="GXBZ" display="备注" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="DLMD" display="电流密度" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="VOLTAGE" display="电压V" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="TEMPERATURE" display="温度" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="TIME" display="时间min" default="" valueSet="" dataType="string"/>
+			<!--  <ibaattribute name="ZJGS" display="准结工时" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="DJGS" display="单结工时" default="" valueSet="" dataType="string"/> -->
+		</step>
+	</pplantype>
+
+	<pplantype name="Process_AP" display="装配工艺">
+		<!--  <ibaattribute name="MINDEX" display="产品型号代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PINDEX" display="产品代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partNumber" display="设计图样代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partName" display="设计图样名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="KEYCOMPONENT" display="关重件标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PHASE_CODE" display="产品阶段标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANTYPE" display="工艺文件类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="TEMPNO" display="临时工艺顺序号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="ZFFLAG" display="主辅制类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsType" display="工艺类型" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANID" display="工艺特征编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsNumber" display="工艺文件编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsName" display="工艺文件名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="SECRET" display="文件密级" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PCNO" display="批次号" default="" valueSet="" dataType="string"/> -->
+
+		<step name="standardStep" display="标准工序">
+			<ibaattribute name="GXBZ" display="备注" default="" valueSet="" dataType="string"/>
+			<!--  <ibaattribute name="ZJGS" display="准结工时" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="DJGS" display="单结工时" default="" valueSet="" dataType="string"/> -->
+		</step>
+	</pplantype>
+	<pplantype name="Process_CS" display="测试工艺">
+		<step name="standardStep" display="标准工序">
+			<ibaattribute name="GXBZ" display="备注" default="" valueSet="" dataType="string"/>
+		</step>
+	</pplantype>
+
+	<pplantype name="Process_DIANXING" display="典型工艺">
+		<step name="standardStep" display="标准工序">
+			<ibaattribute name="GXBZ" display="备注" default="" valueSet="" dataType="string"/>
+		</step>
+	</pplantype>
+	<pplantype name="Process_JIAOJIE" display="胶结工艺">
+		<!--  <ibaattribute name="MINDEX" display="产品型号代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PINDEX" display="产品代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partNumber" display="设计图样代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partName" display="设计图样名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="KEYCOMPONENT" display="关重件标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PHASE_CODE" display="产品阶段标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANTYPE" display="工艺文件类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="TEMPNO" display="临时工艺顺序号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="ZFFLAG" display="主辅制类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsType" display="工艺类型" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANID" display="工艺特征编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsNumber" display="工艺文件编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsName" display="工艺文件名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="SECRET" display="文件密级" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PCNO" display="批次号" default="" valueSet="" dataType="string"/> -->
+
+		<step name="standardStep" display="标准工序">
+			<ibaattribute name="GXBZ" display="备注" default="" valueSet="" dataType="string"/>
+			<!--  <ibaattribute name="ZJGS" display="准结工时" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="DJGS" display="单结工时" default="" valueSet="" dataType="string"/> -->
+		</step>
+	</pplantype>
+
+	<pplantype name="Process_MAOJIE" display="铆接工艺">
+		<!--  <ibaattribute name="MINDEX" display="产品型号代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PINDEX" display="产品代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partNumber" display="设计图样代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partName" display="设计图样名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="KEYCOMPONENT" display="关重件标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PHASE_CODE" display="产品阶段标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANTYPE" display="工艺文件类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="TEMPNO" display="临时工艺顺序号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="ZFFLAG" display="主辅制类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsType" display="工艺类型" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANID" display="工艺特征编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsNumber" display="工艺文件编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsName" display="工艺文件名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="SECRET" display="文件密级" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PCNO" display="批次号" default="" valueSet="" dataType="string"/> -->
+
+		<step name="standardStep" display="标准工序">
+			<ibaattribute name="GXBZ" display="备注" default="" valueSet="" dataType="string"/>
+			<!--  <ibaattribute name="ZJGS" display="准结工时" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="DJGS" display="单结工时" default="" valueSet="" dataType="string"/> -->
+		</step>
+	</pplantype>
+
+	<pplantype name="Process_SHIYAN" display="试验工艺">
+		<!--  <ibaattribute name="MINDEX" display="产品型号代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PINDEX" display="产品代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partNumber" display="设计图样代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partName" display="设计图样名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="KEYCOMPONENT" display="关重件标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PHASE_CODE" display="产品阶段标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANTYPE" display="工艺文件类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="TEMPNO" display="临时工艺顺序号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="ZFFLAG" display="主辅制类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsType" display="工艺类型" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANID" display="工艺特征编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsNumber" display="工艺文件编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsName" display="工艺文件名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="SECRET" display="文件密级" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PCNO" display="批次号" default="" valueSet="" dataType="string"/> -->
+
+		<step name="standardStep" display="标准工序">
+			<ibaattribute name="GXBZ" display="备注" default="" valueSet="" dataType="string"/>
+			<!--  <ibaattribute name="ZJGS" display="准结工时" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="DJGS" display="单结工时" default="" valueSet="" dataType="string"/> -->
+		</step>
+	</pplantype>
+
+	<pplantype name="Process_YOUQI" display="油漆工艺">
+		<!--  ibaattribute name="MINDEX" display="产品型号代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PINDEX" display="产品代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partNumber" display="设计图样代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partName" display="设计图样名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="KEYCOMPONENT" display="关重件标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PHASE_CODE" display="产品阶段标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANTYPE" display="工艺文件类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="TEMPNO" display="临时工艺顺序号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="ZFFLAG" display="主辅制类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsType" display="工艺类型" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANID" display="工艺特征编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsNumber" display="工艺文件编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsName" display="工艺文件名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="SECRET" display="文件密级" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PCNO" display="批次号" default="" valueSet="" dataType="string"/> -->
+
+		<!-- <ibaattribute name="MATERIAL" display="材料牌号" default="" valueSet="" dataType="string" copyPartAttr="CMAT" isEditor="false"/>
+		<ibaattribute name="PTC_MATERIAL_NAME" display="材料名称" default="" valueSet="" dataType="string" copyPartAttr="PTC_MATERIAL_NAME" isEditor="false"/> -->
+
+		<ibaattribute name="TFBJ" display="涂覆标记" default="" valueSet="" dataType="string" copyPartAttr="MATERIAL" isEditor="true"/>
+		<ibaattribute name="TFBMJLBJSL" display="涂覆表面积零部件数量" default="" valueSet="" dataType="string" copyPartAttr="MATERIAL" isEditor="true"/>
+		<ibaattribute name="TLXHLBJSL" display="涂料消耗零部件数量" default="" valueSet="" dataType="string" copyPartAttr="MATERIAL" isEditor="true"/>
+		<ibaattribute name="MJJS" display="每" default="" valueSet="" dataType="string" copyPartAttr="MATERIAL" isEditor="true"/>
+		<ibaattribute name="TOTALAREA" display="件面积Cr2" default="" valueSet="" dataType="string" copyPartAttr="MATERIAL" isEditor="true"/>
+		<ibaattribute name="MJTLXHL" display="每" default="" valueSet="" dataType="string" copyPartAttr="MATERIAL" isEditor="true"/>
+		<ibaattribute name="TLXHLJS" display="件涂料消耗量kg" default="" valueSet="" dataType="string" copyPartAttr="MATERIAL" isEditor="true"/>
+
+		<step name="standardStep" display="标准工序">
+			<ibaattribute name="GXBZ" display="备注" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="TFCLMCPHHBZH" display="涂覆材料名称牌号或标准号" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="TFCLLD" display="涂覆材料粘度" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="GYGFSD" display="工艺规范湿度" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="GYGFWD" display="工艺规范温度" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="GYGFSJ" display="工艺规范时间" default="" valueSet="" dataType="string"/>
+			<!--  <ibaattribute name="ZJGS" display="准结工时" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="DJGS" display="单结工时" default="" valueSet="" dataType="string"/> -->
+		</step>
+	</pplantype>
+
+	<pplantype name="Process_GONGZHUANG" display="工装工艺">
+		<!--  <ibaattribute name="MINDEX" display="产品型号代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PINDEX" display="产品代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partNumber" display="设计图样代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partName" display="设计图样名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="KEYCOMPONENT" display="关重件标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PHASE_CODE" display="产品阶段标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANTYPE" display="工艺文件类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="TEMPNO" display="临时工艺顺序号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="ZFFLAG" display="主辅制类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsType" display="工艺类型" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANID" display="工艺特征编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsNumber" display="工艺文件编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsName" display="工艺文件名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="SECRET" display="文件密级" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PCNO" display="批次号" default="" valueSet="" dataType="string"/>
+
+		<ibaattribute name="MATERIAL" display="材料牌号" default="" valueSet="" dataType="string" copyPartAttr="CMAT" isEditor="false"/>
+		<ibaattribute name="PTC_MATERIAL_NAME" display="材料名称" default="" valueSet="" dataType="string" copyPartAttr="PTC_MATERIAL_NAME" isEditor="false"/>
+		<ibaattribute name="CSIZE" display="材料规格" default="" valueSet="" dataType="string" copyPartAttr="CMAT_UP" isEditor="false"/>
+		<ibaattribute name="CSIZE_REQUIRE" display="规格要求" default="" valueSet="" dataType="string" copyPartAttr="CMAT_DOWN" isEditor="false"/>
+		<ibaattribute name="JSYQ" display="技术要求" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+
+		<ibaattribute name="Product_QTY" display="产品数量" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="CPMPCC" display="产品毛坯尺寸" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="CPKZJS" display="产品可制件数" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="SJ_QTY" display="试件数量" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="SJMPCC" display="试件毛坯尺寸" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="SJKZJS" display="试件可制件数" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>-->
+
+		<step name="standardStep" display="标准工序">
+			<ibaattribute name="GXBZ" display="备注" default="" valueSet="" dataType="string"/>
+			<!--  <ibaattribute name="ZJGS" display="准结工时" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="DJGS" display="单结工时" default="" valueSet="" dataType="string"/> -->
+		</step>
+	</pplantype>
+
+	<pplantype name="Process_FHCL" display="复合材料工艺">
+		<!--  <ibaattribute name="MINDEX" display="产品型号代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PINDEX" display="产品代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partNumber" display="设计图样代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partName" display="设计图样名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="KEYCOMPONENT" display="关重件标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PHASE_CODE" display="产品阶段标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANTYPE" display="工艺文件类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="TEMPNO" display="临时工艺顺序号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="ZFFLAG" display="主辅制类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsType" display="工艺类型" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANID" display="工艺特征编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsNumber" display="工艺文件编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsName" display="工艺文件名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="SECRET" display="文件密级" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PCNO" display="批次号" default="" valueSet="" dataType="string"/>
+
+		<ibaattribute name="MATERIAL" display="材料牌号" default="" valueSet="" dataType="string" copyPartAttr="CMAT" isEditor="false"/>
+		<ibaattribute name="PTC_MATERIAL_NAME" display="材料名称" default="" valueSet="" dataType="string" copyPartAttr="PTC_MATERIAL_NAME" isEditor="false"/>
+		<ibaattribute name="CSIZE" display="材料规格" default="" valueSet="" dataType="string" copyPartAttr="CMAT_UP" isEditor="false"/>
+		<ibaattribute name="CSIZE_REQUIRE" display="规格要求" default="" valueSet="" dataType="string" copyPartAttr="CMAT_DOWN" isEditor="false"/>
+		<ibaattribute name="JSYQ" display="技术要求" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+
+		<ibaattribute name="Product_QTY" display="产品数量" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="CPMPCC" display="产品毛坯尺寸" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="CPKZJS" display="产品可制件数" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="SJ_QTY" display="试件数量" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="SJMPCC" display="试件毛坯尺寸" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="SJKZJS" display="试件可制件数" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>-->
+
+		<step name="standardStep" display="标准工序">
+			<ibaattribute name="GXBZ" display="备注" default="" valueSet="" dataType="string"/>
+			<!--  <ibaattribute name="ZJGS" display="准结工时" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="DJGS" display="单结工时" default="" valueSet="" dataType="string"/> -->
+		</step>
+	</pplantype>
+
+	<pplantype name="Process_HANJIE" display="焊接工艺">
+		<!--  <ibaattribute name="MINDEX" display="产品型号代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PINDEX" display="产品代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partNumber" display="设计图样代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partName" display="设计图样名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="KEYCOMPONENT" display="关重件标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PHASE_CODE" display="产品阶段标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANTYPE" display="工艺文件类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="TEMPNO" display="临时工艺顺序号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="ZFFLAG" display="主辅制类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsType" display="工艺类型" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANID" display="工艺特征编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsNumber" display="工艺文件编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsName" display="工艺文件名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="SECRET" display="文件密级" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PCNO" display="批次号" default="" valueSet="" dataType="string"/> -->
+
+		<step name="standardStep" display="标准工序">
+			<ibaattribute name="GXBZ" display="备注" default="" valueSet="" dataType="string"/>
+			<!--  <ibaattribute name="ZJGS" display="准结工时" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="DJGS" display="单结工时" default="" valueSet="" dataType="string"/> -->
+		</step>
+	</pplantype>
+
+	<pplantype name="Process_TIAOSHI" display="调试工艺">
+		<!--  <ibaattribute name="MINDEX" display="产品型号代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PINDEX" display="产品代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partNumber" display="设计图样代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partName" display="设计图样名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="KEYCOMPONENT" display="关重件标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PHASE_CODE" display="产品阶段标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANTYPE" display="工艺文件类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="TEMPNO" display="临时工艺顺序号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="ZFFLAG" display="主辅制类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsType" display="工艺类型" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANID" display="工艺特征编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsNumber" display="工艺文件编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsName" display="工艺文件名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="SECRET" display="文件密级" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PCNO" display="批次号" default="" valueSet="" dataType="string"/> -->
+
+		<step name="standardStep" display="标准工序">
+			<ibaattribute name="GXBZ" display="备注" default="" valueSet="" dataType="string"/>
+			<!--  <ibaattribute name="ZJGS" display="准结工时" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="DJGS" display="单结工时" default="" valueSet="" dataType="string"/> -->
+		</step>
+	</pplantype>
+
+	<pplantype name="Process_LENGZUO" display="冷作工艺">
+		<!--  <ibaattribute name="MINDEX" display="产品型号代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PINDEX" display="产品代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partNumber" display="设计图样代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partName" display="设计图样名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="KEYCOMPONENT" display="关重件标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PHASE_CODE" display="产品阶段标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANTYPE" display="工艺文件类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="TEMPNO" display="临时工艺顺序号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="ZFFLAG" display="主辅制类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsType" display="工艺类型" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANID" display="工艺特征编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsNumber" display="工艺文件编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsName" display="工艺文件名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="SECRET" display="文件密级" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PCNO" display="批次号" default="" valueSet="" dataType="string"/>
+
+		<ibaattribute name="MATERIAL" display="材料牌号" default="" valueSet="" dataType="string" copyPartAttr="CMAT" isEditor="false"/>
+		<ibaattribute name="PTC_MATERIAL_NAME" display="材料名称" default="" valueSet="" dataType="string" copyPartAttr="PTC_MATERIAL_NAME" isEditor="false"/>
+		<ibaattribute name="CSIZE" display="材料规格" default="" valueSet="" dataType="string" copyPartAttr="CMAT_UP" isEditor="false"/>
+		<ibaattribute name="CSIZE_REQUIRE" display="规格要求" default="" valueSet="" dataType="string" copyPartAttr="CMAT_DOWN" isEditor="false"/>
+		<ibaattribute name="JSYQ" display="技术要求" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+
+		<ibaattribute name="Product_QTY" display="产品数量" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="CPMPCC" display="产品毛坯尺寸" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="CPKZJS" display="产品可制件数" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="SJ_QTY" display="试件数量" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="SJMPCC" display="试件毛坯尺寸" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>
+		<ibaattribute name="SJKZJS" display="试件可制件数" default="" valueSet="" dataType="string" copyPartAttr="" isEditor="true"/>-->
+
+		<step name="standardStep" display="标准工序">
+			<ibaattribute name="GXBZ" display="备注" default="" valueSet="" dataType="string"/>
+			<!--  <ibaattribute name="ZJGS" display="准结工时" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="DJGS" display="单结工时" default="" valueSet="" dataType="string"/> -->
+		</step>
+	</pplantype>
+
+	<pplantype name="Process_JIAOFU" display="交付工艺">
+		<!--  <ibaattribute name="MINDEX" display="产品型号代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PINDEX" display="产品代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partNumber" display="设计图样代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partName" display="设计图样名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="KEYCOMPONENT" display="关重件标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PHASE_CODE" display="产品阶段标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANTYPE" display="工艺文件类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="TEMPNO" display="临时工艺顺序号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="ZFFLAG" display="主辅制类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsType" display="工艺类型" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANID" display="工艺特征编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsNumber" display="工艺文件编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsName" display="工艺文件名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="SECRET" display="文件密级" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PCNO" display="批次号" default="" valueSet="" dataType="string"/> -->
+
+		<step name="standardStep" display="标准工序">
+			<ibaattribute name="GXBZ" display="备注" default="" valueSet="" dataType="string"/>
+			<!--  <ibaattribute name="ZJGS" display="准结工时" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="DJGS" display="单结工时" default="" valueSet="" dataType="string"/> -->
+		</step>
+	</pplantype>
+
+	<pplantype name="Process_WEIXIU" display="维修工艺">
+		<!--  <ibaattribute name="MINDEX" display="产品型号代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PINDEX" display="产品代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partNumber" display="设计图样代号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="partName" display="设计图样名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="KEYCOMPONENT" display="关重件标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PHASE_CODE" display="产品阶段标记" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANTYPE" display="工艺文件类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="TEMPNO" display="临时工艺顺序号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="ZFFLAG" display="主辅制类别" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsType" display="工艺类型" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PPLANID" display="工艺特征编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsNumber" display="工艺文件编号" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="technicsName" display="工艺文件名称" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="SECRET" display="文件密级" default="" valueSet="" dataType="string"/>
+		<ibaattribute name="PCNO" display="批次号" default="" valueSet="" dataType="string"/> -->
+
+		<step name="standardStep" display="标准工序">
+			<ibaattribute name="GXBZ" display="备注" default="" valueSet="" dataType="string"/>
+			<!--  <ibaattribute name="ZJGS" display="准结工时" default="" valueSet="" dataType="string"/>
+			<ibaattribute name="DJGS" display="单结工时" default="" valueSet="" dataType="string"/> -->
+		</step>
+	</pplantype>
+</mpmpplantypes>

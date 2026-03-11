@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+<!-- define the actions on the UI components -->
+<actionmodels>
+   <model name="paste_as_copy_toolbar_actions">
+         <action name="setView" type="pasteAsCopy" shortcut="true"/>
+         <action name="setOrg" type="pasteAsCopy" shortcut="true"/>
+   </model>
+   
+   <model name="paste_as_copy_toolbar_actions_no_setView">
+         <action name="setOrg" type="pasteAsCopy" shortcut="true"/>
+   </model>
+   
+   <model name="paste_as_copy_toolbar_actions_no_setOrg">
+         <action name="setView" type="pasteAsCopy" shortcut="true"/>
+   </model>
+</actionmodels>

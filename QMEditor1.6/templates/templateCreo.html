@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>工艺管理</title>
+<link rel="stylesheet" type="text/css" href="../resource/res_GENERIC_PRC/generic_prc.css">
+<link rel="stylesheet" type="text/css" href="../resource/template.css">
+<script language="javascript" src="../resource/res_GENERIC_PRC/generic_prc.js"></script>
+<script language="javascript" src="../resource/res_GENERIC_PRC/procedure_api.js"></script>
+<script type="text/javascript" SRC="../resource/pvlaunch.js"></script>
+<script type="text/javascript" SRC="../resource/pvUtils.js"></script>
+<script type="text/javascript" src="./treegrid.js"></script>
+<script type="text/javascript">
+            var myPvApi;
+            function changeModel(ctl,fileName,type) {
+                var arrLi = document.getElementsByTagName("a");
+                for (var i = 0; i < arrLi.length; i++) {
+                    arrLi[i].style.backgroundColor = "";
+                    arrLi[i].style.color = "blue";
+                }
+                //ctl.style.backgroundColor ="cyan";
+                ctl.style.color = "red";
+                var container = document.getElementById("picHolder");
+                var objs = container.childNodes;
+                for(var j = 0;j<objs.length;j++) {
+                	if(objs[j].nodeName == 'TD')
+                        objs[j].style.display = "none";
+                }
+           /*      if(type == "pview") {
+                	setDisplay("creo_holder", "");
+                    myLoad();
+                    myPvApi.LoadModel(fileName, "");
+                }else if(type == "image") {
+                	setDisplay("image", "");
+                	setHTML("image", "<img src='"+fileName+"'style='height: 500px;width:100%;' />");
+                } */
+                
+                setDisplay("creo_holder", "");
+                myLoad();
+                myPvApi.LoadModel(fileName, "");
+            }
+            function myLoad(){
+                myPvApi.SetBackgroundColor("0x202020:0x000000");
+            }
+
+            function showUL(ulid){
+                var ul = document.getElementById('part_model'+ulid);
+                if(ul != "undefine"){
+                    var ulList = document.getElementsByTagName('span');
+                    for(var i=0;i<ulList.length;i++)
+                    {
+                        ulList[i].style.display="none";
+                    }
+                    ul.style.display = "";
+                    if(ul.firstChild != null)
+                    	ul.firstChild.click();
+                    else{
+                    	setDisplay("image", "");
+                		setHTML("image", "");
+                    }
+                }
+            }
+            
+        	function img_zoom(e, o) {
+        		var zoom = parseInt(o.style.zoom, 10) || 100;
+        		zoom += event.wheelDelta / 12;
+        		if (zoom > 0)
+        			o.style.zoom = zoom + '%';
+        		return false;
+        	}
+          
+        </script>
+
+</head>
+<body class="claro" scroll="no"  onmouseover="this.style.cursor='default'">
+	<table width="100%" class="tb_all" cellpadding="0" cellspacing="0">
+		<tr height="60px">
+			<td width="5%"><img src="../resource/glaway.PNG" /></td>
+			<td width="95%" align="center">
+				<font size="6px" > 加工工艺流程<font id="bt"></font> </font>
+				<table width="100%" cellpadding="0" cellspacing="0" style="word-break: break-all;">
+					<tr height="25px">
+						<td style="background-color: lightblue;" width="10%">产品名称及代号</td>
+						<td width="10%">${tech.productName}<br/>${tech.productNumber}</td>
+						<td style="background-color: lightblue;" width="10%">整件图号</td>
+						<td width="10%">${tech.parentPartNumber}</td>
+						<td style="background-color: lightblue;" width="10%">编制人</td>
+						<td width="10%">${tech.creator}</td>
+						<td style="background-color: lightblue;" width="10%">备份说明</td>
+						<td width="10%">${tech.backupNote}</td>
+						<td style="background-color: lightblue;" rowspan="4" width="10%">最大备份数量</td>
+						<td width="10%" rowspan="4">${tech.maxBackupCount}</td>
+					</tr>
+					<tr height="25px">
+						<td style="background-color: lightblue;">部件名称</td>
+						<td>${tech.partName}</td>
+						<td style="background-color: lightblue;">部件图号</td>
+						<td>${tech.partNumber}</td>
+						<td style="background-color: lightblue;">编制时间</td>
+						<td>${tech.createTime}</td>
+						<td style="background-color: lightblue;">备份比例</td>
+						<td>${tech.backupRate}</td>
+					</tr>
+					<tr height="25px">
+						<td style="background-color: lightblue;">材料名称</td>
+						<td id="materialName"></td>
+						<td style="background-color: lightblue;">材料牌号 </td>
+						<td id="materialNumber"></td>
+						<td style="background-color: lightblue;">物料编码</td>
+						<td id="materialCode"></td>
+						<td style="background-color: lightblue;">材料标准号</td>
+						<td id="materialCrision"></td>
+					</tr>
+					<tr height="25px">
+						<td style="background-color: lightblue;">材料状态</td>
+						<td id="materialState"></td>
+						<td style="background-color: lightblue;">毛坯形态尺寸</td>
+						<td>${tech.stateSize}</td>
+						<td style="background-color: lightblue;">毛坯中的零件数</td>
+						<td>${tech.partCount}</td>
+						<td style="background-color: lightblue;">零件单件毛坯尺寸</td>
+						<td>${tech.partSize}</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<tr>
+			<!-- left -->
+			<td id="left" width="5%">
+				<div style="text-align: center;height: 50px;"><font style="font-weight: bolder;">工艺路线图</font></div>
+				<div id="tables" style="height: 650px; overflow-y: scroll;">
+					<!-- 左边table列表 -->
+				</div>
+			</td>
+
+			<td width="95%">
+				<table>
+					<tr>
+						<!-- middle -->
+						<td width="1000px" align="center">
+							<table width="100%" cellpadding="0" cellspacing="0" style="word-break: break-all;">
+								<tr><td colspan="6" align="left"><font style="font-weight: bolder "><font id="gxbh"></font>工序内容</font></td></tr>
+								<tr style="background-color: lightblue;">
+									<td rowspan="2"  width="10%">工序号</td>
+									<td rowspan="2"  width="25%">工序名称</td>
+									<td rowspan="2"  width="20%">制造单位</td>
+									<td colspan="2"  width="25%">工种</td>
+									<td rowspan="2"  width="20%">工位</td>
+								</tr>
+								<tr style="background-color: lightblue;" height="20px"><td >操作</td><td >检验</td></tr>
+								<tr><td id="gxh"></td><td id="gxm"></td><td id="zzdw"></td><td id="cz"></td><td id="jy"></td><td id="gw"></td></tr>
+								<tr><td style="background-color: lightblue;" >工序简述</td><td colspan="5" id="gxjs" align="left"></td></tr>
+								<tr><td style="background-color: lightblue;" >工艺附件</td><td colspan="5" align="left">${fujian}</td></tr>
+								<tr>
+									<td style="background-color: lightblue;" >工序简图</td>
+									<td colspan="5" align="left">
+										${modelList}
+									</td>
+								</tr>
+
+								<tr id="picHolder">
+									<td id="image" style="display: none;" height="500px" width="100%" colspan="6"></td>
+									<td id="creo_holder" style="border-top: 0px;" height="500px" width="100%" colspan="6"><script type="text/javascript">
+										try {
+											myPvApi = ProductView("", "${olName }");
+											myPvApi.OnLoadComplete = myLoad;
+										} catch (e) {
+											alert(e);
+										}
+									</script></td>
+								</tr>
+
+
+								<tr>
+									<td width="100%" colspan="6">
+										<table cellspacing="0" style="position: relative; bottom: 0px; word-break: break-all; width: 100%;">
+											<tr style="background-color: lightblue;" height="20px"><td >签审信息</td><td >人员</td><td >日期</td><td >备注</td></tr>
+											<tr height="20px"><td>拟制</td><td>${tech.user1 }</td><td>${tech.date1 }</td><td>${tech.comment1 }</td></tr>
+											<tr height="20px"><td>审核</td><td>${tech.user2 }</td><td>${tech.date2 }</td><td>${tech.comment2 }</td></tr>
+											<tr height="20px"><td>批准</td><td>${tech.user3 }</td><td>${tech.date3 }</td><td>${tech.comment3 }</td></tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+
+
+						<!-- right -->
+						<td id="right" width="1000px">
+							<div style="overflow-y: scroll; height: 650px; width: 100%;">
+							
+								<div id="six" style="margin-bottom: 5px;"></div>
+							
+								<div style="margin-bottom: 60px;">
+									<font style="font-weight: bolder ">工步内容</font>
+									<div id="one"></div>
+								</div>
+
+								<div style="margin-bottom: 60px;">
+									<font style="font-weight: bolder ">参装件</font>
+									<div id="seven" ></div>
+								</div>
+								
+								<div style="margin-bottom: 60px;">
+									<font style="font-weight: bolder ">设备信息</font>
+									<div id="two"></div>
+								</div>
+
+								<div style="margin-bottom: 60px;">
+									<font style="font-weight: bolder ">工装及工具信息</font>
+									<div id="three" ></div>
+								</div>
+								
+								<div style="margin-bottom: 60px;">
+									<font style="font-weight: bolder ">工艺材料信息</font>
+									<div id="four" ></div>
+								</div>
+								
+								<div id="five" style="text-align: center;"></div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+	generateL();
+	</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+CREATE INDEX ChangePackagedResultLink$COM0 ON ChangePackagedResultLink(branchIdA3B5)
+ TABLESPACE INDX
+ STORAGE ( INITIAL 20k NEXT 20k PCTINCREASE 0 )
+/
+CREATE INDEX ChangePackagedResultLink$COM1 ON ChangePackagedResultLink(idA3A5)
+ TABLESPACE INDX
+ STORAGE ( INITIAL 20k NEXT 20k PCTINCREASE 0 )
+/

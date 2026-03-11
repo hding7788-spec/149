@@ -1,0 +1,234 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+
+
+<objecttype name="search" class="java.lang.Object" resourceBundle="com.ptc.windchill.enterprise.search.client.searchClientResource">
+      <action name="mvcSearch">
+         <component name="search.resultsTable" componentType="SEARCH" windowType="page"/>
+      </action>
+      <action name="saveThisSearch" >
+         <command class="com.ptc.netmarkets.search.NmSearchCommands" method="saveThisSearch" windowType="new" />
+      </action>
+      <action name="selectSearch" ajax="page">
+<!--         <command class="com.ptc.netmarkets.search.NmSearchCommands" method="selectSearch" onClick="preSelectSearch()"/>-->
+         <command class="" method="" onClick="preSelectSearch()"/>
+      </action>
+      <action name="search" ajax="component" >
+        <command url="ptc1/searchResults" windowType="submitto" onClick="validateSearch()"/>
+         <!-- command class="com.ptc.netmarkets.search.NmSearchCommands" method="search" onClick="validateSearch()"/ -->
+      </action>
+      <action name="pickerSearch" ajax="page">
+         <command class="com.ptc.netmarkets.search.NmSearchCommands" method="pickerSearch" url="?pickerClear=false" onClick="clearLastSelection()"/>
+      </action>
+      <action name="pickerClear" ajax="page">
+         <command class="" method="" url="?fireSearchOnActionRefresh=false&amp;pickerClear=true&amp;fireSearch=false" onClick="clearLastSelection()"/>
+      </action>
+      <action name="typeChange">
+         <command class="com.ptc.netmarkets.search.NmSearchCommands" method="typeChange"/>
+      </action>
+      <action name="callSearchPicker">
+         <command class="com.ptc.netmarkets.search.NmSearchCommands" method="callSearchPicker" windowType="popup"/>
+         <icon>search.gif</icon>
+      </action>
+      <action name="callSearchPickerClear">
+        <icon>clear_16x16.gif</icon>
+      </action>
+     <action id="searchPicker" name="searchPicker" required="true">
+         <command windowType="wizard_step"/>
+     </action>
+      <action name="callSavedSearchGroupPicker">
+         <command class="com.ptc.netmarkets.search.NmSearchCommands" method="" windowType="popup"/>
+      </action>
+
+      <action name="removeSavedSearchGroups" selectRequired="true" ajax="table">
+         <command onClick="removeGroups(event)"/>
+      </action>
+      <action name="networkSearch" multiselect="true" ajax="page" uicomponent="GLOBAL_SEARCH">
+    <command class="com.ptc.netmarkets.search.NmSearchCommands" method="" onClick="getNetworkNodes(event)"/>
+        <includeFilter name="projectM4D"/>
+      </action>
+      <action name="searchInNode" uicomponent="GLOBAL_SEARCH">
+     <command class="com.ptc.netmarkets.search.NmSearchCommands" method="" onClick="submitToNetworkSearch(event)"/>
+      </action>
+      <action name="relatedItemSearch" ajax="page" uicomponent="GLOBAL_SEARCH">
+        <command class="com.ptc.netmarkets.search.NmSearchCommands" method="" onClick="submitToRelatedItemSearch()"/>
+        <includeFilter name="projectM4D"/>
+      </action>
+      <action name="relationPicker">
+        <command class="" method="relationPicker" windowType="popup"/>
+      </action>
+      <action name="relationPickerStep" afterJS="processInput">
+        <command class="" windowType="wizard_step"/>
+      </action>
+      <action name="export" multiselect="true">
+        <command class="" method="" windowType="popup"/>
+      </action>
+      <action name="export_step">
+        <command class="" windowType="wizard_step"/>
+      </action>
+      <action name="import" multiselect="true">
+        <command class="" method="" windowType="popup"/>
+      </action>
+      <action name="import_step">
+        <command class="" windowType="wizard_step"/>
+      </action>
+
+      <action name="searchCloseButton" id="SEARCH_wizard_cancel">
+                   <command class="" method="" windowType="page" url="javascript:searchClose()"/>
+      </action>
+   <action name="saveSearchSaveButton" id="SAVESEARCH_Save">
+                   <command class="" method="" windowType="page" url="javascript:saveSearch()"/>
+      </action>
+
+   <action name="saveSearchCancelButton" id="SAVESEARCH_Close">
+                   <command class="" method="" windowType="page" url="javascript:saveSearchClose()"/>
+      </action>
+      <action id="savedsearch_name_new" name="saveThisSearch_saveName_LB" required="true" afterVK="savedSearchName" beforeJS="loadName">
+                    <command windowType="wizard_step"/>
+      </action>
+
+       <action name="newView">
+            <command class="" method="" windowType="popup" onClick="loadView()"/>
+      </action>
+
+     <action name="savedSearchTable">
+                   <command class="com.ptc.netmarkets.search.NmSearchCommands" method="" windowType="lightbox" />
+     </action>
+
+     <action id="savedSearchList" name="savedSearchList">
+                         <command windowType="wizard_step"/>
+      </action>
+
+      <action name="savedSearchLightBoxCloseButton" id="SAVEDSEARCH_wizard_cancel">
+                   <command class="" method="" windowType="page" url="javascript:lightBoxCloseandRefreshParent()"/>
+      </action>
+
+<!-- start : added for new wizard component implementation -->
+      <action name="saveThisSearchNew" ajaxActionClass="netmarkets/jsp/search/saveQuery.jsp?wizAction=true">
+           <command class="com.ptc.netmarkets.search.NmSearchCommands" method="saveThisSearch" windowType="new" url="?fireSearchOnActionRefresh=false" onClick="PTC.search.criteriaBuilder()" afterJs="postSaveSearch"/>
+      </action>
+
+      <action id="savedsearch_name" name="saveThisSearch_saveName" required="true" afterVK="savedSearchName">
+                    <command windowType="wizard_step"/>
+      </action>
+      <action id="savedsearch_requierd" name="saveThisSearch_saveRequired">
+                    <command windowType="wizard_step"/>
+      </action>
+      <action id="savedsearch_view" name="saveThisSearch_saveTableView">
+                    <command windowType="wizard_step"/>
+            </action>
+            <action id="savedsearch_access" name="saveThisSearch_saveAccess">
+                    <command windowType="wizard_step"/>
+      </action>
+<!-- end : added for new wizard component implementation -->
+
+         <action name="saveThisSearchProE">
+            <command class="com.ptc.netmarkets.search.NmSearchCommands" method="saveThisSearch" windowType="new" url="netmarkets/jsp/search/saveThisSearchNew.jsp?fireSearchOnActionRefresh=false" onClick="criteriaBuilder()"/>
+         </action>
+
+
+    <action name="adminDelete" ajax="page">
+        <command class="" method="" windowType="popup"/>
+    </action>
+
+
+    <action name="list_delete" multiselect="true" uicomponent="DELETE" ajax="page" ajaxActionClass="netmarkets/jsp/object/delete.jsp" selectRequired="true" afterJS="loadAdvSearchPage(event)">
+       <command class="com.ptc.netmarkets.search.NmSearchCommands" method="list_delete" onClick="postSelectValidation(event, &apos;list_delete&apos;)"/>
+    </action>
+<!-- search navigation links -->
+    <action name="simpleSearch">
+        <command class="" method="" windowType="page"/>
+    </action>
+    <action name="searchHistSavedSearch">
+        <command url="netmarkets/jsp/search/historySavedSearchDisplay.jsp" windowType="page"/>
+    </action>
+    <action name="advancedSearch">
+        <command url="wtcore/jsp/com/ptc/windchill/search/Search.jsp" windowType="page"/>
+    </action> 
+    <action name="classificationSearch">
+       <command url="netmarkets/jsp/search/classificationExplorer.jsp" windowType="page"/>         
+    </action>
+
+ 
+
+
+<!-- simple search type picker 'customize...' link -->
+   <action name="typePicker" ajax="row">
+      <command windowType="popup" url="netmarkets/jsp/typepicker/typePicker.jsp"/>
+   </action>
+  <action id="typePickerLaunchAction" name="newtypePicker" ajax="row">
+      <command windowType="popup" url="netmarkets/jsp/typepicker/typePicker.jsp"/>
+   </action>
+   
+    <action id="attributeLightBoxLaunchAction" name="attributeLightBox" ajax="row" width="200">
+      <command windowType="lightbox" url="netmarkets/jsp/search/queryBuilderAttributeLightBox.jsp"/>
+    </action>
+   
+    <action name="qbAttrbuteTable">
+      <component name="search.querybuilder.attrtable" windowType="wizard_step"/>
+    </action>
+    
+    <action id="explainQBCriteriaLightBoxLaunchAction" name="explainQBCriteriaLightBox" ajax="row">
+      <command windowType="lightbox" url="ptc1/explainQBCriteria/explainQBCriteriaLightBox"/>
+    </action>
+
+   </objecttype>
+    
+   <objecttype name="SavedQuery" class="wt.query.SavedQuery" resourceBundle="com.ptc.windchill.enterprise.search.client.searchClientResource">
+
+        <action name="deleteQuery" ajax="component">
+            <command class="com.ptc.netmarkets.search.NmSearchCommands" method="deleteQuery" onClick="deleteQuery()"/>
+        </action>
+       <!-- action for admin delete -->
+       <action name="finalDelete" ajax="page">
+           <command class="com.ptc.netmarkets.search.NmSearchCommands" method="deleteQuery" onClick="deleteQuery()"/>
+       </action>
+
+        <action name="showQuery" ajax="page" selectRequired="true">
+            <command class="com.ptc.netmarkets.search.NmSearchCommands" method="showQuery"/>
+        </action>
+        <action name="hideQuery" ajax="page" selectRequired="true">
+
+            <command class="com.ptc.netmarkets.search.NmSearchCommands" method="hideQuery" />
+        </action>
+       <!-- duplicate actions just to represent row level actions with selectRequired=false -->
+        <action name="deleteRowQuery" ajax="row" uicomponent="DELETE">
+            <command class="com.ptc.netmarkets.search.NmSearchCommands" method="deleteRowQuery" onClick="confirmRowDelete()"/>
+        </action>
+        <action name="showRowQuery" ajax="page" >
+            <command class="com.ptc.netmarkets.search.NmSearchCommands" method="showQuery"/>
+        </action>
+        <action name="hideRowQuery" ajax="page" >
+
+            <command class="com.ptc.netmarkets.search.NmSearchCommands" method="hideQuery"/>
+        </action>
+
+        <action name="savedQueryExport" multiselect="true" selectRequired="true">
+        <command class="com.ptc.netmarkets.model.NmObjectCommands" method="exportSavedQueries" url="netmarkets/jsp/search/export.jsp" windowType="new"/>
+    </action>
+    <action name="savedQueryImport" ajax="page">
+       <command class="com.ptc.netmarkets.model.NmObjectCommands" method="importSavedQueries" url="netmarkets/jsp/search/import.jsp" windowType="new"/>
+        </action>
+   </objecttype>
+
+   <objecttype name="process" class="wt.workflow.engine.WfProcess">
+      <action name="info">
+          <command class="" method="" windowType="popup"/>
+      </action>
+   </objecttype>
+
+   <objecttype name="navigation" class="" resourceBundle="com.ptc.windchill.enterprise.search.client.searchClientResource">
+        <action name="historySaved" renderType="GENERAL" uicomponent="GLOBAL_SEARCH">
+            <command class="netmarkets" method="servlet/Navigation" url="netmarkets/jsp/search/historySavedSearchDisplay.jsp" windowType="page"/>
+        </action>
+      <action name="advanced" renderType="GENERAL" uicomponent="GLOBAL_SEARCH">
+            <command class="netmarkets" method="servlet/Navigation" url="wtcore/jsp/com/ptc/windchill/search/Search.jsp"  windowType="page"/>
+        </action>
+        <action name="classificationExplorer" renderType="GENERAL" uicomponent="classificationSearch">
+            <command class="netmarkets" url="netmarkets/jsp/search/classificationExplorer.jsp" windowType="page"/>
+            <includeFilter name="clfExplorer"/>  
+        </action>
+   </objecttype>
+
+   </listofactions>

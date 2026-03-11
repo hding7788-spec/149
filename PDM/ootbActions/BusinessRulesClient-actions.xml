@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+<listofactions>
+
+    <objecttype name="businessRules" resourceBundle="com.ptc.windchill.enterprise.businessRules.businessRulesClientActionsRB">
+
+        <action name="businessRulesResultWizard">
+            <command windowType="lightbox"/>
+        </action>
+
+        <action name="businessRulesResultStep">
+            <component name="BusinessRulesResultsTable"/> 
+        </action>
+        
+       <action name="okButton" id="PJL_wizard_ok">
+           <description>Ok button for business rules result wizard</description>
+           <command class="" method="" windowType="page" url="javascript:PTC.lightbox.isLightbox(window)?PTC.lightbox.deactivate({lbWindow: self}):wfWindowClose()"/>
+       </action>        
+
+    </objecttype>
+</listofactions>

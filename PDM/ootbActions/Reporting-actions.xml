@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+   <objecttype name="report" class="com.ptc.windchill.enterprise.report.Report" resourceBundle="com.ptc.windchill.enterprise.report.actionsRB">
+      <action name="execute" renderType="PDM">
+         <command class="com.ptc.windchill.enterprise.report.Report" windowType="popup" method="execute" />
+      </action>
+      <action name="updateReport" ajax="table">
+         <command class="com.ptc.windchill.enterprise.report.NmReportUpdateProcessor" method="execute" windowType="popup" />
+      </action>
+       <action name="deleteReport"  ajax="row" uicomponent="DELETE" ajaxActionClass="netmarkets/jsp/object/delete.jsp?refresh=true">
+         <command class="com.ptc.netmarkets.model.NmObjectCommands" method="delete" onClick="JCAConfirm(event,'com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE')"/>
+      </action>
+      <action name="deleteReports"  ajax="component">
+         <command class="com.ptc.windchill.enterprise.report.NmReportHelper" method="deleteReport" onClick="JCAConfirm(event,'com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE')"/>
+      </action>
+      <action name="deleteReportFromInfo" uicomponent="DELETE">
+         <command class="com.ptc.windchill.enterprise.report.NmReportHelper" method="deleteReport" onClick="JCAConfirm(event,'com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE')"/>
+      </action>
+      <action name="createReport" ajax="component" multiselect="false">
+         <command class="com.ptc.windchill.enterprise.report.NmReportHelper" method="batchCreateReports" />
+         <includeFilter name="projectM4D" />
+      </action>
+      <action name="exportReport" enabledwhensuspended="true">
+         <command class="" method="" windowType="popup"/>
+      </action>
+      <action name="exportMultipleReport" ajax="row" multiselect="true" selectRequired="true">
+         <command class="" method="" windowType="popup"/>
+      </action>
+      <action name="importReport" enabledwhensuspended="true">
+         <command class="com.ptc.windchill.enterprise.report.processor.ImportReportArtifactsFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="importReport_step" afterJS="validateFileInput" >
+         <command class="" method="" windowType="wizard_step"/>
+      </action>
+      <action name="displayArtifactsList_step" preloadWizardPage="false" required="true">
+         <command class="" method="" windowType="wizard_step"/>
+      </action>
+      <action name="changeGO" ajax="page">
+         <command windowType="normal" onClick="submitOnContextTypeChanged()"/>
+      </action>
+   </objecttype>
+   <objecttype name="reportCriteria" class="wt.query.template.ReportCriteria" resourceBundle="com.ptc.windchill.enterprise.report.actionsRB">
+      <action name="execute" renderType="PDM">
+        <command class="wt.query.template.ReportCriteria" windowType="popup" method="execute" />
+      </action>
+      <action name="updateSavedReport" ajax="row">
+         <command class="com.ptc.windchill.enterprise.report.processor.SavedReportUpdateFormProcessor" method="execute" windowType="popup"/>          
+      </action>
+      <action name="updateSavedReportStep">
+         <command url="netmarkets/jsp/reportCriteria/updateSavedReportStep.jsp" windowType="wizard_step"/>
+      </action>
+      <action name="refreshSavedReport" ajax="component">
+         <command class="com.ptc.netmarkets.model.NmObjectCommands" method="refresh"/>
+      </action>
+      <action name="deleteSavedReport"  ajax="component" uicomponent="DELETE" >
+         <command class="com.ptc.windchill.enterprise.report.NmReportCriteriaHelper" method="deleteReportCriteria" onClick="JCAConfirm(event,'com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE')"/>
+      </action>
+      <action name="deleteSavedReports"  ajax="component" uicomponent="DELETE" >
+         <command class="com.ptc.windchill.enterprise.report.NmReportCriteriaHelper" method="deleteReportCriteria" onClick="JCAConfirm(event,'com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE')"/>
+      </action>
+   </objecttype>
+</listofactions>

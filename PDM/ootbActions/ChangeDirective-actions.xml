@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+<listofactions>
+  
+   <objecttype name="changeDirective" class="wt.change2.WTChangeDirective" resourceBundle="com.ptc.windchill.enterprise.changeDirective.changeDirectiveActionsRB">
+      <action name="impactedItemsTable">
+         <description>Configuration items table</description>
+      </action>
+      <action name="changeActionsTable">
+         <description>Change actions table</description>
+      </action>
+      <action name="impactedItemAndActions">
+         <description>Configuration items and actions</description>
+      </action>
+      <action name="addImpactedItems_Wizard" ajax="row" renderType="GENERAL">
+         <description>Add configuration items wizard step</description>
+         <command  windowType="new"/>
+      </action>
+      <action name="impactedItemsStep" id="impactedItemsStep" preloadWizardPage="false">
+         <description>Configuration items wizard step</description>
+         <command class="com.ptc.windchill.enterprise.changeDirective.forms.delegates.ImpactedItemsFormDelegate" windowType="wizard_step"/>
+      </action>
+   </objecttype>
+
+   <objecttype name="changeAction" class="wt.change2.ChangeAction" resourceBundle="com.ptc.windchill.enterprise.changeDirective.changeDirectiveActionsRB">
+         <action name="modificationStack">
+            <description>Modification stack</description>
+            <supportedTypes>
+              <type value="wt.change2.ChangeAction" /> 
+            </supportedTypes>
+            <component name="changeDirective.modificationStack"/>
+         </action>
+         <action name="modifyStatus" ajax="row" uicomponent="MODIFY_CHANGE_ACTION_STATUS" >
+            <description>Modify status</description>
+            <command class="com.ptc.windchill.enterprise.changeDirective.forms.processors.ModifyChangeActionStatusFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="hideFromNonModifyUser"/>
+         </action>
+         <action name="modifyStatus_step">
+             <description>Modify status wizard step</description>
+             <component name="changeAction.modifyStatus" windowType="wizard_step"/>
+         </action>
+   </objecttype>
+
+   <objecttype name="impactedPart" class="wt.part.WTPartMaster" resourceBundle="com.ptc.windchill.enterprise.changeDirective.changeDirectiveActionsRB">
+      <action name="impactingDirectivesTable">
+         <description>Impacting directives table</description>
+      </action>
+   </objecttype>
+
+   <objecttype name="changeDirective" class="wt.change2.WTChangeDirective" resourceBundle="com.ptc.windchill.enterprise.changeDirective.changeDirectiveActionsRB">
+      <action name="createChangeDirective" ajax="row">
+         <description>Create change directive</description>
+         <command class="com.ptc.windchill.enterprise.changeDirective.forms.processors.CreateChangeDirectiveFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="editChangeDirective" ajax="row">
+         <description>Edit change directive</description>
+         <command class="com.ptc.windchill.enterprise.changeDirective.forms.processors.EditChangeDirectiveFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="addDirectives" ajax="component">
+         <description>Add directives</description>
+         <command class="com.ptc.windchill.enterprise.changeDirective.commands.AddDirectivesCommands" method="addDirectives" windowType="popup"/>
+      </action>
+      <action name="removeDirectives" ajax="page" multiselect="true" selectRequired="true">
+         <description>Remove directives</description>
+         <command onClick="JCAConfirm(event, 'com.ptc.netmarkets.util.utilResource.CONFIRM_REMOVE')" class="com.ptc.windchill.enterprise.changeDirective.commands.RemoveDirectivesCommands" method="removeDirectives"/>
+      </action>
+      <action name="addImpactedItems_Inline" ajax="component" >
+          <description>Add configuration items</description>
+          <command class="com.ptc.windchill.enterprise.changeDirective.commands.AddImpactedItemsCommands" method="addImpactedItems" windowType="popup"/>
+          <includeFilter name="hideFromNonModifyUser"/>
+      </action>
+      <action name="removeImpactedItems" ajax="page" multiselect="true" selectRequired="true">
+          <description>Remove configuration items</description>
+          <command onClick="JCAConfirm(event, 'com.ptc.netmarkets.util.utilResource.CONFIRM_REMOVE')" class="com.ptc.windchill.enterprise.changeDirective.commands.RemoveImpactedItemsCommands" method="removeImpactedItems"/>
+          <includeFilter name="hideFromNonModifyUser"/>
+      </action>
+      <action name="deleteChangeDirective" ajax="row" uicomponent="DELETE">
+          <description>Delete change directive</description>
+          <command class="com.ptc.windchill.enterprise.object.commands.DeleteObjectCommands" method="delete" onClick="JCAConfirm(event,&apos;com.ptc.core.ui.confirmationMessagesRB.DELETE&apos;)"/>
+          <includeFilter name="hideFromNonDeleteUser"/>
+      </action>
+      <action name="renameDirectiveWizard">
+         <description>Rename change directive</description>
+         <command class="com.ptc.windchill.enterprise.changeDirective.forms.processors.RenameChangeDirectiveFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="renameDirectiveWizardStep">
+         <description>Rename change directive wizard step</description>
+         <command windowType="wizard_step"/>
+      </action>
+   </objecttype>
+
+</listofactions>

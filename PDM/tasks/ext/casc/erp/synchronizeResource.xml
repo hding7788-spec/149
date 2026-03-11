@@ -1,0 +1,39 @@
+
+<%@page language="java" session="false" access="http|soap" contentType="text/xml"%>
+
+<%@taglib uri="http://www.ptc.com/infoengine/taglib/core" prefix="ie"%>
+<%@page import="java.io.*"%>
+<%@page import="java.util.*"%>
+<%@page import="ext.casc.integrate.synchronizeResource.SynchronizeResourceService"%>
+<%@page import=" wt.util.WTException"%>
+
+
+
+
+
+<%
+
+String xmlfile =  (String)getParam("xml");
+
+String result = "";
+
+SynchronizeResourceService  synchronizeresource = new SynchronizeResourceService();
+try{
+         result = synchronizeresource.sychronize(xmlfile);
+}
+catch (Exception e) {
+            // TODO Auto-generated catch block
+           result = e.getLocalizedMessage();
+}
+System.out.println("----result----"+result);
+%>
+
+      <ie:webject name="Create-Group" type="GRP">
+            <ie:param name="ELEMENT" data="<%=result%>"/>
+           <ie:param name="CLASS" data="Status"/>
+           <ie:param name="GROUP_OUT" data="${@FORM[]group_out[]}"  default="output"/>
+        </ie:webject>
+
+
+
+

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+    <objecttype name="object" class="wt.fc.Persistable">
+        <action name="exportBOMToCEDM" resourceBundle="com.ptc.windchill.enterprise.part.reports.partReportsRB">
+            <command class="com.ptc.core.components.export.table.ExportListContentCommands" onClick="checkExportOnLoading(target,event, table)"
+            method="export" url="netmarkets/jsp/object/exportTable.jsp?fileType=csv" windowType="popup"/>
+            <includeFilter name="hideExportBOMToCEDM"/>
+            <includeFilter name="hideForNonRegisteredUWGMClient"/>
+        </action>
+    </objecttype>   
+</listofactions>

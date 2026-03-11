@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../../../../../ClientArchitecture/CommonComponents/src_web/config/actions/actionmodels.dtd'>
+<!-- define the actions on the UI components -->
+
+<actionmodels>
+
+	<model name="package content control ui table actions">
+		<description>Package content table toolbar actions</description>
+		<action name="doRedline" type="contentControl" shortcut="true"/>
+		<action name="undoRedline" type="contentControl" shortcut="true"/>
+	</model>
+	
+	<model name="CCWizardButtons">
+      <action name="finishButton"  type="contentControl"/>
+      <action name="applyButton"   type="contentControl"/>
+      <action name="cancelButton"  type="object"/>
+   </model>
+
+</actionmodels>

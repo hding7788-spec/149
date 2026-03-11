@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+
+ <objecttype name="history" class="" resourceBundle="wt.workflow.worklist.worklistResource">  
+    <!-- still need to register new action name against history validator -->
+	<action name="pboIterationHistory" uicomponent="THIRD_LEVEL_HISTORY_VERSION" required="true" resourceBundle="wt.workflow.worklist.worklistResource" > 
+	    <component name="workflowTask.pbo"  urlParams="pboCompId=iterationHistory" />
+		         
+     </action>
+	 
+	 <action name="pboMaturityHistory" uicomponent="THIRD_LEVEL_HISTORY_VERSION" required="true" resourceBundle="wt.workflow.worklist.worklistResource" > 
+	    <component name="workflowTask.pbo"  urlParams="pboCompId=history.maturityhistory" />
+		      
+     </action>
+
+	 <action name="pboLegacyLCHistory" uicomponent="THIRD_LEVEL_HISTORY_VERSION" required="true" resourceBundle="wt.workflow.worklist.worklistResource" > 
+	    <component name="workflowTask.pbo"  urlParams="pboCompId=enterpriseui.lifecycleHistoryTableId" />
+		     
+     </action>
+
+	  <action name="pboVersionHistory" uicomponent="THIRD_LEVEL_HISTORY_VERSION" required="true" resourceBundle="wt.workflow.worklist.worklistResource" > 
+	    <component name="workflowTask.pbo"  urlParams="pboCompId=history.versionhistory" />
+		     
+     </action>
+
+  </objecttype>
+
+  <objecttype name="change" class="wt.change2.ChangeItem" resourceBundle="com.ptc.windchill.enterprise.change2.changeManagementActionsRB">
+
+ <action name="TestAffectedData" resourceBundle="wt.workflow.worklist.worklistResource" >
+         <component name="workflowTask.pbo" urlParams="pboCompId=changemanagement.affecteddatatable_useTypeBased=true"/>
+		     <includeFilter name="configurableTypeBaseFilter"/>
+ </action>   
+
+
+<action name="TestRelatedChangeRequest" resourceBundle="wt.workflow.worklist.worklistResource">
+			<component name="workflowTask.pbo" urlParams="pboCompId=changemanagement.relatedchanges.changeRequests"/>
+			   
+		</action>  
+
+
+ <action name="TestRelatedChangeIssues" resourceBundle="wt.workflow.worklist.worklistResource">
+<component name="workflowTask.pbo" urlParams="pboCompId=changemanagement.relatedchanges.changeIssues"/>
+    
+</action> 
+
+
+<action name="TestRelatedChangeNotice" resourceBundle="wt.workflow.worklist.worklistResource">
+<component name="workflowTask.pbo" urlParams="pboCompId=changemanagement.relatedchanges.affectedByChangeNotices"/>
+    
+</action> 
+
+
+<action name="TestResultingfromChangeNotice" resourceBundle="wt.workflow.worklist.worklistResource">
+<component name="workflowTask.pbo" urlParams="pboCompId=changemanagement.relatedchanges.changeRequests.resultingFromChangeNotices"/>
+   
+</action> 
+
+ </objecttype>
+
+
+  </listofactions>

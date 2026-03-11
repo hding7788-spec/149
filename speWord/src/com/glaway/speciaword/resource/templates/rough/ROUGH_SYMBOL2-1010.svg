@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+]>
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="${text_width + 100}" height="60px" viewBox="0 -0.12 ${text_width + 100} 60" enable-background="new 0 -0.12 100 60"
+	 xml:space="preserve">
+<defs>
+</defs>
+<polyline fill="none" stroke="#040000" stroke-miterlimit="10" points="44.83,12.832 27.045,56.704 26.199,58.722 "/>
+<polygon fill="none" stroke="#040000" stroke-miterlimit="10" points="8.787,35.011 26.373,58.46 36.191,34.817 "/>
+<text transform="matrix(1 0 0 1 10 16.8809)" font-family="'宋体'" font-size="12">${upCV}</text>
+<text transform="matrix(1 0 0 1 10 30.9854)" font-family="'宋体'" font-size="12">${downCV}</text>
+<text transform="matrix(1 0 0 1 52 10.5605)" font-family="'宋体'" font-size="12">${upDesc}</text>
+<text transform="matrix(1 0 0 1 52 25.0273)" font-family="'宋体'" font-size="12">${downDesc}</text>
+<#if isLineShow == "true">
+	<line fill="none" stroke="#040000" stroke-miterlimit="10" x1="${text_width + 62.439}" y1="12.832" x2="44.83" y2="12.832"/>
+</#if>
+<#if requestCheck == "true">
+	<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="45.167" cy="12.73" r="5.642"/>
+</#if>
+<text transform="matrix(1 0 0 1 39.6572 57.8418)" fill="#040000" font-family="'宋体'" font-size="16">${GrainType}</text>
+</svg>

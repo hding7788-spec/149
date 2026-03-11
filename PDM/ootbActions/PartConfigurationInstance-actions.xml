@@ -1,0 +1,234 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+
+   <objecttype name="part" class="wt.part.WTPart" resourceBundle="com.ptc.windchill.enterprise.part.partResource">
+      <action name="assignPartVersion" checkaccess="true" ajax="page">
+        <includeFilter name="psbSessionValidation" />
+        <command class="com.ptc.windchill.enterprise.part.forms.AssignPartVersionFormProcessor" method="execute" windowType="popup"/>
+        <access name="update"/>
+      </action>
+
+      <action name="assignPartVersion_step" checkaccess="true" ajax="page">
+        <command windowType="wizard_step"/>
+        <access name="update"/>
+      </action>
+
+      <action name="overridePartVersion" checkaccess="true" ajax="page">
+        <includeFilter name="psbSessionValidation" />
+        <command class="com.ptc.windchill.enterprise.part.forms.OverridePartVersionFormProcessor" method="execute" windowType="popup"/>
+        <access name="update"/>
+      </action>
+
+      <action name="overridePartVersion_step" checkaccess="true" ajax="page">
+        <command windowType="wizard_step"/>
+        <access name="update"/>
+      </action>
+
+      <action name="partInstance_replacePart" checkaccess="true" ajax="page">
+          <includeFilter name="psbSessionValidation" />
+          <command class="com.ptc.windchill.enterprise.part.forms.PartInstanceReplacePartFormProcessor" method="execute" windowType="popup"/>
+        <access name="update"/>
+      </action>
+
+      <action name="partInstance_replacePart_step" checkaccess="true" ajax="page">
+        <command windowType="wizard_step"/>
+        <access name="update"/>
+      </action>
+
+      <action name="partInstance_undo_replacement" checkaccess="true" ajax="page">
+          <includeFilter name="psbSessionValidation" />
+          <command class="com.ptc.windchill.enterprise.part.forms.PartInstanceUndoReplacePartFormProcessor" method="execute" windowType="popup"/>
+         <access name="update"/>
+      </action>
+
+      <action name="partInstance_undo_replacement_step" checkaccess="true" ajax="page">
+         <command windowType="wizard_step"/>
+         <access name="update"/>
+      </action>
+
+   </objecttype>
+
+   <objecttype name="configuration" class="wt.part.WTProductConfiguration" resourceBundle="com.ptc.windchill.enterprise.configuration.partConfigResource">
+
+      <action name="createConfiguration" checkaccess="true" ajax="true">
+        <command class="com.ptc.windchill.enterprise.configuration.forms.CreatePartConfigurationFormProcessor" method="execute" windowType="popup"/>
+      	<includeFilter name="sandboxSharingValidationSimple"/>
+      	<includeFilter name="showNewActionPreValidation" />
+      	<includeFilter name="hideForAdminLocked"/>
+      	<includeFilter name="disableForPartToCadBuildAdminLocked"/>
+      </action>
+
+	  <action name="partRenameHistory">
+		<component name="table.partConfigRenameHistory" />
+	  </action>
+      <action name="createConfiguration_step">
+        <command windowType="wizard_step"/>
+      </action>
+
+	  <action name="renameConfiguration" checkaccess="true" ajax="true">
+		<command class="com.ptc.windchill.enterprise.configuration.forms.RenameConfigurationFormProcessor" method="execute" windowType="popup"/>
+	  </action>
+
+	  <action name="renameConfigurationWizStep">
+		<component name="PartConfigRename" windowType="wizard_step" typeBased="true"/>
+      </action>
+
+      <action name="deletePartConfiguration" checkaccess="true" ajax="true">
+        <command class="com.ptc.windchill.enterprise.configuration.forms.DeletePartConfigurationFormProcessor" method="execute" windowType="popup"/>
+      </action>
+
+      <action name="deletePartConfiguration_step">
+        <command windowType="wizard_step"/>
+      </action>
+
+      <action name="partConfigurations" uicomponent="THIRD_LEVEL_PART_CONFIGURATIONS"/>
+      <action name="attributes"/>
+
+	<!-- OLD Repopulate Part Configuration UI -->
+      <action name="repopConfiguration" checkaccess="true" ajax="true">
+        <command class="com.ptc.windchill.enterprise.configuration.forms.RepopPartConfigurationFormProcessor" method="execute" windowType="popup"/>
+      </action>
+<!-- NEW GWT Repopulate Part Configuration UI -->
+	  <action name="repopConfigurationNEW" class="">
+        <command onClick="ECComponentPicker_launchEditEC('CONFIG_SPEC')"/>
+      </action>
+
+      <action name="repopConfiguration_step">
+        <command windowType="wizard_step"/>
+      </action>
+
+      <action name="saveasConfiguration" checkaccess="true" ajax="true">
+        <command class="com.ptc.windchill.enterprise.configuration.forms.SaveAsPartConfigurationFormProcessor" method="execute" windowType="popup"/>
+      </action>
+
+      <action name="saveasConfiguration_step">
+        <command windowType="wizard_step"/>
+      </action>
+
+
+   </objecttype>
+
+   <objecttype name="instance" class="wt.part.WTProductInstance2" resourceBundle="com.ptc.windchill.enterprise.partInstance.partInstanceClientResource">
+
+      <action name="partInstances" uicomponent="THIRD_LEVEL_PART_INSTANCES"/>
+      <action name="partInstancesFromConfigDetail"/>
+      <action name="allocations"/>
+      <action name="relatedPartInstanceDocuments" uicomponent="THIRD_LEVEL_RELATED_DOCUMENTS">
+		<component name = "relatedParts.DescribedByDocuments" />
+	  </action>
+
+	  <action name="partInstanceRenameHistory" uicomponent="THIRD_LEVEL_PART_INSTANCES">
+          <component name="table.partInstanceRenameHistory" />
+      </action>
+
+      <action name="deletePartInstance" checkaccess="true" ajax="true">
+        <command class="com.ptc.windchill.enterprise.partInstance.forms.DeletePartInstanceFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="deletePartInstance_step">
+        <command windowType="wizard_step"/>
+      </action>
+      <action name="createInstanceFromPart" checkaccess="true" ajax="true">
+        <command class="com.ptc.windchill.enterprise.partInstance.forms.CreatePartInstanceFormProcessor" method="execute" windowType="popup" url="/netmarkets/jsp/instance/createInstanceFromPart.jsp?invokedFrom=part"/>
+        <includeFilter name="hideForNewObjectInWorkspace"/>
+        <includeFilter name="sandboxSharingValidationSimple"/>
+        <includeFilter name="showNewActionPreValidation" />
+        <includeFilter name="hideForAdminLocked"/>
+        <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+      </action>
+      <action name="createInstanceFromPart_step" beforeJS="validateStep">
+        <command windowType="wizard_step"/>
+      </action>
+      <action name="createInstanceFromPartConfig" checkaccess="true" ajax="true">
+        <command class="com.ptc.windchill.enterprise.partInstance.forms.CreatePartInstanceFormProcessor" method="execute" windowType="popup" url="/netmarkets/jsp/instance/createInstanceFromPart.jsp?invokedFrom=partConfig"/>
+      </action>
+      <action name="createInstanceFromPartConfig_step" beforeJS="validateStep">
+        <command windowType="wizard_step"/>
+      </action>
+      <action name="createInstanceSoftAttribute_step">
+        <command windowType="wizard_step"/>
+      </action>
+      <action name="editInstanceSoftAttribute_step">
+        <command windowType="wizard_step"/>
+      </action>
+      <action name="editPartInstance" checkaccess="true" ajax="true">
+        <command class="com.ptc.windchill.enterprise.partInstance.forms.EditPartInstanceFormProcessor" method="execute" windowType="popup"/>
+      </action>
+
+      <action name="editPartInstance_step" beforeJS="validateStep">
+        <command windowType="wizard_step"/>
+      </action>
+
+      <action name="saveAsPartInstance" checkaccess="true" ajax="true">
+        <command class="com.ptc.windchill.enterprise.partInstance.forms.SaveAsPartInstanceFormProcessor" method="execute" windowType="popup"/>
+      </action>
+
+      <action name="saveAsPartInstance_step">
+        <command windowType="wizard_step"/>
+      </action>
+
+	  <action name="renameInstance" checkaccess="true" ajax="true">
+		<command class="com.ptc.windchill.enterprise.partInstance.forms.RenameInstanceFormProcessor" method="execute" windowType="popup"/>
+	  </action>
+
+	  <action name="renameInstanceWizStep">
+		<component name="PartInstanceRename" windowType="wizard_step" typeBased="true"/>
+      </action>
+
+      <action name="updatePartInstanceIncorporation" checkaccess="true" ajax="true">
+        <command class="com.ptc.windchill.enterprise.partInstance.forms.UpdatePartInstanceIncorporationFormProcessor" method="execute" windowType="popup"/>
+      </action>
+
+      <action name="updatePartInstanceIncorporation_step">
+        <command windowType="wizard_step"/>
+      </action>
+
+      <action name="incorporatePartInstance" checkaccess="true" ajax="true">
+        <command class="com.ptc.windchill.enterprise.partInstance.forms.IncorporatePartInstanceFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="incorporatePartInstance_step">
+        <command windowType="wizard_step"/>
+      </action>
+
+      <action name="psb_incorporatePartInstance" checkaccess="true" ajax="true">
+          <includeFilter name="psbSessionValidation" />
+          <command class="com.ptc.windchill.enterprise.partInstance.forms.PSBIncorporatePartInstanceFormProcessor" method="execute" windowType="popup" url="/netmarkets/jsp/instance/incorporatePartInstance.jsp"/>
+      </action>
+
+      <action name="deAllocatePartInstance" checkaccess="true" ajax="true">
+          <includeFilter name="psbSessionValidation" />
+          <command class="com.ptc.windchill.enterprise.partInstance.forms.DeAllocatePartInstanceFormProcessor" method="execute" windowType="popup"/>
+      </action>
+
+      <action name="deAllocatePartInstance_step">
+        <command windowType="wizard_step"/>
+      </action>
+
+   </objecttype>
+
+   <objecttype name="partmaster" class="wt.part.WTPartMaster" resourceBundle="com.ptc.windchill.enterprise.partmaster.partmasterResource">
+      <action name="allocateExistingPartInstance" resourceBundle="com.ptc.windchill.enterprise.partInstance.partInstanceClientResource">
+          <!-- includeFilter name="psbSessionValidation" / -->
+          <command class="com.ptc.windchill.enterprise.partInstance.forms.AllocateExistingPartInstanceFormProcessor" method="execute" windowType="popup" url="/netmarkets/jsp/instance/allocateExistingPartInstance.jsp?contextType=partmaster&amp;contextAction=allocateExistingPartInstance"/>
+      </action>
+      <action name="allocateExistingPartInstance_step" resourceBundle="com.ptc.windchill.enterprise.partInstance.partInstanceClientResource">
+        <command url="/netmarkets/jsp/instance/allocateExistingPartInstance_step.jsp?contextType=partmaster&amp;contextAction=allocateExistingPartInstance" windowType="wizard_step"/>
+      </action>
+
+      <action name="allocateNewPartInstance" resourceBundle="com.ptc.windchill.enterprise.partInstance.partInstanceClientResource">
+          <includeFilter name="psbSessionValidation" />
+          <command class="com.ptc.windchill.enterprise.partInstance.forms.AllocateNewPartInstanceFormProcessor" method="execute" windowType="popup" url="/netmarkets/jsp/instance/allocateNewPartInstance.jsp?contextType=partmaster&amp;contextAction=allocateNewPartInstance"/>
+      </action>
+
+      <action name="allocateNewPartInstance_step" resourceBundle="com.ptc.windchill.enterprise.partInstance.partInstanceClientResource">
+        <command url="/netmarkets/jsp/instance/allocateNewPartInstance_step.jsp?contextType=partmaster&amp;contextAction=allocateNewPartInstance" windowType="wizard_step"/>
+      </action>
+
+	  <!--
+      <action name="createInstanceSoftAttribute_step" resourceBundle="com.ptc.windchill.enterprise.partInstance.partInstanceClientResource">
+        <command url="/netmarkets/jsp/instance/createInstanceSoftAttribute_step.jsp?contextType=partmaster&amp;contextAction=allocateNewPartInstance" windowType="wizard_step"/>
+      </action>
+      -->
+   </objecttype>
+
+</listofactions>

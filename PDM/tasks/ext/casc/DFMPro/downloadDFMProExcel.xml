@@ -1,0 +1,50 @@
+<%@page language="java" session="false" access="http|soap" contentType="text/xml"%>
+<%@taglib uri="http://www.ptc.com/infoengine/taglib/core" prefix="ie"%>
+<%@page import="java.io.*"%>
+<%@page import="java.util.*"%>
+<%@page import="ext.casc.integrate.process.ProcessService"%>
+<%@page import=" java.lang.Exception"%>
+<!--com.infoengine.soap.rpc.def
+JMS Example task.
+
+@param java.lang.String reportName
+@param java.lang.String str
+@param java.lang.String modelName
+@param java.lang.String ruleKind
+@param java.lang.String fileBase64
+
+-->
+
+<%
+String reportName = (String)getParam("reportName");
+String str = (String)getParam("str");
+String modelName = (String)getParam("modelName");
+String ruleKind = (String)getParam("ruleKind");
+String fileBase64 = (String)getParam("fileBase64");
+String result = "";
+ProcessService process = new ProcessService();
+try{
+	result = process.downloadDFMProExcel(reportName,str,modelName,ruleKind,fileBase64);
+	result = "MESSAGE=" + result;
+}
+catch (Exception e) {
+	result = "MESSAGE=" + e.getLocalizedMessage();
+}
+System.out.println("----result----"+result);
+
+%>
+
+<!-- <ie:webject name="Create-Group" type="GRP">
+  <ie:param name="ELEMENT" data="<%=result%>"/>
+  <ie:param name="CLASS" data="Status"/>
+  <ie:param name="GROUP_OUT" data="${@FORM[]group_out[]}" default="output" />
+</ie:webject> -->
+<ie:webject name="Create-Group" type="GRP">
+	<!-- <!ie:param name="GROUP-OUT" data="output"/> -->
+	<ie:param name="GROUP_OUT" data="${@FORM[]group_out[]}" default="output" />
+	<ie:param name="DELIMITER" data="|" />
+	<ie:param name="ELEMENT" data="<%=result %>"/>
+
+</ie:webject>
+
+

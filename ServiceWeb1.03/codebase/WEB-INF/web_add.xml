@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>149_ERP_GLAWAY</display-name>
+
+  <listener>
+   	<description>ERP UPDATE listener</description>
+  	<listener-class>com.glaway.mpm.pbom.db.ERPDBUpdateListener</listener-class>
+  </listener>
+
+ <!--  <listener>
+   	<description>Over Time Order</description>
+  	<listener-class>com.glaway.mpm.print.listener.OverTimeListener</listener-class>
+  </listener>  -->
+
+  <listener>
+ 	<description>Over Time Order</description>
+  	<listener-class>com.glaway.mpm.print.listener.OverTimeListener</listener-class>
+  </listener>
+
+  <servlet>
+    <description>Glaway Custom Servlet for enabling the use of JWS to run applet/application</description>
+    <servlet-name>GWJNLPGeneratorServlet</servlet-name>
+    <servlet-class>com.glaway.mpm.jws.GWJNLPGeneratorServlet</servlet-class>
+  </servlet>
+
+ <servlet-mapping>
+    <servlet-name>GWJNLPGeneratorServlet</servlet-name>
+    <url-pattern>/servlet/GWJNLPGeneratorServlet/*</url-pattern>
+  </servlet-mapping>
+
+</web-app>

@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+<listofactions>
+   <objecttype name="subscription" resourceBundle="com.ptc.core.subscription.subscriptionResource">
+      <action name="unsubscribeSubscription" multiselect="true" ajax="component" uicomponent="UNSUBSCRIBE" selectRequired="true">
+         <command class="com.ptc.core.subscription.commands.SubscriptionCommands" method="unsubscribe"/>
+      </action>
+      <action name="unsubscribeSubscriptionInfo" uicomponent="UNSUBSCRIBE">
+         <command class="com.ptc.core.subscription.commands.SubscriptionCommands" method="unsubscribeSubscriptionInfo"/>
+      </action>
+      <action name="unsubscribeRow" ajax="component" uicomponent="UNSUBSCRIBE">
+         <command class="com.ptc.core.subscription.commands.SubscriptionCommands" method="unsubscribe"/>
+      </action>
+      <action name="unsubscribeTlnRow" ajax="component" uicomponent="UNSUBSCRIBE">
+         <command class="com.ptc.core.subscription.commands.SubscriptionCommands" method="unsubscribe"/>
+      </action>
+      <action name="deleteSubscription" uicomponent="DELETE" multiselect="true" selectRequired="true" ajax="row" ajaxActionClass="netmarkets/jsp/subscription/deleteSubscription.jsp">
+         <command class="com.ptc.core.subscription.commands.SubscriptionCommands" method="deleteSubscriptions" onClick="PTC.subscription.validateSelectRequired(event)"/>
+      </action>
+      <action name="deleteSubscriptionRow" uicomponent="DELETE" ajax="component">
+         <command class="com.ptc.core.subscription.commands.SubscriptionCommands" method="deleteSubscriptions" onClick="JCAConfirm(event, &apos;com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE&apos;)"/>
+      </action>
+      <action name="deleteSubscriptionInfo" uicomponent="DELETE">
+         <command class="com.ptc.core.subscription.commands.SubscriptionCommands" method="deleteSubscriptionInfo" onClick="JCAConfirm(event, &apos;com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE&apos;)"/>
+      </action>
+      
+      <!-- Use createSubscriptionObjSubscr only on the Collaboration->Subscriptions. -->
+      <action name="createSubscriptionObjSubscr" uicomponent="SUBSCRIBE" selectRequired="false" ajax="row">
+         <command class="com.ptc.core.subscription.forms.CreateSubscriptionFormProcessor" method="execute" windowType="popup"/>        
+      </action>
+	  
+      <!-- Use createSubscriptionObjSubscr only on the Collaboration->Subscriptions table toolbar and add the row to the table. -->
+	  <action name="createSubscriptionObjSubscrAddRow" uicomponent="SUBSCRIBE" selectRequired="false" ajax="row">
+         <command url="/netmarkets/jsp/subscription/createSubscriptionObjSubscrAddRow.jsp?addRow=true" class="com.ptc.core.subscription.forms.CreateSubscriptionFormProcessor" method="execute" windowType="popup"/>        
+	  </action>
+      
+      <!-- Use createSubscription in cases where only one object will be selected, e.g. a row action. -->
+      <action name="createSubscription" uicomponent="SUBSCRIBE" selectRequired="true" multiselect="true">
+         <command class="com.ptc.core.subscription.forms.CreateSubscriptionFormProcessor" method="execute" windowType="popup"/>
+         <includeFilter name="hideForNewObjectInWorkspace"/>
+         <includeFilter name="ghostEpmDoc"/>
+      </action>
+      
+      <!-- Use createSubscriptionMultiObj in cases where multiple objects could be selected -->
+      <action name="createSubscriptionMultiObj" uicomponent="SUBSCRIBE" selectRequired="true" multiselect="true">
+         <command class="com.ptc.core.subscription.forms.CreateSubscriptionFormProcessor" method="execute" windowType="popup"/>
+         <includeFilter name="projectM4D"/> 
+      </action>
+      
+      <action name="editSubscription" uicomponent="SUBSCRIBE" ajax="row">
+         <command class="com.ptc.core.subscription.forms.CreateSubscriptionFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="identifyEventsStep1" id="identifyEventsStep1" required="true" preloadWizardPage="true" afterJS="PTC.subscription.identifyCheckFields" beforeJS="PTC.subscription.identifyOnLoad">
+          <command windowType="wizard_step"/>
+      </action>
+      <action name="selectSubscribersStep2" id="selectSubscribersStep2" required="true" preloadWizardPage="true" afterJS="PTC.subscription.selectCheckFields" beforeJS="PTC.subscription.selectOnLoad">
+          <command windowType="wizard_step"/>
+      </action>
+      <action name="defineSubjectAndExpirationStep3" id="defineSubjectAndExpirationStep3" preloadWizardPage="true" required="false" afterJS="PTC.subscription.defineCheckFields" beforeJS="PTC.subscription.defineOnLoad">
+          <command windowType="wizard_step"/>
+      </action>
+      <action name="editIdentifyEventsStep1" id="editIdentifyEventsStep1" preloadWizardPage="true" required="false" afterJS="PTC.subscription.identifyCheckFields" beforeJS="PTC.subscription.identifyOnLoad">
+          <command windowType="wizard_step"/>
+      </action>
+      <action name="editSelectSubscribersStep2" id="editSelectSubscribersStep2" preloadWizardPage="true" required="false" afterJS="PTC.subscription.selectCheckFields" beforeJS="PTC.subscription.selectOnLoad">
+          <command windowType="wizard_step"/>
+      </action>
+      <action name="editDefineSubjectAndExpirationStep3" id="editDefineSubjectAndExpirationStep3" preloadWizardPage="true" required="false" afterJS="PTC.subscription.defineCheckFields" beforeJS="PTC.subscription.defineOnLoad">
+          <command windowType="wizard_step"/>
+      </action>
+      <action name="objectSubscriptions" uicomponent="THIRD_LEVEL_SUBSCRIPTIONS" enabledwhensuspended="true">
+	  <component name="netmarkets.subscription.object.list" />
+	  <includeFilter name="hideForChangeTemplates"/>
+      </action>
+	  
+      <!-- Subscription info page actions. -->
+      <action name="subscriptionRecipients">
+          <component name="subscription.subscribedRecipients"/> 
+      </action>
+      <action name="subscriptionSubscribedObjects">
+          <component name="subscription.subscribedObjects"/> 
+      </action>
+      
+   </objecttype>
+
+   <!-- This action is used to launch the principal picker on step 2 of the Create/Edit Subscription Wizard. -->
+   <objecttype name="subscription" class="wt.fc.Persistable" resourceBundle="com.ptc.core.subscription.subscriptionResource">
+      <action name="subscrPrincipalPicker" ajax="true">
+         <command class="com.ptc.windchill.enterprise.picker.principal.PrincipalCommands" method="addPrincipal" windowType="popup"/>
+            <access name="update"/>
+      </action>
+   </objecttype>
+   <objecttype name="subscription" resourceBundle="com.ptc.core.ui.navigationRB">
+      <action name="listSubscriptions" enabledwhensuspended="true" uicomponent="HOME_SUBSCRIPTIONS">
+		 <component name="netmarkets.subscription.list" windowType="page"/>
+      </action>
+   </objecttype>
+</listofactions>

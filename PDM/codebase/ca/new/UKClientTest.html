@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+<head><head>
+<meta charset="utf-8">
+<TITLE>测试页面</TITLE>
+
+<script type="text/javascript" src="jquery-1.8.3.js"></script>	
+<script type="text/javascript" src="UKeyAPI.js"></script>	
+
+
+<style type="text/css">
+body{ text-align:center }
+.div_outside { margin:0 auto; width: 1150px; height:120px; border:1px solid #A0A0A0;}
+</style>
+</head>
+<script type="text/javascript">
+
+
+/************************ 以下为应用系统使用接口（契合集团现使用的接口）*****************************/
+var ocsp_ip="";
+var err_str="#";
+ function _VgetnameFirst() {
+	// 获取用户登录名。
+	// 参数说明：ocsp_ip为OCSP地址（扩展参数，在服务端验证，此处可为空），
+	// port为操作的UKey，"1"表示第一把插入的UKey，"2"表示第二把插入的UKey
+	// 返回值：返回值中以”#”开头为错误，无”#”正确，正确返回用户名。
+	// 如果其他系统中已经验证过口令，本应用系统就无需再让用户输入口令，可以直接取用户名，否则需要调用Vgetname验证PIN码。
+
+	port = "1";
+	ret =  VgetnameFirst(ocsp_ip, port);
+	if(-1 == ret.search(err_str)) {
+		alert("获取用户登录名成功，登录名为：" + ret);
+		return;
+	} else {
+		//错误码
+		alert(ret.substring(1));
+	}
+} 
+
+ function _Vgetname() {
+	// 获取用户登录名。
+	// 参数说明：pwd为用户PIN码，ocsp_ip为OCSP地址（扩展参数，在服务端验证，此处可为空），port为操作的UKey
+	// 返回值中以”#”开头为错误，无”#”正确。正确返回用户名。
+	pwd="!@#123ab";
+	port = "1";
+	ret = Vgetname(pwd, ocsp_ip, port);
+	
+	if(-1 == ret.search(err_str)) {
+		alert(ret);
+	} else {
+		//错误码
+		alert(ret.substring(1));
+	}	
+} 
+
+/**BSTR concat(LPCSTR asc,LPCSTR base1,LPCSTR base2);
+* Asc: 输入要转换成BASE64的ASCII；
+* Base1: 输入的第一个BASE64数据;
+* Base2: 输入的第二个BASE64数据;
+* 返回值：拼接结果的BASE64编码；
+*/
+var random_user;
+ function _concat() {
+	//数据做base64转换，最多传递3个参数
+	username = "user1";
+	base1 = "abc123";
+	base2 = "123456";
+	str= concat(username, "", "");
+	//console.log("concat(param1,param2,param3)第一次收到信息："+str);
+	random_user= concat(base1, str, "");
+	//console.log("concat(param1,param2,param3)第二次收到信息："+random_user);
+	alert("concat成功：" + random_user);
+}
+
+ function _dataSignCertEx() {	
+	if(random_user==null||random_user==undefined){
+		alert("首先点击concat，对base64格式数据签名");
+		return;
+	}
+	//对数据进行签名。（测试时，首先点击concat，对base64格式数据签名）
+	indata = random_user;	//indata为要签名的数据
+	port = "1";				//port为操作的UKey
+	ishash = "0";			//若indata已做hash,则输入"1"；若indata未做hash,则输入"0"
+	str= dataSignCertEx(indata, port, ishash);
+	if(-1 == str.search(err_str)) {
+		alert(str);
+	} else {
+		//错误码
+		alert(str.substring(1));
+	} 
+}
+
+var cert_data;
+ function _readCert() {
+	//从key中取证书
+	which_cert="3";			//读取的是哪个证书（3：用户签名证书；4：用户加密证书）
+	port="1";				//port为操作的UKey
+	cert_data =  readCert(which_cert, port);
+	if(-1 == cert_data.search(err_str)) {
+		alert(cert_data);
+	} else {
+		//错误码
+		alert(cert_data.substring(1));
+	} 
+}
+
+/** 解析证书，根据需要获取证书中持证者的身份信息 BSTR ParseCert(LPCTSTR cert, LPCTSTR parseStr, LPCTSTR base64Flag);
+* cert：证书信息（base64）
+* parseStr：需要获取的身份信息串
+* base64Flag：返回值是否做base64编码的标识（0：不做base64编码；1：做base64编码）
+* 返回值：正确时，返回相应结果；错误时，返回"#ErrCode#ErrMsg"，ErrCode为错误码，ErrMsg为错误信息
+*/    
+ function _ParseCert() {
+	//从key中取证书
+	key="5";				//要获取的字段(3为username，5为序列号)
+	var cert_data="MIIB5TCCAXOgAwIBAgIIcAABIAAABUQwCQYHKoZIzj0CATBbMRMwEQYKCZImiZPyLGQBAQwDNzAwMRQwEgYDVQQDDAvmoLlDQeS4reW/gzELMAkGA1UEBhMCQ04xITAfBgNVBAsMGOS4reWbveiIquWkqeenkeaKgOmbhuWbojAeFw0yMDEyMDMwOTIzNDdaFw00MDEyMDIxMDU5MjVaMFIxEzARBgoJkiaJk/IsZAEBDAM3MDExFzAVBgNVBAMMDuS4gOe6p0NB5Lit5b+DMQswCQYDVQQGEwJDTjEVMBMGA1UECwwM6Iiq5aSp5LiA6ZmiMHIwCQYHKoZIzj0CAQNlAAAAAYBzJAHeQ66g5vDNm9IMpqgrO/bllusf9dy4ALJaUFBbd33s69hKiO4UYs7t5myPiQq5QKYV647A05xYLPhthVtDiS6rxm3kB4r35Ydq1+3eLT0xwJpN4mWfy93L0DPnxbSjEjAQMA4GA1UdDwEB/wQEAwIBhjAJBgcqhkjOPQIBA2EAdyXcvfTQacdjOpiCU5oIxZKIJJqegvL+LlecOe9DObcrb9BXSgzD1c1Fm+q+QhspZyYonzkwMR+3LErtV3sluRP/ziXRsXioZME5bm+AvEbDj9V1RvEfKnU98fQxFi2R";
+	value =  ParseCert(cert_data, key, "0");
+	if(-1 == value.indexOf("#")) {
+		alert("解析证书成功，值为：" + value);
+		return;
+	} else {
+		//错误码
+		alert(iRet.substring(1));
+	}
+}
+
+//检测新、旧设备
+ function _CheckDev() {
+	port="1";				// 要检测第几把key	
+	value =  CheckDev(port);
+	if(-1 != value.indexOf("#")) {
+		alert("检测失败，错误值为：" + value);
+		return;
+	} 
+	if("0" == value) {
+		alert("新设备");
+		return;
+	}
+	if("1" == value) {
+		alert("老设备");
+		return;
+	}
+}
+
+function _EnumDev() {	
+	var devList = EnumDev();
+	if(-1 != devList.indexOf("#")) {
+		alert("枚举失败");
+		return;
+	} 
+	if(devList == "") {
+		alert("设备不存在");
+		return;
+	}
+	if("1" == devList) {
+		alert("第一把key存在");
+		return;
+	}
+	if("1&2" == devList) {
+		alert("两把key存在");
+		return;
+	}
+}
+
+</script>
+<body>
+
+<div class="div_outside">
+	<p>应用系统接口（契合集团现使用的接口）</p>
+	<input name=VgetnameFirst type=button onclick="_VgetnameFirst()" value=VgetnameFirst>
+	<input name=Vgetname type=button onclick="_Vgetname()" value=Vgetname>	
+	<input name=concat type=button onclick="_concat()" value=concat>	
+	<input name=dataSignCertEx type=button onclick="_dataSignCertEx()" value=dataSignCertEx>	
+	<input name=readCert type=button onclick="_readCert()" value=readCert>
+	<input name=ParseCert type=button onclick="_ParseCert()" value=ParseCert>
+	<input name=CheckDev type=button onclick="_CheckDev()" value=CheckDev>
+	<input name=EnumDev type=button onclick="_EnumDev()" value=EnumDev>
+</div>
+ 
+</body>
+

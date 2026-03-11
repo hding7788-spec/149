@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="lib1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ServiceWeb1.03/codebase/WEB-INF/lib/jxls-reader-1.0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ServiceWeb1.03/codebase/WEB-INF/lib/ehcache-2.7.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ServiceWeb1.03/codebase/WEB-INF/lib/soap.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ServiceWeb1.03/codebase/WEB-INF/lib/httpclient-4.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ServiceWeb1.03/codebase/WEB-INF/lib/jxls-core-1.0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ServiceWeb1.03/codebase/WEB-INF/lib/commons-jexl-2.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ServiceWeb1.03/codebase/WEB-INF/lib/c3p0-0.9.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ServiceWeb1.03/codebase/WEB-INF/lib/jxl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ServiceWeb1.03/codebase/WEB-INF/lib/httpcore-4.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE listofactions SYSTEM "actions.dtd">
+<listofactions>
+	<objecttype name="MPMResource" resourceBundle="com.glaway.mpm.mpmresource.ui.MPMResourceRB">
+		<action name="createZZDWWizard">
+			<command
+				class="com.glaway.mpm.mpmresource.processors.CreateMPMResourceProcessor"
+				method="execute"
+				url="/netmarkets/jsp/ext/glaway/mpm/mpmresource/createMPMResourseWizard.jsp?mpmResourceType=ZZDW"
+				windowType="popup" />
+			<includeFilter name="CreateMPMResourceValidator" />
+		</action>
+    <!--modify by lkc 2017.12.04  -->
+	<!--  	<action name="createGWWizard">
+			<command
+				class="com.glaway.mpm.mpmresource.processors.CreateMPMResourceProcessor"
+				method="execute"
+				url="/netmarkets/jsp/ext/glaway/mpm/mpmresource/createMPMResourseWizard.jsp?mpmResourceType=GW"
+				windowType="popup" />
+			<includeFilter name="CreateMPMResourceValidator" />
+		</action>
+		-->
+
+		<action name="createSBWizard">
+			<command
+				class="com.glaway.mpm.mpmresource.processors.CreateMPMResourceProcessor"
+				method="execute"
+				url="/netmarkets/jsp/ext/glaway/mpm/mpmresource/createMPMResourseWizard.jsp?mpmResourceType=SB"
+				windowType="popup" />
+			<includeFilter name="CreateMPMResourceValidator" />
+		</action>
+
+		<action name="createGJWizard">
+			<command
+				class="com.glaway.mpm.mpmresource.processors.CreateMPMResourceProcessor"
+				method="execute"
+				url="/netmarkets/jsp/ext/glaway/mpm/mpmresource/createMPMResourseWizard.jsp?mpmResourceType=GJ"
+				windowType="popup" />
+			<includeFilter name="CreateMPMResourceValidator" />
+		</action>
+
+		<action name="createGZhongWizard">
+			<command
+				class="com.glaway.mpm.mpmresource.processors.CreateMPMResourceProcessor"
+				method="execute"
+				url="/netmarkets/jsp/ext/glaway/mpm/mpmresource/createMPMResourseWizard.jsp?mpmResourceType=GZhong"
+				windowType="popup" />
+			<includeFilter name="CreateMPMResourceValidator" />
+		</action>
+
+		<action name="createGYFLWizard">
+			<command
+				class="com.glaway.mpm.mpmresource.processors.CreateMPMResourceProcessor"
+				method="execute"
+				url="/netmarkets/jsp/ext/glaway/mpm/mpmresource/createMPMResourseWizard.jsp?mpmResourceType=GYFL"
+				windowType="popup" />
+			<includeFilter name="CreateMPMResourceValidator" />
+		</action>
+
+		<action name="createDJWizard">
+			<command
+				class="com.glaway.mpm.mpmresource.processors.CreateMPMResourceProcessor"
+				method="execute"
+				url="/netmarkets/jsp/ext/glaway/mpm/mpmresource/createMPMResourseWizard.jsp?mpmResourceType=DJ"
+				windowType="popup" />
+			<includeFilter name="CreateMPMResourceValidator" />
+		</action>
+
+		<action name="createGXMCWizard">
+			<command
+				class="com.glaway.mpm.mpmresource.processors.CreateMPMResourceProcessor"
+				method="execute"
+				url="/netmarkets/jsp/ext/glaway/mpm/mpmresource/createMPMResourseWizard.jsp?mpmResourceType=GXMC"
+				windowType="popup" />
+			<includeFilter name="CreateMPMResourceValidator" />
+		</action>
+
+		<action name="createGYCYYWizard">
+			<command
+				class="com.glaway.mpm.mpmresource.processors.CreateMPMResourceProcessor"
+				method="execute"
+				url="/netmarkets/jsp/ext/glaway/mpm/mpmresource/createMPMResourseWizard.jsp?mpmResourceType=GYCYY"
+				windowType="popup" />
+			<includeFilter name="CreateMPMResourceValidator" />
+		</action>
+
+		<action name="createDMSBWizard">
+			<command
+				class="com.glaway.mpm.mpmresource.processors.CreateMPMResourceProcessor"
+				method="execute"
+				url="/netmarkets/jsp/ext/glaway/mpm/mpmresource/createMPMResourseWizard.jsp?mpmResourceType=DMSB"
+				windowType="popup" />
+			<includeFilter name="CreateMPMResourceValidator" />
+		</action>
+
+		<action name="createLJWizard">
+			<command
+				class="com.glaway.mpm.mpmresource.processors.CreateMPMResourceProcessor"
+				method="execute"
+				url="/netmarkets/jsp/ext/glaway/mpm/mpmresource/createMPMResourseWizard.jsp?mpmResourceType=LJ"
+				windowType="popup" />
+			<includeFilter name="CreateMPMResourceValidator" />
+		</action>
+
+		<action name="createYQYBWizard">
+			<command
+				class="com.glaway.mpm.mpmresource.processors.CreateMPMResourceProcessor"
+				method="execute"
+				url="/netmarkets/jsp/ext/glaway/mpm/mpmresource/createMPMResourseWizard.jsp?mpmResourceType=YQYB"
+				windowType="popup" />
+			<includeFilter name="CreateMPMResourceValidator" />
+		</action>
+
+		<action name="createGZhuangWizard">
+			<command
+				class="com.glaway.mpm.mpmresource.processors.CreateMPMResourceProcessor"
+				method="execute"
+				url="/netmarkets/jsp/ext/glaway/mpm/mpmresource/createMPMResourseWizard.jsp?mpmResourceType=GZhuang"
+				windowType="popup" />
+			<includeFilter name="CreateMPMResourceValidator" />
+		</action>
+
+		<action name="createGWWHWizard">
+			<command
+				class="com.glaway.mpm.mpmresource.processors.CreateMPMResourceProcessor"
+				method="execute"
+				url="/netmarkets/jsp/ext/glaway/mpm/mpmresource/createMPMResourseWizard.jsp?mpmResourceType=GWWH"
+				windowType="popup" />
+			<includeFilter name="CreateMPMResourceValidator" />
+		</action>
+
+		<action name="createMPMResourceWizardStep">
+			<command
+				url="/netmarkets/jsp/ext/glaway/mpm/mpmresource/createMPMResourceWizardStep.jsp"
+				windowType="wizard_step" />
+		</action>
+
+		<action name="editMPMResourceWizardStep" ajax="true">
+			<command
+				url="netmarkets/jsp/ext/glaway/mpm/mpmresource/editMPMResourceWizardStep.jsp"
+				windowType="wizard_step" />
+
+		</action>
+
+		<action name="editMPMResourceWizard" ajax="component">
+			<command
+				url="netmarkets/jsp/ext/glaway/mpm/mpmresource/editMPMResourceWizard.jsp"
+				class="com.glaway.mpm.mpmresource.processors.EditMPMResourceProcessor"
+				method="execute" windowType="popup" />
+				<includeFilter name="CreateMPMResourceValidator" />
+		</action>
+
+		<action name="ZZDWToGWLink" ajax="component">
+			<component
+				name="com.glaway.mpm.mvc.builders.mpmresource.ZZDWToGWLinkBuilder"
+				windowType="page" />
+		</action>　
+
+		<action name="ZZDWToGXMCLink" ajax="component">
+			<component
+				name="com.glaway.mpm.mvc.builders.mpmresource.ZZDWToGXMCLinkBuilder"
+				windowType="page" />
+		</action>
+
+		<action name="ZZDWToSBLink" ajax="component">
+			<component
+				name="com.glaway.mpm.mvc.builders.mpmresource.ZZDWToSBLinkBuilder"
+				windowType="page" />
+		</action>
+
+		<action name="ZZDWToGJLink" ajax="component">
+			<component
+				name="com.glaway.mpm.mvc.builders.mpmresource.ZZDWToGJLinkBuilder"
+				windowType="page" />
+		</action>
+
+		<action name="GZhongToGYCYYLink" ajax="component">
+			<component
+				name="com.glaway.mpm.mvc.builders.mpmresource.GZhongToGYCYYLinkBuilder"
+				windowType="page" />
+		</action>
+
+		<action name="GXMCToGZhongLink" ajax="component">
+			<component
+				name="com.glaway.mpm.mvc.builders.mpmresource.GXMCToGZhongLinkBuilder"
+				windowType="page" />
+			<includeFilter name="MPMRelationshipValidator" />
+		</action>
+
+		<action name="SBToSBLink" ajax="component">
+			<component
+				name="com.glaway.mpm.mvc.builders.mpmresource.SBToSBLinkBuilder"
+				windowType="page" />
+			<includeFilter name="MPMRelationshipValidator" />
+		</action>
+
+		<action name="addZZDWToGWLinkWizard" ajax="component">
+			<command
+				url="netmarkets/jsp/ext/glaway/mpm/mpmresource/addMPMResourceLinkWizard.jsp?mpmResourceType=GW"
+				class="com.glaway.mpm.mpmresource.processors.AddMPMResourceLinkProcessor"
+				method="execute" windowType="popup" />
+		</action>
+
+		<action name="addZZDWToGXMCLinkWizard" ajax="component">
+			<command
+				url="netmarkets/jsp/ext/glaway/mpm/mpmresource/addMPMResourceLinkWizard.jsp?mpmResourceType=GXMC"
+				class="com.glaway.mpm.mpmresource.processors.AddMPMResourceLinkProcessor"
+				method="execute" windowType="popup" />
+		</action>
+
+		<action name="addZZDWToSBLinkWizard" ajax="component">
+			<command
+				url="netmarkets/jsp/ext/glaway/mpm/mpmresource/addMPMResourceLinkWizard.jsp?mpmResourceType=SB"
+				class="com.glaway.mpm.mpmresource.processors.AddMPMResourceLinkProcessor"
+				method="execute" windowType="popup" />
+		</action>
+
+		<action name="addSBToSBLinkWizard" ajax="component">
+			<command
+				url="netmarkets/jsp/ext/glaway/mpm/mpmresource/addMPMResourceLinkWizard.jsp?mpmResourceType=ChildSB"
+				class="com.glaway.mpm.mpmresource.processors.AddMPMResourceLinkProcessor"
+				method="execute" windowType="popup" />
+		</action>
+
+		<action name="addZZDWToGJLinkWizard" ajax="component">
+			<command
+				url="netmarkets/jsp/ext/glaway/mpm/mpmresource/addMPMResourceLinkWizard.jsp?mpmResourceType=GJ"
+				class="com.glaway.mpm.mpmresource.processors.AddMPMResourceLinkProcessor"
+				method="execute" windowType="popup" />
+		</action>
+
+		<action name="addGZhongToGYCYYLinkWizard" ajax="component">
+			<command
+				url="netmarkets/jsp/ext/glaway/mpm/mpmresource/addMPMResourceLinkWizard.jsp?mpmResourceType=GYCYY"
+				class="com.glaway.mpm.mpmresource.processors.AddMPMResourceLinkProcessor"
+				method="execute" windowType="popup" />
+		</action>
+
+		<action name="addGXMCToGZhongLinkWizard" ajax="component">
+			<command
+				url="netmarkets/jsp/ext/glaway/mpm/mpmresource/addMPMResourceLinkWizard.jsp?mpmResourceType=GZhong"
+				class="com.glaway.mpm.mpmresource.processors.AddMPMResourceLinkProcessor"
+				method="execute" windowType="popup" />
+		</action>
+
+		<action name="addMPMResourceLinkWizardStep" ajax="component">
+			<command
+				url="netmarkets/jsp/ext/glaway/mpm/mpmresource/addMPMResourceLinkWizardStep.jsp"
+				windowType="wizard_step" />
+		</action>
+
+		<action name="addZZDWToGZhongLinkWizard" ajax="component">
+			<command
+				url="netmarkets/jsp/ext/glaway/mpm/mpmresource/addMPMResourceLinkWizard.jsp?mpmResourceType=GZhong2"
+				class="com.glaway.mpm.mpmresource.processors.AddMPMResourceLinkProcessor"
+				method="execute" windowType="popup" />
+		</action>
+
+		<action name="deleteMPMResourceLink" ajax="component"
+			selectRequired="true" uicomponent="DELETE">
+			<command
+				class="com.glaway.mpm.mpmresource.processors.DeleteMPMResourceLinkProcessor"
+				method="execute" onClick="confirmRowDelete()" />
+		</action>
+
+		<action name="openProcessEditor">
+			<command
+				url="netmarkets/jsp/ext/glaway/mpm/mpmresource/openProcessEditor.jsp"
+				windowType="page" />
+		</action>
+
+		<action name="releaseTechnic">
+			<command url="netmarkets/jsp/ext/glaway/mpm/mpmresource/releaseTechnic.jsp"
+				windowType="popup" />
+		</action>
+
+		<action name="resourceAbondone">
+			<command
+				class="com.glaway.mpm.mpmresource.processors.ResourceAbondoneProcessor"
+				method="execute" />
+		</action>
+
+		<action name="newGZCardWizard">
+			<command
+				url="netmarkets/jsp/ext/glaway/mpm/mpmresource/gz/gzcard/newGZCardWizard.jsp"
+				class="com.glaway.mpm.mpmresource.processors.CreateGZCardProcessor"
+				method="execute" windowType="popup" />
+			<includeFilter name="CreateGZCardValidator" />
+		</action>
+
+		<action name="newGZCardWizardStep">
+			<command
+				url="netmarkets/jsp/ext/glaway/mpm/mpmresource/gz/gzcard/newGZCardWizardStep.jsp"
+				windowType="wizard_step" />
+		</action>
+
+		<action name="editGZCardWizard">
+			<command
+				url="netmarkets/jsp/ext/glaway/mpm/mpmresource/gz/gzcard/editGZCardWizard.jsp"
+				class="com.glaway.mpm.mpmresource.processors.EditGZCardProcessor"
+				method="execute" windowType="popup" />
+			<includeFilter name="CreateGZCardValidator" />
+		</action>
+		<action name="editGZCardWizardStep">
+			<command
+				url="netmarkets/jsp/ext/glaway/mpm/mpmresource/gz/gzcard/editGZCardWizardStep.jsp"
+				windowType="wizard_step" />
+		</action>
+
+		<action name="showGZCardWizard">
+			<command
+				url="netmarkets/jsp/ext/glaway/mpm/mpmresource/gz/gzcard/showGZCardWizard.jsp"
+				method="execute" windowType="popup" />
+				<includeFilter name="CreateGZCardValidator" />
+		</action>
+		<action name="showGZCardWizardStep">
+			<command
+				url="netmarkets/jsp/ext/glaway/mpm/mpmresource/gz/gzcard/showGZCardWizardStep.jsp"
+				windowType="wizard_step" />
+		</action>
+
+		<action name="showGZCard1">
+			<command
+				url="netmarkets/jsp/ext/glaway/mpm/mpmresource/gz/gzcard/showGZCard.jsp"
+				method="execute" windowType="popup" />
+		</action>
+		<action name="setState1" ajax="component" selectRequired="true">
+			<command class="com.glaway.mpm.mpmresource.processors.SetStateProcessor"
+				method="execute" onClick="confirm('确认作废')" />
+			<includeFilter name="CreateGZCardValidator" />
+		</action>
+
+		<action name="setState" selectRequired="true">
+			<command
+				url="netmarkets/jsp/ext/glaway/mpm/mpmresource/gz/gzcard/setStateWizard.jsp"
+				class="com.glaway.mpm.mpmresource.processors.SetStateProcessor"
+				method="execute" windowType="popup" />
+			<includeFilter name="CreateGZCardValidator" />
+		</action>
+
+		<action name="setStateWizardStep">
+			<command
+				url="netmarkets/jsp/ext/glaway/mpm/mpmresource/gz/gzcard/setStateWizardStep.jsp"
+				windowType="wizard_step" />
+		</action>
+
+		<action name="StartGZAuditFlow" ajax="component">
+			<command
+				class="com.glaway.mpm.mpmresource.processors.StartGZWorkFlowProcessor"
+				method="execute" />
+			<includeFilter name="StartGZWorkflowValidator" />
+		</action>
+
+		<action ajax="row" selectRequired="true"
+			ajaxActionClass="netmarkets/jsp/object/delete.jsp?refresh=true" name="delete"
+			uicomponent="DELETE">
+			<command class="com.ptc.netmarkets.model.NmObjectCommands"
+				method="delete"
+				onClick="JCAConfirm(event,'com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE')" />
+			<includeFilter name="hideFromNonAgreementMgrs" />
+			<includeFilter name="disableDeleteManagedCollection" />
+			<includeFilter name="CreateGZCardValidator" />
+		</action>
+
+		<action name="ZZDWToGWLink" ajax="component">
+			<component
+				name="com.glaway.mpm.mvc.builders.mpmresource.ZZDWToGWLinkBuilder"
+				windowType="page" />
+		</action>　
+
+		<action name="ZZDWToGXMCLink" ajax="component">
+			<component
+				name="com.glaway.mpm.mvc.builders.mpmresource.ZZDWToGXMCLinkBuilder"
+				windowType="page" />
+		</action>
+
+		<action name="ZZDWToSBLink" ajax="component">
+			<component
+				name="com.glaway.mpm.mvc.builders.mpmresource.ZZDWToSBLinkBuilder"
+				windowType="page" />
+		</action>
+
+		<action name="ZZDWToGJLink" ajax="component">
+			<component
+				name="com.glaway.mpm.mvc.builders.mpmresource.ZZDWToGJLinkBuilder"
+				windowType="page" />
+		</action>
+
+		<action name="ZZDWToGZhongLink" ajax="component">
+			<component
+				name="com.glaway.mpm.mvc.builders.mpmresource.ZZDWToGZhongBuilder"
+				windowType="page" />
+		</action>
+
+		<action name="GZhongToGYCYYLink" ajax="component">
+			<component
+				name="com.glaway.mpm.mvc.builders.mpmresource.GZhongToGYCYYLinkBuilder"
+				windowType="page" />
+		</action>
+
+		<action name="GXMCToGZhongLink" ajax="component">
+			<component
+				name="com.glaway.mpm.mvc.builders.mpmresource.GXMCToGZhongLinkBuilder"
+				windowType="page" />
+			<includeFilter name="MPMRelationshipValidator" />
+		</action>
+
+		<action name="SBToSBLink" ajax="component">
+			<component
+				name="com.glaway.mpm.mvc.builders.mpmresource.SBToSBLinkBuilder"
+				windowType="page" />
+			<includeFilter name="MPMRelationshipValidator" />
+		</action>
+
+		<action name="addZZDWToGWLinkWizard" ajax="component">
+			<command
+				url="netmarkets/jsp/ext/glaway/mpm/mpmresource/addMPMResourceLinkWizard.jsp?mpmResourceType=GW"
+				class="com.glaway.mpm.mpmresource.processors.AddMPMResourceLinkProcessor"
+				method="execute" windowType="popup" />
+		</action>
+
+		<action name="addZZDWToGXMCLinkWizard" ajax="component">
+			<command
+				url="netmarkets/jsp/ext/glaway/mpm/mpmresource/addMPMResourceLinkWizard.jsp?mpmResourceType=GXMC"
+				class="com.glaway.mpm.mpmresource.processors.AddMPMResourceLinkProcessor"
+				method="execute" windowType="popup" />
+		</action>
+
+		<action name="addZZDWToSBLinkWizard" ajax="component">
+			<command
+				url="netmarkets/jsp/ext/glaway/mpm/mpmresource/addMPMResourceLinkWizard.jsp?mpmResourceType=SB"
+				class="com.glaway.mpm.mpmresource.processors.AddMPMResourceLinkProcessor"
+				method="execute" windowType="popup" />
+		</action>
+
+		<action name="addSBToSBLinkWizard" ajax="component">
+			<command
+				url="netmarkets/jsp/ext/glaway/mpm/mpmresource/addMPMResourceLinkWizard.jsp?mpmResourceType=ChildSB"
+				class="com.glaway.mpm.mpmresource.processors.AddMPMResourceLinkProcessor"
+				method="execute" windowType="popup" />
+		</action>
+
+		<action name="addZZDWToGJLinkWizard" ajax="component">
+			<command
+				url="netmarkets/jsp/ext/glaway/mpm/mpmresource/addMPMResourceLinkWizard.jsp?mpmResourceType=GJ"
+				class="com.glaway.mpm.mpmresource.processors.AddMPMResourceLinkProcessor"
+				method="execute" windowType="popup" />
+		</action>
+
+		<action name="addGZhongToGYCYYLinkWizard" ajax="component">
+			<command
+				url="netmarkets/jsp/ext/glaway/mpm/mpmresource/addMPMResourceLinkWizard.jsp?mpmResourceType=GYCYY"
+				class="com.glaway.mpm.mpmresource.processors.AddMPMResourceLinkProcessor"
+				method="execute" windowType="popup" />
+		</action>
+
+		<action name="addGXMCToGZhongLinkWizard" ajax="component">
+			<command
+				url="netmarkets/jsp/ext/glaway/mpm/mpmresource/addMPMResourceLinkWizard.jsp?mpmResourceType=GZhong"
+				class="com.glaway.mpm.mpmresource.processors.AddMPMResourceLinkProcessor"
+				method="execute" windowType="popup" />
+		</action>
+
+		<action name="addMPMResourceLinkWizardStep" ajax="component">
+			<command
+				url="netmarkets/jsp/ext/glaway/mpm/mpmresource/addMPMResourceLinkWizardStep.jsp"
+				windowType="wizard_step" />
+		</action>
+
+		<action name="deleteMPMResourceLink" ajax="component" selectRequired="true" uicomponent="DELETE">
+			<command
+				class="com.glaway.mpm.mpmresource.processors.DeleteMPMResourceLinkProcessor"
+				method="execute" onClick="confirmRowDelete()" />
+		</action>
+
+		<action name="openInProcessEditor" selectRequired="true">
+			<command url="netmarkets/jsp/ext/glaway/mpm/startPE.jsp?ty=1" windowType="popup" />
+			<!-- <command class="com.glaway.mpm.processplan.processors.StartPEProcessor" method="execute"/> -->
+			<includeFilter name="ProcessPlanActionsValidator" />
+		</action>
+
+		<action name="CustomOpenInProcessEditor" selectRequired="true">
+			<command url="netmarkets/jsp/ext/glaway/mpm/startPE.jsp?startType=1&amp;ty=1" windowType="popup" />
+			<!-- <command class="com.glaway.mpm.processplan.processors.StartPEProcessor" method="execute"/> -->
+			<includeFilter name="ProcessPlanActionsValidator" />
+		</action>
+
+
+	</objecttype>
+
+</listofactions>

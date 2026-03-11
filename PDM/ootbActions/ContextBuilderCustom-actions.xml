@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+
+<objecttype name="contextbuildercustom"
+   resourceBundle="com.ptc.windchill.enterprise.contextBuilderCustom.contextBuilderCustomRB">
+   
+   	<action name="editIncludeExcludeRulesGWT">
+		<command class="com.ptc.windchill.enterprise.object.alternaterep.client.action.CustomFilterRuleAction"
+				 url="Windchill/ptc1/contextbuildercustom/customFilterRulesPopup" />
+    </action>
+	
+	<action name="editIncludeExcludeRules2GWT">
+		<command class="com.ptc.windchill.enterprise.object.alternaterep.client.action.CustomFilterRuleAction"
+				 url="Windchill/ptc1/contextbuildercustom/customFilterRulesPopup2" />
+    </action>
+    
+    <action name="editIncludeExcludeRulesRMC1GWT">
+		<command class="com.ptc.windchill.enterprise.object.alternaterep.client.action.CustomFilterRuleAction"
+				 url="Windchill/ptc1/contextbuildercustom/customFilterRulesPopup" />
+		<includeFilter name="com.ptc.cat.ui.client.internal.action.IsRootNodeFilter" />
+    </action>
+	
+	<action name="editIncludeExcludeRulesRMC2GWT">
+		<command class="com.ptc.windchill.enterprise.object.alternaterep.client.action.CustomFilterRuleAction"
+				 url="Windchill/ptc1/contextbuildercustom/customFilterRulesPopup2" />
+		<includeFilter name="com.ptc.cat.ui.client.internal.action.IsRootNodeFilter" />
+    </action>
+	    
+	<action name="customFilterRulesPopupExampleStep">
+		<command windowType="wizard_step"/>
+	</action>
+	
+	<action name="customFilterRulesPopupExampleStep2">
+		<command windowType="wizard_step"/>
+	</action>
+</objecttype>
+
+</listofactions>
+

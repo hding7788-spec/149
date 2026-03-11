@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+<listofactions>
+
+   <objecttype name="queue" class="wt.fc.Persistable" resourceBundle="wt.queue.jca.queueActionResource" > 
+       <action name="enableQueue" ajax="row">  
+           <command class="wt.queue.mvc.datautil.MVCQueuePage" method="enableSelectedQueues"/>
+       </action>
+       <action name="disableQueue" ajax="row">  
+           <command class="wt.queue.mvc.datautil.MVCQueuePage" method="disableSelectedQueues"/>
+       </action>
+       <action name="startQueue" ajax="row"> 
+           <command class="wt.queue.mvc.datautil.MVCQueuePage" method="startSelectedQueues"/>
+       </action>
+       <action name="stopQueue" ajax="row"> 
+           <command class="wt.queue.mvc.datautil.MVCQueuePage" method="stopSelectedQueues"/>
+       </action>
+       <action name="queueInfo"> 
+           <component name="wt.queue.WtQueue.infoPage" windowType="page" />
+       </action>
+       <action name="editAttributesFP" >  
+           <command class="wt.queue.jca.EditQueueAttributesFormProcessor" method="execute" url="netmarkets/jsp/queue/edit.jsp" windowType="popup" />
+       </action>
+       <!-- MVC wizard step component -->
+       <action name="editQueueAttributes" >  
+            <component name="queue.attributes.edit.table" windowType="wizard_step" />
+       </action>
+       <action name="createQueue" >
+            <component name="queue.create.table" windowType="wizard_step"/>
+       </action>
+   </objecttype>
+
+   <objecttype name="queueTable" class="wt.fc.Persistable" resourceBundle="wt.queue.jca.queueActionResource" > 
+       <action name="enableSelectedQueues" multiselect="true" selectRequired="true" ajax="component">  
+           <command class="wt.queue.mvc.datautil.MVCQueuePage" method="enableSelectedQueues"/>
+       </action>
+       <action name="disableSelectedQueues" multiselect="true" selectRequired="true" ajax="component">  
+           <command class="wt.queue.mvc.datautil.MVCQueuePage" method="disableSelectedQueues"/>
+       </action>
+       <action name="startSelectedQueues" multiselect="true" selectRequired="true" ajax="component"> 
+           <command class="wt.queue.mvc.datautil.MVCQueuePage" method="startSelectedQueues"/>
+       </action>
+       <action name="stopSelectedQueues" multiselect="true" selectRequired="true" ajax="component"> 
+           <command class="wt.queue.mvc.datautil.MVCQueuePage" method="stopSelectedQueues"/>
+       </action>
+       <action name="createQueue" selectRequired="false">
+           <command class="wt.queue.jca.CreateQueueFormProcessor" method="execute" url="netmarkets/jsp/queue/create.jsp"
+                   windowType="popup"/>
+       </action>
+   </objecttype>
+
+   <objecttype name="queueEntries" class="wt.fc.Persistable" resourceBundle="wt.queue.jca.queueActionResource" > 
+       <action name="viewInfo"> 
+           <component name="wt.queue.WtQueueEntry.infoPage" windowType="page" />
+       </action>
+       <action name="resetReady" multiselect="true" selectRequired="true"> 
+           <command class="wt.queue.mvc.datautil.MVCQueuePage" method="resetEntriesToReady"/>
+       </action>
+       <action name="piks" multiselect="true" selectRequired="true"> 
+           <command class="wt.queue.mvc.datautil.MVCQueuePage" method="resetEntries"/>
+       </action>
+       <action name="deleteEntry" multiselect="true" selectRequired="true"> 
+           <command class="wt.queue.mvc.datautil.MVCQueuePage" method="deleteSelectedEntries" 
+                              onClick="JCAConfirm(event, 'com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE')" />
+       </action>
+       <action name="deleteEntries" multiselect="true" selectRequired="true"> 
+           <command class="wt.queue.mvc.datautil.MVCQueuePage" method="deleteSelectedEntries"
+                              onClick="JCAConfirm(event, 'com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE')" />
+       </action>
+       <!-- 10/8, don't think this is needed any more: only called from entry info page, redirects after the delete --> 
+       <action name="deleteEntryRedirect"  multiselect="true" selectRequired="true" uicomponent="DELETE" > 
+           <command class="wt.queue.mvc.datautil.MVCQueuePage" method="deleteSelectedEntry"
+                              onClick="JCAConfirm(event, 'com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE')" />
+       </action>
+       <action name="queueEntryAttributes">
+           <component name="queueEntry.attributes.panel.view"/>
+       </action>
+   </objecttype>
+
+   <objecttype name="queueTableEntries" class="wt.fc.Persistable" resourceBundle="wt.queue.jca.queueActionResource" > 
+       <action name="queueEntryTable"> 
+           <component name="queue.entry.table" windowType="page"/>
+       </action>
+       <action name="queueAttributesTable"> 
+           <component name="queue.attributes.view.table" windowType="page"/>
+       </action>
+   </objecttype>
+
+   <objecttype name="queueEntryArgsType" class="wt.fc.Persistable" resourceBundle="wt.queue.jca.queueActionResource" >
+       <action name="queueEntryArgs"> 
+           <component name="queue.entry.args.table" />
+       </action>
+   </objecttype>
+
+</listofactions>

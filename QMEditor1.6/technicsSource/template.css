@@ -1,0 +1,76 @@
+.claro {
+	font-size: 14px;
+}
+
+.tb_all td {
+	border: black 0.1px solid;
+}
+.tb_info {
+}
+.tb_info .title_l {
+	BACKGROUND: lightblue;
+	width: 180px;
+	BORDER: black 1px solid;
+	height: 20px
+}
+.tb_info .title {
+	BACKGROUND: lightblue;
+	width: 120px;
+	BORDER: black 1px solid;
+	height: 20px
+}
+.tb_info .label {
+	width: 120px;
+	BORDER: black 1px solid;
+	height: 20px
+}
+.tb_part_info {
+	FONT-SIZE: 10px;
+}
+.tb_part_info th {
+	FONT-SIZE: 10px;
+	BACKGROUND: lightblue;
+	text-align: center;
+	width: 180px;
+	BORDER: black 1px solid
+}
+.tb_part_info TD {
+	FONT-SIZE: 10px;
+	height: 24px;
+}
+
+.part_nav {
+	border-width: 0px;
+	height:"100%";
+	list-style: none;
+	margin-top: -2px;
+	margin-left: 0px;
+}
+.part_nav li {
+	float: left;
+	text-align: center;
+	cursor: pointer;
+	margin-right:0px;
+	font-size:10px;line-height: 25px;
+	border: black 1px solid;
+	height:30px;
+	padding: 0 10px;
+}
+.part_nav .select {
+	cursor: default;
+}
+
+.tb_searchbar .td_head {
+	BORDER-TOP: white 1px solid;
+	BORDER-LEFT: white 1px solid;
+	TEXT-ALIGN: left;
+}
+.tb_searchbar .td_title TD {
+	BORDER-TOP: white 1px solid;
+	BACKGROUND: black;
+	BORDER-LEFT: white 1px solid;
+}
+
+input[type=text] {
+	border: thin solid #e0e0e0;
+}

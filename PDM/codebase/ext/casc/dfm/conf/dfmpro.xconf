@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Configuration SYSTEM "xconf.dtd">
+<Configuration xmlns:xlink="http://www.w3.org/1999/xlink">
+
+   <AddToProperty name="wt.services.applicationcontext.WTServiceProviderFromProperties.customPropertyFiles" value="ext/casc/dfm/conf/dfmpro.properties"/>
+
+    <Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.casc.dfmRule.sign.processor.SubmitDataReviewFilter"
+				requestor="java.lang.Object"
+				selector="SubmitDataReviewFilter"
+				cardinality="duplicate"/>
+	</Service>
+	 <Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.casc.dfmRule.validator.CreateGYRuleFileValidator"
+				requestor="java.lang.Object"
+				selector="CreateGYRuleFileValidator"
+				cardinality="duplicate"/>
+	</Service>
+
+
+</Configuration>

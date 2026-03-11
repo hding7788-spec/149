@@ -1,0 +1,50 @@
+<%@page language="java" session="false" access="http|soap" contentType="text/xml"%>
+<%@taglib uri="http://www.ptc.com/infoengine/taglib/core" prefix="ie"%>
+<%@page import="java.io.*"%>
+<%@page import="java.util.*"%>
+<%@page import="ext.casc.integrate.process.DataPacketIntegrate"%>
+<%@page import=" java.lang.Exception"%>
+
+<%
+		String cpth = (String)getParam("cpth");
+		String cpmc = (String)getParam("cpmc");
+		String xh = (String)getParam("xh");
+		String gywjmlbh = (String)getParam("gywjmlbh");
+		String gywjmlmc = (String)getParam("gywjmlmc");
+		String tzdbh = (String)getParam("tzdbh");
+		String tzdmc = (String)getParam("tzdmc");
+		String ggdbh = (String)getParam("ggdbh");
+		String cpdh = (String)getParam("cpdh");
+		String gywjbh = (String)getParam("gywjbh");
+		String gywjmc = (String)getParam("gywjmc");
+		String result = "";
+		System.out.println("------getPDMDataInfo----------start--------");
+		DataPacketIntegrate dataPacketIntegrate = new DataPacketIntegrate();
+try{
+
+		if(type.equals("2")){
+		result =dataPacketIntegrate.getProcessPlanList(cpth,cpmc,gywjbh,gywjmc);
+		}
+	if(type.equals("3")){
+		result =dataPacketIntegrate.getTechnicsCatalogs(cpth,cpmc,xh,gywjmlbh,gywjmlmc);
+	}
+	if(type.equals("4")){
+		result =dataPacketIntegrate.getChangeOrderList(cpth,cpmc,ggdbh,cpdh);
+	}
+	if(type.equals("5")){
+		result = dataPacketIntegrate.getTechnicsNoticesList(cpth,cpmc,tzdbh,tzdmc);
+	}
+}catch (Exception e) {
+	result = e.getLocalizedMessage();
+}
+System.out.println("----result----"+result);
+System.out.println("------getPDMDataInfo----------end--------");
+%>
+
+<ie:webject name="Create-Group" type="GRP">
+  <ie:param name="ELEMENT" data="<%=result%>"/>
+  <ie:param name="CLASS" data="Status"/>
+  <ie:param name="GROUP_OUT" data="${@FORM[]group_out[]}" default="output" />
+</ie:webject>
+
+

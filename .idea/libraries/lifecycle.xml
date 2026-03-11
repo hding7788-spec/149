@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="lifecycle">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/ext/149/lifecycle/149_Preview_LC.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/ext/149/lifecycle/149_TechnicsMaterial_LC.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/ext/149/lifecycle/149_PROCESS_DOC_ECN_LC.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/ext/149/lifecycle/149_TechnicsMaterialEntries_LC.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/ext/149/lifecycle/149_设计方案预审单生命周期.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

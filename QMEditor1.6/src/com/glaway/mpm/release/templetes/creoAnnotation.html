@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>可视化</title>
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.part_nav {
+	border-width: 0px;
+	height: "100%";
+	background-color: #808080;
+	list-style: none;
+	margin-top: -2px;
+	margin-left: -40px
+}
+
+.part_nav li {
+	float: left;
+	text-align: center;
+	background-color: lightblue;
+	cursor: pointer;
+	margin-right: 0px;
+	font-size: 18px;
+	line-height: 25px;
+	border: black 1px solid;
+	height: 30px;
+	padding: 0 10px;
+}
+
+.part_nav .select {
+	background-color: cyan;
+	cursor: default;
+}
+
+.note {
+	background: lightgreen;
+	height: 50px;
+}
+</style>
+<SCRIPT type="text/javascript" SRC="pv/pvlaunch.js"></SCRIPT>
+<SCRIPT type="text/javascript" SRC="pv/pvUtils.js"></SCRIPT>
+<script type="text/javascript">
+	var number = getQuery("number");
+	var spt = number.split("$$");
+
+	var creoPath = "model/" + spt[0] + "/" + spt[1];
+
+	var myPvApi;
+	
+	/* Callback event */
+    function pvAnnotationEvent(type, annoName, saved) {
+        alert("type:["+type+"] || annoName:["+annoName+"] || saved:["+saved+"]");
+    }
+	
+	function close(){
+		var ret = confirm("是否保存当前注释集");
+		alert(ret);
+	}
+	
+	function myLoad() {
+		myPvApi.SetBackgroundColor("0x2C90FF:0xAEAEB2");
+	}
+
+	window.attachEvent('onresize', aa);
+	function aa() {
+		document.getElementById('creo_holder').style.height = document.documentElement.clientHeight
+				- 5 + "px";
+	}
+
+    function getQuery(name)
+    {
+        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r!=null) return unescape(r[2]); return null;
+    }
+</script>
+</head>
+<body onload="aa();" style="margin: 0px; padding: 0px;">
+	<table width="100%" height="100%" cellpadding="0" cellspacing="0">
+		<tr id="picHolder">
+			<td id="creo_holder" style="border-top: 0px" colspan="2"><script
+					type="text/javascript">
+				try {
+					myPvApi = ProductView("pview", creoPath);
+					myPvApi.OnLoadComplete = myLoad;
+					myPvApi.OnAnnotationEvent = pvAnnotationEvent;
+				} catch (e) {
+					alert(e);
+				}
+			</script></td>
+		</tr>
+	</table>
+</body>
+</html>

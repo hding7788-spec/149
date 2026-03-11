@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+
+<listofactions>
+  <objecttype name="object" 
+  	resourceBundle="com.ptc.windchill.enterprise.object.configurableLinkObjectResource">
+
+   <action name="configurableLink_add" ajax="component">
+	    <includeFilter name="hideForNewObjectInWorkspace"/>
+	    <includeFilter name="hideForCheckedoutObjectInWorkspace"/>
+
+   		<command class="com.ptc.windchill.enterprise.object.forms.ConfigLinkAddRelationFormProcessor"
+	    	method="execute" windowType="popup"/>
+   </action>
+   
+   <action name="configurableLink_editMulti" ajax="component">           
+   		<command class="com.ptc.windchill.enterprise.object.forms.ConfigLinkMultiEditFormProcessor"
+        	windowType="popup" />
+   </action>
+   
+   <action name="configurableLink_editMultiWizStep" required="true" preloadWizardPage="true">
+   		<command windowType="wizard_step"/>
+   </action>
+
+	<action name="configurableLink_copy" uicomponent="COPY">
+	    <includeFilter name="hideForNewObjectInWorkspace"/>
+	    <includeFilter name="hideForCheckedoutObjectInWorkspace"/>
+
+		<command class="com.ptc.windchill.enterprise.object.commands.ConfigurableLinkCopyCommand"
+			method="copy" />
+	</action>	
+	
+	<action name="configurableLink_paste" ajax="row">
+	    <includeFilter name="hideForNewObjectInWorkspace"/>
+	    <includeFilter name="hideForCheckedoutObjectInWorkspace"/>
+
+		<command class="com.ptc.windchill.enterprise.object.forms.ConfigLinkPasteRelationFormProcessor"
+			method="execute"/>
+	</action>
+	
+   <action name="configurableLink_pasteSelect" multiselect="true" uicomponent="PASTE" ajax="component">
+	    <includeFilter name="hideForNewObjectInWorkspace"/>
+	    <includeFilter name="hideForCheckedoutObjectInWorkspace"/>
+
+		<command class="com.ptc.windchill.enterprise.object.forms.ConfigLinkPasteRelationFormProcessor"
+			method="execute" windowType="popup"/>
+	</action>
+
+   <action name="configurableLink_remove" ajax="row">
+	    <includeFilter name="hideForNewObjectInWorkspace"/>
+	    <includeFilter name="hideForCheckedoutObjectInWorkspace"/>
+
+   		<command class="com.ptc.windchill.enterprise.object.forms.ConfigLinkRemoveRelationFormProcessor"
+	    	method="execute"/>
+   </action>
+   
+	<action name="configurableRevisionLinkHistory" uicomponent="THIRD_LEVEL_HISTORY_VERSION" required="true">
+		<component name="configurableLink.RevisionLinkHistoryTable"/>
+  		<supportedTypes>
+	  		<type value="wt.part.WTPart"/>
+	  		<type value="wt.doc.WTDocument"/>
+	  		<type value="wt.change2.WTChangeIssue"/>
+	  		<type value="wt.change2.WTChangeRequest2"/>
+	  		<type value="wt.change2.WTChangeOrder2"/>
+  		</supportedTypes>
+    </action>
+      
+  </objecttype>
+  
+  <objecttype name="part" class="wt.part.WTPart" resourceBundle="com.ptc.windchill.enterprise.object.configurableLinkObjectResource">
+  <action name="configurableLink_newPart" ajax="component">
+	    <includeFilter name="hideForNewObjectInWorkspace"/>
+	    <includeFilter name="hideForCheckedoutObjectInWorkspace"/>
+
+   		<command class="com.ptc.windchill.enterprise.object.forms.ConfigLinkNewPartFormProcessor"
+	    	method="execute" windowType="popup" url="/netmarkets/jsp/part/configurableLink_newPart.jsp?invokedfrom=config_link_table"/>
+   </action>
+  </objecttype>
+  
+  <objecttype name="document" class="wt.doc.WTDocument" resourceBundle="com.ptc.windchill.enterprise.object.configurableLinkObjectResource">
+  <action name="configurableLink_newDoc" ajax="component">
+	    <includeFilter name="hideForNewObjectInWorkspace"/>
+	    <includeFilter name="hideForCheckedoutObjectInWorkspace"/>
+
+   		<command class="com.ptc.windchill.enterprise.object.forms.ConfigLinkNewDocumentFormProcessor"
+	    	method="execute" windowType="popup" url="/netmarkets/jsp/document/configurableLink_newDoc.jsp?invokedfrom=config_link_table"/>
+   </action>
+  </objecttype>
+  
+  <objecttype name="changeRequest" class="wt.change2.WTChangeRequest2" resourceBundle="com.ptc.windchill.enterprise.object.configurableLinkObjectResource">
+     <action name="configurableLink_newChangeRequest" uicomponent="CREATE_CHANGEREQUEST" ajax="component">
+         <description>Create a change request</description>
+         <command url="/netmarkets/jsp/changeRequest/configurableLink_newChangeRequest.jsp?invokedfrom=config_link_table" class="com.ptc.windchill.enterprise.object.forms.ConfigLinkNewChangeRequestFormProcessor" method="execute" windowType="popup"/>
+         <includeFilter name="sandboxSharingValidationSimple"/>
+         <includeFilter name="restrictGuestMembers"/>
+         <includeFilter name="showNewActionPreValidation"/>
+     </action>   
+  </objecttype>
+  
+  <objecttype name="changeNotice" class="wt.change2.WTChangeOrder2" resourceBundle="com.ptc.windchill.enterprise.object.configurableLinkObjectResource">
+      <action name="configurableLink_newChangeNotice" uicomponent="CREATE_CHANGENOTICE" ajax="component">
+         <description>Create change notice</description>
+         <command url="/netmarkets/jsp/changeNotice/configurableLink_newChangeNotice.jsp?invokedfrom=config_link_table" class="com.ptc.windchill.enterprise.object.forms.ConfigLinkNewChangeNoticeFormProcessor" method="execute" windowType="popup"/>
+         <includeFilter name="sandboxSharingValidationSimple"/>
+         <includeFilter name="restrictGuestMembers"/>
+         <includeFilter name="showNewActionPreValidation"/>
+      </action>
+   </objecttype>
+   
+   <objecttype name="problemReport" class="wt.change2.WTChangeIssue" resourceBundle="com.ptc.windchill.enterprise.object.configurableLinkObjectResource">
+      <action name="configurableLink_newProblemReport" uicomponent="CREATE_PROBLEMREPORT" ajax="component">
+         <description>Create a problem report</description>
+         <command url="/netmarkets/jsp/problemReport/configurableLink_newProblemReport?invokedfrom=config_link_table" class="com.ptc.windchill.enterprise.object.forms.ConfigLinkNewProblemReportFormProcessor" method="execute" windowType="popup"/>
+         <includeFilter name="restrictGuestMembers"/>
+         <includeFilter name="sandboxSharingValidationSimple"/>
+      </action>
+   </objecttype>
+</listofactions>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+
+<actionmodels>
+
+    <model name="apsbFindCheckedOutItemsToolBar">
+        <action name="checkinAndRemoveGWT" type="psb"/>
+        <action name="undocheckoutAndRemoveGWT" type="psb"/>
+        <action name="separator" type="separator"/>
+        <action name="compareInfoGWT" type="psb"/>
+    </model>
+
+    <model name="apsbFindCheckedOutItemsContextMenu">
+        <action name="checkinAndRemoveGWT" type="psb"/>
+        <action name="undocheckoutAndRemoveGWT" type="psb"/>
+        <action name="separator" type="separator"/>
+        <action name="compareInfoGWT" type="psb"/>
+    </model>
+	<!-- Check Out/In Actions -->
+	<model name="apsbCheckOutInContextSubMenu" resourceBundle="com.ptc.windchill.enterprise.associativity.part.apsb.apsbActionsRB">
+		<action name="asbCheckinGWT" type="asb"/>
+        <action name="asbCheckoutGWT" type="asb"/>
+        <action name="asbUndoCheckoutGWT" type="asb"/>
+	</model>
+	<!-- Expand Actions -->
+    <model name="apsbExpandContextSubmenuGWT" resourceBundle="com.ptc.windchill.enterprise.associativity.part.apsb.apsbActionsRB">
+      <action name="expandOneLevelGWT" type="cat" />
+      <action name="expandTwoLevelsGWT" type="cat" />
+      <action name="expandThreeLevelsGWT" type="cat" />
+      <action name="expandFourLevelsGWT" type="cat" />
+      <action name="expandFiveLevelsGWT" type="cat" />
+      <action name="separator" type="separator" />
+      <action name="expandAllSelectedLevelsGWT" type="cat" />
+      <action name="expandNLevelsGWT" type="cat" />
+	</model>
+	
+	<model name="apsbSearchObjectListContextMenu">
+    </model>
+    
+</actionmodels>

@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+<listofactions>
+
+   <objecttype name="annotation" class="wt.change2.SupportingMaterial" resourceBundle="com.ptc.windchill.enterprise.annotation.annotationActionsRB">
+
+     <action name="annotationSets" uicomponent="THIRD_LEVEL_RELATED_ANNOTATIONS">
+        <description>Annotation sets</description>
+        <includeFilter name="hideForChangeTemplates"/>
+     </action>
+
+     <action name="editAnnotationsForChgLnk" ajax="true">
+        <description>Edit annotations for change link</description>
+        <command class="" windowType="new"/>
+     </action>
+
+     <action name="editAnnotationsForChgLnk_Step">
+        <description>Edit annotations for change link step</description>
+        <command windowType="new"/>
+     </action>
+
+     <action name="viewAnnotationsForChgLnk">
+        <description>View annotations for change link</description>
+        <command class="" windowType="new"/>
+     </action>
+
+     <action name="viewAnnotationsForChgLnk_Step">
+        <description>View annotations for change link step</description>
+        <command class="" windowType="new"/>
+     </action>
+
+     <action name="PSEAnnotationsForChange" ajax="row">
+        <description>PSE annotations for change</description>
+        <command onClick="ptcChgLAH.handleToolbarAction(event,false,false)" class="com.ptc.windchill.enterprise.annotation.forms.AddRevisedPartsFormDelegate" method="execute" windowType="new"/>
+        <includeFilter name="hideForObjectInProject"/>
+     </action>
+
+     <action name="PSEAnnotationsForChange_step">
+        <description>PSE annotations for change step</description>
+        <component name="annotation.pseAnnotationsForChangeWizStep" windowType="wizard_step"/>
+     </action>
+
+     <action name="annotationStep" preloadWizardPage="false" required="false">
+        <description>Annotations step</description>
+        <command class="com.ptc.windchill.enterprise.annotation.forms.AnnotationsFormDelegate" windowType="wizard_step"/>
+     </action>
+
+     <action name="annotationPickerTable">
+        <description>Annotation picker table</description>
+        <component name="annotation.annotationPickerTable" class="" windowType="wizard_step"/>
+     </action>
+
+     <action name="annotationPicker" ajax="row">
+        <description>Annotation picker table</description>
+        <command class="com.ptc.windchill.enterprise.annotation.commands.AnnotationPickerCommands" method="addAnnotations" windowType="new"/>
+     </action>
+
+     <action name="annotationMiniInfoTable">
+        <description>Annotation mini info table</description>
+        <command class="" windowType="wizard_step"/>
+     </action>
+
+     <action name="annotationMiniInfo" ajax="false">
+        <description>Annotation mini info</description>
+        <command class="" windowType="new"/>
+     </action>
+
+     <action name="pasteAnnotations" ajax="row">
+        <description>Paste annotations</description>
+        <command class="com.ptc.windchill.enterprise.annotation.commands.PasteAnnotationCommands" method="paste"/>
+     </action>
+
+     <action name="annotationPasteSelect" uicomponent="PASTE" ajax="row">
+        <description>Paste select annotations</description>
+        <command class="com.ptc.windchill.enterprise.annotation.commands.PasteAnnotationCommands" method="pasteSelect" windowType="new" url="netmarkets/jsp/object/pasteSelect.jsp"/>
+     </action>
+     
+     <action name="remove" type="annotation">
+        <description>Right click action to remove an annotation from the Annotation table</description>
+        <command onClick="PTC.annotations.remove(event)" />
+     </action>
+
+   </objecttype>
+</listofactions>

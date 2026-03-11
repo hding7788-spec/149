@@ -1,0 +1,35 @@
+<%@page language="java" session="false" access="http|soap" contentType="text/xml"%>
+<%@taglib uri="http://www.ptc.com/infoengine/taglib/core" prefix="ie"%>
+<%@page import="java.io.*"%>
+<%@page import="java.util.*"%>
+<%@page import="ext.casc.integrate.mes.PPlanFilesProcessor"%>
+<%@page import=" wt.util.WTException"%>
+
+<!--com.infoengine.soap.rpc.def
+@param string number Argument processFileNumber 1.
+-->
+
+<%
+	String processFileNumber = (String)getParam("processFileNumber");
+	String guid = (String)getParam("guid");
+
+	String result = "";
+	PPlanFilesProcessor processor = new PPlanFilesProcessor();
+	try{
+		result = processor.getPartProcessFilesInfo(processFileNumber, guid);
+	}
+	catch (Exception e) {
+		result = e.getLocalizedMessage();
+	}
+	System.out.println("----result----"+result);
+%>
+
+<ie:webject name="Create-Group" type="GRP">
+    <ie:param name="ELEMENT" data="<%=result%>"/>
+    <ie:param name="CLASS" data="getPartProcessFilesInfo"/>
+    <ie:param name="GROUP_OUT" data="${@FORM[]group_out[]}"  default="output"/>
+</ie:webject>
+
+
+
+

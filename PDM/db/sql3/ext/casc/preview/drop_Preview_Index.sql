@@ -1,0 +1,5 @@
+exec WTPK.dropIndex('Preview$COMPOSITE1')
+exec WTPK.dropIndex('Preview$COMPOSITE2')
+exec WTPK.dropIndex('Preview$COMPOSITE6')
+exec WTPK.dropIndex('Preview$COMPOSITE13')
+exec WTPK.dropIndex('Preview$COMPOSITE20')

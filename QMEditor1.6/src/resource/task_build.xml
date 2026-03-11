@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="changeme" basedir=".">
+	
+    <target name="uncompress">
+        <echo message="unzip ${zipsrc} to ${zipdest}"/>
+        <unzip src="${zipsrc}" dest="${zipdest}" overwrite="true" />
+    </target>
+	
+    <target name="copydir">
+        <echo message="copy ${srcdir} to ${destdir}"/>
+        <copy todir="${destdir}" overwrite="true" >
+            <fileset dir="${srcdir}"/>
+        </copy>
+    </target>
+    
+</project>

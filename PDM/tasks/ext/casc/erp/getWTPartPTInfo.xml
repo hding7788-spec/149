@@ -1,0 +1,45 @@
+
+<%@page language="java" session="false" access="http|soap" contentType="text/xml"%>
+
+<%@taglib uri="http://www.ptc.com/infoengine/taglib/core" prefix="ie"%>
+<%@page import="java.io.*"%>
+<%@page import="java.util.*"%>
+<%@page import="ext.casc.integrate.bom.ProductBomService"%>
+<%@page import=" java.lang.Exception"%>
+
+<!--com.infoengine.soap.rpc.def
+
+@param string number Argument number 1.
+@param string batch Argument number 2.
+-->
+
+<%
+
+String number =  (String)getParam("number");
+
+String batch = (String)getParam("batch");
+
+
+
+String result = "";
+
+ProductBomService  bomService = new ProductBomService();
+try{
+         result =bomService.getWTPartPTInfo(number,  batch);
+}
+catch (Exception e) {
+            // TODO Auto-generated catch block
+           result = e.getLocalizedMessage();
+}
+System.out.println("----result----"+result);
+%>
+
+      <ie:webject name="Create-Group" type="GRP">
+            <ie:param name="ELEMENT" data="<%=result%>"/>
+           <ie:param name="CLASS" data="Status"/>
+           <ie:param name="GROUP_OUT" data="${@FORM[]group_out[]}"  default="output"/>
+        </ie:webject>
+
+
+
+

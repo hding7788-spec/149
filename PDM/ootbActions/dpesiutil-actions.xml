@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+<listofactions>
+        <objecttype name="dpesiutil"
+                resourceBundle="com.ptc.windchill.dpesiutil.DPEsiUtilResource">
+                <action name="setDefaultProcessStep" id="setDefaultProcessStep"
+                        required="false" hidden="true" afterJS="PTC.dpesiutil.validateSeletion"
+                        beforeJS="PTC.dpesiutil.selectAssociatedProcess">
+                        <component name="dpesiutil.mvc.selectProcessList"
+                                windowType="wizard_step" />
+                </action>
+                <action name="displayRelatedTxnTable">
+                        <description>Related transaction table in the third level navigation.</description>
+                        <command windowType="page" />
+                </action>
+                <action name="displayAssociatedDPImplJob">
+                        <description>Display Associated DPImplJob Details Page.</description>
+                        <command windowType="no_content" onClick="displayDPJobInfoPageOnParentWindow()" />
+                        <includeFilter name="relatedJobFilter"/>
+                </action>
+                <action name="associatedProcesses">
+                        <description>Table of Distributed Processes that are associated with a distribution target of type distributed process.</description>
+                        <component name="dpesiutil.associatedProcessTable"/>
+                </action>
+        </objecttype>
+</listofactions>

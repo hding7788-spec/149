@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<listofactions>
+  <objecttype name="docsb" resourceBundle="com.ptc.windchill.enterprise.doc.docsb.docsbActionsRB">      
+      <action name="docStructureGWT">
+         <command url="netmarkets/jsp/docsb/docsb.jsp"/>
+      </action>
+
+      <action name="downloadFilesGWT">
+         <command class="com.ptc.windchill.enterprise.doc.docsb.client.action.DownloadSelectedDocumentsAction"/>
+         <includeFilter name="com.ptc.windchill.enterprise.doc.docsb.client.filter.DownloadActionFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.doc.docsb.client.action.WTDocumentTypeFilter"/>
+      </action>
+
+      <action name="downloadPrimaryFileGWT">
+         <command class="com.ptc.windchill.enterprise.doc.docsb.client.action.DownloadDocumentAction"/>
+         <includeFilter name="com.ptc.windchill.enterprise.doc.docsb.client.filter.DownloadActionFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.doc.docsb.client.action.WTDocumentTypeFilter"/>
+      </action>
+
+      <action name="openPrimaryUrlGWT">
+         <command class="com.ptc.windchill.enterprise.doc.docsb.client.action.OpenPrimaryURLAction"/>
+         <includeFilter name="com.ptc.windchill.enterprise.doc.docsb.client.filter.OpenURLFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+      </action>
+
+      <action name="editDocMenuGWT">
+         <command class="com.ptc.cat.ui.client.action.NoAction"/>
+         <includeFilter name="com.ptc.windchill.enterprise.doc.docsb.client.action.WTDocumentTypeFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+      </action>
+
+      <action name="editDocGWT" ajax="component">
+         <command class="com.ptc.windchill.enterprise.doc.docsb.client.action.EditDocumentAction" method="execute" url="/ptc1/document/edit" windowType="popup"/>
+         <includeFilter name="com.ptc.windchill.enterprise.doc.docsb.client.action.WTDocumentTypeFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.CheckoutFilter"/>
+      </action>
+
+      <action name="insertNewDocStructureSplitGWT" uicomponent="CREATE_DOC" ajax="row">
+         <command class="com.ptc.windchill.enterprise.doc.docsb.client.action.InsertNewDocumentAction" method="execute" url="/ptc1/document/create?invokedfrom=docsb" windowType="popup"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.doc.docsb.client.action.WTDocumentTypeFilter"/>
+         <includeFilter name="disableForAdminLocked"/>
+      </action>
+
+      <action name="insertNewDocStructureGWT" uicomponent="CREATE_DOC" ajax="row">
+         <command class="com.ptc.windchill.enterprise.doc.docsb.client.action.InsertNewDocumentAction" method="execute" url="/ptc1/document/create?invokedfrom=docsb" windowType="popup"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.doc.docsb.client.action.WTDocumentTypeFilter"/>
+         <includeFilter name="disableForAdminLocked"/>
+      </action>
+
+      <action name="insertNewDocUsesGWT">
+         <command class="com.ptc.windchill.enterprise.doc.docsb.client.action.InsertNewDocumentAction" method="execute" url="/ptc1/document/create?invokedfrom=docsb" windowType="popup"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+         <includeFilter name="disableForAdminLocked"/>
+      </action>
+
+      <action name="insertMultiNewDocStructureGWT" uicomponent="CREATE_DOC" ajax="row">
+         <command class="com.ptc.windchill.enterprise.doc.docsb.client.action.InsertNewDocumentsAction" method="execute" url="/ptc1/document/createMulti?invokedfrom=docsb" windowType="popup"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.doc.docsb.client.action.WTDocumentTypeFilter"/>
+         <includeFilter name="disableForAdminLocked"/>
+      </action>
+
+      <action name="insertMultiNewDocUsesGWT">
+         <command class="com.ptc.windchill.enterprise.doc.docsb.client.action.InsertNewDocumentsAction" method="execute" url="/ptc1/document/createMulti?invokedfrom=docsb" windowType="popup"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+         <includeFilter name="disableForAdminLocked"/>       
+      </action>
+
+      <action name="insertExistingDocStructureGWT">
+         <command class="com.ptc.windchill.enterprise.doc.docsb.client.action.AddDocumentAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>  
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.doc.docsb.client.action.WTDocumentTypeFilter"/>
+         <includeFilter name="disableForAdminLocked"/>
+      </action>
+
+      <action name="insertExistingDocUsesGWT">
+         <command class="com.ptc.windchill.enterprise.doc.docsb.client.action.AddDocumentAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+         <includeFilter name="disableForAdminLocked"/>
+      </action>
+
+      <action name="reorderGWT">
+         <command class="com.ptc.windchill.enterprise.doc.docsb.client.action.ReorderDocumentAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.doc.docsb.client.filter.HasMoreThanOneChildrenFilter"/> 
+      </action>
+      
+      <action name="docsbExpandSubmenuGWT">
+           <command class="com.ptc.cat.ui.client.action.NoAction"/>
+       </action>
+
+       <action name="docsbEndExpandSubmenuGWT">
+           <command class="com.ptc.cat.ui.client.action.NoAction"/>
+       </action>
+
+      <action name="pasteFromClipboardToTreeGWT" uicomponent="PASTE">
+         <command class="com.ptc.windchill.enterprise.doc.docsb.client.action.PasteDocumentAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.doc.docsb.client.action.WTDocumentTypeFilter"/>
+      </action>
+
+      <action name="pasteFromClipboardToTableGWT" uicomponent="PASTE">
+         <command class="com.ptc.windchill.enterprise.doc.docsb.client.action.PasteDocumentAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+         <includeFilter name="disableForAdminLocked"/>
+      </action>      
+
+      <action name="pasteFromClipboardToTreeWithLargeIconGWT" uicomponent="PASTE">
+         <command class="com.ptc.windchill.enterprise.doc.docsb.client.action.PasteDocumentAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.doc.docsb.client.action.WTDocumentTypeFilter"/>
+         <includeFilter name="disableForAdminLocked"/>
+      </action>
+
+      <action name="checkoutWithLargeIconGWT">
+         <command class="com.ptc.cat.ui.client.internal.action.CheckoutAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.CheckinFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.doc.docsb.client.action.WTDocumentTypeFilter"/>
+      </action>
+      
+        <action name="checkoutSplitGWT">
+         <command class="com.ptc.cat.ui.client.internal.action.CheckoutAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.CheckinFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.doc.docsb.client.action.WTDocumentTypeFilter"/>
+         <includeFilter name="disableForAdminLocked"/>
+       </action>
+
+      <action name="checkoutGWT">
+         <command class="com.ptc.cat.ui.client.internal.action.CheckoutAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.CheckinFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.doc.docsb.client.action.WTDocumentTypeFilter"/>
+         <includeFilter name="disableForAdminLocked"/>
+         
+      </action>
+
+      <action name="checkoutAndDownloadGWT">
+         <command class="com.ptc.windchill.enterprise.doc.docsb.client.action.CheckoutAndDownloadAction"/>
+         <includeFilter name="com.ptc.windchill.enterprise.doc.docsb.client.filter.DownloadActionFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.CheckinFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.doc.docsb.client.action.WTDocumentTypeFilter"/>
+         <includeFilter name="disableForAdminLocked"/>
+      </action>
+
+      <action name="selectInTreeGWT">
+         <command class="com.ptc.cat.gxt.client.action.SelectInStructureTreeAction" />
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter" />
+      </action>
+
+      <action name="selectInTableGWT">
+         <command class="com.ptc.windchill.enterprise.doc.docsb.client.action.SelectDocumentInUsesTabAction" />
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter" />
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter" />
+         <includeFilter name="com.ptc.windchill.enterprise.doc.docsb.client.action.WTDocumentTypeFilter"/>
+      </action>
+
+  </objecttype>
+</listofactions>

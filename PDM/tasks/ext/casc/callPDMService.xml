@@ -1,0 +1,31 @@
+<?xml version="1.0" standalone="yes"?>
+<%@taglib uri="http://www.ptc.com/infoengine/taglib/core" prefix="ie"%>
+<%@page import="ext.casc.webservice.WebServiceCommand"%>
+<%@page import="ext.casc.webservice.WebServiceCommandInvoker"%>
+<%@page import="ext.casc.webservice.WebServiceCommandFactory"%>
+<%@page language="java" access="http|soap"%>
+
+<!--com.infoengine.soap.rpc.def
+@param string methodName
+@param string parameters
+@return string $(output[]result[])
+-->
+
+<ie:webject name="Create-Group" type="GRP">
+	<ie:param name="GROUP_OUT" data="output"/>
+</ie:webject>
+<%
+	String methodName = (String)getParam("methodName");//baiYuSynch
+	String parameters = (String)getParam("parameters");//{}
+	WebServiceCommand wscommand=WebServiceCommandFactory.getWebServiceCommand(methodName);
+	WebServiceCommandInvoker wsinvoker=new WebServiceCommandInvoker(wscommand);
+	String result = wsinvoker.callService(parameters);
+
+	Group output = getGroup("output");
+	Element element = new Element();
+	element.addAtt(new Att("result", result));
+	output.addElement(element);
+%>
+<ie:webject name="Return-Groups" type="GRP">
+	<ie:param name="GROUP_IN" data="output"/>
+</ie:webject>

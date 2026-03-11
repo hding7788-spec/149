@@ -1,0 +1,40 @@
+<%@page language="java" session="false" access="http|soap" contentType="text/xml"%>
+<%@taglib uri="http://www.ptc.com/infoengine/taglib/core" prefix="ie"%>
+<%@page import="java.io.*"%>
+<%@page import="java.util.*"%>
+<%@page import="ext.casc.integrate.mes.PbomDesignFilesProcessor"%>
+<%@page import=" wt.util.WTException"%>
+
+<!--com.infoengine.soap.rpc.def
+@param string number Argument processFileNumber 1.
+@param string version Argument fileVersionType 2.
+@param string version Argument fileVersion 3.
+@param string version Argument guid 4.
+-->
+
+<%
+	String processFileNumber = (String)getParam("processFileNumber");
+	String fileVersionType = (String)getParam("fileVersionType");
+	String fileVersion = (String)getParam("fileVersion");
+	String guid = (String)getParam("guid");
+
+	String result = "";
+	PbomDesignFilesProcessor processor = new PbomDesignFilesProcessor();
+	try{
+		result = processor.getPbomDesignFiles(processFileNumber, fileVersionType, fileVersion, guid);
+	}
+	catch (Exception e) {
+		result = e.getLocalizedMessage();
+	}
+	System.out.println("----result----"+result);
+%>
+
+<ie:webject name="Create-Group" type="GRP">
+    <ie:param name="ELEMENT" data="<%=result%>"/>
+    <ie:param name="CLASS" data="getPbomDesignFiles"/>
+    <ie:param name="GROUP_OUT" data="${@FORM[]group_out[]}"  default="output"/>
+</ie:webject>
+
+
+
+

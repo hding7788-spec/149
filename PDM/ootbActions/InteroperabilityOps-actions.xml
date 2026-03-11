@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+<objecttype name="sandbox" resourceBundle="wt.dataops.sandbox.sandboxActionsResource">
+        <!--sendToPDM is the toolbar action and  SBSendToPdm is row-level action -->
+        <action name="sendToPDM" ajax="page" selectRequired="true" multiselect="true">
+            <command class="wt.dataops.sandbox.processors.sendtopdm.SBSendToPdmFormProcessor" method="execute" windowType="popup"
+             onClick="onClickValidation(event,'sendToPDM')"/>
+        </action>
+
+		<action name="SBSendToPdm" ajax="page" selectRequired="true">
+            <command class="wt.dataops.sandbox.processors.sendtopdm.SBSendToPdmFormProcessor" method="execute" windowType="popup"/>
+        </action>
+
+        <action name="sendToPDMCollectObjectsWizStep" beforeJS="SendToPDM.step1Before" afterJS="SendToPDM.step1CollectTableContentsScript" >
+            <component name="sandbox.sendToPDMCollectObjTable" sendToPDMCollectObjTable="wizard_step" />
+            <command windowType="wizard_step"/> 
+        </action>
+
+        <action name="sendToPDMSetObjectAttributesWizStep" preloadWizardPage="false">
+            <component name="sandbox.sendToPDMSetObjectAttributes" windowType="wizard_step" />
+            <command windowType="wizard_step"/> 
+        </action>
+
+        <action name="convertToShare" selectRequired="true" enabledwhensuspended="true" renderType="PDM" installType="PDM|PJL">
+          <command windowType="popup" class="java.lang.Object" method="convertToShare"/>
+        </action>
+        
+        <action name="convertToShareTB" selectRequired="true" multiselect="true" renderType="PDM" enabledwhensuspended="true">
+          <command windowType="popup" class="java.lang.Object" method="convertToShare"/>
+        </action>
+
+	<!-- the onClick function gets called before the selectRequired property checks if any selection is made -->
+	<!-- so don't use the property and do the check in the onClick function instead -->
+	
+        <action name="keepcheckout" multiselect="true">
+            <command onClick="keepCheckoutClick(target,event,table)"  />
+        </action>
+
+        <action name="checkinonly" multiselect="true">
+            <command onClick="checkinOnlyClick(target,event,table)" />
+        </action>
+
+        <action name="collectObjects" renderType="GENERAL">
+            <description>Collect Related Objects</description>
+            <command onClick="openCollectorPicker(&apos;SBSendToPdm&apos;,event)" windowType="no_content"/>
+        </action>
+
+        <action name="remove" multiselect="true">
+            <command onClick="SendToPDM.sendToPDMRemove(target,event,table)" />
+        </action>
+
+        <action name="sendToPDMSetView" multiselect="true" selectRequired="true">
+            <description>The Set View toolbar action found in the Send to PDM Set Object Attributes step</description>
+            <command windowType="popup" class="" method="" onClick="onClickValidation(event,'sendToPDMSetView')"/>
+            <moreurlinfo>height=500,width=900</moreurlinfo>
+        </action>
+
+        <action name="sendToPDMSetLocation" ajax="row" multiselect="true">
+            <description>The Set Location toolbar action found in the Send to PDM Set Object Attributes step</description>
+            <component onClick="SendToPDM.launchFolderPicker(event)" />
+        </action>
+
+        <action name="manageIdentityConflicts">
+            <command windowType="popup"/>
+        </action>
+
+        <action name="manageIdentityConflictsWizStep">
+            <component name="sandbox.identityConflictsReportTable" identityConflictsReportTable="wizard_step" />
+            <command windowType="wizard_step"/>
+        </action>
+
+        <action name="replaceWithPDMObj" ajax="component">
+          <command class="wt.dataops.sandbox.processors.replacePrjObj.ReplacePrjObjFormProcessor" method="execute"
+                onClick="JCAConfirm(event,'wt.dataops.sandbox.sandboxResource.REPLACE_PROJ_OBJ_CONFIRMATION')"/>
+        </action>
+
+        <action name="replaceWithPDMObjTB" ajax="row" selectRequired="true" multiselect="true">
+          <command class="wt.dataops.sandbox.processors.replacePrjObj.ReplacePrjObjFormProcessor" method="execute"
+                onClick="onClickValidation(event,'replaceWithPDMObjTB')"/>
+        </action>
+
+        <action name="compareWithPDMObj">
+            <command windowType="popup"/>
+        </action>
+        
+        <action name="pstConvertToShare" selectRequired="true" enabledwhensuspended="true" renderType="PDM" installType="PDM|PJL">
+          <command windowType="popup" class="java.lang.Object" method="convertToShare"/>
+        </action>
+        <action name="pstSendToPdmTB" ajax="page" selectRequired="true" multiselect="true">
+          <command class="wt.dataops.sandbox.processors.sendtopdm.SBSendToPdmFormProcessor" method="execute" windowType="popup"
+           onClick="onClickValidation(event,'pstSendToPdmTB')"/>
+        </action>
+        <action name="pstSendToPdm" ajax="page" selectRequired="true">
+          <command class="wt.dataops.sandbox.processors.sendtopdm.SBSendToPdmFormProcessor" method="execute" windowType="popup"/>
+        </action>       
+        <action name="pstUpdateShare" selectRequired="true" enabledwhensuspended="true" renderType="PDM" installType="PDM|PJL">
+          <command windowType="popup" class="java.lang.Object"/>
+        </action>      
+    </objecttype>
+    
+    <objecttype name="sandbox" class="java.lang.Object">
+          <action name="SBAddToPrj" uicomponent="ADD_TO_PROJECT" enabledwhensuspended="true" renderType="PDM" installType="PDM|PJL" multiselect="true" selectRequired="true" resourceBundle="wt.dataops.sandbox.sandboxActionsResource">
+             <command windowType="popup" class="java.lang.Object" method="SBAddToPrj"/>
+             <includeFilter name="sandboxSharingValidationSimple"/>
+             <includeFilter name="ghostEpmDoc"/>
+          </action>
+          <action name="SBUpdatePrj" enabledwhensuspended="true" renderType="PDM" installType="PDM|PJL" resourceBundle="wt.dataops.sandbox.sandboxActionsResource">
+             <command windowType="popup" class="java.lang.Object" method="SBUpdatePrj"/>
+             <access name="update"/>
+          </action>
+          <action name="updateShareMultiSelect" selectRequired="true" multiselect="true" enabledwhensuspended="true" renderType="PDM" installType="PDM|PJL" resourceBundle="wt.dataops.sandbox.sandboxActionsResource">
+              <command windowType="popup" class="java.lang.Object"/>
+          </action>
+          <action name="updateShare" selectRequired="true" enabledwhensuspended="true" renderType="PDM" installType="PDM|PJL" resourceBundle="wt.dataops.sandbox.sandboxActionsResource">
+              <command windowType="popup" class="java.lang.Object"/>
+          </action>
+          <action name="projectRevision" installType="PDM|PJL" resourceBundle="com.ptc.core.ui.navigationRB">
+                <component name="interoperability.projectRevision"/>
+                <includeFilter name="hideForChangeTemplates"/> 		  		  				
+          </action>
+   </objecttype>
+
+    <objecttype name="object">
+      <action name="sandboxUndoCheckout" ajax="row" multiselect="true" selectRequired="true" resourceBundle="wt.dataops.sandbox.sandboxActionsResource">
+         <command onClick="onClickValidation(event,'sandboxUndoCheckout')" class="wt.dataops.sandbox.SandboxCommands" method="undoPDMCheckout"/>
+      </action>
+      <action name="sandboxUndoCheckoutDetails" ajax="row" resourceBundle="wt.dataops.sandbox.sandboxActionsResource">
+         <command onClick="JCAConfirm(event, 'wt.dataops.sandbox.sandboxResource.SANDBOX_CONFIRM_UNDO_CHK_OUT_MSG')" class="wt.dataops.sandbox.SandboxCommands" method="undoPDMCheckout"/>
+      </action>
+      <action name="sandboxCheckoutShareMultiSelect" multiselect="true" selectRequired="true" resourceBundle="wt.dataops.sandbox.sandboxActionsResource">
+         <command onClick="onClickValidation(event,'sandboxCheckoutShareMultiSelect')" class="com.ptc.netmarkets.interop.NmInteropCommands" method="convertShareToCheckOut" windowType="normal"/>
+		 <includeFilter name="disableForAdminLocked" />
+      </action>
+      <action name="sandboxCheckoutShare" resourceBundle="wt.dataops.sandbox.sandboxActionsResource">
+         <command class="com.ptc.netmarkets.interop.NmInteropCommands" method="convertShareToCheckOut"/>
+		 <includeFilter name="disableForAdminLocked" />
+      </action>
+      <action name="removeShare" ajax="row" resourceBundle="wt.dataops.sandbox.sandboxActionsResource">
+         <command onClick="onClickValidation(event,'removeShare_onclick')" class="wt.dataops.sandbox.SandboxCommands" method="removeShares"/>
+      </action>
+      <action name="removeShareTB" ajax="row" multiselect="true" selectRequired="true" resourceBundle="wt.dataops.sandbox.sandboxActionsResource">
+         <command onClick="onClickValidation(event,'removeShareTB')" class="wt.dataops.sandbox.SandboxCommands" method="removeShares"/>
+      </action>
+      <action name="pstUndoPdmCheckoutTB" ajax="Component" multiselect="true" selectRequired="true" resourceBundle="wt.dataops.sandbox.sandboxActionsResource">
+         <command onClick="onClickValidation(event,'sandboxUndoCheckout')" class="wt.dataops.sandbox.SandboxCommands" method="undoPDMCheckout"/>
+      </action>
+      <action name="pstUndoPdmCheckout" ajax="Component" resourceBundle="wt.dataops.sandbox.sandboxActionsResource">
+         <command onClick="JCAConfirm(event, 'wt.dataops.sandbox.sandboxResource.SANDBOX_CONFIRM_UNDO_CHK_OUT_MSG')" class="wt.dataops.sandbox.SandboxCommands" method="undoPDMCheckout"/>
+      </action>
+      <action name="pstConvertToPdmCheckoutTB" multiselect="true" selectRequired="true" resourceBundle="wt.dataops.sandbox.sandboxActionsResource">
+         <command onClick="onClickValidation(event,'sandboxCheckoutShareMultiSelect')" class="com.ptc.netmarkets.interop.NmInteropCommands" method="convertShareToCheckOut" windowType="normal"/>
+		 <includeFilter name="disableForAdminLocked" />
+      </action>
+      <action name="pstConvertToPdmCheckout" resourceBundle="wt.dataops.sandbox.sandboxActionsResource">
+         <command class="com.ptc.netmarkets.interop.NmInteropCommands" method="convertShareToCheckOut"/>
+		 <includeFilter name="disableForAdminLocked" />
+      </action>
+      <action name="pstRemoveShare" ajax="row" resourceBundle="wt.dataops.sandbox.sandboxActionsResource">
+         <command onClick="onClickValidation(event,'removeShare_onclick')" class="wt.dataops.sandbox.SandboxCommands" method="removeShares"/>
+      </action>
+      <action name="pstRemoveShareTB" ajax="row" multiselect="true" selectRequired="true" resourceBundle="wt.dataops.sandbox.sandboxActionsResource">
+         <command onClick="onClickValidation(event,'pstRemoveShareTB')" class="wt.dataops.sandbox.SandboxCommands" method="removeShares"/>
+      </action>
+      <action name="pstDelete" checkaccess="true" enabledwhensuspended="true" renderType="PDM" uicomponent="DELETE" resourceBundle="wt.dataops.sandbox.sandboxActionsResource">
+         <command windowType="popup" class="java.lang.Object" method="MULTI_OBJ_DELETE_DETAILS"/>
+      </action>
+      <action name="pstDeleteTB" ajax="Component" selectRequired="true" multiselect="true" uicomponent="DELETE" resourceBundle="wt.dataops.sandbox.sandboxActionsResource">
+         <command onClick="JCAConfirm(event, 'com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE')" class="wt.dataops.sandbox.SandboxCommands" method="pst_delete"/>
+      </action>
+    </objecttype>
+</listofactions>

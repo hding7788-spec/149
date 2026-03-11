@@ -1,0 +1,85 @@
+ResourceInfo.class=wt.tools.resource.EnumResourceInfo
+ResourceInfo.customizable=true
+ResourceInfo.deprecated=false
+ResourceInfo.UUID=f02e5a5a-f978-438f-be4d-93306237cc68
+
+
+# Entry Format (values equal to default value are not included)
+# <key>.value=
+# <key>.category=
+# <key>.comment=
+# <key>.argComment<n>=
+# <key>.constant=
+# <key>.customizable=
+# <key>.deprecated=
+# <key>.abbreviatedDisplay=
+# <key>.fullDisplay=
+# <key>.shortDescription=
+# <key>.longDescription=
+# <key>.order=
+# <key>.defaultValue=
+# <key>.selectable=
+
+# Entry Contents
+
+as_needed.value=as needed
+as_needed.shortDescription=as needed
+as_needed.order=20
+
+cu_m.value=cubic meters
+cu_m.shortDescription=m^3
+cu_m.order=70
+
+ea.value=each
+ea.comment=For example, how much quantity of a material would you need: 2 meters, 2 kilos, 2 each.
+ea.shortDescription=each
+ea.order=10
+ea.defaultValue=true
+
+kg.value=kilograms
+kg.shortDescription=kg
+kg.order=30
+
+l.value=liters
+l.shortDescription=l
+l.order=50
+
+m.value=meters
+m.shortDescription=m
+m.order=40
+
+sq_m.value=square meters
+sq_m.shortDescription=m^2
+sq_m.order=60
+
+bao.value=包
+bao.shortDescription=包
+bao.order=80
+
+tong.value=筒
+tong.shortDescription=筒
+tong.order=90
+
+ping.value=瓶
+ping.shortDescription=瓶
+ping.order=100
+
+zhang.value=张
+zhang.shortDescription=张
+zhang.order=110
+
+zhi.value=只
+zhi.shortDescription=只
+zhi.order=120
+
+zhi_2.value=支
+zhi_2.shortDescription=支
+zhi_2.order=130
+
+haosheng.value=毫升
+haosheng.shortDescription=毫升
+haosheng.order=140
+
+g.value=克
+g.shortDescription=g
+g.order=150

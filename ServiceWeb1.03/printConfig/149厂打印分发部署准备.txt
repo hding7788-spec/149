@@ -1,0 +1,77 @@
+使用前配置说明
+
+一、新增类型和存储库
+	（1）. 新增类型和属性
+		打印申请单		casc.sast.149.PRINTAPPLYRECORD
+		回收申请单		casc.sast.149.PRINTRECOVERFORM
+		遗失申请单		casc.sast.149.PRINTLOSEFORM
+		封存申请单		casc.sast.149.PRINTSTOREFORM
+		加盖印章申请单		casc.sast.149.PRINTSEALPLUS
+
+	（2）. 新增存储库：
+		打印分发管理库
+		新建存储库下新建五个文件夹，分别名为“打印申请单”，“回收申请单”，“遗失申请单”，“封存申请单”，“加盖印章申请单”。
+
+
+二、新增角色和组
+	（1）.新增角色
+		KUFANGGUANLIYUAN.value=库房管理员
+		KUFANGGUANLIYUAN.shortDescription=库房管理员
+		KUFANGGUANLIYUAN.order=3220
+
+		BUMENZILIAOYUAN.value=部门资料员
+		BUMENZILIAOYUAN.shortDescription=部门资料员
+		BUMENZILIAOYUAN.order=3230
+
+
+	(2).新增组：
+		X分厂资料员组（一到十分厂）
+		X分厂领导组（一到十分厂）
+		事业X部主任组（一到四部，一对应运载型号、二对应战术型号、三对应飞船型号、四对应新品型号）
+		档案室库管理员组
+		运载型号档案员组
+		飞船型号档案员组
+		战术型号档案员组
+		新品型号档案员组
+		档案室回收组
+
+
+三、权限配置
+	(1).功能入口权限配置
+
+	在casc_149.xconf中配置如下
+	<Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.casc.validator.RecoverRuleOfRoleValidator"
+				requestor="java.lang.Object"
+				selector="RecoverRuleOfRoleValidator"
+				cardinality="duplicate"/>
+	</Service>
+	Windchillshell中cd 文件所在目录   执行xconfmanager -i 文件名.xconf -p
+	文件名：casc_149.xconf
+	文件路径：codebase\ext\casc\conf\casc_149.xconf
+
+	注意：不执行xconfmanager命令的情况下
+	在Windchill目录下的codebase的service.properties中手动加入：
+	wt.services/svc/default/com.ptc.core.ui.validation.SimpleValidationFilter/PrintRuleValidator/java.lang.Object/0=ext.casc.validator.PrintRuleValidator/duplicate
+
+	过滤器生效后，针对于初版文件，档案员组中的用户可以在快速链接中“文件打印分发回收管理”中“厂所工艺文件”发起打印申请、加盖印章、回收、入库、封存以及导入，在“外来文件”中发起打印申请、加盖印章、回收、封存以及导入，在“厂内纸质文件”中发起打印申请、加盖印章、回收、封存。
+	针对于文件更改打印分发，档案员可在PDM系统文件更改流程签审完成后，自动启动文件回收流程中领取到文件更改回收任务，完成回收后可进行打印分发。
+	针对于特定的功能入口，部门资料员可完成文件的延迟和遗失操作。
+	档案员统一负责印章管理。
+	打印分发记录查询功能没有权限设置。
+
+
+	不需部署文件
+	149/src/ext/ases/technotice/CreateTechNoticeFormProcessor.java
+	ServiceWeb1.03/src/org/tempuri/
+	需对比部署文件：
+	codebase\netmarkets\jsp\customtemplates\
+
+
+
+
+
+
+
+
+

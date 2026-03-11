@@ -1,0 +1,213 @@
+ResourceInfo.class=wt.tools.resource.StringResourceInfo
+ResourceInfo.customizable=true
+ResourceInfo.deprecated=false
+
+
+# Entry Format (values equal to default value are not included)
+# <key>.value=
+# <key>.category=
+# <key>.comment=
+# <key>.argComment<n>=
+# <key>.constant=
+# <key>.customizable=
+# <key>.deprecated=
+# <key>.abbreviatedDisplay=
+# <key>.fullDisplay=
+# <key>.shortDescription=
+# <key>.longDescription=
+
+# Entry Contents
+
+#Create Envelope wizard action
+envelope.create.description.value=创建批量数据集
+envelope.create.description.comment=创建批量数据集
+envelope.create.title.value=创建批量数据集
+envelope.create.title.comment=创建批量数据集
+envelope.create.tooltip.value=创建批量数据集
+envelope.create.tooltip.comment=创建批量数据集
+envelope.create.icon.value=newobj.gif
+envelope.create.icon.comment=创建批量数据集
+
+envelope.createApproveForm.description.value=启动批量审签流程
+envelope.createApproveForm.description.comment=启动批量审签流程
+envelope.createApproveForm.title.value=启动批量审签流程
+envelope.createApproveForm.title.comment=启动批量审签流程
+envelope.createApproveForm.tooltip.value=启动批量审签流程
+envelope.createApproveForm.tooltip.comment=启动批量审签流程
+envelope.createApproveForm.icon.value=newobj.gif
+envelope.createApproveForm.icon.comment=启动批量审签流程
+
+envelope.createReleaseForm.description.value=启动打印申请流程
+envelope.createReleaseForm.description.comment=启动打印申请流程
+envelope.createReleaseForm.title.value=启动打印申请流程
+envelope.createReleaseForm.title.comment=启动打印申请流程
+envelope.createReleaseForm.tooltip.value=启动打印申请流程
+envelope.createReleaseForm.tooltip.comment=启动打印申请流程
+envelope.createReleaseForm.icon.value=newobj.gif
+envelope.createReleaseForm.icon.comment=启动打印申请流程
+
+envelope.createOuterdocForm.description.value=启动外来文档分发流程
+envelope.createOuterdocForm.description.comment=启动外来文档分发流程
+envelope.createOuterdocForm.title.value=启动外来文档分发流程
+envelope.createOuterdocForm.title.comment=启动外来文档分发流程
+envelope.createOuterdocForm.tooltip.value=启动外来文档分发流程
+envelope.createOuterdocForm.tooltip.comment=启动外来文档分发流程
+envelope.createOuterdocForm.icon.value=newobj.gif
+envelope.createOuterdocForm.icon.comment=启动外来文档分发流程
+
+envelope.createAntecedency.description.value=启动先行件申请单流程
+envelope.createAntecedency.description.comment=启动先行件申请单流程
+envelope.createAntecedency.title.value=启动先行件申请单流程
+envelope.createAntecedency.title.comment=启动先行件申请单流程
+envelope.createAntecedency.tooltip.value=启动先行件申请单流程
+envelope.createAntecedency.tooltip.comment=启动先行件申请单流程
+envelope.createAntecedency.icon.value=newobj.gif
+envelope.createAntecedency.icon.comment=启动先行件申请单流程
+
+envelope.createAntecedencyCancel.description.value=启动先行件取消单流程
+envelope.createAntecedencyCancel.description.comment=启动先行件取消单流程
+envelope.createAntecedencyCancel.title.value=启动先行件取消单流程
+envelope.createAntecedencyCancel.title.comment=启动先行件取消单流程
+envelope.createAntecedencyCancel.tooltip.value=启动先行件取消单流程
+envelope.createAntecedencyCancel.tooltip.comment=启动先行件取消单流程
+envelope.createAntecedencyCancel.icon.value=newobj.gif
+envelope.createAntecedencyCancel.icon.comment=启动先行件取消单流程
+
+envelope.createSuperaddition.description.value=启动追加先行件流程
+envelope.createSuperaddition.description.comment=启动追加先行件流程
+envelope.createSuperaddition.title.value=启动追加先行件流程
+envelope.createSuperaddition.title.comment=启动追加先行件流程
+envelope.createSuperaddition.tooltip.value=启动追加先行件流程
+envelope.createSuperaddition.tooltip.comment=启动追加先行件流程
+envelope.createSuperaddition.icon.value=newobj.gif
+envelope.createSuperaddition.icon.comment=启动追加先行件流程
+
+envelope.createCancelForm.description.value=启动作废申请单流程
+envelope.createCancelForm.description.comment=启动作废申请单流程
+envelope.createCancelForm.title.value=启动作废申请单流程
+envelope.createCancelForm.title.comment=启动作废申请单流程
+envelope.createCancelForm.tooltip.value=启动作废申请单流程
+envelope.createCancelForm.tooltip.comment=启动作废申请单流程
+envelope.createCancelForm.icon.value=newobj.gif
+envelope.createCancelForm.icon.comment=启动作废申请单流程
+
+envelope.envelopeObjects.description.value=关联数据
+envelope.envelopeObjects.description.comment=关联数据
+envelope.envelopeObjects.title.value=关联数据
+envelope.envelopeObjects.title.comment=关联数据
+envelope.envelopeObjects.tooltip.value=关联数据
+envelope.envelopeObjects.tooltip.comment=关联数据
+envelope.envelopeObjects.icon.value=newobj.gif
+envelope.envelopeObjects.icon.comment=关联数据
+
+envelope.updateEnvelope.description.value=编辑
+envelope.updateEnvelope.description.comment=编辑
+envelope.updateEnvelope.title.value=编辑
+envelope.updateEnvelope.title.comment=编辑
+envelope.updateEnvelope.tooltip.value=编辑
+envelope.updateEnvelope.tooltip.comment=编辑
+envelope.updateEnvelope.icon.value=multi_update.gif
+envelope.updateEnvelope.icon.comment=编辑
+
+envelope.deleteEnvelope.description.value=删除
+envelope.deleteEnvelope.description.comment=删除
+envelope.deleteEnvelope.title.value=删除
+envelope.deleteEnvelope.title.comment=删除
+envelope.deleteEnvelope.tooltip.value=删除
+envelope.deleteEnvelope.tooltip.comment=删除
+envelope.deleteEnvelope.icon.value=delete.gif
+envelope.deleteEnvelope.icon.comment=删除
+
+envelope.downloadContents.description.value=下载内容
+envelope.downloadContents.description.comment=下载内容
+envelope.downloadContents.title.value=下载内容
+envelope.downloadContents.title.comment=下载内容
+envelope.downloadContents.tooltip.value=下载内容
+envelope.downloadContents.tooltip.comment=下载内容
+envelope.downloadContents.icon.value=export.gif
+envelope.downloadContents.icon.comment=下载内容
+
+# Create Envelope Wizard labels
+envelope.create.DEFINE_ITEM_WIZ_STEP_LABEL.value=定义类型
+envelope.create.DEFINE_ITEM_WIZ_STEP_LABEL.comment=Label for define item step in the Create Envelope Wizard
+envelope.create.SET_ATTRIBUTES_WIZ_STEP_LABEL.value=设置属性
+envelope.create.SET_ATTRIBUTES_WIZ_STEP_LABEL.comment=Label for set attributes step in the Create Envelope Wizard
+envelope.create.SET_RELATEDDATA_WIZ_STEP_LABEL.value=设置关联数据
+envelope.create.SET_RELATEDDATA_WIZ_STEP_LABEL.comment=Used as the label for a wizard step
+envelope.create.ATTACHMENTS_WIZ_STEP_LABEL.value=设置附件
+envelope.create.ATTACHMENTS_WIZ_STEP_LABEL.comment=Used as the label for a wizard step
+envelope.create.LOCATION_LABEL.value=位置
+envelope.create.LOCATION_LABEL.comment=lable for Location in the Create Envelope Wizard
+
+#EnvelopeObjects
+ENVELOPE_RELATED_DATA.value=关联数据
+ENVELOPE_RELATED_DATA.constant=ENVELOPE_RELATED_DATA
+ENVELOPE_RELATED_DATA.comment=Related Data for Process Envelope
+
+ENVELOPE_CONTENTS_TEXT.value=批量数据集对象
+ENVELOPE_CONTENTS_TEXTconstant=ENVELOPE_CONTENTS_TEXT
+ENVELOPE_CONTENTS_TEXT.comment=Text for the 3rd level navigation link and the table header text
+
+STRUCTURE_TABLEVIEW_NAME.value=作为结构
+STRUCTURE_TABLEVIEW_NAME.constant=STRUCTURE_TABLEVIEW_NAME
+STRUCTURE_TABLEVIEW_NAME.comment=Text for tableview
+
+LIST_TABLEVIEW_NAME.value=作为列表
+LIST_TABLEVIEW_NAME.constant=LIST_TABLEVIEW_NAME
+LIST_TABLEVIEW_NAME.comment=Text for tableview
+
+ENVELOPE_NAME_LABEL.value=名称
+ENVELOPE_NAME_LABEL.constant=ENVELOPE_NAME_LABEL
+ENVELOPE_NAME_LABEL.comment=Name for tableview
+
+ENVELOPE_NUMBER_LABEL.value=编号
+ENVELOPE_NUMBER_LABEL.constant=ENVELOPE_NUMBER_LABEL
+ENVELOPE_NUMBER_LABEL.comment=Number for tableview
+
+ENVELOPE_UPDATESTAMP_LABEL.value=上次修改时间
+ENVELOPE_UPDATESTAMP_LABEL.constant=ENVELOPE_UPDATESTAMP_LABEL
+ENVELOPE_UPDATESTAMP_LABEL.comment=Updatestamp for tableview
+
+ENVELOPE_STATE_LABEL.value=状态
+ENVELOPE_STATE_LABEL.constant=ENVELOPE_STATE_LABEL
+ENVELOPE_STATE_LABEL.comment=State for tableview
+
+ENVELOPE_VERSION_LABEL.value=版本
+ENVELOPE_VERSION_LABEL.constant=ENVELOPE_VERSION_LABEL
+ENVELOPE_VERSION_LABEL.comment=Version for tableview
+
+ENVELOPE_UPDATE_ACTION_PERM_ERROR.value=您没有足够的权限，不能更新数据集对象
+ENVELOPE_UPDATE_ACTION_PERM_ERROR.constant=ENVELOPE_UPDATE_ACTION_PERM_ERROR
+ENVELOPE_UPDATE_ACTION_PERM_ERROR.comment=Update Error for ProcessEnvelope
+
+ENVELOPE_SELECT.value=请选择一个选项:
+ENVELOPE_SELECT.constant=ENVELOPE_SELECT
+ENVELOPE_SELECT.comment=SELECT for Download Print Contents
+
+ENVELOPE_ALL.value=所有内容
+ENVELOPE_ALL.constant=ENVELOPE_ALL
+ENVELOPE_ALL.comment=ALL for Download All Contents
+
+ENVELOPE_PRIMARY.value=主要内容
+ENVELOPE_PRIMARY.constant=ENVELOPE_PRIMARY
+ENVELOPE_PRIMARY.comment=PRIMARY for Download Primary Contents
+
+ENVELOPE_PRINT.value=电子签名文件
+ENVELOPE_PRINT.constant=ENVELOPE_PRINT
+ENVELOPE_PRINT.comment=PRINT for Download Print Contents
+
+ENVELOPE_WVS.value=可视化文件
+ENVELOPE_WVS.constant=ENVELOPE_WVS
+ENVELOPE_WVS.comment=WVS for Download Print Contents
+
+ENVELOPE_ATTACHMENT.value=附件文件
+ENVELOPE_ATTACHMENT.constant=ENVELOPE_ATTACHMENT
+ENVELOPE_ATTACHMENT.comment=ATTACHMENT for Download Attachment Contents
+
+ENVELOPE_DOWNLOAD.value=点击下载
+ENVELOPE_DOWNLOAD.constant=ENVELOPE_DOWNLOAD
+ENVELOPE_DOWNLOAD.comment=DOWNLOAD for Download Attachment Contents
+
+ENVELOPE_NOCONTENT.value=请从列表中选择下载列表:
+ENVELOPE_NOCONTENT.constant=ENVELOPE_NOCONTENT
+ENVELOPE_NOCONTENT.comment=NOCONTENT for Download Attachment Contents

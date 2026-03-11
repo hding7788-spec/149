@@ -1,0 +1,15 @@
+<%@page language="java" access="http|soap" %>
+<%@taglib uri="http://www.ptc.com/infoengine/taglib/core" prefix="ie"%>
+<%
+
+ String name= (String)getParam("name","");
+ 
+%>
+<ie:webject name="Query-Objects" type="OBJ">
+    <ie:param name="INSTANCE" data="$(@FORM[]supporting-adapter[*])" delim="!" valueSeparator="!" default="<%=com.infoengine.au.NamingService.getVMName()%>"/>
+    <ie:param name="ATTRIBUTE" data="name"/>
+    <ie:param name="ATTRIBUTE" data="creator.name"/>
+    <ie:param name="ATTRIBUTE" data="thePersistInfo.createStamp"/>
+    <ie:param name="TYPE" data="wt.pdmlink.PDMLinkProduct"/>
+    <ie:param name="WHERE" data="(name=*<%=name%>*)"/>
+</ie:webject>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="lifecycle template">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/ext/149/lifecycle template/149_EPM_LC.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/ext/149/lifecycle template/149_Doc_LC.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/ext/149/lifecycle template/149_QADoc_LC.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/ext/149/lifecycle template/149_Part_LC.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/ext/149/lifecycle template/149_Pattern_LC.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

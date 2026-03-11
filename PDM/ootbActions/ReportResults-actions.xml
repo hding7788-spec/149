@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+   <objecttype name="reportResult" resourceBundle="com.ptc.windchill.enterprise.report.actionsRB">
+      <action name="createChart" ajax="table">
+         <command class="" method="" onClick="PTC.charting.openChartOptions('adhocTable')"/>
+      </action>   
+   </objecttype>
+</listofactions>

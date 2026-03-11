@@ -1,0 +1,110 @@
+ResourceInfo.class=wt.tools.resource.StringResourceInfo
+ResourceInfo.customizable=true
+ResourceInfo.deprecated=false
+
+
+# Entry Format (values equal to default value are not included)
+# <key>.value=
+# <key>.category=
+# <key>.comment=
+# <key>.argComment<n>=
+# <key>.constant=
+# <key>.customizable=
+# <key>.deprecated=
+# <key>.abbreviatedDisplay=
+# <key>.fullDisplay=
+# <key>.shortDescription=
+# <key>.longDescription=
+
+# Entry Contents
+
+changerequest.AFFECT_DATA_TABLE.value=受影响的对象
+changerequest.AFFECT_DATA_TABLE.comment=受影响的对象
+
+
+
+changerequest.attributes.description.value=详细信息
+changerequest.attributes.description.comment=详细信息
+
+changerequest.affectedItems.description.value=受影响的对象
+changerequest.affectedItems.description.comment=受影响的对象
+
+changerequest.updateRequest.description.value=编辑
+changerequest.updateRequest.description.comment=编辑
+
+changerequest.deleteRequest.description.value=删除
+changerequest.deleteRequest.description.comment=删除
+
+
+STRUCTURE_TABLEVIEW_NAME.value=作为结构
+STRUCTURE_TABLEVIEW_NAME.constant=STRUCTURE_TABLEVIEW_NAME
+STRUCTURE_TABLEVIEW_NAME.comment=Text for tableview
+
+LIST_TABLEVIEW_NAME.value=作为列表
+LIST_TABLEVIEW_NAME.constant=LIST_TABLEVIEW_NAME
+LIST_TABLEVIEW_NAME.comment=Text for tableview
+
+
+changerequest_NUMBER_LABEL.value=编号
+changerequest_NUMBER_LABEL.constant=changerequest_NUMBER_LABEL
+changerequest_NUMBER_LABEL.comment=Number for tableview
+
+changerequest_NAME_LABEL.value=名称
+changerequest_NAME_LABEL.constant=changerequest_NAME_LABEL
+changerequest_NAME_LABEL.comment=Name for tableview
+
+changerequest_DESCRIPTION_LABEL.value=说明
+changerequest_DESCRIPTION_LABEL.constant=changerequest_DESCRIPTION_LABEL
+changerequest_DESCRIPTION_LABEL.comment=Description for tableview
+
+changerequest_UPDATESTAMP_LABEL.value=上次修改时间
+changerequest_UPDATESTAMP_LABEL.constant=changerequest_UPDATESTAMP_LABEL
+changerequest_UPDATESTAMP_LABEL.comment=Updatestamp for tableview
+
+changerequest_STATE_LABEL.value=状态
+changerequest_STATE_LABEL.constant=changerequest_STATE_LABEL
+changerequest_STATE_LABEL.comment=State for tableview
+
+changerequest_VERSION_LABEL.value=版本
+changerequest_VERSION_LABEL.constant=changerequest_VERSION_LABEL
+changerequest_VERSION_LABEL.comment=Version for tableview
+
+General Attributes.value=基本属性
+General Attributes.constant=General_Attributes
+General Attributes.comment=基本属性
+
+avidmtype.value=类型
+avidmtype.constant=avidmtype
+avidmtype.comment=类型
+
+
+requesttype.value=请求类别
+requesttype.constant=requesttype
+requesttype.comment=请求类别
+
+
+requestproprity.value=请求优先级
+requestproprity.constant=requestproprity
+requestproprity.comment=请求优先级
+
+
+template.value=模板
+template.constant=template
+template.comment=模板
+
+
+solution.value=解决方案
+solution.constant=solution
+solution.comment=解决方案
+
+remark.value=备注
+remark.constant=remark
+remark.comment=备注
+
+cost.value=成本
+cost.constant=cost
+cost.comment=成本
+
+implement.value=落实意见
+implement.constant=implement
+implement.comment=落实意见

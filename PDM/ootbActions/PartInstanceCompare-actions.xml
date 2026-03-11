@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+
+   <objecttype name="partInstanceCompare" class="" resourceBundle= "com.ptc.windchill.enterprise.instance.partInstanceCompare.partInstanceCompareActionsRB">
+
+      <action name="launchPartInstanceCompare">
+		<command windowType="popup"/>
+		<includeFilter name="hideForObjectInProject"/>
+	  </action>
+      
+      <action name="picEditFilterGWT">
+        <command class="com.ptc.windchill.enterprise.instance.partInstanceCompare.client.action.PICEditECAction"/>
+        <includeFilter name="hideForObjectInProject"/>
+      </action>
+
+   </objecttype>
+
+</listofactions>

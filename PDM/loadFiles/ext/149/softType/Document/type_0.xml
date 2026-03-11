@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE NmLoader
+  SYSTEM "standardX20.dtd">
+<NmLoader>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>149IBA</csvname>
+      <csvhierarchyDisplayName>149IBA</csvhierarchyDisplayName>
+      <csvorganizerPaths></csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name/>
+      <csvdescription/>
+      <csvdata_type>ORG</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier/>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>SUBSYSTEM</csvname>
+      <csvhierarchyDisplayName>分系统代号</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>分系统代号</csvdisplay_name>
+      <csvdescription>分系统代号</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>SUBSYSTEM</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>Format</csvname>
+      <csvhierarchyDisplayName>幅面</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>幅面</csvdisplay_name>
+      <csvdescription>幅面</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>Format</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>DesignDept</csvname>
+      <csvhierarchyDisplayName>设计单位</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>设计单位</csvdisplay_name>
+      <csvdescription>设计单位</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>DesignDept</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>FileStatus</csvname>
+      <csvhierarchyDisplayName>文件状态</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>文件状态</csvdisplay_name>
+      <csvdescription>文件状态</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>FileStatus</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>SUBTYPE</csvname>
+      <csvhierarchyDisplayName>小类</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>小类</csvdisplay_name>
+      <csvdescription>小类</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>SUBTYPE</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>CINDEX</csvname>
+      <csvhierarchyDisplayName>图号</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>图号</csvdisplay_name>
+      <csvdescription>图号</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>CINDEX</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>SECRET</csvname>
+      <csvhierarchyDisplayName>密级</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>密级</csvdisplay_name>
+      <csvdescription>密级</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>SECRET</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>PINDEX</csvname>
+      <csvhierarchyDisplayName>所属产品</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>所属产品</csvdisplay_name>
+      <csvdescription>所属产品</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>PINDEX</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>PAGE</csvname>
+      <csvhierarchyDisplayName>页数</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>页数</csvdisplay_name>
+      <csvdescription>页数</csvdescription>
+      <csvdata_type>INT</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>PAGE</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>DEPT</csvname>
+      <csvhierarchyDisplayName>编制部门</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>编制部门</csvdisplay_name>
+      <csvdescription>编制部门</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>DEPT</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>CHGREASON</csvname>
+      <csvhierarchyDisplayName>原因</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>原因</csvdisplay_name>
+      <csvdescription>原因</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>CHGREASON</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>PHASE_CODE</csvname>
+      <csvhierarchyDisplayName>阶段标记</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>阶段标记</csvdisplay_name>
+      <csvdescription>阶段标记</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>PHASE_CODE</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>GZLOGO</csvname>
+      <csvhierarchyDisplayName>关重标识</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>关重标识</csvdisplay_name>
+      <csvdescription>关重标识</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>GZLOGO</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>EFFDATE</csvname>
+      <csvhierarchyDisplayName>有效期限</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>有效期限</csvdisplay_name>
+      <csvdescription>有效期限</csvdescription>
+      <csvdata_type>TIME</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>EFFDATE</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+</NmLoader>

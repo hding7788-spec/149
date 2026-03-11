@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+<listofactions>
+   <objecttype name="rule" class="wt.rule.TypeBasedRule" resourceBundle="com.ptc.core.rule.ruleResource">
+      <action name="listRules" enabledwhensuspended="true">
+         <component name="rule.listRules" windowType="page"/>
+      </action>
+      <action name="createRule" ajax="row">
+         <command class="com.ptc.core.rule.forms.CreateRuleFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="downloadCompositeRule" ajax="row">
+         <command class="com.ptc.core.rule.forms.DownloadCompositeFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="downloadCompositeRuleStep" ajax="row" afterJS="PTC.rule.validateType">
+         <command windowType="wizard_step"/>
+      </action>
+      <action name="downloadRuleRow" ajax="row">
+         <command windowType="popup"/>
+      </action>
+      <action name="enableRuleRow" ajax="row" selectRequired="true">
+         <command class="com.ptc.core.rule.commands.RuleCommands" method="enableRule"/>
+      </action>
+      <action name="disableRuleRow" ajax="row" selectRequired="true">
+         <command class="com.ptc.core.rule.commands.RuleCommands" method="disableRule"/>
+      </action>
+      <action name="editRuleRow" ajax="row">
+      	<command class="com.ptc.core.rule.forms.EditRuleFormProcessor" method="execute" windowType="popup"/>
+      </action>    
+   </objecttype>   
+</listofactions>

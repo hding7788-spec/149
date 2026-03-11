@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+<listofactions>
+   <objecttype name="effectivity" class="java.lang.Object" resourceBundle="com.ptc.windchill.enterprise.effectivity.effectivityActionsRB">
+      <action name="setEffectivityOnViewPage" selectRequired="true">
+          <command class="com.ptc.windchill.enterprise.effectivity.forms.EffectivityFormProcessor" method="execute" windowType="new"/>
+          <includeFilter name="hideForObjectInProject"/>
+          <includeFilter name="hideForChangeTemplates"/>          
+      </action>
+      <action name="setEffectivityOnWizard" selectRequired="true">
+          <command class="com.ptc.windchill.enterprise.effectivity.forms.SetEffectivityOnChangeFormProcessor" method="execute" windowType="new" onClick="eff_setFormData_LaunchClient(event,false)"/>
+          <includeFilter name="hideForObjectInProject"/>
+          <includeFilter name="hideForChangeTemplates"/>
+          <includeFilter name="hideForAddToChangeTask"/>
+      </action>
+
+      <action name="viewEffectivityOnViewPage" selectRequired="true">
+         <command  windowType="new" />
+         <includeFilter name="hideForObjectInProject"/>
+         <includeFilter name="hideForChangeTemplates"/>
+      </action>
+      <action name="viewEffectivityOnWizard" selectRequired="true">
+         <command  windowType="new" onClick="eff_setFormData_LaunchClient(event,true)" />
+         <includeFilter name="hideForObjectInProject"/>
+         <includeFilter name="hideForChangeTemplates"/>
+         <includeFilter name="hideForAddToChangeTask"/>
+      </action>
+	  
+      <action name="plannedEffTable">
+      </action>
+      <action name="effTableForPartsAndMPMLinkInfoPage" uicomponent="THIRD_LEVEL_EFFECTIVITY">
+         <command class="com.ptc.windchill.enterprise.effectivity.forms.EffectivityFormProcessor" method="execute" windowType="new" />
+      </action>
+         
+      <action name="set_updateEffectivity" ajax="row" selectRequired="true">
+         <command onClick="SetEffActionHandler.setSelectedEffGroupOids()" windowType="new"/>
+       </action>
+         
+      <action name="addEffectivity" ajax="row" selectRequired="true">
+         <command onClick="SetEffActionHandler.copyAndAddEffectivity()" windowType="no_content"/>
+      </action>
+        
+      <action name="addEffectivityForPartsAndMPMLinkInfoPage"  ajax="page" >
+         <command  class="com.ptc.windchill.enterprise.effectivity.forms.AddEffectivityFormProcessor" method="execute" windowType="new"/>
+      </action>
+               
+      <action name="modifyEffectivity" ajax="page" >
+          <command  onClick="setEffGroupValueInForm(event, false)" class="com.ptc.windchill.enterprise.effectivity.forms.ModifyEffectivityFormProcessor" method="execute" windowType="new"/>            
+      </action>
+      
+       <action name="removeEffectivity" selectRequired="true" multiselect="true" ajax="page">
+         <command onClick="SetEffActionHandler.removeEffectivityStatements(event)" class="com.ptc.windchill.enterprise.effectivity.EffectivityCommands" method="deleteEffectivityStatements" selectRequired="true"/>
+      </action>
+        
+      <action name="specifyPropagation" ajax="row">
+           <command onClick="setEffGroupValueInForm(event, true)" windowType="new"/>                       
+      </action>
+         
+      <action name="viewByVersion" ajax="row"  >
+           <command  onClick="setEffGroupValueInForm(event, true)" windowType="new"/>               
+      </action>
+      
+      <action name="addEffectivityStep" id="addEffectivityStep" afterJS="eff_validateFields"> 
+           <command  windowType="wizard_step"/>                
+      </action>
+      
+     <action name="modifyEffectivityStep" id="modifyEffectivityStep" afterJS="eff_validateFields"> 
+           <command  windowType="wizard_step"/>                
+      </action>      
+      
+      <action name="effTableStep" id="effTableStep" afterJS="eff_validateFields" >
+           <command  windowType="wizard_step"/>                
+      </action>
+      
+      <action name="set_updateEffectivityStep" id="set_updateEffectivityStep" afterJS="setEffOnChangeLink"> 
+           <command  windowType="wizard_step"/>                
+      </action>
+      
+      <action name="specifyPropagationStep" id="specifyPropagationStep">
+           <command   windowType="wizard_step"/>                
+      </action> 
+      
+      <action name="viewByVersionStep" id="viewByVersionStep" afterJS="eff_createHiddenFields">
+           <command  windowType="wizard_step"/>                
+      </action>   
+                
+      <action name="plannedEffTableStep" id="plannedEffTableStep">
+           <command  windowType="wizard_step"/>                
+      </action> 
+      
+      <action name="setContext" ajax="row" selectRequired="true">
+             <command windowType="popup"/>                     
+      </action>
+
+      <action name="removeEffStatements" renderType="GENERAL" selectRequired="true">
+           <command onClick="SetEffActionHandler.removeEffectivityStatements(event)" windowType="no_content"/>
+      </action>
+      
+      <action name="fulfillChangeActionsStep" id="fulfillChangeActionsStep" uicomponent="FULFILL_CHANGE_ACTION">
+           <command  windowType="wizard_step"/>                
+      </action> 
+
+      <action name="undoFulfillChangeActionInfoPage" ajax="page" uicomponent="UNDO_FULFILL_CHANGE_ACTION">
+           <command class="com.ptc.windchill.enterprise.effectivity.commands.ChangeActionCommands" method="undoFulFillChangeAction" onClick="confirmUndoFulfillChangeAction(event)"/> 
+      </action>
+
+      <action name="undoFulfillChangeActionsStep" id="undoFulfillChangeActionsStep" uicomponent="UNDO_FULFILL_CHANGE_ACTION">
+           <command  windowType="wizard_step"/>         
+      </action>            
+
+       <action name="setEffectivityRangePicker" id="setEffectivityRangePickerId" resourceBundle="com.ptc.windchill.enterprise.effectivity.client.SetEffectivityRangePickerMessages">
+           <command windowType="popup"/>         
+      </action>
+	  
+	  <action name="setEffectivityRangeWizStep" id="setEffectivityRangeWizStepId" resourceBundle="com.ptc.windchill.enterprise.effectivity.client.SetEffectivityRangePickerMessages">
+           <command windowType="wizard_step"/>         
+      </action> 
+
+	  <action name="okButton" id="setEffectivityRange_ok_btn" resourceBundle="com.ptc.windchill.enterprise.effectivity.client.SetEffectivityRangePickerMessages">
+		 <command class="" method="" windowType="page" url="javascript:setEffectivityRangeSubmit()"/>
+	  </action>
+
+	  <action name="closeButton" id="setEffectivityRange_close_btn" resourceBundle="com.ptc.windchill.enterprise.effectivity.client.SetEffectivityRangePickerMessages">
+		  <command class="" method="" windowType="page" url="javascript:wfWindowClose()"/>
+	  </action> 
+
+   </objecttype>
+   
+</listofactions>

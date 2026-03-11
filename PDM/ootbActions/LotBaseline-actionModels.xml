@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+
+<actionmodels resourceBundle="com.ptc.windchill.lotbaseline.data.lotBaselineResource">
+
+    <model name="lotBaselineTabSet" >
+        <submodel name="infoDetails"/>
+        <submodel name="relatedTab" />
+        <submodel name="baselineObjectsTab" />
+        <submodel name="lotBaselineInfoHistoryTab"/>
+        <submodel name="lotBaselineInfoRelatedItemsTab"/>
+    </model>
+
+    <model name="infoDetails" resourceBundle="com.ptc.core.ui.navigationRB">
+        <action name="primaryAttributes" type="object"/>
+        <action name="attributes" type="object"/>
+    </model>
+
+    <model name="relatedTab" resourceBundle="com.ptc.windchill.lotbaseline.data.lotBaselineResource"> <!-- Action model related tab on Variant Baseline info page-->
+     	<action name="productVariantsTable" type="lotbaseline"/>
+    </model>
+     <model name="baselineObjectsTab" resourceBundle="com.ptc.windchill.lotbaseline.data.lotBaselineResource"> <!-- Action model Baseline Objects tab on Variant Baseline info page-->
+     	<action name="lotBaselineObjectsTable" type="lotbaseline"/>
+    </model>
+     <model name="LotBaselineObjectsTableToolbar"> <!-- Action model for table toolbar on Baseline Objects table-->
+        <action name="addLotBaseLineObjects"  type="lotbaseline" shortcut="true"/>
+        <action name="removeLotBaseLineObjects" type="lotbaseline" shortcut="true"/>
+    	<action name="editLotBaseLineObjects"  type="lotbaseline" shortcut="true"/>
+    	<action name="list_copy" type="object" shortcut="true"/>
+    	<action name="pasteVariantBaselineObjects" type="lotbaseline" shortcut="true"/>
+    	<action name="separator" type="separator"/>
+    	<action name="track_new_work_table" type="resourceAssignment" /><!-- Track new Work against subject -->
+    	<action name="new_plan_activity_table" type="planActivity" /><!-- New Plan Activity against subject -->      
+     </model>
+    <model name="ProductVariantsTableToolbar"> <!-- Action model for table toolbar on product variants table-->
+    	<action name="addProductVariantToLot"  type="lotbaseline" shortcut="true"/>
+     	<action name="removeProductVariants" type="lotbaseline" shortcut="true"/>
+     </model>
+
+    <model name="third_level_nav_lotbaseline">
+        <submodel name="lotbaselineGeneral"/>
+        <submodel name="lotBaselineRelatedItems"/>
+        <submodel name="lotBaselineHistory"/>
+    </model>
+    
+    <model name="lotbaselineGeneral" resourceBundle="com.ptc.windchill.lotbaseline.data.lotBaselineResource">
+        <action name="primaryAttributes" type="object"/>
+        <action name="attributes" type="object"/>
+    </model>
+    
+    <model name="lotBaselineRelatedItems" resourceBundle="com.ptc.windchill.lotbaseline.data.lotBaselineResource">
+        <action name="productVariantsTable" type="lotbaseline"/>
+        <action name="lotBaselineObjectsTable" type="lotbaseline"/>
+		<action name="scheduledDeliverables" type="planActivity"/>             <!-- PlanActivities which act as Scheduled Deliverables. -->
+    </model>
+    
+     <model name="lotBaselineHistory" resourceBundle="com.ptc.windchill.lotbaseline.data.lotBaselineResource">
+       <action name="timelineHistory" type="history"/>
+       <action name="maturityHistory" type="history"/>
+       <action name="processHistory" type="workflow"/>
+       <action name="legacyLCHistory" type="history"/>
+       <action name="moveHistory" type="object"/>         
+       <action name="renameHistory" type="object"/>
+    </model>
+    
+     <model name="lotBaselineInfoHistoryTab" resourceBundle="com.ptc.windchill.lotbaseline.data.lotBaselineResource">
+       <action name="maturityHistory" type="history"/>
+    </model>
+   
+
+    <!-- Lot configuration information page Actions list -->
+    <model name="more variant baseline actions" menufor="wt.lotbaseline.LotBaseline">
+        <action name="view" type="object"/>									    <!-- View Information -->
+        <action name="separator" type="separator"/>
+        <action name="openInMatrixEditorRMB" type="productfamily"/>  <!--Matrix editor for selected objects-->
+        <action name="separator" type="separator"/>
+        <action name="editLotBaseline"   type="lotbaseline"/>                  <!-- Edit -->
+        <action name="separator" type="separator"/>
+        <action name="updateProductVariants"  type="lotbaseline"/>
+        <action name="addLotBaseLineObjectsVariantTableAction"  type="lotbaseline"/>
+        <action name="editLotBaseLineObjects" type="lotbaseline"/>
+        <action name="separator" type="separator"/>
+        <action name="MULTIRENAME" type="pdmObject"/>
+        <action name="CONTAINERMOVE" type="pdmObject"/>
+        <action name="lotSetState" type="lotbaseline"/> 							<!-- Set State -->
+        <action name="delete_object" type="object"/>							<!-- Delete Variant Baseline -->
+        <action name="reassignLC" type="lifecycle"/> 							<!-- Reassign Life Cycle -->
+        <action name="resetTeam" type="team"/>
+        <action name="separator" type="separator"/>
+        <action name="track_new_work" type="resourceAssignment" /><!-- Track new Work against subject of deliverable-->
+        <action name="new_plan_activity" type="planActivity" /><!-- New Plan Activity against subject -->      
+    </model>
+
+    <model name="more variant baseline actions new">
+    </model>
+
+    <model name="more variant baseline actions add">
+    </model>
+
+   
+
+    <model name="LotBaselineRelatedProductVariantToolBar">
+        <action name="related_product_variant_create_wizard_lotbaseline" type="lotbaseline" shortcut="true"/>
+        <action name="lc_related_delete_described" type="lotbaseline" shortcut="true"/>
+    </model>
+
+    <model name="lotBaselineVariantSpecAction">
+    	<action name="addProductVariants"  type="lotbaseline" shortcut="true"/>
+		<action name="removeVariants" type="lotbaseline" shortcut="true"/>
+	</model>
+    <model name="UpdateLotBaselineVariantTableAction">
+    	<action name="searchAddVariantsToUpdateTable"  type="lotbaseline" shortcut="true"/>
+		<action name="removeVariants" type="lotbaseline" shortcut="true"/>
+	</model>
+
+    <model name="LotBaselineSearchResultTableToolbar">
+        <action name="removeLotBaselines" type="lotbaseline" shortcut="true"/>
+    </model>
+
+    <model name="EditLotBaselineObjectsTableToolbar"> <!-- Action model for table toolbar on product variants table-->
+        <action name="editProperties" type="lotbaseline" shortcut="true"/>
+    </model>   
+
+	<model name="AddLotBaselineObjectsTableToolbar"> <!-- Action model for table toolbar on product variants table-->
+     	<action name="addPartToLotBaseline"  type="lotbaseline" shortcut="true"/>
+     	<action name="removePartFromLotBaseline" type="lotbaseline" shortcut="true"/>
+        <action name="editProperties" type="lotbaseline" shortcut="true"/>
+     </model> 
+
+    <model name="partmaster details page actions">
+    </model>
+    
+    
+    <model name="RelatedLotBaselinesTableToolbar"> 
+        <action name="openInMatrixEditorRMB" type="productfamily" shortcut="true"/>  <!--Matrix editor for selected objects-->
+    </model>
+
+    <model name="ProductFamily_LotBaselines.table.toolbar">
+        <action name="createLotBaselineJCA" type="lotbaseline" shortcut="true" />
+    </model>
+
+</actionmodels>

@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+
+
+  <objecttype name="part" class="wt.part.WTPart" resourceBundle="com.ptc.windchill.uwgm.cadx.createecaddesign.documentECADResource">
+     <action name="createPartFromBOMEditor" uicomponent="CREATE_PART" ajax="row">
+       <command class="com.ptc.windchill.uwgm.cadx.EcadActions.CreatePartFromBOMEditorFormProcessor" method="execute" windowType="popup" 
+       url="/netmarkets/jsp/part/createPartWizard.jsp"/>
+       <includeFilter name="showNewActionPreValidation"/>
+	     <moreurlinfo>height=620,width=620</moreurlinfo>
+     </action>
+    <action name="removeRowsDerived" renderType="GENERAL" selectRequired="true">
+          <command onClick="rowHandler.removeRowsFromParentTable(event, 'com.ptc.windchill.uwgm.cadx.createecaddesign.documentECADResource.JS_CONFIRM_REMOVE_ROWS');" windowType="no_content"/>
+    </action>
+    <action name="convertVRToOR" enabledwhensuspended="true">
+          <command windowType="popup"/>
+     </action>
+  </objecttype>
+
+
+  <objecttype name="document" class="wt.doc.WTDocument" resourceBundle="com.ptc.windchill.uwgm.cadx.createecaddesign.documentECADResource">
+    <action name="createECADDesign" ajax="page">
+      <command class="com.ptc.windchill.uwgm.cadx.createecaddesign.forms.CreateECADDesignFormProcessor" 
+      method="execute" url="netmarkets/jsp/document/createECADDesign.jsp"
+      windowType="popup" />
+	  <moreurlinfo>height=600,width=670</moreurlinfo>
+    </action>
+
+    <action name="defineDesign" required="true" preloadWizardPage="true" >
+      <component name="document.defineDesign" typeBased="true" windowType="wizard_step" />
+    </action>
+
+    <action name="setSchematicAttributes" required="true" preloadWizardPage="false" hidden="true" beforeJS="setSchematicAttributesBefore" afterVK="setAttributesWizStep">
+      <command windowType="wizard_step" />
+    </action>
+
+    <action name="setBoardAttributes" preloadWizardPage="false" required="true" hidden="true" beforeJS="setBoardAttributesBefore" afterVK="setAttributesWizStep">
+      <command windowType="wizard_step" />
+    </action>
+
+    <action name="setGenericAttributes" required="true" preloadWizardPage="false" hidden="true" beforeJS="setGenericAttributesBefore" afterVK="setAttributesWizStep">
+      <command windowType="wizard_step" />
+    </action>
+
+    <action name="addSchematicDerivedObject" >
+      <command onClick="addNewRow(table.id,'schematic')" ></command>
+    </action>
+
+    <action name="addSchematicMultipleDerivedObjects" >
+      <command onClick="add5NewRows(table.id,'schematic')" ></command>
+    </action>
+
+    <action name="addBoardDerivedObject" >
+      <command onClick="addNewRow(table.id,'board')" ></command>
+    </action>
+
+    <action name="addBoardMultipleDerivedObjects" >
+      <command onClick="add5NewRows(table.id,'board')" ></command>
+    </action>
+
+    <action name="setDerivedObjects" ajax="row" id="setDerivedObjects" preloadWizardPage="false"  required="true" hidden="true" afterJS="validateDerivedObjectsStep">
+      <command windowType="wizard_step" url="netmarkets/jsp/document/setDerivedObjects.jsp"/>
+    </action>
+
+    <action name="addScematicDerivedObjects" required="false" preloadWizardPage="false" hidden="true" >
+      <component name="document.addScematicDerivedObjects" typeBased="true" windowType="wizard_step"/>
+    </action>
+
+    <action name="addBoardDerivedObjects" required="false" preloadWizardPage="false" hidden="true" >
+      <component name="document.addBoardDerivedObjects" typeBased="true" windowType="wizard_step"/>
+    </action>
+
+  </objecttype>
+  
+  <objecttype name="pdmObject" class="wt.fc.WTObject" resourceBundle="com.ptc.windchill.uwgm.cadx.EcadActions.ecadActionsResource">
+
+     <action name="editRelationships" enabledwhensuspended="true">
+          <command windowType="lightbox" class="java.lang.Object" method="editRelationships"/>
+          <moreurlinfo>resizable=yes,scrollbars=yes,menubar=no,toolbar=no,location=no,status=yes,height=235,width=580</moreurlinfo>
+     </action>
+     <action name="syncWithBoard" enabledwhensuspended="true">
+          <command windowType="lightbox" class="java.lang.Object" method="syncWithBoard"/>
+          <moreurlinfo>resizable=yes,scrollbars=yes,menubar=no,toolbar=no,location=no,status=yes,height=235,width=535</moreurlinfo>
+     </action>
+
+     <action name="ecadAdvancedCheckin">
+          <command class="java.lang.Object" method="ecadAdvancedCheckin" windowType="lightbox" onClick="advancedCheckinResizeLightBox()"/>
+          <moreurlinfo>resizable=yes,scrollbars=no,menubar=no,toolbar=no,location=no,status=yes</moreurlinfo>
+     </action>
+
+     <action name="ecadAdvancedCheckinProgress" enabledwhensuspended="true">
+          <command windowType="lightbox" class="java.lang.Object" method="ecadAdvancedCheckinProgress"/>
+          <moreurlinfo>resizable=yes,scrollbars=no,menubar=no,toolbar=no,location=no,status=yes,height=600,width=800</moreurlinfo>
+     </action>
+      
+      <action name="ecadImport" enabledwhensuspended="true">
+          <command windowType="lightbox" class="java.lang.Object" method="ecadImport"/>
+          <moreurlinfo>resizable=yes,scrollbars=yes,menubar=no,toolbar=no,location=yes,status=yes,height=1000,width=850</moreurlinfo>
+      </action>
+      <action name="ecadUpdate" enabledwhensuspended="true">
+          <command windowType="lightbox" class="java.lang.Object" method="ecadUpdate"/>
+          <moreurlinfo>resizable=yes,scrollbars=yes,menubar=no,toolbar=no,location=no,status=yes,height=1000,width=850</moreurlinfo>
+      </action>
+      <action name="viewContDef" enabledwhensuspended="true">
+          <command windowType="lightbox" class="java.lang.Object" method="viewContDef"/>
+          <moreurlinfo>resizable=yes,scrollbars=no,menubar=no,toolbar=no,location=no,status=yes,height=440,width=590</moreurlinfo>
+      </action>
+      <action name="editContDef" enabledwhensuspended="true">
+          <command windowType="lightbox" class="java.lang.Object" method="editContDef"/>
+          <moreurlinfo>resizable=yes,scrollbars=yes,menubar=no,toolbar=no,location=no,status=yes,height=1000,width=850</moreurlinfo>
+      </action>
+      <action name="AttachmentsDefinitions" enabledwhensuspended="true">
+          <command windowType="lightbox" class="java.lang.Object" method="AttachmentsDefinitions"/>
+          <moreurlinfo>resizable=yes,scrollbars=yes,menubar=no,toolbar=no,location=no,status=yes,height=480,width=770</moreurlinfo>
+      </action>
+      <action name="variantBOMEditor" enabledwhensuspended="true">
+          <command windowType="lightbox" class="java.lang.Object" method="variantBOMEditor"/>
+          <moreurlinfo>resizable=yes,scrollbars=yes,menubar=no,toolbar=no,location=no,status=yes,height=500,width=850</moreurlinfo>
+      </action>
+      <action name="VariantBOMViewer" enabledwhensuspended="true" >
+          <command windowType="lightbox" class="java.lang.Object" method="VariantBOMViewer"/>
+          <moreurlinfo>resizable=yes,scrollbars=yes,menubar=no,toolbar=no,location=no,status=yes,height=1000,width=850</moreurlinfo>
+      </action>
+      <action name="EditHookDefinitions" enabledwhensuspended="true">
+          <command windowType="lightbox" class="java.lang.Object" method="EditHookDefinitions"/>
+          <moreurlinfo>resizable=yes,scrollbars=yes,menubar=no,toolbar=no,location=no,status=yes,height=480,width=670</moreurlinfo>
+      </action>
+      <action name="ViewHookDefinitions" enabledwhensuspended="true">
+          <command windowType="lightbox" class="java.lang.Object" method="ViewHookDefinitions"/>
+          <moreurlinfo>resizable=yes,scrollbars=yes,menubar=no,toolbar=no,location=no,status=yes,height=480,width=670</moreurlinfo>
+      </action>
+      <action name="selectHooks" enabledwhensuspended="true">
+          <command windowType="lightbox" class="java.lang.Object" method="selectHooks"/>
+          <moreurlinfo>resizable=yes,scrollbars=yes,menubar=no,toolbar=no,location=no,status=yes,height=1000,width=850</moreurlinfo>
+      </action>
+     
+      <action name="EditBOMDefinitions" enabledwhensuspended="true" >
+          <command windowType="lightbox" class="java.lang.Object" method="EditBOMDefinitions"/>
+          <moreurlinfo>resizable=yes,scrollbars=yes,menubar=no,toolbar=no,location=no,status=yes,height=440,width=670</moreurlinfo>
+      </action>
+      <action name="EditBOMFilterDefinitions" enabledwhensuspended="true" >
+          <command windowType="lightbox" class="java.lang.Object" method="EditBOMFilterDefinitions"/>
+          <moreurlinfo>resizable=yes,scrollbars=yes,menubar=no,toolbar=no,location=no,status=yes,height=440,width=670</moreurlinfo>
+      </action>
+      <action name="editBomDefinition" enabledwhensuspended="true">
+          <command windowType="lightbox" class="java.lang.Object" method="ecadUpdate"/>
+          <moreurlinfo>resizable=yes,scrollbars=yes,menubar=no,toolbar=no,location=no,status=yes,height=700,width=670</moreurlinfo>
+      </action>
+      <action name="ViewBOMDefinitions" enabledwhensuspended="true" >
+          <command windowType="lightbox" class="java.lang.Object" method="ViewBOMDefinitions"/>
+          <moreurlinfo>resizable=yes,scrollbars=yes,menubar=no,toolbar=no,location=no,status=yes,height=440,width=590</moreurlinfo>
+      </action>
+      <action name="ViewBOMFilterDefinitions" enabledwhensuspended="true">
+          <command windowType="lightbox" class="java.lang.Object" method="ViewBOMFilterDefinitions"/>
+          <moreurlinfo>resizable=yes,scrollbars=yes,menubar=no,toolbar=no,location=no,status=yes,height=440,width=590</moreurlinfo>
+      </action>
+      <action name="ecadExport" enabledwhensuspended="true">
+          <command windowType="lightbox" class="java.lang.Object" method="Export"/>
+          <moreurlinfo>resizable=yes,scrollbars=yes,menubar=no,toolbar=no,location=no,status=yes,height=320,width=760</moreurlinfo>
+      </action>
+      <action name="BOM_REPORT" enabledwhensuspended="true">
+          <command windowType="popup" class="java.lang.Object" method="BOM_REPORT"/>
+          <moreurlinfo>resizable=yes,scrollbars=no,menubar=no,toolbar=no,location=no,status=yes,height=760,width=760</moreurlinfo>
+      </action>
+      <action name="ManageDLD" enabledwhensuspended="true">
+        <command windowType="lightbox" class="java.lang.Object" method="ManageDLD"/>
+        <moreurlinfo>resizable=yes,scrollbars=yes,menubar=no,toolbar=no,location=no,status=yes,height=390,width=560</moreurlinfo>
+     </action>
+  </objecttype>
+</listofactions>

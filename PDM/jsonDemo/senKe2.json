@@ -1,0 +1,195 @@
+{
+  "rtnMsg": "",
+  "rtnCode": "S",
+  "data": {
+    "realatedDrws": [
+      {
+        "dataUrl": "http://pdm.149.sast.casc/t-0000-00.drw",
+        "cadName": "t-0000-00.drw",
+        "oid": "OR:wt.epm.EPMDocument:132662",
+        "name": "t-0000-00.drw",
+        "state": "正在工作",
+        "number": "T-0000-00.DRW",
+        "version": "space.1"
+      }
+    ],
+    "realatedDocs": [
+      {
+        "dataUrl": "http://pdm.149.sast.casc/%E4%BA%A7%E5%93%81%E6%98%8E%E7%BB%86%E8%A1%A8%E6%A0%BC%E5%BC%8F7-2012%28A4%29.dwg",
+        "cadName": "",
+        "oid": "OR:wt.doc.WTDocument:5437843",
+        "name": "产品明细表格式7-2012(A4)",
+        "state": "正在工作",
+        "dataUrl2": "http://pdm.149.sast.casc/SIGN_%E4%BA%A7%E5%93%81%E6%98%8E%E7%BB%86%E8%A1%A8%E6%A0%BC%E5%BC%8F7-2012%28A4%29.pdf",
+        "number": "T-0000-00.ASM.DWG",
+        "version": "space.2"
+      }
+    ],
+    "processDocData": {
+      "dataUrl": "http://pdm.149.sast.casc/1387265886200.zip",
+      "oid": "OR:wt.doc.WTDocument:554441",
+      "name": "数控工艺规程(RZ_T-0000-00.ASMZ17)",
+      "number": "1387265886200",
+      "realatedPart": {
+        "oid": "OR:wt.part.WTPart:207742",
+        "name": "t-0000-00.asm",
+        "number": "T-0000-00.ASM",
+        "view": "Manufacturing",
+        "version": "space.1"
+      },
+      "version": "space.2"
+    },
+    "pvs3dData": {
+      "dataUrl": "http://pdm.149.sast.casc/T-0000-00.ASM.pvz",
+      "cadName": "t-0000-00_0.asm",
+      "oid": "OR:wt.epm.EPMDocument:132669",
+      "name": "t-0000-00_0.asm",
+      "number": "T-0000-00.ASM",
+      "realatedPart": {
+        "oid": "OR:wt.part.WTPart:134685",
+        "name": "t-0000-00.asm",
+        "number": "T-0000-00.ASM",
+        "version": "space.1"
+      },
+      "version": "space.1"
+    },
+    "children": [
+      {
+        "realatedDrws": [
+          {
+            "dataUrl": "http://pdm.149.sast.casc/t-0000-02.drw",
+            "cadName": "t-0000-02.drw",
+            "oid": "OR:wt.epm.EPMDocument:132658",
+            "name": "t-0000-02.drw",
+            "state": "正在工作",
+            "number": "T-0000-02.DRW",
+            "version": "space.1"
+          }
+        ],
+        "location": "1",
+        "cadName": "t-0000-02.prt",
+        "realatedDocs": [],
+        "oid": "OR:wt.epm.EPMDocument:132661",
+        "name": "t-0000-02.prt",
+        "number": "T-0000-02.PRT",
+        "realatedPart": {
+          "oid": "OR:wt.part.WTPart:2190578",
+          "name": "t-0000-02.prt",
+          "number": "T-0000-02.PRT",
+          "view": "Design",
+          "version": "space.3"
+        },
+        "version": "space.1"
+      },
+      {
+        "realatedDrws": [
+          {
+            "dataUrl": "http://pdm.149.sast.casc/t-0000-03.drw",
+            "cadName": "t-0000-03.drw",
+            "oid": "OR:wt.epm.EPMDocument:132672",
+            "name": "t-0000-03.drw",
+            "state": "正在工作",
+            "number": "T-0000-03.DRW",
+            "version": "space.1"
+          }
+        ],
+        "location": "1",
+        "cadName": "t-0000-03.prt",
+        "realatedDocs": [],
+        "oid": "OR:wt.epm.EPMDocument:132663",
+        "name": "t-0000-03.prt",
+        "number": "T-0000-03.PRT",
+        "realatedPart": {
+          "oid": "OR:wt.part.WTPart:134692",
+          "name": "t-0000-03.prt",
+          "number": "T-0000-03.PRT",
+          "view": "Design",
+          "version": "space.1"
+        },
+        "version": "space.1"
+      },
+      {
+        "realatedDrws": [
+          {
+            "dataUrl": "http://pdm.149.sast.casc/t-0000-01.drw",
+            "cadName": "t-0000-01.drw",
+            "oid": "OR:wt.epm.EPMDocument:132670",
+            "name": "t-0000-01.drw",
+            "state": "正在工作",
+            "number": "T-0000-01.DRW",
+            "version": "space.1"
+          }
+        ],
+        "location": "1",
+        "cadName": "t-0000-01.prt",
+        "realatedDocs": [
+          {
+            "dataUrl": "http://pdm.149.sast.casc/%E5%B0%81%E9%9D%A2%E6%A0%BC%E5%BC%8F4-2012%28A4%29.dwg",
+            "cadName": "",
+            "oid": "OR:wt.doc.WTDocument:5437873",
+            "name": "封面格式4-2012(A4)",
+            "state": "正在工作",
+            "dataUrl2": "http://pdm.149.sast.casc/SIGN_%E4%BA%A7%E5%93%81%E6%98%8E%E7%BB%86%E8%A1%A8%E6%A0%BC%E5%BC%8F7-2012%28A4%29.pdf",
+            "number": "T-0000-01.PRT.DWG",
+            "version": "space.2"
+          }
+        ],
+        "oid": "OR:wt.epm.EPMDocument:132665",
+        "name": "t-0000-01.prt",
+        "number": "T-0000-01.PRT",
+        "realatedPart": {
+          "oid": "OR:wt.part.WTPart:134687",
+          "name": "t-0000-01.prt",
+          "number": "T-0000-01.PRT",
+          "view": "Design",
+          "version": "space.1"
+        },
+        "version": "space.1"
+      },
+      {
+        "realatedDrws": [
+          {
+            "dataUrl": "http://pdm.149.sast.casc/t-0000-04.drw",
+            "cadName": "t-0000-04.drw",
+            "oid": "OR:wt.epm.EPMDocument:132660",
+            "name": "t-0000-04.drw",
+            "state": "正在工作",
+            "number": "T-0000-04.DRW",
+            "version": "space.1"
+          }
+        ],
+        "location": "1",
+        "cadName": "t-0000-04.prt",
+        "realatedDocs": [],
+        "oid": "OR:wt.epm.EPMDocument:132667",
+        "name": "t-0000-04.prt",
+        "number": "T-0000-04.PRT",
+        "realatedPart": {
+          "oid": "OR:wt.part.WTPart:134689",
+          "name": "t-0000-04.prt",
+          "number": "T-0000-04.PRT",
+          "view": "Design",
+          "version": "space.1"
+        },
+        "version": "space.1"
+      },
+      {
+        "realatedDrws": [],
+        "location": "1",
+        "cadName": "t-0001-00.asm",
+        "realatedDocs": [],
+        "oid": "OR:wt.epm.EPMDocument:132673",
+        "name": "t-0001-00.asm",
+        "number": "T-0001-00.ASM",
+        "realatedPart": {
+          "oid": "OR:wt.part.WTPart:134684",
+          "name": "t-0001-00.asm",
+          "number": "T-0001-00.ASM",
+          "view": "Design",
+          "version": "space.1"
+        },
+        "version": "space.1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+
+<actionmodels>
+
+<!-- Part information page Related Documents "Described By Documents" table -->
+  <model name="relatedDocumentDescribesToolBar">
+      <action name="related_add_described"                     type="part" shortcut="true"/>        <!-- Add Described By Document -->
+	   <action name="related_doc_create_wizard_part_described"  type="document" shortcut="true"/>        <!-- Create and associate a described by document -->
+       <action name="related_delete_described"                  type="part" shortcut="true"/>        <!-- Remove Described By Document -->
+      <action name="related_copy_references"                   type="part" shortcut="true"/>        <!-- Copy to Clipboard -->
+      <action name="separator"                                 type="separator" shortcut="true"/>   <!-- ===================================== -->
+	  <action name="related_paste_described"                   type="part" shortcut="true"/>        <!-- Paste Described By Document from Clipboard -->
+      <action name="related_paste_select_described"            type="part" shortcut="true"/>    <!-- Paste Select Described By Document from Clipboard -->
+
+   </model>
+
+<!-- Part information page Related Documents "References Documents" table -->
+   <model name="relatedDocumentReferencesToolBar">
+      <action name="related_add_references"                    type="part" shortcut="true"/>        <!-- Add References Document -->
+	  <action name="related_doc_create_wizard_part_references" type="document" shortcut="true"/>    <!-- Create and associate a references document -->
+      <action name="related_delete_references"                 type="part" shortcut="true"/>        <!-- Remove References Document -->
+      <action name="related_copy_references"                   type="part" shortcut="true"/>        <!-- Copy to Clipboard -->
+      <action name="separator"                                 type="separator" shortcut="true"/>   <!-- ===================================== -->
+	   <action name="related_paste_references"                  type="part" shortcut="true"/>        <!-- Paste References Document from Clipboard -->
+      <action name="related_paste_select_references"           type="part" shortcut="true"/>      <!-- Paste Select References Document from Clipboard -->
+          
+   </model>
+
+<!-- Part information page Related Documents "CAD/Dynamic Documents" table -->
+   <model name="relatedCADDynamicDocumentToolBar">
+      <action name="EDITASSOCIATION"                          type="pdmObject" shortcut="true"/>   <!-- Edit Associations -->
+   </model>
+
+<!-- Document/CAD Document Information page Related Parts table part row actions -->
+   <model name="relatedPartRowAction">
+      <action name="view"     type="part"/>  <!-- View informaton -->
+   </model>
+
+</actionmodels>

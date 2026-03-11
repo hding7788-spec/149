@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="jar" name="newCapp">
+	<property environment="env" />
+	<property name="debuglevel" value="source,lines,vars" />
+	<property name="target" value="1.6" />
+	<property name="source" value="1.6" />
+	<property name="dest.dir" value="C:/Users/xuehu/Desktop/dest" />
+	<property name="jar.file.name" value="C:/Users/xuehu/Desktop/newCapp.jar" />
+
+	<path id="newCapp.classpath">
+		<pathelement location="${dest.dir}" />
+		<pathelement location="lib/jgoodies-common-1.4.0.jar" />
+		<pathelement location="lib/jgoodies-looks-2.5.2.jar" />
+		<pathelement location="lib/ant-launcher.jar" />
+		<pathelement location="lib/ant.jar" />
+		<pathelement location="lib/codebase.jar" />
+		<pathelement location="lib/log4j.jar" />
+		<pathelement location="lib/pview.jar" />
+		<pathelement location="lib/swt-debug.jar" />
+		<pathelement location="lib/vecmath.jar" />
+		<pathelement location="lib/wncWeb.jar" />
+		<pathelement location="lib/dom4j.jar" />
+		<pathelement location="lib/cappPart.jar" />
+		<pathelement location="lib/Annotations.jar" />
+		<pathelement location="lib/capp.jar" />
+		<pathelement location="lib/dom4j-1.6.1.jar" />
+		<pathelement location="lib/freemarker.jar" />
+		<pathelement location="lib/httpclient-4.2.jar" />
+		<pathelement location="lib/httpcore-4.2.jar" />
+		<pathelement location="lib/ie3rdpartylibs.jar" />
+		<pathelement location="lib/j3dcore.jar" />
+		<pathelement location="lib/jacob.jar" />
+		<pathelement location="lib/jaxen-1.1.1.jar" />
+		<pathelement location="lib/jdic.jar" />
+		<pathelement location="lib/ptcCore.jar" />
+		<pathelement location="lib/soap.jar" />
+		<pathelement location="lib/tomcat-coyote.jar" />
+		<pathelement location="lib/wtApplet.jar" />
+	</path>
+
+	<target name="clean">
+		<delete dir="${dest.dir}" />
+	</target>
+
+	<target name="init" depends="clean">
+		<mkdir dir="${dest.dir}" />
+		<copy includeemptydirs="false" todir="${dest.dir}">
+			<fileset dir="src">
+				<exclude name="**/*.launch" />
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target depends="init" name="build-project">
+		<echo message="${ant.project.name}: ${ant.file}" />
+		<javac debug="true" debuglevel="${debuglevel}" destdir="${dest.dir}" source="${source}" target="${target}">
+			<src path="src" />
+			<classpath refid="newCapp.classpath" />
+			<compilerarg line="-encoding UTF-8" />
+		</javac>
+	</target>
+
+	<target name="jar" depends="build-project">
+		<jar destfile="${jar.file.name}" basedir="${dest.dir}">
+			<manifest>
+				<attribute name="Build-by" value="user.id" />
+				<attribute name="Main-Class" value="com.faw_qm.capputil.view.NewTechnicsPart" />
+			</manifest>
+		</jar>
+		<delete dir="${dest.dir}" />
+	</target>
+
+	<target name="NewTechnicsPart">
+		<java classname="com.glaway.mpm.view.NewTechnicsPart" failonerror="true" fork="yes">
+			<classpath refid="newCapp.classpath" />
+		</java>
+	</target>
+</project>

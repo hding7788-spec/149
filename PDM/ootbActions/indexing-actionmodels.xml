@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+<!-- define the actions on the UI components -->
+<actionmodels>
+	<!-- This action model is used for bulk index table level actions -->
+	<model name="INDEX_TABLE_ACTIONS_TOOLBAR" resourceBundle="wt.index.client.resource.indexingClientResource">
+        <action name="startBIT" type="indexing" shortcut="true" /> <!-- start indexing option 1  -->
+        <action name="stopBIT" type="indexing" shortcut="true" /> <!-- stop indexing option 2 -->
+        <action name="resetFailed" type="indexing" shortcut="true" /> <!-- option 4 -->
+        <action name="resetProcessing" type="indexing" shortcut="true" /> <!-- resets Processing entries option 5 -->        
+        <action name="resetNoPolicy" type="indexing" shortcut="true" /> <!-- resetNoPolicy option 6-->
+        <action name="resetIndexStatus" type="indexing" shortcut="true" /> <!-- delete index statrus entries option 8 --> 
+               
+        <action name="separator" type="separator"/>   <!-- Seperator -->
+        
+        <submodel name="folderbrowser_toolbar_exportlisttofile_submenu"/> <!-- Export -->
+		 
+	</model>
+    
+    <model name="INDEX_SINGLE_TYPE" resourceBundle="wt.index.client.resource.indexingClientResource">
+         <action name="Index_Single_Type" type="object"/>  
+                         
+    </model>
+
+</actionmodels>
+

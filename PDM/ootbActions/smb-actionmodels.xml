@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+
+<!-- define the actions on the UI components -->
+<actionmodels>
+  <model name="smbWizardButtonsNoApply">
+	  <action name="prevButton"       type="object"/>
+      <action name="nextButton"       type="object"/>
+      <action name="okButton"         type="object"/>
+      <action name="cancelButton"     type="object"/>
+   </model>
+   <model name="userTableActions">
+      <action name="addUserButton"    type="smb" shortcut="true"/>
+      <action name="deleteUserButton" type="smb" shortcut="true"/>
+      <action name="editUserButton"   type="smb" shortcut="true"/>
+   </model>
+      <model name="cadAttributesTableActions">
+      <action name="addAttributeButton"    type="smb" shortcut="true"/>
+      <action name="deleteAttributeButton" type="smb" shortcut="true"/>
+      <action name="editAttributeButton"   type="smb" shortcut="true"/>
+   </model>
+</actionmodels>

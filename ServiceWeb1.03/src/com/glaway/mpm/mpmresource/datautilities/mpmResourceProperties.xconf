@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Configuration SYSTEM "xconf.dtd">
+<Configuration targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties">
+	<Service name="com.ptc.core.components.descriptor.DataUtility">  
+		<Option serviceClass="com.glaway.mpm.mpmresource.datautilities.MPMResourceInfoDatautility"
+		        requestor="java.lang.Object"
+			    selector="MPMResourceInfoDatautility"
+		        cardinality="singleton"
+		/>
+	</Service> 
+	<Service name="com.ptc.core.components.descriptor.DataUtility">  
+		<Option serviceClass="com.glaway.mpm.mpmresource.datautilities.CreateMPMResourceDatautility"
+		        requestor="java.lang.Object"
+			    selector="CreateMPMResourceDatautility"
+		        cardinality="singleton"
+		/>
+	</Service> 
+	<Service name="com.ptc.core.components.descriptor.DataUtility">  
+		<Option serviceClass="com.glaway.mpm.mpmresource.datautilities.CreateGZCardDatautility"
+		        requestor="java.lang.Object"
+			    selector="CreateGZCardDatautility"
+		        cardinality="singleton"
+		/>
+	</Service>
+	<Service name="com.ptc.core.components.descriptor.DataUtility">
+		<Option serviceClass="com.glaway.mpm.mpmresource.datautilities.PbomBuilderFlowDataUtility"
+		        requestor="java.lang.Object"
+			    selector="PbomBuilderFlowDataUtility"
+		        cardinality="singleton"
+		/>
+	</Service>
+	<Service name="com.ptc.core.components.descriptor.DataUtility">
+		<Option serviceClass="com.glaway.mpm.mpmresource.datautilities.MPMResourceRelationshipDatautility"
+		        requestor="java.lang.Object"
+			    selector="MPMResourceRelationshipDatautility"
+		        cardinality="singleton"
+		/>
+	</Service>
+</Configuration>
+

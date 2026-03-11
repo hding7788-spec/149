@@ -1,0 +1,3 @@
+shoukong.jpg文件放在Windchill_10.0\Windchill\codebase\printApply目录下
+
+barCode.jpg文件放在桌面上

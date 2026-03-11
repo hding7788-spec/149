@@ -1,0 +1,365 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM "http://www.ptc.com/Windchill/config/actions/actionmodels.dtd">
+<!-- define the actions on the UI components -->
+<actionmodels resourceBundle="com.ptc.windchill.wp.WorkPackageActionsRB">
+
+   <!-- Work Packages -->
+   <!-- When adding an action, be sure to add it to "wp_Lock_Action_Validator" model if the action is valid when locked -->
+
+   <!-- Changes to this model should be reflected in "work package toolbar infopage actions" -->
+   <!-- and with it's WADM counterpart "cdrl package toolbar row actions". -->
+   <model name="work package toolbar row actions" menufor="com.ptc.windchill.wp.AbstractWorkPackage">
+      <action name="view" type="object"/>
+      <action name="separator" type="separator"/>
+      <action name="edit_package" type="wp"/>
+      <!-- the edit action is used for the add/edit/delete attachment table action-->
+      <action name="edit" type="wp"/>
+      <action name="refreshPackage" type="wp"/>
+      <action name="viewFilters" type="wp"/>
+      <action name="editFilters" type="wp"/>
+      <action name="lock" type="wp"/>
+      <action name="lock_NoExtensionUIStep" type="wp"/>
+      <action name="unLock" type="wp"/>
+      <action name="revise_package" type="wp"/>
+      <action name="iterate_package" type="wp"/>
+      <action name="create_delivery" type="delivery"/>
+      <action name="saveAs" type="wp"/>
+      <action name="renameObjectWizard" type="object"/>
+      <action name="route" type="wp"/>
+      <action name="setState" type="lifecycle"/>      
+      <action name="MULTI_OBJ_DELETE" type="pdmObject"/>      
+      <action name="addToPackage" type="wpcollection"/>
+      <action name="addToRepPackage" type="rep"/>      
+      <action name="wtObjCompare" type="ocmp"/>   
+      <action name="ManageSecurity" type="accessPermission"/>
+      <action name="securityLabelsSingleObjJCA" type="securityLabels"/>
+      <action name="EDITSECURITYLABELSNONCOLLECTED" type="object"/>  
+      <action name="createSubscription" type="subscription"/>
+      <action name="separator" type="separator"/>
+      <action name="track_new_work" type="resourceAssignment" /><!-- Track new Work against subject of deliverable-->
+      <action name="new_plan_activity" type="planActivity" /><!-- New Plan Activity against subject -->
+   </model>
+
+   <!-- Changes to this model should be reflected in "work package toolbar row actions" -->
+   <!-- and with it's WADM counterpart "cdrl package toolbar infopage actions". -->
+   <model name="work package toolbar infopage actions">
+      <action name="view" type="object"/>
+      <action name="separator" type="separator"/>
+      <action name="edit_package" type="wp"/>
+      <action name="refreshPackage" type="wp"/>
+      <action name="viewFilters" type="wp"/>
+      <action name="editFilters" type="wp"/>
+      <action name="lock" type="wp"/>      
+      <action name="lock_NoExtensionUIStep" type="wp"/>
+      <action name="unLock" type="wp"/>
+      <action name="revise_package" type="wp"/>
+      <action name="iterate_package" type="wp"/>
+      <action name="create_delivery" type="delivery"/>
+      <action name="saveAs" type="wp"/>
+      <action name="renameObjectWizard" type="object"/>
+      <action name="route" type="wp"/>
+      <action name="setState" type="lifecycle"/>
+      <action name="MULTI_OBJ_DELETE_DETAILS" type="pdmObject"/>
+      <action name="addToPackage" type="wpcollection"/>
+      <action name="addToRepPackage" type="rep"/>           
+      <action name="wtObjCompare" type="ocmp"/>
+      <action name="ManageSecurity" type="accessPermission"/>
+      <action name="securityLabelsSingleObjJCA" type="securityLabels"/>
+      <action name="EDITSECURITYLABELSNONCOLLECTED" type="object"/>
+      <action name="createSubscription" type="subscription"/>
+      <action name="separator" type="separator"/>
+      <action name="track_new_work" type="resourceAssignment" /><!-- Track new Work against subject of deliverable-->
+      <action name="new_plan_activity" type="planActivity" /><!-- New Plan Activity against subject -->
+   </model>
+
+   <model name="work package list table toolbar actions">
+      <!-- Package table toolbar actions -->
+      <submodel name="workpackagelist_new_submenu"/>
+      <action name="separator" type="separator"/>
+      <action name="route" type="wp" shortcut="true"/>
+      <action name="list_delete" type="wp" shortcut="true"/>
+      <action name="separator" type="separator"/>
+      <action name="wtObjCompareMultiple" type="ocmp"/>
+      <action name="noParentFolderedMultiObjManageSecurity" type="accessPermission" shortcut="true"/>
+      <action name="MULTIEDITSECURITYLABELS" type="object"/>
+      <action name="createSubscription" type="subscription" shortcut="true"/>
+   </model>
+   
+   <model name="workpackagelist_new_submenu">
+      <description>"New" submenu for work package list table toolbar Actions menu</description>
+      <action name="createToolbar" type="wp" shortcut="true"/>
+   </model>
+   <model name="third level nav package">
+      <!-- Package third level navigation menu -->
+      <submodel name="general"/>
+      <submodel name="relatedItems"/>
+      <submodel name="history"/>
+      <submodel name="collaboration"/>
+   </model>
+   <model name="third level nav delivery">
+      <!-- Delivery info page third level navigation menu -->
+      <submodel name="general"/>
+      <submodel name="collaboration"/>
+   </model>
+
+   <model name="deliveryDefaultTabSet">
+      <!-- Delivery info page default tabs -->
+       <submodel name="deliveryDetailsTab"/>
+       <submodel name="deliveryAttachmentTab"/>
+       <action name="deliveryContent" type="delivery"/>
+       <action name="deliveryMissingReplicationObject" type="delivery"/>
+   </model>
+
+    <model name="third level nav workpackagemaster">
+      <!-- WorkPackage Master info page third level navigation menu -->
+      <submodel name="general"/>
+      <submodel name="history"/>
+   </model>
+
+   <model name="deliveryDetailsTab">
+      <action name="primaryAttributes" type="object"/>
+      <action name="attributes" type="object"/>
+   </model>
+
+
+   <model name="workpackageMasterDefaultTabSet">
+      <!-- WorkPackage Master  info page default tabs -->
+       <submodel name="workpackageMasterDetailsTab"/>
+
+   </model>
+    <model name="workpackageMasterDetailsTab">
+      <action name="primaryAttributes" type="object"/>
+
+   </model>
+
+   <model name="deliveryAttachmentTab">
+      <action name="primaryContent" type="object"/>
+      <action name="attachments" type="object"/>
+   </model>
+
+   <model name="packageDefaultTabSet">
+      <!-- Packages info page default tabs -->
+      <submodel name="packageDetailsTab"/>
+      <action name="wpcontent" type="wp"/>
+      <action name="deliveriesOnePackage" type="wp"/>
+   </model>
+   <model name="packageDetailsTab">
+      <action name="primaryAttributes" type="object"/>
+      <action name="attributes" type="object"/>
+   </model>
+
+   <model name="work package successor table actions">
+      <!-- Successor table toolbar actions -->
+      <action name="remove_successors" type="wp" shortcut="true"/>
+      <action name="add_successors" type="wp" shortcut="true"/>
+   </model>
+   <model name="CreateDeliveryWizardButtons">
+      <!-- Buttons for the New Delivery wizard -->
+      <action name="prevButton" type="object"/>
+      <action name="nextButton" type="object"/>
+      <action name="okButton" type="object"/>
+      <action name="cancelButton" type="object"/>
+   </model>
+   <model name="EditDeliveryWizardButtons">
+      <description>Buttons for the Edit Delivery wizard</description>
+      <action name="okButton" type="object"/>
+      <action name="cancelButton" type="object"/>
+   </model>
+   <model name="package delivery list table toolbar actions">
+      <!-- Delivery table toolbar actions -->
+      <action name="list_copy" type="object" shortcut="true"/>
+      <action name="pasteDelivery" type="delivery" shortcut="true"/>
+      <action name="separator" type="separator"/>
+      <action name="list_deleteDeliveries" type="delivery" shortcut="true"/>
+      <action name="separator" type="separator"/>
+      <action name="SBAddToPrj" type="sandbox" shortcut="true"/>
+      <action name="separator" type="separator"/>
+      <action name="noParentFolderedMultiObjManageSecurity" type="accessPermission" shortcut="true"/>
+      <action name="MULTIEDITSECURITYLABELS" type="object"/>
+      <action name="createSubscription" type="subscription" shortcut="true"/>
+   </model>
+
+   <model name="deliverylist_addto_submenu">
+      <description>"Add to" submenu delivery table toolbar actions</description>
+      <action name="SBAddToPrj" type="sandbox"/>
+   </model>
+   <model name="single package delivery list table toolbar actions">
+      <!-- Delivery table toolbar actions -->
+      <action name="list_copy" type="object" shortcut="true"/>
+      <action name="separator" type="separator"/>
+      <submodel name="deliverylist_new_submenu"/>
+      <action name="separator" type="separator"/>
+      <action name="send_delivery" type="delivery"/>
+      <action name="receive_delivery" type="delivery"/>
+      <action name="list_deleteDeliveries" type="delivery"/>
+      <action name="separator" type="separator"/>
+      <submodel name="deliverylist_addto_submenu"/>
+      <action name="separator" type="separator"/>
+      <action name="multiObjManageSecurity" type="accessPermission"/>
+      <action name="MULTIEDITSECURITYLABELS" type="object"/>
+      <action name="createSubscription" type="subscription"/>
+   </model>
+   <model name="deliverylist_new_submenu">
+      <description>"New" submenu for delivery list table Actions menu</description>
+      <action name="create_delivery" type="delivery" shortcut="true"/>
+   </model>
+   <model name="more delivery toolbar actions" menufor="com.ptc.windchill.wp.delivery.DeliveryRecord">
+      <action name="view" type="object"/>
+      <action name="edit_delivery" type="delivery"/>
+      <action name="zipWithUI" type="delivery"/>
+      <action name="separator" type="separator"/>
+      <action name="copy" type="object"/>
+      <action name="send_delivery" type="delivery"/>
+      <action name="receive_delivery" type="delivery"/>
+      <action name="abort_export" type="delivery"/>
+      <action name="renameObjectWizard" type="object"/>
+      <action name="deleteDelivery" type="delivery"/>
+      <action name="separator" type="separator"/>
+      <submodel name="more delivery toolbar actions add"/>
+      <action name="separator" type="separator"/>
+      <action name="removeShare" type="object"/>
+      <action name="separator" type="separator"/>
+      <action name="ManageSecurity" type="accessPermission"/>
+      <action name="securityLabelsSingleObjJCA" type="securityLabels"/>     
+      <action name="createSubscription" type="subscription"/>
+   </model>
+
+   <model name="more delivery toolbar actions add">
+      <action name="SBAddToPrj" type="sandbox"/>
+   </model>
+
+   <model name="package content list table toolbar actions">
+      <action name="excludeMembers" type="wpcollection" shortcut="true"/>
+      <action name="includeMembers" type="wpcollection" shortcut="true"/>         
+      <action name="addToPackage" type="wpcollection" shortcut="true"/>
+      <action name="addToRepPackage" type="rep" shortcut="true"/>  
+      <action name="refreshPackage" type="wp"/>
+      <action name="viewFilters" type="wp" shortcut="true"/>
+      <action name="editFilters" type="wp"/>
+      <action name="separator" type="separator"/>
+      <action name="lock" type="wp"/>
+      <action name="lock_NoExtensionUIStep" type="wp"/>
+      <action name="createFilesInfo" type="contentControl" />
+      <action name="contentControlWizard" type="contentControl" />
+      <action name="separator" type="separator"/>
+      <action name="explode" type="folder" shortcut="true"/>
+      <action name="implode" type="folder" shortcut="true"/>
+      <submodel name="folderbrowser_toolbar_exportlisttofile_submenu"/> <!-- Export -->
+   </model>
+
+   <model name="nested package contents table toolbar actions">
+      <action name="excludeMembers" type="wpcollection" shortcut="true"/>
+      <action name="includeMembers" type="wpcollection" shortcut="true"/>         
+   </model>
+   
+   <model name="wpcollection addtopackage toolbar actions">
+      <!-- Objects table actions that appear in the Add to Package wizard -->
+      <action name="removeSeeds" type="wpcollection" shortcut="true"/>
+      <action name="pasteSeeds"  type="wpcollection" shortcut="true"/>
+      <action name="addSeeds"    type="wpcollection" shortcut="true"/>
+   </model>
+   <model name="AddToPackageWizardButtons">
+      <!-- Buttons for the Add to Package wizard -->
+      <action name="previewButton" type="wpcollection"/>
+      <action name="prevButton" type="object"/>
+      <action name="nextButton" type="object"/>
+      <action name="okButton" type="object"/>
+      <action name="cancelButton" type="object"/>
+   </model>
+   <model name="wp baseline row actions">
+      <!-- Row level Actions menu for objects within a Collection -->
+      <action name="excludeMembers" type="wpcollection"/>
+      <action name="includeMembers" type="wpcollection"/>       
+      <action name="nested_content_view" type="wp"/>
+      <action name="addToManagedCollection" type="managedcollection"/>
+   </model>
+   <model name="wp attachments readonly table toolbar actions">
+      <action name="download_selected_attachments" type="attachments" shortcut="true"/>
+      <action name="wp_edit_attachments" type="wp" shortcut="true"/>
+   </model>
+
+   <model name="wp_attachments wizard table toolbar actions">
+      <action name="remove" type="object" shortcut="true"/>
+      <action name="separator" type="separator"/>
+      <action name="wp_addFileAttachment" type="wp" shortcut="true"/>      
+   </model>
+
+   <model name="wp_Default_Action_Validator">
+      <!-- Actions available by default in a Package context; used by wp_Default_Action_Validator -->
+      <action name="list_cut" type="object"/>
+      <action name="checkoutAndEdit" type="document"/>
+      <action name="view" type="object"/>
+      <action name="reference" type="notebook"/>
+      <action name="setState" type="lifecycle"/>
+      <action name="checkin" type="wip"/>
+      <action name="checkout" type="object"/>
+      <action name="checkout_and_download" type="wip"/>
+      <action name="undocheckout" type="object"/>
+      <action name="edit" type="document"/>
+      <action name="replace_content" type="wip"/>
+      <action name="renameDocumentWizard" type="document"/>
+      <action name="ManageSecurity"       type="accessPermission"/>
+      <action name="EDITSECURITYLABELS"   type="object"/>  
+      <action name="MULTI_OBJ_DELETE" type="pdmObject"/>
+      <action name="MULTI_OBJ_DELETE_DETAILS" type="pdmObject"/>
+      <action name="bookmarkIt" type="bookmark"/>
+      <action name="cut" type="object"/>
+      <action name="copy" type="object"/>
+      <action name="explode" type="folder"/>
+      <action name="implode" type="folder"/>
+      <action name="rename" type="folder"/>
+      <action name="create" type="folder"/>
+      <action name="access" type="folder"/>
+      <action name="pasteSeeds" type="wpcollection"/>
+      <action name="refreshPackage" type="wp"/>
+      <action name="create_folder_network" type="folder"/>
+      <action name="lock" type="wp"/>
+      <action name="lock_NoExtensionUIStep" type="wp"/>
+      <action name="unLock" type="wp"/>
+      <action name="zipWithUI" type="delivery"/>
+      <action name="edit_package" type="wp"/>
+      <action name="edit" type="wp"/>
+      <action name="revise_package" type="wp"/>
+      <action name="iterate_package" type="wp"/>
+      <action name="saveAs" type="wp"/>
+      <action name="route" type="wp"/>
+      <action name="renameObjectWizard" type="object"/>
+      <action name="edit_bk" type="bookmark"/>
+      <action name="delete" type="object"/>
+      <action name="wtObjCompare" type="ocmp"/>
+      <action name="edit_attachments" type="attachments"/>
+      <action name="wp_edit_attachments" type="wp"/>
+      <action name="excludeMembers" type="wpcollection"/>
+      <action name="includeMembers" type="wpcollection"/>       
+   </model>
+   <model name="wp_Lock_Action_Validator">
+      <!-- Actions available in a Locked Package context; used by WPLockedStateActionValidator -->
+      <action name="view" type="object"/>
+      <action name="MULTI_OBJ_DELETE" type="pdmObject"/>
+      <action name="MULTI_OBJ_DELETE_DETAILS" type="pdmObject"/>
+      <action name="reference" type="notebook"/>
+      <action name="bookmarkIt" type="bookmark"/>
+      <action name="copy" type="object"/>
+      <action name="explode" type="folder"/>
+      <action name="implode" type="folder"/>
+      <action name="wtObjCompare" type="ocmp"/>
+      <action name="edit_attachments" type="attachments"/>
+      <!-- the edit action is used for the add/edit/delete attachment table action--> 
+      <action name="edit" type="wp"/>
+   </model>
+   <model name="more packagemaster actions" menufor="com.ptc.windchill.wp.AbstractWorkPackageMaster">
+      <action name="renameObjectWizard" type="object"/>
+   </model>
+   
+   <model name="replication package select contexts table toolbar actions">
+      <action name="removeContexts" type="rep" shortcut="true"/>
+      <action name="separator" type="separator"/>
+      <action name="replicationContextPicker" type="rep" shortcut="true"/>
+   </model>
+   
+   <model name="AddToReplicationPackageWizardButtons">
+      <description>Buttons for the Add to Replication Package wizard</description>
+      <action name="okButton" type="object"/>
+      <action name="cancelButton" type="object"/>
+   </model>   
+</actionmodels>

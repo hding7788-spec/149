@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="GBK"?>
+<design>
+	<default>
+		<attribute name="SETMARK">成套件标识</attribute>
+		<attribute name="PHASE_CODE">当前阶段</attribute>
+		<attribute name="KEYCOMPONENT">关重件标识</attribute>
+		<attribute name="CTYPE">零部件分类</attribute>
+		<attribute name="SECRET">密级</attribute>
+		<attribute name="ENDITEMIN">所属成品</attribute>
+		<attribute name="MINDEX">所属型号</attribute>
+		<attribute name="CINDEX">图号</attribute>
+		<attribute name="PTC_COMMON_NAME">中文名称</attribute>
+		<attribute name="size">二维工程图图幅</attribute>
+		<attribute name="PINDEX">产品代号</attribute>
+		<attribute name="DESIGNER">设计者</attribute>
+		<attribute name="COMPANY">设计单位</attribute>
+	</default>
+</design>

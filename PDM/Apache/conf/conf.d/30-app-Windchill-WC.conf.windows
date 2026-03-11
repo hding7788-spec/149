@@ -1,0 +1,16 @@
+# 允许匿名访问启动编辑器需要的 .jar 文件
+<LocationMatch "^/Windchill/((lib/)?[^/]+\.jar(?:;.*)?|wt/security/security.jar(?:;.*)?|install/boot.jar(?:;.*)?)$">
+    Require all granted
+</LocationMatch>
+
+<LocationMatch "^/Windchill/.+\\.class(;.*)?">
+    Require all granted
+</LocationMatch>
+
+# 输入http://域名/ 可以浏览文件列表，  内网需要换成对应的Linux目录
+DocumentRoot "D:/ptc/Windchill_11.0/Windchill/temp/IXBExpImp"
+<Directory "D:/ptc/Windchill_11.0/Windchill/temp/IXBExpImp">
+    Options Indexes FollowSymLinks
+    AllowOverride None
+    Require all granted
+</Directory>

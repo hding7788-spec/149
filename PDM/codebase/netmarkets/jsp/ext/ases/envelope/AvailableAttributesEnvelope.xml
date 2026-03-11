@@ -1,0 +1,10 @@
+<AvailableAttributes>
+	<Class name="ext.ases.envelope.ProcessEnvelope">
+		<Include name="wt.fc.Persistable"/>
+		<Include name="wt.enterprise.RevisionControlled"/>
+		<Include name="wt.org.OrganizationOwned"/>
+		<Attribute id="number"/>
+		<Attribute id="name"/>
+		<Attribute id="description"/>
+	</Class>
+</AvailableAttributes>

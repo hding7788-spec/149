@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+
+  <!-- define the actions on the UI components -->
+<actionmodels>
+
+  <model name="carRelatedCADDocsTreeToolBarProE">
+
+    <action name="editingGroupGWT" type="psb" />
+    <action name="includeRep" type="car" />
+    <action name="masterRep" type="car" />
+    <action name="assemblyOnlyRep" type="car" />
+    <action name="geometryRep" type="car" />
+    <action name="graphicsRep" type="car" />
+    <action name="clearRep" type="car" />
+    <action name="excludeRep" type="car" />
+
+    <action name="designContextGroup" type="car" />
+    <action name="exitContextBuilder" type="car" />
+    <action name="saveDefinition" type="car" />
+
+    <action name="viewingGroupGWT" type="psb" />
+    <action name="configurableTableViewGWT" type="cat" />
+    <action name="configurableTableViewListGWT" type="cat" />
+    <action name="separator" type="separator" />
+    <action name="saveStructureViewGWT" type="cat" />
+    <action name="configurableTableViewManagerGWT" type="cat" />
+    <action name="displayGWT" type="cat" />
+    <action name="showExcludedNodes" type="car" />
+    <action name="separator" type="separator" />
+    <action name="expandAllLevelsGWT" type="cat" />
+    <action name="collapseAllLevelsGWT" type="cat" />
+    <action name="separator" type="separator" />
+    <action name="viewLayout2Panel" type="cat" />
+    <action name="viewLayout3Panel" type="cat" />
+    <action name="separator" type="separator" />
+    <action name="refreshGWT" type="car" />
+
+    <action name="filterGroupGWT" type="ec" />
+    <action name="filterPropertiesGWT" type="ec" />
+    <action name="editFilter" type="car" />
+    
+    <action name="attributeRulesGroupGWT" type="car" />
+    <action name="manageAttributeRulesViaToolbarGWT" type="car" />
+
+  </model>
+  
+  <model name="carRelatedCADDocsTreeToolBarCatiaV5">
+
+    <action name="editingGroupGWT" type="psb" />
+    <action name="includeRep" type="car" />
+    <action name="masterRepCatiaV5" type="car" />
+    <action name="assemblyOnlyRep" type="car" />
+    <action name="graphicsRepCatiaV5" type="car" />
+    <action name="clearRep" type="car" />
+    <action name="excludeRep" type="car" />
+
+    <action name="designContextGroup" type="car" />
+    <action name="exitContextBuilder" type="car" />
+    <action name="saveDefinition" type="car" />
+
+
+    <action name="viewingGroupGWT" type="psb" />
+    <action name="configurableTableViewGWT" type="cat" />
+    <action name="configurableTableViewListGWT" type="cat" />
+    <action name="separator" type="separator" />
+    <action name="saveStructureViewGWT" type="cat" />
+    <action name="configurableTableViewManagerGWT" type="cat" />
+    <action name="displayGWT" type="cat" />
+    <action name="showExcludedNodes" type="car" />
+    <action name="separator" type="separator" />	
+    <action name="expandAllLevelsGWT" type="cat" />
+    <action name="collapseAllLevelsGWT" type="cat" />
+    <action name="separator" type="separator" />
+    <action name="viewLayout2Panel" type="cat" />
+    <action name="viewLayout3Panel" type="cat" />
+    <action name="separator" type="separator" />
+    <action name="refreshGWT" type="cat" />
+
+    <action name="filterGroupGWT" type="ec" />
+    <action name="filterPropertiesGWT" type="ec" />
+    <action name="editFilter" type="car" />
+    
+    <action name="attributeRulesGroupGWT" type="car" />
+    <action name="manageAttributeRulesViaToolbarGWT" type="car" />
+
+  </model>
+
+  <model name="carRelatedCADDocsTreeToolBarWindchill">
+
+    <action name="editingGroupGWT" type="psb" />
+    <action name="includeRep" type="car" />
+    <action name="masterRepWindchill" type="car" />
+    <action name="assemblyOnlyRep" type="car" />
+    <action name="geometryRep" type="car" />
+    <action name="graphicsRepWindchill" type="car" />
+    <action name="clearRep" type="car" />
+    <action name="excludeRep" type="car" />
+
+    <action name="designContextGroup" type="car" />
+    <action name="exitContextBuilder" type="car" />
+    <action name="saveDefinition" type="car" />
+
+    <action name="viewingGroupGWT" type="psb" />
+    <action name="configurableTableViewGWT" type="cat" />
+    <action name="configurableTableViewListGWT" type="cat" />
+    <action name="separator" type="separator" />
+    <action name="saveStructureViewGWT" type="cat" />
+    <action name="configurableTableViewManagerGWT" type="cat" />
+    <action name="displayGWT" type="cat" />
+    <action name="showExcludedNodes" type="car" />
+    <action name="separator" type="separator" />
+    <action name="expandAllLevelsGWT" type="cat" />
+    <action name="collapseAllLevelsGWT" type="cat" />
+    <action name="separator" type="separator" />
+    <action name="viewLayout2Panel" type="cat" />
+    <action name="viewLayout3Panel" type="cat" />
+    <action name="separator" type="separator" />
+    <action name="refreshGWT" type="cat" />
+
+    <action name="filterGroupGWT" type="ec" />
+    <action name="filterPropertiesGWT" type="ec" />
+    <action name="editFilter" type="car" />
+    
+    <action name="attributeRulesGroupGWT" type="car" />
+    <action name="manageAttributeRulesViaToolbarGWT" type="car" />
+
+  </model>
+
+  
+  <model name="carRelatedCADDocsTreeContextMenuProE">
+
+    <action name="viewInfoGWT" type="car" />
+    <action name="separator" type="separator" />
+    <action name="expandAllLevelsGWT" type="cat" />
+    <action name="collapseAllLevelsGWT" type="cat" />
+    <action name="separator" type="separator" />
+    <action name="setProximityFilter"     type="car"/>
+    <action name="setProximityRule" type="car" />
+    <action name="separator" type="separator" />
+    <submodel name="includeRepGroupProE" />
+    <action name="separator" type="separator" />
+    <action name="clearRep" type="car" />
+    <action name="separator" type="separator" />
+    <action name="excludeRep" type="car" />
+  </model>
+
+  <model name="includeRepGroupProE" 
+         resourceBundle="com.ptc.windchill.uwgm.cadx.caddoc.car.carActionsRB">
+  
+    <action name="masterRep" type="car" />
+    <action name="assemblyOnlyRep" type="car" />
+    <action name="geometryRep" type="car" />
+    <action name="graphicsRep" type="car" />
+
+  </model>
+
+  <model name="carRelatedCADDocsTreeContextMenuCatiaV5">
+
+    <action name="viewInfoGWT" type="car" />
+    <action name="separator" type="separator" />
+    <action name="expandAllLevelsGWT" type="cat" />
+    <action name="collapseAllLevelsGWT" type="cat" />
+    <action name="separator" type="separator" />
+    <action name="setProximityFilter"     type="car"/>
+    <action name="setProximityRule" type="car" />
+    <action name="separator" type="separator" />
+    <submodel name="includeRepGroupCatiaV5" />
+    <action name="separator" type="separator" />
+    <action name="clearRep" type="car" />
+    <action name="separator" type="separator" />
+    <action name="excludeRep" type="car" />
+  </model>
+
+  <model name="includeRepGroupCatiaV5" 
+         resourceBundle="com.ptc.windchill.uwgm.cadx.caddoc.car.carActionsRB">
+  
+    <action name="masterRepCatiaV5" type="car" />
+    <action name="assemblyOnlyRep" type="car" />
+    <action name="graphicsRepCatiaV5" type="car" />
+
+  </model>
+  
+  <model name="carRelatedCADDocsTreeContextMenuWindchill">
+
+    <action name="viewInfoGWT" type="car" />
+    <action name="separator" type="separator" />
+    <action name="expandAllLevelsGWT" type="cat" />
+    <action name="collapseAllLevelsGWT" type="cat" />
+    <action name="separator" type="separator" />
+    <action name="setProximityFilter"     type="car"/>
+    <action name="setProximityRule" type="car" />
+    <action name="separator" type="separator" />
+    <submodel name="includeRepGroupWindchill" />
+    <action name="separator" type="separator" />
+    <action name="clearRep" type="car" />
+    <action name="separator" type="separator" />
+    <action name="excludeRep" type="car" />
+
+  </model>
+
+  <model name="includeRepGroupWindchill" 
+         resourceBundle="com.ptc.windchill.uwgm.cadx.caddoc.car.carActionsRB">
+  
+    <action name="masterRepWindchill" type="car" />
+    <action name="assemblyOnlyRep" type="car" />
+    <action name="geometryRep" type="car" />
+    <action name="graphicsRepWindchill" type="car" />
+
+  </model>
+
+  <model name="carRulesToolBar">
+    <action name="deleteRuleGWT" type="car" />
+  </model>
+  
+  <model name="carRulesContextMenu">
+    <action name="deleteRuleGWT" type="car" />
+  </model>
+  
+  <model name="carVizToolBar">
+    <action name="zoomAllGWT" type="cat" />
+    <action name="zoomSelectedGWT" type="cat" />
+    <action name="setSpinCenterGWT" type="cat" />
+    <action name="toggleAutoSelectionGWT" type="cat" />
+    <action name="toggleAutoSelectionFromStructToVIZGWT" type="cat" />
+    <action name="toggleAutoSelectionFromVIZToStructGWT" type="cat" />
+    
+    <action name="spatialFilter" type="structurecomponent" />
+    <action name="setBoxSpatialFilter" type="structurecomponent" />
+    <action name="setSphereSpatialFilter" type="structurecomponent" />
+    <action name="setProximitySpatialFilter" type="structurecomponent" />
+    <action name="updateSpatialFilter" type="structurecomponent" />
+    
+    <action name="spatialRuleGWT" type="contextbuilder" />
+    <action name="newBoxSpatialRuleGWT" type="contextbuilder" />
+    <action name="newSphereSpatialRuleGWT" type="contextbuilder" />
+    <action name="newProximitySpatialRuleGWT" type="contextbuilder" />
+    <action name="updateSpatialRuleGWT" type="contextbuilder" />
+  </model>
+
+  <!-- This action model is simillar to psbTreePanelContextMenu and msrTreePanelContextMenu. These three models should be in synch ideally.-->
+  <model name="carTreePanelContextMenu">
+        <action name="selectAllGWT" type="cat" />
+        <action name="separator" type="separator" />
+        <action name="viewLayout2Panel" type="cat"/>
+        <action name="viewLayout3Panel" type="cat"/>
+        <action name="separator" type="separator" />
+        <action name="refreshGWT" type="car" />
+    </model>
+
+</actionmodels>

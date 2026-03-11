@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+<!-- define the actions on the UI components -->
+<actionmodels>
+
+   <model name="RenameViewWizardButtons">
+      <action name="okButton"      type="object"/>
+      <action name="cancelButton"  type="object"/>
+   </model>
+
+   <model name="renameObjectWizardButtons">
+      <action name="okButton"      type="object"/>
+      <action name="cancelButton"  type="object"/>
+   </model>
+
+  <!-- Part Master details page action model -->
+  <model name="partmaster details page actions">
+      <action name="renameObjectWizard"           type="object"/>
+  </model>
+
+   <!-- Action dropdown list in part details page -->
+   <model name="more parts actions" menufor="wt.part.WTPart">
+      <action name="renameObjectWizard"        type="object"/> <!-- X-10 Rename -->
+   </model>
+
+</actionmodels>

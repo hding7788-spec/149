@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE NmLoader SYSTEM "standardX20.dtd">
+<NmLoader>
+  <csvLifeCycleTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createLifeCycleTemplate">
+    <csvname>149_设计方案预审单生命周期</csvname>
+    <csvdescription>null</csvdescription>
+    <csvsupportedClass>wt.fc.WTObject</csvsupportedClass>
+    <csvfolderLocation>/System</csvfolderLocation>
+    <csvenabled>true</csvenabled>
+    <csvrouting>false</csvrouting>
+    <csvbasic>true</csvbasic>
+  </csvLifeCycleTemplateBegin>
+  <csvPhaseTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateBegin">
+    <csvname>工艺审查</csvname>
+    <csvphaseState>PROCESSREVIEW</csvphaseState>
+    <csvphaseWorkflow></csvphaseWorkflow>
+    <csvgateWorkflow></csvgateWorkflow>
+    <csvseriesSelector></csvseriesSelector>
+  </csvPhaseTemplateBegin>
+  <csvPhaseTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateEnd"></csvPhaseTemplateEnd>
+  <csvPhaseTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateBegin">
+    <csvname>已审查</csvname>
+    <csvphaseState>PROCESSREVIEWED</csvphaseState>
+    <csvphaseWorkflow></csvphaseWorkflow>
+    <csvgateWorkflow></csvgateWorkflow>
+    <csvseriesSelector></csvseriesSelector>
+  </csvPhaseTemplateBegin>
+  <csvPhaseTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateEnd"></csvPhaseTemplateEnd>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_设计方案预审单生命周期</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROCESSREVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROCESSREVIEWED</csvsuccessorPhaseState>
+    <csvphaseTransition>NEXT</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_设计方案预审单生命周期</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROCESSREVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROCESSREVIEWED</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_设计方案预审单生命周期</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROCESSREVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROCESSREVIEW</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_设计方案预审单生命周期</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROCESSREVIEWED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROCESSREVIEWED</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_设计方案预审单生命周期</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROCESSREVIEWED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROCESSREVIEW</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvLifeCycleTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createLifeCycleTemplateEnd"></csvLifeCycleTemplateEnd>
+</NmLoader>

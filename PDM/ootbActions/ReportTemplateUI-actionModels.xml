@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+<actionmodels>
+    <!-- action models for wt.query.template.ReportTemplate -->
+    <model name="reportTemplateInfoDefaultDetails" resourceBundle="com.ptc.windchill.enterprise.query.template.mvc.reportTemplateResource">
+        <action name="reportTemplateAttributes" type="reportTemplate"/>
+    </model>
+
+    <model name="reportTemplateInfoPageTabset" resourceBundle="com.ptc.windchill.enterprise.query.template.mvc.reportTemplateResource">
+        <submodel name="reportTemplateInfoDefaultDetails"/>
+    </model>
+    
+    <model name="reportTemplateActions">
+        <action name="generate" type="reportTemplate"/>
+    </model>
+    <model name="third_level_nav_reporttemplate" resourceBundle="com.ptc.windchill.enterprise.query.template.mvc.reportTemplateResource">
+        <action name="reportTemplateAttributes" type="reportTemplate"/>
+    </model>
+</actionmodels>

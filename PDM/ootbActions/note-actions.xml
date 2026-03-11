@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<listofactions>
+    <objecttype name="note" class="wt.epm.EPMDocument" resourceBundle="com.ptc.windchill.enterprise.note.noteActionsRB">
+      <action name="relatedNotes" uicomponent="THIRD_LEVEL_RELATED_NOTES">
+       <component name="notes.relatedNotes.list"/>
+      </action>
+      <action name="relatedParts">
+      <component name="note.relatedParts.list"/>
+      </action>
+      <action name="relatedBOM">
+      <component name="note.relatedBOM.list"/>
+      </action>
+      <action name="addNotesToolBarAction" multiselect="true" selectRequired="true" ajax="component">
+      <command class="com.ptc.windchill.enterprise.note.forms.AddNoteObjectFormProcessor" 
+          url="netmarkets/jsp/note/addNotes.jsp" method="execute" windowType="popup"/>
+           <includeFilter name="projectM4D" />  
+           <includeFilter name="PdmLinkProjectLinkContext" />
+           <includeFilter name="restrictGuestMembers"/>
+           <includeFilter name="disableForAdminLocked"/>
+      </action>
+      <action name="addNotes" ajax="component">
+           <command class="com.ptc.windchill.enterprise.note.forms.AddNoteObjectFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="removeNotes" ajax="component">
+           <command class="com.ptc.windchill.enterprise.note.forms.RemoveNoteFormProcessor" method="execute"/>
+      </action>
+      <action name="createNoteMenuAction" ajax="row">
+      <command class="com.ptc.windchill.enterprise.note.forms.CreateNoteObjectFormProcessor" method="execute" windowType="popup" url="netmarkets/jsp/note/createNotesWizard.jsp" onClick="validateCreateLocation(event)"/>
+      <includeFilter name="projectM4D" />  
+           <includeFilter name="PdmLinkProjectLinkContext" />
+      <includeFilter name="restrictGuestMembers"/>
+      </action>
+      <action name="createNote">
+           <command class="com.ptc.windchill.enterprise.note.forms.CreateNoteObjectFormProcessor" method="execute" windowType="popup" url="netmarkets/jsp/note/createNotesWizard.jsp"/>
+           <includeFilter name="projectM4D" />  
+           <includeFilter name="PdmLinkProjectLinkContext" />
+           <includeFilter name="restrictGuestMembers"/>
+      </action>
+      <action name="createNotesWizard">
+      <command class="com.ptc.windchill.enterprise.note.forms.CreateNoteObjectFormProcessor" method="execute" />
+      </action>
+      <action name="createNoteInNoteTable" multiselect="true" selectRequired="true" ajax="component">
+           <command class="com.ptc.windchill.enterprise.note.forms.CreateNoteObjectFormProcessor" method="execute" windowType="popup" 
+          url="netmarkets/jsp/note/createNotesWizard.jsp"/>
+           <includeFilter name="projectM4D" />  
+      <includeFilter name="PdmLinkProjectLinkContext" />
+      <includeFilter name="restrictGuestMembers"/>
+      <includeFilter name="disableForAdminLocked"/>
+      </action>
+      <action name="createNoteSetAttributesWizStep" id="createNoteSetAttributesWizStep" preloadWizardPage="false" required="true">
+           <command windowType="wizards_step" typeBased="true"/>
+      </action>   
+      <action name="createTemplate">
+           <command class="com.ptc.windchill.enterprise.note.forms.CreateNoteTemplateObjectFormProcessor" method="execute" 
+                url="/netmarkets/jsp/note/createTemplate.jsp?template=true" windowType="popup"/>
+      </action>
+      <action name="createNoteFromTemplateMenuAction" ajax="row">
+           <command class="com.ptc.windchill.enterprise.note.forms.CreateNoteFromTemplateObjectFormProcessor" method="execute" windowType="popup"
+               url="netmarkets/jsp/note/createNoteFromTemplate.jsp?createNoteFromTemplate=true" onClick="validateCreateLocation(event)"/>   
+           <includeFilter name="projectM4D" />
+           <includeFilter name="PdmLinkProjectLinkContext" />
+      <includeFilter name="restrictGuestMembers"/>
+      </action>
+      <action name="createNoteFromTemplate">
+           <command class="com.ptc.windchill.enterprise.note.forms.CreateNoteFromTemplateObjectFormProcessor" method="execute" windowType="popup"
+               url="netmarkets/jsp/note/createNoteFromTemplate.jsp?createNoteFromTemplate=true"/>
+           <includeFilter name="projectM4D" />  
+      <includeFilter name="PdmLinkProjectLinkContext" />
+      <includeFilter name="restrictGuestMembers"/>
+      </action>
+      <action name="addNewNoteFromTemplate" multiselect="true" selectRequired="true" ajax="component">
+           <command class="com.ptc.windchill.enterprise.note.forms.CreateNoteFromTemplateObjectFormProcessor" method="execute" windowType="popup"
+               url="netmarkets/jsp/note/createNoteFromTemplate.jsp?createNoteFromTemplate=true"/>
+           <includeFilter name="projectM4D" />  
+      <includeFilter name="PdmLinkProjectLinkContext" />
+      <includeFilter name="restrictGuestMembers"/>
+      <includeFilter name="disableForAdminLocked"/>
+      </action>
+      <action name="defineNoteFromTemplateWizStep" afterJS="validateTemplate">
+           <component name="note.defineItemStepContextPanelDescriptor" windowType="wizard_step"/>      
+      </action>
+       
+      <action name="reorderNotesWizard" ajax="component">
+      <command class="com.ptc.windchill.enterprise.note.forms.NoteReorderingFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="reorderNotesWizard_step" afterJS="collectReorderedList">
+            <component name="note.create.setProperties" windowType="wizard_step"/>      
+      </action>
+      
+      
+      <action name="editAttributesWizStep" >
+            <command windowType="wizards_step" typeBased="true"/>
+      </action>
+        
+      <action name="templatePickerWizard" selectRequired="true">
+           <command windowType="popup" />
+      </action>
+      <action name="templatePickerResults">
+           <command windowType="wizard_step" />
+      </action>
+      <action name="enableTemplate" ajax="row">
+           <command class="com.ptc.windchill.enterprise.note.commands.NoteServiceCommand" method="enable"
+               windowType="normal"/>
+      </action>
+      <action name="disableTemplate" ajax="row">
+           <command class="com.ptc.windchill.enterprise.note.commands.NoteServiceCommand" method="disable"
+               windowType="normal"/>
+      </action>
+
+      <action name="edit" ajax="component">
+           <command class="com.ptc.windchill.enterprise.note.forms.EditNoteFormProcessor" method="execute" windowType="popup" 
+               onClick="onClickValidation(event,'checkout')"/>
+               <includeFilter name="hideSBHiddenFilter"/>
+               <includeFilter name="disableForAdminLocked"/>
+      </action>
+      <action name="view" resourceBundle="com.ptc.core.ui.actionsRB">
+           <command url="servlet/TypeBasedIncludeServlet" windowType="page"/>
+      </action>
+    </objecttype>
+    <objecttype name="epmdocument" class="wt.epm.EPMDocument">
+    </objecttype>
+</listofactions>

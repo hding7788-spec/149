@@ -1,0 +1,604 @@
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+<listofactions>
+ <objecttype name="lwcType" class="java.lang.Object" resourceBundle="com.ptc.core.lwc.client.lwcResource">
+
+  <action name="typeInfo">
+   <component name="lwc.type.info" windowType="page" />
+  </action>
+
+  <action name="organizerInfo">
+   <component name="lwc.organizer.info" windowType="page" />
+  </action>
+
+  <action name="enumerationInfo">
+   <component name="lwc.enumeration.info" windowType="page" />
+  </action>
+
+  <action name="createOrganizer" selectRequired="false" ajax="page">
+   <command class="com.ptc.core.lwc.client.forms.CreateOrganizerFormProcessor" method="execute" windowType="lightbox" urlParams="isIframeWizard=true"
+    onClick="PTC.lwc.navigation.wrapPopUpWizard(true)" />
+   <moreurlinfo>height=500,width=600</moreurlinfo>
+  </action>
+
+  <action name="createOrganizerStep" id="createOrganizerStep" required="false" preloadWizardPage="true">
+   <command windowType="wizard_step" />
+  </action>
+
+  <action name="createSubEnumeration" selectRequired="false" ajax="page">
+   <command class="com.ptc.core.lwc.client.forms.CreateEnumerationFormProcessor" method="execute" windowType="lightbox" urlParams="isIframeWizard=true"
+    onClick="PTC.lwc.navigation.wrapPopUpWizard(true)" />
+   <moreurlinfo>height=500,width=600</moreurlinfo>
+  </action>
+
+  <action name="createEnumeration" selectRequired="false" ajax="page">
+   <command class="com.ptc.core.lwc.client.forms.CreateEnumerationFormProcessor" method="execute" windowType="lightbox" urlParams="isIframeWizard=true"
+    onClick="PTC.lwc.navigation.wrapPopUpWizard(true)" />
+   <moreurlinfo>height=500,width=600</moreurlinfo>
+  </action>
+
+  <action name="createEnumerationStep" id="createEnumerationStep" required="false" preloadWizardPage="true">
+   <command windowType="wizard_step" />
+  </action>
+
+  <action name="editOrganizerInfoPage">
+   <command onClick="PTC.lwc.navigation.enableEdit()" />
+  </action>
+
+  <action name="editOrganizerTree">
+   <component name="lwc.organizer.info" windowType="page" urlParams="lwcMode=edit" />
+  </action>
+
+  <action name="editEnumerationInfoPage">
+   <command onClick="PTC.lwc.navigation.enableEdit()" />
+  </action>
+
+  <action name="editEnumerationTree">
+   <component name="lwc.enumeration.info" windowType="page" urlParams="lwcMode=edit" />
+  </action>
+
+  <action name="deleteOrganizer" ajax="page">
+   <command class="com.ptc.core.lwc.client.commands.LWCCommands" method="deleteOrganizer" windowType="lightbox" urlParams="isIframeWizard=true"
+    url="netmarkets/jsp/lwcType/deleteConfirmation.jsp" onClick="PTC.lwc.navigation.wrapPopUpWizard(true)" />
+  </action>
+
+  <action name="deleteEnumeration" ajax="page">
+   <command class="com.ptc.core.lwc.client.commands.LWCCommands" method="deleteEnumeration" windowType="lightbox" urlParams="isIframeWizard=true"
+    url="netmarkets/jsp/lwcType/deleteConfirmation.jsp" onClick="PTC.lwc.navigation.wrapPopUpWizard(true)" />
+  </action>
+
+  <action name="deleteType" uicomponent="DELETE" afterJS="removeFooter" ajax="row">
+   <command class="com.ptc.core.lwc.client.commands.LWCCommands" method="deleteType" windowType="lightbox" url="netmarkets/jsp/lwcType/deleteConfirmation.jsp"
+    onClick="PTC.lwc.navigation.wrapPopUpWizard(true)" />
+  </action>
+
+  <action name="viewPrimaryAssociationConstraint" ajax="row">
+   <command class="com.ptc.core.lwc.client.commands.LWCCommands" method="viewPrimaryAssociationConstraint" />
+  </action>
+
+  <action name="editType">
+   <command onClick="PTC.lwc.navigation.enableEdit()" />
+  </action>
+
+  <action name="editTypeTree">
+   <component name="lwc.type.info" windowType="page" urlParams="lwcMode=edit" />
+  </action>
+
+  <action name="attributeInfo">
+   <component name="lwc.type.attribute.info" windowType="page" onClick="PTC.lwc.navigation.infoLinkClickListener(event)" />
+  </action>
+
+  <action name="editAttribute">
+   <command onClick="PTC.lwc.navigation.enableEdit()" />
+  </action>
+
+  <action name="notSubTypeable" selectRequired="false" />
+
+  <action name="createType" selectRequired="false" ajax="page">
+   <command class="com.ptc.core.lwc.client.forms.CreateTypeFormProcessor" method="execute" windowType="lightbox" urlParams="isIframeWizard=true"
+    onClick="PTC.lwc.navigation.wrapPopUpWizard(true)" />
+  </action>
+
+  <action name="createTypeStep" id="createTypeStep" required="false" preloadWizardPage="true">
+   <command windowType="wizard_step" />
+  </action>
+
+  <action name="newLegalTypesConstraint" ajax="row">
+   <command class="com.ptc.core.lwc.client.forms.EditLegalTypesConstraintFormProcessor" method="execute" windowType="lightbox"
+    url="netmarkets/jsp/lwcType/newLegalTypesConstraint.jsp?isIframeWizard=true" urlParams="lwcMode=edit" onClick="PTC.lwc.navigation.abortActionIfNotInEditMode( event )" />
+  </action>
+
+  <action name="newLegalTypesConstraintStep" id="newLegalTypesConstraintStep" required="false" preloadWizardPage="true">
+   <command windowType="wizard_step" name="lwc.attribute.legalTypes" />
+  </action>
+
+  <action name="removeLegalTypesConstraint" multiselect="true" selectRequired="true" ajax="row">
+   <command class="com.ptc.core.lwc.client.forms.NewConstraintFormProcessor" method="execute" urlParams="lwcMode=edit"
+    onClick="PTC.lwc.constraints.deleteConstraintOrConditionConfirmation('legaltypeConstraint')" />
+  </action>
+
+  <action name="editLegalTypesConstraint" ajax="row">
+   <command class="com.ptc.core.lwc.client.forms.EditLegalTypesConstraintFormProcessor" method="execute" windowType="lightbox"
+    url="netmarkets/jsp/lwcType/editLegalTypesConstraint.jsp?isIframeWizard=true" urlParams="lwcMode=edit" onClick="PTC.lwc.navigation.abortActionIfNotInEditMode( event )" />
+  </action>
+
+  <action name="editLegalTypesConstraintStep" id="editLegalTypesConstraintStep" required="false" preloadWizardPage="true">
+   <command windowType="wizard_step" />
+  </action>
+
+  <action name="newConstraint" ajax="row">
+   <command class="com.ptc.core.lwc.client.forms.NewConstraintFormProcessor" method="execute" windowType="lightbox"
+    url="netmarkets/jsp/lwcType/newConstraint.jsp?isIframeWizard=true" />
+  </action>
+
+  <action name="newConstraintStep" id="newConstraintStep" required="false" preloadWizardPage="true">
+   <command windowType="wizard_step" name="lwc.attribute.constraints" />
+  </action>
+
+  <action name="removeConstraint" multiselect="true" selectRequired="true" ajax="row">
+   <command class="com.ptc.core.lwc.client.forms.NewConstraintFormProcessor" method="execute" urlParams="lwcMode=edit"
+    onClick="PTC.lwc.constraints.deleteConstraintOrConditionConfirmation('constraint')" />
+  </action>
+
+  <action name="editConstraint" ajax="row">
+   <command class="com.ptc.core.lwc.client.forms.EditConstraintFormProcessor" method="execute" windowType="lightbox"
+    url="netmarkets/jsp/lwcType/editConstraint.jsp?isIframeWizard=true" urlParams="lwcMode=edit" onClick="PTC.lwc.navigation.abortActionIfNotInEditMode( event )" />
+  </action>
+
+  <action name="editConstraintStep" id="editConstraintStep" required="false" preloadWizardPage="true">
+   <command windowType="wizard_step" name="lwc.attribute.editConstraints" />
+  </action>
+
+  <action name="editAllConditions" ajax="row">
+   <command class="com.ptc.core.lwc.client.forms.EditAllConditionsFormProcessor" method="execute" windowType="lightbox"
+    url="netmarkets/jsp/lwcType/editAllConditions.jsp?isIframeWizard=true" urlParams="lwcMode=edit" onClick="PTC.lwc.navigation.abortActionIfNotInEditMode( event )" />
+  </action>
+
+  <action name="editAllConditionsStep" id="editAllConditionsStep" afterJS="setPageEditedFlag">
+   <component windowType="wizard_step" name="lwc.attribute.conditions" />
+  </action>
+
+  <action name="addCondition" ajax="row">
+   <command class="com.ptc.core.lwc.client.forms.AddConditionFormProcessor" method="execute" windowType="popup" url="netmarkets/jsp/lwcType/addCondition.jsp" />
+  </action>
+
+  <action name="addConditionStep" id="addConditionStep" afterJS="clearHelpText">
+   <command windowType="wizard_step" urlParams="lwcMode=edit" />
+  </action>
+
+  <action name="editCondition" ajax="row">
+   <command class="com.ptc.core.lwc.client.forms.EditConditionFormProcessor" method="execute" windowType="popup" urlParams="lwcMode=edit" />
+  </action>
+
+  <action name="deleteCondition" multiselect="true" selectRequired="true" ajax="row">
+   <command class="com.ptc.core.lwc.client.forms.EditConditionFormProcessor" method="execute" urlParams="lwcMode=edit"
+    onClick="parent.PTC.lwc.constraints.deleteConstraintOrConditionConfirmation('condition')" />
+  </action>
+
+  <action name="addDefaultValue" id="lwcAddDefaultValueAction">
+   <command onClick="PTC.lwc.defaultvalues.addDefaultValue(event)" />
+  </action>
+
+  <action name="deleteDefaultValue" id="lwcDeleteDefaultValueAction">
+   <command onClick="PTC.lwc.defaultvalues.deleteDefaultValue(event)" />
+  </action>
+
+  <action name="createAttribute" selectRequired="false" ajax="page">
+   <command class="com.ptc.core.lwc.client.forms.CreateAttributeFormProcessor" method="execute" windowType="lightbox" urlParams="isIframeWizard=true"
+    onClick="PTC.lwc.navigation.wrapPopUpWizard(true)" />
+  </action>
+
+  <action name="createAttributeDefineStep" id="createAttributeDefineStep" required="true" afterJS="defineStepValidate">
+   <command windowType="wizard_step" />
+  </action>
+
+  <action name="createAttributeDatatypeStep" id="createAttributeDatatypeStep" hidden="true" required="true" afterJS="isGlobalAttSelected">
+   <command windowType="wizard_step" />
+  </action>
+
+  <action name="createAttributeIbaStep" id="createAttributeIbaStep" hidden="true" required="true" afterJS="shouldProceedToNextStep" preloadWizardPage="false">
+   <command windowType="wizard_step" />
+  </action>
+
+  <action name="createAttributeSourceTextAttStep" id="createAttributeSourceTextAttStep" hidden="true" required="true" afterJS="shouldProceedToNextStep"
+   preloadWizardPage="false">
+   <command windowType="wizard_step" />
+  </action>
+
+  <action name="createAttributeSetPropsStep" id="createAttributeSetPropsStep" required="true" afterJS="shouldProceedToNextStep">
+   <command windowType="wizard_step" />
+  </action>
+
+  <action name="deleteAttribute" id="deleteAttributeId" multiselect="true" selectRequired="true" ajax="page">
+   <command class="com.ptc.core.lwc.client.commands.LWCCommands" method="deleteAttribute" windowType="lightbox" url="netmarkets/jsp/lwcType/deleteConfirmation.jsp"
+    onClick="PTC.lwc.navigation.wrapPopUpWizard(true)" />
+  </action>
+
+  <action name="cancelLightboxButton" id="LWC_lightbox_cancel" resourceBundle="com.ptc.core.lwc.client.lwcResource">
+   <command onClick="PTC.lightbox.isLightbox(window)?PTC.lightbox.deactivate({lbWindow: self}):wfWindowClose()" />
+  </action>
+
+  <action name="createLayout" selectRequired="false" ajax="page">
+   <command class="com.ptc.core.lwc.client.forms.CreateLayoutFormProcessor" method="execute" windowType="lightbox" urlParams="isIframeWizard=true" />
+  </action>
+
+  <action name="newLayoutComponent" selectRequired="false" ajax="page">
+   <command class="com.ptc.core.lwc.client.forms.NewLayoutComponentFormProcessor" method="execute" windowType="lightbox" urlParams="isIframeWizard=true" />
+  </action>
+
+  <action name="newLayoutComponentStep" id="newLayoutComponentStep" required="false" preloadWizardPage="true">
+   <command windowType="wizard_step" />
+  </action>
+
+  <action name="newLayoutComponent" selectRequired="false" ajax="page">
+   <command class="com.ptc.core.lwc.client.forms.NewLayoutComponentFormProcessor" method="execute" windowType="lightbox" urlParams="isIframeWizard=true" />
+  </action>
+
+  <action name="newLayoutComponentStep" id="newLayoutComponentStep" required="false" preloadWizardPage="true">
+   <command windowType="wizard_step" />
+  </action>
+
+  <action name="deleteLayout" ajax="page">
+   <command class="com.ptc.core.lwc.client.commands.LWCCommands" method="deleteLayout" windowType="lightbox" urlParams="isIframeWizard=true"
+    url="netmarkets/jsp/lwcType/deleteConfirmation.jsp" onClick="PTC.lwc.navigation.wrapPopUpWizard(true)" />
+  </action>
+
+  <action name="layoutProperties" id="layoutProperties" required="false" preloadWizardPage="true">
+   <command windowType="wizard_step" />
+  </action>
+
+  <action name="layoutInfo">
+   <command windowType="page" />
+  </action>
+
+  <action name="groupInfo">
+   <command windowType="page" />
+  </action>
+
+  <action name="editGroupMembershipProperties" ajax="page">
+   <command class="com.ptc.core.lwc.client.forms.EditGroupMemberShipPropertiesFormProcessor" method="execute" windowType="lightbox" urlParams="isIframeWizard=true" />
+  </action>
+
+  <action name="groupMembershipPropertiesStep" id="groupMembershipPropertiesStep">
+   <component name="lwc.groupMembership.properties" windowType="wizard_step" />
+  </action>
+
+  <!-- Type info page third level navigation actions -->
+  <action name="lwc.type.attribute.multiedit">
+   <component windowType="popup" />
+  </action>
+  <action name="typeLayouts" renderType="GENERAL">
+   <command class="" method="" windowType="popup" url="netmarkets/jsp/lwcType/typeLayouts.jsp" />
+  </action>
+  <action name="relationshipConstraints">
+      <component name="lwcType.relationshipConstraints" windowType="popup"/>
+  </action>
+  <action name="lwc.type.cascading.attributes">
+   <component windowType="popup" />
+  </action>
+
+  <!-- Attribute info page third level navigation actions -->
+  <action name="attributeValues">
+   <component name="lwc.attribute.values" windowType="popup" />
+  </action>
+  <action name="attributeConstraints">
+   <component name="lwc.attribute.constraints" windowType="popup" />
+  </action>
+  <action name="attributeVisibility">
+   <component name="lwc.attribute.visibility" windowType="popup" />
+  </action>
+  <action name="attributeLegalTypes">
+   <component name="lwc.attribute.legalTypes" windowType="popup" />
+  </action>
+  <action name="attributeWhereUsed" renderType="General">
+   <command class="" method="" windowType="popup" url="netmarkets/jsp/lwcType/attributeWhereUsed.jsp" />
+  </action>
+
+  <!-- localization wizard actions -->
+  <action name="localizeProperty" ajax="page">
+   <command class="com.ptc.core.lwc.client.forms.LocalizePropertyFormProcessor" method="execute" windowType="lightbox" urlParams="isIframeWizard=true" />
+  </action>
+  <action name="localizePropertyStep" id="localizePropertyStep">
+   <component name="lwc.property.localization" windowType="popup" />
+  </action>
+
+  <action name="createEntry" selectRequired="false">
+   <command class="com.ptc.core.lwc.client.forms.CreateEntryFormProcessor" method="execute" windowType="lightbox" urlParams="isIframeWizard=true" />
+  </action>
+
+  <action name="createEntryStep" id="createEntryStep" required="false" preloadWizardPage="true" afterJS="updateAllEntriesNamesList">
+   <command windowType="wizard_step" />
+  </action>
+
+  <action name="editEntry" selectRequired="false" ajax="page">
+   <command class="com.ptc.core.lwc.client.forms.EditEntryFormProcessor" method="execute" windowType="lightbox" urlParams="isIframeWizard=true" />
+  </action>
+
+  <action name="editEntryStep" id="editEntryStep" required="false" preloadWizardPage="true">
+   <command windowType="wizard_step" />
+  </action>
+
+  <action name="deleteEntry" />
+
+  <!-- Enumiration info page third level navigation actions -->
+  <action name="lwc.enumiration.entries" selectRequired="false" ajax="page">
+   <command class="" method="" url="netmarkets/jsp/lwcType/entriesNav.jsp" />
+  </action>
+
+  <!-- Quantity of Measure info page third level navigation actions -->
+  <action name="lwc.quantityofmeasure.displayUnits">
+    <component windowType="popup" />
+  </action>
+
+  <action name="editQuantityOfMeasure">
+   <command onClick="PTC.lwc.navigation.enableEdit()" />
+  </action>
+
+  <action name="editQuantityOfMeasureTree">
+   <component name="lwc.quantityofmeasure.info" windowType="page" urlParams="lwcMode=edit" />
+  </action>
+
+  <action name="createQuantityOfMeasure" selectRequired="false" ajax="page">
+   <command class="com.ptc.core.lwc.client.forms.CreateQuantityOfMeasureFormProcessor" method="execute" windowType="lightbox" urlParams="isIframeWizard=true"
+    onClick="PTC.lwc.navigation.wrapPopUpWizard(true)" />
+   <moreurlinfo>height=230,width=600</moreurlinfo>
+  </action>
+
+  <action name="createQuantityOfMeasureStep" id="createQuantityOfMeasureStep" required="false" preloadWizardPage="true" afterJS="validateQuantityOfMeasureUnit">
+   <command windowType="wizard_step" />
+  </action>
+
+  <!-- Create an enumeration constraint on an attribute -->
+  <action name="useGlobalEnumeration" ajax="row">
+   <command class="com.ptc.core.lwc.client.forms.UseGlobalEnumConstraintFormProcessor" method="execute" windowType="lightbox" urlParams="isIframeWizard=true"
+    onClick="PTC.lwc.navigation.abortActionIfNotInEditMode( event )" />
+  </action>
+
+  <action name="chooseGlobalEnum" ajax="row">
+   <command class="com.ptc.core.lwc.client.forms.UseGlobalEnumConstraintFormProcessor" method="execute" windowType="lightbox" urlParams="isIframeWizard=true"
+    onClick="PTC.lwc.navigation.abortActionIfNotInEditMode( event )" />
+  </action>
+
+  <action name="createLocalEnumeration" ajax="row">
+   <command class="com.ptc.core.lwc.client.forms.CreateLocalEnumFormProcessor" method="execute" windowType="lightbox" urlParams="isIframeWizard=true"
+    onClick="PTC.lwc.navigation.abortActionIfNotInEditMode( event )" />
+  </action>
+
+  <action name="createLocalEnumStep" id="createLocalEnumStep" required="false" afterJS="onCreateEnumeration">
+   <command windowType="wizard_step" url="netmarkets/jsp/lwcType/createLocalEnumStep.jsp" />
+  </action>
+
+  <action name="editLocalEnumeration" id="editLocalEnumeration" ajax="row">
+   <command class="com.ptc.core.lwc.client.forms.CreateLocalEnumFormProcessor" method="execute" windowType="lightbox" />
+  </action>
+
+  <action name="chooseGlobalEnumPickerStep" id="chooseGlobalEnumPickerStep" required="false" afterJS="isEnumerationSelected">
+   <command windowType="wizard_step" url="netmarkets/jsp/lwcType/chooseGlobalEnumPickerStep.jsp" />
+  </action>
+
+  <action name="LwcApplyButton" id="PJL_wizard_apply">
+   <description>Custom apply button to clear fields on create wizard.</description>
+   <command class="" method="" windowType="page" url="javascript:PTC.lwc.navigation.onApply();" />
+  </action>
+
+  <action name="createConstraintRule">
+   <command class="com.ptc.core.lwc.client.forms.CreateRuleFormProcessor" windowType="lightbox" method="execute"
+    url="netmarkets/jsp/lwcType/createRule.jsp?isIframeWizard=true" />
+  </action>
+  <action name="createConstraintRuleStep" required="false" preloadWizardPage="false">
+   <command windowType="wizard_step" url="netmarkets/jsp/lwcType/createRuleStep.jsp" />
+  </action>
+
+  <action name="createRuleFromExisting">
+   <command class="com.ptc.core.lwc.client.forms.CreateRuleFormProcessor" windowType="lightbox" method="execute"
+    url="netmarkets/jsp/lwcType/createRuleFromExisting.jsp?isIframeWizard=true" />
+  </action>
+  <action name="createRuleFromExistingStep" required="false" preloadWizardPage="false">
+   <command windowType="wizard_step" url="netmarkets/jsp/lwcType/createRuleFromExistingStep.jsp" />
+  </action>
+
+  <action name="attributeSetReport">
+   <command onClick="PTC.lwc.cascadingAttributes.attributeSetReport.launch()" windowType="popup" />
+  </action>
+  <action name="attributeSetReportWizStep">
+   <command windowType="wizard_step" />
+  </action>
+
+  <action name="enableInheritedRule">
+   <command class="com.ptc.core.lwc.client.commands.CascadingAttrsInheritRulesCommands" method="enableInheritedRules"
+    onClick="return PTC.lwc.cascadingAttributes.confirmUnHide(null,null,table);" />
+  </action>
+
+  <action name="disableInheritedRule">
+   <command class="com.ptc.core.lwc.client.commands.CascadingAttrsInheritRulesCommands" method="disableInheritedRules" />
+  </action>
+
+  <!-- Content Holder Property Icons -->
+  <action name="editContentHolderProperty" ajax="page">
+   <command class="com.ptc.core.lwc.client.forms.EditContentHolderPropertiesFormProcessor" method="execute" windowType="lightbox" urlParams="isIframeWizard=true" />
+  </action>
+  <action name="editContentHolderPropertyStep" id="editContentHolderPropertyStep">
+   <command windowType="wizard_step" />
+  </action>
+  <action name="deleteContentHolderProperty" />
+
+  <!-- Relationship Constraints actions  -->
+  <action name="newRelationshipConstraint" ajax="row">
+      <command class="com.ptc.core.lwc.client.forms.CreateRelationshipConstraintFormProcessor" method="execute" windowType="lightbox" url="netmarkets/jsp/lwcType/newRelationshipConstraint.jsp?isIframeWizard=true" onClick="PTC.lwc.navigation.abortActionIfNotInEditMode( event )"/>
+  </action>
+  <action name="newRelationshipConstraintStep" id="newRelationshipConstraintStep" required="false" preloadWizardPage="true">
+        <command windowType="wizard_step" name=""/>
+  </action>
+  <action name="removeRelationshipConstraint" multiselect="true" selectRequired="true" ajax="row">
+      <command class="" method="execute" urlParams="" onClick="PTC.lwc.relationshipConstraints.deleteRelationshipConstraints(event);"/>
+  </action>
+  <action name="editRelationshipConstraint" ajax="row">
+      <command class="com.ptc.core.lwc.client.forms.EditRelationshipConstraintFormProcessor" method="execute" windowType="lightbox" url="netmarkets/jsp/lwcType/editRelationshipConstraint.jsp?isIframeWizard=true" onClick="PTC.lwc.navigation.abortActionIfNotInEditMode( event )"/>
+  </action>
+  <action name="editRelationshipConstraintStep" id="editRelationshipConstraintStep" required="false" preloadWizardPage="true">
+      <command windowType="wizard_step"/>
+  </action>
+  <!-- End of Relationship Constraints actions  -->
+
+  <!-- reusable attributes -->
+  <action name="reusableOrganizerInfo">
+   <component name="lwc.reusable.organizer.info" windowType="page" />
+  </action>
+
+  <action name="reusableAttributeInfo">
+   <component name="lwc.reusable.attribute.info" windowType="page" />
+  </action>
+
+  <action name="createReusableOrganizer">
+   <command class="com.ptc.core.lwc.client.forms.CreateReusableOrganizerFormProcessor" method="execute" windowType="lightbox" urlParams="isIframeWizard=true"
+    onClick="PTC.lwc.navigation.wrapPopUpWizard(true)" />
+   <moreurlinfo>height=500,width=600</moreurlinfo>
+  </action>
+
+  <action name="createReusableOrganizerStep" id="createReusableOrganizerStep" required="false" preloadWizardPage="true">
+   <command windowType="wizard_step" />
+  </action>
+
+  <action name="createReusableAttribute">
+   <command class="com.ptc.core.lwc.client.forms.CreateReusableAttributeFormProcessor" method="execute" windowType="lightbox" urlParams="isIframeWizard=true"
+    onClick="PTC.lwc.navigation.wrapPopUpWizard(true)" />
+   <moreurlinfo>height=500,width=600</moreurlinfo>
+  </action>
+
+  <action name="createReusableAttributeStep" id="createReusableAttributeStep" required="false" preloadWizardPage="true">
+   <command windowType="wizard_step" />
+  </action>
+
+  <action name="editReusableAttributeTree">
+   <component name="lwc.reusable.attribute.info" windowType="page" urlParams="lwcMode=edit" />
+  </action>
+
+  <action name="editReusableAttributeInfoPage">
+   <command onClick="PTC.lwc.navigation.enableEdit()" />
+  </action>
+
+  <action name="editReusableOrganizerTree">
+   <component name="lwc.reusable.organizer.info" windowType="page" urlParams="lwcMode=edit" />
+  </action>
+
+  <action name="editReusableOrganizerInfoPage">
+   <command onClick="PTC.lwc.navigation.enableEdit()" />
+  </action>
+
+  <action name="deleteReusableAttribute">
+   <command class="com.ptc.core.lwc.client.commands.LWCCommands" method="deleteReusableAttribute" windowType="lightbox" urlParams="isIframeWizard=true"
+    url="netmarkets/jsp/lwcType/deleteConfirmation.jsp" onClick="PTC.lwc.navigation.wrapPopUpWizard(true)" />
+   <moreurlinfo>height=170,width=560</moreurlinfo>
+  </action>
+
+  <action name="deleteReusableOrganizer">
+   <command class="com.ptc.core.lwc.client.commands.LWCCommands" method="deleteReusableOrganizer" windowType="lightbox" urlParams="isIframeWizard=true"
+    url="netmarkets/jsp/lwcType/deleteConfirmation.jsp" onClick="PTC.lwc.navigation.wrapPopUpWizard(true)" />
+   <moreurlinfo>height=170,width=560</moreurlinfo>
+  </action>
+
+  <action name="lwc.reusable.attributes.displayUnits">
+   <component windowType="popup" />
+  </action>
+
+  <action name="cutReusableItem">
+    <command windowType="no_content"/>
+  </action>
+
+  <action name="pasteReusableItem">
+    <command windowType="page"/>
+  </action>
+
+
+  <!-- MEASUREMENT SYSTEMS ACTIONS -->  
+  <action name="measurementSystemInfo">
+   <component name="lwc.measurement.system.info" windowType="page" />
+  </action>
+
+  <action name="editMeasurementSystem">
+   <command onClick="PTC.lwc.navigation.enableEdit()" />
+  </action>
+
+  <action name="editMeasurementSystemTree">
+   <component name="lwc.measurement.system.info" windowType="page" urlParams="lwcMode=edit" />
+  </action>
+
+  <action name="deleteMeasurementSystem">
+   <command class="com.ptc.core.lwc.client.commands.LWCCommands" method="deleteMeasurementSystem" windowType="lightbox" urlParams="isIframeWizard=true"
+    url="netmarkets/jsp/lwcType/deleteConfirmation.jsp" onClick="PTC.lwc.navigation.wrapPopUpWizard(true)" />
+   <moreurlinfo>height=170,width=560</moreurlinfo>
+  </action>
+
+  <action name="createMeasurementSystem">
+   <command class="com.ptc.core.lwc.client.forms.CreateMeasurementSystemFormProcessor" method="execute" windowType="lightbox" urlParams="isIframeWizard=true"
+    onClick="PTC.lwc.navigation.wrapPopUpWizard(true)" />
+   <moreurlinfo>height=200,width=600</moreurlinfo>
+  </action>
+
+  <action name="createMeasurementSystemStep" id="createMeasurementSystemStep" required="false" preloadWizardPage="true">
+   <command windowType="wizard_step" />
+  </action>
+
+  <!-- Quantity of Measure actions -->
+  <action name="quantityOfMeasureInfo">
+   <component name="lwc.quantityofmeasure.info" windowType="page" />
+  </action>
+
+  <action name="deleteQuantityOfMeasure">
+   <command class="com.ptc.core.lwc.client.commands.LWCCommands" method="deleteQuantityOfMeasure" windowType="lightbox" urlParams="isIframeWizard=true"
+    url="netmarkets/jsp/lwcType/deleteConfirmation.jsp" onClick="PTC.lwc.navigation.wrapPopUpWizard(true)" />
+   <moreurlinfo>height=170,width=560</moreurlinfo>
+  </action>
+
+ </objecttype>
+
+ <!-- Table Toolbar actions that should be permenantly disabled -->
+ <objecttype name="lwcTypeDisabled" class="java.lang.Object" resourceBundle="com.ptc.core.lwc.client.lwcResource">
+  <action name="newConstraintDisabled">
+   <command class="" windowType="page" />
+  </action>
+ </objecttype>
+
+ <objecttype name="navigation" class="" resourceBundle="com.ptc.core.lwc.client.lwcResource">
+  <action name="typeMgmnt" renderType="GENERAL" resourceBundle="com.ptc.core.lwc.client.lwcResource">
+   <command class="netmarkets" method="servlet/Navigation?tab=typeMgmnt" windowType="page" />
+  </action>
+  <action name="reusableAttMgmnt" renderType="GENERAL" resourceBundle="com.ptc.core.lwc.client.lwcResource">
+   <command class="netmarkets" method="servlet/Navigation?tab=reusableAttMgmnt" windowType="page" />
+  </action>
+  <action name="globalEnumMgmnt" renderType="GENERAL" resourceBundle="com.ptc.core.lwc.client.lwcResource" uicomponent="MANAGE_ENUMERATIONS">
+   <command class="netmarkets" method="servlet/Navigation?tab=enumMgmnt" windowType="page" />
+  </action>
+  <action name="msrmntSysMgmnt" renderType="GENERAL" resourceBundle="com.ptc.core.lwc.client.lwcResource">
+   <command class="netmarkets" method="servlet/Navigation?tab=msrmntSysMgmnt" windowType="page" />
+  </action>
+  <action name="qomMgmnt" renderType="GENERAL" resourceBundle="com.ptc.core.lwc.client.lwcResource">
+   <command class="netmarkets" method="servlet/Navigation?tab=qomMgmnt" windowType="page" />
+  </action>
+ </objecttype>
+
+ <objecttype name="constraintTreeNode" class="" resourceBundle="com.ptc.core.lwc.client.lwcResource">
+  <action name="deleteConstraintRule" ajax="component">
+   <command class="com.ptc.core.lwc.client.commands.CascadingAttrsDeleteRulesCommand" method="deleteConstraintRule"
+    onClick="JCAConfirm(event,'com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE')" />
+  </action>
+  <action name="editConstraintRule">
+   <command class="com.ptc.core.lwc.client.forms.EditRuleFormProcessor" windowType="lightbox" method="execute"
+    url="netmarkets/jsp/lwcType/editRule.jsp?isIframeWizard=true" />
+  </action>
+  <action name="editConstraintRuleStep" required="false" preloadWizardPage="false">
+   <command windowType="wizard_step" url="netmarkets/jsp/lwcType/editRuleStep.jsp" />
+  </action>
+  <action name="editCascadingCondition">
+   <command class="com.ptc.core.lwc.client.forms.EditCascadingConditionFormProcessor" windowType="lightbox" method="execute"
+    url="netmarkets/jsp/lwcType/editCascadingCondition.jsp?isIframeWizard=true" />
+  </action>
+  <action name="editCascadingConditionStep" required="false" preloadWizardPage="false">
+   <command windowType="wizard_step" url="netmarkets/jsp/lwcType/editCascadingConditionStep.jsp" />
+  </action>
+  <!-- These actions are expected to be always disabled or hidden -->
+  <action name="createRuleFromExistingEmpty" />
+  <action name="deleteInheritedConstraintRule" />
+  <action name="editInheritedConstraintRule" />
+ </objecttype>
+
+</listofactions>

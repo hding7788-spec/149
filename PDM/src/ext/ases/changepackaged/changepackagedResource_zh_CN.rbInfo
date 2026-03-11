@@ -1,0 +1,169 @@
+ResourceInfo.class=wt.tools.resource.StringResourceInfo
+ResourceInfo.customizable=true
+ResourceInfo.deprecated=false
+
+
+# Entry Format (values equal to default value are not included)
+# <key>.value=
+# <key>.category=
+# <key>.comment=
+# <key>.argComment<n>=
+# <key>.constant=
+# <key>.customizable=
+# <key>.deprecated=
+# <key>.abbreviatedDisplay=
+# <key>.fullDisplay=
+# <key>.shortDescription=
+# <key>.longDescription=
+
+# Entry Contents
+
+changepackaged.AFFECT_DATA_TABLE.value=受影响的对象
+changepackaged.AFFECT_DATA_TABLE.comment=受影响的对象
+
+changepackaged.RESULT_DATA_TABLE.value=产生的对象
+changepackaged.RESULT_DATA_TABLE.comment=产生的对象
+
+changepackaged.attributes.description.value=详细信息
+changepackaged.attributes.description.comment=详细信息
+
+changepackaged.affectedAndresultIems.description.value=受影响的/产生的对象
+changepackaged.affectedAndresultIems.description.comment=受影响的/产生的对象
+
+changepackaged.updatePackaged.description.value=编辑
+changepackaged.updatePackaged.description.comment=编辑
+
+changepackaged.deletePackaged.description.value=删除
+changepackaged.deletePackaged.description.comment=删除
+
+STRUCTURE_TABLEVIEW_NAME.value=作为结构
+STRUCTURE_TABLEVIEW_NAME.constant=STRUCTURE_TABLEVIEW_NAME
+STRUCTURE_TABLEVIEW_NAME.comment=Text for tableview
+
+LIST_TABLEVIEW_NAME.value=作为列表
+LIST_TABLEVIEW_NAME.constant=LIST_TABLEVIEW_NAME
+LIST_TABLEVIEW_NAME.comment=Text for tableview
+
+changepackaged_NAME_LABEL.value=名称
+changepackaged_NAME_LABEL.constant=changepackaged_NAME_LABEL
+changepackaged_NAME_LABEL.comment=Name for tableview
+
+changepackaged_NUMBER_LABEL.value=编号
+changepackaged_NUMBER_LABEL.constant=changepackaged_NUMBER_LABEL
+changepackaged_NUMBER_LABEL.comment=Number for tableview
+
+changepackaged_UPDATESTAMP_LABEL.value=上次修改时间
+changepackaged_UPDATESTAMP_LABEL.constant=changepackaged_UPDATESTAMP_LABEL
+changepackaged_UPDATESTAMP_LABEL.comment=Updatestamp for tableview
+
+changepackaged_STATE_LABEL.value=状态
+changepackaged_STATE_LABEL.constant=changepackaged_STATE_LABEL
+changepackaged_STATE_LABEL.comment=State for tableview
+
+changepackaged_VERSION_LABEL.value=版本
+changepackaged_VERSION_LABEL.constant=changepackaged_VERSION_LABEL
+changepackaged_VERSION_LABEL.comment=Version for tableview
+
+General Attributes.value=基本属性
+General Attributes.constant=General_Attributes
+General Attributes.comment=基本属性
+
+complex.value=变更通告复杂性
+complex.constant=complex
+complex.comment=变更通告复杂性
+
+
+profession.value=专业
+profession.constant=profession
+profession.comment=专业
+
+
+changetype.value=变更类别
+changetype.constant=changetype
+changetype.comment=变更类别
+
+
+phasecode.value=当前阶段
+phasecode.constant=phasecode
+phasecode.comment=当前阶段
+
+
+affectdpage.value=涉及页数
+affectdpage.constant=affectdpage
+affectdpage.comment=涉及页数
+
+department.value=编制部门
+department.constant=department
+department.comment=编制部门
+
+implement.value=落实意见
+implement.constant=implement
+implement.comment=落实意见
+
+requestpriority.value=请求优先级
+requestpriority.constant=requestpriority
+requestpriority.comment=请求优先级
+
+
+changeleixing.value=变更类型
+changeleixing.constant=changeleixing
+changeleixing.comment=变更类型
+
+
+changereason.value=更改原因
+changereason.constant=changereason
+changereason.comment=更改原因
+
+
+edittime.value=编制日期
+edittime.constant=edittime
+edittime.comment=编制日期
+
+
+requesttime.value=需求时间
+requesttime.constant=requesttime
+requesttime.comment=需求时间
+
+avidmtype.value=类型
+avidmtype.constant=avidmtype
+avidmtype.comment=类型
+
+template.value=模板
+template.constant=template
+template.comment=模板
+
+cost.value=成本
+cost.constant=cost
+cost.comment=成本
+
+secret.value=密级
+secret.constant=secret
+secret.comment=密级
+
+pindex.value=产品代号
+pindex.constant=pindex
+pindex.comment=产品代号
+
+filenumber.value=文件代号
+filenumber.constant=filenumber
+filenumber.comment=文件代号
+
+guancanghao.value=馆藏号
+guancanghao.constant=guancanghao
+guancanghao.comment=馆藏号
+
+responsor.value=责任者
+responsor.constant=responsor
+responsor.comment=责任者
+
+remark.value=备注
+remark.constant=remark
+remark.comment=备注
+
+startphasename.value=开始阶段
+startphasename.constant=startphasename
+startphasename.comment=开始阶段
+
+targetphasename.value=目标阶段
+targetphasename.constant=startphasename
+targetphasename.comment=目标阶段

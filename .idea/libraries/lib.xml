@@ -1,0 +1,62 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/axiom-dom-1.2.19.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/axiom-jaxb-1.2.19.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/axiom-impl-1.2.19.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/axis2-java2wsdl-1.7.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/axiom-api-1.2.19.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/hutool-all-4.6.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/junrar-0.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/neethi-3.0.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/newCapp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/axis2-transport-local-1.7.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/axis2-saaj-1.7.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/axis2-corba-1.7.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/axis2-mtompolicy-1.7.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/axis2-transport-xmpp-1.7.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/woden-core-1.0M10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/amqp-client-4.7.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/wsdl4j-1.6.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/axis2-jaxbri-1.7.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/axis2-transport-mail-1.7.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/jxl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/xmlschema-core-2.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/axis2-metadata-1.7.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/jspSmartUpload_supportZH.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/jspsmartupload.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/itext-asian-5.4.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/axis2-adb-1.7.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/axis2-transport-udp-1.7.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/edtftpj.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/json-20160810.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/axis2-soapmonitor-servlet-1.7.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/soap-2.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/axis2-jaxws-1.7.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/axis2-xmlbeans-1.7.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/iTextAsian.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/axis2-ant-plugin-1.7.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/freemarker.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/axis2-transport-tcp-1.7.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/edtFTPj-1.5.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/axis2-adb-codegen-1.7.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/pbom.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/pdfbox-2.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/axis2-codegen-1.7.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/axis2-transport-http-1.7.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/commons-lang3-3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/axis2-clustering-1.7.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/axis2-transport-jms-1.7.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/itextpdf-5.4.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/axis2-jibx-1.7.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/axis2-fastinfoset-1.7.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/axis2-spring-1.7.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/axis2-transport-base-1.7.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/axis2-kernel-1.7.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/httpcore-4.2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/codebase/WEB-INF/lib/axis2-json-1.7.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,3 @@
+@ext/ases/changepackaged/create_ChangePackagedAffectLink_Table.sql
+@ext/ases/changepackaged/create_ChangePackagedResultLink_Table.sql
+@ext/ases/changepackaged/create_ChangePackaged_Table.sql

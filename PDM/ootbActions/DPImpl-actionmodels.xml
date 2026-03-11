@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+<!-- define the actions on DP Module -->
+<actionmodels resourceBundle="com.ptc.windchill.dpimpl.dpimplResource">
+   
+    <model name="Master Process actions" menufor="com.ptc.windchill.dpimpl.core.WTMasterProcess">
+        <action name="createDPJob"      type="dpimpl"/>
+        <action name="listSchedules"    type="dpimpl"/> 
+        <action name="listJobs"         type="dpimpl"/> 	
+    </model>
+
+    <model name="Schedule actions" menufor="com.ptc.windchill.dpimpl.core.DPImplSchedule">
+        <action name="editSchedule"     type="dpimpl"/> 
+        <action name="enableGatewaySchedule"   type="dpimpl"/> 
+        <action name="disableGatewaySchedule"  type="dpimpl"/> 
+        <action name="listJobs"         type="dpimpl"/> 	
+    </model>
+    
+    <model name="job details page actions" menufor="com.ptc.windchill.dpimpl.core.DPImplJob" 					                    		                                                 >
+        <action name="DPJobCancel"      type="dpimpl"/> 
+        <action name="DPJobResume"      type="dpimpl"/> 
+        <action name="DPJobDiagnose"    type="dpimpl"/>         
+    </model>      
+       
+    <model name="DP Process Manager">        
+        <action name="DP_list_delete"      type="dpimpl" shortcut = "true"/>        
+        <action name="createProcess"    type="dpimpl" shortcut = "true"/>  
+    </model>
+
+    <model name="DP Schedule Manager">        
+        <action name="schedule_delete"  type="dpimpl" shortcut = "true"/>        
+        <action name="createSchedule"   type="dpimpl" shortcut = "true"/>  
+        <action name="listProcess"      type="dpimpl" shortcut = "true"/>
+    </model>
+
+    <model name="DP Job Manager">        
+        <action name="job_delete"   type="dpimpl" shortcut = "true"/>
+        <action name="createDPJob"        type="dpimpl" shortcut = "true"/>
+        <action name="listSchedules"    type="dpimpl" shortcut = "true"/>
+        <action name="listProcess"      type="dpimpl" shortcut = "true"/>
+    </model>
+   
+    <model name="New Process">        
+        <action name="createProcessStep1" type="dpimpl"/>        
+        <action name="createProcessStep2" type="dpimpl"/>        
+    </model>
+
+    <model name="New Schedule">        
+        <action name="createScheduleStep1" type="dpimpl"/>        
+        <action name="createScheduleStep2" type="dpimpl"/>
+        <action name="createScheduleStep3" type="dpimpl"/>        
+    </model>
+    
+    <model name="Process Info Page Actions">        
+        <action name="createSchedule"   type="dpimpl"/>
+        <action name="createDPJob"      type="dpimpl"/>
+    </model>
+
+   <model name="Schedule Info Page Actions">        
+        <action name="enableSchedulePage"   type="dpimpl"/>
+        <action name="disableSchedulePage"  type="dpimpl"/> 
+        <action name="editSchedule"     type="dpimpl"/>        
+   </model>
+
+   <!-- Third level navigation for DP Objects such as Process/Schedule Info Page -->
+   <model name="third_level_nav_dpimpl" defaultActionName="primaryAttributes" defaultActionType="dpGeneral">
+       <submodel name="dpGeneral"/>
+       <submodel name="dpRelatedItems"/>
+   </model>
+   
+   <model name="dpGeneral" resourceBundle="com.ptc.windchill.dpimpl.dpimplResource">
+       <action name="primaryAttributes" type="object"/>
+       <action name="attributes" type="object"/>
+   </model>
+   
+   <model name="dpRelatedItems" resourceBundle="com.ptc.windchill.dpimpl.dpimplResource">
+       <action name="viewProcessInfoPage"      type="dpimpl"/>
+       <action name="viewJobsInfoPage"         type="dpimpl"/>
+       <action name="viewSchedulesInfoPage"         type="dpimpl"/>
+       <action name="displayRelatedTxnTable"         type="dpesiutil" resourceBundle="com.ptc.windchill.dpesiutil.DPEsiUtilResource"/>
+   </model>
+   <!-- End -->
+   
+   <!-- Third level navigation for Job Info Page -->
+   <model name="third_level_nav_dpimplJob" defaultActionName="primaryAttributes" defaultActionType="dpGeneral">
+       <submodel name="JobGeneral"/>
+       <submodel name="dpRelatedItems"/>
+   </model>
+   
+   <model name="JobGeneral" resourceBundle="com.ptc.windchill.dpimpl.dpimplResource">
+       <action name="primaryAttributes" type="object"/>
+       <action name="jobInfoAttributes" type="dpimpl"/>
+   </model>  
+   <!-- End --> 
+   
+   <!-- Process Info page Tab Set -->
+   <model name="processInfoPageTabSet" resource="com.ptc.windchill.dpimpl.dpimplResource">
+     	<submodel name="infoDefaultDetails"/>
+     	<action name="operationDetails" type="dpimpl"/>
+     	<submodel name="uninitialized_myTab"/>
+   </model>
+   <!-- End -->
+
+ <!-- Schedule Info page Tab Set -->
+   <model name="scheduleInfoPageTabSet" resource="com.ptc.windchill.dpimpl.dpimplResource">
+        <submodel name="infoDefaultDetails_schedule"/>    
+        <submodel name="uninitialized_myTab"/>
+   </model>
+   <!-- End -->
+
+    <!-- Job Info page Tab Set -->
+   <model name="jobInfoPageTabSet" resource="com.ptc.windchill.dpimpl.dpimplResource">
+     	<submodel name="infoDefaultDetails"/>     	
+     	<action name="operationStatus" type="dpimpl"/>
+     	<submodel name="uninitialized_myTab"/>
+   </model>
+   <!-- End -->
+
+   <model name="infoDefaultDetails" resourceBundle="com.ptc.windchill.dpimpl.dpimplResource">
+		<action name="primaryAttributes" type="object"/>
+		<!-- place holder until defaults are provided -->
+   </model>
+   
+   <model name="infoDefaultDetails_schedule" resourceBundle="com.ptc.windchill.dpimpl.dpimplResource">
+        <action name="primaryAttributes" type="object"/>
+        <action name="attributes" type="object"/>
+   </model>
+         
+</actionmodels>

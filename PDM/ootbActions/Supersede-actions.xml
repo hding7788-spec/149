@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+
+   <objecttype name="part" class="wt.part.WTPart" resourceBundle="com.ptc.windchill.enterprise.supersede.supersedeResource">      
+      <action name="supersedeWithExisting" ajax="row" selectRequired="true">
+      	<command class="com.ptc.windchill.enterprise.supersede.processors.SupersedeWithExistingFormProcessor" method="execute" windowType="popup" url="netmarkets/jsp/supersede/supersedeWithExisting.jsp"/>
+      	<includeFilter name="supersedeDisableForAdminLocked"/>
+      </action>
+      
+      <action name="supersedePartStep">
+         <command windowType="wizard_step" url="netmarkets/jsp/supersede/supersedePartStep.jsp"/>
+      </action>
+
+      <action name="supersedeCollectCadDocuments" ajax="row" selectRequired="true">
+         <command class="com.ptc.windchill.enterprise.supersede.processors.CollectRelatedCadFormProcessor" method="execute" onClick="callAJAXValidation('supersedePart')"/>
+      </action>
+      
+      <action name="supersedeRemoveObjects" ajax="row" selectRequired="true">
+         <command class="com.ptc.windchill.enterprise.supersede.processors.RemoveSupersededObjectFormProcessor" method="execute"/>
+      </action>
+
+      <action name="supersedeSetLocation" ajax="row" selectRequired="true">
+         <component onClick="SupersedePicker.launchFolderPicker(event)" />
+      </action>
+      
+      <action name="supersedes">
+         <command url="netmarkets/jsp/supersede/supersedes.jsp"/>
+         <supportedTypes>
+         	<type value="wt.part.WTPart"/>
+         </supportedTypes>
+         <includeFilter name="supersedeEnabled"/>
+      </action>
+      
+      <action name="undoSupersede" selectRequired="true" uicomponent="SUPERSEDE_UNDO">
+         <command class="com.ptc.windchill.enterprise.supersede.commands.UndoSupersedeCommand" method="deleteSupersedeGroups" onClick="PTC.validation.AJAXPostSelectValidation( event, 'undoSupersede')"/>
+         <includeFilter name="hideForObjectInProject"/>
+         <includeFilter name="disableForAdminLocked"/>         
+         <includeFilter name="disableForSupersedesTableRootItem"/>
+      </action>
+      
+   </objecttype>
+   
+   <objecttype name="supersede" class="wt.supersede.SupersedeGroup" 
+   		resourceBundle="com.ptc.windchill.enterprise.supersede.supersedeResource">
+   
+       <action name="createSupersedeWithExistingWizard" selectRequired="false" uicomponent="SUPERSEDE_CREATE">
+         <command class="com.ptc.windchill.enterprise.supersede.forms.CreateSupersedeWithExistingFormProcessor" method="execute" windowType="popup"/>
+         <includeFilter name="supersedeDisableForAdminLocked"/>
+         <includeFilter name="hideForObjectInProject"/>
+       </action>
+       
+       <action name="createSupersedeWithExistingWizardDefineParts_step" id="createSupersedeWithExistingWizardDefineParts_step">
+         <command windowType="wizard_step" />
+       </action>
+       
+       <action name="createSupersedeWithExistingWizardSetAttributes_step" id="createSupersedeWithExistingWizardSetAttributes_step">
+         <command windowType="wizard_step" />
+       </action>
+       
+       <action name="addSupersedingObjects" ajax="row">         
+         <command windowType="new"/>
+       </action>
+       
+       <action name="addSupersededObjects" ajax="row">         
+         <command windowType="new"/>
+       </action>
+       
+       <action name="editSupersedeWithExistingWizard" selectRequired="true" uicomponent="SUPERSEDE_EDIT">
+         <command class="com.ptc.windchill.enterprise.supersede.forms.EditSupersedeWithExistingFormProcessor" method="execute" windowType="popup"/>
+         <includeFilter name="supersedeDisableForAdminLocked"/>
+         <includeFilter name="hideForObjectInProject"/>
+         <includeFilter name="disableForSupersedesTableRootItem"/>
+       </action>
+       
+       <action name="editSupersedeWithExistingWizardDefineParts_step" id="editSupersedeWithExistingWizardDefineParts_step">
+         <command windowType="wizard_step" />
+       </action>
+       
+       <action name="editSupersedeWithExistingWizardSetAttributes_step" id="editSupersedeWithExistingWizardSetAttributes_step">
+         <command windowType="wizard_step" />
+       </action>
+       
+       <action name="createSupersedeWithNew" ajax="row" selectRequired="true" uicomponent="SUPERSEDE_CREATE">
+        <command class="com.ptc.windchill.enterprise.supersede.processors.SupersedeWithNewFormProcessor" method="execute" windowType="popup" />
+        <moreurlinfo>resizable=yes, scrollbars=no, height=400, width=1100</moreurlinfo>
+        <includeFilter name="supersedeDisableForAdminLocked"/>
+        
+        <includeFilter name="hideForObjectInProject"/>
+      </action>
+      
+       <action name="createSupersedeWithNewSetAttributes_step" id="createSupersedeWithNewSetAttributes_step">
+         <command windowType="wizard_step" />
+       </action>
+       
+       <action name="supersedeGroupHistory" ajax="row">         
+         <command windowType="popup"/>
+         <includeFilter name="disableForSupersedesTableRootItem"/>
+         <includeFilter name="hideForObjectInProject"/>
+       </action>
+       
+   </objecttype>
+
+</listofactions>

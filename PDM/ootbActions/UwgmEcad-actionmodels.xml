@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+<!-- define the actions on the UI components -->
+<actionmodels resourceBundle="com.ptc.windchill.uwgm.cadx.createecaddesign.documentECADResource">
+   <model name="schematic derived objects create table toolbar actions">
+      <action name="addSchematicDerivedObject" type="document"/>     <!-- Add Row -->
+      <action name="addSchematicMultipleDerivedObjects" type="document"/>     <!-- Add 5 Rows -->
+      <action name="removeRowsDerived" type="part"/>     <!-- Remove Selected Row -->
+    </model>
+
+   <model name="board derived objects create table toolbar actions">
+      <action name="addBoardDerivedObject" type="document"/>     <!-- Add Row -->
+      <action name="addBoardMultipleDerivedObjects" type="document"/>     <!-- Add 5 Rows -->
+      <action name="removeRowsDerived" type="part"/>     <!-- Remove Selected Row -->
+    </model>
+</actionmodels>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+   <objecttype name="table" class="wt.fc.Persistable">
+      <action name="saveAsView" ajax="row" resourceBundle="com.ptc.core.ui.tableRB">
+        <command class="com.ptc.core.htmlcomp.components.SaveAsViewFormProcessor" method="execute"/>
+      </action>
+      <action name="saveView" ajax="row" resourceBundle="com.ptc.core.ui.tableRB">
+        <command class="com.ptc.core.htmlcomp.components.SaveViewFormProcessor" method="execute"/>
+      </action>
+   </objecttype>
+
+    <objecttype name="object">
+        <action name="checkConsole" resourceBundle="com.ptc.core.htmlcomp.console.consoleResource" uicomponent="HOME_UTILITIES">
+            <command onClick="eventManagerConsole(event)" windowType="page"/>
+        </action>
+    </objecttype>
+
+	<objecttype name="newGenericEPMDocument" class="wt.epm.EPMDocument" resourceBundle="com.ptc.core.htmlcomp.createdocument.createDocumentResource">
+        <action name="genericDocCreateAttributesStep" id="genericDocCreateAttributesStep">
+           <command windowType="wizard_step" url="netmarkets/jsp/genericEPMDocument/genericDocCreateAttributesStep.jsp"/>
+        </action>
+    </objecttype>
+    
+</listofactions>

@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+
+<actionmodels>
+
+<!-- Part Information page Alternates table -->
+   <model name="alternatesTableToolBar" >
+   	  <action shortcut="true" name="addAlternatePart"     		   type="alternatePart"/>   <!-- Add Alternate Part -->
+      <action shortcut="true" name="remove_alternates_substitutes" type="part"/>   <!-- Remove Selected Objects -->
+      <action shortcut="true" name="editReplacement"               type="alternatePart"/> <!-- Edit Replacement type -->
+   </model>
+   <model name="alternatesTableRowAction">
+      <action name="view"        type="part"/>     <!-- View informaton -->
+      <action name="setTwoway"   type="part"/>     <!-- Indicates two-way relationship ??? -->
+   </model>
+
+<!-- Part Information page Substitutes table -->
+   <model name="substitutesTableToolBar" >
+   </model>
+   <model name="substitutesTableRowAction">
+      <action name="view"     type="part"/>  <!-- View informaton -->
+   </model>
+
+<!-- "Manage Replacements" Wizard and Replacement table actions  -->
+   <model name="ReplacementsWizardButtons">
+      <action name="replacementsOkButton"       type="part"/>     <!-- OK -->
+      <action name="replacementsCancelButton"   type="part"/>     <!-- Cancel -->
+   </model>
+   <model name="replacementsTableToolBar" >
+      <action name="remove"                     type="object" shortcut="true"/>   <!-- Remove Selected Objects -->
+      <action name="addAlternateLinks"          type="part" shortcut="true"/>     <!-- Add Alternate Part -->
+      <action name="addSubstituteLinks"         type="part" shortcut="true"/>     <!-- Add Substitute Part -->
+   </model>
+
+   <model name="replacementWizardButtons" resourceBundle="com.ptc.windchill.enterprise.part.replacementResource" >
+		<action name="prevButton" type="object"/>
+		<action name="nextButton" type="alternatePart"/>
+		<action name="okButton" type="object" />
+		<action name="cancelButton" type="object"/>
+	</model>
+	
+	<model name="replacementsAlternateTableToolBar" >
+      <action name="removeAlternateLinks"       type="part" shortcut="true"/>     <!-- Remove Selected Objects -->
+      <action name="addAlternateLinks"          type="part" shortcut="true"/>     <!-- Add Alternate Part -->
+   </model>
+   
+   <model name="replacementsSubstituteTableToolBar" >
+      <action name="removeSubstituteLinks"      type="part" shortcut="true"/>     <!-- Remove Selected Objects -->      
+      <action name="addSubstituteLinks"         type="part" shortcut="true"/>     <!-- Add Substitute Part -->
+   </model>
+   <!-- "Replace with alternate and substitute" table actions starts -->
+   
+   <model name="ReplaceWithAltSubWizardButtons">
+      <action name="replaceWithAltSubOkButton"       type="part"/>     <!-- OK -->
+      <action name="cancelButton" type="object"/>     <!-- Cancel -->
+   </model>
+   
+   <model name="replaceWithAltSubTableToolBar" >
+   </model>
+   
+   <!-- "Replace with alternate and substitute" table actions ends -->
+
+</actionmodels>

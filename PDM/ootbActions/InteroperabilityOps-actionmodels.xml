@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+
+<actionmodels>
+<!-- These actions are available on the 1st step of the send to PDM wizard -->
+   <model name="send to pdm step 1 toolbar actions">
+    	<action name="checkinonly" type="sandbox" shortcut="true"/>
+	<action name="keepcheckout" type="sandbox" shortcut="true"/>
+	<action name="collectObjects" type="sandbox" shortcut="true"/>
+   	<action name="remove" type="sandbox" shortcut="true"/>
+
+   </model>
+   
+   <!-- These actions are available on the 2nd step of the send to PDM wizard -->
+   <model name="send to pdm step 2 toolbar actions">
+        <action name="sendToPDMSetLocation" type="sandbox" shortcut="true"/>
+        <action name="sendToPDMSetView" type="sandbox" shortcut="true"/> 
+   </model>
+ 
+   <!-- These actions are available in the identity conflicts report toolbar -->
+    <model name="identity conflicts toolbar actions">
+          <action name="replaceWithPDMObjTB" type="sandbox" shortcut="true"/> 
+   </model>
+   
+   <!-- These actions are available in the identity conflicts report for CADDocuments at the row level -->
+   <model name="identity conflicts row level actions">
+         <action name="MULTIRENAME" type="pdmObject" shortcut="true"/>
+         <action name="compareWithPDMObj" type="sandbox" shortcut="true"/> 
+         <action name="replaceWithPDMObj" type="sandbox" shortcut="true"/> 
+   </model>
+   
+   <!-- list of actions for the Project Revisions table on the object info page -->
+   
+   <model name="project revisions table row level actions shares" menufor="wt.inf.sharing.SharedContainerMap">
+     <action name="pstRemoveShare" type="object"/>             <!-- Project Status Table Remove Share -->
+     <action name="pstConvertToPdmCheckout" type="object"/>    <!-- Project Status Table Convert to PDM Checkout -->
+     <action name="pstUpdateShare" type="sandbox"/>            <!-- Project Status Table Update Selected Shares -->
+   </model>
+   
+   <model name="project revisions table row level actions">
+     <action name="pstSendToPdm" type="sandbox"/>              <!-- Project Status Table Send to PDM -->
+     <action name="pstUndoPdmCheckout" type="object"/>         <!-- Project Status Table Undo PDM Checkout -->
+     <action name="pstConvertToShare" type="sandbox"/>         <!-- Project Status Table Convert to Share -->
+     <action name="pstDelete" type="object"/>         			<!-- Project Status Table Delete -->
+   </model>
+   
+   <model name="project revisions table actions toolbar">
+     <action name="pstSendToPdmTB" type="sandbox" shortcut="true"/>                <!-- Project Status Table Send to PDM -->
+     <action name="pstUndoPdmCheckoutTB" type="object" shortcut="true"/>           <!-- Project Status Table Undo PDM Checkout -->
+     <action name="pstConvertToShareTB" type="sandbox" shortcut="true"/>           <!-- Project Status Table Convert to Share -->
+     <action name="pstDeleteTB" type="object" shortcut="true"/>            		<!-- Project Status Table Delete -->
+     <action name="pstRemoveShareTB" type="object" shortcut="true"/>               <!-- Project Status Table Remove Share -->
+     <action name="pstConvertToPdmCheckoutTB" type="object" shortcut="true"/>      <!-- Project Status Table Convert to PDM Checkout -->
+   </model>
+</actionmodels>

@@ -1,0 +1,111 @@
+﻿ResourceInfo.class=wt.tools.resource.MetadataResourceInfo
+ResourceInfo.customizable=true
+ResourceInfo.deprecated=false
+
+# Entry Format (values equal to default value are not included)
+# <key>.value=
+# <key>.category=
+# <key>.comment=
+# <key>.argComment<n>=
+# <key>.constant=
+# <key>.customizable=
+# <key>.deprecated=
+# <key>.abbreviatedDisplay=
+# <key>.fullDisplay=
+# <key>.shortDescription=
+# <key>.longDescription=
+
+# Entry Contents
+
+AccessControlList.value=访问控制列表
+
+AccessControlList.entry.value=条目
+
+AccessPermission.value=访问权限
+
+AccessPolicy.value=访问策略
+
+AccessPolicy.policyOwnerRef.value=策略所有者参考
+
+AccessPolicyRule.value=访问策略规则
+
+AccessPolicyRule.entrySet.value=条目集
+
+AccessPolicyRule.selector.value=选择器
+
+AccessSelector.value=访问选择器
+
+AccessSelector.className.value=类名称
+
+AccessSelector.ownerRef.value=所有者参考
+
+AccessSelector.stateName.value=状态名称
+
+AccessSelector.typeId.value=类型 ID
+
+AccessSelectorList.value=访问选择器列表
+
+AccessSelectorList.ownerRef.value=所有者参考
+
+AccessSelectorList.selectorListType.value=选择器列表类型
+
+AclEntryLink.value=Acl 条目链接
+
+AclEntryLink.acl.value=Acl
+
+AclEntryLink.entry.value=条目
+
+AdHocAccessKey.value=Ad Hoc 访问密钥
+
+AdHocAcl.value=专用 Acl
+
+AdHocAcl.ownerRef.value=所有者参考
+
+AdHocAclKey.value=专用 Acl 关键字
+
+AdHocAclSpec.value=专用 Acl 规范
+
+AdHocAclSpec.entrySet.value=条目集
+
+AdHocAclSpec.name.value=名称
+
+AdHocAclSpec.principalRef.value=承担者参考
+
+AdHocAclSpec.role.value=角色
+
+AdHocControlled.value=管理的 Ad Hoc
+
+AdHocControlled.entrySet.value=条目集
+
+PolicyAcl.value=策略 Acl
+
+PolicyAcl.entrySet.value=条目集
+
+PolicyAcl.selector.value=选择器
+
+WTAclEntry.value=WTAcl 条目
+
+WTAclEntry.acl.value=Acl
+
+WTAclEntry.aclReference.value=Acl 参考
+
+WTAclEntry.negative.value=负值
+WTAclEntry.negative.deprecated=true
+
+WTAclEntry.principalReference.value=承担者参考
+
+WTPermission.value=WTPermission
+WTPermission.deprecated=true
+
+WCTYPE|wt.access.SecurityLabeled~SCA|ALL_SECURITY_LABELS.value=所有安全标签值
+WCTYPE|wt.access.SecurityLabeled~SCA|ALL_SECURITY_LABELS.dataType=com.ptc.core.meta.common.AttributeTypeIdentifierSet
+WCTYPE|wt.access.SecurityLabeled~SCA|ALL_SECURITY_LABELS.serverFunction=com.ptc.core.foundation.security.server.impl.SACFAllSecurityLabels
+WCTYPE|wt.access.SecurityLabeled~SCA|ALL_SECURITY_LABELS.serverFunction.arg1=PID{ALL_SECURITY_LABELS}
+
+##configure for 149
+WCTYPE|wt.access.SecurityLabeled~SCA|MIJI.value=密级
+WCTYPE|wt.access.SecurityLabeled~SCA|MIJI.dataType=java.lang.String
+WCTYPE|wt.access.SecurityLabeled~SCA|MIJI.serverFunction=com.ptc.core.foundation.security.server.impl.SACFSecurityLabel
+WCTYPE|wt.access.SecurityLabeled~SCA|MIJI.serverFunction.arg1=PID{MIJI}
+WCTYPE|wt.access.SecurityLabeled~SCA|MIJI.longDescription=密级
+

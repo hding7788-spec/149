@@ -1,0 +1,40 @@
+<%@page language="java" session="false" contentType="text/xml"%>
+<%@taglib uri="http://www.ptc.com/infoengine/taglib/core" prefix="ie"%>
+<%@page import="java.io.*"%>
+<%@page import="java.util.*"%>
+<%@page import="ext.casc.integrate.process.CreateGZFromBPM"%>
+<%@page import=" java.lang.Exception"%>
+<!--com.infoengine.soap.rpc.def
+
+@param string gzCode Argument number 1.
+@param string gzName Argument number 2.
+@param string gzType Argument number 3.
+@param string UpdateTime Argument number 4.
+@param string SubmitBy Argument number 5.
+
+-->
+
+<%
+		String gzCode = (String)getParam("gzCode");
+		String gzName = (String)getParam("gzName");
+		String gzType = (String)getParam("gzType");
+		String UpdateTime = (String)getParam("UpdateTime");
+		String SubmitBy = (String)getParam("SubmitBy");
+		System.out.println("------getGZByBPM----------start--------");
+		System.out.println("------param---------------==="+gzCode+">>>"+gzName+">>>"+gzType+">>>"+UpdateTime+">>>"+SubmitBy);
+		CreateGZFromBPM createGZFromBPM = new CreateGZFromBPM();
+try{
+	createGZFromBPM.createGZ(gzCode,gzName,gzType,UpdateTime,SubmitBy);
+}catch (Exception e) {
+	e.getLocalizedMessage();
+}
+System.out.println("------getPDMDataInfo----------end--------");
+%>
+
+<ie:webject name="Create-Group" type="GRP">
+  <!ie:param name="ELEMENT" data="<%=result%>"/>
+  <ie:param name="CLASS" data="Status"/>
+  <ie:param name="GROUP_OUT" data="${@FORM[]group_out[]}" default="output" />
+</ie:webject>
+
+

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<convert_Config>
+<!-- 阶段 发送配置 -->
+	<exp_Config>
+	  <!-- id="标准模型属性ID" fromValue="本地的属性值（配置时此属性值在同一个属性ID的配置中不能重复）"
+	   toValue="中心域的属性值" -->
+	  <attr id="phaseInfo">
+		  <convertMap fromValue="M" toValue="M"/>
+		  <convertMap fromValue="C" toValue="C"/>
+		  <convertMap fromValue="S" toValue="S"/>
+		  <convertMap fromValue="D" toValue="D"/>
+		  <convertMap fromValue="P" toValue="P"/>
+		  <convertMap fromValue="S1" toValue="S"/>
+		  <convertMap fromValue="S2" toValue="S"/>
+		  <convertMap fromValue="S3" toValue="S1"/>
+		  <convertMap fromValue="C1" toValue="C"/>
+		  <convertMap fromValue="C2" toValue="C"/>
+		  <convertMap fromValue="C3" toValue="C1"/>
+		  <convertMap fromValue="P1" toValue="P"/>
+		  <convertMap fromValue="P2" toValue="P"/>
+		  <convertMap fromValue="P3" toValue="P"/>
+	  </attr>
+	  <attr id="securityLevel">
+		  <convertMap fromValue="" toValue="10"/>
+		  <convertMap fromValue="公开" toValue="10"/>
+		  <convertMap fromValue="内部" toValue="20"/>
+		  <convertMap fromValue="秘密★10年" toValue="30"/>
+		  <convertMap fromValue="机密★20年" toValue="40"/>
+	  </attr>
+	   <attr id="versionInfo">
+		  <convertMap fromValue="space" toValue="A"/>
+		  <convertMap fromValue="Z" toValue="B"/>
+		  <convertMap fromValue="a" toValue="C"/>
+		  <convertMap fromValue="b" toValue="D"/>
+		  <convertMap fromValue="c" toValue="E"/>
+		  <convertMap fromValue="d" toValue="F"/>
+		  <convertMap fromValue="e" toValue="G"/>
+		  <convertMap fromValue="f" toValue="H"/>
+		  <convertMap fromValue="g" toValue="I"/>
+		  <convertMap fromValue="h" toValue="J"/>
+		  <convertMap fromValue="i" toValue="K"/>
+		  <convertMap fromValue="j" toValue="L"/>
+		  <convertMap fromValue="j" toValue="M"/>
+		  <convertMap fromValue="l" toValue="N"/>
+		  <convertMap fromValue="m" toValue="O"/>
+		  <convertMap fromValue="n" toValue="P"/>
+		  <convertMap fromValue="o" toValue="Q"/>
+		  <convertMap fromValue="p" toValue="R"/>
+		  <convertMap fromValue="q" toValue="S"/>
+		  <convertMap fromValue="r" toValue="T"/>
+		  <convertMap fromValue="s" toValue="U"/>
+		  <convertMap fromValue="t" toValue="V"/>
+		  <convertMap fromValue="u" toValue="W"/>
+		  <convertMap fromValue="v" toValue="X"/>
+		  <convertMap fromValue="w" toValue="Y"/>
+	  </attr>
+	  <attr id="IBAKey">
+		  <convertMap fromValue="M" toValue="M"/>
+		  <convertMap fromValue="C" toValue="C"/>
+		  <convertMap fromValue="S" toValue="S"/>
+		  <convertMap fromValue="D" toValue="D"/>
+		  <convertMap fromValue="P" toValue="P"/>
+		  <convertMap fromValue="S1" toValue="S"/>
+		  <convertMap fromValue="S2" toValue="S"/>
+		  <convertMap fromValue="S3" toValue="S1"/>
+		  <convertMap fromValue="C1" toValue="C"/>
+		  <convertMap fromValue="C2" toValue="C"/>
+		  <convertMap fromValue="C3" toValue="C1"/>
+		  <convertMap fromValue="P1" toValue="P"/>
+		  <convertMap fromValue="P2" toValue="P"/>
+		  <convertMap fromValue="P3" toValue="P"/>
+	  </attr>
+	   <attr id="buildType">
+		  <convertMap fromValue="7" toValue="OWNER"/>
+		  <convertMap fromValue="6" toValue="IMAGE"/>
+		  <convertMap fromValue="2" toValue="CONTENT"/>
+	  </attr>
+
+	  <!--
+	  <attr id="versionInfo">
+	  </attr>
+	  <attr id="IterationInfo">
+	  </attr>
+	  <attr id="State">
+	  </attr>
+	  <attr id="BGLB">
+	  </attr>
+	  <attr id="changeReason">
+	  </attr>
+	  <attr id="THECATEGORY">
+	  </attr>
+	  <attr id="THEREQUESTPRIORITY">
+	  </attr>
+
+	  <attr id="fileObjType">
+	  </attr>
+
+	  <attr id="version">
+	  </attr>
+	  <attr id="iteration">
+	  </attr>
+	  <attr id="view">
+	  </attr>
+	  <attr id="quantityUnit">
+	  </attr>
+	  <attr id="quantityUnitName">
+	  </attr>
+	  <attr id="type">
+	  </attr>
+	  <attr id="buildType">
+	  </attr>
+	  <attr id="referenceType">
+	  </attr>
+	  <attr id="traceCode">
+	  </attr>
+	   -->
+	</exp_Config>
+	<!--  接收配置 -->
+	<imp_Config>
+	  <!-- id="标准模型属性ID" fromValue="中心域的属性值（配置时此属性值在同一个属性ID的配置中不能重复）" toValue="本地的属性值" -->
+	  <attr id="phaseInfo">
+		  <convertMap fromValue="M" toValue="M"/>
+		  <convertMap fromValue="C" toValue="C"/>
+		  <convertMap fromValue="S" toValue="S"/>
+		  <convertMap fromValue="D" toValue="D"/>
+		  <convertMap fromValue="P" toValue="P"/>
+		  <convertMap fromValue="S1" toValue="S1"/>
+		  <convertMap fromValue="S2" toValue="S2"/>
+		  <convertMap fromValue="S3" toValue="S3"/>
+		  <convertMap fromValue="C1" toValue="C1"/>
+		  <convertMap fromValue="C2" toValue="C2"/>
+		  <convertMap fromValue="C3" toValue="C3"/>
+		  <convertMap fromValue="P1" toValue="P1"/>
+		  <convertMap fromValue="P2" toValue="P2"/>
+		  <convertMap fromValue="P3" toValue="P3"/>
+	  </attr>
+	  <attr id="securityLevel">
+		  <convertMap fromValue="0" toValue=""/>
+		  <convertMap fromValue="10" toValue="公开"/>
+		  <convertMap fromValue="20" toValue="内部"/>
+		  <convertMap fromValue="30" toValue="秘密★10年"/>
+		  <convertMap fromValue="40" toValue="机密★20年"/>
+	  </attr>
+	   <attr id="versionInfo">
+	      <convertMap fromValue="A" toValue="a"/>
+		  <convertMap fromValue="B" toValue="b"/>
+		  <convertMap fromValue="C" toValue="c"/>
+		  <convertMap fromValue="D" toValue="d"/>
+		  <convertMap fromValue="E" toValue="e"/>
+		  <convertMap fromValue="F" toValue="f"/>
+		  <convertMap fromValue="G" toValue="g"/>
+		  <convertMap fromValue="H" toValue="h"/>
+		  <convertMap fromValue="I" toValue="i"/>
+		  <convertMap fromValue="J" toValue="j"/>
+		  <convertMap fromValue="K" toValue="k"/>
+		  <convertMap fromValue="L" toValue="l"/>
+		  <convertMap fromValue="M" toValue="m"/>
+		  <convertMap fromValue="N" toValue="n"/>
+		  <convertMap fromValue="O" toValue="o"/>
+		  <convertMap fromValue="P" toValue="p"/>
+		  <convertMap fromValue="Q" toValue="q"/>
+		  <convertMap fromValue="R" toValue="r"/>
+		  <convertMap fromValue="S" toValue="s"/>
+		  <convertMap fromValue="T" toValue="t"/>
+	   	   <!--
+		  <convertMap fromValue="A" toValue="space"/>
+		  <convertMap fromValue="B" toValue="Z"/>
+		  <convertMap fromValue="C" toValue="a"/>
+		  <convertMap fromValue="D" toValue="b"/>
+		  <convertMap fromValue="E" toValue="c"/>
+		  <convertMap fromValue="F" toValue="d"/>
+		  <convertMap fromValue="G" toValue="e"/>
+		  <convertMap fromValue="H" toValue="f"/>
+		  <convertMap fromValue="I" toValue="g"/>
+		  <convertMap fromValue="J" toValue="h"/>
+		  <convertMap fromValue="K" toValue="i"/>
+		  <convertMap fromValue="L" toValue="j"/>
+		  <convertMap fromValue="M" toValue="k"/>
+		  <convertMap fromValue="N" toValue="l"/>
+		  <convertMap fromValue="O" toValue="m"/>
+		  <convertMap fromValue="P" toValue="n"/>
+		  <convertMap fromValue="Q" toValue="o"/>
+		  <convertMap fromValue="R" toValue="p"/>
+		  <convertMap fromValue="S" toValue="q"/>
+		  <convertMap fromValue="T" toValue="r"/>
+		  <convertMap fromValue="U" toValue="s"/>
+		  <convertMap fromValue="V" toValue="t"/>
+		  <convertMap fromValue="W" toValue="u"/>
+		  <convertMap fromValue="X" toValue="v"/>
+		  <convertMap fromValue="Y" toValue="w"/>
+		   -->
+	  </attr>
+		<attr id="versionInfo_805">
+			<convertMap fromValue="A" toValue="space"/>
+			<convertMap fromValue="B" toValue="Z"/>
+			<convertMap fromValue="C" toValue="a"/>
+			<convertMap fromValue="D" toValue="b"/>
+			<convertMap fromValue="E" toValue="c"/>
+			<convertMap fromValue="F" toValue="d"/>
+			<convertMap fromValue="G" toValue="e"/>
+			<convertMap fromValue="H" toValue="f"/>
+			<convertMap fromValue="I" toValue="g"/>
+			<convertMap fromValue="J" toValue="h"/>
+			<convertMap fromValue="K" toValue="i"/>
+			<convertMap fromValue="L" toValue="j"/>
+			<convertMap fromValue="M" toValue="k"/>
+			<convertMap fromValue="N" toValue="l"/>
+			<convertMap fromValue="O" toValue="m"/>
+			<convertMap fromValue="P" toValue="n"/>
+			<convertMap fromValue="Q" toValue="o"/>
+			<convertMap fromValue="R" toValue="p"/>
+			<convertMap fromValue="S" toValue="q"/>
+			<convertMap fromValue="T" toValue="r"/>
+			<convertMap fromValue="U" toValue="s"/>
+			<convertMap fromValue="V" toValue="t"/>
+			<convertMap fromValue="W" toValue="u"/>
+			<convertMap fromValue="X" toValue="v"/>
+			<convertMap fromValue="Y" toValue="w"/>
+			<convertMap fromValue="Z" toValue="x"/>
+			<convertMap fromValue="AA" toValue="y"/>
+			<convertMap fromValue="AB" toValue="z"/>
+		</attr>
+		<attr id="versionInfo_NO8">
+
+		</attr>
+		<attr id="buildType">
+		  <convertMap fromValue="OWNER" toValue="7"/>
+		  <convertMap fromValue="IMAGE" toValue="6"/>
+		  <convertMap fromValue="CONTENT" toValue="2"/>
+	  </attr>
+
+		<attr id="extPath">
+			<convertMap fromValue="pdm_PHASE_NOW" toValue="PHASE_CODE"/>
+			<convertMap fromValue="pdm_SMALLTYPE" toValue="SUBTYPE"/>
+			<convertMap fromValue="pdm_MODELINDEX" toValue="MINDEX"/>
+			<convertMap fromValue="pdm_EDITUNIT" toValue="ENDITEMIN"/>
+			<convertMap fromValue="pdm_SYSTEMNUMBER" toValue="SUBSYSTEM"/>
+			<convertMap fromValue="pdm_CINDEX" toValue="CINDEX"/>
+			<convertMap fromValue="pdm_DESIGN_UNIT" toValue="DESIGNER"/>
+			<convertMap fromValue="pdm_KEYCOMPONENT" toValue="KEYCOMPONENT"/>
+			<convertMap fromValue="pdm_PINDEX" toValue="PINDEX"/>
+			<convertMap fromValue="pdm_CTYPE" toValue="CTYPE"/>
+			<convertMap fromValue="pdm_SETMARK" toValue="SETMARK"/>
+		</attr>
+  	</imp_Config>
+</convert_Config>

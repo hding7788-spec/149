@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE NmLoader
+  SYSTEM "standardX20.dtd">
+<NmLoader>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>149IBA</csvname>
+      <csvhierarchyDisplayName>149IBA</csvhierarchyDisplayName>
+      <csvorganizerPaths></csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name/>
+      <csvdescription/>
+      <csvdata_type>ORG</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier/>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>CHANGETYPE</csvname>
+      <csvhierarchyDisplayName>变更类别</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>变更类别</csvdisplay_name>
+      <csvdescription>变更类别</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>CHANGETYPE</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>AFFECTEDPAGE</csvname>
+      <csvhierarchyDisplayName>涉及页数</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>涉及页数</csvdisplay_name>
+      <csvdescription>涉及页数</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>AFFECTEDPAGE</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>CurrentStage</csvname>
+      <csvhierarchyDisplayName>当前阶段</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>当前阶段</csvdisplay_name>
+      <csvdescription>当前阶段</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>CurrentStage</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>DEPT</csvname>
+      <csvhierarchyDisplayName>编制部门</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>编制部门</csvdisplay_name>
+      <csvdescription>编制部门</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>DEPT</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+</NmLoader>

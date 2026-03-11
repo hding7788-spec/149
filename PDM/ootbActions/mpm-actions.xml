@@ -1,0 +1,270 @@
+<?xml version="1.0"?>
+<listofactions>
+    <objecttype name="mpm" resourceBundle="com.ptc.windchill.mpml.mpmActionsRB">
+
+        <action name="viewInfoGWT">
+            <command class="com.ptc.windchill.mpml.client.action.ViewInfoAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+        </action>
+
+        <action name="mpmSelectInVIZTabGWT">
+            <command class="com.ptc.cat.ui.client.action.SelectInVIZTabAction"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.action.IsVisualizationInstalled"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+                <type value="wt.part.WTPartUsageLink" />
+                <type value="wt.part.PartUsesOccurrence" />
+                <type value="wt.part.RTPartPathOccurrence" />
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationHolder"/>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationUsageLink"/>
+            </supportedTypes>
+        </action>
+
+        <action name="mpmRenameObjectWizardGWT" ajax="row">
+            <command class="com.ptc.windchill.mpml.client.action.MPMRenameAction" method="execute" url="/ptc1/object/renameObjectWizard" windowType="popup"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.CheckinFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <includeFilter name="sandboxSharingValidationSimple"/>
+            <includeFilter name="hideFromNonAgreementMgrs"/>
+            <includeFilter name="hideSBHiddenFilter"/>
+            
+            <nonSupportedTypes>
+                <type value="wt.part.WTPart"/>
+            </nonSupportedTypes>
+        </action>
+
+        <action name="checkInOutGroupGWT">
+            <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+
+        <action name="supportingProcessPlanFilterGroupGWT">
+           <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+
+        <action name="supportingRelatedAssemblyFilterGroupGWT">
+           <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+
+
+        <action name="mainMPMProcessPlanEditFilterAction">
+           <command class="com.ptc.windchill.mpml.client.filter.action.MainMPMProcessPlanEditFilterAction" />
+        </action>
+
+        <action name="mainMPMProcessPlanInfoFilterAction">
+           <command class="com.ptc.windchill.mpml.client.filter.action.MainMPMProcessPlanInfoFilterAction" />
+        </action>
+
+        <action name="mainMPMProcessPlanSaveFilterAction">
+           <command class="com.ptc.windchill.mpml.client.filter.action.MainMPMProcessPlanSaveFilterAction" />
+        </action>
+
+        <action name="mainMPMResourceEditFilterAction">
+           <command class="com.ptc.windchill.mpml.client.filter.action.MainMPMResourceEditFilterAction" />
+        </action>
+
+        <action name="mainMPMResourceInfoFilterAction">
+           <command class="com.ptc.windchill.mpml.client.filter.action.MainMPMResourceInfoFilterAction" />
+        </action>
+
+        <action name="mainMPMResourceSaveFilterAction">
+           <command class="com.ptc.windchill.mpml.client.filter.action.MainMPMResourceSaveFilterAction" />
+        </action>
+
+        <action name="mainWTPartEditFilterAction">
+           <command class="com.ptc.windchill.mpml.client.filter.action.MainWTPartEditFilterAction" />
+        </action>
+
+        <action name="mainWTPartInfoFilterAction">
+           <command class="com.ptc.windchill.mpml.client.filter.action.MainWTPartInfoFilterAction" />
+        </action>
+
+        <action name="mainWTPartSaveFilterAction">
+           <command class="com.ptc.windchill.mpml.client.filter.action.MainWTPartSaveFilterAction" />
+        </action>
+
+
+        <action name="supportingMPMProcessPlanEditFilterAction">
+           <command class="com.ptc.windchill.mpml.client.filter.action.SupportingMPMProcessPlanEditFilterAction" />
+           <includeFilter name="com.ptc.windchill.mpml.client.internal.filter.DoesProcessPlanInfoExistFilter"/>
+        </action>
+
+        <action name="supportingMPMProcessPlanInfoFilterAction">
+           <command class="com.ptc.windchill.mpml.client.filter.action.SupportingMPMProcessPlanInfoFilterAction" />
+           <includeFilter name="com.ptc.windchill.mpml.client.internal.filter.DoesProcessPlanInfoExistFilter"/>
+        </action>
+
+        <action name="supportingMPMProcessPlanSaveFilterAction">
+           <command class="com.ptc.windchill.mpml.client.filter.action.SupportingMPMProcessPlanSaveFilterAction" />
+           <includeFilter name="com.ptc.windchill.mpml.client.internal.filter.DoesProcessPlanInfoExistFilter"/>
+        </action>
+
+        <action name="supportingWTPartEditFilterAction">
+           <command class="com.ptc.windchill.mpml.client.filter.action.SupportingWTPartEditFilterAction" />
+           <includeFilter name="com.ptc.windchill.mpml.client.internal.filter.DoesProcessPlanInfoExistFilter"/>
+        </action>
+
+        <action name="supportingWTPartInfoFilterAction">
+           <command class="com.ptc.windchill.mpml.client.filter.action.SupportingWTPartInfoFilterAction" />
+           <includeFilter name="com.ptc.windchill.mpml.client.internal.filter.DoesProcessPlanInfoExistFilter"/>
+        </action>
+
+        <action name="supportingWTPartSaveFilterAction">
+           <command class="com.ptc.windchill.mpml.client.filter.action.SupportingWTPartSaveFilterAction" />
+           <includeFilter name="com.ptc.windchill.mpml.client.internal.filter.DoesProcessPlanInfoExistFilter"/>
+        </action>
+
+
+        <action name="treePickerMPMProcessPlanEditFilterAction">
+           <command class="com.ptc.windchill.mpml.client.filter.action.TreePickerMPMProcessPlanEditFilterAction" />
+        </action>
+
+        <action name="treePickerMPMProcessPlanInfoFilterAction">
+           <command class="com.ptc.windchill.mpml.client.filter.action.TreePickerMPMProcessPlanInfoFilterAction" />
+        </action>
+
+        <action name="treePickerMPMProcessPlanSaveFilterAction">
+           <command class="com.ptc.windchill.mpml.client.filter.action.TreePickerMPMProcessPlanSaveFilterAction" />
+        </action>
+
+        <action name="treePickerMPMResourceEditFilterAction">
+           <command class="com.ptc.windchill.mpml.client.filter.action.TreePickerMPMResourceEditFilterAction" />
+        </action>
+
+        <action name="treePickerMPMResourceInfoFilterAction">
+           <command class="com.ptc.windchill.mpml.client.filter.action.TreePickerMPMResourceInfoFilterAction" />
+        </action>
+
+        <action name="treePickerMPMResourceSaveFilterAction">
+           <command class="com.ptc.windchill.mpml.client.filter.action.TreePickerMPMResourceSaveFilterAction" />
+        </action>
+
+        <action name="treePickerMPMMfgStandardGroupedEditFilterAction">
+           <command class="com.ptc.windchill.mpml.client.filter.action.TreePickerMPMMfgStandardGroupedEditFilterAction" />
+        </action>
+
+        <action name="treePickerMPMMfgStandardGroupedInfoFilterAction">
+           <command class="com.ptc.windchill.mpml.client.filter.action.TreePickerMPMMfgStandardGroupedInfoFilterAction" />
+        </action>
+
+        <action name="treePickerMPMMfgStandardGroupedSaveFilterAction">
+           <command class="com.ptc.windchill.mpml.client.filter.action.TreePickerMPMMfgStandardGroupedSaveFilterAction" />
+        </action>
+
+        <action name="treePickerWTPartEditFilterAction">
+           <command class="com.ptc.windchill.mpml.client.filter.action.TreePickerWTPartEditFilterAction" />
+        </action>
+
+        <action name="treePickerWTPartInfoFilterAction">
+           <command class="com.ptc.windchill.mpml.client.filter.action.TreePickerWTPartInfoFilterAction" />
+        </action>
+
+        <action name="treePickerWTPartSaveFilterAction">
+           <command class="com.ptc.windchill.mpml.client.filter.action.TreePickerWTPartSaveFilterAction" />
+        </action>
+
+
+        <action name="resetPlantsGWT">
+            <command class="com.ptc.windchill.mpml.client.plantfilter.ResetPlantsAction"/>
+        </action>
+
+        <action name="clearAllPlantsGWT">
+            <command class="com.ptc.windchill.mpml.client.plantfilter.ClearAllPlantsAction"/>
+        </action>
+
+        <action name="selectAllPlantsGWT">
+            <command class="com.ptc.windchill.mpml.client.plantfilter.SelectAllPlantsAction"/>
+        </action>
+
+        <action name="resetPartTagsGWT">
+            <command class="com.ptc.windchill.mpml.client.parttag.ResetPartTagsAction"/>
+        </action>
+
+        <action name="clearAllPartTagsGWT">
+            <command class="com.ptc.windchill.mpml.client.parttag.ClearAllPartTagsAction"/>
+        </action>
+
+        <action name="selectAllPartTagsGWT">
+            <command class="com.ptc.windchill.mpml.client.parttag.SelectAllPartTagsAction"/>
+        </action>
+
+        <action name="treePickerGroupGWT">
+           <command class="com.ptc.cat.ui.client.action.NoAction" />
+        </action>
+
+        <action name="TreePickerToolbarButtonGWT">
+            <command class="com.ptc.windchill.mpml.client.treepicker.TreePickerToolbarFilterAction"/>
+        </action>
+
+        <action name="treePickerSelectedIdentifierCopyGWT">
+            <command class="com.ptc.windchill.mpml.client.treepicker.TreePickerSelectedIdentifierCopyAction" />
+            <includeFilter name="com.ptc.windchill.mpml.client.treepicker.TreePickerSelectedIdentifierCopyActionFilter" />
+        </action>
+
+        <action name="openTreePickerGWT">
+            <command class="com.ptc.windchill.mpml.client.treepicker.OpenTreePickerAction" />
+        </action>
+
+        <action name="viewingGroupGWT">
+            <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+
+        <action name="mpmExpandSubmenuGWT">
+            <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+
+        <action name="mpmEndExpandSubmenuGWT">
+           <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+
+        <action name="mpmEndViewsSubmenuGWT">
+           <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+
+        <action name="playBackGroupGWT">
+            <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+
+        <action name="playBackGWT">
+            <command class="com.ptc.windchill.mpml.client.playback.EnablePlayBackAction"/>
+            <includeFilter name="com.ptc.windchill.mpml.client.action.IsVisualizationInstalled"/>
+        </action>
+
+        <action name="editingGroupGWT">
+            <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+
+        <action name="editSplitGWT">
+            <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+
+        <action name="measurementSplitGWT">
+            <command class="com.ptc.windchill.mpml.client.action.MeasurementDelegateAction"/>
+        </action>
+        
+         <action name="deleteAllSplitGWT">
+            <command class="com.ptc.windchill.baseclient.client.action.DeleteAllMeasurementsAction"/>
+        </action>
+		
+		<action name="mpmInsertNewAUMGWT">
+           <command class="com.ptc.windchill.baseclient.client.action.AddNewAUMAction"/> 
+        <includeFilter name="com.ptc.windchill.mpml.client.internal.filter.AddNewAUMActionFilterForOperation"/>		
+           <supportedTypes>
+                 <type value="wt.part.WTPart"/>              
+                 <type value="com.ptc.windchill.mpml.resource.MPMResource"/>		
+				 <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationHolder"/> 	
+				 <type value="wt.aum.AlternateUnitOfMeasure"/> 				 
+      	   </supportedTypes>
+		   <nonSupportedTypes>
+                 <type value="com.ptc.windchill.enterprise.data.EnterpriseData"/>
+                 <type value="wt.epm.EPMDocument"/>
+           </nonSupportedTypes>  			
+        </action>
+
+        <action name="mpmVizSaveViewPointGWT">
+            <command class="com.ptc.windchill.mpml.client.action.SaveViewPointVizAction"/>
+        </action>
+    </objecttype>
+
+</listofactions>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="codebase">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ServiceWeb1.03/codebase/commons-logging.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ServiceWeb1.03/codebase/pdfbox-2.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ServiceWeb1.03/codebase/QRCode.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ServiceWeb1.03/codebase/jxl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ServiceWeb1.03/codebase/jsoup-1.10.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

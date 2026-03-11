@@ -1,0 +1,438 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+<listofactions>
+
+   <objecttype name="history" class="" resourceBundle="com.ptc.windchill.enterprise.history.historyResource">
+       <action name="versionHistory" uicomponent="THIRD_LEVEL_HISTORY_VERSION" resourceBundle="com.ptc.windchill.enterprise.history.historyResource" required="true"> <component name="history.versionhistory" />
+     	  </action>
+      <action name="iterationHistory" uicomponent="PROJECT_ITERATION_HISTORY" resourceBundle="com.ptc.windchill.enterprise.history.historyResource"/>
+      <action name="maturityHistory" uicomponent="THIRD_LEVEL_HISTORY_MATURITY" resourceBundle="com.ptc.windchill.enterprise.history.historyResource">  <component name="history.maturityhistory"/>
+	  </action>
+       <action name="saveAsHistory" uicomponent="THIRD_LEVEL_HISTORY_SAVE_AS" resourceBundle="com.ptc.windchill.enterprise.history.historyResource"/>
+      <action name="revisionHistory" uicomponent="THIRD_LEVEL_HISTORY_REVISION" resourceBundle="com.ptc.windchill.enterprise.history.historyResource">
+      	<includeFilter name="hideForChangeTemplates"/>
+      </action>
+      <action name="effectivityHistory" uicomponent="THIRD_LEVEL_HISTORY_EFFECTIVITY" resourceBundle="com.ptc.windchill.enterprise.history.historyResource"/>
+
+      <action name="showLifeCycleHistory" enabledwhensuspended="true">
+         <command class="" method="showLifeCycleHistory" windowType="page"/>
+      </action>
+      <action name="alternateHistory" uicomponent="THIRD_LEVEL_HISTORY_ALTERNATE" resourceBundle="com.ptc.windchill.enterprise.history.historyResource">
+          <includeFilter name="PartAlternateRepNav"/>
+		  <component name="table.alternateHistory"/>
+      </action>
+       <action name="timelineHistory" uicomponent="THIRD_LEVEL_TIMELINE_HISTORY" resourceBundle="com.ptc.windchill.enterprise.history.historyResource"/>
+      
+      <action name="viewEffectivityGroupHistory" ajax="row">
+      </action>
+	
+	  <action name="legacyLCHistory" uicomponent="THIRD_LEVEL_HISTORY_LCHISTORY" resourceBundle="com.ptc.windchill.enterprise.history.historyResource">
+	  <command url="/netmarkets/jsp/history/lifecycleHistory.jsp"/>
+	  </action>
+      <action name="editTimelineFilterWiz" resourceBundle="com.ptc.windchill.enterprise.history.timeline.filter.client.TimelineFilterMessages">
+        <command windowType="popup"/>
+      </action>
+      <action name="editTimelineFilterWizStep">
+        <command windowType="wizard_step"/>
+      </action>
+      <action name="okButton" id="_ptc_timeline_ok_btn" resourceBundle="com.ptc.windchill.enterprise.history.timeline.filter.client.TimelineFilterMessages">
+            <command class="" method="" windowType="page" url="javascript:timelineSubmit()"/>
+      </action>
+      <action name="closeButton" id="_ptc_timeline_close_btn" resourceBundle="com.ptc.windchill.enterprise.history.timeline.filter.client.TimelineFilterMessages">
+            <command class="" method="" windowType="page" url="javascript:wfWindowClose()"/>
+      </action>
+   </objecttype>
+
+   <objecttype name="object" class="wt.fc.Persistable">
+      <action name="whereUsed" uicomponent="THIRD_LEVEL_WHERE_USED">
+        <component name="enterpriseUI.whereUsed.view.multi"/>
+      </action>
+
+      <action name="whereused_copy" multiselect="true" selectRequired="true" ajax="row" uicomponent="COPY" resourceBundle="com.ptc.windchill.enterprise.object.whereUsedResource">
+        <command class="com.ptc.windchill.enterprise.object.commands.WhereUsedCopyCommand" method="list_copy"/>
+        <includeFilter name="projectM4D"/>
+        <includeFilter name="hideFromNonAgreementMgrs"/>
+      </action>
+
+      <action name="search_master_step" ajax="row" afterJS="defineInsertSteps" resourceBundle="com.ptc.windchill.enterprise.revisionControlled.insertWizardResource">
+          <command windowType="wizard_step"/>
+      </action>
+
+      <action name="insert_object_step" preloadWizardPage="false" ajax="row">
+        <command windowType="wizard_step"/>
+      </action>
+      <action name="deleteIterations" uicomponent="DELETE" ajax="component" >
+        <command class="com.ptc.windchill.enterprise.object.forms.DeleteIterationsFormProcessor" method="execute" onClick="JCAConfirm('com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE_NON_LATEST_ITERATIONS')"/>
+        <includeFilter name="sandboxSharingValidationSimple"/>
+        <includeFilter name="hideFromNonAgreementMgrs"/>
+        <includeFilter name="manAuthorized" />
+      </action>
+
+     <action name="setState_step" id="setState_step" preloadWizardPage="false" required="true" resourceBundle="com.ptc.core.ui.componentRB">
+           <command windowType="wizard_step" url="servlet/TypeBasedIncludeServlet?contextAction=setState_step"/>
+       </action>
+
+     <action name="pasteSelectRepresentations" uicomponent="PASTE" ajax="page">
+        <command url="wtcore/jsp/wvs/pasteSelectRepresentations.jsp" class="com.ptc.windchill.enterprise.wvs.forms.PasteSelectRepresentationsFormProcessor" method="execute" windowType="new"/>
+     </action>
+
+     <action name="pasteSelectMarkups" uicomponent="PASTE" ajax="page">
+        <command url="wtcore/jsp/wvs/pasteSelectMarkups.jsp" class="com.ptc.windchill.enterprise.wvs.forms.PasteSelectMarkupsFormProcessor" method="execute" windowType="new"/>
+     </action>
+      <action name="setSharedAttributesWizStep" id="setSharedAttributesWizStep" preloadWizardPage="false" required="false" resourceBundle="com.ptc.windchill.enterprise.object.setSharedAttributesResource">
+         <command class="" method="" windowType="wizard_step"/>
+      </action>
+      <!-- The Wizard mechanism for jca paste -->
+      <action name="jca_paste_picktype" preloadWizardPage="true">
+         <command class="" method="" windowType="wizard_step"/>
+      </action>
+      <action name="paste_pdmcopy" preloadWizardPage="false">
+         <command class="" method="" windowType="wizard_step"/>
+      </action>
+
+      <action name="sandboxCheckoutStatus" resourceBundle="com.ptc.windchill.enterprise.object.dataUtilities.dataUtilitiesResource">
+          <component name="enterpriseUI.view.setAttribute" windowType="page"/>
+      </action>
+      <action name="sandboxResultingPDMVersionStatus" resourceBundle="com.ptc.windchill.enterprise.object.dataUtilities.dataUtilitiesResource">
+          <component name="enterpriseUI.sandboxResultingPDMStatus" windowType="page"/>
+      </action>
+       <!-- MULTI OBJECT EDIT ACTIONS -->
+       <action name="editMultiObjects" id="editMultiObjects" multiselect="true" selectRequired="true" resourceBundle="com.ptc.core.ui.tableRB">
+         <command class="com.ptc.windchill.enterprise.object.forms.EditMultiObjectsFormProcessor" method="execute" windowType="popup" url="netmarkets/jsp/object/editMultiObjects.jsp"/>
+         <includeFilter name="disableForAdminLocked"/>
+         <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+       </action>
+
+	   <action name="workflowTaskPboAttributes" resourceBundle="wt.workflow.worklist.worklistResource">
+          <component name="workflowTask.pbo" urlParams="pboCompId=workflow.pbo.attributes" /> 
+	      <includeFilter name="configurableTypeBaseFilter"/>
+      </action> 
+
+   </objecttype>
+    <!-- MULTI OBJECT EDIT ACTIONS END-->
+   <!-- These are actions related to clipboard -->
+   <objecttype name="object" class="wt.fc.Persistable" resourceBundle="com.ptc.windchil.enterprise.object.pasteWizardResource">
+       <action name="pasteSelect" uicomponent="PASTE" ajax="row">
+          <!-- implementors need to define their own action with a command class/method, but may call this JSP -->
+       </action>
+   </objecttype>
+
+      <objecttype name="util" class="">
+        <action name="revisionLabelPicker" resourceBundle="com.ptc.windchill.enterprise.picker.revisionLabelPickerResource">
+            <command windowType="popup"/>
+        </action>
+        <action name="revisionLabelPickerStep" afterJS="validate" afterVK="revisionLabelPickerValidation" resourceBundle="com.ptc.windchill.enterprise.picker.revisionLabelPickerResource">
+            <command windowType="wizard_step"/>
+        </action>
+      </objecttype>
+
+   <objecttype name="containerteam" class="wt.fc.Persistable" resourceBundle="com.ptc.windchill.enterprise.picker.container.team.sharedTeamPickerResource">
+      <action name="sharedTeamPicker" ajax="row">
+         <command class="com.ptc.windchill.enterprise.picker.container.team.SharedTeamCommands" method="addSharedTeam" windowType="popup"/>
+         <access name="update"/>
+      </action>
+      <action name="sharedTeamPicker_step" ajax="component">
+        <command windowType="wizard_step"/>
+      </action>
+      <action name="sharedTeamPickerSearch" ajax="page">
+         <command windowType="normal" onClick="findUsers()"/>
+      </action>
+   </objecttype>
+
+   <objecttype name="principalpicker" class="wt.fc.Persistable" resourceBundle="com.ptc.windchill.enterprise.picker.principal.principalPickerResource">
+      <action name="principalPickerCD_step" ajax="component">
+        <command windowType="wizard_step"/>
+      </action>
+      <action name="pickerSearch" ajax="page">
+         <command windowType="normal" onClick="findUsers()"/>
+      </action>
+      <action name="principalPickerClear" ajax="page">
+         <command windowType="normal" onClick="clearAll()"/>
+      </action>
+      <action name="principalPickerGo" ajax="page">
+         <command windowType="normal" onClick="sumbitOnPrincipalTypeChange()"/>
+      </action>
+   </objecttype>
+
+<objecttype name="sharedTeam" class="wt.inf.team.ContainerTeam" resourceBundle="com.ptc.windchill.enterprise.team.teamActionsResource">
+   <action name="show_team_uses">
+      <command class="" method="" windowType="page"/>
+   </action>
+   <action name="team_properties_step" afterJS="setNextStepDirty">
+      <command windowType="wizard_step"/>
+   </action>
+   <action name="edit_team_step">
+      <command windowType="wizard_step"/>
+   </action>
+   <action name="updateTeam" selectRequired="false" ajax="row">
+      <command windowType="popup" url="netmarkets/jsp/sharedTeam/updateTeam.jsp" class="com.ptc.windchill.enterprise.team.processor.EditSharedTeamFormProcessor" method="execute"/>
+   </action>
+   <action name="changeOwner">
+   </action>
+   <action name="deleteTeam" selectRequired="true" ajax="row">
+      <command class="com.ptc.windchill.enterprise.team.SharedTeamCommands" method="deleteSharedTeam" onClick="PTC.team.utils.selectRequiredAndConfirmation(event,target,table)"/>
+   </action>
+   <action name="enableTeam" ajax="row">
+      <command class="com.ptc.windchill.enterprise.team.SharedTeamCommands" method="enableSharedTeam"/>
+   </action>
+   <action name="disableTeam" ajax="row">
+      <command class="com.ptc.windchill.enterprise.team.SharedTeamCommands" method="disableSharedTeam"/>
+   </action>
+   <action name="pasteTeam">
+   </action>
+   <action name="exportSharedTeam" selectRequired="true" ajax="row">
+      <command class="com.ptc.windchill.enterprise.team.SharedTeamCommands" method="exportSharedTeam" windowType="popup"/>
+   </action>
+   <action name="export_sharedTeam_step">
+      <command class="" method="" windowType="wizard_step"/>
+   </action>
+   <action name="emailTeamOwners" ajax="component">
+      <command class="com.ptc.windchill.enterprise.team.SharedTeamCommands" method="emailSharedTeamOwners" windowType="popup"/>
+   </action>
+   <action name="createTeam" ajax="row">
+      <command windowType="popup" class="com.ptc.windchill.enterprise.team.processor.CreateSharedTeamFormProcessor" method="execute"/>
+   </action>
+   <action name="importSharedTeam">
+      <command class="com.ptc.windchill.enterprise.team.SharedTeamCommands" method="importSharedTeam" windowType="popup"/>
+   </action>
+   <action name="import_sharedTeam_step">
+      <command class="" method="" windowType="wizard_step"/>
+   </action>
+   
+   <action name="sharedTeamTable" resourceBundle="com.ptc.windchill.enterprise.team.teamActionsResource">
+       <description>Member table for shared teams.</description>      
+   </action>
+   
+   <action name="attributePanel">
+       <description>Attributes for Shared Team.</description>
+
+       <component name="attributesTable" typeBased="true" windowType="page" urlParams="typeIdForTypeLookup=wt.inf.team.ContainerTeam"/>
+   </action>
+
+
+</objecttype>
+
+<objecttype name="team" class="com.ptc.windchill.enterprise.team.server.TeamCCService" resourceBundle="com.ptc.windchill.enterprise.team.teamActionsResource">
+   <action name="update_descriptions">
+      <command class="wt.inf.team.ContainerTeamService" method="updateDescriptions" windowType="popup" url="netmarkets/jsp/team/update_descriptions_wizard.jsp?"/>
+      <includeFilter name="projectM4D"/>
+   </action>
+   <action name="list_cut" multiselect="true">
+         <command class="com.ptc.netmarkets.model.NmObjectCommands" method="list_cut" windowType="no_content"/>
+         <includeFilter name="projectM4D"/>
+   </action>
+   <action name="listTeamCC"/>
+   <action name="removeUsersFromTeam" selectRequired="true" ajax="row">
+      <command class="com.ptc.windchill.enterprise.team.commands.TeamCommands" method="removeUsersFromTeam" onClick="PTC.team.utils.selectRequiredAndConfirmation(event,target,table)"/>
+      <access name="update"/>
+      <includeFilter name="projectM4D"/>
+   </action>
+   <action name="replaceUserInTeam" checkaccess="true">
+      <command class="com.ptc.windchill.enterprise.team.commands.TeamCommands" method="replaceUserInTeam" windowType="popup"/>
+      <access name="update"/>
+      <includeFilter name="projectM4D"/>
+   </action>
+
+   <action name="addRolesToTeam" ajax="page">
+         <command class="com.ptc.windchill.enterprise.team.commands.TeamCommands" method="addRolesToTeam" windowType="popup"/>
+         <access name="update"/>
+         <includeFilter name="projectM4D"/>
+   </action>
+   <action name="addRolesToTeam_step">
+      <command class="" method="" windowType="wizard_step"/>
+      <includeFilter name="projectM4D"/>
+   </action>
+   <action name="addUsersToRole" ajax="row">
+      <command class="com.ptc.windchill.enterprise.picker.principal.PrincipalCommands" method="addPrincipal" windowType="popup"/>
+      <includeFilter name="projectM4D"/>
+   </action>
+   <action name="emailPage" enabledwhensuspended="true" resourceBundle="com.ptc.core.ui.navigationRB">
+      <command url="?useJSCA=false" class="com.ptc.windchill.enterprise.team.commands.TeamCommands" method="email" windowType="popup"/>
+   </action>
+   <action name="emailPage_step" enabledwhensuspended="true" resourceBundle="com.ptc.core.ui.navigationRB">
+      <command class="com.ptc.windchill.enterprise.team.commands.TeamCommands" method="email" windowType="wizard_step"/>
+   </action>
+   <action name="emailTeam" ajax="component">
+      <command class="com.ptc.windchill.enterprise.team.commands.TeamCommands" method="email" windowType="popup"/>
+      <includeFilter name="projectM4D"/> 
+   </action>
+   <action name="emailMembers" ajax="component" multiselect="true" selectRequired="true">
+      <command class="com.ptc.windchill.enterprise.team.commands.TeamCommands" method="email" windowType="popup"/>
+      <includeFilter name="projectM4D"/>
+   </action>
+
+   <action name="teamPaste" uicomponent="PASTE">
+      <command class="com.ptc.windchill.enterprise.team.commands.TeamCommands" method="teamPaste"/>
+      <access name="update"/>
+      <includeFilter name="projectM4D"/>
+   </action>
+
+</objecttype>
+
+<objecttype name="typepicker" class="" resourceBundle="com.ptc.windchill.enterprise.picker.type.typePickerResource">
+   <action name="typePicker" ajax="row">
+      <command windowType="popup"/>
+      <icon>search.gif</icon>
+   </action>
+   <action name="typePicker_step" postloadJS="setCheckbox">
+      <command windowType="wizard_step"/>
+   </action>
+</objecttype>
+
+<objecttype name="search" class="java.lang.Object">
+   <action name="groupPickerCC">
+      <command class="com.ptc.windchill.enterprise.picker.principal.PrincipalCommands" method="addPrincipal" windowType="popup"/>
+   </action>
+</objecttype>
+
+<objecttype name="ecadcompare" class="java.lang.Object" resourceBundle="com.ptc.windchill.enterprise.ecadcompare.ecadcompareResource">
+   <action name="ecadValidate">
+      <command windowType="popup" onClick="getWindow().postSelectValidation(event, &apos;ecadValidate&apos;)"/>
+   </action>
+   <action name="downloadECADContent">
+      <command windowType="no_content"/>
+   </action>
+</objecttype>
+
+<objecttype name="ManagedBaseline" class="java.lang.Object" resourceBundle="com.ptc.windchill.enterprise.ocmp.ocmpClientResource">
+   <action name="comparisonReport4ManagedBaseline">
+      <command windowType="popup"/>
+   </action>
+   <action name="comparisonReport4ManagedBaselineStep">
+      <command windowType="wizard_step" url="netmarkets/jsp/ocmp/ManagedBaseline/comparisonReport4ManagedBaselineStep.jsp"/>
+   </action>
+</objecttype>
+
+<objecttype name="WTPart" class="java.lang.Object" resourceBundle="com.ptc.windchill.enterprise.ocmp.ocmpClientResource">
+   <action name="comparisonReport4WTPart">
+      <command windowType="popup"/>
+   </action>
+   <action name="comparisonReport4WTPartStep">
+      <command windowType="wizard_step" url="netmarkets/jsp/ocmp/WTPart/comparisonReport4WTPartStep.jsp"/>
+   </action>
+</objecttype>
+
+<objecttype name="WTDocument" class="java.lang.Object" resourceBundle="com.ptc.windchill.enterprise.ocmp.ocmpClientResource">
+   <action name="comparisonReport4WTDocument">
+      <command windowType="popup"/>
+   </action>
+   <action name="comparisonReport4WTDocumentStep">
+      <command windowType="wizard_step" url="netmarkets/jsp/ocmp/WTDocument/comparisonReport4WTDocumentStep.jsp"/>
+   </action>
+</objecttype>
+
+<objecttype name="AbstractWorkPackage" class="java.lang.Object" resourceBundle="com.ptc.windchill.enterprise.ocmp.ocmpClientResource">
+   <action name="comparisonReport4AbstractWorkPackage">
+      <command windowType="popup"/>
+   </action>
+   <action name="comparisonReport4AbstractWorkPackageStep">
+      <command windowType="wizard_step" url="netmarkets/jsp/ocmp/AbstractWorkPackage/comparisonReport4AbstractWorkPackageStep.jsp"/>
+   </action>
+</objecttype>
+
+<objecttype name="ManagedCollection" class="java.lang.Object" resourceBundle="com.ptc.windchill.enterprise.ocmp.ocmpClientResource">
+   <action name="comparisonReport4ManagedCollection">
+      <command windowType="popup"/>
+   </action>
+   <action name="comparisonReport4ManagedCollectionStep">
+      <command windowType="wizard_step" url="netmarkets/jsp/ocmp/ManagedCollection/comparisonReport4ManagedCollectionStep.jsp"/>
+   </action>
+</objecttype>
+
+<objecttype name="EPMDocument" class="java.lang.Object" resourceBundle="com.ptc.windchill.enterprise.ocmp.ocmpClientResource">
+   <action name="comparisonReport4EPMDocument">
+      <command windowType="popup"/>
+   </action>
+   <action name="comparisonReport4EPMDocumentStep">
+      <command windowType="wizard_step" url="netmarkets/jsp/ocmp/EPMDocument/comparisonReport4EPMDocumentStep.jsp"/>
+   </action>
+</objecttype>
+
+<objecttype name="VariantSpec" class="java.lang.Object" resourceBundle="com.ptc.windchill.enterprise.ocmp.ocmpClientResource">
+   <action name="comparisonReport4VariantSpec">
+      <command windowType="popup"/>
+   </action>
+   <action name="comparisonReport4VariantSpecStep">
+      <command windowType="wizard_step" url="netmarkets/jsp/ocmp/VariantSpec/comparisonReport4VariantSpecStep.jsp"/>
+   </action>
+</objecttype>
+
+<objecttype name="Requirement" class="java.lang.Object" resourceBundle="com.ptc.windchill.enterprise.ocmp.ocmpClientResource">
+   <action name="comparisonReport4Requirement">
+      <command windowType="popup"/>
+   </action>
+   <action name="comparisonReport4RequirementStep">
+      <command windowType="wizard_step" url="netmarkets/jsp/ocmp/Requirement/comparisonReport4RequirementStep.jsp"/>
+   </action>
+</objecttype>
+
+<objecttype name="Specification" class="java.lang.Object" resourceBundle="com.ptc.windchill.enterprise.ocmp.ocmpClientResource">
+   <action name="comparisonReport4Specification">
+      <command windowType="popup"/>
+   </action>
+   <action name="comparisonReport4SpecificationStep">
+      <command windowType="wizard_step" url="netmarkets/jsp/ocmp/Specification/comparisonReport4SpecificationStep.jsp"/>
+   </action>
+</objecttype>
+
+<objecttype name="teamTemplate" resourceBundle="com.ptc.windchill.enterprise.team.teamResource">
+   <action name="teamTemplateDetails">
+			<component name="enterpriseui.workflow.mvc.builders.TeamTemplateDetails.view" windowType="page"/>
+   </action>
+</objecttype>
+
+<objecttype name="Plan" class="java.lang.Object" resourceBundle="com.ptc.windchill.enterprise.ocmp.ocmpClientResource">
+   <action name="comparisonReport4Plan">
+      <command windowType="popup"/>
+   </action>
+   <action name="comparisonReport4PlanStep">
+      <command windowType="wizard_step" url="netmarkets/jsp/ocmp/Plan/comparisonReport4PlanStep.jsp"/>
+   </action>
+</objecttype>
+
+<objecttype name="PlanActivity" class="java.lang.Object" resourceBundle="com.ptc.windchill.enterprise.ocmp.ocmpClientResource">
+   <action name="comparisonReport4PlanActivity">
+      <command windowType="popup"/>
+   </action>
+   <action name="comparisonReport4PlanActivityStep">
+      <command windowType="wizard_step" url="netmarkets/jsp/ocmp/PlanActivity/comparisonReport4PlanActivityStep.jsp"/>
+   </action>
+</objecttype>
+
+<objecttype name="PlanDeliverable" class="java.lang.Object" resourceBundle="com.ptc.windchill.enterprise.ocmp.ocmpClientResource">
+   <action name="comparisonReport4PlanDeliverable">
+      <command windowType="popup"/>
+   </action>
+   <action name="comparisonReport4PlanDeliverableStep">
+      <command windowType="wizard_step" url="netmarkets/jsp/ocmp/PlanDeliverable/comparisonReport4PlanDeliverableStep.jsp"/>
+   </action>
+</objecttype>
+
+<objecttype name="PlanResource" class="java.lang.Object" resourceBundle="com.ptc.windchill.enterprise.ocmp.ocmpClientResource">
+   <action name="comparisonReport4PlanResource">
+      <command windowType="popup"/>
+   </action>
+   <action name="comparisonReport4PlanResourceStep">
+      <command windowType="wizard_step" url="netmarkets/jsp/ocmp/PlanResource/comparisonReport4PlanResourceStep.jsp"/>
+   </action>
+</objecttype>
+
+<objecttype name="ResourceAssignment" class="java.lang.Object" resourceBundle="com.ptc.windchill.enterprise.ocmp.ocmpClientResource">
+   <action name="comparisonReport4ResourceAssignment">
+      <command windowType="popup"/>
+   </action>
+   <action name="comparisonReport4ResourceAssignmentStep">
+      <command windowType="wizard_step" url="netmarkets/jsp/ocmp/ResourceAssignment/comparisonReport4ResourceAssignmentStep.jsp"/>
+   </action>
+</objecttype>
+
+<objecttype name="EnterpriseData" class="java.lang.Object" resourceBundle="com.ptc.windchill.enterprise.ocmp.ocmpClientResource">
+   <action name="comparisonReport4EnterpriseData">
+      <command windowType="popup"/>
+   </action>
+   <action name="comparisonReport4EnterpriseDataStep">
+      <command windowType="wizard_step" url="netmarkets/jsp/ocmp/EnterpriseData/comparisonReport4EnterpriseDataStep.jsp"/>
+   </action>
+</objecttype>
+
+</listofactions>

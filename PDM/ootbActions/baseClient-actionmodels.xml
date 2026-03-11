@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+
+<actionmodels>
+   <model name="setPathFilterToolBar">
+      <action name="clearAllPathFilterGWT" type="baseclient" />
+      <action name="selectAllPathFiltersGWT" type="baseclient" />
+      <action name="resetAllPathFiltersGWT" type="baseclient" />
+   </model>
+
+   <model name="aumToolbarMenu">
+    <action name="insertNewAUMGWT" type="baseclient" />
+     <action name="removeAUMGWT" type="baseclient" />		 
+   </model>
+
+</actionmodels>

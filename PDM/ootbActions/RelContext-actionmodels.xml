@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+<!-- define the actions for RelContext Module -->
+<actionmodels>
+   <!-- define the action models for Related Context -->
+   <!-- com.ptc.core.relcontext.server.ContextLink -->
+   <model name="contextlink_table">
+      <action name="list_delete" type="contextlink" shortcut="true"/>
+      <action name="create_context_wizard" type="contextlink" shortcut="true"/>
+      <action name="send_relcontext_notification_wizard" type="contextlink" shortcut="true"/>     
+   </model>
+
+   <model name="contextlink" menufor="com.ptc.core.relcontext.server.ContextLink">
+      <action name="update_context_wizard" type="contextlink"/>
+      <action name="delete" type="contextlink"/>
+   </model>
+
+   <!-- define the action models for Network page -->
+   <!-- com.ptc.core.relcontext.server.NetworkLink -->
+   <model name="network_list_table">
+      <action name="list_copy"                         type="object" shortcut="true"/>
+      <action name="network_paste"                type="network" shortcut="true"/>
+      <action name="network_list_delete"                  type="network"/>
+      <action name="networkSearch"               type="search"/>
+      <action name="separator"                    type="separator"/>
+      <action name="explode"         type="folder"/>
+      <action name="implode"         type="folder"/>
+      <action name="separator"                    type="separator"/>
+      <action name="create_folder_network"        type="folder" shortcut="true"/>
+      <action name="add_link_network"             type="bookmark" shortcut="true"/>
+      <action name="networklink_create_wizard"    type="networklink" shortcut="true"/>
+      <action name="relatedItemSearch"               type="search"/>
+	  <action name="separator" type="separator" />
+   	  <submodel name="nm_exportlisttofile_submenu" />
+
+   </model>
+
+   <model name="network folder toolbar row actions">
+      <action name="edit_folder_network"                       type="folder"/>
+      <action name="delete"                     type="object"/>
+      <action name="separator"                    type="separator"/>
+      <action name="add_link_network"                     type="bookmark"/>
+      <action name="create_folder_network"                type="folder"/>
+      <action name="networklink_create_wizard"    type="networklink"/>
+   </model>
+
+   <model name="networklink toolbar row actions" menufor="com.ptc.core.relcontext.server.NetworkLink">
+      <action name="networklink_update_wizard"	type="networklink"/>
+      <action name="delete"                     type="networklink"/>
+      <action name="separator"                    type="separator"/>
+      <action name="add_link_network"                     type="bookmark"/>
+      <action name="create_folder_network"                type="folder"/>
+      <action name="networklink_create_wizard"    type="networklink"/>
+   </model>
+
+    <!-- project list table actions in Program Network Page -->
+   <model name="network project list">
+   		<action name="addToFavorites" type="object" shortcut="true"/>
+   		<action name="removeFromFavorites" type="object" shortcut="true"/>
+   </model>
+</actionmodels>

@@ -1,0 +1,152 @@
+ResourceInfo.class=wt.tools.resource.StringResourceInfo
+ResourceInfo.customizable=true
+ResourceInfo.deprecated=false
+
+
+# Entry Format (values equal to default value are not included)
+# <key>.value=
+# <key>.category=
+# <key>.comment=
+# <key>.argComment<n>=
+# <key>.constant=
+# <key>.customizable=
+# <key>.deprecated=
+# <key>.abbreviatedDisplay=
+# <key>.fullDisplay=
+# <key>.shortDescription=
+# <key>.longDescription=
+
+# Entry Contents
+
+#Create preview wizard action
+
+preview.attributes.description.value=详细信息
+preview.attributes.description.comment=详细信息
+preview.attributes.title.value=详细信息
+preview.attributes.title.comment=详细信息
+preview.attributes.tooltip.value=详细信息
+preview.attributes.tooltip.comment=详细信息
+preview.attributes.icon.value=newobj.gif
+preview.attributes.icon.comment=详细信息
+
+preview.previewObjects.description.value=预审数据
+preview.previewObjects.description.comment=预审数据
+preview.previewObjects.title.value=预审数据
+preview.previewObjects.title.comment=预审数据
+preview.previewObjects.tooltip.value=预审数据
+preview.previewObjects.tooltip.comment=预审数据
+preview.previewObjects.icon.value=newobj.gif
+preview.previewObjects.icon.comment=预审数据
+
+preview.updatePreview.description.value=编辑附件
+preview.updatePreview.description.comment=编辑附件
+preview.updatePreview.title.value=编辑附件
+preview.updatePreview.title.comment=编辑附件
+preview.updatePreview.tooltip.value=编辑附件
+preview.updatePreview.tooltip.comment=编辑附件
+preview.updatePreview.icon.value=multi_update.gif
+preview.updatePreview.icon.comment=编辑附件
+
+preview.deletePreview.description.value=删除
+preview.deletePreview.description.comment=删除
+preview.deletePreview.title.value=删除
+preview.deletePreview.title.comment=删除
+preview.deletePreview.tooltip.value=删除
+preview.deletePreview.tooltip.comment=删除
+preview.deletePreview.icon.value=delete.gif
+preview.deletePreview.icon.comment=删除
+
+
+object.previewContentInfo.description.value=内容
+object.previewContentInfo.description.comment=内容
+object.previewContentInfo.title.value=内容
+object.previewContentInfo.title.comment=内容
+object.previewContentInfo.tooltip.value=内容
+object.previewContentInfo.tooltip.comment=内容
+
+
+# Create preview Wizard labels
+preview.create.DEFINE_ITEM_WIZ_STEP_LABEL.value=定义类型
+preview.create.DEFINE_ITEM_WIZ_STEP_LABEL.comment=Label for define item step in the Create preview Wizard
+preview.create.SET_ATTRIBUTES_WIZ_STEP_LABEL.value=设置属性
+preview.create.SET_ATTRIBUTES_WIZ_STEP_LABEL.comment=Label for set attributes step in the Create preview Wizard
+preview.create.SET_RELATEDDATA_WIZ_STEP_LABEL.value=设置预审数据
+preview.create.SET_RELATEDDATA_WIZ_STEP_LABEL.comment=Used as the label for a wizard step
+preview.create.ATTACHMENTS_WIZ_STEP_LABEL.value=设置附件
+preview.create.ATTACHMENTS_WIZ_STEP_LABEL.comment=Used as the label for a wizard step
+preview.create.LOCATION_LABEL.value=位置
+preview.create.LOCATION_LABEL.comment=lable for Location in the Create preview Wizard
+
+#previewObjects
+preview_RELATED_DATA.value=预审数据
+preview_RELATED_DATA.constant=preview_RELATED_DATA
+preview_RELATED_DATA.comment=Related Data for Process preview
+
+preview_CONTENTS_TEXT.value=批量数据集对象
+preview_CONTENTS_TEXTconstant=preview_CONTENTS_TEXT
+preview_CONTENTS_TEXT.comment=Text for the 3rd level navigation link and the table header text
+
+STRUCTURE_TABLEVIEW_NAME.value=作为结构
+STRUCTURE_TABLEVIEW_NAME.constant=STRUCTURE_TABLEVIEW_NAME
+STRUCTURE_TABLEVIEW_NAME.comment=Text for tableview
+
+LIST_TABLEVIEW_NAME.value=作为列表
+LIST_TABLEVIEW_NAME.constant=LIST_TABLEVIEW_NAME
+LIST_TABLEVIEW_NAME.comment=Text for tableview
+
+preview_NAME_LABEL.value=名称
+preview_NAME_LABEL.constant=preview_NAME_LABEL
+preview_NAME_LABEL.comment=Name for tableview
+
+preview_NUMBER_LABEL.value=编号
+preview_NUMBER_LABEL.constant=preview_NUMBER_LABEL
+preview_NUMBER_LABEL.comment=Number for tableview
+
+preview_UPDATESTAMP_LABEL.value=上次修改时间
+preview_UPDATESTAMP_LABEL.constant=preview_UPDATESTAMP_LABEL
+preview_UPDATESTAMP_LABEL.comment=Updatestamp for tableview
+
+preview_STATE_LABEL.value=状态
+preview_STATE_LABEL.constant=preview_STATE_LABEL
+preview_STATE_LABEL.comment=State for tableview
+
+preview_VERSION_LABEL.value=版本
+preview_VERSION_LABEL.constant=preview_VERSION_LABEL
+preview_VERSION_LABEL.comment=Version for tableview
+
+preview_UPDATE_ACTION_PERM_ERROR.value=您没有足够的权限，不能更新数据集对象
+preview_UPDATE_ACTION_PERM_ERROR.constant=preview_UPDATE_ACTION_PERM_ERROR
+preview_UPDATE_ACTION_PERM_ERROR.comment=Update Error for Processpreview
+
+preview_SELECT.value=请选择一个选项:
+preview_SELECT.constant=preview_SELECT
+preview_SELECT.comment=SELECT for Download Print Contents
+
+preview_ALL.value=所有内容
+preview_ALL.constant=preview_ALL
+preview_ALL.comment=ALL for Download All Contents
+
+preview_PRIMARY.value=主要内容
+preview_PRIMARY.constant=preview_PRIMARY
+preview_PRIMARY.comment=PRIMARY for Download Primary Contents
+
+preview_PRINT.value=电子签名文件
+preview_PRINT.constant=preview_PRINT
+preview_PRINT.comment=PRINT for Download Print Contents
+
+preview_WVS.value=可视化文件
+preview_WVS.constant=preview_WVS
+preview_WVS.comment=WVS for Download Print Contents
+
+preview_ATTACHMENT.value=附件文件
+preview_ATTACHMENT.constant=preview_ATTACHMENT
+preview_ATTACHMENT.comment=ATTACHMENT for Download Attachment Contents
+
+preview_DOWNLOAD.value=点击下载
+preview_DOWNLOAD.constant=preview_DOWNLOAD
+preview_DOWNLOAD.comment=DOWNLOAD for Download Attachment Contents
+
+preview_NOCONTENT.value=请从列表中选择下载列表:
+preview_NOCONTENT.constant=preview_NOCONTENT
+preview_NOCONTENT.comment=NOCONTENT for Download Attachment Contents
+

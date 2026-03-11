@@ -1,0 +1,683 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM "../../actions.dtd">
+<listofactions>
+
+    <!-- Table examples related entries -->
+    <objecttype name="object" class="java.lang.Object" resourceBundle="com.ptc.carambola.carambolaResource">
+        <action name="CustEx_simpleTable1">
+            <command url="netmarkets/jsp/carambola/customization/examples/table/simpleTable1.jsp?action=simpleTable1" windowType="page"/>
+        </action>
+        <action name="CustEx_simpleTable2">
+            <command url="netmarkets/jsp/carambola/customization/examples/table/simpleTable2.jsp?action=simpleTable2" windowType="page"/>
+        </action>
+        <action name="CustEx_simpleTable3">
+            <command url="netmarkets/jsp/carambola/customization/examples/table/simpleTable3.jsp?action=simpleTable3" windowType="page"/>
+        </action>
+        <action name="CustEx_advancedTable1">
+            <command url="netmarkets/jsp/carambola/customization/examples/table/advancedTable1.jsp?action=advancedTable1" windowType="page"/>
+        </action>
+        <action name="CustEx_advancedTable_custom_oid_actions">
+            <command url="netmarkets/jsp/carambola/customization/examples/menu/Carambola_Row_Context_Menu.jsp" windowType="page"/>
+        </action>
+        <action name="CustEx_error_on_page">
+            <command url="netmarkets/jsp/carambola/customization/examples/errors/errorExample.jsp" windowType="page" />
+        </action>
+        <!-- The following action will cause a HTTP 404 response code because the server cannot                         -->
+        <!-- locate a jsp page with the path "codebase/netmarkets/jsp/object/CustEx_error_404.jsp."                     -->
+        <!-- If no name attribute is provided on the command subtag, the server assumes the response will be created    -->
+        <!-- via a jsp page rather than a MVC builder.                                                                  -->
+        <!-- If no url attribute with the jsp path is provided on the command subtag, the server                        -->
+        <!-- will attempt to locate a jsp using the path "codebase/netmarkets/jsp/<action objecttype><action name>.jsp" -->
+        <action name="CustEx_error_404">
+            <command windowType="page" />
+        </action>
+        <action name="TestAction1">
+            <command url="netmarkets/jsp/carambola/customization/examples/table/popup.jsp?action=advancedTable1" windowType="popup"/>
+        </action>
+        <action name="TestAction2">
+            <command url="netmarkets/jsp/carambola/customization/examples/table/popup.jsp?action=advancedTable1" windowType="popup"/>
+        </action>
+        <action name="TestAction3">
+            <command url="netmarkets/jsp/carambola/customization/examples/table/popup.jsp?action=advancedTable1" windowType="popup"/>
+        </action>
+        <action name="TestAction4">
+            <command url="netmarkets/jsp/carambola/customization/examples/table/popup.jsp?action=advancedTable1" windowType="popup"/>
+        </action>
+        <action name="TestAction5">
+            <command url="netmarkets/jsp/carambola/customization/examples/table/popup.jsp?action=advancedTable1" windowType="popup"/>
+        </action>
+        <action name="OpenTreeInWizard">
+            <command url="netmarkets/jsp/carambola/customization/examples/wizard/treeInWizard.jsp" windowType="popup"/>
+        </action>
+        <action name="treeWizStep">
+            <label>Tree Step</label>
+            <component windowType="wizard_step" name="carambola.mvc.tree.async"/>
+        </action>
+    </objecttype>
+
+    <!-- Tree examples related entries -->
+    <objecttype name="object" class="java.lang.Object" resourceBundle="com.ptc.carambola.carambolaResource">
+        <action name="CustEx_simpleTree1">
+            <command url="netmarkets/jsp/carambola/customization/examples/tree/simpleTree1.jsp?action=simpleTree1" windowType="page"/>
+        </action>
+        <action name="CustEx_simpleTree2">
+            <command url="netmarkets/jsp/carambola/customization/examples/tree/simpleTree2.jsp?action=simpleTree2" windowType="page"/>
+        </action>
+        <action name="CustEx_simpleTree3">
+            <command url="netmarkets/jsp/carambola/customization/examples/tree/simpleTree3.jsp?action=simpleTree3" windowType="page"/>
+        </action>
+        <action name="CustEx_advancedTree1">
+            <command url="netmarkets/jsp/carambola/customization/examples/tree/advancedTree1.jsp?action=advancedTree1" windowType="page"/>
+        </action>
+        <action name="CustEx_advancedTree2">
+            <command url="netmarkets/jsp/carambola/customization/examples/tree/advancedTree2.jsp?action=advancedTree2" windowType="page"/>
+        </action>
+        <action name="CustEx_advancedTree3">
+            <command url="netmarkets/jsp/carambola/customization/examples/tree/advancedTree3.jsp?action=advancedTree3" windowType="page"/>
+        </action>
+        <action name="CustEx_advancedTree4">
+            <command url="netmarkets/jsp/carambola/customization/examples/tree/advancedTree4.jsp?action=advancedTree4" windowType="page"/>
+        </action>
+    </objecttype>
+
+    <!-- Wizard examples related entries -->
+    <objecttype name="object" class="wt.fc.Persistable" resourceBundle="com.ptc.carambola.carambolaResource">
+        <action name="newWizardExampleOne">
+            <command class="com.ptc.carambola.customization.examples.wizard.CreateTestWizardProcessor"
+                method="execute"
+                url="netmarkets/jsp/carambola/customization/examples/wizard/newWizardExampleOne.jsp"
+                windowType="popup" />
+        </action>
+        <action name="wizardExampleTwo">
+            <command class="com.ptc.carambola.customization.examples.wizard.CreateTestWizardProcessor" method="execute" url="netmarkets/jsp/carambola/customization/examples/wizard/wizardExampleTwo.jsp" windowType="popup"/>
+        </action>
+        <action name="clerkExampleOne">
+            <command class="com.ptc.carambola.customization.examples.wizard.CreateTestWizardProcessor" method="execute" url="netmarkets/jsp/carambola/customization/examples/wizard/clerkExampleOne.jsp" windowType="popup"/>
+        </action>
+        <action name="attributeWizardExample">
+            <command class="com.ptc.carambola.customization.examples.wizard.CreateTestWizardProcessor" method="execute" url="netmarkets/jsp/carambola/customization/examples/wizard/attributeWizardExample.jsp" windowType="popup"/>
+        </action>
+        <action name="twoPaneWizardExample">
+            <command class="com.ptc.carambola.customization.examples.wizard.CreateTestWizardProcessor" method="execute" url="netmarkets/jsp/carambola/customization/examples/wizard/twoPaneWizardExample.jsp" windowType="popup"/>
+        </action>
+        <action name="twoPaneWizardExampleTwo">
+            <command class="com.ptc.carambola.customization.examples.wizard.CreateTestWizardProcessor" method="execute" url="netmarkets/jsp/carambola/customization/examples/wizard/twoPaneWizardExampleTwo.jsp" windowType="popup"/>
+        </action>
+        <!-- case 1 -->
+        <action name="setFirstWizStep" id="setFirstWizStep" beforeJS="newWizardStepOneBefore" afterJS="newWizardStepOneAfter">
+            <command windowType="wizard_step" url="netmarkets/jsp/carambola/customization/examples/wizard/setFirstWizStep.jsp"/>
+        </action>
+        <action name="setSecondWizStep" id="setSecondWizStep" beforeJS="newWizardStepTwoBefore">
+            <command windowType="wizard_step" url="netmarkets/jsp/carambola/customization/examples/wizard/setSecondWizStep.jsp"/>
+        </action>
+        <action name="setThirdWizStep" id="setThirdWizStep" beforeJS="newWizardStepThreeBefore" afterJS="newWizardStepThreeAfter" hidden="true">
+            <command windowType="wizard_step" url="netmarkets/jsp/carambola/customization/examples/wizard/setThirdWizStep.jsp"/>
+        </action>
+        <!-- case 2 -->
+        <action name="setFourthWizStep" id="setFourthWizStep" beforeJS="newWizardStepFourthBefore" afterJS="newWizardStepFourthAfter">
+            <command windowType="wizard_step" url="netmarkets/jsp/carambola/customization/examples/wizard/setFourthWizStep.jsp"/>
+        </action>
+        <action name="setFifthWizStep" id="setFifthWizStep" beforeJS="newWizardStepFifthBefore" afterJS="newWizardStepFifthAfter" hidden="true">
+            <command windowType="wizard_step" url="netmarkets/jsp/carambola/customization/examples/wizard/setFifthWizStep.jsp"/>
+        </action>
+        <action name="setSixthWizStep" id="setSixthWizStep" beforeJS="newWizardStepSixthBefore" afterJS="newWizardStepSixthAfter" hidden="true">
+            <command windowType="wizard_step" url="netmarkets/jsp/carambola/customization/examples/wizard/setSixthWizStep.jsp"/>
+        </action>
+        <action name="setFirstClerkStep" id="setFirstWizStep" beforeJS="newWizardStepOneBefore" afterJS="newWizardStepOneAfter">
+            <command windowType="wizard_step" url="netmarkets/jsp/carambola/customization/examples/wizard/setFirstClerkStep.jsp"/>
+        </action>
+        <action name="setSecondClerkStep" id="setSecondWizStep" beforeJS="newWizardStepTwoBefore">
+            <command windowType="wizard_step" url="netmarkets/jsp/carambola/customization/examples/wizard/setSecondClerkStep.jsp"/>
+        </action>
+        <action name="setThirdClerkStep" id="setThirdWizStep" beforeJS="newWizardStepThreeBefore" afterJS="newWizardStepThreeAfter" hidden="true">
+            <command windowType="wizard_step" url="netmarkets/jsp/carambola/customization/examples/wizard/setThirdClerkStep.jsp"/>
+        </action>
+        <action name="setStepOneWizStep" id="setStepOneWizStep" preloadWizardPage="false">
+            <command windowType="wizard_step" url="netmarkets/jsp/carambola/customization/examples/wizard/setStepOneWizStep.jsp"/>
+        </action>
+        <action name="setStepTwoWizStep" id="setStepTwoWizStep" preloadWizardPage="true">
+            <command windowType="wizard_step" url="netmarkets/jsp/carambola/customization/examples/wizard/setStepTwoWizStep.jsp"/>
+        </action>
+    </objecttype>
+
+    <!-- MVC actions -->
+    <objecttype name="carambola" class="java.lang.Object" resourceBundle="com.ptc.carambola.carambolaResource">
+        <!-- MVC Search II level action  -->
+        <action name="carambola.testClients.search">
+            <component windowType="page" />
+        </action>
+
+        <!-- MVC tables -->
+        <action name="CustEx_mvc_table">
+            <component name="carambola.mvc.table" windowType="page" />
+        </action>
+        <action name="CustEx_mvc_table_separateBuilders">
+            <component name="carambola.mvc.table.separateBuilders" windowType="page"/>
+        </action>
+        <action name="CustEx_mvc_table_nonPersistedData">
+            <component name="carambola.mvc.table.nonPersistedData" windowType="page" />
+        </action>
+        <action name="CustEx_mvc_table_IE">
+            <component name="carambola.mvc.table.ie" windowType="page" />
+        </action>
+        <!-- table toolbars -->
+        <action name="sortByState" ajax="none">
+            <command windowType="no_content" onClick="PTC.carambola.sortByState(table)"/>
+        </action>
+        <action name="removeRowFromView" ajax="none">
+            <command windowType="no_content" onClick="PTC.carambola.deleteRow(table)"/>
+        </action>
+        <action name="reloadTable" ajax="none">
+            <command windowType="no_content" onClick="PTC.carambola.reloadTable(table)"/>
+        </action>
+        <action name="strikeThroughRows" ajax="none" multiselect="true" selectRequired="true">
+            <command windowType="no_content" onClick="PTC.carambola.strikeThroughRows(table, true)"/>
+        </action>
+        <action name="clearStrikeThrough" ajax="none" multiselect="true" selectRequired="true">
+            <command windowType="no_content" onClick="PTC.carambola.strikeThroughRows(table, false)"/>
+        </action>
+        <action name="strikeThroughRow" ajax="none">
+            <command windowType="no_content" onClick="PTC.carambola.strikeThroughRow(event, table)"/>
+        </action>
+        <!-- MVC DS components -->
+        <action name="CustEx_mvc_table_DataSourceEnabled">
+            <component name="carambola.mvc.table.dataSourceEnabled.sync" windowType="page"/>
+        </action>
+        <action name="CustEx_mvc_table_DataSourceEnabled_IE">
+            <component name="carambola.mvc.table.dataSourceEnabled.sync.ie" windowType="page"/>
+        </action>
+        <action name="CustEx_mvc_table_AsyncDataSourceEnabled">
+            <component name="carambola.mvc.table.dataSourceEnabled.async" urlParams="async=true" windowType="page"/>
+        </action>
+        <action name="CustEx_mvc_table_AsyncDataSourceEnabled_IE">
+            <component name="carambola.mvc.table.dataSourceEnabled.async.ie" urlParams="async=true" windowType="page"/>
+        </action>
+        <action name="CustEx_mvc_tree_async">
+            <component name="carambola.mvc.tree.async" windowType="page" />
+        </action>
+
+        <action name="carambola.multistep.wiz" ajax="page"  resourceBundle="com.ptc.carambola.carambolaResource" >
+            <command url="netmarkets/jsp/carambola/multistepwiz.jsp" windowType="popup"/>
+        </action>
+        <action name="carambola.multistep.wiz.step1" ajax="page" >
+            <command url="netmarkets/jsp/carambola/carambola.multistep.wiz.step1.jsp" windowType="wizard_step"/>
+        </action>
+        <action name="carambola.multistep.wiz.step2" ajax="page" >
+            <component name="carambola.mvc.tree.async" windowType="wizard_step"/>
+        </action>
+        <action name="mvc.table.singleSelect">
+            <component name="carambola.mvc.table.singleSelect" urlParams="async=true" windowType="page"/>
+        </action>
+
+        <!-- MVC trees -->
+        <action name="CustEx_mvc_tree">
+            <component name="carambola.mvc.tree" windowType="page" />
+        </action>
+        <action name="CustEx_mvc_tree_IE">
+            <component name="carambola.mvc.tree.ie" windowType="page" />
+        </action>
+        
+        <action name="graphicalAttrsNonConfigExample">
+            <component name="carambola.graphicalAttrsNonConfigExample" windowType="page" />
+        </action>
+        <action name="graphicalAttrsConfigExample">
+            <component name="carambola.graphicalAttrsConfigExample" windowType="page" />
+        </action>
+    </objecttype>
+
+    <objecttype name="object" class="java.lang.Object" resourceBundle="com.ptc.carambola.carambolaResource">
+        <action name="CustEx_ExtJs_exceptionHandle1">
+            <command url="ptc1/table/exception?actionElement=streamIsBusy" windowType="page"/>
+        </action>
+        <action name="CustEx_ExtJs_exceptionHandle2">
+            <command url="ptc1/table/exception?actionElement=streamIsClosed" windowType="page"/>
+        </action>
+        <action name="CustEx_ExtJs_exceptionHandle3">
+            <command url="ptc1/table/exception?actionElement=inGeneral" windowType="page"/>
+        </action>
+        <action name="CustEx_Ajax_exceptionHandle">
+            <command url="netmarkets/jsp/carambola/customization/examples/exception/exceptionDemo.jsp" windowType="page"/>
+        </action>
+        <action name="attributePanelWizStep">
+            <component name="carambola.mvc.attributePanelWizStep" windowType="wizard_step"/>
+        </action>
+        
+    </objecttype>
+
+    <objecttype name="carambola" class="java.lang.Object">
+        <action name="attributePanelWizStep">
+            <component name="defineItemAttributesWizStep" typeBased="true" windowType="wizard_step" urlParams="typeIdForTypeLookup=com.ptc.carambola.customization.examples.attributePanel.AttributePanelExampleObject"/>
+            <label>Carambola Set Attribute Wizard Step</label>
+            <icon>url.gif</icon>
+        </action>
+        <action name="attributePanel">
+            <!-- Typically, you would not include the "typeIdForTypeLookup" parameter as the type would be determined from the
+                 context object.  It is needed here only because there is no context object. -->
+            <component name="attributesTable" typeBased="true" windowType="page" urlParams="typeIdForTypeLookup=com.ptc.carambola.customization.examples.attributePanel.AttributePanelExampleObject"/>
+            <label>Advanced Attribute Panel</label>
+        </action>
+    </objecttype>
+
+    <!-- Navigation entry - for Customization  I level -->
+    <objecttype name="navigation" class="" resourceBundle="com.ptc.carambola.carambolaResource">
+        <action name="customization" renderType="GENERAL">
+            <command class="netmarkets" method="servlet/Navigation?tab=customization" windowType="page"/>
+        </action>
+
+        <action name="carambolaWidget">
+            <component name="carambola.mvc.widget" windowType="page"/>
+       </action>
+        <action name="recentDocuments">
+           <component name="recent.documents.mini" windowType="page"/>
+       </action>
+    </objecttype>
+
+    <!-- Navigation entry - for Customization  II level -->
+    <objecttype name="object" class="java.lang.Object" resourceBundle="com.ptc.carambola.carambolaResource">
+        <action name="table">
+            <command
+                    url="ptc1/tcomp/infoPage?typeIdForTypeLookup=com.ptc.mvc.builders.carambola.CarambolaTableExampleBuilder"
+                    windowType="page" />
+        </action>
+        <action name="tree">
+            <command
+                    url="ptc1/tcomp/infoPage?typeIdForTypeLookup=com.ptc.mvc.builders.carambola.CarambolaTreeExampleBuilder"
+                    windowType="page" />
+        </action>
+        <action name="picker">
+            <command url="netmarkets/jsp/carambola/customization/examples/picker/picker.jsp" windowType="page"/>
+        </action>
+        <action name="pickerOverview">
+            <command url="netmarkets/jsp/carambola/customization/examples/picker/pickerOverview.jsp" windowType="page"/>
+        </action>
+        <action name="suggest">
+            <command url="netmarkets/jsp/carambola/customization/examples/picker/suggest.jsp" windowType="page"/>
+        </action>
+        <action name="propertyPanel">
+            <command url="netmarkets/jsp/carambola/testClients/propertyPanel/examples.jsp" windowType="page"/>
+        </action>
+        <action name="twoPanePanels">
+            <command url="netmarkets/jsp/carambola/customization/examples/twoPanePanels/examples.jsp" windowType="page"/>
+        </action>
+        <action name="tools">
+            <command url="netmarkets/jsp/carambola/tools/list.jsp" windowType="page"/>
+        </action>
+        <action name="componentCatalog">
+            <command url="netmarkets/jsp/componentCatalog/componentCatalog.jsp" windowType="page"/>
+        </action>
+      <action name="apiDocs">
+            <command url="netmarkets/jsp/apiDocs/apiDocs.jsp" windowType="page"/>
+        </action>
+    </objecttype>
+
+    <objecttype name="carambola" class="java.lang.Object" resourceBundle="com.ptc.carambola.carambolaResource">
+
+        <action name="createAction" ajax="component">
+            <command class="com.ptc.carambola.tools.actionReport.CreateActionFormProcessor" method="execute" windowType="popup" onClick="validateCreateLocation(event)"/>
+        </action>
+        <action name="definePropertiesStep" id="definePropertiesStep">
+            <command windowType="wizard_step" />
+        </action>
+        <action name="defineAdvPropertiesStep" id="defineAdvPropertiesStep">
+            <command windowType="wizard_step" />
+        </action>
+        <action name="removeAction" multiselect="true" ajax="component" selectRequired="true">
+            <command class="com.ptc.carambola.tools.actionReport.RemoveActionFormProcessor" method="execute" onClick="onClickValidation(event,'removeAction')"/>
+        </action>
+        <action name="pasteAction" multiselect="true" ajax="component">
+            <command class="com.ptc.carambola.tools.actionReport.PasteActionFormProcessor" method="execute" onClick="onClickValidation(event,'pasteAction')"/>
+        </action>
+        <action name="slice" ajax="none">
+            <label>Slice</label>
+            <command windowType="no_content" onClick="alert('Slicing...')" />
+        </action>
+        <action name="eat">
+            <label>Eat</label>
+            <command windowType="no_content" onClick="alert('Yum!')" />
+        </action>
+        <action name="ripe">
+            <label>When is a carambola ripe?</label>
+            <command windowType="no_content" onClick="alert('When they are yellow with a light shade of green.')"/>
+        </action>
+        <action name="grow">
+            <label>Where does a carambola grow?</label>
+            <command windowType="no_content" onClick="alert('The carambola is a tropical and subtropical fruit. In India, it grows in up to 4,000 feet in elevation.')"/>
+        </action>
+        <action name="infoPageExample">
+            <command url="ptc1/tcomp/infoPage?typeIdForTypeLookup=com.ptc.carambola.customization.examples.infoPage.Carambola" windowType="page"/>
+        </action>
+        <action name="infoPageTest">
+            <command url="ptc1/tcomp/infoPage?typeIdForTypeLookup=com.ptc.carambola.testClients.infoPage.Pineapple" windowType="page"/>
+        </action>
+        <action name="ajaxNumericRenderingTestPanel">
+            <component name="ajaxNumericRenderingTestPanel" windowType="page" />
+            <label>Test Panel for Ajax Numeric Rendering</label>
+        </action>
+        <action name="ajaxNumericRenderingTestPanel2">
+            <component name="ajaxNumericRenderingTestPanel2" windowType="page" />
+            <label>Test Panel for Multiple Ajax Numeric Rendering</label>
+        </action>
+
+        <action name="testClients"/>
+        <action name="otherExamples"/>
+        <action name="attributePanelExamples"/>
+
+        <action name="performanceFakeTableData">
+            <label>Performance Fake Table Data</label>
+            <component name="performanceFakeTableData" windowType="page" />
+        </action>
+
+        <action name="performanceOneLevelDeep">
+            <label>Performance One Level Deep Tree</label>
+            <component name="performanceOneLevelDeepTree" windowType="page" />
+        </action>
+
+        <action name="tree_dynamic_row_add" ajax="row">
+            <command class="com.ptc.carambola.tests.tree.CarambolaAddFakeTreeRowProcessor" method="execute"/>
+        </action>
+        <!-- Mini Table Example-->
+        <action name="CustEx_miniTable">
+            <component name="recent.documents.mini" windowType="page"/>
+            <label>Mini Table Example</label>
+        </action>
+
+        <!-- Exception Handling Examples-->
+        <action name="CustEx_expHandle">
+            <command url="netmarkets/jsp/carambola/customization/examples/exception/exceptionDemo.jsp" windowType="page"/>
+            <label>Exception Handling Example</label>
+        </action>
+    </objecttype>
+
+    <!-- Two-Pane Panel Examples-->
+    <objecttype name="object" class="java.lang.Object" resourceBundle="com.ptc.carambola.carambolaResource">
+        <action name="horizontalSplitPaneExample">
+            <command url="netmarkets/jsp/carambola/customization/examples/twoPanePanels/horizontalSplitPaneExample.jsp" windowType="page"/>
+        </action>
+        <action name="verticalSplitPaneExample">
+            <command url="netmarkets/jsp/carambola/customization/examples/twoPanePanels/verticalSplitPaneExample.jsp" windowType="page"/>
+        </action>
+    </objecttype>
+
+    <!-- Paste UI -->
+    <objecttype name="carambola" resourceBundle="com.ptc.carambola.customization.examples.paste.carambolaPasteResource">
+        <action name="paste">
+            <description>Example Paste UI</description>
+            <command class="com.ptc.carambola.customization.examples.paste.PasteFormProcessor" url="netmarkets/jsp/carambola/customization/examples/paste/paste.jsp" windowType="popup"/>
+        </action>
+        <action name="pasteWizStep" afterJS="PasteExample.validate">
+            <description>Only step for Example Paste UI</description>
+            <component name="carambola.pasteWizStep" windowType="wizard_step" urlParams=""/>
+        </action>
+        <action name="pasteLocation" ajax="row">
+            <description>The toolbar action for the paste client</description>
+            <component onClick="PasteExample.launchFolderPicker(event)" />
+        </action>
+        <action name="aboutPasteExample">
+            <description> About This Example button for example paste wizard </description>
+            <component name="carambola.AboutPasteExampleBuilder" windowType="popup" />
+        </action>
+    </objecttype>
+
+    <objecttype name="carambola">
+        <action name="onclickIsInvalid">
+            <description>
+                This action illustrates how an invalid onclick action is handled when parsed by the action service.
+                Such invalid actions should not prevent the page from being displayed.
+            </description>
+            <command onClick="doFoo('unterminated string)"/>
+            <label>Action Has Invalid Onclick</label>
+            <icon>netmarkets/images/ladybug.png</icon>
+            <tooltip>Action has invalid onclick</tooltip>
+        </action>
+        <action name="onclickToBeWrapped">
+            <description>
+                This action illustrates how invalid onclick actions with multiple javascript function calls are
+                handled by the action service.  Onclick actions should just be a single function call.
+                The function can return either true or false, depending on whether the action should be executed or not.
+                If an onclick action with multiple statements is found, the framework wraps the statements in a single function call
+                so the page will not be prevented from displaying.
+
+                This onclick will be converted to:
+                if(function(){alert('Hello');Event.stop(event);return false;}()) { //proceed with action...}
+            </description>
+            <command onClick="alert('Hello');Event.stop(event);return false;" windowType="page"/>
+            <label>Action Has Complex Onclick</label>
+            <icon>netmarkets/images/ladybug.png</icon>
+            <tooltip>Action has complex onclick</tooltip>
+        </action>
+    </objecttype>
+
+    <!-- Download File -->
+    <objecttype name="carambola" resourceBundle="com.ptc.carambola.download.carambolaDownloadFileResource">
+        <action name="downloadFileWizard">
+            <description>Launch the example Download File wizard.</description>
+            <icon>netmarkets/images/download.gif</icon>
+            <command class="com.ptc.carambola.download.DownloadFileFormProcessor"
+                    url="netmarkets/jsp/carambola/testClients/download/download.jsp" windowType="popup" />
+        </action>
+        <action name="downloadWizardStep">
+            <description>The only step for the example Download File wizard.</description>
+            <command url="netmarkets/jsp/carambola/testClients/download/downloadWizardStep.jsp" windowType="wizard_step" />
+        </action>
+    </objecttype>
+
+    <objecttype name="carambola_test">
+        <action name="addRow" ajax="row" >
+            <label>Add row - dynamic row refresh</label>
+            <command class="com.ptc.carambola.tests.wizard.ForTestingNoContentActions" method="addRow" />
+        </action>
+        <action name="removeRow" ajax="row" selectRequired="true">
+            <label>Remove row(s) - dynamic row refresh</label>
+            <command class="com.ptc.carambola.tests.wizard.ForTestingNoContentActions" method="removeRow" />
+        </action>
+        <action name="moveRow" ajax="row" selectRequired="true">
+            <label>Move row(s) to other table - dynamic row refresh</label>
+            <command class="com.ptc.carambola.tests.wizard.ForTestingNoContentActions" method="moveRow" />
+        </action>
+    </objecttype>
+
+   <!--this is for the modeled object-->
+    <objecttype name="modeledObject">
+        <action name="attributesError">
+            <command url="netmarkets/jsp/carambola/customization/examples/errors/errorExample.jsp" windowType="page"/>
+        </action>
+        <action name="Java_attributes">
+            <component name="javaattributesTable" typeBased="true" windowType="page" urlParams="typeIdForTypeLookup=com.ptc.carambola.tools.modeled.ModeledObject"/>
+            <label>Attributes</label>
+        </action>
+        <action name="Properties_table_for_infoPage">
+            <component windowType="page"/>
+            <label>Property Descriptors</label>
+        </action>
+        <action name="Roles_table_for_classinfoPage">
+            <component windowType="page"/>
+            <label>Role Descriptors</label>
+        </action>
+        <action name="ParentInterface_table_for_classinfoPage">
+            <component windowType="page"/>
+            <label>Parent Interfaces</label>
+        </action>
+        <action name="Descendents_table_for_classinfoPage">
+            <component windowType="page"/>
+            <label>Descendents</label>
+        </action>
+        <action name="CompositeUniques_table_for_classinfoPage">
+            <component windowType="page"/>
+            <label>Composite Unique Indices</label>
+        </action>
+        <action name="Indices_table_for_classinfoPage">
+            <component windowType="page"/>
+            <label>Composite Indices</label>
+        </action>
+         <action name="UML">
+            <command url="netmarkets/jsp/carambola/tools/uml.jsp" windowType="page"/>
+            <label>UML Diagram</label>
+        </action>
+        <action name="Javadoc">
+            <command url="netmarkets/jsp/carambola/tools/Docjava.jsp" windowType="page"/>
+            <label>Javadoc</label>
+        </action>
+    </objecttype>
+
+   <!--this is for the modeled object table details info page-->
+    <objecttype name="modeledObjectTableDetails">
+        <action name="attributesForTable">
+            <component name="attributesdbTable" typeBased="true" windowType="page" urlParams="typeIdForTypeLookup=com.ptc.carambola.tools.modeled.ModeledObjectTableDetails"/>
+            <label>Table Attributes</label>
+        </action>
+        <action name="ColumnDescriptors_table_for_infoPage">
+            <component windowType="page"/>
+            <label>Column Descriptors</label>
+        </action>
+    </objecttype>
+
+   <!--this is for the modeled object properties descriptor info page-->
+    <objecttype name="modeledObjectProperties">
+        <action name="attributes_properties">
+            <component name="attributesTable" typeBased="true" windowType="page" urlParams="typeIdForTypeLookup=com.ptc.carambola.tools.modeled.ModeledObjectProperties"/>
+            <label>Property Descriptor</label>
+        </action>
+    </objecttype>
+
+   <!-- this for the modeled object column descriptors info page -->
+    <objecttype name="modeledObjectColumnDescriptors">
+        <action name="attributes_columndescriptors">
+            <component name="attributesTable" typeBased="true" windowType="page" urlParams="typeIdForTypeLookup=com.ptc.carambola.tools.modeled.ModeledObjectTableColumnDescriptors"/>
+            <label>Column Descriptor</label>
+        </action>
+    </objecttype>
+
+   <!--for modeled object index page -->
+    <objecttype name="modeledObjectIndex">
+        <action name="carambola.tools.index_table_for_modeledObjectIndexPage">
+            <component windowType="page"/>
+            <label>Modeled Objects</label>
+        </action>
+    </objecttype>
+
+   <!-- these are for the modeled object roles info page-->
+    <objecttype name="modeledObjectRoles">
+        <action name="attributes_roles">
+            <component name="attributesTable" typeBased="true" windowType="page" urlParams="typeIdForTypeLookup=com.ptc.carambola.tools.modeled.ModeledObjectRoles"/>
+            <label>Role Descriptor</label>
+        </action>
+    </objecttype>
+
+    <!-- Actions for Literature UIs -->
+    <objecttype name="fakeLiterature" resourceBundle="com.ptc.carambola.carambolaResource">
+        <action name="testCustomAttributeDisplay">
+            <label>Test Custom Attribute Display</label>
+            <description>To try out custom attribute display accomplished with a custom data utility.
+                    This is an unsupported customization, but customers have wanted to do this because calculated attributes do not
+                    support localized values. If LWC layer is enhanced to support localized calculated attributes this type of
+                    customization would just done through the type manager UI.</description>
+            <component name="literature_customAttributeDisplay" windowType="page"/>
+        </action>
+        <action name="attributesFromAnotherObject">
+            <label>Attributes From Container Context</label>
+            <description>To demonstrate how an info page could show an attribute panel for an object that is different from the current context object. </description>
+            <component name="literature_attributesFromAnotherObject" windowType="page"/>
+        </action>
+        <action name="editLiterature" ajax="row">
+            <label>Basic Edit Wizard</label>
+            <command class="com.ptc.core.components.forms.EditWorkableFormProcessor" method="execute" url="netmarkets/jsp/carambola/customization/examples/wizard/exampleLiteratureEdit.jsp" windowType="popup"/>
+        </action>
+        <action name="create">
+            <command class="com.ptc.core.components.forms.CreateObjectFormProcessor" method="execute" url="netmarkets/jsp/carambola/customization/examples/wizard/createLiterature.jsp" windowType="popup"/>
+        </action>
+        <action name="create_withLegacyAttributesTable">
+            <label>Create Wizard - Legacy Attributes Table</label>
+            <command class="com.ptc.core.components.forms.CreateObjectFormProcessor" method="execute" url="netmarkets/jsp/carambola/testClients/wizard/createLiteratureWithLegacyAttributesTable.jsp" windowType="popup"/>
+        </action>
+        <action name="createLitOOTBSteps">
+            <label>Create Wizard using Common Steps</label>
+            <command class="com.ptc.core.components.forms.CreateObjectFormProcessor" method="execute" url="netmarkets/jsp/carambola/customization/examples/wizard/createLitOOTBSteps.jsp" windowType="popup"/>
+        </action>
+        <action name="createLitCheckbox">
+            <label>Create Wizard using Keep Checked Out Checkbox</label>
+            <command class="com.ptc.core.components.forms.CreateObjectFormProcessor" method="execute" url="netmarkets/jsp/carambola/customization/examples/wizard/createLitCheckbox.jsp" windowType="popup"/>
+        </action>
+        <action name="createLitCustomWizStep">
+            <label>My Custom Wiz Step</label>
+            <command  url="netmarkets/jsp/carambola/customization/examples/wizard/createLitCustomWizStep.jsp" windowType="wizard_step"/>
+        </action>
+
+        <action name="createWidgetAndMultiLitDoc">
+            <command class="com.ptc.carambola.customization.examples.wizard.CreateWidgetAndMultiLitFormProcessor" method="execute" url="netmarkets/jsp/carambola/customization/examples/wizard/createWidgetAndMultiLitDoc.jsp" windowType="popup"/>
+        </action>
+
+        <action name="editWidgetAndMultiLitDoc">
+            <command class="com.ptc.carambola.customization.examples.wizard.EditWidgetAndMultiLitFormProcessor" method="execute" url="netmarkets/jsp/carambola/customization/examples/wizard/editWidgetAndMultiLitDoc.jsp" windowType="popup"/>
+        </action>
+
+        <action name="crudWidgetsTable">
+            <component name="carambola.crud.widgetTable" windowType="page"/>
+        </action>
+
+        <action name="createMultiLitDoc">
+            <command class="com.ptc.core.components.forms.CreateObjectFormProcessor" method="execute" url="netmarkets/jsp/carambola/customization/examples/wizard/createMultiLitDoc.jsp" windowType="popup"/>
+        </action>
+        <action name="setTypeAndAttributeStepForCreateMulti" preloadWizardPage="false" required="true">
+            <label>My Custom Wiz Step</label>
+            <command url="netmarkets/jsp/carambola/customization/examples/wizard/setTypeAndAttributeStepForCreateMulti.jsp" windowType="wizard_step"/>
+        </action>
+        <action name="dataStoreOnlyExample">
+            <command class="com.ptc.carambola.customization.examples.wizard.DataStoreOnlyFormProcessor" method="execute" url="netmarkets/jsp/carambola/customization/examples/wizard/dataStoreOnlyExample.jsp" windowType="popup"/>
+        </action>
+        <action name="setTypeAndAttributeForDataStoreOnly" preloadWizardPage="false" required="true">
+            <label>My Custom Wiz Step</label>
+            <command url="netmarkets/jsp/carambola/customization/examples/wizard/setTypeAndAttributeForDataStoreOnly.jsp" windowType="wizard_step"/>
+        </action>
+        <action name="addLitObject">
+            <command onClick="PTC.wizard.addNewRow(table.id);" />
+        </action>
+        <action name="editPopupExample">
+            <icon>info_edit.png</icon>
+            <label>Edit</label>
+            <command onClick="PTC.ux.grid.DetailsPopupGrid.launchEditDialog(event, 'ptc1/carambola/customization/examples/wizard/editAttributesPopupExample', {create: 'com.ptc.core.components.forms.CreateObjectFormProcessor', edit: 'com.ptc.core.components.forms.EditWorkableFormProcessor'})" />
+        </action>
+        <action name="detailsPopupExample" required="true">
+            <component name="fakeNovel.detailsPopupExample" windowType="wizard_step"/>
+        </action>
+        <action name="legacyAttributesTableWizStep" preloadWizardPage="false">
+            <label>Set Attributes (Legacy Attributes Table)</label>
+            <command url="netmarkets/jsp/carambola/testClients/wizard/legacyAttributesTableWizStep.jsp" windowType="wizard_step"/>
+        </action>
+        <action name="createNovelWithSaveButton">
+            <command class="com.ptc.core.components.forms.CreateObjectFormProcessor" method="execute" url="netmarkets/jsp/carambola/testClients/wizard/createNovelWithSaveButton.jsp" windowType="popup"/>
+        </action>
+        <action name="createNovelWithSaveAttributesStep" preloadWizardPage="false">
+            <component name="createNovelWithSaveAttributesStep" windowType="wizard_step"/>
+        </action>
+        <action name="createNovelWithSaveAttributesPanel">
+           <component name="createNovelWithSaveAttributesPanel" typeBased="true" />
+        </action>
+        <action name="saveButtonForCreate" id="create_wizard_save">
+           <command onClick="PTC.wizard.onSaveInCreate('saveButtonForCreate', PTC.carambola.handleSubmitResultAfterSave)"/>
+        </action>
+    </objecttype>
+
+
+    <!-- Attribute Panel Examples -->
+    <objecttype name="attributePanel" resourceBundle="com.ptc.carambola.customization.examples.attributePanel.AttributePanelExamplesResource">
+        <action name="wizardWithAttributePanels">
+             <description>Launches a single-step create wizard that contains examples of attribute panels </description>
+             <command url="netmarkets/jsp/carambola/customization/examples/attributePanel/wizardWithAttributePanels.jsp?fakeLiterature=loaded" windowType="popup"/>
+        </action>
+    </objecttype>
+
+    <objecttype name="Novel">
+        <action name="defineItemAttributesWizStepForAttrPanelWizard" afterVK="setAttributesWizStep" preloadWizardPage="true" required="true">
+             <description>The action for the wizard step containing examples of attribute panels.</description>
+            <component name="defineItemAttributesWizStep" typeBased="true" windowType="wizard_step"/>
+        </action>
+    </objecttype>
+
+	<objecttype name="object" class="java.lang.Object" resourceBundle="com.ptc.windchill.enterprise.participantPicker.resource.participantPickerResource">
+ 		<action name="participantPicker">
+            <command url="netmarkets/jsp/carambola/testClients/participantPicker/participantPickerExamples.jsp" windowType="page"/>
+        </action>
+	</objecttype>
+	
+</listofactions>
+

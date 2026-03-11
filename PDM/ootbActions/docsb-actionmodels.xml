@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+
+   <!-- define the actions on the UI components -->
+<actionmodels>
+
+   <!-- This refers to top level tabs like "Editing", "Check Out/In", "New/Add To" etc -->
+   <!-- "Doc Structure Tab" Main Toolbar -->
+   <model name="docsbRelatedDocsTreeToolBar">
+      <action name="editingGroupGWT"                          type="psb" />
+      <action name="insertExistingDocStructureGWT"            type="docsb"/>
+      <action name="removeGWT"                                type="psb"/>
+      <action name="insertNewDocStructureSplitGWT"            type="docsb" />
+      <action name="insertNewDocStructureGWT"                 type="docsb" />
+      <action name="insertMultiNewDocStructureGWT"            type="docsb" />
+      <action name="editDocMenuGWT"                           type="docsb" />
+      <action name="editDocGWT"                               type="docsb" />
+      <action name="separator"                                type="separator" />
+      <action name="renameGWT"                                type="psb" />
+
+      <action name="checkInOutGroupGWT"                       type="psb" />
+      <action name="checkoutSplitGWT"                         type="docsb" />
+      <action name="checkoutGWT"                              type="docsb" />
+      <action name="checkoutAndDownloadGWT"                   type="docsb" />
+      <action name="newRevisionGWT"              	          type="cat" />
+      <action name="checkinSplitGWT"                          type="psb" />
+      <action name="checkinGWT"                               type="psb" />
+      <action name="undocheckoutGWT"                          type="psb" />
+      
+      <action name="clipboardGroupGWT"                        type="psb" />
+      <action name="pasteFromClipboardToTreeWithLargeIconGWT" type="docsb" />
+      <action name="copyToWindchillWithLargeIconGWT"          type="cat" />
+
+      <action name="viewingGroupGWT"                          type="psb" />
+      <action name="configurableTableViewGWT"                 type="cat" />
+      <action name="configurableTableViewListGWT"             type="cat" />
+      <action name="separator"                                type="separator" />
+      <action name="saveStructureViewGWT"                     type="cat" />
+      <action name="configurableTableViewManagerGWT"          type="cat" />
+      <action name="displayGWT"                               type="cat" />
+      <action name="selectAllGWT"                             type="cat" />
+      <action name="separator"                                type="separator" />
+      <action name="expandAllLevelsFromRootGWT"               type="cat" />
+      <action name="docsbExpandSubmenuGWT"                       type="docsb" />
+      <action name="expandOneLevelGWT"                           type="cat" />
+      <action name="expandTwoLevelsGWT"                       type="cat" />
+      <action name="expandThreeLevelsGWT"                      type="cat" />
+      <action name="expandFourLevelsGWT"                       type="cat" />
+      <action name="expandFiveLevelsGWT"                       type="cat" />
+      <action name="separator"                                   type="separator" />
+      <action name="expandAllSelectedLevelsGWT"               type="cat" />
+      <action name="expandNLevelsGWT"                         type="cat" />
+      <action name="collapseAllLevelsGWT"                       type="cat" />
+      <action name="docsbEndExpandSubmenuGWT"                   type="docsb" />
+
+
+      <action name="separator"                                type="separator" />
+      <action name="viewLayout2Panel"                         type="cat" />
+      <action name="viewLayout3Panel"                         type="cat" />
+      <action name="separator"                                type="separator" />
+      <action name="refreshGWT"                               type="cat" />
+
+      <action name="newAddToGroupGWT"                         type="psb" />
+      <action name="addToActionsGWT"                          type="psb" />
+      <action name="addToBaselineGWT"                         type="cat" />
+      <action name="addToPackageGWT"                          type="cat" />
+
+     <action name="filterGroupGWT"                            type="ec" />
+     <action name="editFilterWithLargeIconGWT"                type="ec" />
+     <action name="filterPropertiesGWT"                       type="ec" />
+     <action name="savedFiltersGWT"                           type="ec" />
+
+      <action name="toolsGroupGWT"                            type="psb" />
+      <action name="downloadFilesGWT"                         type="docsb" />
+
+   </model>
+
+   <!-- "Uses Tab" Toolbar -->
+   <model name="docsbRelatedDocsToolBar">
+      <action name="insertExistingDocUsesGWT"     type="docsb" />
+      <action name="insertNewDocUsesGWT"          type="docsb" />
+      <action name="insertMultiNewDocUsesGWT"     type="docsb" />
+      <action name="removeGWT"                    type="psb" />
+      <action name="separator"                    type="separator" />
+      <action name="editDocGWT"                   type="docsb" />
+      <action name="renameGWT"                    type="psb" />
+      <action name="separator"                    type="separator" />
+      <action name="copyToWindchillGWT"           type="cat" />
+      <action name="pasteFromClipboardToTableGWT" type="docsb" />
+      <action name="separator"                    type="separator" />
+      <action name="checkinGWT"                   type="psb" />
+      <action name="checkoutGWT"                  type="docsb" />
+      <action name="checkoutAndDownloadGWT"       type="docsb" />
+      <action name="undocheckoutGWT"              type="psb" />
+      <action name="separator"                    type="separator" />
+      <action name="downloadFilesGWT"             type="docsb" />
+   </model>
+
+   <!-- "Uses Tab" Right Click Context Menu -->
+   <model name="docsbRelatedDocsContextMenu">
+      <action name="viewInfoGWT"                  type="cat" />
+      <action name="separator"                    type="separator" />
+      <action name="removeGWT"                    type="psb"/>
+      <action name="editDocGWT"                   type="docsb" />
+      <action name="renameGWT"                    type="psb" />
+      <action name="separator"                    type="separator" />
+      <action name="copyToWindchillGWT"           type="cat" />
+      <action name="pasteFromClipboardToTableGWT" type="docsb" />
+      <action name="separator"                    type="separator" />
+      <action name="selectInTreeGWT"              type="docsb" />
+      <action name="separator"                    type="separator" />
+      <action name="checkinGWT"                   type="psb" />
+      <action name="checkoutGWT"                  type="docsb" />
+      <action name="checkoutAndDownloadGWT"       type="docsb" />
+      <action name="undocheckoutGWT"              type="psb" />
+      <action name="newRevisionGWT"               type="cat" />
+      <action name="separator"                    type="separator" />
+      <action name="downloadPrimaryFileGWT"       type="docsb" />
+      <action name="openPrimaryUrlGWT"            type="docsb" />
+   </model>
+
+   <!-- The Main Right Click Context Menu -->
+   <model name="docsbRelatedDocsTreeContextMenu">
+      <action name="viewInfoGWT"                 type="cat" />
+      <action name="separator"                   type="separator" />
+      <action name="selectInTableGWT"            type="docsb" />
+      <action name="separator"                   type="separator" />
+      <submodel name="docsbAddInsertRelatedDocsTreeContextSubmenuGWT"/>
+      <action name="removeGWT"                   type="psb"/>
+      <submodel name="docsbEditRelatedDocsTreeContextSubmenuGWT"/>
+      <action name="reorderGWT"                  type="docsb"/>
+      <action name="separator"                   type="separator" />
+      <action name="copyToWindchillGWT"          type="cat" />
+      <action name="pasteFromClipboardToTreeGWT" type="docsb" />
+      <submodel name="docsbExpandContextSubmenuGWT"/>
+      <action name="separator"                   type="separator" />
+      <submodel name="docsbAddToRelatedDocsTreeContextSubmenuGWT"/>
+      <action name="separator"                   type="separator" />
+      <action name="checkinGWT"                  type="psb" />
+      <action name="checkoutGWT"                 type="docsb" />
+      <action name="checkoutAndDownloadGWT"      type="docsb" />
+      <action name="undocheckoutGWT"             type="psb" />
+      <action name="newRevisionGWT"              type="cat" />
+      <action name="separator"                   type="separator" />
+      <action name="downloadPrimaryFileGWT"      type="docsb" />
+      <action name="openPrimaryUrlGWT"           type="docsb" />
+   </model>
+
+   <model name="docsbAddInsertRelatedDocsTreeContextSubmenuGWT" resourceBundle="com.ptc.windchill.enterprise.doc.docsb.docsbActionsRB">
+      <action name="insertExistingDocStructureGWT" type="docsb"/>
+      <action name="insertNewDocStructureGWT"      type="docsb" />
+      <action name="insertMultiNewDocStructureGWT" type="docsb" />
+   </model>
+
+   <model name="docsbEditRelatedDocsTreeContextSubmenuGWT" resourceBundle="com.ptc.windchill.enterprise.doc.docsb.docsbActionsRB">
+      <action name="editDocGWT" type="docsb" />
+      <action name="renameGWT"  type="psb" />
+   </model>
+
+   <model name="docsbAddToRelatedDocsTreeContextSubmenuGWT" resourceBundle="com.ptc.windchill.enterprise.doc.docsb.docsbActionsRB">
+      <action name="addToBaselineGWT" type="cat" />
+      <action name="addToPackageGWT"  type="cat" />
+   </model>
+   <model name="docsbExpandContextSubmenuGWT" resourceBundle="com.ptc.windchill.enterprise.doc.docsb.docsbActionsRB">
+      <action name="expandOneLevelGWT" type="cat" />
+      <action name="expandTwoLevelsGWT" type="cat" />
+      <action name="expandThreeLevelsGWT" type="cat" />
+      <action name="expandFourLevelsGWT" type="cat" />
+      <action name="expandFiveLevelsGWT" type="cat" />
+      <action name="separator" type="separator" />
+      <action name="expandAllSelectedLevelsGWT" type="cat" />
+      <action name="expandNLevelsGWT" type="cat" />
+   </model>
+
+</actionmodels>

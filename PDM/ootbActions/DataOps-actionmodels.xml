@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+<!-- define the actions on DataOps Module -->
+<actionmodels resourceBundle="com.ptc.windchill.enterprise.dataops.dataopsUIResource">
+   <model name="Archive Job actions" menufor="wt.dataops.archive.Archive">
+      <action name="restoreJob"             type="archive" shortcut="true"/>
+   </model>
+   
+   <model name="manage archive rules table actions">
+        <action name="deleteRule" type="dataops" shortcut="true"/>
+        <action name="createArchiveQuery" type="dataops" shortcut="true"/>          
+        <action name="mergeRulesWizard" type="dataops"  shortcut="true"/>    
+        <action name="importRuleWizard" type="dataops" shortcut="true"/>    
+   </model> 
+   
+   <model name="manage archive rules row actions">
+        <action name="renameRuleWizard" type="dataops" shortcut="true"/>
+        <action name="editRuleWizard" type="dataops" shortcut="true"/>          
+        <action name="copyRuleWizard" type="dataops" shortcut="true"/>  
+        <action name="exportQuery" type="dataops" shortcut="true"/>
+        <action name="repairCollQuery" type="dataops" shortcut="true"/>         
+   </model>
+
+   <model name="archive schedule admin actions">
+        <action name="deleteArchiveSchedule" type="dataops" shortcut="true"/>
+        <action name="refresh" type="dataops" shortcut="true"/>
+        <action name="newArchiveJob" type="dataops" shortcut="true"/>          
+        <action name="criteriaManager" type="dataops" shortcut="true"/>  
+        <action name="archiveJobToggle" type="dataops" shortcut="true"/>    
+   </model> 
+   
+   <model name="archive schedule admin row actions">
+        <action name="deleteArchiveScheduleForRow" type="dataops" shortcut="true"/>
+        <action name="editArchiveSchedule" type="dataops" shortcut="true"/>          
+        <action name="disableArchiveSchedule" type="dataops" shortcut="true"/>  
+        <action name="enableArchiveSchedule" type="dataops" shortcut="true"/>    
+   </model>
+   
+   <model name="archive job admin actions">
+        <action name="deleteArchiveJob" type="dataops" shortcut="true"/>
+        <action name="refresh" type="dataops" shortcut="true"/>
+        <action name="newArchiveJob" type="dataops" shortcut="true"/>          
+        <action name="criteriaManager" type="dataops" shortcut="true"/>  
+        <action name="archiveScheduleToggle" type="dataops" shortcut="true"/>    
+   </model> 
+   
+   <model name="archive job admin row actions">
+        <action name="deleteArchiveJobForRow" type="dataops" shortcut="true"/>
+        <action name="openEventConsole" type="dataops" shortcut="true"/>          
+        <action name="resumeJob" type="dataops" shortcut="true"/>  
+        <action name="newRestoreJob" type="dataops" shortcut="true"/>
+        <action name="viewAffectedObjects" type="dataops" shortcut="true"/>
+   </model>
+   
+   <model name="closeButtonForPopup">
+        <action name="closeButton" type="dataops" shortcut="true"/>
+   </model>
+
+   <model name="DefaultWizardButtonsNoApplyValidateFinish">
+        <action name="prevButton"    type="object" shortcut="true"/>
+        <action name="nextButton"    type="object" shortcut="true"/>
+        <action name="okButton"      type="dataops" shortcut="true"/>
+        <action name="cancelButton"  type="object" shortcut="true"/>
+   </model>
+
+   <model name="archive job preview actions">
+        <action name="excludeJob" type="dataops" shortcut="true"/>
+        <action name="includeJob" type="dataops" shortcut="true"/>              
+   </model> 
+   
+   <model name="DefaultClerkButtonsNoApplyWithConfirm">
+       <action name="okButtonWithConfirm"      type="dataops" shortcut="true"/>
+       <action name="cancelButton"  type="object" shortcut="true"/>
+   </model>
+   <model name="Query Picker table model">
+        <action name="createArchiveQuery" type="dataops" shortcut="true"/>
+   </model>
+   
+   <model name="dataops criteria attributes toolbar">
+        <action name="deleteCriteriaAttributes" type="dataops" shortcut="true"/>
+   </model>
+   
+   <model name="archive job info actions">
+        <action name="resumeJob" type="dataops" shortcut="true"/>  
+        <action name="newRestoreJob" type="dataops" shortcut="true"/>
+        <action name="viewAffectedObjects" type="dataops" shortcut="true"/>
+        <action name="viewQuery" type="dataops" shortcut="true"/>
+        <action name="viewJobLog" type="dataops" shortcut="true"/>
+        <action name="openEventConsole" type="dataops" shortcut="true"/>
+        
+   </model>
+   
+    <model name="archive schedule admin info actions">
+        <action name="editArchiveSchedule" type="dataops" shortcut="true"/>          
+        <action name="disableArchiveSchedule" type="dataops" shortcut="true"/>  
+        <action name="enableArchiveSchedule" type="dataops" shortcut="true"/>    
+   </model>   
+   
+   <model name="dataopsRuleTabSet" resource="com.ptc.windchill.enterprise.dataops.dataopsUIResource">
+        <submodel name="dataopsRuleInfoTables" shortcut="true"/>
+   </model>
+   
+   <model name="dataopsRuleInfoTables" resource="com.ptc.windchill.enterprise.dataops.dataopsUIResource">
+        <action name="dataopsQueryAttrPanel" type="dataops" shortcut="true"/> 
+        <action name="dataopsCriteriaInfoContext" type="dataops" shortcut="true"/>
+        <action name="dataopsCriteriaInfoAttribute" type="dataops" shortcut="true"/>
+   </model>
+   
+   <model name="dataopsScheduleTabSet" resource="com.ptc.windchill.enterprise.dataops.dataopsUIResource">
+        <submodel name="dataopsScheduleInfoTables" shortcut="true"/>
+   </model>
+   
+   <model name="dataopsScheduleInfoTables" resource="com.ptc.windchill.enterprise.dataops.dataopsUIResource">
+        <action name="dataopsScheduleAttrPanel" type="dataops" shortcut="true"/> 
+        <action name="dataopsArchiveScheduleInfo" type="dataops" shortcut="true"/>
+   </model>
+   
+   <model name="purgeJobInfoTablesNavBar">
+	 <action name="dataopsJobAttrPanel" type="dataops"/>	  
+   </model> 
+   
+	<model name="archiveJobInfoTablesNavBar">
+		 <action name="dataopsJobAttrPanel" type="dataops"/> 
+		 <action name="dataopsArchiveJobAttrPanel" type="dataops"/> 
+	</model>
+	
+	<model name="purgeJobInfoTables">
+	    <submodel name="dataopsJobInfoTables"/>	   
+    </model>
+    
+   <model name="dataopsJobInfoTables" resource="com.ptc.windchill.enterprise.dataops.dataopsUIResource">
+        <action name="dataopsJobAttrPanel" type="dataops"/> 
+   </model>
+
+    <model name="dataopsArchiveJobInfo" resource="com.ptc.windchill.enterprise.dataops.dataopsUIResource">
+        <action name="dataopsArchiveJobAttrPanel" type="dataops"/> 
+   </model>
+   
+   <model name="archiveJobInfoTables">
+	    <submodel name="dataopsJobInfoTables"/>
+	    <submodel name="dataopsArchiveJobInfo"/>
+   </model>
+   
+   <model name="archive info actions">
+        <action name="newRestoreJob" type="dataops" shortcut="true"/>
+        <action name="viewArchivedObjects" type="dataops" shortcut="true"/>
+        <action name="openEventConsole" type="dataops" shortcut="true"/>    
+   </model>
+   
+   <model name="archiveInfoTables" resource="com.ptc.windchill.enterprise.dataops.dataopsUIResource">
+        <action name="dataopsArchiveAttrPanel" type="dataops" shortcut="true"/>
+   </model>
+ 
+</actionmodels>

@@ -1,0 +1,43 @@
+<?xml version="1.0" standalone="yes"?>
+<%@page language="java" session="false" access="http|soap" contentType="text/xml"%>
+<%@taglib uri="http://www.ptc.com/infoengine/taglib/core" prefix="ie"%>
+<%@page import="wt.adapter.BasicWebjectDelegate"%>
+<%@page import="java.util.*"%>
+<%@page import="ext.casc.capp.CAPPPartService"%>
+<%@page import="ext.casc.capp.CAPPCraft"%>
+
+<%
+	CAPPCraft craft = new CAPPCraft();
+	String productName = (String)getParam("productName");
+	String type = (String)getParam("type");
+	String number = (String)getParam("number");
+	String name = (String)getParam("name");
+	String partNumber = (String)getParam("partNumber");
+	String fileSate = (String)getParam("fileSate");
+	String version = (String)getParam("version");
+	String changedCraftNum = (String)getParam("changedCraftNum");
+	String changedCraftVersion = (String)getParam("changedCraftVersion");
+	String craftor = (String)getParam("craftor");
+	String department = (String)getParam("department");
+	craft.setProductName(productName);
+	craft.setName(name);
+	craft.setNumber(number); 
+	craft.setPartNumber(partNumber);
+	craft.setFileSate(fileSate);
+	craft.setVersion(version);
+	craft.setChangedCraftNum(changedCraftNum); 
+	craft.setChangedCraftVersion(changedCraftVersion);
+	craft.setCraftor(craftor);
+	craft.setDepartment(department); 
+	craft.setType(type); 
+	CAPPPartService cservice = new CAPPPartService();
+     String result = cservice.create(craft);
+     System.out.println(result);
+     result = "result="+result;
+%>
+<ie:webject name="Create-Group" type="GRP">
+    <ie:param name="GROUP_OUT" data="${@FORM[]group_out[]}" default="output"/>
+    <ie:param name="DELIMITER" data="|"/>
+    <ie:param name="CLASS" data="RES"/>
+     <ie:param name="ELEMENT" data="<%=result%>"/>
+</ie:webject>

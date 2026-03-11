@@ -1,0 +1,33 @@
+<%@page import="ext.ptc.workinstruction.WorkInstructionHelper,ext.ptc.ViewWIHelper,wt.util.WTProperties"%>
+
+<%
+	String tempopObid =  ieObj.getAttributeValue("CURRENT_OPERATION", 0, "obid");
+	String tempoidOP= WorkInstructionsUtilities.getOid(tempopObid);
+	MPMOperation tempopera = (MPMOperation)WorkInstructionsUtilities.getObject(tempoidOP);
+	WTProperties props = WTProperties.getLocalProperties();
+	String hName = props.getProperty("wt.server.hostname");
+	String fileName = ViewWIHelper.getAppDatasForPvsFileByMPMOperation(tempopera);
+
+%>
+
+<script type="text/javascript" src="pview/pvlaunch.js"></script>
+<script type="text/javascript">
+	SetPvBaseUrl("pview/");
+</script>
+<body>
+	<table align="center" width="600" height="500">
+		<tr valign="center" width="100%" height="100%">
+			<td border="3" height="100%" align="justify">
+				<A HREF="<%=edrURL%>">
+					<script type="text/javascript">
+						try {
+						    ProductView("","http://<%=hName%>/Windchill/netmarkets/jsp/flv/<%=fileName%>","","","<%=illustName%>","");
+						} catch(e) {
+						    alert(e);
+						}
+					</script>
+				</A>
+			</td>
+		</tr>
+	</table>
+</body>

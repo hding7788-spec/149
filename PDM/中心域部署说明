@@ -1,0 +1,4 @@
+
+初始化型号映射：
+insert into PRODUCTINFO (LOCALHOST_PRODUCT,LOCALHOST_PRODUCT_NAME,SAST_PRODUCT,SAST_PRODUCT_NAME)
+select ida2a2,namecontainerinfo,b.SAST_PRODUCT_ID,b.SAST_PRODUCT_NAME from pdmlinkproduct a,SAST_PRODUCT_INFO b where a.namecontainerinfo = b.SAST_PRODUCT_ID

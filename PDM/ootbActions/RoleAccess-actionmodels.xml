@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+<actionmodels>
+
+   <model name="profile table toolbar manager actions">
+      <action name="list_cut"                 type="object" shortcut="true"/>
+      <action name="list_copy"                type="object" shortcut="true"/>
+      <action name="memberPaste"              type="roleAccess" shortcut="true"/>
+      <action name="remove"                   type="object" shortcut="true"/>
+      <action name="separator"                type="separator"/>
+      <action name="profile_addMembers"       type="roleAccess" shortcut="true"/>
+   </model>
+
+   <model name="profile toolbar actions">
+      <action name="list_copy"                type="object" shortcut="true"/>
+      <action name="pasteProfile"             type="roleAccess" shortcut="true"/>
+      <action name="profile_create"           type="roleAccess" shortcut="true"/>
+      <action name="import_profile"           type="roleAccess" shortcut="true"/>
+      <action name="export_profile"           type="roleAccess" shortcut="true"/>
+      <action name="deleteProfile"            type="roleAccess" shortcut="true"/>
+   </model>
+
+   <model name="profile row actions">
+      <action name="view"                 type="object"/>
+      <action name="profile_update"       type="roleAccess"/>
+      <action name="export_profile"       type="roleAccess"/>
+      <action name="saveAs"               type="roleAccess"/>
+      <action name="enableProfile"        type="roleAccess"/>
+      <action name="disableProfile"       type="roleAccess"/>
+      <action name="deleteProfile"        type="roleAccess"/>
+      <action name="profileEditAttribute" type="roleAccess"/>
+   </model>
+
+   <model name="license profile row actions">
+      <action name="view"                 type="object"/>
+	  <action name="saveAsStandard"       type="roleAccess"/>
+   </model>
+
+   <model name="profile create attributes toolbar actions">
+      <action name="remove"         type="object"  shortcut="true"/>
+      <action name="separator"      type="separator"/>
+      <action name="addAttributes"  type="roleAccess"  shortcut="true"/>
+   </model>
+
+   <model name="profile edit attributes toolbar actions">
+      <action name="profileEditAttributeToolbar"  type="roleAccess"  shortcut="true"/>
+   </model>
+
+
+</actionmodels>

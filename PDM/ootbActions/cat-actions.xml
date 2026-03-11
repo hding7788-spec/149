@@ -1,0 +1,360 @@
+<?xml version="1.0"?>
+<listofactions>
+	<objecttype name="cat" resourceBundle="com.ptc.cat.catActionsRB">
+
+		<!-- TODO: Deprecated - Use the expandAllLevelsGWT action instead. -->
+		<action name="expandalllevels">
+			<command class="com.ptc.cat.gxt.client.action.ExpandAllLevelsAction"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.HasChildrenFilter"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+		</action>
+		
+        <action name="expandAllLevelsFromRootGWT">
+            <command class="com.ptc.cat.gxt.client.action.ExpandAllLevelsFromRootAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotFilteredFilter"/>
+        </action>
+        
+		<action name="expandAllSelectedLevelsGWT">
+			<command class="com.ptc.cat.gxt.client.action.ExpandAllLevelsAction"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.HasChildrenFilter"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotFilteredFilter"/>
+			<includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForMatrixCellFilter"/>
+		</action>
+
+		<action name="expandOneLevelGWT">
+            <command class="com.ptc.cat.gxt.client.action.ExpandOneLevelAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HasChildrenFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotFilteredFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForMatrixCellFilter"/>
+        </action>
+		
+        <action name="expandTwoLevelsGWT">
+            <command class="com.ptc.cat.gxt.client.action.ExpandTwoLevelsAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HasChildrenFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotFilteredFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForMatrixCellFilter"/>
+        </action>
+        
+        <action name="expandThreeLevelsGWT">
+            <command class="com.ptc.cat.gxt.client.action.ExpandThreeLevelsAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HasChildrenFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotFilteredFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForMatrixCellFilter"/>
+        </action>
+        
+        <action name="expandFourLevelsGWT">
+            <command class="com.ptc.cat.gxt.client.action.ExpandFourLevelsAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HasChildrenFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotFilteredFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForMatrixCellFilter"/>
+        </action>
+        
+        <action name="expandFiveLevelsGWT">
+            <command class="com.ptc.cat.gxt.client.action.ExpandFiveLevelsAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HasChildrenFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotFilteredFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForMatrixCellFilter"/>
+        </action>
+        
+        <action name="expandNLevelsGWT">
+            <command class="com.ptc.cat.gxt.client.action.ExpandNLevelsAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HasChildrenFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotFilteredFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForMatrixCellFilter"/>
+        </action>
+        
+		<action name="expandAllLevelsGWT">
+			<command class="com.ptc.cat.gxt.client.action.ExpandAllLevelsAction"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.HasChildrenFilter"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotFilteredFilter"/>
+			<includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForMatrixCellFilter"/>
+		</action>
+
+		<action name="collapseAllLevelsGWT">
+			<command class="com.ptc.cat.gxt.client.action.CollapseAllLevelsAction"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HasChildrenFilter"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotFilteredFilter"/>
+			<includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForMatrixCellFilter"/>
+		</action>
+	
+		<action name="setexpansioncriteria">
+			<command class="com.ptc.windchill.enterprise.structurecomponent.client.action.SetExpansionCriteriaAction"/>
+		</action>
+		
+		<!-- TODO: Deprecated - Use the refreshGWT action instead. -->
+		<action name="refresh">
+			<command class="com.ptc.cat.gxt.client.action.RefreshAction"/>
+		</action>
+		
+		<action name="refreshGWT">
+			<command class="com.ptc.cat.gxt.client.action.RefreshAction"/>
+		</action>
+		
+        <action name="selectAllGWT">
+            <command class="com.ptc.cat.gxt.client.action.SelectAllAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForMatrixCellFilter"/>
+        </action>
+        
+		<action name="configurableTableViewGWT">
+			<command class="com.ptc.cat.ui.client.action.NoAction"/>
+		</action>
+		
+		<action name="configurableTableViewWithLargeIconGWT">
+			<command class="com.ptc.cat.ui.client.action.NoAction"/>
+		</action>
+
+		<action name="configurableTableViewListGWT">
+			<command class="com.ptc.cat.ui.client.action.TableViewListAction"/>
+		</action>
+	
+		<action name="saveStructureViewGWT">
+			<command class="com.ptc.cat.ui.client.action.SaveTableViewAction"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.IsTableViewSystemFilter"/>
+		</action>
+			
+        <action name="configurableTableViewManagerGWT">
+            <command class="com.ptc.cat.gxt.client.action.TableViewManagerAction"/>
+        </action>
+            
+		<action name="copyToWindchillGWT" uicomponent="COPY">
+			<command class="com.ptc.cat.gxt.client.action.CopyAction"/>
+            		<includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+			<includeFilter name="com.ptc.windchill.enterprise.part.psb.client.filters.UnsupportedActionsForReplacmentPartFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForEmptyMatrixCellFilter"/>
+		</action>
+
+		<action name="copyToWindchillWithLargeIconGWT" uicomponent="COPY">
+			<command class="com.ptc.cat.gxt.client.action.CopyAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+		</action>
+		
+		<action name="toggleViewLayout">
+			<command class="com.ptc.cat.gxt.client.action.ToggleViewLayoutAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.ViewLayoutPreferenceOverriddenFilter"/>
+		</action>
+
+		<action name="viewLayout2Panel">
+			<command class="com.ptc.cat.gxt.client.action.ViewLayout2PanelAction"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.ViewLayoutPreferenceOverriddenFilter"/>
+		</action>
+
+		<action name="viewLayout3Panel">
+			<command class="com.ptc.cat.gxt.client.action.ViewLayout3PanelAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.ViewLayoutPreferenceOverriddenFilter"/>
+		</action>
+
+		<action name="viewInfoGWT">
+			<command class="com.ptc.cat.ui.client.action.ViewInfoAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+		</action>
+		
+		<action name="viewInfoInNewWindowGWT">
+			<command class="com.ptc.cat.ui.client.action.ViewInfoInNewWindowAction"/>
+		        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+		</action>
+
+		<action name="displayGWT">
+			<command class="com.ptc.cat.ui.client.action.NoAction"/>
+		</action>
+		
+		<action name="displayWithLargeIconGWT">
+			<command class="com.ptc.cat.ui.client.action.NoAction"/>
+		</action>
+		
+        <action name="addToBaselineGWT" ajax="component">
+            <command class="com.ptc.cat.ui.client.action.AddToBaselineAction" method="execute" url="/ptc1/baseline/addToBaseline" windowType="popup"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="disableForNewObjectInWorkspace"/>
+            <includeFilter name="disableForWorkingCopyWorkInProgress"/> 
+	    <includeFilter name="com.ptc.windchill.enterprise.part.psb.client.filters.UnsupportedActionsForReplacmentPartFilter"/>			
+        </action>
+
+        <action name="addToPackageGWT" uicomponent="ADD_TO_PACKAGE" ajax="component">
+            <command class="com.ptc.cat.ui.client.action.AddToPackageAction" method="execute" url="/ptc1/wpcollection/addToPackageMultiple" windowType="popup"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="disableForNewObjectInWorkspace"/>
+            <includeFilter name="disableForWorkingCopyWorkInProgress"/>            
+            <supportedTypes>
+				<type value="wt.part.WTPart"/>
+				<type value="wt.part.WTPartUsageLink"/>
+				<type value="wt.part.WTPartReferenceLink"/>
+				<type value="wt.part.WTPartDescribeLink"/>				
+				<type value="wt.part.PartUsesOccurrence"/>
+				<type value="wt.doc.WTDocument"/>
+				<type value="wt.doc.WTDocumentUsageLink"/>
+				<type value="wt.epm.EPMDocument"/>
+				<type value="wt.epm.structure.EPMMemberLink"/>
+				<type value="wt.epm.build.EPMBuildHistory"/>
+				<type value="com.ptc.arbortext.windchill.partlist.PartList"/>
+			</supportedTypes>	
+        </action>
+
+        <!-- Use the action name 'SBAddToProj' because the validator for this action (from DataOps team) has logic in it
+             that relies on actionName to be 'SBAddToPrj' -->
+		<action name="SBAddToPrj" uicomponent="ADD_TO_PROJECT" ajax="component">
+			<command class="com.ptc.cat.ui.client.action.AddToProjectAction" method="execute" url="/servlet/WindchillAuthGW/wt.enterprise.URLProcessor/URLTemplateAction" windowType="popup"/>
+                        <includeFilter name="isNotInProject"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+		</action>
+
+		<action name="newRevisionGWT" ajax="component">
+			<command class="com.ptc.cat.ui.client.action.NewRevisionAction" method="execute" url="/servlet/WindchillAuthGW/wt.enterprise.URLProcessor/generateForm" windowType="lightbox"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.DisableForAdminLockedFilter"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.DisableForPartToCadBuildAdminLockedFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForEmptyMatrixCellFilter"/>
+		</action>
+
+		<action name="newRevisionWithLargeIconGWT" ajax="component">
+			<command class="com.ptc.cat.ui.client.action.NewRevisionAction" method="execute" url="/servlet/WindchillAuthGW/wt.enterprise.URLProcessor/generateForm" windowType="lightbox"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.DisableForAdminLockedFilter"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.DisableForPartToCadBuildAdminLockedFilter"/>
+		</action>
+
+		<action name="publishToCADGWT">
+			<command class="com.ptc.cat.gxt.client.action.PublishToCADAction"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.PublishToCADFilter"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+			<includeFilter name="disableForParentInTreeAdminLocked"/>
+			<includeFilter name="disableForPartToCadBuildAdminLocked"/>
+		</action>
+
+		<action name="zoomAllGWT">
+			<command class="com.ptc.cat.viz.client.action.ZoomAllAction"/>
+		</action>
+		
+		<action name="zoomSelectedGWT">
+			<command class="com.ptc.cat.viz.client.action.ZoomSelectedAction"/>
+		</action>
+		
+		<action name="setSpinCenterGWT">
+			<command class="com.ptc.cat.viz.client.action.SetSpinCenterAction"/>
+		</action>
+		
+		<action name="toggleAutoSelectionGWT">
+			<command class="com.ptc.cat.ui.client.action.NoAction"/>
+		</action>
+		
+		<action name="toggleAutoSelectionFromStructToVIZGWT">
+			<command class="com.ptc.cat.viz.client.action.ToggleAutoSelectionStructToVIZAction"/>
+		</action>
+		
+		<action name="toggleAutoSelectionFromVIZToStructGWT">
+			<command class="com.ptc.cat.viz.client.action.ToggleAutoSelectionVIZToStructAction"/>
+		</action>
+		
+		<action name="selectInVIZTabGWT">
+			<command class="com.ptc.cat.ui.client.action.SelectInVIZTabAction"/>
+			<supportedTypes>
+				<type value="wt.part.WTPart"/>
+				<type value="wt.part.WTPartUsageLink"/>
+				<type value="wt.part.PartUsesOccurrence"/>
+				<type value="wt.part.RTPartPathOccurrence"/>
+			</supportedTypes>	
+		</action>
+        
+        <action name="newPromotionRequestGWT">
+            <command class="com.ptc.cat.ui.client.action.NewPromotionRequestAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreCheckinFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+        </action>
+
+        <action name="testActionValidationOperationGWT">
+            <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+		
+        <action name="tableExportActionsGWT">
+           <command class="com.ptc.cat.ui.client.action.NoAction"/>
+           <includeFilter name="com.ptc.cat.ui.client.internal.action.IsTabEmptyFilter"/>
+        </action>
+        
+        <action name="exportActionsGWT">
+           <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+        
+        <action name="exportCsvGWT">
+           <command class="com.ptc.cat.ui.client.action.ExportCsvAction"/>
+        </action>
+        
+        <action name="exportHtmlGWT">
+           <command class="com.ptc.cat.ui.client.action.ExportHtmlAction"/>
+        </action>
+        
+        <action name="exportTextGWT">
+           <command class="com.ptc.cat.ui.client.action.ExportTextAction"/>
+        </action>
+        
+        <action name="exportXlsGWT">
+           <command class="com.ptc.cat.ui.client.action.ExportXlsAction"/>
+        </action>
+        
+        <action name="exportXlsReportGWT">
+           <command class="com.ptc.cat.ui.client.action.ExportXlsReportAction"/>
+        </action>
+        
+        <action name="exportXmlGWT">
+           <command class="com.ptc.cat.ui.client.action.ExportXmlAction"/>
+        </action>
+        
+        <action name="exportXlsxGWT">
+           <command class="com.ptc.cat.ui.client.action.ExportXlsxAction"/>
+        </action>
+        
+                <action name="exportPdfGWT">
+           <command class="com.ptc.cat.ui.client.action.ExportPdfAction"/>
+        </action>
+        
+        <action name="exportImportableXlsGWT">
+	   <command class="com.ptc.cat.ui.client.action.ExportImportableXlsAction"/>
+        </action>
+        
+        <action name="exportImportableXlsxGWT">
+           <command class="com.ptc.cat.ui.client.action.ExportImportableXlsxAction"/>
+        </action>
+        	
+        <action name="moveGWT">
+           <command class="com.ptc.cat.ui.client.action.MoveAction" method="execute" url="/servlet/WindchillAuthGW/wt.enterprise.URLProcessor/URLTemplateAction" windowType="popup"/>
+           <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+           <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForEmptyMatrixCellFilter"/>
+           <includeFilter name="sandboxSharingValidationSimple" />
+           <includeFilter name="hideFromNonAgreementMgrs"/>
+        </action>
+
+	</objecttype>
+</listofactions>

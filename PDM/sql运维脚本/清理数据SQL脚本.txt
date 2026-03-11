@@ -1,0 +1,15 @@
+//清空ERP导入冗余缓存数据
+DELETE from  GLERPPEITAOPARTBEAN     WHERE SUBSTR(docoid, INSTR(docoid, ':', -1) + 1) IN (
+   SELECT IDA2A2 FROM WTDOCUMENT where ida2a2 in ( SELECT SUBSTR(docoid, INSTR(docoid, ':', -1) + 1) AS DOCID FROM GLERPPEITAOPARTBEAN) AND LATESTITERATIONINFO=0)
+
+DELETE from  GLERPPBOMPARTBEAN     WHERE SUBSTR(docoid, INSTR(docoid, ':', -1) + 1) IN (
+   SELECT IDA2A2 FROM WTDOCUMENT where ida2a2 in ( SELECT SUBSTR(docoid, INSTR(docoid, ':', -1) + 1) AS DOCID FROM GLERPPBOMPARTBEAN) AND LATESTITERATIONINFO=0)
+
+DELETE from  GLERPMATERIALSBEAN     WHERE SUBSTR(docoid, INSTR(docoid, ':', -1) + 1) IN (
+   SELECT IDA2A2 FROM WTDOCUMENT where ida2a2 in ( SELECT SUBSTR(docoid, INSTR(docoid, ':', -1) + 1) AS DOCID FROM GLERPMATERIALSBEAN) AND LATESTITERATIONINFO=0)
+
+
+//清理分页数据
+truncate table PageResults;
+truncate table PagingSession;
+truncate table ExtendedPageResults;

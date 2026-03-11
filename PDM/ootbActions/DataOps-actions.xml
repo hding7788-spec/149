@@ -1,0 +1,318 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+    <objecttype name="archive">
+        <action name="restoreJob" installType="PDM|PJL">
+            <command class="com.ptc.windchill.enterprise.dataops.commands.NmDataOpsRulesCommands" method="restoreArchive" url="netmarkets/jsp/archive/newRestoreJobWizard.jsp" windowType="popup"/>
+        </action>
+    </objecttype>
+
+    <objecttype name="dataops" class="com.ptc.windchill.enterprise.dataops.commands.NmDataOpsRulesCommands" resourceBundle="com.ptc.windchill.enterprise.dataops.dataopsUIResource">
+
+        <action name="manageArchiveRulesStep_MVC">
+            <component name="dataops.manageArchiveCollectionRules" windowType="wizard_step"/>
+        </action>
+
+        <action name="deleteRule" ajax="row">
+            <command class="com.ptc.windchill.enterprise.dataops.commands.NmDataOpsRulesCommands" method="deleteRule" 
+            onClick="selectRequiredAndConfirmation(event,&apos;com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE&apos;)"/>
+        </action>
+
+        <action name="createArchiveQuery">
+            <command class="com.ptc.windchill.enterprise.dataops.commands.NmDataOpsRulesCommands" method="createQuery" url="netmarkets/jsp/archive/createArchiveQuery.jsp" windowType="popup"/>
+            <moreurlinfo>height=730,width=1000</moreurlinfo>
+        </action>
+
+        <action name="mergeRulesWizard">
+            <command class="com.ptc.windchill.enterprise.dataops.commands.NmDataOpsRulesCommands" method="mergeRules" url="netmarkets/jsp/archive/mergeArchiveRulesWizard.jsp" onClick="mergeClick(event)" windowType="popup"/>
+        </action>
+
+        <action name="mergeArchiveRules_Step_MVC">
+            <component name="dataops.mergeRules" windowType="wizard_step"/>
+        </action>
+
+        <action name="importRuleWizard">
+            <command class="com.ptc.windchill.enterprise.dataops.forms.ImportRuleFormProcessor" method="execute" url="netmarkets/jsp/archive/importArchiveRuleWizard.jsp" windowType="popup"/>
+        </action>
+
+        <action name="importFromFile_Step" required="true" afterJS="valideFileInput">
+            <command class="com.ptc.windchill.enterprise.dataops.forms.ImportRuleFormProcessor" method="execute" windowType="wizard_step"/>
+        </action>
+
+        <action name="checkConflicts_Step_MVC" required="true" preloadWizardPage="false">
+            <component name="dataops.checkConflicts_Step" windowType="wizard_step"/>
+        </action>
+
+        <action name="exportQuery">
+            <command class="" method="" url="netmarkets/jsp/dataops/exportRule.jsp" windowType="popup"/>
+        </action>
+
+        <action name="exportRule">
+            <command class="" method="" url="netmarkets/jsp/dataops/exportRule.jsp" windowType="popup"/>
+        </action>
+
+        <action name="repairCollQuery">
+            <command class="com.ptc.windchill.enterprise.dataops.commands.NmDataOpsRulesCommands" method="repairCollectionQuery"/>
+        </action>
+
+        <action name="renameRuleWizard" required="true">
+            <command class="com.ptc.windchill.enterprise.dataops.commands.NmDataOpsRulesCommands" method="renameRule" url="netmarkets/jsp/archive/renameRuleWizard.jsp" windowType="popup"/>
+        </action>
+
+        <action name="editRuleWizard">
+            <command class="com.ptc.windchill.enterprise.dataops.commands.NmDataOpsRulesCommands" method="editQuery" windowType="popup" url="netmarkets/jsp/archive/editQueryWizard.jsp"/>
+            <moreurlinfo>height=730,width=1000</moreurlinfo>
+        </action>
+
+        <action name="editQuery_step1" required="true" afterJS="validataOnNext" postloadJS="resizeTwoPaneComponent">
+            <command class="" method="" windowType="wizard_step" url="netmarkets/jsp/archive/editQuery_step1.jsp"/>
+        </action>
+
+        <action name="editQuery_step2_MVC">
+            <command class="" method="" windowType="wizard_step" url="netmarkets/jsp/archive/editQuery_step2.jsp"/>
+        </action>
+
+        <action name="copyRuleWizard">
+            <command class="com.ptc.windchill.enterprise.dataops.commands.NmDataOpsRulesCommands" method="copyRule" url="netmarkets/jsp/archive/copyRuleWizard.jsp" windowType="popup"/>
+         </action>
+
+         <action name="renameRuleStep">
+            <command class="" method="" url="netmarkets/jsp/dataops/reNameRule_step.jsp" windowType="wizard_step"/>
+        </action>
+
+        <action name="copyRuleStep">
+            <command class="" method="" url="netmarkets/jsp/dataops/copyRuleStep.jsp" windowType="wizard_step"/>
+        </action>
+
+        <action name="closeButton">
+            <command class="" method="" windowType="page" url="javascript:wfWindowClose()"/>
+        </action>
+
+        <action name="archiveScheduleAdmin_Step_MVC">
+            <component name="dataops.archiveSchedule" windowType="wizard_Step"/>
+        </action>
+
+        <action name="deleteArchiveSchedule">
+            <command class="com.ptc.windchill.enterprise.dataops.commands.NmDataOpsRulesCommands" method="deleteArchiveSchedule" 
+            onClick="selectRequiredAndConfirmation(event,&apos;com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE&apos;)"/>
+        </action>
+
+        <action name="newArchiveJob" required="true">
+            <command class="" method="" url="netmarkets/jsp/archive/newPurgeJobWizard.jsp" windowType="popup"/>
+        </action>
+
+        <action name="criteriaManager" required="true">
+            <command class="" method="" url="netmarkets/jsp/archive/manageArchiveCollectionRulesWizard.jsp" windowType="page"/>
+        </action>
+
+        <action name="archiveJobToggle" required="true">
+            <command class="" method="" url="netmarkets/jsp/archive/archiveJobAdminWizard.jsp" windowType="page"/>
+        </action>
+
+        <action name="deleteArchiveScheduleForRow">
+            <command class="com.ptc.windchill.enterprise.dataops.commands.NmDataOpsRulesCommands" method="deleteArchiveScheduleForRow" onClick="JCAConfirm(event,&apos;com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE&apos;)"/>
+        </action>
+
+        <action name="editArchiveSchedule">
+            <command class="com.ptc.windchill.enterprise.dataops.commands.NmDataOpsRulesCommands" method="editArchiveSchedule" url="netmarkets/jsp/archive/editJobScheduleWizard.jsp" windowType="popup"/>
+        </action>
+
+        <action name="editJobScheduleWizard_Step1" required="true">
+            <command class="" method="" url="netmarkets/jsp/archive/editJobSchedule_step1.jsp" windowType="wizard_step"/>
+        </action>
+
+        <action name="editJobScheduleWizard_Step2" required="true">
+            <command class="" method="" url="netmarkets/jsp/archive/editJobSchedule_step2.jsp" windowType="wizard_step"/>
+        </action>
+
+        <action name="enableArchiveSchedule">
+            <command class="com.ptc.windchill.enterprise.dataops.commands.NmDataOpsRulesCommands" method="enableDisableSchedule"/>
+        </action>
+
+        <action name="disableArchiveSchedule">
+            <command class="com.ptc.windchill.enterprise.dataops.commands.NmDataOpsRulesCommands" method="enableDisableSchedule"/>
+        </action>
+
+        <action name="newPurgeJobWizard">
+            <command class="com.ptc.windchill.enterprise.dataops.commands.NmDataOpsRulesCommands" method="createNewArchiveJob" url="netmarkets/jsp/archive/newPurgeJobWizard.jsp" windowType="popup"/>
+        </action>
+
+        <action name="newPurgeJobWizard_Step1" required="true">
+            <command class="" method="" url="netmarkets/jsp/archive/newPurgeJobWizard_Step1.jsp" windowType="wizard_step"/>
+        </action>
+
+        <action name="newPurgeJobWizard_Step2" required="true">
+            <command class="" method="" url="netmarkets/jsp/archive/newPurgeJobWizard_Step2.jsp" windowType="wizard_step"/>
+        </action>
+
+        <action name="newPurgeJobWizard_Step3" required="true">
+            <command class="" method="" url="netmarkets/jsp/archive/newPurgeJobWizard_Step3.jsp" windowType="wizard_step"/>
+        </action>
+
+        <action name="newPurgeJobWizard_Step4" required="true" afterJS="validationBeforePreview">
+            <command class="com.ptc.windchill.enterprise.dataops.forms.CreateArchiveJobFormProcessor" method="execute" url="netmarkets/jsp/archive/newPurgeJobWizard_Step4.jsp" windowType="wizard_step"/>
+        </action>
+
+        <action name="newPurgeJobWizard_Step5" id="previewStep" required="true">
+            <command class="" method="" url="netmarkets/jsp/archive/newPurgeJobWizard_Step5.jsp" windowType="wizard_step"/>
+        </action>
+
+        <action name="newPurgeJobWizard_Step5_previewHTML_MVC" id="previewHtmlStep" hidden="true" required="true" preloadWizardPage="false">
+            <component name="dataops.newJobTable" windowType="wizard_step"/>
+        </action>
+
+        <action name="excludeJob" selectRequired="true">
+            <command class="" method="" onClick="excludeJob(this)"/>
+        </action>
+
+        <action name="includeJob" selectRequired="true">
+            <command class="" method="" onClick="includeJob(this)"/>
+        </action>
+
+        <action name="archiveJobAdmin_Step_MVC">
+            <component name="dataops.archiveJob" windowType="wizard_Step"/>
+        </action>
+
+        <action name="deleteArchiveJob">
+            <command class="com.ptc.windchill.enterprise.dataops.commands.NmDataOpsRulesCommands" method="deleteArchiveJob" 
+            onClick="selectRequiredAndConfirmation(event,&apos;com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE&apos;)"/>
+        </action>
+
+        <action name="archiveScheduleToggle" required="true">
+            <command class="" method="" url="netmarkets/jsp/archive/archiveScheduleAdminWizard.jsp" windowType="page"/>
+        </action>
+
+        <action name="deleteArchiveJobForRow">
+            <command class="com.ptc.windchill.enterprise.dataops.commands.NmDataOpsRulesCommands" method="deleteArchiveJobForRow" onClick="JCAConfirm(event,&apos;com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE&apos;)"/>
+        </action>
+
+        <action name="openEventConsole">
+            <command class="" method="" url="netmarkets/jsp/archive/openEventConsole.jsp" windowType="popup"/>
+        </action>
+
+        <action name="resumeJob">
+            <command class="com.ptc.windchill.enterprise.dataops.commands.NmDataOpsRulesCommands" method="resumeJob" url="netmarkets/jsp/archive/resumeJob.jsp" windowType="popup"/>
+        </action>
+
+        <action name="resumeJob_previewHTML">
+            <component name="dataops.newJobTable" windowType="wizard_step"/>
+        </action>
+
+        <action name="resumeJob_previewText">
+            <command class="" method="" url="netmarkets/jsp/archive/newPurgeJobWizard_Step5_previewText.jsp" windowType="wizard_Step"/>
+        </action>
+
+        <action name="viewAffectedObjects">
+            <command class="" method="" url="netmarkets/jsp/archive/viewAffectedList.jsp" windowType="popup"/>
+        </action>
+
+        <action name="viewArchivedObjects">
+            <command class="" method="" url="netmarkets/jsp/archive/viewAffectedList.jsp" windowType="popup"/>
+        </action>
+        
+        <action name="newRestoreJob">
+            <command class="com.ptc.windchill.enterprise.dataops.commands.NmDataOpsRulesCommands" method="restoreArchive" url="netmarkets/jsp/archive/newRestoreJobWizard.jsp" windowType="popup"/>
+        </action>
+
+        <action name="newRestoreJobStep">
+            <command class="" method="" url="netmarkets/jsp/archive/newRestoreJob_step.jsp" windowType="wizard_step"/>
+        </action>
+
+        <action name="okButton" id="PJL_wizard_ok">
+            <command class="" method="" windowType="page" onClick="validateOnFinish(event)"/>
+        </action>
+
+        <action name="okButtonWithConfirm">
+          <command class="" method="" windowType="page" url="javascript:onSubmit()" onClick="JCAConfirm(event,&apos;com.ptc.windchill.enterprise.dataops.dataopsUIResource.CONFIRMATION_PURGE&apos;)"/>
+        </action>
+
+        <action name="queryPickerWizard">
+            <command class="" method="" url="netmarkets/jsp/dataops/QueryPicker/queryPickerWizard.jsp" windowType="popup"/>
+            <moreurlinfo>height=760,width=900</moreurlinfo>
+        </action>
+
+        <action name="queryPicker_step_MVC">
+            <component name="dataops.queryPicker" windowType="wizard_step"/>
+        </action>
+
+        <action name="queryPickerSearchButton">
+            <command class="com.ptc.windchill.enterprise.dataops.commands.NmDataOpsRulesCommands" method="queryPickerSearch"/>
+        </action>
+
+        <action name="queryPickerSearchClearButton">
+            <command class="com.ptc.windchill.enterprise.dataops.commands.NmDataOpsRulesCommands" method="queryPickerClear" onClick="clearDateBeforeSubmit()"/>
+        </action>
+
+        <action name="archiveRuleDetails" required="true">
+            <command class="" method="" url="netmarkets/jsp/archive/archiveRuleDetails.jsp" windowType="wizard_step"/>
+        </action>
+
+        <action name="archiveRuleCriteriaContext" required="true" afterJS="validataOnNext" postloadJS="loadContext">
+            <command class="" method="" url="netmarkets/jsp/archive/archiveRuleCriteriaContext.jsp" windowType="wizard_step"/>
+        </action>
+
+        <action name="archiveRuleCriteriaAttributes_MVC" required="true">
+            <component name="dataops.selectionCriteria" windowType="wizard_step"/>
+        </action>
+
+        <action name="addSelectCriteria">
+                <description>Button for adding criteria</description>
+                <command class="com.ptc.windchill.enterprise.dataops.commands.NmDataOpsRulesCommands" method="addCriteriaAttribute" onClick="validateAddBeforeSubmit()"/>
+        </action>
+
+        <action name="deleteCriteriaAttributes" ajax="page">
+            <description>Delete Criteria from search criteria table on step 3 of New Archive/Purge Query Wizard</description>
+            <command class="com.ptc.windchill.enterprise.dataops.commands.NmDataOpsRulesCommands" onClick="removeRow(event)" method="deleteCriteriaAttributes"/>
+        </action>
+
+        <action name="refresh" ajax="page">
+         <command class="com.ptc.netmarkets.model.NmObjectCommands" method="refresh"/>
+        </action>
+
+        <action name="domainPicker_Step">
+            <command class="" method="" url="netmarkets/jsp/dataops/domainPicker.jsp" windowType="wizard_Step"/>
+        </action>
+
+        <action name="viewQuery">
+           <command url="netmarkets/jsp/tcomp/infoPage" windowType="page"/>
+        </action>
+
+        <action name="viewJobLog">
+            <command class="" method="" url="netmarkets/jsp/archive/viewJobLog.jsp" windowType="popup"/>
+        </action>
+
+        <action name="dataopsCriteriaInfoContext" resourceBundle="com.ptc.windchill.enterprise.dataops.dataopsUIResource">
+          <component name="dataops.criteriaInfo.context" typeBased="false" windowType="page"/>
+        </action>
+       
+        <action name="dataopsCriteriaInfoAttribute" resourceBundle="com.ptc.windchill.enterprise.dataops.dataopsUIResource">
+          <component name="dataops.criteriaInfo.attribute" typeBased="false" windowType="page"/>
+        </action>
+       
+        <action name="dataopsQueryAttrPanel" resourceBundle="com.ptc.windchill.enterprise.dataops.dataopsUIResource">
+          <component name="dataops.query.attrPanel" typeBased="false" windowType="page"/>
+        </action>
+        
+        <action name="dataopsArchiveScheduleInfo" resourceBundle="com.ptc.windchill.enterprise.dataops.dataopsUIResource">
+          <component name="dataops.archiveScheduleInfo" typeBased="false" windowType="page"/>
+        </action>
+       
+        <action name="dataopsScheduleAttrPanel" resourceBundle="com.ptc.windchill.enterprise.dataops.dataopsUIResource">
+          <component name="dataops.schedule.attrPanel" typeBased="false" windowType="page"/>
+        </action>
+        
+        <action name="dataopsJobAttrPanel" resourceBundle="com.ptc.windchill.enterprise.dataops.dataopsUIResource">
+          <component name="dataops.job.attrPanel" typeBased="false" windowType="page"/>
+        </action>
+        
+        <action name="dataopsArchiveJobAttrPanel" resourceBundle="com.ptc.windchill.enterprise.dataops.dataopsUIResource">
+          <component name="dataops.archiveJob.attrPanel" typeBased="false" windowType="page"/>
+        </action>
+        
+        <action name="dataopsArchiveAttrPanel" resourceBundle="com.ptc.windchill.enterprise.dataops.dataopsUIResource">
+          <component name="dataops.archive.attrPanel" typeBased="false" windowType="page"/>
+        </action>
+
+    </objecttype>
+
+</listofactions>

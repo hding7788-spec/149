@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+<!-- Define the actions on the UI components -->
+<actionmodels resourceBundle="com.ptc.core.agreements.agreementsResource">
+   <!-- Default toolbar for the agreement folder details page  -->
+   <model name="agreements_toolbar">
+      <action name="list_cut"                     type="object"/>
+      <action name="list_copy"                    type="object"/>
+      <action name="pasteAsCopy"                  type="saveas"/>
+      <action name="list_delete"                  type="object" shortcut="true"/>
+      <action name="separator"                    type="separator"/>
+      <action name="create"                       type="folder" shortcut="true"/>
+      <action name="create"                       type="agreements" shortcut="true"/>
+      <action name="separator"                    type="separator"/>
+      <action name="multiObjManageSecurity"       type="accessPermission"/>
+      <action name="createSubscriptionMultiObj"   type="subscription"/>
+   </model>
+
+   <!-- Agreement actions -->
+   <model name="agreements_actions" menufor="wt.access.agreement.AuthorizationAgreement">
+      <action name="view"                   type="object"/>  <!-- View Information -->
+      <action name="separator"              type="separator"/>
+      <action name="checkin"                type="wip"/>
+      <action name="checkout"               type="wip"/>
+      <action name="checkoutAndEdit"        type="agreements"/>
+      <action name="undocheckout"           type="wip"/>
+      <action name="edit"                   type="agreements"/>
+      <action name="REVISEITEMS"            type="pdmObject"/>
+      <action name="separator"              type="separator"/>
+      <action name="cut"                    type="object"/>
+      <action name="copy"                   type="object"/>
+      <action name="renameObjectWizard"     type="object"/>
+      <action name="setState"               type="lifecycle"/>
+      <action name="delete"                 type="object"/>
+      <action name="deleteIterations"       type="object"/>
+      <action name="separator"              type="separator"/>
+      <action name="ManageSecurity"         type="accessPermission"/>
+      <action name="createSubscription"     type="subscription"/>
+   </model>
+   
+   <!-- Agreement info actions -->
+   <model name="agreements_info_actions">
+      <action name="checkin"                type="wip"/>
+      <action name="checkout"               type="wip"/>
+      <action name="checkoutAndEdit"        type="agreements"/>
+      <action name="undocheckout"           type="wip"/>
+      <action name="edit"                   type="agreements"/>
+      <action name="separator"              type="separator"/>
+      <action name="REVISEITEMS"            type="pdmObject"/>
+      <action name="separator"              type="separator"/>
+      <action name="cut"                    type="object"/>
+      <action name="copy"                   type="object"/>
+      <action name="renameObjectWizard"     type="object"/>
+      <action name="setState"               type="lifecycle"/>
+      <action name="deleteAgreementInfo"    type="agreements"/>
+      <action name="deleteIterations"       type="object"/>
+      <action name="separator"              type="separator"/>
+      <action name="ManageSecurity"         type="accessPermission"/>
+      <action name="createSubscription"     type="subscription"/>
+   </model>
+
+   <!-- Agreement information page 3rd level nav menu bar -->
+   <model name="third_level_nav_agreement">
+      <submodel name="agreeGeneral"/>
+      <submodel name="agreeHistory"/>
+      <submodel name="collaboration"/>
+   </model>
+    
+   <model name="third_level_nav_full_container_agreement">
+      <submodel name="agreeFullContainerGeneral"/>
+      <submodel name="agreeHistory"/>
+      <submodel name="collaboration"/>
+   </model>
+
+   <model name="agreeGeneral">
+      <description>"General" 3rd level nav menu</description>
+      <action name="attributes"             type="object"/>
+      <action name="primaryAttributes"      type="object"/>
+      <action name="authObjectsTable"       type="agreements"/>
+      <action name="authParticipantsTable"  type="agreements"/>
+   </model>
+
+   <model name="agreeFullContainerGeneral">
+      <description>"General" 3rd level nav menu for full container agreements</description>
+      <action name="attributes"             type="object"/>
+      <action name="primaryAttributes"      type="object"/>
+      <action name="authParticipantsTable"  type="agreements"/>
+   </model>
+
+   <model name="agreeHistory">
+      <description>History 3rd level nav menu</description>
+      <action name="versionHistory"   type="history"/>
+      <action name="maturityHistory"  type="history"/>
+      <action name="separator"        type="separator"/>
+      <action name="processHistory"   type="workflow"/>
+      <action name="legacyLCHistory"  type="history"/> 
+      <action name="separator"        type="separator"/>
+      <action name="renameHistory"    type="object"/>
+   </model>
+
+   <!-- Agreements info page tabs -->
+   <model name="AgreementsInfoPageTabset" resourceBundle="com.ptc.core.agreements.agreementsResource">
+      <submodel name="AgreementsInfoDefaultDetailsTab"/>
+      <submodel name="AgreementsInfoAuthorizedParticipantsTab"/>
+      <submodel name="AgreementsInfoAuthorizedObjectsTab"/>
+   </model>
+
+   <model name="FullContainerAgreementsInfoPageTabset" resourceBundle="com.ptc.core.agreements.agreementsResource">
+      <submodel name="AgreementsInfoDefaultDetailsTab"/>
+      <submodel name="AgreementsInfoAuthorizedParticipantsTab"/>
+   </model>
+
+   <model name="AgreementsInfoDefaultDetailsTab" resourceBundle="com.ptc.core.agreements.agreementsResource">
+      <action name="primaryAttributes" type="object"/>
+      <action name="attributes" type="object"/>
+   </model>
+
+   <model name="AgreementsInfoAuthorizedParticipantsTab" resourceBundle="com.ptc.core.agreements.agreementsResource">
+      <action name="authParticipantsTable"  type="agreements"/>
+   </model>
+
+   <model name="AgreementsInfoAuthorizedObjectsTab" resourceBundle="com.ptc.core.agreements.agreementsResource">
+      <action name="authObjectsTable"       type="agreements"/>
+   </model>
+   
+   <model name="AgreementsInfoAuthorizedParticipantsRow" resourceBundle="com.ptc.core.agreements.agreementsResource">
+      <action name="view" type="object"/>
+   </model>
+   
+   <model name="AgreementsInfoAuthorizedParticipantsWizardRow" resourceBundle="com.ptc.core.agreements.agreementsResource">
+      <action name="view" type="agreements"/>
+   </model>
+
+   <!-- Agreement folder actions -->
+   <model name="agreement_folder_actions">
+      <submodel name="agreements_folder_actions_new"/>	  
+      <action name="separator"              type="separator"/>
+      <action name="view"                   type="folder"/>
+      <action name="separator"              type="separator"/>
+      <action name="cut"                    type="object"/>
+      <action name="pasteAsCopy"            type="saveas"/>
+      <action name="delete"                 type="object"/>	  
+      <action name="separator"              type="separator"/>
+      <action name="edit"                   type="folder"/>
+      <action name="separator"              type="separator"/>
+      <action name="ManageSecurity"         type="accessPermission"/>
+      <action name="createSubscription"     type="subscription"/>
+   </model>
+	
+   <!-- Agreement folder create submenu actions -->
+   <model name="agreements_folder_actions_new">
+      <action name="create"                 type="agreements" shortcut="true"/>
+      <action name="create"                 type="folder"/>
+   </model>
+
+   <!-- Authorized participants table actions -->
+   <model name="authorized_participant_toolbar_actions">
+      <action name="findParticipant"        type="agreements" shortcut="true"/>
+      <action name="remove"                 type="object" shortcut="true" resourceBundle="com.ptc.core.agreements.agreementsResource"/>
+   </model>
+
+   <!-- Authorized objects table actions -->
+   <model name="authorized_objects_toolbar_actions">
+      <action name="addAuthObjects"           type="agreements" shortcut="true"/>
+      <action name="remove"                   type="agreements" shortcut="true"/>
+      <action name="collectItems"             type="object" shortcut="true"/>
+      
+      <action name="separator"                type="separator" shortcut="true"/>
+      <action name="editAuthVersionsMultiObj" type="agreements" shortcut="true"/>
+      <action name="pasteAuthObjects"         type="agreements" shortcut="true"/>
+   </model>
+
+   <model name="authtable_row_action">
+      <action name="editAuthVersions"      type="agreements"/>
+   </model>  
+
+   <model name="no_actions">
+       
+   </model> 
+
+</actionmodels>

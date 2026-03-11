@@ -1,0 +1,167 @@
+<%@page import="com.ptc.windchill.mpml.processplan.MPMProcessPlan"%>
+<%@page import="com.ptc.netmarkets.workinstructions.WorkInstructionsUtilities"%>
+<%@page import="ext.casc.util.IBAUtility"%>
+
+<% 
+	   String pplanObid =  ieObj.getAttributeValue("PROCESS_PLAN", 0, "obid");
+	   String oidPPlan= WorkInstructionsUtilities.getOid(pplanObid);
+	   String pPlanFullLink = urlFactoryBean.getHREF("app/#ptc1/tcomp/infoPage?oid="+oidPPlan+"&u8=1");
+	   String imageLinkProcessPlan = WorkInstructionsUtilities.getPendingStatusIconString(oidPPlan);	   
+
+	   //out.println("---oidPPlan:"+oidPPlan);
+	   String danwei = "一四九厂";
+	   danwei = new String(danwei.getBytes("iso-8859-1"),"GBK");
+	   String processCard = "工艺过程卡";
+	   processCard = new String(processCard.getBytes("iso-8859-1"),"GBK");
+
+	   MPMProcessPlan plan = (MPMProcessPlan)WorkInstructionsUtilities.getObject(oidPPlan);
+	   //out.println("plan:"+plan);
+	   String dept = "部门";
+	   dept  = new String(dept.getBytes("iso-8859-1"),"GBK");
+	   String mindex = "代号";
+	   mindex  = new String(mindex.getBytes("iso-8859-1"),"GBK");
+	   String pindex = "产品代号";
+	   pindex  = new String(pindex.getBytes("iso-8859-1"),"GBK");
+	   String KEYCOMPONENT = "关重件标记";
+	   KEYCOMPONENT  = new String(KEYCOMPONENT.getBytes("iso-8859-1"),"GBK");
+	   String PHASE_CODE = "阶段标记";
+	   PHASE_CODE  = new String(PHASE_CODE.getBytes("iso-8859-1"),"GBK");
+	   String planNumber = "工艺文件编号";
+	   planNumber  = new String(planNumber.getBytes("iso-8859-1"),"GBK");
+
+	   String MATERIAL = "材料牌号";
+	   MATERIAL  = new String(MATERIAL.getBytes("iso-8859-1"),"GBK");
+	   String PTC_MATERIAL_NAME = "材料名称";
+	   PTC_MATERIAL_NAME  = new String(PTC_MATERIAL_NAME.getBytes("iso-8859-1"),"GBK");
+	   String CSIZE = "规格";
+	   CSIZE  = new String(CSIZE.getBytes("iso-8859-1"),"GBK");
+	   String JSTJ = "技术条件";
+	   JSTJ  = new String(JSTJ.getBytes("iso-8859-1"),"GBK");
+	   String JSTJ2 = "技术条件2";
+	   JSTJ2  = new String(JSTJ2.getBytes("iso-8859-1"),"GBK");
+	   String Product_QTY = "产品数量";
+	   Product_QTY  = new String(Product_QTY.getBytes("iso-8859-1"),"GBK");
+	   String SJ_QTY = "试件数量";
+	   SJ_QTY  = new String(SJ_QTY.getBytes("iso-8859-1"),"GBK");
+	   String CPMPCC = "产品毛坯尺寸";
+	   CPMPCC  = new String(CPMPCC.getBytes("iso-8859-1"),"GBK");
+	   String SJMPCC = "试件毛坯尺寸";
+	   SJMPCC  = new String(SJMPCC.getBytes("iso-8859-1"),"GBK");
+	   String kezhijianshu = "可制件数";
+	   kezhijianshu  = new String(kezhijianshu.getBytes("iso-8859-1"),"GBK");
+	   
+	   IBAUtility ibautility = new IBAUtility(plan);
+	   String deptValue = ibautility.getIBAValue("DEPT");
+	   if(deptValue==null){
+	       deptValue="";
+	   }
+	   String mindexValue = ibautility.getIBAValue("MINDEX");
+	   if(mindexValue==null){
+	       mindexValue="";
+	   }
+	   String pindexValue = ibautility.getIBAValue("PINDEX");
+	   if(pindexValue==null){
+	       pindexValue="";
+	   }
+	   String KEYCOMPONENTValue = ibautility.getIBAValue("KEYCOMPONENT");
+	   if(KEYCOMPONENTValue==null){
+	       KEYCOMPONENTValue="";
+	   }
+	   String PHASE_CODEValue = ibautility.getIBAValue("PHASE_CODE");
+	   if(PHASE_CODEValue==null){
+	       PHASE_CODEValue="";
+	   }
+
+	   String MATERIALValue = ibautility.getIBAValue("MATERIAL");
+	   if(MATERIALValue==null){
+	       MATERIALValue="";
+	   }
+	   String PTC_MATERIAL_NAMEValue = ibautility.getIBAValue("PTC_MATERIAL_NAME");
+	   if(PTC_MATERIAL_NAMEValue==null){
+	       PTC_MATERIAL_NAMEValue="";
+	   }
+	   String CSIZEValue = ibautility.getIBAValue("CSIZE");
+	   if(CSIZEValue==null){
+	       CSIZEValue="";
+	   }
+	   String JSTJ1Value = ibautility.getIBAValue("JSTJ1");
+	   if(JSTJ1Value==null){
+	       JSTJ1Value="";
+	   }
+	   String JSTJ2Value = ibautility.getIBAValue("JSTJ2");
+	   if(JSTJ2Value==null){
+	       JSTJ2Value="";
+	   }
+	   String Product_QTYValue = ibautility.getIBAValue("Product_QTY");
+	   if(Product_QTYValue==null){
+	       Product_QTYValue="";
+	   }
+	   String SJ_QTYValue = ibautility.getIBAValue("SJ_QTY");
+	   if(SJ_QTYValue==null){
+	       SJ_QTYValue="";
+	   }
+	   String CPMPCCValue = ibautility.getIBAValue("CPMPCC");
+	   if(CPMPCCValue==null){
+	       CPMPCCValue="";
+	   }
+	   String SJMPCCValue = ibautility.getIBAValue("SJMPCC");
+	   if(SJMPCCValue==null){
+	       SJMPCCValue="";
+	   }
+	   String CPMPKZJSValue = ibautility.getIBAValue("CPMPKZJS");
+	   if(CPMPKZJSValue==null){
+	       CPMPKZJSValue="";
+	   }
+	   String SJMPKZJSValue = ibautility.getIBAValue("SJMPKZJS");
+	   if(SJMPKZJSValue==null){
+	       SJMPKZJSValue="";
+	   }
+
+ %> 
+
+<TABLE  width="100%" cellspacing=0 cellpadding = 2 border=1>  
+      
+       <TR>
+	      <TD class="tdPPTableHeader" rowspan="2" COLSPAN=2 align = "center"><%=danwei%></TD>
+	      <TD class="tdPPTableHeader" rowspan="2" COLSPAN=2 align = "center"><%=processCard%></TD>
+	      <TD class="tdPPTableHeader" COLSPAN=2><%=pindex%></TD>
+	      <TD class="tdPPTableHeader" COLSPAN=2><%=mindex%></TD>
+	      <TD class="tdPPTableHeader" COLSPAN=2><fmt:message key="mpml.headerWorkInstruction.name"/></TD>
+	      <TD class="tdPPTableHeader" COLSPAN=2><%=planNumber%></TD>
+      </TR>
+      <TR>
+	      <TD class="tdPPTableNormal" COLSPAN=2><%=pindexValue%></TD>
+	      <TD class="tdPPTableNormal" COLSPAN=2><%=mindexValue%></TD>
+	      <TD class="tdPPTableNormal" COLSPAN=2><pre-wrap>
+                        		<%if(!showPrintOption){ %>
+                        		<A HREF="<%=globalHRef%><%=pPlanFullLink%>&ncid=<%=request.getParameter( MPMLConstants.NCID)%> " target="_blank" >
+                        		<%} %>
+                        		<ie:getValue name="name" groupIn="PROCESS_PLAN"/>
+                        		<%if(!showPrintOption){ %>
+                        		</A>
+                        		<%} %>
+                        <pre-wrap></TD>
+	      <TD class="tdPPTableNormal" COLSPAN=2><pre-wrap><ie:getValue name="number" groupIn="PROCESS_PLAN"/></TD>	      
+      </TR>
+      <TR>
+	      <TD class="tdPPTableHeader" rowspan="2"><%=MATERIAL%></TD>
+	      <TD class="tdPPTableNormal" rowspan="2"><%=MATERIALValue%></TD>
+	      <TD class="tdPPTableHeader" rowspan="2"><%=PTC_MATERIAL_NAME%></TD>
+	      <TD class="tdPPTableNormal" rowspan="2"><%=PTC_MATERIAL_NAMEValue%></TD>
+	      <TD class="tdPPTableHeader" rowspan="2"><%=CSIZE%></TD>
+	      <TD class="tdPPTableNormal" rowspan="2"><%=CSIZEValue%></TD>
+	      <TD class="tdPPTableHeader" rowspan="2"><%=JSTJ%></TD>
+	      <TD class="tdPPTableNormal" ><%=JSTJ1Value%></TD>
+	      <TD class="tdPPTableHeader" ><%=Product_QTY%></TD>
+	      <TD class="tdPPTableNormal" ><%=Product_QTYValue%></TD>
+	      <TD class="tdPPTableHeader"  ><%=CPMPCC%>/<%=kezhijianshu%></TD>
+	      <TD class="tdPPTableNormal" ><%=CPMPCCValue%>/<%=CPMPKZJSValue%></TD>
+      </TR>
+      <TR>
+	      <TD class="tdPPTableNormal" ><%=JSTJ2Value%></TD>
+	      <TD class="tdPPTableHeader" ><%=SJ_QTY%></TD>
+	      <TD class="tdPPTableNormal" ><%=SJ_QTYValue%></TD>
+	      <TD class="tdPPTableHeader" ><%=SJMPCC%>/<%=kezhijianshu%></TD>
+	      <TD class="tdPPTableNormal" ><%=SJMPCCValue%>/<%=SJMPKZJSValue%></TD>
+      </TR>
+</TABLE>

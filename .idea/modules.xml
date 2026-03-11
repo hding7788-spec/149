@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/PDM/PDM.iml" filepath="$PROJECT_DIR$/PDM/PDM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/QMEditor1.6/QMEditor1.6.iml" filepath="$PROJECT_DIR$/QMEditor1.6/QMEditor1.6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ServiceWeb1.03/ServiceWeb1.03.iml" filepath="$PROJECT_DIR$/ServiceWeb1.03/ServiceWeb1.03.iml" />
+    </modules>
+  </component>
+</project>

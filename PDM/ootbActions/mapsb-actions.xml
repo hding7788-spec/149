@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<listofactions>
+
+    <objecttype name="mapsb" resourceBundle="com.ptc.windchill.enterprise.associativity.part.mpml.mapsb.mapsbActionsRB">
+        <action name="launchInMAPSB" uicomponent="MAPSB">
+            <command url="netmarkets/jsp/mapsb/launchInMAPSB.jsp" windowType="popup" />
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.MPMLinkInstalledFilter" />
+            <includeFilter name="hideForNewObjectInWorkspace" />
+        </action>
+        <action name="removeAllEquivalenceLinkMAPSB"  >
+            <command class="com.ptc.windchill.enterprise.associativity.asb.client.action.RemoveAllEquivalenceLinkAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter"/>
+        </action>
+        
+        <action name="insertNewMAPSBDescDocGWT" uicomponent="CREATE_DOC" ajax="row">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.APSBInsertNewDescDocAction" method="execute" url="/ptc1/document/create?invokedfrom=mapsb" windowType="popup" />
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsTreeModelCheckedOutAnotherUser" />
+            <includeFilter name="disableForTableContextAdminLocked" />
+        </action> 
+        
+        <action name="insertNewMAPSBRefDocGWT" uicomponent="CREATE_DOC" ajax="row">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.APSBInsertNewRefDocAction" method="execute" url="/ptc1/document/create?invokedfrom=mapsb" windowType="popup" />
+           <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsTreeModelCheckedOutAnotherUser" />
+            <includeFilter name="disableForTableContextAdminLocked" />
+        </action>
+        
+        <action name="insertNewAPSBPartUsesGWT" uicomponent="CREATE_PART" ajax="row">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.InsertPartAction" method="execute" url="/ptc1/part/createPartWizard?revisionMode=create&amp;invokedfrom=folder&amp;showNewCADDocStep=true&amp;&amp;hideAssociatePart=true" windowType="popup"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsTreeModelCheckedOutAnotherUser" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentOriginalCopyFilter"/>
+            <includeFilter name="disableForNewObjectInWorkspace"/>
+            <includeFilter name="disableForTableContextAdminLocked"/>
+            <includeFilter name="disableForPartToCadBuildTableContextAdminLocked"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+                <type value="wt.part.WTPartMaster"/>
+                <type value="wt.part.WTPartUsageLink"/>
+                <type value="wt.part.PartUsesOccurrence"/>
+                <type value="wt.part.RTPartPathOccurrence"/>
+            </supportedTypes>   
+        </action>
+
+        <action name="updateDistributionTargetGWT" ajax="component">
+            <command class="com.ptc.windchill.mpml.client.action.UpdateDistributionTargetNoRefreshAction" method="adjustTargetAssignments" url="ptc1/tgt/updateTargetAssocations?invokedfrom=mapsb" windowType="new"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="disableForAdminLocked"/>
+            <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+		<type value="wt.part.WTPartUsageLink" />
+		<type value="wt.part.PartUsesOccurrence" />
+		<type value="wt.part.RTPartPathOccurrence" />
+		<type value="wt.epm.EPMDocument" />
+            </supportedTypes>
+        </action>
+
+        <action name="sendToDistributionTargetGWT">
+            <command class="com.ptc.windchill.enterprise.associativity.part.mpml.mapsb.client.action.SendToDistributionTargetAction"
+                     url="/ptc1/tgt/sendToDistributionTarget" method="execute" windowType="popup" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter" />
+            <includeFilter name="sandboxSharingValidationSimple" />
+            <includeFilter name="disableForWorkingCopyWorkInProgress" />
+            <includeFilter name="disableForAdminLocked" />
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+            </supportedTypes>
+        </action>
+
+        <action name="sendEnterpriseDataToDistributionTargetGWT">
+            <command class="com.ptc.windchill.enterprise.associativity.part.mpml.mapsb.client.action.SendToDistributionTargetAction"
+                     url="/ptc1/tgt/sendToDistributionTarget" method="execute" windowType="popup" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter" />
+            <includeFilter name="sandboxSharingValidationSimple" />
+            <includeFilter name="disableForWorkingCopyWorkInProgress" />
+            <includeFilter name="disableForAdminLocked" />
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+            </supportedTypes>
+        </action>
+        
+        <action name="insertNewMAPSBProcessPlanGWT" uicomponent="NEW_PROCESS_PLAN">
+            <command class="com.ptc.windchill.enterprise.associativity.part.mpml.mapsb.client.action.MAPSBInsertNewProcessPlanAction"/>
+            <includeFilter name="disableForTableContextAdminLocked"/>
+            <includeFilter name="com.ptc.windchill.mpml.client.internal.filter.ContextIsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.windchill.mpml.client.internal.filter.ContextIsLatestIterationFilter"/>
+            <moreurlinfo>height=625,width=650</moreurlinfo>
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+            </supportedTypes>
+        </action>
+        
+        <action name="insertExistingMAPSBProcessPlanGWT">
+            <command class="com.ptc.windchill.enterprise.associativity.part.mpml.mapsb.client.action.MAPSBAddProcessPlanAction"/>
+            <includeFilter name="disableForTableContextAdminLocked"/>
+            <includeFilter name="com.ptc.windchill.mpml.client.internal.filter.ContextIsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.windchill.mpml.client.internal.filter.ContextIsLatestIterationFilter"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+            </supportedTypes>
+        </action>
+        
+        <action name="removeMASPBProcessPlanGWT">
+            <command class="com.ptc.windchill.enterprise.associativity.part.mpml.mapsb.client.action.MAPSBRemoveProcessPlanAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.windchill.mpml.client.internal.filter.ContextIsWTPartFilter" />
+            <includeFilter name="com.ptc.windchill.mpml.client.internal.filter.ContextIsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.windchill.mpml.client.internal.filter.ContextIsLatestIterationFilter"/>
+            <includeFilter name="disableForTableContextAdminLocked"/>
+        </action>
+        
+        <action name="duplicatePartMAPSB">
+            <command class="com.ptc.windchill.enterprise.associativity.part.mpml.mapsb.client.transform.MAPSBDuplicatePartAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.ASBValidOrEqualClientFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.part.apsb.client.filter.DisableAllForMPMResource"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.part.apsb.client.filter.APSBDuplicateFilter"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+                <type value="wt.part.WTPartUsageLink" />
+            </supportedTypes>
+        </action>
+
+        <action name="insertNewMPMStandardCCGWT" uicomponent="NEW_STANDARD_CONTROL_CHARACTERISTIC">
+            <command class="com.ptc.windchill.enterprise.associativity.part.mpml.mapsb.client.action.MAPSBInsertNewMPMStandardCCAction"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsTreeModelCheckedOutAnotherUser" />
+            <includeFilter name="disableForTableContextAdminLocked" />
+            <moreurlinfo>height=625,width=650</moreurlinfo>
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+                <type value="com.ptc.windchill.enterprise.data.EnterpriseData"/>
+            </supportedTypes>
+        </action>
+
+         <action name="removeMPMStandardCCGWT">
+            <command class="com.ptc.windchill.enterprise.associativity.part.mpml.mapsb.client.action.MAPSBCCRemoveAction" />
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsTreeModelCheckedOutAnotherUser" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotRootStructureModelFilter" />
+            <includeFilter name="disableForTableContextAdminLocked" />
+            <supportedTypes>
+               <type value="com.ptc.windchill.mpml.pmi.MPMStandardCC"/>
+            </supportedTypes>
+        </action>
+
+        <action name="copyToWindchillGWT" uicomponent="COPY">
+            <command class="com.ptc.cat.gxt.client.action.CopyAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <supportedTypes>
+               <type value="com.ptc.windchill.mpml.pmi.MPMStandardCC"/>
+            </supportedTypes>
+        </action>
+        
+        <action name="pasteSCCFromClipboardToTableGWT" uicomponent="PASTE">
+            <command class="com.ptc.windchill.enterprise.associativity.part.mpml.mapsb.client.action.MAPSBPasteStandardCCAction"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsTreeModelCheckedOutAnotherUser" />
+            <includeFilter name="disableForTableContextAdminLocked" />
+        </action> 
+
+        <action name="insertExistingMPMStandardCCGWT">
+            <command class="com.ptc.windchill.enterprise.associativity.part.mpml.mapsb.client.action.MAPSBAddExistingMPMStandardCCAction" />
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsTreeModelCheckedOutAnotherUser" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OriginalCopyFilter" />
+            <includeFilter name="disableForNewObjectInWorkspace" />
+            <includeFilter name="disableForAdminLocked" />
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+                <type value="com.ptc.windchill.enterprise.data.EnterpriseData" />
+                <type value="com.ptc.windchill.mpml.pmi.AssociativeToSCCLink" />
+            </supportedTypes>
+        </action>
+    </objecttype>
+    
+    
+</listofactions>

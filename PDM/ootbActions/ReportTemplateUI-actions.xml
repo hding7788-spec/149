@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+<listofactions>
+    <!-- actions for wt.query.template.ReportTemplate -->
+    <objecttype name="reportTemplate"
+                class="wt.query.template.ReportTemplate"
+                resourceBundle="com.ptc.windchill.enterprise.query.template.mvc.reportTemplateResource">
+        <action name="reportTemplateAttributes">
+            <component name="reportTemplate.attributes.view.table"/>
+        </action>
+        <action name="reportTemplateInfo">
+            <component name="wt.query.template.ReportTemplate.infoPage" windowType="page" />
+        </action>
+
+        <action name="generate" >
+           <command method="execute" url="wtcore/jsp/report/runReportTemplate.jsp" windowType="new" />
+        </action>
+    </objecttype>
+</listofactions>

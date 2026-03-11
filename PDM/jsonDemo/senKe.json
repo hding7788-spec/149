@@ -1,0 +1,232 @@
+{
+  "processDocData": {
+    "dataUrl": {
+      "fileName": "3000000000060.zip",
+      "downloadUrl": "http://pdm.149.sast.casc/3000000000060.zip"
+    },
+    "number": "3000000000060",
+    "name": "装配工艺规程(Rz/T-0000-00.ASMZ23)",
+    "oid": "OR:wt.doc.WTDocument:5054867",
+    "version": "space.1",
+    "realatedPart": {
+      "number": "T-0000-00.ASM",
+      "view": "Manufacturing",
+      "name": "t-0000-00.asm",
+      "oid": "OR:wt.part.WTPart:5049317",
+      "version": "space.2"
+    }
+  },
+  "pvs3dData": {
+    "dataUrl": {
+      "fileName": "T-0000-00.ASM.pvz",
+      "downloadUrl": "http://pdm.149.sast.casc/T-0000-00.ASM.pvz"
+    },
+    "number": "T-0000-00.ASM",
+    "cadName": "t-0000-00.asm",
+    "name": "t-0000-00.asm",
+    "oid": "OR:wt.epm.EPMDocument:132669",
+    "version": "space.1",
+    "realatedPart": {
+      "number": "T-0000-00.ASM",
+      "name": "t-0000-00.asm",
+      "oid": "OR:wt.part.WTPart:134685",
+      "version": "space.1"
+    }
+  },
+  "realatedDrws": [
+    {
+      "dataUrl": {
+        "fileName": "t-0000-00.drw",
+        "downloadUrl": "http://pdm.149.sast.casc/t-0000-00.drw"
+      },
+      "number": "T-0000-00.DRW",
+      "cadName": "t-0000-00.drw",
+      "printDataUrl": {},
+      "name": "t-0000-00.drw",
+      "oid": "OR:wt.epm.EPMDocument:132662",
+      "state": "正在工作",
+      "version": "space.1"
+    }
+  ],
+  "realatedDocs": [
+    {
+      "dataUrl": {
+        "fileName": "封面格式4-2012(A4).dwg",
+        "downloadUrl": "http://pdm.149.sast.casc/%E5%B0%81%E9%9D%A2%E6%A0%BC%E5%BC%8F4-2012%28A4%29.dwg"
+      },
+      "number": "T-0000-00.ASM.DWG",
+      "cadName": "",
+      "printDataUrl": {
+        "fileName": "SIGN_封面格式4-2012(A4).pdf",
+        "downloadUrl": "http://pdm.149.sast.casc/SIGN_%E5%B0%81%E9%9D%A2%E6%A0%BC%E5%BC%8F4-2012%28A4%29.pdf"
+      },
+      "name": "封面格式4-2012(A4)",
+      "oid": "OR:wt.doc.WTDocument:5056602",
+      "state": "已批准",
+      "version": "space.2"
+    }
+  ],
+  "children": [
+    {
+      "number": "T-0000-02.PRT",
+      "realatedDrws": [
+        {
+          "dataUrl": {
+            "fileName": "t-0000-02.drw",
+            "downloadUrl": "http://pdm.149.sast.casc/t-0000-02.drw"
+          },
+          "number": "T-0000-02.DRW",
+          "cadName": "t-0000-02.drw",
+          "printDataUrl": {},
+          "name": "t-0000-02.drw",
+          "oid": "OR:wt.epm.EPMDocument:132658",
+          "state": "正在工作",
+          "version": "space.1"
+        }
+      ],
+      "realatedDocs": [],
+      "cadName": "t-0000-02.prt",
+      "name": "t-0000-02.prt",
+      "location": "1",
+      "oid": "OR:wt.epm.EPMDocument:132661",
+      "version": "space.1",
+      "realatedPart": {
+        "number": "T-0000-02.PRT",
+        "view": "Design",
+        "name": "t-0000-02.prt",
+        "oid": "OR:wt.part.WTPart:2190578",
+        "version": "space.3"
+      }
+    },
+    {
+      "number": "T-0000-03.PRT",
+      "realatedDrws": [
+        {
+          "dataUrl": {
+            "fileName": "t-0000-03.drw",
+            "downloadUrl": "http://pdm.149.sast.casc/t-0000-03.drw"
+          },
+          "number": "T-0000-03.DRW",
+          "cadName": "t-0000-03.drw",
+          "printDataUrl": {},
+          "name": "t-0000-03.drw",
+          "oid": "OR:wt.epm.EPMDocument:132672",
+          "state": "正在工作",
+          "version": "space.1"
+        }
+      ],
+      "realatedDocs": [],
+      "cadName": "t-0000-03.prt",
+      "name": "t-0000-03.prt",
+      "location": "1",
+      "oid": "OR:wt.epm.EPMDocument:132663",
+      "version": "space.1",
+      "realatedPart": {
+        "number": "T-0000-03.PRT",
+        "view": "Design",
+        "name": "t-0000-03.prt",
+        "oid": "OR:wt.part.WTPart:134692",
+        "version": "space.1"
+      }
+    },
+    {
+      "number": "T-0000-01.PRT",
+      "realatedDrws": [
+        {
+          "dataUrl": {
+            "fileName": "t-0000-01.drw",
+            "downloadUrl": "http://pdm.149.sast.casc/t-0000-01.drw"
+          },
+          "number": "T-0000-01.DRW",
+          "cadName": "t-0000-01.drw",
+          "printDataUrl": {},
+          "name": "t-0000-01.drw",
+          "oid": "OR:wt.epm.EPMDocument:132670",
+          "state": "正在工作",
+          "version": "space.1"
+        }
+      ],
+      "realatedDocs": [
+        {
+          "dataUrl": {
+            "fileName": "产品明细表格式7-2012(A4).dwg",
+            "downloadUrl": "http://pdm.149.sast.casc/%E4%BA%A7%E5%93%81%E6%98%8E%E7%BB%86%E8%A1%A8%E6%A0%BC%E5%BC%8F7-2012%28A4%29.dwg"
+          },
+          "number": "T-0000-01.PRT.DWG",
+          "cadName": "",
+          "printDataUrl": {
+            "fileName": "SIGN_产品明细表格式7-2012(A4).pdf",
+            "downloadUrl": "http://pdm.149.sast.casc/SIGN_%E4%BA%A7%E5%93%81%E6%98%8E%E7%BB%86%E8%A1%A8%E6%A0%BC%E5%BC%8F7-2012%28A4%29.pdf"
+          },
+          "name": "产品明细表格式7-2012(A4)",
+          "oid": "OR:wt.doc.WTDocument:5056939",
+          "state": "已批准",
+          "version": "space.2"
+        }
+      ],
+      "cadName": "t-0000-01.prt",
+      "name": "t-0000-01.prt",
+      "location": "1",
+      "oid": "OR:wt.epm.EPMDocument:132665",
+      "version": "space.1",
+      "realatedPart": {
+        "number": "T-0000-01.PRT",
+        "view": "Design",
+        "name": "t-0000-01.prt",
+        "oid": "OR:wt.part.WTPart:134687",
+        "version": "space.1"
+      }
+    },
+    {
+      "number": "T-0000-04.PRT",
+      "realatedDrws": [
+        {
+          "dataUrl": {
+            "fileName": "t-0000-04.drw",
+            "downloadUrl": "http://pdm.149.sast.casc/t-0000-04.drw"
+          },
+          "number": "T-0000-04.DRW",
+          "cadName": "t-0000-04.drw",
+          "printDataUrl": {},
+          "name": "t-0000-04.drw",
+          "oid": "OR:wt.epm.EPMDocument:132660",
+          "state": "正在工作",
+          "version": "space.1"
+        }
+      ],
+      "realatedDocs": [],
+      "cadName": "t-0000-04.prt",
+      "name": "t-0000-04.prt",
+      "location": "1",
+      "oid": "OR:wt.epm.EPMDocument:132667",
+      "version": "space.1",
+      "realatedPart": {
+        "number": "T-0000-04.PRT",
+        "view": "Design",
+        "name": "t-0000-04.prt",
+        "oid": "OR:wt.part.WTPart:134689",
+        "version": "space.1"
+      }
+    },
+    {
+      "number": "T-0001-00.ASM",
+      "realatedDrws": [],
+      "realatedDocs": [],
+      "cadName": "t-0001-00.asm",
+      "name": "t-0001-00.asm",
+      "location": "1",
+      "oid": "OR:wt.epm.EPMDocument:132673",
+      "version": "space.1",
+      "realatedPart": {
+        "number": "T-0001-00.ASM",
+        "view": "Design",
+        "name": "t-0001-00.asm",
+        "oid": "OR:wt.part.WTPart:134684",
+        "version": "space.1"
+      }
+    }
+  ]
+}
+
+
+

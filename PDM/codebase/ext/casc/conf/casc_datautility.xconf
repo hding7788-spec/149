@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Configuration SYSTEM "xconf.dtd">
+<Configuration targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties">
+
+ <!-- Data utilities for retrieving column values from a row -->
+    <Service name="com.ptc.core.components.descriptor.DataUtility">
+		<Option serviceClass="ext.casc.process.datautility.ProAssignTaskDatautility"
+		          requestor="java.lang.Object"
+				  selector="ProAssignTaskDatautility"
+		          cardinality="singleton"/>
+    </Service>
+    <Service name="com.ptc.core.components.descriptor.DataUtility">
+    		<Option serviceClass="ext.casc.process.datautility.NewProAssignTaskDatautility"
+    		          requestor="java.lang.Object"
+    				  selector="NewProAssignTaskDatautility"
+    		          cardinality="singleton"/>
+        </Service>
+
+
+    <Property name="wt.services/svc/default/com.ptc.core.components.beans.TreeHandler/SignatureTreeHandler1/java.lang.Object/0" overridable="true"
+             targetFile="codebase/service.properties"
+             default="ext.casc.workflow.tree.SignatureTreeHandler1/duplicate"/>
+   <Property name="wt.services/svc/default/com.ptc.core.components.beans.TreeHandler/SignatureTreeHandler2/java.lang.Object/0" overridable="true"
+             targetFile="codebase/service.properties"
+             default="ext.casc.workflow.tree.SignatureTreeHandler2/duplicate"/>
+
+   <Property name="wt.services/svc/default/com.ptc.core.components.beans.TreeHandler/SignatureResultTreeHandler/java.lang.Object/0" overridable="true"
+             targetFile="codebase/service.properties"
+             default="ext.casc.workflow.tree.SignatureResultTreeHandler/duplicate"/>
+
+   <Property name="wt.services/svc/default/com.ptc.core.components.beans.TreeHandler/SignatureResultTreeHandler2/java.lang.Object/0" overridable="true"
+             targetFile="codebase/service.properties"
+             default="ext.casc.workflow.tree.SignatureResultTreeHandler2/duplicate"/>
+
+   <Property name="wt.services/svc/default/com.ptc.core.components.descriptor.DataUtility/SignatureTreeDataUtility1/java.lang.Object/0" overridable="true"
+             targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties"
+             default="ext.casc.workflow.tree.SignatureTreeDataUtility1/singleton" />
+ 	<Property name="wt.services/svc/default/com.ptc.core.components.descriptor.DataUtility/SignatureEpmsDataUtility/java.lang.Object/0" overridable="true"
+             targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties"
+             default="ext.casc.workflow.tree.SignatureEpmsDataUtility/singleton" />
+   <Property name="wt.services/svc/default/com.ptc.core.components.descriptor.DataUtility/SignatureTreeDataUtility2/java.lang.Object/0" overridable="true"
+             targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties"
+             default="ext.casc.workflow.tree.SignatureTreeDataUtility2/singleton" />
+
+   <Property name="wt.services/svc/default/com.ptc.core.components.descriptor.DataUtility/SignatureResultDataUtility/java.lang.Object/0" overridable="true"
+             targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties"
+             default="ext.casc.workflow.tree.SignatureResultDataUtility/singleton" />
+
+   <Property name="wt.services/svc/default/com.ptc.core.components.descriptor.DataUtility/ProcessEnvelopeDataUtility/java.lang.Object/0" overridable="true"
+             targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties"
+             default="ext.ases.envelope.datautility.ProcessEnvelopeDataUtility/singleton" />
+
+   <Property name="wt.services/svc/default/com.ptc.core.htmlcomp.tableview.ConfigurableTable/envelopeMembersTable2/java.lang.Object/0" overridable="true"
+             targetFile="codebase/service.properties"
+             default="ext.ases.envelope.EnvelopeObjectsConfigurableTable/duplicate"/>
+
+   <Property name="wt.services/svc/default/com.ptc.core.components.beans.TreeHandler/envelopeTreeHandler/java.lang.Object/0" overridable="true"
+             targetFile="codebase/service.properties"
+             default="ext.ases.envelope.EnvelopeTreeHandler/duplicate"/>
+
+     <Property name="wt.services/svc/default/com.ptc.core.components.descriptor.DataUtility/SecretLevelDataUtility/java.lang.Object/0" overridable="true"
+             targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties"
+             default="ext.casc.access.SecretLevelDataUtility/singleton" />
+
+     <Property name="wt.services/svc/default/com.ptc.core.components.descriptor.DataUtility/DataSendRecordUtility/java.lang.Object/0"
+             overridable="true"
+             targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties"
+             default="ext.ases.dataSearch.utility.DataSendRecordUtility/singleton"/>
+
+     <Property name="wt.services/svc/default/com.ptc.core.components.descriptor.DataUtility/RoleDataUtility/java.lang.Object/0"
+             overridable="true"
+             targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties"
+             default="ext.casc.dataUtility.RoleDataUtility/singleton"/>
+
+     <Property name="wt.services/svc/default/com.ptc.core.components.descriptor.DataUtility/GYWJPrintTaskDataUtility/java.lang.Object/0" overridable="true"
+             targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties"
+             default=" ext.casc.part.GYWJPrintTaskDataUtility/singleton" />
+
+     <Property name="wt.services/svc/default/com.ptc.core.components.descriptor.DataUtility/AllWorkFlowDataUtility/java.lang.Object/0" overridable="true"
+             targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties"
+             default="ext.casc.report.datautility.AllWorkFlowDataUtility/singleton" />
+
+	 <Property name="wt.services/svc/default/com.ptc.core.components.descriptor.DataUtility/CenterWorkflowInfoUtility/java.lang.Object/0" overridable="true"
+             targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties"
+             default="ext.sast.center.mvc.builders.CenterWorkflowInfoUtility/singleton" />
+
+     <Service  name="com.ptc.core.components.descriptor.DataUtility"
+     		   targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties" context="default">
+		       <Option serviceClass="ext.casc.dataUtility.AssignmentUtility" requestor="null" selector="assignmentUtility" cardinality="duplicate"/>
+     </Service>
+
+     <Service  name="com.ptc.core.components.descriptor.DataUtility"
+     		   targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties" context="default">
+		       <Option serviceClass="ext.casc.process.datautility.ProcessTaskItemAttrDataUtility" requestor="null" selector="ProcessTaskItemAttrDataUtility" cardinality="duplicate"/>
+     </Service>
+
+       <Service  name="com.ptc.core.components.descriptor.DataUtility"
+     		   targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties" context="default">
+		       <Option serviceClass="ext.casc.workflow.tree.PreviewDataUtility" requestor="null" selector="PreviewDataUtility" cardinality="duplicate"/>
+     </Service>
+  	 <Service  name="com.ptc.core.components.descriptor.DataUtility"
+     		   targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties" context="default">
+		       <Option serviceClass="ext.casc.workflow.tree.ReleaseDataUtility" requestor="null" selector="ReleaseDataUtility" cardinality="duplicate"/>
+     </Service>
+
+     <Service  name="com.ptc.core.components.descriptor.DataUtility"
+     		   targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties" context="default">
+		       <Option serviceClass="ext.casc.workflow.tree.ReleaseDataUtility" requestor="null" selector="ReleaseDataUtility" cardinality="duplicate"/>
+     </Service>
+
+       <Service  name="com.ptc.core.components.descriptor.DataUtility"
+     		   targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties" context="default">
+		       <Option serviceClass="ext.casc.workflow.tree.TableColumnDataUtility" requestor="null" selector="TableColumnDataUtility" cardinality="duplicate"/>
+     </Service>
+
+      <Service  name="com.ptc.core.components.descriptor.DataUtility"
+     		   targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties" context="default">
+		       <Option serviceClass="com.glaway.mpm.processplan.MpmplanReleaseDataUtility" requestor="null" selector="MpmplanReleaseDataUtility" cardinality="duplicate"/>
+     </Service>
+
+    <Service  name="com.ptc.core.components.descriptor.DataUtility"
+     		   targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties" context="default">
+		       <Option serviceClass="ext.casc.workflow.tree.MPMOperationDataUtility" requestor="null" selector="ext.casc.workflow.tree.MPMOperationDataUtility" cardinality="duplicate"/>
+     </Service>
+     <Service  name="com.ptc.core.components.descriptor.DataUtility"
+     		   targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties" context="default">
+		       <Option serviceClass="ext.casc.workflow.tree.SearchDownloadDataUtility" requestor="null" selector="SearchDownloadDataUtility" cardinality="duplicate"/>
+     </Service>
+      <Service  name="com.ptc.core.components.descriptor.DataUtility"
+     		   targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties" context="default">
+		       <Option serviceClass="ext.casc.doc.dataUtility.DocDataUtility" requestor="null" selector="DocDataUtility" cardinality="duplicate"/>
+     </Service>
+	<Service name="com.ptc.core.components.descriptor.DataUtility">
+		<Option serviceClass="ext.casc.consCheckRecords.ProConfigDataUtility"
+		        requestor="java.lang.Object"
+			    selector="ProConfigDataUtility"
+		        cardinality="singleton"
+		/>
+	</Service>
+		<Service name="com.ptc.core.components.descriptor.DataUtility">
+		<Option serviceClass="ext.casc.consCheckRecords.TableConfigDataUtility"
+		        requestor="java.lang.Object"
+			    selector="TableConfigDataUtility"
+		        cardinality="singleton"
+		/>
+	</Service>
+	<Service name="com.ptc.core.components.descriptor.DataUtility">
+    		<Option serviceClass="ext.casc.processPlan.datautility.MPMProcessPlanDatautility"
+    		        requestor="java.lang.Object"
+    			    selector="MPMProcessPlanDatautility"
+    		        cardinality="singleton"
+    		/>
+    	</Service>
+</Configuration>

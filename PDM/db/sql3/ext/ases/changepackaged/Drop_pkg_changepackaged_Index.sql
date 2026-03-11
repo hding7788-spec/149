@@ -1,0 +1,3 @@
+@ext/ases/changepackaged/drop_ChangePackagedAffectLink_Index.sql
+@ext/ases/changepackaged/drop_ChangePackagedResultLink_Index.sql
+@ext/ases/changepackaged/drop_ChangePackaged_Index.sql

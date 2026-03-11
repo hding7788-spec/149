@@ -1,0 +1,273 @@
+﻿ResourceInfo.class=wt.tools.resource.EnumResourceInfo
+ResourceInfo.customizable=true
+ResourceInfo.deprecated=false
+
+# Entry Format (values equal to default value are not included)
+# <key>.value=
+# <key>.category=
+# <key>.comment=
+# <key>.argComment<n>=
+# <key>.constant=
+# <key>.customizable=
+# <key>.deprecated=
+# <key>.abbreviatedDisplay=
+# <key>.fullDisplay=
+# <key>.shortDescription=
+# <key>.longDescription=
+# <key>.order=
+# <key>.defaultValue=
+# <key>.selectable=
+
+# Entry Contents
+
+ACCEPTED.value=已接受
+ACCEPTED.shortDescription=「已接受」狀態
+
+APPROVED.value=已核准
+APPROVED.shortDescription=「已核准」狀態
+
+ASSEMBLY.value=組件
+ASSEMBLY.shortDescription=「組件」狀態
+
+ASSIGNED.value=已指派
+ASSIGNED.shortDescription=指派狀態
+
+CLOSED.value=已關閉
+CLOSED.shortDescription=「已關閉」狀態
+
+CLOSURE.value=關閉
+CLOSURE.shortDescription=關閉狀態
+
+COMPLETED.value=已完成
+COMPLETED.shortDescription=「已完成」狀態
+
+DEFERRED.value=已延期
+DEFERRED.shortDescription=「已延期」狀態
+
+DESIGN.value=設計
+DESIGN.shortDescription=「設計」狀態
+
+DEVELOPMENT.value=開發
+DEVELOPMENT.shortDescription=「開發」狀態
+
+DROPPED.value=已中止
+DROPPED.shortDescription=「已中止」狀態
+DROPPED.selectable=false
+
+IMPLEMENTATION.value=實行
+IMPLEMENTATION.shortDescription=「實行」狀態
+
+IN ANALYSIS.value=分析中
+IN ANALYSIS.shortDescription=「分析中」狀態
+
+INVESTIGATION.value=調查
+INVESTIGATION.shortDescription=「調查」狀態
+
+INWORK.value=工作中
+INWORK.shortDescription=「工作中」狀態
+
+MANUFACTURING.value=製造
+MANUFACTURING.shortDescription=「製造」狀態
+
+ON HOLD.value=暫停
+ON HOLD.shortDescription=「暫停」狀態
+
+OBSOLETE.value=作廢
+OBSOLETE.shortDescription=作廢狀態
+
+OPEN.value=開啟
+OPEN.shortDescription=「開啟」狀態
+
+PACKAGING.value=包裝
+PACKAGING.shortDescription=「包裝」狀態
+
+PENDING APPROVAL.value=待核准
+PENDING APPROVAL.shortDescription=「待核准」狀態
+
+PLANNING.value=計劃
+PLANNING.shortDescription=「計劃」狀態
+
+PREVIEW.value=預覽
+PREVIEW.shortDescription=預覽狀態
+
+PRICING.value=定價
+PRICING.shortDescription=「定價」狀態
+
+PROCUREMENT.value=採購
+PROCUREMENT.shortDescription=「採購」狀態
+
+PROPOSAL.value=提案
+PROPOSAL.shortDescription=「提案」狀態
+
+REJECTED.value=已拒絕
+REJECTED.shortDescription=「已拒絕」狀態
+
+RELEASED.value=已發行
+RELEASED.shortDescription=「已發行」狀態
+
+RESEARCH.value=研究
+RESEARCH.shortDescription=「研究」狀態
+
+RESOLVED.value=已解決
+RESOLVED.shortDescription=「已解決」狀態
+
+REVIEWED.value=已審核
+REVIEWED.shortDescription=「已審核」狀態
+
+REWORK.value=重工
+REWORK.shortDescription=「重工」狀態
+
+SHIPPED.value=已出貨
+SHIPPED.shortDescription=「已出貨」狀態
+
+SHIPPING.value=出貨中
+SHIPPING.shortDescription=「出貨中」狀態
+
+SOLUTION.value=解決方案
+SOLUTION.shortDescription=「解決」狀態
+
+TESTING.value=測試
+TESTING.shortDescription=「測試」狀態
+
+UNDERREVIEW.value=審核中
+UNDERREVIEW.shortDescription=「審核中」狀態
+
+EXPORTING.value=匯出
+EXPORTING.shortDescription=「匯出」狀態
+
+IMPORTING.value=匯入
+IMPORTING.shortDescription=「匯入」狀態
+
+POPULATED.value=已填入
+POPULATED.shortDescription=「已填入」狀態
+
+PURGING.value=清除
+PURGING.shortDescription=「清除」狀態
+
+RECEIVING.value=正在接收
+RECEIVING.shortDescription=「接收」狀態
+
+SENDING.value=傳送
+SENDING.shortDescription=「傳送」狀態
+
+SENT.value=已傳送
+SENT.shortDescription=「已傳送」狀態
+
+DEFINING REQUIREMENTS.value=定義需求
+DEFINING REQUIREMENTS.shortDescription=「定義需求」狀態
+
+OPEN FOR RESPONSES.value=反應意見
+OPEN FOR RESPONSES.shortDescription=「反應意見」狀態
+
+EVALUATING RESPONSES.value=評估意見
+EVALUATING RESPONSES.shortDescription=「評估意見」狀態
+
+CONTRACTING.value=簽約
+CONTRACTING.shortDescription=「簽約」狀態
+
+PROTOTYPE.value=原型
+PROTOTYPE.shortDescription=原型
+
+PRODUCTION.value=生產
+PRODUCTION.shortDescription=生產
+
+OBSOLESCENCE.value=淘汰
+OBSOLESCENCE.shortDescription=淘汰
+
+CONCEPT.value=概念
+CONCEPT.shortDescription=概念
+
+WITHDRAWN.value=撤除
+WITHDRAWN.shortDescription=撤除
+
+PROTOTYPEINWORK.value=原型雛形
+PROTOTYPEINWORK.shortDescription=原型雛形
+
+PROTOTYPERELEASED.value=已發行原型
+PROTOTYPERELEASED.shortDescription=已發行原型
+
+PRODUCTIONCHANGE.value=生產變更
+PRODUCTIONCHANGE.shortDescription=生產變更
+
+PRODUCTIONRELEASED.value=已發行生產
+PRODUCTIONRELEASED.shortDescription=已發行生產
+
+CANCELLED.value=已取消
+CANCELLED.shortDescription=已取消狀態
+
+DISREGARD.value=忽視
+DISREGARD.shortDescription=忽視
+
+INTAKE.value=引入
+INTAKE.shortDescription=引入狀態
+
+EVALUATION.value=評估
+EVALUATION.shortDescription=評估狀態
+
+INVESTIGATIONAPPROVAL.value=調查核准
+INVESTIGATIONAPPROVAL.shortDescription=調查核准狀態
+
+IN PROGRESS.value=進行中
+IN PROGRESS.shortDescription=進行中狀態
+
+PLAN.value=計劃
+PLAN.shortDescription=計劃狀態
+
+PLAN APPROVAL.value=計劃核准
+PLAN APPROVAL.shortDescription=計劃核准狀態
+
+UNDERAPPROVAL.value=等待核准
+UNDERAPPROVAL.shortDescription=等待核准狀態
+
+CONFIRMATION.value=確認
+CONFIRMATION.shortDescription=確認狀態
+
+EFFECTIVENESS.value=生效
+EFFECTIVENESS.shortDescription=生效狀態
+
+EFFECTIVENESS APPROVAL.value=生效核准
+EFFECTIVENESS APPROVAL.shortDescription=生效核准狀態
+
+REOPENED.value=已再次開啟
+REOPENED.shortDescription=已再次開啟
+
+DISPOSITION.value=處理方式
+DISPOSITION.shortDescription=處理方式狀態
+
+CLOSUREREVIEW.value=關閉審核
+CLOSUREREVIEW.shortDescription=關閉審核狀態
+
+DISPOSITIONPLAN.value=處理方式計劃
+DISPOSITIONPLAN.shortDescription=處理方式計劃狀態
+
+MRB.value=材料審核委員會
+MRB.shortDescription=材料審核委員會狀態
+
+REDISPOSITION.value=重新處理方式
+REDISPOSITION.shortDescription=重新處理方式狀態
+
+#add by zhaojiajia at 20120711
+
+PROOFREAD.value=Jiao Dui
+PROOFREAD.shortDescription=Jiao Dui state
+
+REVIEW.value=Shen He
+REVIEW.shortDescription=Shen He state
+
+INTERNALCOUNTERSIGN.value=Nei Bu Hui Qian
+INTERNALCOUNTERSIGN.shortDescription=Nei Bu Hui Qian state
+
+EXTERNALCOUNTERSIGN.value=Wai Bu Hui Qian
+EXTERNALCOUNTERSIGN.shortDescription=Wai Bu Hui Qian state
+
+STANDARDIZATIONEXAM.value=Biao Shen
+STANDARDIZATIONEXAM.shortDescription=Biao Shen state
+
+APPROVING.value=Pi Zhun
+APPROVING.shortDescription=Pi Zhun state
+
+RECHECK.value=Fu Shen
+RECHECK.shortDescription=Fu Shen state
+
+PROCESSCOUNTERSIGN.value=Gong Yi Hui Qian
+PROCESSCOUNTERSIGN.shortDescription=Gong Yi Hui Qian state

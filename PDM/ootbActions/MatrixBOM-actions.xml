@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+  <!-- added for matrix BOMs -->
+  <objecttype class="wt.fc.WTObject" name="object" resourceBundle="com.ptc.windchill.enterprise.matrixbom.matrixbomResource">
+    <action name="openInMatrixBom" renderType="GENERAL" resourceBundle="com.ptc.windchill.enterprise.matrixbom.matrixbomResource" selectRequired="false" uicomponent="ADVANCED_ASSEMBLY_EDITOR">
+      <command url="netmarkets/jsp/matrixbom/MatrixBomEditor.jsp" windowType="popup"></command>
+      <includeFilter name="sharingValidationSimple"/>
+      <includeFilter name="hideForObjectInProject"/>
+      <includeFilter name="disableForAdminLocked"/>
+    </action>
+
+  </objecttype>
+
+  <objecttype class="wt.fc.WTObject" name="object" resourceBundle="com.ptc.windchill.enterprise.matrixbom.matrixbomResource">
+    <action name="openMatrixBom" renderType="GENERAL" resourceBundle="com.ptc.windchill.enterprise.matrixbom.matrixbomResource" selectRequired="false" uicomponent="ADVANCED_ASSEMBLY_EDITOR">
+      <command url="netmarkets/jsp/matrixbom/MatrixBomEditor.jsp" windowType="popup"></command>
+      <includeFilter name="sharingValidationSimple"/>
+      <includeFilter name="hideForObjectInProject"/>
+    </action>
+
+  </objecttype>
+
+  <objecttype name="part" class="wt.part.WTPart" resourceBundle="com.ptc.windchill.enterprise.matrixbom.matrixbomResource">
+    <action name="Matrix_BOM_create_part" uicomponent="CREATE_PART">
+        <command class="com.ptc.windchill.enterprise.matrixbom.forms.processors.CreatePartFromMatrixBomProcessor" method="execute" windowType="popup" url="/netmarkets/jsp/part/createPartWizard.jsp?showContextStep=true"/>
+        <includeFilter name="showNewActionPreValidation" />
+    </action>
+
+    <action name="Matrix_BOM_paste_candidate_part" ajax="row">
+        <command class="com.ptc.windchill.enterprise.matrixbom.forms.processors.MatrixBomPasteCandidatePartFormProcessor" method="execute"/>
+    </action>
+
+    <action name="Matrix_BOM_paste_editor_part" ajax="row">
+        <command class="com.ptc.windchill.enterprise.matrixbom.forms.processors.MatrixBomPasteEditorPartFormProcessor" method="execute"/>
+    </action>
+
+    <action name="Matrix_BOM_paste_select_candidate_part" multiselect="true" uicomponent="PASTE" ajax="row">
+        <command class="com.ptc.windchill.enterprise.matrixbom.forms.processors.MatrixBomPasteSelectCandidatePartFormProcessor" method="execute" windowType="popup" url="/netmarkets/jsp/part/ti_paste_select_part.jsp?createType=wt.part.WTPartUsageLink"/>
+        <includeFilter name="showNewActionPreValidation" />
+    </action>
+
+    <action name="Matrix_BOM_paste_select_editor_part" multiselect="true" uicomponent="PASTE" ajax="row">
+        <command class="com.ptc.windchill.enterprise.matrixbom.forms.processors.MatrixBomPasteSelectEditorPartFormProcessor" method="execute" windowType="popup" url="/netmarkets/jsp/part/ti_paste_select_part.jsp?createType=wt.part.WTPartUsageLink"/>
+        <includeFilter name="showNewActionPreValidation" />
+    </action>
+
+	<action name="matrixBOMSaveAsPart" ajax="row">
+    </action>
+
+    <action name="matrixBOMsaveAsPart_step" url="/netmarkets/jsp/part/matrixBOMsaveAsPart_step.jsp" beforeJS="appendHiddenInput">
+        <command windowType="wizard_step"/>
+    </action>
+
+	<action name="Matrix_BOM_part_picker">
+        <command  method="execute" windowType="popup" url="/netmarkets/jsp/search/pickerLoader.jsp?pickerId=matrixBOMPartPicker1"/>
+    </action>
+
+	<action name="Matrix_BOM_part_master_picker">
+        <command  method="execute" windowType="popup" url="/netmarkets/jsp/search/pickerLoader.jsp?pickerId=matrixBOMPartMasterPicker1"/>
+    </action>
+  </objecttype>
+
+</listofactions>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+
+<!-- define the actions on the UI components -->
+<actionmodels>
+   <model name="rule toolbar actions">
+      <action name="list_delete"            type="object" shortcut="true"/>
+      <action name="separator"              type="separator"/> 
+      <action name="createRule"   	    type="rule" shortcut="true"/>
+      <action name="downloadCompositeRule"  type="rule" shortcut="true"/>
+   </model>
+   
+   <model name="rule actions">
+      <action name="editRuleRow"       	    type="rule"/>
+      <action name="downloadRuleRow"        type="rule"/>
+      <action name="enableRuleRow" 	    type="rule"/>
+      <action name="disableRuleRow"         type="rule"/>
+      <action name="delete"      	    type="object"/>
+   </model>  
+</actionmodels>

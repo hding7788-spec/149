@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>3D Procedure Message</title>
+<style>
+  body {font-family:tahoma, sans-serif; color:black; background-color:#808080; font-size:10pt;}
+  #baseTable{border:1px solid #FFFFFF;}
+  .msgScroll {
+  	width: 100%;
+  	height: 100%;
+  	overflow: auto;
+  	border: 1px solid Gray;
+	background-color:white;
+  }
+  #MsgSpan{
+  	font-family:tahoma, sans-serif;
+  	color:black;
+  	font-size:10pt;
+  	text-align : center;
+	background-color:white;
+	vertical-align: middle;
+  }
+  #titleSpan{
+  	font-family:tahoma, sans-serif;
+  	font-weight : bold;
+  }
+  #tdContent{
+  	padding:0px 15px 0px 15px;
+  }
+</style>	
+
+<script language="javascript">
+<!--
+try{document.title = window.dialogArguments.messageTitleText;} catch(e){}
+var wnd = null;
+function on_load(){
+if(!(navigator.userAgent.toLowerCase().lastIndexOf("chrome")>0)){
+	try{
+		wnd = window.dialogArguments;
+	} catch(e){}
+	if(wnd==null){
+		try{
+			wnd = window.parent;
+			document.getElementById("bttnClose").onclick=closeWarning;
+		} catch(e){}
+	}else{
+		document.body.onunload=closeWarning;
+		document.getElementById("bttnClose").onclick=closeWindow;
+	}
+}
+	if(wnd!=null){
+		try{document.getElementById("Scroller").style.height=(document.body.clientHeight-70)+"px";}catch(e){}
+		var htxt = (typeof(document.getElementById("MsgSpan").textContent)!= "undefined")? "textContent": "innerText";
+		document.getElementById("MsgSpan")[htxt] = wnd.warningText;
+		document.getElementById("titleSpan")[htxt] = wnd.messageTitleText;
+		document.getElementById("bttnClose").value=wnd.iMessageCloseButton;
+		document.getElementById("baseTable").style.color=wnd.propMessageBodyColor;
+		document.getElementById("baseTable").style.border="1px solid "+ wnd.propMessageBodyColor;
+		document.getElementById("baseTable").style.backgroundColor=wnd.propMessageBodyBackgroundColor;
+		document.getElementById("MsgSpan").style.color=wnd.propMessageTextAreaColor;
+		document.getElementById("MsgSpan").style.backgroundColor=wnd.propMessageTextAreaBackgroundColor;
+		document.getElementById("bttnClose").focus();
+	}else{
+		document.getElementById("bttnClose").style.display='none';
+	}
+}
+function closeWarning(){
+	try{wnd._on_warning_close();}
+	catch(e){}
+}
+function closeWindow(){
+	window.close();
+}
+//-->
+</script>
+
+</head>
+<body scroll="no" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" 
+onload="on_load()" onkeydown="if(event.keyCode==27){wnd._on_warning_close();}">
+<table id="baseTable" width="100%" height="100%" border="0" cellspacing="0" cellpadding="1" style="table-layout:fixed;">
+<tr height="30px">
+<td align="center" valign="middle" id="titleSpan"></td></tr>
+<tr><td id="tdContent">
+	<div class="msgScroll" id="Scroller">
+		<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr><td align="center" valign="middle" id="MsgSpan">&nbsp;</td></tr>
+		</table>
+	</div>
+</td>
+</tr>
+<tr height="35px">
+<td align="center" valign="middle">
+	<input id="bttnClose" type="button" style="padding:0px 10px 0px 10px;" value="  Close  ">
+</td></tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+   <objecttype name="dsv" class="" resourceBundle="com.ptc.windchill.enterprise.dsv.DsvActionsRB">
+
+      <action name="resetCompare">
+        <command class="com.ptc.windchill.enterprise.dsv.client.action.DsvResetCompareAction" />    
+        <includeFilter name="com.ptc.windchill.enterprise.dsv.client.action.IsNotResolvePartUIFilter"/>
+      </action>
+      
+      <action name="viewInfo">
+        <command class="com.ptc.windchill.enterprise.dsb.client.action.ViewInfoAction" />
+        <includeFilter name="com.ptc.windchill.enterprise.dsv.client.action.IsNotPlaceholderActionFilter"/>   
+      </action>
+
+      <action name="launchDsvC2P">
+        <command windowType="popup"/>
+      </action>
+
+      <action name="launchCompareToPartGWT" ajax="row">
+         <command class="com.ptc.cat.ui.client.action.LaunchURLAction" method="execute"
+                  url="/ptc1/dsv/launchDsvC2P" windowType="popup"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotProIFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotArbortextFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.structurecomponent.client.filters.IsNotSmbFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.dsb.client.action.SelectSingleNonBlankActionFilter" />
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+         <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.WGMClientIdentifierFilter"/>
+      </action>
+
+      <action name="launchDsvP2C">
+        <command windowType="popup"/>
+        <includeFilter name="hideForNonLatestIteration" />
+      </action>
+
+      <action name="launchCompareToCADGWT" ajax="row">
+        <command class="com.ptc.cat.ui.client.action.LaunchURLAction" method="execute"
+                 url="/ptc1/dsv/launchDsvP2C" windowType="popup"/>
+        <includeFilter name="com.ptc.windchill.enterprise.dsb.client.action.SelectSingleNonBlankActionFilter" />
+        <supportedTypes>
+            <type value="wt.part.WTPart"/>
+            <type value="wt.part.WTPartUsageLink"/>
+            <type value="wt.part.PartUsesOccurrence"/>
+            <type value="wt.part.RTPartPathOccurrence"/>
+        </supportedTypes>	
+      </action>
+
+      <action name="buildCad">
+        <command class="com.ptc.windchill.enterprise.dsv.client.action.BuildSelectedAction"/>
+        <includeFilter name="com.ptc.windchill.enterprise.dsv.client.action.HasWorkspaceFilter"/>
+        <includeFilter name="com.ptc.windchill.enterprise.dsv.client.action.IsSrcNotCheckedOutFilter"/>
+        <includeFilter name="com.ptc.windchill.enterprise.dsv.client.action.IsBuildableFilter"/>
+      </action>
+
+      <action name="buildCadAndDesc">
+        <command class="com.ptc.windchill.enterprise.dsv.client.action.BuildSelectedAndDescAction"/>
+        <includeFilter name="com.ptc.windchill.enterprise.dsv.client.action.HasWorkspaceFilter"/>
+        <includeFilter name="com.ptc.windchill.enterprise.dsv.client.action.IsSrcNotCheckedOutFilter"/>
+		<includeFilter name="com.ptc.windchill.enterprise.dsv.client.action.IsBuildableFilter"/>
+      </action>
+
+      <action name="buildPart">
+        <command class="com.ptc.windchill.enterprise.dsv.client.action.BuildSelectedAction"/>
+        <includeFilter name="com.ptc.windchill.enterprise.dsv.client.action.IsSrcNotCheckedOutFilter"/>
+        <includeFilter name="com.ptc.windchill.enterprise.dsv.client.action.IsBuildableFilter"/>
+        <includeFilter name="com.ptc.windchill.enterprise.dsv.client.action.IsNotResolvePartUIFilter"/>
+      </action>
+
+      <action name="buildPartAndDesc">
+        <command class="com.ptc.windchill.enterprise.dsv.client.action.BuildSelectedAndDescAction" />
+        <includeFilter name="com.ptc.windchill.enterprise.dsv.client.action.IsSrcNotCheckedOutFilter"/>
+		<includeFilter name="com.ptc.windchill.enterprise.dsv.client.action.IsBuildableFilter"/>
+        <includeFilter name="com.ptc.windchill.enterprise.dsv.client.action.IsNotResolvePartUIFilter"/>
+      </action>
+      <action name="resolvePart">
+        <command class="com.ptc.windchill.enterprise.dsv.client.action.ResolvePartAction" />
+        <includeFilter name="com.ptc.windchill.enterprise.dsv.client.action.ResolvePartActionFilter"/>
+        <includeFilter name="com.ptc.windchill.enterprise.dsv.client.action.ResolvePartActionVisibilityFilter"/>
+      </action>
+
+      <action name="exitResolvePartUI">
+        <command class="com.ptc.windchill.enterprise.dsv.client.action.ExitResolvePartUIAction" />
+        <includeFilter name="com.ptc.windchill.enterprise.dsv.client.action.ExitResolvePartUIActionFilter"/>
+        <includeFilter name="com.ptc.windchill.enterprise.dsv.client.action.ExitResolvePartUIActionVisibilityFilter"/>
+      </action>
+
+	  <action name="undocheckoutGWT">
+		<command class="com.ptc.windchill.enterprise.dsv.client.action.DsvUndoCheckoutAction"/>
+		<includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+		<includeFilter name="com.ptc.cat.ui.client.internal.action.CheckoutConsiderSiteAdminFilter"/>
+		<includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+		<includeFilter name="com.ptc.cat.ui.client.internal.action.DisableForBlankStructureModelsInSelectionFilter"/>
+		<nonSupportedTypes>
+		  <type value="wt.epm.EPMDocument"/>
+		</nonSupportedTypes>
+	  </action>
+		
+   </objecttype>
+</listofactions>

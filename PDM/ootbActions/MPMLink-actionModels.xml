@@ -1,0 +1,1321 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+
+<actionmodels>
+
+        <!-- Added for Masters -->
+
+        <!-- Operation Master information page Actions list -->
+        <model name="infoActionListMpmoperationMaster" menufor="com.ptc.windchill.mpml.processplan.operation.MPMOperationMaster">
+                <!--action name="MULTIRENAME"               type="object"/-->         <!-- Rename -->
+        </model>
+
+        <!-- Operation Master information page 3rd level nav menu -->
+        <model name="info3rdLevelNavMpmoperationMaster">
+                <submodel name="info3rdLevelNavGeneralOperationMaster"/>                            <!-- General -->
+                <submodel name="info3rdLevelNavHistoryOperationMaster"/>                            <!-- History -->
+        </model>
+
+        <model name="info3rdLevelNavGeneralOperationMaster" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+                <action name="primaryAttributes" type="object"/>
+                <action name="separator" type="separator"/>
+                <action name="actionWhereUsedMpmOperationMaster" type="mpml"/>
+        </model>
+
+        <model name="info3rdLevelNavHistoryOperationMaster" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+                <action name="revisionHistory" type="history"/>
+                <!--action name="versionHistory" type="history"/-->
+        </model>
+
+        <model name="OperationMasterTabSet">
+                <submodel name="infoDetailsForOperationMaster"/>
+                <submodel name="mpmlHistoryForOperationMaster"/>
+                <submodel name="mpmlWhereUsedOperationMaster"/>
+        </model>
+
+        <model name="infoDetailsForOperationMaster" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+                <action name="primaryAttributes"      type="object"/>
+        </model>
+
+        <model name="mpmlWhereUsedOperationMaster" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+                <action name="actionWhereUsedMpmOperationMaster" type="mpml"/>
+        </model>
+
+        <model name="mpmlHistoryForOperationMaster" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+                <!--action name="versionHistory" type="history"/-->
+                <action name="revisionHistory" type="history"/>
+        </model>
+
+        <model name="whereUsedOperationMaster" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+                <action name="actionWhereUsedMpmOperationMaster" type="mpml"/>
+        </model>
+
+        <!-- Sequence Master information page Actions list -->
+        <model name="infoActionListMpmSequenceMaster" menufor="com.ptc.windchill.mpml.processplan.sequence.MPMSequenceMaster">
+        </model>
+
+        <!-- Sequence Master information page 3rd level nav menu -->
+        <model name="info3rdLevelNavMpmSequenceMaster">
+                <submodel name="info3rdLevelNavGeneralSequenceMaster"/>                            <!-- General -->
+                <submodel name="info3rdLevelNavHistorySequenceMaster"/>                            <!-- History -->
+        </model>
+
+        <model name="info3rdLevelNavGeneralSequenceMaster" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+                <action name="primaryAttributes" type="object"/>
+                <action name="separator" type="separator"/>
+                <action name="actionWhereUsedMpmSequenceMaster" type="mpml"/>
+        </model>
+
+        <model name="info3rdLevelNavHistorySequenceMaster" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+                <action name="revisionHistory" type="history"/>
+        </model>
+
+        <model name="SequenceMasterTabSet">
+                <submodel name="infoDetailsForSequenceMaster"/>
+                <submodel name="mpmlHistoryForSequenceMaster"/>
+                <submodel name="mpmlWhereUsedSequenceMaster"/>
+                 
+        </model>
+
+        <model name="infoDetailsForSequenceMaster" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+                <action name="primaryAttributes"      type="object"/>
+        </model>
+
+        <model name="mpmlWhereUsedSequenceMaster" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+                <action name="actionWhereUsedMpmSequenceMaster" type="mpml"/>
+        </model>
+
+        <model name="mpmlHistoryForSequenceMaster" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+                <action name="revisionHistory" type="history"/>
+        </model>
+
+        <model name="whereUsedSequenceMaster" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+                <action name="actionWhereUsedMpmSequenceMaster" type="mpml"/>
+        </model>
+
+        <!-- ProcessPlan Master information page Actions list -->
+        <model name="infoActionListMpmProcessPlanMaster" menufor="com.ptc.windchill.mpml.processplan.MPMProcessPlanMaster">
+        </model>
+
+        <!-- ProcessPlan Master information page 3rd level nav menu -->
+        <model name="info3rdLevelNavMpmProcessPlanMaster">
+                <submodel name="info3rdLevelNavGeneralProcessPlanMaster"/>                            <!-- General -->
+                <submodel name="info3rdLevelNavHistoryProcessPlanMaster"/>                            <!-- History -->
+        </model>
+
+        <model name="info3rdLevelNavGeneralProcessPlanMaster" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+                <action name="primaryAttributes" type="object"/>
+        </model>
+
+        <model name="info3rdLevelNavHistoryProcessPlanMaster" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+                <action name="revisionHistory" type="history"/>
+        </model>
+
+        <model name="ProcessPlanMasterTabSet">
+                <submodel name="infoDetailsForProcessPlanMaster"/>
+                <submodel name="mpmlHistoryForProcessPlanMaster"/>
+                <action   name="sysnavTab" type="sysnav"/>
+        </model>
+
+        <model name="infoDetailsForProcessPlanMaster" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+                <action name="primaryAttributes"      type="object"/>
+        </model>
+
+        <model name="mpmlHistoryForProcessPlanMaster" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+                <action name="revisionHistory" type="history"/>
+        </model>
+
+        <!-- MfgProcess Master information page Actions list -->
+        <model name="infoActionListMpmMfgProcessMaster" menufor="com.ptc.windchill.mpml.mfgprocess.MPMMfgProcessMaster">
+        </model>
+
+        <!-- MfgProcess Master information page 3rd level nav menu -->
+        <model name="info3rdLevelNavMpmMfgProcessMaster">
+                <submodel name="info3rdLevelNavGeneralMfgProcessMaster"/>                            <!-- General -->
+                <submodel name="info3rdLevelNavHistoryMfgProcessMaster"/>                            <!-- History -->
+        </model>
+
+        <model name="info3rdLevelNavGeneralMfgProcessMaster" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+                <action name="primaryAttributes" type="object"/>
+                <action name="separator" type="separator"/>
+                <action name="actionWhereUsedMpmMfgProcessMaster" type="mpml"/>
+        </model>
+
+        <model name="info3rdLevelNavHistoryMfgProcessMaster" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+                <action name="revisionHistory" type="history"/>
+        </model>
+
+        <model name="CapabilityMasterTabSet">
+                <submodel name="infoDetailsForMfgProcessMaster"/>
+                <submodel name="mpmlHistoryForMfgProcessMaster"/>
+                <submodel name="mpmlWhereUsedMfgProcessMaster"/>
+        </model>
+
+        <model name="infoDetailsForMfgProcessMaster" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+                <action name="primaryAttributes"      type="object"/>
+        </model>
+
+        <model name="mpmlHistoryForMfgProcessMaster" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+                <action name="revisionHistory" type="history"/>
+        </model>
+
+        <model name="mpmlWhereUsedMfgProcessMaster" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+                <action name="actionWhereUsedMpmMfgProcessMaster" type="mpml"/>
+        </model>
+
+        <model name="whereUsedMfgProcessMaster" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+                <action name="actionWhereUsedMpmMfgProcessMaster" type="mpml"/>
+        </model>
+
+        <!-- MfgStandardGroup Master information page Actions list -->
+        <model name="infoActionListMfgStandardGroupMaster" menufor="com.ptc.windchill.mpml.mfgprocess.MPMMfgStandardGroupMaster">
+        </model>
+
+        <!-- MfgMfgStandardGroup Master information page 3rd level nav menu -->
+        <model name="info3rdLevelNavMpmMfgStandardGroupMaster">
+                <submodel name="info3rdLevelNavGeneralMfgStandardGroupMaster"/>                            <!-- General -->
+                <submodel name="info3rdLevelNavHistoryMfgStandardGroupMaster"/>                            <!-- History -->
+        </model>
+
+        <model name="info3rdLevelNavGeneralMfgStandardGroupMaster" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+                <action name="primaryAttributes" type="object"/>
+        </model>
+
+        <model name="info3rdLevelNavHistoryMfgStandardGroupMaster" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+                <action name="revisionHistory" type="history"/>
+        </model>
+
+        <model name="StandardGroupMasterTabSet">
+                <submodel name="infoDetailsForMfgStandardGroupMaster"/>
+                <submodel name="mpmlHistoryForMfgStandardGroupMaster"/>
+                <action   name="sysnavTab" type="sysnav"/>
+        </model>
+
+        <model name="infoDetailsForMfgStandardGroupMaster" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+                <action name="primaryAttributes"      type="object"/>
+        </model>
+
+        <model name="mpmlHistoryForMfgStandardGroupMaster" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+                <action name="revisionHistory" type="history"/>
+        </model>
+
+        <!-- Added for Masters -->
+    <model name="infoToolbarActionListMpmprocessplan" menufor="com.ptc.windchill.mpml.processplan.MPMProcessPlan">
+        <action name="view"                             type="object"/>            <!-- View Information -->
+        <action name="separator" type="separator"/>                 <!-- ===================================== -->
+        <submodel name="processplan.actions.open"/>                       <!-- Open In ==> -->        
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="checkin"                          type="wip"/>               <!-- Check In -->
+        <action name="checkout"                         type="wip"/>               <!-- Check Out -->
+        <action name="undocheckout"                     type="wip"/>               <!-- Undo Checkout -->
+        <action name="REVISEITEMS"                      type="pdmObject"/>         <!-- New Revision -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <submodel name="Fly-out for New actions"/>
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="copy"                             type="object"/>            <!-- Copy -->
+        <action name="renameObjectWizard"               type="object"/>            <!-- Rename -->
+        <action name="CONTAINERMOVE"                    type="pdmObject"/>         <!-- Move -->
+        <action name="SETSTATE"                         type="pdmObject"/>         <!-- Set State -->
+        <action name="MULTI_OBJ_DELETE"                 type="pdmObject"/>         <!-- Delete (Non-Information page) -->
+        <action name="MULTI_OBJ_DELETE_DETAILS"         type="pdmObject"/>         <!-- Delete (Information page) -->
+        <action name="reassignLC"                       type="lifecycle"/>         <!-- Reassign Life Cycle -->
+        <action name="resetTeam"                        type="team"/>              <!-- Reset Team -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <submodel name="Fly-out for Add to actions"/>
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="DISPLAYRELATEDMANUFACTURINGITEMS" type="object"/>            <!-- MPMLink Display Related Manufacturing items report -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="associateDistributionTarget"      type="tgt"/>               <!-- ESI Associate distribution Targets -->
+        <action name="sendToDistributionTarget"         type="tgt"/>               <!-- ESI Send to Distribution Target -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="launchWI_PP"                      type="explorer"/>          <!-- Work Instruction -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="userInitiatedReplication"   type="replication"/>  <!-- Use Initiated Replication -->
+        <action name="launchFromInfoPage"               type="massUpdate"/>
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="ManageSecurity"                   type="accessPermission"/>  <!-- Edit Access Control -->
+        <action name="EDITSECURITYLABELS"               type="object"/>            <!-- Edit Security Labels -->
+        <action name="createSubscription"               type="subscription"/>      <!-- Subscribe -->
+        <action name="separator" type="separator"/>
+        <action name="track_new_work" type="resourceAssignment" /><!-- Track new Work against subject of deliverable-->
+        <action name="new_plan_activity" type="planActivity" /><!-- New Plan Activity against subject -->      
+    </model>
+
+
+    <model name="processplan.actions.open" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="openProductView" type="wvs"/> <!-- Open in ProductView -->
+        <action name="launchPPE" type="explorer"/> <!-- Launch Process Plan Explorer -->
+        <action name="launchInMRB" type="mpml"/> <!-- Launch in Manufacturing Resource Browser -->
+        <action name="sysnavTabShortcut" type="sysnav"/> <!-- Open Info Page in Relationship Eplorer Tab-->
+        <action name="openProcessPlanWorkbench" type="mpml"/> <!-- Open process plan in separate window-->
+    </model>
+        
+    <model name="Fly-out for New actions" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="create"                           type="changeNotice"/>      <!-- New Change Notice -->
+        <action name="create"                           type="changeRequest"/>     <!-- New Change Request -->
+        <action name="create"                           type="problemReport"/>     <!-- New Problem Report -->
+        <action name="create"                           type="variance"/>              <!-- New Variance -->
+        <action name="create"                           type="promotionRequest"/>  <!-- Promote -->
+        <action name="newBranch"                        type="mpml"/>              <!-- New View Version-->
+    </model>
+
+    <model name="Fly-out for Add to actions" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="addToBaselineSingle"  type="baseline"/>      <!-- Add to Baseline -->
+        <action name="bookmarkIt"                       type="bookmark"/>          <!-- Add to Notebook -->
+    </model>
+
+    <model name="info3rdLevelNavMpmprocessplan">
+        <submodel name="info3rdLevelNavSpecificMpmprocessplan"/>
+        <submodel name="info3rdLevelNavMpmlMpmprocessplanRelatedItems"/>
+        <submodel name="history"/>
+    </model>
+    <model name="info3rdLevelNavSpecificMpmprocessplan" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+       <action name="visualizationAndAttributes" type="object"/>
+       <action name="attributes"            type="object"/>
+        <action name="effTableForPartsAndMPMLinkInfoPage" type="effectivity"/>
+        <action name="reference" type="notebook"/>
+        <action name="repsAndMarkups" type="wvs"/>
+        <action name="markups" type="wvs"/>
+        <action name="listAssignedOptionSet" type="filterTemplate"/>
+    </model>
+    <model name="info3rdLevelNavMpmlMpmprocessplanRelatedItems" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="actionRelatedDocumentsMpmdocumentmanageable" type="mpml"/>
+        <action name="actionReferencedDocumentsMpmdocumentmanageable" type="mpml"/>
+        <action name="actionRelatedCADDocumentsMpmdocumentmanageable" type="mpml"/>
+        <action name="actionRelatedPartsMpmprocessplan" type="mpml"/>
+        <action name="actionRelatedPlantsMpmprocessplan" type="mpml"/>        
+        <!-- cc tab -->
+        <action name="processPlanRelatedCC" type="mpml"/>        
+        <action name="separator" type="separator"/>
+        <action name="relatedBaselines" type="object"/>
+        <action name="relatedManagedCollection" type="managedcollection"/>
+        <action name="separator" type="separator"/>
+        <action name="relatedChangeIssues" type="change"/>      
+        <action name="relatedChangeRequests" type="change"/>
+        <action name="relatedAffectedByChangeNotices" type="change"/>
+        <action name="relatedResultingFromChangeNotices" type="change"/>
+        <action name="relatedChangeNotices" type="change"/>
+        <action name="relatedWorkSets" type="workSet"/>
+        <action name="relatedConfigContextStep" type="mpml"/>        
+        <action name="separator" type="separator"/>
+        <action name="distributionList" type="tgt"/>
+        <action name="separator" type="separator"/>
+        <action name="singleLevelTraceability" type="object"/>
+        <action name="TraceabilityLinksTable" type="requirement"/>
+        <action name="separator" type="separator"/>  
+        <action name="scheduledDeliverables" type="planActivity"/>             <!-- Associated PlanActivities which act as Scheduled Deliverables. -->       
+   </model>
+
+
+    <model name="infoToolbarActionListMpmsequence" menufor="com.ptc.windchill.mpml.processplan.sequence.MPMSequence">
+        <action name="view"                             type="object"/>            <!-- View Information -->
+        <action name="separator" type="separator"/>                 <!-- ===================================== -->
+        <submodel name="sequence.actions.open"/>                       <!-- Open In ==> -->        
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="checkin"                          type="wip"/>               <!-- Check In -->
+        <action name="checkout"                         type="wip"/>               <!-- Check Out -->
+        <action name="undocheckout"                     type="wip"/>               <!-- Undo Checkout -->
+        <action name="REVISEITEMS"                      type="pdmObject"/>         <!-- New Revision -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <submodel name="Fly-out for New actions"/>
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="copy"                             type="object"/>            <!-- Copy -->
+        <action name="renameObjectWizard"               type="object"/>            <!-- Rename -->
+        <action name="CONTAINERMOVE"                    type="pdmObject"/>         <!-- Move -->
+        <action name="reassignLC"                       type="lifecycle"/>         <!-- Reassign Life Cycle -->
+        <action name="resetTeam"                        type="team"/>              <!-- Reset Team -->
+        <action name="SETSTATE"                         type="pdmObject"/>         <!-- Set State -->       
+        <action name="separator"                        type="separator"/>         <!-- ===================================== --> 
+        <action name="MULTI_OBJ_DELETE"                 type="pdmObject"/>         <!-- Delete (Non-Information page) -->
+        <action name="MULTI_OBJ_DELETE_DETAILS"         type="pdmObject"/>         <!-- Delete (Information page) -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== --> 
+        <action name="bookmarkIt"                       type="bookmark"/>          <!-- Add to Notebook -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="DISPLAYRELATEDMANUFACTURINGITEMS" type="object"/>            <!-- MPMLink Display Related Manufacturing items report -->
+        <action name="ManageSecurity"                   type="accessPermission"/>  <!-- Edit Access Control -->
+        <action name="EDITSECURITYLABELS"               type="object"/>            <!-- Edit Security Labels -->
+        <action name="createSubscription"               type="subscription"/>      <!-- Subscribe -->
+        <action name="separator" type="separator"/>
+        <action name="track_new_work" type="resourceAssignment" /><!-- Track new Work against subject of deliverable-->
+        <action name="new_plan_activity" type="planActivity" /><!-- New Plan Activity against subject -->      
+    </model>
+    <model name="info3rdLevelNavMpmsequence">
+        <submodel name="info3rdLevelNavSpecificMpmsequence"/>
+        <submodel name="info3rdLevelNavMpmlMpmsequenceRelatedItems"/>
+        <submodel name="history"/>
+    </model>
+    <model name="info3rdLevelNavSpecificMpmsequence" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="visualizationAndAttributes" type="object"/>
+        <action name="attributes"            type="object"/>
+        <action name="effTableForPartsAndMPMLinkInfoPage" type="effectivity"/>
+        <action name="reference" type="notebook"/>
+        <action name="actionWhereUsedMpmsequence" type="mpml"/>
+        <action name="repsAndMarkups" type="wvs"/>
+        <action name="markups" type="wvs"/>
+        <action name="actionStructureMpmsequence" type="mpml"/>
+        <action name="listAssignedOptionSet" type="filterTemplate"/>
+    </model>
+    <model name="info3rdLevelNavMpmlMpmsequenceRelatedItems" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="actionRelatedDocumentsMpmdocumentmanageable" type="mpml"/>
+        <action name="actionReferencedDocumentsMpmdocumentmanageable" type="mpml"/>
+        <action name="actionRelatedCADDocumentsMpmdocumentmanageable" type="mpml"/>
+        <action name="separator" type="separator"/>
+        <action name="relatedBaselines" type="object"/>
+        <action name="relatedManagedCollection" type="managedcollection"/>
+        <action name="separator" type="separator"/>
+        <action name="relatedChangeIssues" type="change"/>      
+        <action name="relatedChangeRequests" type="change"/>
+        <action name="relatedAffectedByChangeNotices" type="change"/>
+        <action name="relatedResultingFromChangeNotices" type="change"/>
+        <action name="relatedChangeNotices" type="change"/>
+        <action name="relatedWorkSets" type="workSet"/>
+        <action name="relatedConfigContextStep" type="mpml"/>        
+        <action name="separator" type="separator"/>
+        <action name="distributionList"  type="tgt"/>
+        <action name="separator" type="separator"/>
+        <action name="singleLevelTraceability" type="object"/>
+        <action name="TraceabilityLinksTable" type="requirement"/>
+        <action name="separator" type="separator"/>
+        <action name="scheduledDeliverables" type="planActivity"/>             <!-- Associated PlanActivities which act as Scheduled Deliverables. -->             
+    </model>
+    
+    <model name="sequence.actions.open" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="openProductView" type="wvs"/>               <!-- Open in ProductView -->
+        <action name="sysnavTabShortcut" type="sysnav"/>   <!-- Open Info Page in Relationship Eplorer Tab-->
+        <action name="openProcessPlanWorkbench" type="mpml"/> <!-- Open process plan in separate window-->
+    </model>
+
+    <model name="infoToolbarActionListMpmoperation" menufor="com.ptc.windchill.mpml.processplan.operation.MPMOperation">
+                <action name="view"                             type="object"/>            <!-- View Information -->
+        <action name="separator" type="separator"/>                 <!-- ===================================== -->
+        <submodel name="operation.actions.open"/>                       <!-- Open In ==> -->        
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="checkin"                          type="wip"/>               <!-- Check In -->
+        <action name="checkout"                             type="wip"/>               <!-- Check Out -->
+        <action name="undocheckout"                         type="wip"/>               <!-- Undo Checkout -->
+        <action name="REVISEITEMS"                      type="pdmObject"/>         <!-- New Revision -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <submodel name="Fly-out for New actions"/>
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="copy"                             type="object"/>            <!-- Copy -->
+        <action name="renameObjectWizard"               type="object"/>            <!-- Rename -->
+        <action name="CONTAINERMOVE"                    type="pdmObject"/>         <!-- Move -->
+        <action name="reassignLC"                           type="lifecycle"/>         <!-- Reassign Life Cycle -->
+        <action name="resetTeam"                            type="team"/>              <!-- Reset Team -->
+        <action name="SETSTATE"                             type="pdmObject"/>         <!-- Set State -->       
+        <action name="separator"                        type="separator"/>         <!-- ===================================== --> 
+        <action name="MULTI_OBJ_DELETE"                 type="pdmObject"/>         <!-- Delete (Non-Information page) -->
+        <action name="MULTI_OBJ_DELETE_DETAILS"     type="pdmObject"/>         <!-- Delete (Information page) -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== --> 
+        <action name="bookmarkIt"                   type="bookmark"/>          <!-- Add to Notebook -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="DISPLAYRELATEDMANUFACTURINGITEMS" type="object"/>            <!-- MPMLink Display Related Manufacturing items report -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="launchWI_OP"                      type="explorer"/>          <!-- Work Instruction -->  
+        <action name="ManageSecurity"                   type="accessPermission"/>  <!-- Edit Access Control -->
+        <action name="EDITSECURITYLABELS"               type="object"/>            <!-- Edit Security Labels -->
+        <action name="createSubscription"           type="subscription"/>      <!-- Subscribe -->      
+        <action name="separator" type="separator"/>
+        <action name="track_new_work" type="resourceAssignment" /><!-- Track new Work against subject of deliverable-->
+        <action name="new_plan_activity" type="planActivity" /><!-- New Plan Activity against subject -->      
+    </model>
+
+    <model name="info3rdLevelNavMpmoperation">
+        <submodel name="info3rdLevelNavSpecificMpmoperation"/>
+        <submodel name="info3rdLevelNavMpmlMpmoperationRelatedItems"/>
+        <submodel name="history"/>
+    </model>
+    <model name="info3rdLevelNavMpmlMpmoperationRelatedItems" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="actionRelatedDocumentsMpmdocumentmanageable" type="mpml"/>
+        <action name="actionReferencedDocumentsMpmdocumentmanageable" type="mpml"/>
+        <action name="actionRelatedCADDocumentsMpmdocumentmanageable" type="mpml"/>
+        <action name="actionAllocatedPartsMpmoperation" type="mpml"/>
+        <action name="actionAllocatedResourcesMpmoperation" type="mpml"/>
+        <action name="operationRelatedCC" type="mpml"/>
+        <action name="separator" type="separator"/>
+        <action name="relatedBaselines" type="object"/>
+        <action name="relatedManagedCollection" type="managedcollection"/>
+        <action name="separator" type="separator"/>
+        <action name="relatedChangeIssues" type="change"/>      
+        <action name="relatedChangeRequests" type="change"/>
+        <action name="relatedAffectedByChangeNotices" type="change"/>
+        <action name="relatedResultingFromChangeNotices" type="change"/>
+        <action name="relatedChangeNotices" type="change"/>
+        <action name="relatedWorkSets" type="workSet"/>
+        <action name="relatedConfigContextStep" type="mpml"/>
+        <action name="separator" type="separator"/>
+        <action name="distributionList"  type="tgt"/>
+        <action name="separator" type="separator"/>
+        <action name="singleLevelTraceability" type="object"/>
+        <action name="TraceabilityLinksTable" type="requirement"/>   
+        <action name="separator" type="separator"/>
+        <action name="scheduledDeliverables" type="planActivity"/>             <!-- Associated PlanActivities which act as Scheduled Deliverables. -->        
+    </model>
+    <model name="info3rdLevelNavSpecificMpmoperation" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="visualizationAndAttributes" type="object"/>
+        <action name="attributes"            type="object"/>
+        <action name="effTableForPartsAndMPMLinkInfoPage" type="effectivity"/>
+        <action name="reference" type="notebook"/>
+        <action name="actionWhereUsedMpmoperation" type="mpml"/>
+        <action name="repsAndMarkups" type="wvs"/>
+        <action name="markups" type="wvs"/>
+        <action name="actionStructureMpmoperation" type="mpml"/>
+        <action name="listAssignedOptionSet" type="filterTemplate"/>
+    </model>
+    
+    <model name="operation.actions.open" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="openProductView" type="wvs"/>               <!-- Open in ProductView -->
+        <action name="sysnavTabShortcut" type="sysnav"/>   <!-- Open Info Page in Relationship Eplorer Tab-->
+        <action name="openProcessPlanWorkbench" type="mpml"/> <!-- Open process plan in separate window-->
+   </model>
+
+    <model name="infoToolbarActionListMpmmfgprocess" menufor="com.ptc.windchill.mpml.mfgprocess.MPMMfgProcess">
+        <action name="view"                             type="object"/>            <!-- View Information -->
+        <action name="sysnavTabShortcut" type="sysnav"/>
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="checkin"                          type="wip"/>               <!-- Check In -->
+        <action name="checkout"                         type="wip"/>               <!-- Check Out -->
+        <action name="undocheckout"                     type="wip"/>               <!-- Undo Checkout -->
+        <action name="REVISEITEMS"                      type="pdmObject"/>         <!-- New Revision -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <submodel name="Fly-out for New actions"/>
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="copy"                             type="object"/>            <!-- Copy -->
+        <action name="renameObjectWizard"               type="object"/>            <!-- Rename -->
+        <action name="CONTAINERMOVE"                    type="pdmObject"/>         <!-- Move -->
+        <action name="reassignLC"                       type="lifecycle"/>         <!-- Reassign Life Cycle -->
+        <action name="resetTeam"                        type="team"/>              <!-- Reset Team -->
+        <action name="SETSTATE"                         type="pdmObject"/>         <!-- Set State -->       
+        <action name="separator"                        type="separator"/>         <!-- ===================================== --> 
+        <action name="MULTI_OBJ_DELETE"                 type="pdmObject"/>         <!-- Delete (Non-Information page) -->
+        <action name="MULTI_OBJ_DELETE_DETAILS"         type="pdmObject"/>         <!-- Delete (Information page) -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== --> 
+        <action name="bookmarkIt"                       type="bookmark"/>          <!-- Add to Notebook -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="DISPLAYRELATEDMANUFACTURINGITEMS" type="object"/>            <!-- MPMLink Display Related Manufacturing items report -->
+        <action name="launchFromInfoPage"               type="massUpdate"/>
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="ManageSecurity"                   type="accessPermission"/>  <!-- Edit Access Control -->
+        <action name="EDITSECURITYLABELS"               type="object"/>            <!-- Edit Security Labels -->
+        <action name="createSubscription"               type="subscription"/>      <!-- Subscribe -->
+        <action name="separator" type="separator"/>
+        <action name="track_new_work" type="resourceAssignment" /><!-- Track new Work against subject of deliverable-->
+        <action name="new_plan_activity" type="planActivity" /><!-- New Plan Activity against subject -->      
+    </model>
+    <model name="info3rdLevelNavMpmmfgprocess">
+        <submodel name="info3rdLevelNavSpecificMpmmfgprocess"/>
+        <submodel name="info3rdLevelNavMpmlMpmmfgprocessRelatedItems"/>
+        <submodel name="history"/>
+    </model>
+    <model name="info3rdLevelNavSpecificMpmmfgprocess" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="primaryAttributes" type="object"/>
+        <action name="attributes"            type="object"/>
+        <action name="effTableForPartsAndMPMLinkInfoPage" type="effectivity"/>
+        <action name="reference" type="notebook"/>
+        <action name="actionWhereUsedMpmmfgstandardgrouped" type="mpml"/>
+    </model>
+    <model name="info3rdLevelNavMpmlMpmmfgprocessRelatedItems" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+         <action name="actionRelatedDocumentsMpmdocumentmanageable" type="mpml"/>
+         <action name="actionReferencedDocumentsMpmdocumentmanageable" type="mpml"/>
+         <action name="actionRelatedOperationsMpmmfgprocess" type="mpml"/>
+         <action name="separator" type="separator"/>
+         <action name="relatedBaselines" type="object"/>
+         <action name="relatedManagedCollection" type="managedcollection"/>
+         <action name="separator" type="separator"/>
+         <action name="relatedChangeIssues" type="change"/>      
+         <action name="relatedChangeRequests" type="change"/>
+         <action name="relatedAffectedByChangeNotices" type="change"/>
+         <action name="relatedResultingFromChangeNotices" type="change"/>
+         <action name="relatedChangeNotices" type="change"/>
+         <action name="relatedWorkSets" type="workSet"/>
+         <!--&gt; &lt;action name=&quot;actionProcessPlansUseMpmmfgprocess&quot; type=&quot;mpml&quot;/&gt; &lt;!-->
+         <action name="separator" type="separator"/>
+         <action name="singleLevelTraceability" type="object"/>
+         <action name="TraceabilityLinksTable" type="requirement"/>  
+         <action name="separator" type="separator"/>
+         <action name="scheduledDeliverables" type="planActivity"/>             <!-- Associated PlanActivities which act as Scheduled Deliverables. -->        
+    </model>
+
+    <model name="infoToolbarActionListMpmmfgstdgroup" menufor="com.ptc.windchill.mpml.mfgprocess.MPMMfgStandardGroup">
+        <action name="view"                             type="object"/>            <!-- View Information -->
+        <action name="launchMSE"                        type="explorer"/>          <!-- Launch Manufacturing Standard Explorer -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="checkin"                          type="wip"/>               <!-- Check In -->
+        <action name="checkout"                         type="wip"/>               <!-- Check Out -->
+        <action name="undocheckout"                     type="wip"/>               <!-- Undo Checkout -->
+        <action name="REVISEITEMS"                      type="pdmObject"/>         <!-- New Revision -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <submodel name="Fly-out for New actions"/>
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="copy"                             type="object"/>            <!-- Copy -->
+        <action name="renameObjectWizard"               type="object"/>            <!-- Rename -->
+        <action name="CONTAINERMOVE"                    type="pdmObject"/>         <!-- Move -->
+        <action name="reassignLC"                       type="lifecycle"/>         <!-- Reassign Life Cycle -->
+        <action name="resetTeam"                        type="team"/>              <!-- Reset Team -->
+        <action name="SETSTATE"                         type="pdmObject"/>         <!-- Set State -->       
+        <action name="separator"                        type="separator"/>         <!-- ===================================== --> 
+        <action name="MULTI_OBJ_DELETE"                 type="pdmObject"/>         <!-- Delete (Non-Information page) -->
+        <action name="MULTI_OBJ_DELETE_DETAILS"         type="pdmObject"/>         <!-- Delete (Information page) -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== --> 
+        <action name="bookmarkIt"                       type="bookmark"/>          <!-- Add to Notebook -->
+        <action name="DISPLAYRELATEDMANUFACTURINGITEMS" type="object"/>            <!-- MPMLink Display Related Manufacturing items report -->
+        <action name="ManageSecurity"                   type="accessPermission"/>  <!-- Edit Access Control -->
+        <action name="EDITSECURITYLABELS"               type="object"/>            <!-- Edit Security Labels -->
+        <action name="createSubscription"               type="subscription"/>      <!-- Subscribe -->
+        <action name="separator" type="separator"/>
+        <action name="track_new_work" type="resourceAssignment" /><!-- Track new Work against subject of deliverable-->
+        <action name="new_plan_activity" type="planActivity" /><!-- New Plan Activity against subject -->      
+    </model>
+    <model name="info3rdLevelNavMpmmfgstdgroup">
+        <submodel name="info3rdLevelNavSpecificMpmmfgstdgroup"/>
+        <submodel name="info3rdLevelNavMpmlMpmmfgstdgroupRelatedItems"/>
+        <submodel name="history"/>
+    </model>
+    <model name="info3rdLevelNavSpecificMpmmfgstdgroup" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="primaryAttributes" type="object"/>
+        <action name="attributes"            type="object"/>
+        <action name="effTableForPartsAndMPMLinkInfoPage" type="effectivity"/>
+        <action name="reference" type="notebook"/>
+        <action name="actionStructureMpmmfgstdgroup" type="mpml"/>
+    </model>
+    <model name="info3rdLevelNavMpmlMpmmfgstdgroupRelatedItems" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="actionRelatedDocumentsMpmdocumentmanageable" type="mpml"/>
+        <action name="actionReferencedDocumentsMpmdocumentmanageable" type="mpml"/>
+        <action name="separator" type="separator"/>
+        <action name="relatedBaselines" type="object"/>
+        <action name="relatedManagedCollection" type="managedcollection"/>
+        <action name="separator" type="separator"/>
+        <action name="relatedChangeIssues"  type="change"/>      
+        <action name="relatedChangeRequests" type="change"/>
+        <action name="relatedAffectedByChangeNotices" type="change"/>
+        <action name="relatedResultingFromChangeNotices" type="change"/>
+        <action name="relatedChangeNotices" type="change"/>
+        <action name="relatedWorkSets" type="workSet"/>
+        <!--
+        <action name="actionProcessPlansUseMpmmfgprocess" type="mpml"/>
+        -->
+        <action name="separator" type="separator"/>
+        <action name="scheduledDeliverables" type="planActivity"/>         <!-- Associated PlanActivities which act as Scheduled Deliverables. -->
+        
+    </model>
+
+    <model name="resourceA.actions.open" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="launchMRE"         type="explorer"/> <!-- Launch Manufacturing Resource Explorer -->
+        <action name="launchInMAPSB"     type="mapsb"/>    <!-- Open in Manufacturing Associative Part Structure Browser -->                
+    </model>
+    
+    <model name="resourceB.actions.open" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="launchMRE"         type="explorer"/> <!-- Launch Manufacturing Resource Explorer -->
+        <action name="launchInMAPSB"     type="mapsb"/>    <!-- Open in Manufacturing Associative Part Structure Browser -->                
+        <action name="sysnavTabShortcut" type="sysnav"/>   <!-- Open Info Page in Relationship Eplorer Tab-->
+    </model>    
+
+    <model name="infoToolbarActionListMpmplant" menufor="com.ptc.windchill.mpml.resource.MPMPlant">
+        <action name="view"                             type="object"/>            <!-- View Information -->
+        <submodel name="resourceA.actions.open"/>                                  <!-- Open In ==> -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="checkin"                          type="wip"/>               <!-- Check In -->
+        <action name="checkout"                         type="wip"/>               <!-- Check Out -->
+        <action name="checkoutAndEdit"                  type="part"/>
+        <action name="undocheckout"                     type="wip"/>               <!-- Undo Checkout -->
+        <action name="edit"                             type="part"/>
+        <action name="REVISEITEMS"                      type="pdmObject"/>         <!-- New Revision -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <submodel name="Fly-out for New actions"/>
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="copy"                             type="object"/>            <!-- Copy -->
+        <action name="MULTIRENAME"                      type="pdmObject"/>         <!-- Rename -->
+        <action name="CONTAINERMOVE"                    type="pdmObject"/>         <!-- Move -->
+        <action name="reassignLC"                       type="lifecycle"/>         <!-- Reassign Life Cycle -->
+        <action name="resetTeam"                        type="team"/>              <!-- Reset Team -->
+        <action name="SETSTATE"                         type="pdmObject"/>         <!-- Set State -->       
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->  
+        <action name="MULTI_OBJ_DELETE"                 type="pdmObject"/>         <!-- Delete (Non-Information page) -->
+        <action name="MULTI_OBJ_DELETE_DETAILS"         type="pdmObject"/>         <!-- Delete (Information page) -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== --> 
+        <action name="bookmarkIt"                       type="bookmark"/>          <!-- Add to Notebook -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="DISPLAYRELATEDMANUFACTURINGITEMS" type="object"/>            <!-- MPMLink Display Related Manufacturing items report -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="associateDistributionTarget"      type="tgt"/>               <!-- ESI Associate distribution Targets --> 
+        <action name="sendToDistributionTarget"         type="tgt"/>               <!-- ESI Send to Distribution Target -->
+        <action name="sendEnterpriseDataToDistributionTarget"
+               type="tgt"/>                                            <!-- ESI Send Enterprise Data to Distribution Target -->
+	<action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="userInitiatedReplication"   type="replication"/>  <!-- Use Initiated Replication -->
+        <action name="ManageSecurity"                   type="accessPermission"/>  <!-- Edit Access Control -->
+        <action name="EDITSECURITYLABELS"               type="object"/>            <!-- Edit Security Labels -->
+        <action name="createSubscription"               type="subscription"/>      <!-- Subscribe -->
+        <action name="separator" type="separator"/>
+        <action name="track_new_work" type="resourceAssignment" /><!-- Track new Work against subject of deliverable-->
+        <action name="new_plan_activity" type="planActivity" /><!-- New Plan Activity against subject -->      
+    </model>
+    <model name="info3rdLevelNavMpmplant">
+        <submodel name="info3rdLevelNavSpecificMpmplant"/>
+        <submodel name="info3rdLevelNavMpmlPlantRelatedItems"/>
+        <submodel name="history"/>
+    </model>
+    <model name="info3rdLevelNavSpecificMpmplant" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="visualizationAndAttributes" type="object"/>
+        <action name="attributes"            type="object"/>
+        <action name="effTableForPartsAndMPMLinkInfoPage" type="effectivity"/>
+        <action name="reference" type="notebook"/>
+        <action name="mpmlResourceWhereUsed" type="mpml"/>
+        <action name="repsAndMarkups" type="wvs"/>
+        <action name="markups" type="wvs"/>
+
+    </model>
+
+    <model name="infoToolbarActionListMpmresourcegroup" menufor="com.ptc.windchill.mpml.resource.MPMResourceGroup">
+        <action name="view"                             type="object"/>            <!-- View Information -->
+        <submodel name="resourceA.actions.open"/>                                  <!-- Open In ==> -->        
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="checkin"                          type="wip"/>               <!-- Check In -->
+        <action name="checkout"                         type="wip"/>               <!-- Check Out -->
+        <action name="checkoutAndEdit"                  type="part"/>
+        <action name="undocheckout"                     type="wip"/>               <!-- Undo Checkout -->
+        <action name="edit"                             type="part"/>
+        <action name="REVISEITEMS"                      type="pdmObject"/>         <!-- New Revision -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <submodel name="Fly-out for New actions"/>
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="copy"                             type="object"/>            <!-- Copy -->
+        <action name="MULTIRENAME"                      type="pdmObject"/>         <!-- Rename -->
+        <action name="CONTAINERMOVE"                    type="pdmObject"/>         <!-- Move -->
+        <action name="reassignLC"                       type="lifecycle"/>         <!-- Reassign Life Cycle -->
+        <action name="resetTeam"                        type="team"/>              <!-- Reset Team -->
+        <action name="SETSTATE"                         type="pdmObject"/>         <!-- Set State -->       
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->  
+        <action name="MULTI_OBJ_DELETE"                 type="pdmObject"/>         <!-- Delete (Non-Information page) -->
+        <action name="MULTI_OBJ_DELETE_DETAILS"         type="pdmObject"/>         <!-- Delete (Information page) -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== --> 
+        <action name="bookmarkIt"                       type="bookmark"/>          <!-- Add to Notebook -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="DISPLAYRELATEDMANUFACTURINGITEMS" type="object"/>            <!-- MPMLink Display Related Manufacturing items report -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="associateDistributionTarget"      type="tgt"/>               <!-- ESI Associate distribution Targets --> 
+        <action name="sendToDistributionTarget"         type="tgt"/>               <!-- ESI Send to Distribution Target -->
+        <action name="sendEnterpriseDataToDistributionTarget"
+               type="tgt"/>                                            <!-- ESI Send Enterprise Data to Distribution Target -->
+	<action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="userInitiatedReplication"   type="replication"/>  <!-- Use Initiated Replication -->
+        <action name="ManageSecurity"                   type="accessPermission"/>  <!-- Edit Access Control -->
+        <action name="EDITSECURITYLABELS"               type="object"/>            <!-- Edit Security Labels -->
+        <action name="createSubscription"               type="subscription"/>      <!-- Subscribe -->
+        <action name="separator" type="separator"/>
+        <action name="track_new_work" type="resourceAssignment" /><!-- Track new Work against subject of deliverable-->
+        <action name="new_plan_activity" type="planActivity" /><!-- New Plan Activity against subject -->      
+    </model>
+    <model name="info3rdLevelNavMpmresourcegroup">
+        <submodel name="info3rdLevelNavSpecificMpmresourcegroup"/>
+        <submodel name="info3rdLevelNavMpmlPlantRelatedItems"/>
+        <submodel name="history"/>
+    </model>
+    <model name="info3rdLevelNavSpecificMpmresourcegroup" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="visualizationAndAttributes" type="object"/>
+        <action name="attributes"            type="object"/>
+        <action name="effTableForPartsAndMPMLinkInfoPage" type="effectivity"/>
+        <action name="reference" type="notebook"/>
+        <action name="mpmlResourceWhereUsed" type="mpml"/>
+        <action name="repsAndMarkups" type="wvs"/>
+        <action name="markups" type="wvs"/>
+
+    </model>
+
+    <model name="info3rdLevelNavMpmlResourceRelatedItems" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="relatedPartsCADDocuments" type="part"/>
+        <action name="relatedPartsDocuments" type="part"/>
+        <action name="relatedPartsReferences" type="part"/>
+        <action name="processPlansUse" type="mpml"/>
+        <action name="separator" type="separator"/>
+        <action name="relatedBaselines" type="object"/>
+        <action name="relatedManagedCollection" type="managedcollection"/>
+        <action name="separator" type="separator"/>
+        <action name="relatedChangeIssues" type="change"/>      
+        <action name="relatedChangeRequests" type="change"/>
+        <action name="relatedAffectedByChangeNotices" type="change"/>
+        <action name="relatedResultingFromChangeNotices" type="change"/>
+        <action name="relatedChangeNotices" type="change"/>
+       <action name="relatedWorkSets" type="workSet"/>
+	<action name="relatedPartsEnterpriseData" type="enterprisedata"/>
+        <action name="separator" type="separator"/>
+        <action name="distributionList" type="tgt"/>
+        <action name="separator" type="separator"/>
+        <action name="scheduledDeliverables" type="planActivity"/>             <!-- Associated PlanActivities which act as Scheduled Deliverables. -->
+    </model>
+
+    <model name="info3rdLevelNavMpmlPlantRelatedItems" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="relatedPartsCADDocuments" type="part"/>
+        <action name="relatedPartsDocuments" type="part"/>
+        <action name="relatedPartsReferences" type="part"/>        
+        <action name="separator" type="separator"/>
+        <action name="relatedBaselines" type="object"/>
+        <action name="relatedManagedCollection" type="managedcollection"/>
+        <action name="separator" type="separator"/>
+        <action name="relatedChangeIssues" type="change"/>      
+        <action name="relatedChangeRequests" type="change"/>
+        <action name="relatedAffectedByChangeNotices" type="change"/>
+        <action name="relatedResultingFromChangeNotices" type="change"/>
+        <action name="relatedChangeNotices" type="change"/>
+        <action name="relatedWorkSets" type="workSet"/>
+	<action name="relatedPartsEnterpriseData" type="enterprisedata"/>
+        <action name="separator" type="separator"/>
+        <action name="distributionList" type="tgt"/> 
+        <action name="separator" type="separator"/>
+        <action name="scheduledDeliverables" type="planActivity"/>             <!-- Associated PlanActivities which act as Scheduled Deliverables. -->     
+    </model>
+
+    <model name="infoToolbarActionListMpmskill" menufor="com.ptc.windchill.mpml.resource.MPMSkill">
+        <action name="view"                             type="object"/>            <!-- View Information -->
+        <submodel name="resourceB.actions.open"/>                                  <!-- Open In ==> -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="checkin"                          type="wip"/>               <!-- Check In -->
+        <action name="checkout"                         type="wip"/>               <!-- Check Out -->
+        <action name="checkoutAndEdit"                  type="part"/>
+        <action name="undocheckout"                     type="wip"/>               <!-- Undo Checkout -->
+        <action name="edit"                             type="part"/>
+        <action name="REVISEITEMS"                      type="pdmObject"/>         <!-- New Revision -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <submodel name="Fly-out for New actions"/>
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="copy"                             type="object"/>            <!-- Copy -->
+        <action name="MULTIRENAME"                      type="pdmObject"/>         <!-- Rename -->
+        <action name="CONTAINERMOVE"                    type="pdmObject"/>         <!-- Move -->
+        <action name="reassignLC"                       type="lifecycle"/>         <!-- Reassign Life Cycle -->
+        <action name="resetTeam"                        type="team"/>              <!-- Reset Team -->
+        <action name="SETSTATE"                         type="pdmObject"/>         <!-- Set State -->       
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->  
+        <action name="MULTI_OBJ_DELETE"                 type="pdmObject"/>         <!-- Delete (Non-Information page) -->
+        <action name="MULTI_OBJ_DELETE_DETAILS"         type="pdmObject"/>         <!-- Delete (Information page) -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== --> 
+        <action name="bookmarkIt"                       type="bookmark"/>          <!-- Add to Notebook -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="DISPLAYRELATEDMANUFACTURINGITEMS" type="object"/>            <!-- MPMLink Display Related Manufacturing items report -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="associateDistributionTarget"      type="tgt"/>               <!-- ESI Associate distribution Targets -->
+        <action name="sendToDistributionTarget"         type="tgt"/>               <!-- ESI Send to Distribution Target --> 
+        <action name="sendEnterpriseDataToDistributionTarget"
+               type="tgt"/>                                            <!-- ESI Send Enterprise Data to Distribution Target -->
+	<action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="userInitiatedReplication"   type="replication"/>  <!-- Use Initiated Replication -->
+        <action name="launchFromInfoPage"               type="massUpdate"/>
+        <action name="ManageSecurity"                   type="accessPermission"/>  <!-- Edit Access Control -->
+        <action name="EDITSECURITYLABELS"               type="object"/>            <!-- Edit Security Labels -->
+        <action name="createSubscription"               type="subscription"/>      <!-- Subscribe -->
+        <action name="separator" type="separator"/>
+        <action name="track_new_work" type="resourceAssignment" /><!-- Track new Work against subject of deliverable-->
+        <action name="new_plan_activity" type="planActivity" /><!-- New Plan Activity against subject -->      
+    </model>
+    <model name="info3rdLevelNavMpmskill">
+        <submodel name="info3rdLevelNavSpecificMpmskill"/>
+        <submodel name="info3rdLevelNavMpmlResourceRelatedItems"/>
+        <submodel name="history"/>
+    </model>
+    <model name="info3rdLevelNavSpecificMpmskill" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="visualizationAndAttributes" type="object"/>
+        <action name="attributes"            type="object"/>
+        <action name="effTableForPartsAndMPMLinkInfoPage" type="effectivity"/>
+        <action name="reference" type="notebook"/>
+        <action name="mpmlResourceWhereUsed" type="mpml"/>
+        <action name="repsAndMarkups" type="wvs"/>
+        <action name="markups" type="wvs"/>
+
+    </model>
+
+    <model name="infoToolbarActionListMpmmaterial" menufor="com.ptc.windchill.mpml.resource.MPMProcessMaterial">
+        <action name="view"                             type="object"/>            <!-- View Information -->
+        <submodel name="resourceB.actions.open"/>                                  <!-- Open In ==> -->        
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="checkin"                          type="wip"/>               <!-- Check In -->
+        <action name="checkout"                         type="wip"/>               <!-- Check Out -->
+        <action name="checkoutAndEdit"                  type="part"/>
+        <action name="undocheckout"                     type="wip"/>               <!-- Undo Checkout -->
+        <action name="edit"                             type="part"/>
+        <action name="REVISEITEMS"                      type="pdmObject"/>         <!-- New Revision -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <submodel name="Fly-out for New actions"/>
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="copy"                             type="object"/>            <!-- Copy -->
+        <action name="MULTIRENAME"                      type="pdmObject"/>         <!-- Rename -->
+        <action name="CONTAINERMOVE"                    type="pdmObject"/>         <!-- Move -->
+        <action name="reassignLC"                       type="lifecycle"/>         <!-- Reassign Life Cycle -->
+        <action name="resetTeam"                        type="team"/>              <!-- Reset Team -->
+        <action name="SETSTATE"                         type="pdmObject"/>         <!-- Set State -->       
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->  
+        <action name="MULTI_OBJ_DELETE"                 type="pdmObject"/>         <!-- Delete (Non-Information page) -->
+        <action name="MULTI_OBJ_DELETE_DETAILS"         type="pdmObject"/>         <!-- Delete (Information page) -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== --> 
+        <action name="bookmarkIt"                       type="bookmark"/>          <!-- Add to Notebook -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="DISPLAYRELATEDMANUFACTURINGITEMS" type="object"/>            <!-- MPMLink Display Related Manufacturing items report -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="associateDistributionTarget"      type="tgt"/>               <!-- ESI Associate distribution Targets --> 
+        <action name="sendToDistributionTarget"         type="tgt"/>               <!-- ESI Send to Distribution Target -->
+        <action name="sendEnterpriseDataToDistributionTarget"
+               type="tgt"/>                                            <!-- ESI Send Enterprise Data to Distribution Target -->
+	<action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="userInitiatedReplication"   type="replication"/>  <!-- Use Initiated Replication -->
+        <action name="launchFromInfoPage"               type="massUpdate"/>
+        <action name="ManageSecurity"                   type="accessPermission"/>  <!-- Edit Access Control -->
+        <action name="EDITSECURITYLABELS"               type="object"/>            <!-- Edit Security Labels -->
+        <action name="createSubscription"               type="subscription"/>      <!-- Subscribe -->
+        <action name="separator" type="separator"/>
+        <action name="track_new_work" type="resourceAssignment" /><!-- Track new Work against subject of deliverable-->
+        <action name="new_plan_activity" type="planActivity" /><!-- New Plan Activity against subject -->      
+    </model>
+    <model name="info3rdLevelNavMpmmaterial">
+        <submodel name="info3rdLevelNavSpecificMpmmaterial"/>
+        <submodel name="info3rdLevelNavMpmlResourceRelatedItems"/>
+        <submodel name="history"/>
+    </model>
+    <model name="info3rdLevelNavSpecificMpmmaterial" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="visualizationAndAttributes" type="object"/>
+        <action name="attributes"            type="object"/>
+        <action name="effTableForPartsAndMPMLinkInfoPage" type="effectivity"/>
+        <action name="reference" type="notebook"/>
+        <action name="mpmlResourceWhereUsed" type="mpml"/>
+        <action name="repsAndMarkups" type="wvs"/>
+        <action name="markups" type="wvs"/>        
+    </model>
+
+    <model name="infoToolbarActionListMpmtooling" menufor="com.ptc.windchill.mpml.resource.MPMTooling">
+        <action name="view"                             type="object"/>            <!-- View Information -->
+        <submodel name="resourceB.actions.open"/>                                  <!-- Open In ==> -->        
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="checkin"                          type="wip"/>               <!-- Check In -->
+        <action name="checkout"                         type="wip"/>               <!-- Check Out -->
+        <action name="checkoutAndEdit"                  type="part"/>
+        <action name="undocheckout"                     type="wip"/>               <!-- Undo Checkout -->
+        <action name="edit"                             type="part"/>
+        <action name="REVISEITEMS"                      type="pdmObject"/>         <!-- New Revision -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <submodel name="Fly-out for New actions"/>
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="copy"                             type="object"/>            <!-- Copy -->
+        <action name="MULTIRENAME"                      type="pdmObject"/>         <!-- Rename -->
+        <action name="CONTAINERMOVE"                    type="pdmObject"/>         <!-- Move -->
+        <action name="reassignLC"                       type="lifecycle"/>         <!-- Reassign Life Cycle -->
+        <action name="resetTeam"                        type="team"/>              <!-- Reset Team -->
+        <action name="SETSTATE"                         type="pdmObject"/>         <!-- Set State -->       
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->  
+        <action name="MULTI_OBJ_DELETE"                 type="pdmObject"/>         <!-- Delete (Non-Information page) -->
+        <action name="MULTI_OBJ_DELETE_DETAILS"         type="pdmObject"/>         <!-- Delete (Information page) -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== --> 
+        <action name="bookmarkIt"                       type="bookmark"/>          <!-- Add to Notebook -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="DISPLAYRELATEDMANUFACTURINGITEMS" type="object"/>            <!-- MPMLink Display Related Manufacturing items report -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="associateDistributionTarget"      type="tgt"/>               <!-- ESI Associate distribution Targets -->
+        <action name="sendToDistributionTarget"         type="tgt"/>               <!-- ESI Send to Distribution Target -->
+        <action name="sendEnterpriseDataToDistributionTarget"
+               type="tgt"/>                                            <!-- ESI Send Enterprise Data to Distribution Target -->
+	<action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="userInitiatedReplication"   type="replication"/>  <!-- Use Initiated Replication -->
+        <action name="launchFromInfoPage"               type="massUpdate"/>
+        <action name="ManageSecurity"                   type="accessPermission"/>  <!-- Edit Access Control -->
+        <action name="EDITSECURITYLABELS"               type="object"/>            <!-- Edit Security Labels -->
+        <action name="createSubscription"               type="subscription"/>      <!-- Subscribe -->
+        <action name="separator" type="separator"/>
+        <action name="track_new_work" type="resourceAssignment" /><!-- Track new Work against subject of deliverable-->
+        <action name="new_plan_activity" type="planActivity" /><!-- New Plan Activity against subject -->      
+    </model>
+    <model name="info3rdLevelNavMpmtooling">
+        <submodel name="info3rdLevelNavSpecificMpmtooling"/>
+        <submodel name="info3rdLevelNavMpmlResourceRelatedItems"/>
+        <submodel name="history"/>
+    </model>
+    <model name="info3rdLevelNavSpecificMpmtooling" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="visualizationAndAttributes" type="object"/>
+        <action name="attributes"            type="object"/>
+        <action name="effTableForPartsAndMPMLinkInfoPage" type="effectivity"/>
+        <action name="reference" type="notebook"/>
+        <action name="mpmlResourceWhereUsed" type="mpml"/>
+        <action name="repsAndMarkups" type="wvs"/>
+        <action name="markups" type="wvs"/>        
+    </model>
+
+    <model name="infoToolbarActionListMpmWorkCenter" menufor="com.ptc.windchill.mpml.resource.MPMWorkCenter">
+        <action name="view"                             type="object"/>            <!-- View Information -->
+        <submodel name="resourceB.actions.open"/>                                  <!-- Open In ==> -->        
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="checkin"                          type="wip"/>               <!-- Check In -->
+        <action name="checkout"                         type="wip"/>               <!-- Check Out -->
+        <action name="checkoutAndEdit"                  type="part"/>
+        <action name="undocheckout"                     type="wip"/>               <!-- Undo Checkout -->
+        <action name="edit"                             type="part"/>
+        <action name="REVISEITEMS"                      type="pdmObject"/>         <!-- New Revision -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <submodel name="Fly-out for New actions"/>
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="copy"                             type="object"/>            <!-- Copy -->
+        <action name="MULTIRENAME"                      type="pdmObject"/>         <!-- Rename -->
+        <action name="CONTAINERMOVE"                    type="pdmObject"/>         <!-- Move -->
+        <action name="reassignLC"                       type="lifecycle"/>         <!-- Reassign Life Cycle -->
+        <action name="resetTeam"                        type="team"/>              <!-- Reset Team -->
+        <action name="SETSTATE"                         type="pdmObject"/>         <!-- Set State -->       
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->  
+        <action name="MULTI_OBJ_DELETE"                 type="pdmObject"/>         <!-- Delete (Non-Information page) -->
+        <action name="MULTI_OBJ_DELETE_DETAILS"         type="pdmObject"/>         <!-- Delete (Information page) -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== --> 
+        <action name="bookmarkIt"                       type="bookmark"/>          <!-- Add to Notebook -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="DISPLAYRELATEDMANUFACTURINGITEMS" type="object"/>            <!-- MPMLink Display Related Manufacturing items report -->
+        <action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="associateDistributionTarget"      type="tgt"/>               <!-- ESI Associate distribution Targets --> 
+        <action name="sendToDistributionTarget"         type="tgt"/>               <!-- ESI Send to Distribution Target -->
+        <action name="sendEnterpriseDataToDistributionTarget"
+               type="tgt"/>                                            <!-- ESI Send Enterprise Data to Distribution Target -->
+	<action name="separator"                        type="separator"/>         <!-- ===================================== -->
+        <action name="userInitiatedReplication"   type="replication"/>  <!-- Use Initiated Replication -->
+        <action name="launchFromInfoPage"               type="massUpdate"/>
+        <action name="ManageSecurity"                   type="accessPermission"/>  <!-- Edit Access Control -->
+        <action name="EDITSECURITYLABELS"               type="object"/>            <!-- Edit Security Labels -->
+        <action name="createSubscription"               type="subscription"/>      <!-- Subscribe -->
+        <action name="separator" type="separator"/>
+        <action name="track_new_work" type="resourceAssignment" /><!-- Track new Work against subject of deliverable-->
+        <action name="new_plan_activity" type="planActivity" /><!-- New Plan Activity against subject -->      
+    </model>
+    <model name="info3rdLevelNavMpmWorkCenter">
+        <submodel name="info3rdLevelNavSpecificMpmWorkCenter"/>
+        <submodel name="info3rdLevelNavMpmlResourceRelatedItems"/>
+        <submodel name="history"/>
+    </model>
+    <model name="info3rdLevelNavSpecificMpmWorkCenter" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="visualizationAndAttributes" type="object"/>
+        <action name="attributes"            type="object"/>
+        <action name="effTableForPartsAndMPMLinkInfoPage" type="effectivity"/>
+        <action name="reference" type="notebook"/>
+        <action name="mpmlResourceWhereUsed" type="mpml"/>
+        <action name="repsAndMarkups" type="wvs"/>
+        <action name="markups" type="wvs"/>
+
+    </model>
+
+    <model name="ProcessPlanTabSet" >
+        <submodel name="mpmlInfoDetails"/>
+        <action name="processPlanStructureGWT" type="mpml"/>
+        <submodel name="mpmlMpmprocessplanRelatedItems"/>
+        <submodel name="changesTab"/>
+        <submodel name="mpmlHistory"/>
+        <submodel name="requirementTraceabilityTab"/>
+        <action   name="sysnavTab" type="sysnav"/>
+    </model>
+    
+    <model name="OperationTabSet" >
+        <submodel name="mpmlInfoDetails"/>
+        <action name="processPlanStructureGWT" type="mpml"/>
+        <submodel name="mpmlMpmoperationRelatedItems"/>
+        <submodel name="changesTab"/>
+        <submodel name="mpmlHistory"/>
+        <submodel name="mpmlWhereUsedOperation"/>
+        <submodel name="requirementTraceabilityTab" />
+        <action   name="sysnavTab" type="sysnav"/>
+    </model>
+    
+    <model name="SequenceTabSet" >
+        <submodel name="infoDetails"/>
+        <action name="processPlanStructureGWT" type="mpml"/>
+        <submodel name="mpmlMpmsequenceRelatedItems"/>
+        <submodel name="changesTab"/>
+        <submodel name="mpmlHistory"/>
+        <submodel name="mpmlWhereUsedSequence"/>
+        <submodel name="requirementTraceabilityTab" />
+        <action   name="sysnavTab" type="sysnav"/>
+    </model>     
+    
+    <model name="StandardGroupTabSet" >
+        <submodel name="infoDetailsForStandards"/>
+        <submodel name="structureMpmmfgstdgroup"/>
+        <submodel name="mpmlRelatedItemsStandards"/>
+        <submodel name="changesTab"/>
+        <submodel name="mpmlHistoryForStandardsAndResources"/>
+    </model>
+    
+    <model name="CapabilityTabSet" >
+        <submodel name="infoDetailsForStandards"/>
+        <submodel name="mpmlRelatedItemsStandards"/>
+        <submodel name="changesTab"/>
+        <submodel name="mpmlHistoryForStandardsAndResources"/>
+        <submodel name="mpmlWhereUsedCapability"/>
+        <submodel name="requirementTraceabilityTab" />
+        <action   name="sysnavTab" type="sysnav"/>
+    </model>
+    
+    <model name="PlantTabSet" >
+        <submodel name="mpmlInfoDetails"/>
+        <action name="resourceStructureGWT" type="mpml"/>
+        <submodel name="mpmlRelatedItems"/>
+        <submodel name="changesTab"/>
+        <submodel name="mpmlHistoryForStandardsAndResources"/>
+        <submodel name="mpmlWhereUsed"/>
+    </model>      
+    
+    <model name="ProcessMaterialTabSet" >
+        <submodel name="mpmlInfoDetails"/>
+        <action name="resourceStructureGWT" type="mpml"/>
+        <submodel name="mpmlRelatedItemsForProcessMaterial"/>
+        <submodel name="changesTab"/>
+        <submodel name="mpmlHistoryForStandardsAndResources"/>
+        <submodel name="mpmlWhereUsedResources"/>
+        <action   name="sysnavTab" type="sysnav"/>
+    </model> 
+    
+    <model name="ResourceGroupTabSet" >
+        <submodel name="mpmlInfoDetails"/>
+        <action name="resourceStructureGWT" type="mpml"/>
+        <submodel name="mpmlRelatedItems"/>
+        <submodel name="changesTab"/>
+        <submodel name="mpmlHistoryForStandardsAndResources"/>
+        <submodel name="mpmlWhereUsed"/>
+    </model>
+    
+    <model name="SkillTabSet" >
+        <submodel name="mpmlInfoDetails"/>
+        <action name="resourceStructureGWT" type="mpml"/>
+        <submodel name="mpmlRelatedItems"/>
+        <submodel name="changesTab"/>
+        <submodel name="mpmlHistoryForStandardsAndResources"/>
+        <submodel name="mpmlWhereUsedResources"/>
+        <action   name="sysnavTab" type="sysnav"/>
+    </model>     
+    
+    <model name="ToolingTabSet" >
+        <submodel name="mpmlInfoDetails"/>
+        <action name="resourceStructureGWT" type="mpml"/>
+        <submodel name="mpmlRelatedItems"/>
+        <submodel name="changesTab"/>
+        <submodel name="mpmlHistoryForStandardsAndResources"/>
+        <submodel name="mpmlWhereUsedResources"/>
+        <action   name="sysnavTab" type="sysnav"/>
+    </model>
+    
+    <model name="WorkCenterTabSet" >
+        <submodel name="mpmlInfoDetails"/>
+        <action name="resourceStructureGWT" type="mpml"/>
+        <submodel name="mpmlRelatedItems"/>
+        <submodel name="changesTab"/>
+        <submodel name="mpmlHistoryForStandardsAndResources"/>
+        <submodel name="mpmlWhereUsedResources"/>
+        <action   name="sysnavTab" type="sysnav"/>
+    </model>
+
+    <model name="infoDetails" resourceBundle="com.ptc.core.ui.navigationRB">
+        <action name="visualizationAndAttributes"  type="object"/>
+        <action name="attributes"                  type="object"/>
+    </model>
+
+    <model name="mpmlInfoDetails" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="visualizationAndAttributes"  type="object"/>
+        <action name="attributes"                  type="object"/>
+    </model>
+
+    <model name="infoDetailsForStandards" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="primaryAttributes"  type="object"/>
+        <action name="attributes"                  type="object"/>
+    </model>    
+
+   <model name="mpmlMpmprocessplanRelatedItems" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="actionRelatedPartsMpmprocessplan" type="mpml"/>
+        <action name="actionRelatedPlantsMpmprocessplan" type="mpml"/>          
+        <action name="actionRelatedDocumentsMpmdocumentmanageable" type="mpml"/>
+        <action name="actionReferencedDocumentsMpmdocumentmanageable" type="mpml"/>
+        <action name="distributionList" type="tgt"/>
+   </model>   
+   
+    <model name="mpmlHistory" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+       <action name="timelineHistory" type="history"/>       
+       <action name="saveAsHistory" type="history"/>
+    </model>
+    
+    <model name="mpmlHistoryForStandardsAndResources" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+       <action name="timelineHistory" type="history"/>       
+    </model>       
+    
+    <model name="mpmlMpmoperationRelatedItems" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+         <action name="actionAllocatedPartsMpmoperation" type="mpml"/>
+         <action name="actionAllocatedResourcesMpmoperation" type="mpml"/>
+         <action name="actionRelatedDocumentsMpmdocumentmanageable" type="mpml"/>
+         <action name="actionReferencedDocumentsMpmdocumentmanageable" type="mpml"/>         
+         <action name="distributionList" type="tgt"/>
+    </model>  
+    
+    <model name="mpmlMpmsequenceRelatedItems" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+         <action name="actionRelatedDocumentsMpmdocumentmanageable" type="mpml"/>
+         <action name="actionReferencedDocumentsMpmdocumentmanageable" type="mpml"/>
+         <action name="distributionList" type="tgt"/>
+    </model>      
+    
+    <model name="mpmlWhereUsed" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="mpmlResourceWhereUsed" type="mpml"/>
+    </model>
+    
+    <model name="mpmlWhereUsedOperation" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="actionWhereUsedMpmoperation" type="mpml"/>
+    </model>
+    
+    <model name="mpmlWhereUsedSequence" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="actionWhereUsedMpmsequence" type="mpml"/>
+    </model>    
+    
+    <model name="mpmlWhereUsedResources" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="processPlansUse" type="mpml"/>
+        <action name="mpmlResourceWhereUsed" type="mpml"/>
+    </model>  
+    
+    <model name="mpmlWhereUsedCapability" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="actionRelatedOperationsMpmmfgprocess" type="mpml"/>
+        <action name="actionWhereUsedMpmmfgstandardgrouped" type="mpml"/>
+    </model>      
+    
+    <model name="mpmlRelatedItems" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="relatedPartsDocuments" type="part"/>
+        <action name="relatedPartsReferences" type="part"/> 
+        <action name="relatedPartsCADDocuments" type="part"/>
+        <action name="distributionList" type="tgt"/>
+    </model> 
+    
+    <model name="mpmlRelatedItemsForProcessMaterial" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="relatedPartsDocuments" type="part"/>
+        <action name="relatedPartsReferences" type="part"/>
+        <action name="distributionList" type="tgt"/>
+    </model>
+    
+    <model name="mpmlRelatedItemsStandards" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="actionRelatedDocumentsMpmdocumentmanageable" type="mpml"/>
+        <action name="actionReferencedDocumentsMpmdocumentmanageable" type="mpml"/>
+    </model>       
+    
+   <model name="mpmlCollaboration" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+    <action name="discuss" type="forum"/>
+    <action name="objectSubscriptions" type="subscription"/>
+   </model>
+   
+    <model name="structureMpmresource" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="actionStructureMpmresource" type="mpml"/>
+    </model>
+    
+    <model name="structureMpmmfgstdgroup" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="actionStructureMpmmfgstdgroup" type="mpml"/>
+    </model>    
+    
+    <model name="structureMpmprocessplan" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="processPlanStructureGWT" type="mpml"/>
+    </model>
+    
+    <model name="structureMpmoperation" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="processPlanStructureGWT" type="mpml"/>
+    </model>
+    
+    <model name="structureMpmsequence" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="processPlanStructureGWT" type="mpml"/>
+    </model>      
+    
+    <model name="mpmlReportButtons" >
+        <description>MPMLink Report's input page wizard buttons, submit brings up submit now/later prompt</description>
+        <action name="reportOKButton" type="mpmlReports"/>
+        <action name="cancelButton" type="object"/>
+    </model>
+    <model name="whereUsedTableMPMOperation">
+        <action name="explode" type="folder" shortcut="true"/>
+        <action name="implode" type="folder" shortcut="true"/>
+        <action name="whereused_copy" type="object" shortcut="true"/>
+    </model>
+    <model name="whereUsedTableMPMSequence">
+        <action name="explode" type="folder" shortcut="true"/>
+        <action name="implode" type="folder" shortcut="true"/>
+        <action name="whereused_copy" type="object" shortcut="true"/>
+    </model>
+
+    <model name="relatedPlantsToolBarActions" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="removeRelatedPlantsFromPP" type="mpml" shortcut="true"/>
+    </model>
+
+    <model name="partAllocationsToolBarActions" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="removePartAllocationsFromPP" type="mpml" shortcut="true"/>
+    </model>
+
+    <!-- Standard Control Characteristic information page tabs -->
+    <model name="StandardControlCharacteristicInfoPageTabSet" >
+        <submodel name="standardControlCharacteristicDetailTab"/>
+        <submodel name="standardControlCharacteristicRelatedItemsTab"/>
+        <submodel name="standardControlCharacteristicHistoryTab"/>
+        <action   name="sysnavTab" type="sysnav"/>
+    </model>
+
+    <!-- Standard Control Characteristic information page 3rd level Customize menu -->
+    <model name="standardControlCharacteristicInfo3rdLevelNav">
+        <submodel name="info3rdLevelNavSpecificMpmStandardCC"/>
+        <submodel name="standardControlCharacteristicRelatedItemsTab"/>
+        <submodel name="standardControlCharacteristicHistoryTab"/>
+    </model>
+    
+    <model name="info3rdLevelNavSpecificMpmStandardCC" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="primaryAttributes"      type="object"/>
+        <action name="visualizationAndAttributes" type="object"/>
+        <action name="attributes"                  type="object"/>
+        <action name="repsAndMarkups" type="wvs"/>
+    </model>
+
+    <!-- Standard Control Characteristic information page Details tab -->
+    <model name="standardControlCharacteristicDetailTab" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <action name="primaryAttributes"      type="object"/>
+            <action name="visualizationAndAttributes" type="object"/>
+            <action name="attributes"                  type="object"/>
+    </model>
+
+    <!-- Standard Control Characteristic information page 3rd level History menu -->
+    <model name="standardControlCharacteristicHistoryTab" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+       <action name="versionHistory" type="history"/>
+       <action name="timelineHistory" type="history"/>
+    </model>
+
+    <!-- Standard Control Characteristic information page Related tab -->
+    <model name="standardControlCharacteristicRelatedItemsTab" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="relatedStandardCCReferenceDocument"  type="mpml"/>
+        <action name="relatedStandardCCStandardProcedure"  type="mpml"/>
+        <action name="relatedStandardCCProcessingResource" type="mpml"/>
+        <action name="relatedStandardCCRelatedPart"        type="mpml"/>
+    </model>
+
+    <!-- Standard Control Characteristic information action menu -->
+    <model name="standardControlCharacteristicInfoToolbarActionList" menufor="com.ptc.windchill.mpml.pmi.MPMStandardCC">
+        <action name="checkin"                          type="wip"/>               <!-- Check In -->
+        <action name="checkout"                         type="wip"/>               <!-- Check Out -->
+        <action name="checkoutAndEdit"                  type="mpml"/>             <!-- Check Out and Edit-->
+        <action name="undocheckout"                     type="object"/>            <!-- Undo Checkout -->
+        <action name="editCommonSCCAttributes"          type="mpml"/>              <!-- Edit Common Attributes -->
+        <action name="REVISEITEMS"                      type="pdmObject"/>         <!-- New Revision -->
+        <action name="MULTI_OBJ_DELETE"                 type="pdmObject"/>         <!-- Delete (Non-Information page) -->
+        <action name="MULTI_OBJ_DELETE_DETAILS"         type="pdmObject"/>         <!-- Delete (Information page) -->
+        <action name="separator"                        type="separator"/>
+        <action name="create"                           type="promotionRequest"/>  <!-- Promote -->
+        <action name="SETSTATE"                         type="pdmObject"/>         <!-- Set State -->
+    </model>
+
+   <!-- Standard Control Characteristic information page Related tab's "Reference Documents" table -->
+   <model name="mpml.relatedDocumentReferencesToolBar">
+      <action name="mpmscc_related_add_references"               type="mpml" shortcut="true"/>        <!-- Add References Document -->
+      <action name="mpmscc_related_doc_create_wizard_references" type="document" shortcut="true"/>    <!-- Create and associate a references document -->
+      <action name="mpmscc_related_delete_references"            type="mpml" shortcut="true"/>        <!-- Remove References Document -->
+      <action name="mpmscc_related_copy_references"              type="mpml" shortcut="true"/>        <!-- Copy to Clipboard -->
+      <action name="mpmscc_related_paste_references"             type="mpml" shortcut="true"/>        <!-- Paste References Document from Clipboard -->
+   </model>
+
+   <!-- Toolbar for SCC information page Related tab's "Standard Procedure" table -->
+   <model name="relatedStandardProcedureToolBar">
+      <action name="mpmscc_related_add_standard_procedure"               type="mpml" shortcut="true"/>        <!-- Add Standard Procedure -->
+      <!--action name="mpmscc_related_create_standard_procedure"            type="mpml" shortcut="true"/-->        <!-- Create and associate a standard procedure -->
+      <action name="mpmscc_related_delete_standard_procedure"            type="mpml" shortcut="true"/>        <!-- Remove Standard Procedure -->
+      <action name="mpmscc_related_copy_standard_procedure"              type="mpml" shortcut="true"/>        <!-- Copy to Clipboard -->
+      <action name="mpmscc_related_paste_standard_procedure"             type="mpml" shortcut="true"/>        <!-- Paste Standard Procedure from Clipboard -->
+   </model>
+
+   <!-- Toolbar for SCC information page Related tab's "Processing Resource" table -->
+   <model name="relatedProcessingResourceToolBar">
+      <action name="mpmscc_related_add_processing_resource"              type="mpml" shortcut="true"/>        <!-- Add Processing Resource -->
+      <!--action name="mpmscc_related_create_processing_resource"           type="mpml" shortcut="true"/-->        <!-- Create and associate a processing resource -->
+      <action name="mpmscc_related_delete_processing_resource"           type="mpml" shortcut="true"/>        <!-- Remove Processing Resource -->
+      <action name="mpmscc_related_copy_processing_resource"             type="mpml" shortcut="true"/>        <!-- Copy to Clipboard -->
+      <action name="mpmscc_related_paste_processing_resource"            type="mpml" shortcut="true"/>        <!-- Paste Processing Resource from Clipboard -->
+   </model>
+</actionmodels>

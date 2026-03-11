@@ -1,0 +1,824 @@
+<?xml version="1.0"?>
+<listofactions>
+    <objecttype name="apsb" resourceBundle="com.ptc.windchill.enterprise.associativity.part.apsb.apsbActionsRB">
+        
+        <action name="findCheckoutItemsASPB">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.APSBFindCheckedOutItemsAction"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsRootModelValidFilter"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+                <type value="wt.part.WTPartUsageLink" />
+                <type value="wt.part.PartUsesOccurrence" />
+                <type value="wt.part.RTPartPathOccurrence" />
+            </supportedTypes>
+        </action>
+        <action name="clipboardGroupAPSB">
+            <command class="com.ptc.cat.ui.client.action.NoAction"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataFilter" />
+        </action>
+        <action name="viewingGroupAPSB">
+            <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+        <action name="newAddGroupAPSB">
+            <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+        <action name="toolsGroupAPSB">
+            <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+        <action name="tableViewsGroupAPSB">
+            <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+        <action name="expandSubmenuAPSB">
+            <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+        <action name="endExpandSubmenuAPSB">
+            <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+        <action name="defaultAssignExpressionGroupAPSB">
+            <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+        <action name="insertPartStructureAPSB" uicomponent="CREATE_PART" ajax="row">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.InsertPartAction" method="execute" url="/ptc1/part/createPartWizard?revisionMode=create&amp;invokedfrom=folder&amp;showNewCADDocStep=true&amp;hideAssociatePart=true" windowType="popup"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OriginalCopyFilter"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsTreeModelCheckedOutAnotherUser" />
+            <includeFilter name="disableForAdminLocked"/>
+            <includeFilter name="disableForNewObjectInWorkspace"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+                <type value="wt.part.WTPartUsageLink"/>
+                <type value="wt.part.PartUsesOccurrence"/>
+                <type value="wt.part.RTPartPathOccurrence"/>
+            </supportedTypes>
+        </action>
+        
+        <action name="insertMultiPartStructureAPSB" uicomponent="CREATE_PART" ajax="row">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.InsertMultiplePartAction" method="execute" url="/ptc1/part/createPartWizard?wizardType=multiPart&amp;invokedfrom=folder" windowType="popup"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OriginalCopyFilter"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsTreeModelCheckedOutAnotherUser" />
+            <includeFilter name="disableForNewObjectInWorkspace"/>
+            <includeFilter name="disableForAdminLocked"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+                <type value="wt.part.WTPartUsageLink" />
+                <type value="wt.part.PartUsesOccurrence" />
+                <type value="wt.part.RTPartPathOccurrence" />
+            </supportedTypes>
+        </action>
+        
+        <action name="insertExistingPartStructureAPSB">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.APSBAddAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OriginalCopyFilter"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsTreeModelCheckedOutAnotherUser" />
+            <includeFilter name="disableForAdminLocked"/>
+            <includeFilter name="disableForNewObjectInWorkspace"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+                <type value="wt.part.WTPartUsageLink"/>
+                <type value="wt.part.PartUsesOccurrence"/>
+                <type value="wt.part.RTPartPathOccurrence"/>
+            </supportedTypes>
+        </action>
+        
+        <action name="removePartsAPSB">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.APSBRemoveAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotRootStructureModelFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotSummaryRowFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentCheckinOrCheckoutFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+                <type value="wt.part.WTPartMaster"/>
+                <type value="wt.part.WTPartUsageLink"/>
+                <type value="wt.part.PartUsesOccurrence"/>
+                <type value="wt.part.WTPartDescribeLink"/>
+                <type value="wt.part.WTPartReferenceLink"/>
+                <type value="wt.part.RTPartPathOccurrence"/>
+            </supportedTypes>
+        </action>
+        
+        <action name="updateEquivalenceLinkAPSB">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.APSBUpdateEquivalenceLinkAction" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.UpdateEquivalenceLinkActionFilter" />
+        </action>
+        
+        <action name="upstreamPartCopyAPSB">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.APSBUpstreamPartCopyAction"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.ASBValidOrEqualClientFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+                <type value="wt.part.WTPartMaster"/>
+                <type value="wt.part.WTPartUsageLink" />
+                <type value="wt.part.PartUsesOccurrence" />
+                <type value="wt.part.RTPartPathOccurrence" />
+            </supportedTypes>
+        </action>
+        
+        <action name="newDownstreamBranchUpstreamVersionAPSB">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.transform.APSBNewDownstreamBranchUpstreamVersionAction"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.transform.AbstractAssociativeDirectTransformationActionFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.ASBValidOrEqualClientFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.HasViewFilter"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+                <type value="wt.part.WTPartUsageLink" />
+                <type value="wt.part.PartUsesOccurrence" />
+                <type value="wt.part.RTPartPathOccurrence" />
+            </supportedTypes>
+        </action>
+        
+        <action name="newDownstreamViewUpstreamVersionAPSB">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.transform.APSBNewDownstreamBranchUpstreamVersionAction"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.transform.AbstractAssociativeDirectTransformationActionFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.ASBValidOrEqualClientFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.HasViewFilter"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+                <type value="wt.part.WTPartUsageLink" />
+                <type value="wt.part.PartUsesOccurrence" />
+                <type value="wt.part.RTPartPathOccurrence" />
+            </supportedTypes>
+        </action>
+        
+        <action name="newDownstreamPartUpstreamVersionAPSB">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.transform.APSBNewDownstreamPartUpstreamVersionAction"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.transform.AbstractAssociativeDirectTransformationActionFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.ASBValidOrEqualClientFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.part.apsb.client.filter.DisableForMPMResource"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.part.apsb.client.filter.APSBHierarchySelectionFilter"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+                <type value="wt.part.WTPartUsageLink" />
+                <type value="wt.part.PartUsesOccurrence" />
+                <type value="wt.part.RTPartPathOccurrence" />
+            </supportedTypes>
+        </action>
+        
+        <action name="newDownstreamBranchDownstreamVersionAPSB">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.transform.APSBNewDownstreamBranchDownstreamVersionAction"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.transform.AbstractAssociativeDirectTransformationActionFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.ASBValidOrEqualClientFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.HasViewFilter"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+                <type value="wt.part.WTPartUsageLink" />
+                <type value="wt.part.PartUsesOccurrence" />
+                <type value="wt.part.RTPartPathOccurrence" />
+            </supportedTypes>
+        </action>
+        
+        <action name="newDownstreamViewDownstreamVersionAPSB">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.transform.APSBNewDownstreamBranchDownstreamVersionAction"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.transform.AbstractAssociativeDirectTransformationActionFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.ASBValidOrEqualClientFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotRootStructureModelFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.HasViewFilter"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+                <type value="wt.part.WTPartUsageLink" />
+                <type value="wt.part.PartUsesOccurrence" />
+                <type value="wt.part.RTPartPathOccurrence" />
+            </supportedTypes>
+        </action>
+        
+        <action name="newDownstreamPartDownstreamVersionAPSB">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.transform.APSBNewDownstreamPartDownstreamVersionAction"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.transform.AbstractAssociativeDirectTransformationActionFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.ASBValidOrEqualClientFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.HasViewFilter"/>   
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.part.apsb.client.filter.APSBHierarchySelectionFilter"/>         
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+                <type value="wt.part.WTPartUsageLink" />
+                <type value="wt.part.PartUsesOccurrence" />
+                <type value="wt.part.RTPartPathOccurrence" />
+            </supportedTypes>
+        </action>
+        
+        <action name="pasteAsIsAPSB">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.transform.APSBPasteAsIsAction"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.transform.AssociativeTransformationPasteActionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.ASBValidOrEqualClientFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.part.apsb.client.filter.APSBDownstreamPasteFilter"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+                <type value="wt.part.WTPartUsageLink" />
+                <type value="wt.part.PartUsesOccurrence" />
+                <type value="wt.part.RTPartPathOccurrence" />
+            </supportedTypes>
+        </action>
+        
+        <action name="pasteAsNewBranchAPSB">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.transform.APSBPasteAsNewBranchAction"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.transform.AssociativeTransformationPasteActionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.ASBValidOrEqualClientFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.part.apsb.client.filter.APSBDownstreamPasteAsNewBranchFilter"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+                <type value="wt.part.WTPartUsageLink" />
+                <type value="wt.part.PartUsesOccurrence" />
+                <type value="wt.part.RTPartPathOccurrence" />
+            </supportedTypes>        
+        </action>
+        
+        <action name="pasteAsNewViewAPSB">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.transform.APSBPasteAsNewBranchAction"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.transform.AssociativeTransformationPasteActionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.ASBValidOrEqualClientFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+                <type value="wt.part.WTPartUsageLink" />
+                <type value="wt.part.PartUsesOccurrence" />
+                <type value="wt.part.RTPartPathOccurrence" />
+            </supportedTypes>
+        </action>
+        
+        <action name="pasteAsNewPartAPSB">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.transform.APSBPasteAsNewPartAction"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.transform.AssociativeTransformationPasteActionFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.ASBValidOrEqualClientFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.part.apsb.client.filter.APSBDownstreamPasteAsNewPartFilter"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+                <type value="wt.part.WTPartUsageLink" />
+                <type value="wt.part.PartUsesOccurrence" />
+                <type value="wt.part.RTPartPathOccurrence" />
+                <type value="com.ptc.windchill.mpml.resource.MPMResource" />
+            </supportedTypes>
+        </action>
+        
+        <action name="newAlternateBOMDownstreamVersionAPSB">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.transform.APSBNewAlternateBOMDownstreamVersionAction"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.transform.AbstractAssociativeDirectTransformationActionFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.ASBValidOrEqualClientFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+                <type value="wt.part.WTPartUsageLink" />
+                <type value="wt.part.PartUsesOccurrence" />
+                <type value="wt.part.RTPartPathOccurrence" />
+            </supportedTypes>
+        </action>
+        
+        <action name="newAlternateBOMDownstreamTableVersionAPSB">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.transform.APSBNewAlternateBOMDownstreamTableVersionAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.transform.AbstractAssociativeDirectTransformationActionFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.ASBValidOrEqualClientFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+                <type value="wt.part.WTPartUsageLink" />
+                <type value="wt.part.PartUsesOccurrence" />
+                <type value="wt.part.RTPartPathOccurrence" />
+            </supportedTypes>
+        </action>
+        
+        <action name="newBranchDownstreamVersionAPSB">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.transform.APSBNewBranchDownstreamVersionAction"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.transform.AbstractAssociativeDirectTransformationActionFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.ASBValidOrEqualClientFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+                <type value="wt.part.WTPartUsageLink" />
+                <type value="wt.part.PartUsesOccurrence" />
+                <type value="wt.part.RTPartPathOccurrence" />
+            </supportedTypes>
+        </action>
+        
+        <action name="replacePartDownstreamVersionAPSB">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.transform.APSBReplacePartDownstreamVersionAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotRootStructureModelFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.MultiIsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.part.apsb.client.filter.DisableForMPMResource"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+                <type value="wt.part.WTPartUsageLink" />
+                <type value="wt.part.WTPartMaster"/>
+                <type value="wt.part.PartUsesOccurrence" />
+                <type value="wt.part.RTPartPathOccurrence" />
+            </supportedTypes>
+        </action>
+         
+        <action name="duplicatePartAPSB">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.transform.APSBDuplicatePartAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.part.apsb.client.filter.APSBDuplicateFilter"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+                <type value="wt.part.WTPartUsageLink" />
+            </supportedTypes>
+            <nonSupportedTypes>
+                <type value="com.ptc.windchill.mpml.resource.MPMResource" applyToDescendants="true" />
+            </nonSupportedTypes>
+        </action>
+        
+	   <action name="extendDownstreamBranchDownstreamVersionAPSB">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.transform.APSBExtendDownstreamBranchDownstreamVersionAction"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.transform.AbstractAssociativeDirectTransformationActionFilter"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsTreeModelCheckedOutAnotherUser" />
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+                <type value="wt.part.WTPartUsageLink" />
+                <type value="wt.part.PartUsesOccurrence" />
+                <type value="wt.part.RTPartPathOccurrence" />
+            </supportedTypes>
+            <nonSupportedTypes>
+                <type value="com.ptc.windchill.mpml.resource.MPMResource" applyToDescendants="true" />
+            </nonSupportedTypes>
+        </action>
+        
+        <action name="selectEquivalentPartsAPSB">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.SelectEquivalentPartsAction"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.SelectEquivalentItemsActionFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.ASBValidOrEqualClientFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+            </supportedTypes>
+        </action>
+        
+        <action name="insertExistingAPSBDescDocGWT">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.APSBAddExistingDescDocAction" />
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsTreeModelCheckedOutAnotherUser" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OriginalCopyFilter" />
+            <includeFilter name="disableForNewObjectInWorkspace" />
+            <includeFilter name="disableForAdminLocked" />
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+                <type value="wt.part.WTPartUsageLink" />
+                <type value="wt.part.PartUsesOccurrence" />
+                <type value="wt.part.RTPartPathOccurrence" />
+                <type value="com.ptc.windchill.enterprise.data.EnterpriseData" />
+                <type value="com.ptc.windchill.enterprise.data.EnterpriseDataLink" />
+            </supportedTypes>
+        </action>
+        
+        <action name="removeAPSBDescDocGWT">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.APSBDocRemoveAction" />
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsTreeModelCheckedOutAnotherUser" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotRootStructureModelFilter" />
+            <includeFilter name="disableForTableContextAdminLocked" />
+        </action>
+
+        <action name="insertExistingAPSBRefDocGWT">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.APSBAddExistingRefDocAction" />
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsTreeModelCheckedOutAnotherUser" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OriginalCopyFilter" />
+            <includeFilter name="disableForNewObjectInWorkspace" />
+            <includeFilter name="disableForAdminLocked" />
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+                <type value="wt.part.WTPartUsageLink" />
+                <type value="wt.part.PartUsesOccurrence" />
+                <type value="wt.part.RTPartPathOccurrence" />
+                <type value="com.ptc.windchill.enterprise.data.EnterpriseData" />
+                <type value="com.ptc.windchill.enterprise.data.EnterpriseDataLink" />
+            </supportedTypes>
+        </action>
+        
+        <action name="removeAPSBRefDocGWT">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.APSBDocRemoveAction" />
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsTreeModelCheckedOutAnotherUser" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotRootStructureModelFilter" />
+            <includeFilter name="disableForTableContextAdminLocked" />
+        </action>
+        
+        <action name="openPartAsUpstreamBOMActionAPSB">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.OpenPartAsUpstreamBOMAction" />
+        </action>
+        
+        <action name="openPartAsDownstreamBOMActionAPSB">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.OpenPartAsDownstreamBOMAction" />
+        </action>
+            
+        <action name="insertExistingAPSBEPMDocGWT">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.APSBAddExistingEPMDocAction"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsTreeModelCheckedOutAnotherUser" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter" />
+            <includeFilter name="disableForNewObjectInWorkspace" />
+            <includeFilter name="disableForAdminLocked" />
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+                <type value="wt.part.WTPartUsageLink" />
+                <type value="wt.part.PartUsesOccurrence" />
+                <type value="wt.part.RTPartPathOccurrence" />
+                <type value="com.ptc.windchill.enterprise.data.EnterpriseData" />
+                <type value="com.ptc.windchill.enterprise.data.EnterpriseDataLink" />
+            </supportedTypes>
+        </action>
+        
+        <action name="removeAPSBEPMDocGWT">
+           <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.APSBDocRemoveAction"/>
+           <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsTreeModelCheckedOutAnotherUser" />
+           <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+           <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+           <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotRootStructureModelFilter"/>
+           <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.ASBRemoveActionFilter"/>
+           <includeFilter name="disableForTableContextAdminLocked"/>
+        </action>
+        
+        <action name="insertExistingAPSBPartUsesGWT">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.APSBAdvancedAddAction"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsTreeModelCheckedOutAnotherUser" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentOriginalCopyFilter"/>
+            <includeFilter name="disableForNewObjectInWorkspace"/>
+            <includeFilter name="disableForTableContextAdminLocked"/>
+            <includeFilter name="disableForPartToCadBuildTableContextAdminLocked"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+                <type value="wt.part.WTPartMaster"/>
+                <type value="wt.part.WTPartUsageLink"/>
+                <type value="wt.part.PartUsesOccurrence"/>
+                <type value="wt.part.RTPartPathOccurrence"/>
+            </supportedTypes>     
+          </action>
+          
+          <action name="removeAPSBChildPartGWT">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.APSBRemoveAction"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsTreeModelCheckedOutAnotherUser" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotRootStructureModelFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentOriginalCopyFilter"/>
+            <includeFilter name="disableForNewObjectInWorkspace"/>
+            <includeFilter name="disableForTableContextAdminLocked"/>
+            <includeFilter name="disableForPartToCadBuildTableContextAdminLocked"/>
+            <includeFilter name="disableForNewParentObjectInWorkspace"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+                <type value="wt.part.WTPartMaster"/>
+                <type value="wt.part.WTPartUsageLink"/>
+                <type value="wt.part.PartUsesOccurrence"/>
+                <type value="wt.doc.WTDocument"/>
+                <type value="wt.doc.WTDocumentMaster"/>
+                <type value="wt.part.WTPartDescribeLink"/>
+                <type value="wt.part.WTPartReferenceLink"/>
+                <type value="wt.part.RTPartPathOccurrence"/>
+             </supportedTypes> 
+           </action> 
+        
+           <action name="pasteFromClipboardToTableAPSBGWT" uicomponent="PASTE">
+              <command class="com.ptc.cat.gxt.client.action.PasteAction"/>
+              <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsTreeModelCheckedOutAnotherUser" />
+              <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentOriginalCopyFilter"/>
+              <includeFilter name="disableForTableContextAdminLocked"/>
+              <includeFilter name="disableForPartToCadBuildTableContextAdminLocked"/>
+              <includeFilter name="disableForNewObjectInWorkspace"/>
+              <supportedTypes>
+                <type value="wt.part.WTPart"/>
+                <type value="wt.part.WTPartMaster"/>
+                <type value="wt.part.WTPartUsageLink"/>
+                <type value="wt.part.PartUsesOccurrence"/>
+                <type value="wt.part.RTPartPathOccurrence"/>
+              </supportedTypes>    
+            </action>
+        
+          <action name="assignOptionalityAPSBGWT">
+			  <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.APSBEditOptionRulesAction" method="execute" url="/ptc1/optionality/assignUsesOptionality" windowType="popup"/>
+              <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+              <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+              <includeFilter name="com.ptc.cat.ui.client.internal.action.HasGenericParentFilter"/>
+              <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+              <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotProjectContainer"/>
+              <includeFilter name="createEditExpressionFilter"/>
+          </action>
+            
+            <action name="assignOccurrencesOptionalityAPSBGWT">
+                <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.APSBOccurrencesOptionRulesAction" method="execute" url="/ptc1/optionality/assignOccurrencesOptionality" windowType="popup"/>
+                <includeFilter name="com.ptc.windchill.enterprise.associativity.part.apsb.client.filter.APSBOccurrenceAssignExpressionVisibilityFilter" />                       
+                <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+				<includeFilter name="createEditIndependentExpressionFilter"/>
+                <includeFilter name="createEditExpressionFilter"/>
+                <includeFilter name="com.ptc.cat.ui.client.internal.action.HasGenericParentFilter"/>
+            </action>
+
+
+        	<action name="assignItemOptionalityAPSBGWT">       
+    			<command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.APSBEditItemOptionRulesAction" method="execute" url="/ptc1/optionality/assignItemOptionalityGWT" windowType="popup"/>
+    			<includeFilter name="com.ptc.windchill.enterprise.associativity.part.apsb.client.filter.APSBBomAssignExpressionVisibilityFilter" />
+    			<includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+    			<includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotProjectContainer"/>
+    			<includeFilter name="AssignItemOptionalityFilter"/>
+            	<includeFilter name="createEditIndependentExpressionFilter"/>            
+            	<nonSupportedTypes>
+                    <type value="com.ptc.windchill.enterprise.data.EnterpriseData"/>
+                    <type value="wt.epm.EPMDocument"/>
+            	</nonSupportedTypes>    		
+        	</action>
+                          
+        <action name="editPartAPSB" ajax="component">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.APSBEditAction" method="execute" url="/ptc1/part/edit" windowType="popup"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="disableForNewObjectInWorkspace"/>
+            <includeFilter name="disableForAdminLocked"/>
+            <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+                <type value="wt.part.WTPartUsageLink"/>
+                <type value="wt.part.PartUsesOccurrence"/>
+                <type value="wt.part.RTPartPathOccurrence"/>
+            </supportedTypes>    
+        </action>   
+        
+        <action name="apsbDisplayOccurrencesGWT">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.APSBDisplayOccurrencesAction"/>
+        </action>
+        
+        <action name="apsbNewDownstreamBranchVariant">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.transform.APSBNewDownstreamBranchVariantAction"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.UpstreamOneSelectionFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.DownstreamOneSelectionFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.UpstreamIsMasterFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.DownstreamIsMasterFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.MiddleASBInvalidClientFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.MiddleHasViewFilter"/>
+        </action>
+        
+        <action name="apsbNewDownstreamPartVariant">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.transform.APSBNewDownstreamPartVariantAction"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.UpstreamOneSelectionFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.DownstreamOneSelectionFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.UpstreamIsMasterFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.DownstreamIsMasterFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.MiddleASBInvalidClientFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.DisableMiddleASBActionForMPMResource"/>
+        </action>
+        
+        <action name="newViewSpecificEnterpriseDataAPSB">
+            <command class="com.ptc.windchill.enterprise.associativity.asb.client.action.NewViewSpecificEnterpriseDataAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="enterpriseDataEnabledFilter"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+            </supportedTypes>
+        </action>
+        
+        <action name="openEquivalentPartOnUpstreamSide">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.OpenPartInOtherSideTree"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.ASBValidOrEqualClientFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+        </action>
+        
+        <action name="openEquivalentPartOnDownstreamSide">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.OpenPartInOtherSideTree"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.ASBValidOrEqualClientFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+        </action>
+        
+        <action name="openUpstreamPartInSameSideTree">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.OpenPartInSameSideTreeAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+            </supportedTypes>
+        </action>
+        
+        <action name="openDownstreamPartInSameSideTree">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.OpenPartInSameSideTreeAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+            </supportedTypes>
+        </action>
+        
+        <action name="bomReconciliationAPSB">
+             <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.reconciliation.APSBBOMReconciliationAction"/>
+        </action>
+        
+        <action name="assignExpressionToOccurrenceGWT">
+             <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.APSBAssignExpressionVizAction"/>
+             <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.ASBMultiSelectionVizFilter"/>
+        </action>
+        
+        <action name="upstreamPartCutAPSB">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.APSBUpstreamPartCutAction"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.ASBValidOrEqualClientFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotRootStructureModelFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentCheckinOrCheckoutFilter"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+                <type value="wt.part.WTPartMaster"/>
+                <type value="wt.part.WTPartUsageLink" />
+                <type value="wt.part.PartUsesOccurrence" />
+                <type value="wt.part.RTPartPathOccurrence" />
+            </supportedTypes>
+        </action>
+        
+        <action name="upstreamPasteAPSB">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.APSBUpstreamPasteAction"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.ASBValidOrEqualClientFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.part.apsb.client.filter.APSBUpstreamPasteFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.CheckinOrCheckoutFilter"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+                <type value="wt.part.WTPartUsageLink" />
+                <type value="wt.part.PartUsesOccurrence" />
+                <type value="wt.part.RTPartPathOccurrence" />
+            </supportedTypes>
+        </action>
+        
+         <action name="downstreamPartCutAPSB">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.APSBDownstreamPartCutAction"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.ASBValidOrEqualClientFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotRootStructureModelFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentCheckinOrCheckoutFilter"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+                <type value="wt.part.WTPartMaster"/>
+                <type value="wt.part.WTPartUsageLink" />
+                <type value="wt.part.PartUsesOccurrence" />
+                <type value="wt.part.RTPartPathOccurrence" />
+            </supportedTypes>
+        </action>
+        
+         <action name="downstreamPartCopyAPSB">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.APSBDownstreamPartCopyAction"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.ASBValidOrEqualClientFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+                <type value="wt.part.WTPartMaster"/>
+                <type value="wt.part.WTPartUsageLink" />
+                <type value="wt.part.PartUsesOccurrence" />
+                <type value="wt.part.RTPartPathOccurrence" />
+            </supportedTypes>
+        </action>
+        
+        <action name="setAPSBPathFilterGWT">
+           <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.APSBSetPathFilterAction"/>
+           <includeFilter name="com.ptc.windchill.enterprise.associativity.part.apsb.client.filter.APSBActionFilter" />
+       </action>
+
+
+  <action name="insertExistingAPSBPartTreeGWT">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.APSBAdvancedAddAction"/>
+             <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OriginalCopyFilter"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsTreeModelCheckedOutAnotherUser" />
+            <includeFilter name="disableForAdminLocked"/>
+            <includeFilter name="disableForNewObjectInWorkspace"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+                <type value="wt.part.WTPartUsageLink"/>
+                <type value="wt.part.PartUsesOccurrence"/>
+                <type value="wt.part.RTPartPathOccurrence"/>
+            </supportedTypes>
+          </action>
+          
+        <action name="apsbOpenReconciliationPanelGWT">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.APSBOpenReconciliationPanelAction"/>
+        </action>
+
+        <action name="updateEquivalencyAPSB">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.middle.APSBUpdateEquivalencyMiddleAction"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.UpstreamAndDownstreamOneSelectionNotEqualFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.MiddleASBValidOrEqualClientFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.MiddleIsNotLeafNodeFilter"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+            </supportedTypes>
+        </action>
+        
+            
+        <action name="customURLActionGWT" ajax="component">
+            <command class="com.ptc.cat.ui.client.action.LaunchCustomURLAction" method="execute" url="/ptc1/apsb/customURLAction" windowType="popup"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+                <type value="wt.part.WTPartUsageLink"/>
+                <type value="wt.part.PartUsesOccurrence"/>
+                <type value="wt.part.RTPartPathOccurrence"/>
+            </supportedTypes>
+        </action>
+        
+         <action name="openInProductViewGWT">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.OpenInCreoViewAPSBAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter" />
+            <includeFilter name="isNotInProject" />
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsRepresentableOrViewableFilter" />
+            <nonSupportedTypes>
+                <type value="WCTYPE|wt.epm.EPMDocument|org.rnd.DynamicDocument|org.rnd.Note" />
+            </nonSupportedTypes>
+        </action>      
+
+        <action name="mpmCopyAssignedExpressionGWT">
+            <command class="com.ptc.windchill.option.psb.client.CopyAssignedExpressionAction" />
+			<includeFilter name="com.ptc.windchill.enterprise.associativity.part.apsb.client.filter.APSBBomAssignExpressionVisibilityFilter" />
+            <includeFilter name="independentAssignedExpressionFilter"/>
+        </action>
+		
+        <action name="mpmCopyAssignedOccurrencesExpressionGWT">
+            <command class="com.ptc.windchill.option.psb.client.CopyAssignedExpressionAction" url="?occurrence=true"/>
+			<includeFilter name="com.ptc.windchill.enterprise.associativity.part.apsb.client.filter.APSBOccurrenceAssignExpressionVisibilityFilter" /> 
+            <includeFilter name="independentAssignedExpressionFilter"/>
+        </action>
+        
+         <action name="updateStructureAssociativityAPSB">
+         	<command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.APSBUpdateStructureAssociativityAction"/>
+         	<includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.UpstreamOneSelectionFilter"/>
+         	<includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.DownstreamOneSelectionFilter"/>
+         	<includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.UpstreamIsMasterFilter"/>
+         	<includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.DownstreamIsMasterFilter"/>
+         	<supportedTypes>
+                <type value="wt.part.WTPart"/>
+            </supportedTypes>
+      </action>
+      <action name="assignExpressionToUsageGWT">
+             <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.APSBAssignExpressionOnUsageVizAction"/>
+             <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.ASBMultiSelectionVizFilter"/>
+        </action>
+        
+       <action name="updateQuantityGWT">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.middle.APSBUpdateQuantityMiddleAction"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.UpstreamOneSelectionFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.DownstreamOneSelectionFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.MiddleToolbarIsNotRootStructureModelFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.MiddleToolbarIsUsageModeFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.DownstreamParentCheckedOutToAnotherUserFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.MiddleASBValidOrEqualClientFilter"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+                <type value="wt.part.WTPartMaster"/>
+            </supportedTypes>
+       </action> 
+       <action name="partEditFilterAction">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.PartEditFilterAction" />
+       </action>
+       
+       <action name="updatePosition">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.middle.APSBUpdatePositionMiddleAction"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.UpstreamOneSelectionFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.DownstreamOneSelectionFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.MiddleToolbarIsNotRootStructureModelFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.DownstreamParentCheckedOutToAnotherUserFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.MiddleASBValidOrEqualClientFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.MiddleToolbarIsOccurrenceModeFilter"/>            
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.MiddleToolbarHasOccurrenceFilter"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+                <type value="com.ptc.windchill.mpml.resource.MPMResource" />               
+            </supportedTypes>
+       </action>
+        
+
+       <action name="splitUsageLink">
+            <command class="com.ptc.windchill.enterprise.associativity.part.apsb.client.action.SplitUsageLinkAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotRootStructureModelFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentCheckinOrCheckoutFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.part.apsb.client.filter.SplitUsageLinkActionFilter" />
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+                <type value="wt.part.WTPartMaster"/>
+                <type value="wt.part.WTPartUsageLink"/>
+                <type value="wt.part.PartUsesOccurrence"/>
+                <type value="wt.part.RTPartPathOccurrence"/>
+            </supportedTypes>
+       </action> 
+		
+   </objecttype>
+</listofactions>

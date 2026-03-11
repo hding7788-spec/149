@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+<!-- define the actions on wt.doc.WTDocument -->
+<actionmodels resourceBundle="com.ptc.swlink.adaptersAdminUI.AdaptersAdminRB">
+
+    <model name="adapterDefinitionCreate">
+        <action name="adapterCreate" type="AdaptersAdmin" shortcut="true"/>
+    	<!-- Removing this action as per RIA - 671 <action name="adapterImport" type="AdaptersAdmin" shortcut="true"/> -->
+        <action name="adapterDelete" type="AdaptersAdmin" shortcut="true"/>
+    </model>
+
+    <model name="adapterDeleteAssociationObject">
+        <action name="deleteAssociation" type="AdaptersAdmin" shortcut="true"/>
+    </model>
+
+    <model name="adapterInfoPageTabSet" resourceBundle="com.ptc.core.ui.navigationRB">
+        <submodel name="adapterAttributeDetailsTab"/> 
+        <submodel name="adapterAssociationsTab"/> 
+	</model>
+
+    <model name="adapterAttributeDetailsTab">
+	    <action name="visualizationAndAttributes" type="object"/>
+    </model>
+
+    <model name="adapterAssociationsTab">
+        <action name="adapterAssociationInfoAction" type="AdaptersAdmin"/>
+    </model>
+
+    <model name="infoPageTOC">
+        <action name="visualizationAndAttributes" type="object"/>
+        <action name="adapterAssociationInfoAction" type="AdaptersAdmin"/>
+    </model>
+
+    <model name="adapterSpecificActionMenu">
+        <action name="adapterAssociateContext" type="AdaptersAdmin" shortcut="true"/>
+        <action name="removeAssociation" type="AdaptersAdmin" shortcut="true"/>
+    </model>
+	
+	<model name="configSpecsTableActions" >
+        <description>Configuration Specifications additional actions</description>
+        <action name="addConfigSpec" type ="AdaptersAdmin" shortcut="true"/>         
+        <action name="removeConfigSpecs" type ="AdaptersAdmin" shortcut="true"/>  		
+   </model>
+   
+   <model name="configSpecLabelsTableActions" >
+        <description>Configuration Specification Labels additional actions</description>
+        <action name="removeConfigSpecLabels" type ="AdaptersAdmin" shortcut="true"/>                   
+   </model>
+   
+   <model name="lcMappingActions" >
+        <action name="createLCMapping" type="AdaptersAdmin" shortcut="true"/>
+        <action name="deleteLCMapping" type="AdaptersAdmin" shortcut="true"/>
+   </model>
+   
+</actionmodels>

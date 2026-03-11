@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+<actionmodels>
+
+   <!-- Define the Data Monitor Management page -->
+   <model name="data monitor actions">  
+   </model>
+   
+   	<model name="data monitor row actions" menufor="com.ptc.windchill.enterprise.datamonitor.DataMonitor">
+		<action name="view" type="object"/>
+		<action name="editDataMonitor" type="datamonitor" />
+		<action name="deleteDataMonitor" type="datamonitor" />
+		<action name="executeNowDataMonitor" type="datamonitor" />
+	</model>
+
+	<model name="datamonitorinfopageTabSet">
+		<submodel name="datamonitorInfo_detailstab"/>
+		<submodel name="executedreports_tab"/>
+	</model>
+
+	<model name="datamonitorInfo_detailstab" resourceBundle="com.ptc.windchill.enterprise.datamonitor.dataMonitorResource">
+		<action name="primaryAttributes" type="object"/>
+		<action name="attributes" type="object"/>
+	</model>
+
+
+	<model name="datamonitorinfo_detailstab_nav" >
+           <action name="primaryAttributes" type="object"/>
+           <action name="attributes" type="object"/>
+           <action name="viewExecutedReports" type="savedReportHolder"/>
+    </model>
+    
+    <model name="executedreports_tab" resourceBundle="com.ptc.windchill.enterprise.datamonitor.dataMonitorResource">
+		<action name="viewExecutedReports" type="savedReportHolder"/>	
+	</model>
+
+</actionmodels>

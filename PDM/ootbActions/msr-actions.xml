@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+<listofactions>
+   <objecttype name="msr" resourceBundle="com.ptc.windchill.uwgm.cadx.caddoc.msr.msrActionsRB">
+
+      <action name="msrCheckoutGWT">
+         <command class="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSRCheckoutAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+         <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSRCheckoutFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+      </action>
+
+
+      <action name="msrCheckinGWT">
+         <command class="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSRCheckinAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+         <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSRCheckinFilter"/>
+      </action>
+
+
+      <action name="undocheckoutGWT">
+         <command class="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSRUndoCheckoutAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+         <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSRUndoCheckoutFilter"/>
+      </action>
+
+
+      <action name="addToWorkspaceGWT" uicomponent="ADD_TO_WORKSPACE">
+         <command class="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSRAddToWorkspaceAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+         <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSRAddToWorkspaceFilter"/>
+      </action>
+
+
+      <action name="saveAsGWT">
+         <command class="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSRSaveAsAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+         <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSRSaveAsFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+      </action>
+
+
+      <action name="modelStructureGWT">
+         <command url="netmarkets/jsp/msr/msr.jsp"/>
+      </action>
+
+
+      <action name="newCARGWT">
+         <command class="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSRNewCARAction"/>
+      </action>
+
+       <action name="refreshGWT">
+         <command class="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSRRefreshAction"/>
+      </action>
+
+      <action name="editCARGWT">
+         <command class="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSREditCARAction"/>
+      </action>
+
+
+      <action name="newImageDesignContextGWT">
+          <command class="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSRNewImageDesignContextAction"/>
+          <includeFilter name="com.ptc.cat.ui.client.internal.action.IsRootNodeFilter"/>
+          <supportedTypes value="wt.epm.EPMDocument" applyToDescendants="true"/>
+      </action>
+
+      <action name="updateImageDesignContextGWT">
+          <command class="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSRUpdateImageDesignContextAction"/>
+          <includeFilter name="com.ptc.cat.ui.client.internal.action.IsRootNodeFilter"/>
+          <supportedTypes value="wt.epm.EPMDocument" applyToDescendants="true"/>
+      </action>
+
+
+      <action name="viewCaddocInfoGWT">
+          <command class="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSRViewInfoAction"/>
+          <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+      </action>
+    
+
+      <action name="refreshMembersGWT">
+         <command class="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSRRefreshMembersAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.EPMDocumentTypeFilter"/>
+         <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSRRefreshMembersFilter"/>
+      </action>
+
+      <!-- Please make sure to keep filters for editAttrsGWT & msrEditSplitGWT in synch
+           Both the actions are same and there doesn't seem to tell framework to refer to common
+           set of filters for both -->
+      <action name="msrEditSplitGWT">
+        <command class="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSREditAttributesAction"/>
+        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+        <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSREditAttributesFilter"/>
+        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+      </action>
+      
+      <action name="editSplitCARGWT">
+        <command class="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSREditCARAction"/>
+      </action>
+
+      <action name="checkInOutGroupGWT">
+         <command class="com.ptc.cat.ui.client.action.NoAction"/>
+      </action>
+
+
+      <action name="mergeOrShowUsesGWT">
+         <command class="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSRMergeOrShowUsesAction"/>
+      </action>
+
+      <action name="openInCADToolGWT">
+         <command class="com.ptc.cat.ui.client.action.NoAction"/>
+      </action>
+
+      <action name="msrSingleLevelReportGWT">
+         <command class="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSRSingleLevelReportAction"
+          url="/netmarkets/jsp/msr/reports/msrSingleLevelReport.jsp"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+         <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.OneOrMoreValidEPMDocumentTypeFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+         <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSRIsReportsEnabledFilter"/>
+      </action>
+
+      <action name="msrMultiLevelReportGWT">
+         <command class="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSRMultiLevelReportAction"
+          url="/netmarkets/jsp/msr/reports/msrMultilevelReport.jsp"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+         <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.OneOrMoreValidEPMDocumentTypeFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+         <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSRIsReportsEnabledFilter"/>
+      </action>
+
+      <action name="updateGWT" ajax="component">
+          <command class="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSRUpdateAction" method="execute" url="/servlet/WindchillAuthGW/wt.enterprise.URLProcessor/URLTemplateAction" windowType="lightbox"/>
+          <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSRHideInCommonspaceFilter"/>
+          <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+          <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSRUpdateFilter"/>
+          <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+      </action>
+
+      <!-- Please make sure to keep filters for editAttrsGWT & msrEditSplitGWT in synch
+           Both the actions are same and there doesn't seem to tell framework to refer to common
+           set of filters for both -->
+      <action name="editAttrsGWT">
+         <command class="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSREditAttributesAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+         <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSREditAttributesFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+      </action>
+            
+       
+      <action name="filterPropertiesGWT">
+         <command class="com.ptc.expansionui.eccomponent.client.ui.actions.MiniInfoECAction"/>
+      </action>      
+      <action name="editFilterGWT">
+         <command class="com.ptc.expansionui.eccomponent.client.ui.actions.EditECAction"/>
+      </action>      
+      <action name="editFilterWithLargeIconGWT">
+         <command class="com.ptc.expansionui.eccomponent.client.ui.actions.EditECAction"/>
+      </action>      
+      <action name="savedFiltersGWT">
+         <command class="com.ptc.expansionui.eccomponent.client.ui.actions.SavedFiltersAction"/>
+      </action>      
+      <action name="filterGroupGWT">
+         <command class="com.ptc.cat.ui.client.action.NoAction"/>
+      </action>
+      <action name="openInCreoGWT">
+         <command class="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSROpenInCADToolAction"/>
+         <includeFilter name="MSROpenInCADToolEnabledFilter"/>
+      </action>
+      <action name="openInCreoViewGWT">
+          <command class="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSROpenInCADToolAction"/>
+          <includeFilter name="MSROpenInCADToolEnabledFilter"/>
+      </action>
+      <action name="openInCatiaGWT">
+          <command class="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.MSROpenInCADToolAction"/>
+          <includeFilter name="MSROpenInCADToolEnabledFilter"/>
+      </action>
+
+      <action name="msrReportsGWT">
+          <command class="com.ptc.cat.ui.client.action.NoAction" />
+      </action>
+
+      <action name="msrReportsActionsGWT">
+         <command class="com.ptc.cat.ui.client.action.NoAction"/>
+         <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.msr.reports.client.action.MsrReportsInProgressFilter" />
+      </action>
+
+      <action name="msrReportsExportListGWT">
+         <command class="com.ptc.cat.ui.client.action.NoAction"/>
+      </action>
+
+      <action name="reportsExportCsvGWT">
+         <command class="com.ptc.windchill.uwgm.cadx.caddoc.msr.reports.client.action.MsrReportsExportCsvAction"/>
+      </action>
+
+      <action name="reportsExportHtmlGWT">
+         <command class="com.ptc.windchill.uwgm.cadx.caddoc.msr.reports.client.action.MsrReportsExportHtmlAction"/>
+      </action>
+
+      <action name="reportsExportPdfGWT">
+         <command class="com.ptc.windchill.uwgm.cadx.caddoc.msr.reports.client.action.MsrReportsExportPdfAction"/>
+      </action>
+
+      <action name="reportsExportTextGWT">
+         <command class="com.ptc.windchill.uwgm.cadx.caddoc.msr.reports.client.action.MsrReportsExportTextAction"/>
+      </action>
+
+      <action name="reportsExportXlsGWT">
+         <command class="com.ptc.windchill.uwgm.cadx.caddoc.msr.reports.client.action.MsrReportsExportXlsAction"/>
+      </action>
+
+      <action name="reportsExportXlsReportGWT">
+         <command class="com.ptc.windchill.uwgm.cadx.caddoc.msr.reports.client.action.MsrReportsExportXlsReportAction"/>
+      </action>
+
+      <action name="reportsExportXmlGWT">
+         <command class="com.ptc.windchill.uwgm.cadx.caddoc.msr.reports.client.action.MsrReportsExportXmlAction"/>
+      </action>
+
+      <action name="reportsExportXlsxGWT">
+         <command class="com.ptc.windchill.uwgm.cadx.caddoc.msr.reports.client.action.MsrReportsExportXlsxAction"/>
+      </action>
+
+      <!-- Action for Adding distribution targets to epm document -->
+      <action name="updateDistributionTargetGWT" ajax="component">
+         <command class="com.ptc.cat.ui.client.action.UpdateDistributionTargetAction" method="adjustTargetAssignments" url="ptc1/tgt/updateTargetAssocations" windowType="new"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+         <includeFilter name="disableForAdminLocked"/>
+         <supportedTypes>
+            <type value="wt.epm.EPMDocument" />
+         </supportedTypes>
+      </action>
+      
+      <!--  New Actions for Show/Hide Starts here -->
+ 	<action name="relatedObjectsGWT"  ajax="row">
+		<command class="com.ptc.cat.gxt.client.action.RelatedObjectsAction"/>
+		<includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotProIFilter"/>
+		<includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotArbortextFilter"/>
+		<includeFilter name="com.ptc.windchill.enterprise.structurecomponent.client.filters.IsNotSmbFilter"/>
+		<includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+		<includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.OneOrMoreValidEPMDocumentTypeFilter"/>
+		<includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.WGMClientIdentifierFilter"/>
+	</action> 
+
+	<action name="hideAllRelatedObjectsGWT"  ajax="row">
+		<command class="com.ptc.cat.gxt.client.action.HideAllRelatedObjectsAction"/>
+		<includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotProIFilter"/>
+		<includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotArbortextFilter"/>
+		<includeFilter name="com.ptc.windchill.enterprise.structurecomponent.client.filters.IsNotSmbFilter"/>
+		<includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+		<includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.OneOrMoreValidEPMDocumentTypeFilter"/>
+		<includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.WGMClientIdentifierFilter"/>
+	</action> 
+         
+	<action name="showDefaultRelatedObjectsGWT"  ajax="row">
+        <command class="com.ptc.cat.gxt.client.action.ShowDefaultRelatedObjectsAction"/>
+		<includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotProIFilter"/>
+		<includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotArbortextFilter"/>
+		<includeFilter name="com.ptc.windchill.enterprise.structurecomponent.client.filters.IsNotSmbFilter"/>
+		<includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+		<includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.OneOrMoreValidEPMDocumentTypeFilter"/>
+		<includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.WGMClientIdentifierFilter"/>
+	</action>
+
+	<action name="showAllRelatedObjectsAction"  ajax="row">
+        <command class="com.ptc.cat.gxt.client.action.ShowDefaultRelatedObjectsAction"/>
+		<includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotProIFilter"/>
+		<includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotArbortextFilter"/>
+		<includeFilter name="com.ptc.windchill.enterprise.structurecomponent.client.filters.IsNotSmbFilter"/>
+		<includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+		<includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.OneOrMoreValidEPMDocumentTypeFilter"/>
+		<includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.msr.client.action.WGMClientIdentifierFilter"/>
+	</action>
+ <!--  New Actions for Show/Hide End here -->
+
+   </objecttype>
+</listofactions>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE listofactions SYSTEM "actions.dtd">
+<listofactions>
+
+	<include href="config/actions/glaway-mpm-pbom-actions.xml"/>
+	<include href="config/actions/glaway-mpm-mpmresource-actions.xml"/>
+	<include href="config/actions/glaway-mpm-parameterManager-actions.xml"/>
+	<include href="config/actions/custom-149-actions.xml"/>
+     <include href="config/actions/preview-actions.xml"/>
+      <!--begin add by zw 20171016-->
+     <include href="config/actions/custom-cir-actions.xml"/>
+      <!--end add by zw 20171016-->
+    <include href="config/actions/custom-search-actions.xml"/>
+</listofactions>

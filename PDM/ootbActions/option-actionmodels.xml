@@ -1,0 +1,1088 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+<!-- Assemble-To-Order Action Models -->
+<actionmodels>
+   <!-- actionmodels defining ocm tabs -->
+   <model name="ocm.rightpane.tabs" resourceBundle="com.ptc.windchill.option.optionResource">
+      <action name="primaryAttributes"      type="object"/>
+      <action name="choicesTab"             type="optionmanager"/>
+      <action name="groupsTab"              type="optionmanager"/>
+      <action name="optionsTab"             type="optionmanager"/>
+      <action name="atoExpressionAliasTab"  type="optionmanager"/>
+      <action name="atoRulesTab"            type="optionmanager"/>
+      <action name="mappingsTab"            type="optionmanager"/>
+      <action name="constraintsTab"         type="optionmanager"/>
+      <action name="enableTab"              type="optionmanager"/>
+      <action name="choicesWhereUsedTab"    type="optionmanager"/>
+      <action name="optionsWhereUsedTab"    type="optionmanager"/>
+      <action name="atoExpressionAliasTab"  type="optionmanager"/>
+   </model>
+
+   <!-- more action for ExpressionAlias -->
+   <model name="more actions for expressionalias" menufor="com.ptc.windchill.option.model.ExpressionAlias">
+      <action name="view"                             type="object"/>
+      <action name="separator"                        type="separator"/>
+      <action name="setState"                         type="lifecycle"/> <!-- Set State -->
+      <action name="copy"                             type="object"/>
+      <action name="editExpressionAlias"              type="expressionAlias"/>
+      <action name="deleteExpressionAlias"            type="expressionAlias"/>
+      <action name="undocheckout"                     type="object"/>
+      <action name="reviseExpressionAlias"            type="expressionAlias"/>
+      <action name="renameExpressionAlias"            type="expressionAlias"/>
+      <action name="separator"                        type="separator"/>
+      <submodel name="more Choice Rule actions new"/>
+      <action name="separator"                        type="separator"/>
+   </model>
+
+   <!-- more action for choice rule -->
+   <model name="more actions for choicerule" menufor="com.ptc.windchill.option.model.ChoiceRule">
+      <action name="view"                             type="object"/>
+      <action name="separator"                        type="separator"/>
+      <action name="setState"                         type="ChoiceRule"/> <!-- Set State -->
+      <action name="copy"                             type="object"/>
+      <action name="editConditionalRule"              type="choiceRule"/>
+      <action name="deleteConditionalRule"            type="choiceRule"/>
+      <action name="deleteLocalChoiceRule"            type="choiceRule"/>
+      <action name="removeLocalChoiceRule"            type="choiceRule"/>
+      <action name="undoCheckoutRule"                 type="choiceRule"/>
+      <action name="reviseChoiceRule"                 type="choiceRule"/>
+      <action name="reviseLocalChoiceRule"            type="choiceRule"/>
+      <action name="separator"                        type="separator"/>
+      <submodel name="more Choice Rule actions new"/>
+      <action name="separator"                        type="separator"/>
+      <action name="removeConditionalRuleMembership"  type="choiceRule"/>
+      <action name="addCandidateChoiceRule"           type="choiceRule"/>
+      <action name="ignoreCandidateChoiceRule"        type="choiceRule"/>
+      <action name="revertExplicitChoiceRule"         type="choiceRule"/>
+   </model>
+
+   <!-- actionmodels defining ocm treetable -->
+   <model name="ocm.treetable.toolbaractions" resourceBundle="com.ptc.windchill.option.optionResource">
+      <action name="showDuplicateChoices"  type="choice" shortcut = "true" />
+      <action name="manageChoices"         type="filterTemplate" shortcut="true"/>
+      <action name="previewECOptions"      type="filterTemplate" shortcut="true"/>
+   </model>
+
+   <!-- all the actions that are possible for the Option object
+        This is the model that will be used for this object in all tables
+        if some of the actions that are not valid based on context
+        we write validators/filters for them -->
+   <model name="more actions for option" menufor="com.ptc.windchill.option.model.Option">
+      <action name="view"               type="object"/>
+      <action name="editOption"         type="option"/>
+      <action name="deleteOption"       type="option"/>
+      <action name="renameOptionWizard" type="option"/>
+      <action name="createChoice"       type="choice"/>
+      <action name="setOptionGroup"     type="option"/>
+      <action name="undoCheckoutOcm"       type="common"/>
+   </model>
+
+   <!-- Option table toolbar actions -->
+   <model name="optionstable_toolbar_actions">
+      <action name="deleteOptionItem" type="optionmanager" shortcut="true"/>
+      <action name="createOption"     type="option" shortcut="true"/>
+      <action name="setOptionGroup"   type="option" shortcut="true"/>
+   </model>
+
+   <!-- all the actions that are possible for the Choice object
+        This is the model that will be used for this object in all tables
+        if some of the actions that are not valid based on context
+        we write validators/filters for them -->
+   <model name="more actions for choice" menufor="com.ptc.windchill.option.model.Choice">
+      <action name="view"                              type="object"/>
+      <action name="editChoice"                        type="choice"/>
+      <action name="undoCheckoutOcm"                   type="common"/>
+      <action name="copy"                              type="object"/>
+      <action name="separator"                         type="separator"/>
+      <submodel name="more Choice actions new"/>
+      <action name="separator"                         type="separator"/>
+      <action name="deleteChoice"                      type="choice"/>
+      <action name="renameChoiceWizard"                type="choice"/>
+      <action name="createChoiceMapping"               type="choiceMapping"/>
+      <action name="createChoiceEnable"                type="choiceEnable"/>
+      <action name="editChoiceMappingInChoiceContext"  type="choiceMapping"/>
+      <action name="editChoiceEnableInChoiceContext"   type="choiceEnable"/>
+      <action name="setChoiceEffectivity"              type="filterTemplate"/>
+   </model>
+
+   <!-- Choice table toolbar action -->
+   <model name="choicestable_toolbar_actions">
+      <action name="deleteChoiceToolbar"     type="choice" shortcut="true"/>
+      <action name="createChoice"            type="choice" shortcut="true"/>
+      <action name="list_copy"               type="object" shortcut="true"/>
+      <action name="setChoiceEffectivity"    type="filterTemplate" shortcut="true"/>
+   </model>
+
+   <model name="groupstable_row_action" menufor="com.ptc.windchill.option.model.Group">
+      <action name="view"          type="object"/>
+      <action name="editGroup"     type="group"/>
+      <action name="deleteGroup"   type="group"/>
+      <action name="createOption"  type="option"/>
+   </model>
+
+   <model name="Create Group toolbar actions">
+      <action name="addGroupRowsToTable"  type="group" shortcut="true"/>
+   </model>
+
+   <!-- all the actions that are possible for the Mapping object
+        This is the model that will be used for this object in all tables
+        if some of the actions that are not valid based on context
+        we write validators/filters for them -->
+   <model name="more actions for choicemapping" menufor="com.ptc.windchill.option.model.ChoiceMapping">
+      <action name="view"                        type="object"/>
+      <action name="separator"                   type="separator"/>
+      <action name="setState"                    type="ChoiceRule"/> <!-- Set State -->
+      <action name="copy"                        type="object"/>
+      <action name="editChoiceMapping"           type="choiceMapping"/>
+      <action name="deleteChoiceMapping"         type="choiceMapping"/>
+      <action name="deleteLocalChoiceRule"       type="choiceRule"/>
+      <action name="removeLocalChoiceRule"       type="choiceRule"/>
+      <action name="undoCheckoutRule"            type="choiceRule"/>
+      <action name="reviseChoiceRule"            type="choiceRule"/>
+      <action name="reviseLocalChoiceRule"       type="choiceRule"/>
+      <action name="separator"                   type="separator"/>
+      <submodel name="more Choice Rule actions new"/>
+      <action name="separator"                   type="separator"/>
+      <action name="removeMappingsMembership"    type="filterTemplate"/>
+      <action name="addCandidateChoiceRule"      type="choiceRule"/>
+      <action name="ignoreCandidateChoiceRule"   type="choiceRule"/>
+      <action name="revertExplicitChoiceRule"    type="choiceRule"/>
+   </model>
+
+   <!-- toolbar action for mapping table -->
+   <model name="choicemappingtable_toolbar_actions">
+      <action name="addMappingsMembership"       type="filterTemplate" shortcut="true"/>
+      <action name="removeChoiceRuleMembership"  type="optionmanager" shortcut="true"/>
+      <action name="deleteChoiceRule"            type="optionmanager" shortcut="true"/>
+      <action name="revertChoiceMapping"         type="choiceMapping" shortcut="true"/>
+      <action name="list_copy"                   type="object" shortcut="true"/>
+      <action name="separator"                   type="separator"/>
+      <submodel name="more Choice Rule actions new"/>
+   </model>
+
+   <!-- toolbar action for mapping table in option set-->
+   <model name="choicemappingtable_optionset_toolbar_actions">
+      <action name="addMappingsMembership"       type="filterTemplate" shortcut="true"/>
+      <action name="removeChoiceRuleMembership"  type="optionmanager" shortcut="true"/>
+      <action name="deleteChoiceRule"            type="optionmanager" shortcut="true"/>
+      <action name="revertChoiceMapping"         type="choiceMapping" shortcut="true"/>
+      <action name="list_copy"                   type="object" shortcut="true"/>
+   </model>
+
+   <!-- toolbar action for local mapping table -->
+   <model name="localchoicemappingtable_toolbar_actions">
+      <action name="removeLocalChoiceRuleTB"     type="optionmanager" shortcut="true"/>
+      <action name="list_copy"                   type="object" shortcut="true"/>
+   </model>
+
+   <!-- all the actions that are possible for the Constraint object
+        This is the model that will be used for this object in all tables
+        if some of the actions that are not valid based on context
+        we write validators/filters for them -->
+   <model name="more actions for choiceconstraint" menufor="com.ptc.windchill.option.model.ChoiceConstraint">
+      <action name="view"                        type="object"/>
+      <action name="separator"                   type="separator"/>
+      <action name="setState"                    type="ChoiceRule"/> <!-- Set State -->
+      <action name="copy"                        type="object"/>
+      <action name="editChoiceConstraint"        type="choiceConstraint"/>
+      <action name="deleteChoiceConstraint"      type="choiceConstraint"/>
+      <action name="deleteLocalChoiceRule"       type="choiceRule"/>
+      <action name="removeLocalChoiceRule"       type="choiceRule"/>
+      <action name="undoCheckoutRule"            type="choiceRule"/>
+      <action name="reviseChoiceRule"            type="choiceRule"/>
+      <action name="reviseLocalChoiceRule"       type="choiceRule"/>
+      <action name="separator"                   type="separator"/>
+      <submodel name="more Choice Rule actions new"/>
+      <action name="separator"                   type="separator"/>
+      <action name="removeConstraintsMembership" type="filterTemplate"/>
+      <action name="addCandidateChoiceRule"      type="choiceRule"/>
+      <action name="ignoreCandidateChoiceRule"   type="choiceRule"/>
+      <action name="revertExplicitChoiceRule"    type="choiceRule"/>
+   </model>
+
+   <!-- toolbar action for constraint table -->
+   <model name="choiceconstrainttable_toolbar_actions">
+      <action name="addConstraintMembership"     type="filterTemplate" shortcut="true" />
+      <action name="removeChoiceRuleMembership"  type="optionmanager" shortcut="true" />
+      <action name="deleteChoiceRule"            type="optionmanager" shortcut="true" />
+      <action name="createChoiceConstraint"      type="choiceConstraint" shortcut="true" />
+      <action name="revertChoiceConstraint"      type="choiceConstraint" shortcut="true" />
+      <action name="list_copy"                   type="object" shortcut="true"/>
+      <action name="separator"                   type="separator"/>
+      <submodel name="more Choice Rule actions new"/>
+   </model>
+
+   <!-- toolbar action for constraint table in option set -->
+   <model name="choiceconstrainttable_optionset_toolbar_actions">
+      <action name="addConstraintMembership"     type="filterTemplate" shortcut="true" />
+      <action name="removeChoiceRuleMembership"  type="optionmanager" shortcut="true" />
+      <action name="deleteChoiceRule"            type="optionmanager" shortcut="true" />
+      <action name="createChoiceConstraint"      type="choiceConstraint" shortcut="true" />
+      <action name="revertChoiceConstraint"      type="choiceConstraint" shortcut="true" />
+      <action name="list_copy"                   type="object" shortcut="true"/>
+   </model>
+
+   <!-- toolbar action for local constraint table -->
+   <model name="localchoiceconstrainttable_toolbar_actions">
+      <action name="removeLocalChoiceRuleTB"     type="optionmanager" shortcut="true" />
+      <action name="createLocalChoiceConstraint" type="choiceConstraint" shortcut="true" />
+      <action name="list_copy"                   type="object" shortcut="true"/>
+   </model>
+
+   <model name="ATO_IterationHistory" resourceBundle="com.ptc.windchill.option.optionResource">
+      <action name="iterationHistory" type="history"/>
+   </model>
+
+   <model name="ATO_VersionHistory" resourceBundle="com.ptc.windchill.option.optionResource">
+      <action name="versionHistory" type="history"/>
+   </model>
+
+   <model name="ATO_HistoryTab" resourceBundle="com.ptc.windchill.option.optionResource">
+      <action name="maturityHistory" type="history"/>
+      <action name="versionHistory"  type="history"/>
+   </model>
+
+   <model name="third_level_nav_model_configuration" resourceBundle="com.ptc.windchill.option.optionResource"
+             defaultActionName="attributes" defaultActionType="object">
+      <description>"General" 3rd level nav menu for Model Configuration</description>
+      <submodel name="model_configuration_general"/>
+      <submodel name="model_configuration_options"/>
+      <submodel name="history"/>
+   </model>
+
+    <model name="optionstableInOptionSet_toolbar_actions">
+      <action name="showDuplicateChoices"        type="choice" shortcut="true"/>
+   </model>
+
+   <model name="Create Option toolbar actions">
+      <action name="addOptionRowsToTable"        type="option" shortcut="true"/>
+      <action name="removeOptionRowsFromTable"   type="option" shortcut="true"/>
+   </model>
+
+   <model name="create_choice_toolbar_actions">
+      <action name="addChoiceRowsToTable"        type="choice" shortcut="true"/>
+       <action name="removeChoiceRowsFromTable"        type="choice" shortcut="true"/>
+   </model>
+
+   <model name="optionset_relatedItems" resourceBundle="com.ptc.windchill.option.optionResource">
+      <action name="relatedActionItems" type="actionitem"/>
+      <action name="relatedContexts"    type="object"/>
+      <!--BC X-24 ESI Actions added for the story B-98688 -->
+      <action name="distributionList"   type="tgt"/> <!-- Distribution Target -->
+      <!--EC X-24 ESI Actions added for the story B-98688 -->
+   </model>
+
+   <model name="more Choice actions new" resourceBundle="com.ptc.windchill.option.optionResource">
+      <action name="create"                      type="changeNotice"/>      <!-- New Change Notice -->
+      <action name="create"                      type="changeRequest"/>     <!-- New Change Request -->
+      <action name="create"                      type="problemReport"/>     <!-- New Problem Report -->
+      <action name="create"                      type="variance"/>          <!-- New Variance -->
+      <action name="create"                      type="promotionRequest"/>  <!-- Promote -->
+   </model>
+
+   <model name="more Choice Rule actions new" resourceBundle="com.ptc.windchill.option.optionResource">
+      <action name="create"                      type="changeNotice"/>      <!-- New Change Notice -->
+      <action name="create"                      type="changeRequest"/>     <!-- New Change Request -->
+      <action name="create"                      type="problemReport"/>     <!-- New Problem Report -->
+      <action name="create"                      type="variance"/>          <!-- New Variance -->
+      <action name="create"                      type="promotionRequest"/>  <!-- Promote -->
+   </model>
+
+   <model name="more Local Choice Rule actions new" resourceBundle="com.ptc.windchill.option.optionResource">
+      <action name="create_localRule"            type="changeNotice"/>      <!-- New Change Notice -->
+      <action name="create_localRule"            type="changeRequest"/>     <!-- New Change Request -->
+      <action name="create_localRule"            type="problemReport"/>     <!-- New Problem Report -->
+      <action name="create_localRule"            type="variance"/>          <!-- New Variance -->
+      <action name="create_localRule"            type="promotionRequest"/>  <!-- Promote -->
+   </model>
+
+   <model name="ATO_collaboration" resourceBundle="com.ptc.windchill.option.optionResource">
+      <action name="discuss" type="forum"/>
+      <action name="objectSubscriptions" type="subscription"/>
+   </model>
+
+   <model name="optionset_toolbar_actions">
+      <action name="deleteOptionSets"            type="filterTemplate" shortcut="true" />
+      <action name="createOptionSet"             type="filterTemplate" shortcut="true" />
+      <action name="addToPackageMultiple"        type="wpcollection" shortcut="true"/>   <!-- Add to Package -->
+      <action name="list_copy"                   type="object" shortcut="true"/>         <!-- Copy -->
+   </model>
+
+   <model name="optionset_row_actions"  menufor="com.ptc.windchill.option.model.OptionSet">
+      <action name="view"                        type="object"/>
+      <action name="editOptionSet"               type="filterTemplate"/>
+      <action name="checkin"                     type="wip"/>
+      <action name="undocheckout"                type="object"/>
+      <action name="reviseOptionSet"             type="filterTemplate"/>    <!-- Revise -->
+      <action name="separator"                   type="separator"/>
+      <submodel name="more optionSet actions new"/>
+      <action name="separator"                   type="separator"/>
+      <action name="copy"                        type="object"/>            <!-- Copy -->
+      <action name="saveasOptionSet"             type="filterTemplate"/>
+      <action name="renameOptionSetWizard"       type="filterTemplate"/>
+      <action name="setState"                    type="lifecycle"/>         <!-- Set State -->
+      <!-- temporarily disable export of NFT until X20 model changes are done -->
+      <action name="EXPORT"                      type="pdmObject"/>         <!-- Export (PDMLink) -->
+      <action name="deleteOptionSet"             type="filterTemplate"/>
+      <action name="reassignLC"                  type="lifecycle"/>         <!-- Reassign Life Cycle -->
+      <action name="separator"                   type="separator"/>
+      <action name="addToPackageSingle"          type="wpcollection"/>      <!-- Add to Package -->
+      <action name="moveToChildContainer"        type="filterTemplate"/>
+      <!--BC X-24 ESI Actions added for the story B-98688 -->
+      <action name="separator"                   type="separator"/>
+      <action name="associateDistributionTarget" type="tgt"/>               <!-- Associate Distribution Target -->
+      <action name="sendToDistributionTarget"    type="tgt"/>               <!-- Send to Distribution Target -->
+      <!--EC X-24 ESI Actions added for the story B-98688 -->
+      <action name="separator"                   type="separator"/>
+      <action name="ManageSecurity"              type="accessPermission"/>  <!-- Manage Security -->
+      <action name="createSubscription"          type="subscription"/>      <!-- Subscribe -->
+      <action name="removeMergedItems"           type="filterTemplate" />
+   </model>
+
+   <model name="more optionSet actions new" resourceBundle="com.ptc.windchill.option.optionResource">
+      <action name="create"                      type="changeNotice"/>      <!-- New Change Notice -->
+      <action name="create"                      type="changeRequest"/>     <!-- New Change Request -->
+      <action name="create"                      type="problemReport"/>     <!-- New Problem Report -->
+      <action name="create"                      type="variance"/>          <!-- New Variance -->
+      <action name="create"                      type="promotionRequest"/>  <!-- Promote -->
+   </model>
+
+   <model name="registered_optionset_toolbar_actions">
+      <action name="registerOptionSet"           type="filterTemplate" shortcut="true"/>
+   </model>
+
+   <model name="registered_optionset_row_actions">
+      <action name="view"                        type="object"/>
+      <action name="unregisterOptionSet"         type="filterTemplate"/>
+      <action name="overrideOptionSet"           type="filterTemplate"/>
+      <action name="undooverrideOptionSet"       type="filterTemplate"/>
+   </model>
+
+   <model name="ATOEditWizardButtons">
+      <action name="prevButton"                  type="object"/>
+      <action name="nextButton"                  type="object"/>
+      <action name="okButton"                    type="object"/>
+      <action name="editCancelButton"            type="object"/>
+   </model>
+
+   <model name="ATOChoiceRuleEditWizardButtons">
+      <action name="prevButton"                  type="object"/>
+      <action name="nextButton"                  type="object"/>
+      <action name="okButton"                    type="object"/>
+      <action name="atoEditCancelButton"         type="choiceRule"/>
+   </model>
+
+   <model name="ManageChoicesInNFTButtons">
+      <action name="okButton"                    type="object"/>
+      <action name="applyButton"                 type="object"/>
+      <action name="editCancelButton"            type="object"/>
+   </model>
+
+   <model name="optionset_mapping_table_toolbar_actions">
+      <action name="addMappingsMembership"       type="filterTemplate" shortcut="true"/>
+      <action name="removeMappingsMembership"    type="filterTemplate" shortcut="true"/>
+   </model>
+
+   <!-- Empty button model for revise option set wizard -->
+   <model name="ReviseOptionSetWizardButtons">
+      <description>No buttons for revise progress indicator Wizard</description>
+   </model>
+
+   <!-- Product Node row level actions at OCM Tree -->
+   <model name="product_row_actions">
+      <action name="view"        type="object"/>
+      <action name="createGroup" type="group"/>
+      <action name="createOption" type="option"/>
+   </model>
+
+   <model name="PartChoices_tableToolbar_actions">
+      <action name="viewAssignedExpression"      type="expressionAssignable" shortcut="true"/>
+      <action name="copyAssignedExpression"      type="expressionAssignable" shortcut="true"/>
+      <action name="editItemOptionRulesPreStep"  type="filterTemplate" 		 shortcut="true"/>
+   </model>
+
+   <!-- TO fix SPR 2044204-01 -->
+   <model name="ManageRulesWizardButton">
+      <action name="finishButton"  type="filterTemplate"/>
+   </model>
+
+   <model name="whereAssigned_row_actions">
+      <action name="view"          type="object"/>
+   </model>
+
+   <!-- tabs for OptionSet Info Page -->
+   <model name="optionSetInfoPageTabSet">
+      <submodel name="optionSetDetails"/>
+      <action name="optionsManagerTab" type="optionmanager"/>
+      <submodel name="changesTab"/>
+   </model>
+
+   <model name="optionSetDetails" resourceBundle="com.ptc.windchill.option.optionResource">
+      <action name="primaryAttributes"     type="object"/>
+   </model>
+
+   <model name="third_level_nav_optionset" defaultActionName="options" defaultActionType="navigationFilter">
+      <submodel name="optionset_general"/>
+      <submodel name="changesTab"/>
+      <submodel name="optionset_relatedItems" />           <!-- Related Objects -->
+      <submodel name="history"/>
+      <submodel name="ATO_collaboration" />                <!-- Collaboration -->
+   </model>
+
+   <model name="optionset_general" resourceBundle="com.ptc.windchill.option.optionResource">
+      <description>"General" 3rd level nav menu for OptionSet</description>
+      <action name="primaryAttributes"           type="object"/>
+      <action name="reference"                   type="notebook"/>
+   </model>
+
+   <!-- tab model for choice where used -->
+   <model name="choicesWhereUsedTabModel" resourceBundle="com.ptc.windchill.option.optionResource">
+      <action name="whereAssigned"               type="choice"/>
+      <action name="listOptionSets"              type="choice"/>
+      <action name="ChoiceRulesForChoice"        type="choice"/>
+      <action name="listAliasesFromChoice"       type="choice"/>
+   </model>
+
+   <!-- 3 level nav option where used -->
+   <model name="optionWhereUsedNav" resourceBundle="com.ptc.windchill.option.optionResource">
+      <action name="referenceByGenericizable"    type="option"/>
+   </model>
+
+   <!-- tabs for Choice Info Page -->
+   <model name="choiceInfoPageTabSet">
+      <submodel name="choiceDetails"/>
+      <submodel name="changesTab"/>
+      <submodel name="choicesWhereUsedTabModel"/>
+   </model>
+
+   <model name="choiceDetails" resourceBundle="com.ptc.windchill.option.optionResource">
+      <action name="primaryAttributes" type="object"/>
+   </model>
+
+   <model name="third_level_nav_choice"
+          defaultActionName="listOptionSets" defaultActionType="choice">
+      <submodel name="choice_general"/>
+      <submodel name="changesTab"/>
+      <submodel name="ATO_VersionHistory"/>
+      <submodel name="ATO_collaboration" />
+   </model>
+
+   <model name="choice_general" resourceBundle="com.ptc.windchill.option.optionResource"
+          defaultActionName="listOptionSets" defaultActionType="choice">
+      <description>"General" 3rd level nav menu for Choice</description>
+      <action name="primaryAttributes"  type="object"/>
+      <submodel name="choicesWhereUsedTabModel"/>
+   </model>
+
+   <!-- tabs for Group Info Page -->
+   <model name="groupInfoPageTabSet">
+      <submodel name="groupDetails"/>
+   </model>
+
+   <model name="groupDetails" resourceBundle="com.ptc.windchill.option.optionResource">
+      <action name="primaryAttributes"     type="object"/>
+      <action name="listOptions"           type="group"/>
+   </model>
+
+   <model name="third_level_nav_group">
+      <submodel name="group_general"/>
+   </model>
+
+   <model name="group_general" resourceBundle="com.ptc.windchill.option.optionResource">
+      <description>"General" 3rd level nav menu for Group</description>
+      <action name="primaryAttributes"  type="object"/>
+      <action name="listOptions"        type="group"/>
+   </model>
+
+   <!-- tabs for Option Info Page -->
+   <model name="optionInfoPageTabSet">
+      <submodel name="optionDetails"/>
+   </model>
+
+   <model name="optionDetails" resourceBundle="com.ptc.windchill.option.optionResource">
+      <action name="primaryAttributes"         type="object"/>
+      <action name="displayUnitsTable"         type="option"/>
+      <action name="listChoices"               type="option"/>
+      <action name="referenceByGenericizable"  type="option"/>
+   </model>
+
+   <model name="third_level_nav_option"
+          defaultActionName="listChoices" defaultActionType="option">
+      <submodel name="option_general"/>
+      <submodel name="optionWhereUsedNav"/>
+   </model>
+
+   <model name="option_general" resourceBundle="com.ptc.windchill.option.optionResource"
+          defaultActionName="listChoices" defaultActionType="option">
+      <description>"General" 3rd level nav menu for Option</description>
+      <action name="primaryAttributes"      type="object"/>
+      <action name="listChoices"            type="option"/>
+      <action name="displayUnitsTable"      type="option"/>
+   </model>
+
+   <!-- tabs for Include Rule Info Page -->
+   <model name="mappingInfoPageTabSet">
+      <submodel name="mappingDetails"/>
+      <submodel name="mappingWhereUsed"/>
+      <submodel name="changesTab"/>
+      <submodel name="ATO_HistoryTab"/>
+   </model>
+
+   <model name="mappingDetails" resourceBundle="com.ptc.windchill.option.optionResource">
+      <action name="primaryAttributes"     type="object"/>
+   </model>
+
+   <model name="mappingWhereUsed" resourceBundle="com.ptc.windchill.option.optionResource">
+      <action name="listOptionSetsFromChoiceRule"  type="choiceMapping"/>
+   </model>
+
+   <model name="third_level_nav_mapping">
+      <submodel name="mapping_general"/>
+      <submodel name="changes"/>
+      <submodel name="history"/>
+   </model>
+
+   <model name="mapping_general" resourceBundle="com.ptc.windchill.option.optionResource">
+      <description>"General" 3rd level nav menu for Mapping</description>
+      <action name="primaryAttributes"  type="object"/>
+      <action name="listOptionSetsFromChoiceRule"  type="choiceMapping"/>
+      <action name="effTableForPartsAndMPMLinkInfoPage" type="effectivity"/>
+   </model>
+
+   <!-- tabs for Enable Rule Info Page -->
+   <model name="enableInfoPageTabSet">
+      <submodel name="enableDetails"/>
+      <submodel name="enableWhereUsed"/>
+      <submodel name="changesTab"/>
+      <submodel name="ATO_HistoryTab"/>
+   </model>
+
+   <model name="enableDetails" resourceBundle="com.ptc.windchill.option.optionResource">
+      <action name="primaryAttributes"     type="object"/>
+   </model>
+
+   <model name="enableWhereUsed" resourceBundle="com.ptc.windchill.option.optionResource">
+      <action name="listOptionSetsFromChoiceRule"  type="choiceEnable"/>
+   </model>
+
+   <model name="third_level_nav_enable">
+      <submodel name="enable_general"/>
+      <submodel name="changes"/>
+      <submodel name="history"/>
+   </model>
+
+   <model name="enable_general" resourceBundle="com.ptc.windchill.option.optionResource">
+      <description>"General" 3rd level nav menu for Enable Rule</description>
+      <action name="primaryAttributes"  type="object"/>
+      <action name="listOptionSetsFromChoiceRule"  type="choiceEnable"/>
+      <action name="effTableForPartsAndMPMLinkInfoPage" type="effectivity"/>
+   </model>
+
+   <!-- tabs for ChoiceRule Info Page -->
+   <model name="choiceRuleInfoPageTabSet">
+      <submodel name="choiceRuleDetails"/>
+      <submodel name="choiceRuleWhereUsed"/>
+      <submodel name="changesTab"/>
+      <submodel name="ATO_HistoryTab"/>
+   </model>
+
+   <model name="choiceRuleDetails" resourceBundle="com.ptc.windchill.option.optionResource">
+      <action name="primaryAttributes"     type="object"/>
+   </model>
+
+   <model name="choiceRuleWhereUsed" resourceBundle="com.ptc.windchill.option.optionResource">
+      <action name="listOptionSetsFromChoiceRule"  type="choiceRule"/>
+   </model>
+
+   <model name="third_level_nav_choicerule">
+      <submodel name="choicerule_general"/>
+      <submodel name="changes"/>
+      <submodel name="history"/>
+   </model>
+
+   <model name="choicerule_general" resourceBundle="com.ptc.windchill.option.optionResource">
+      <description>"General" 3rd level nav menu for Choice Rule</description>
+      <action name="primaryAttributes"  type="object"/>
+      <action name="listOptionSetsFromChoiceRule"  type="choiceRule"/>
+      <action name="effTableForPartsAndMPMLinkInfoPage" type="effectivity"/>
+   </model>
+
+   <!--  all the actions that are possible for the Enable object
+         This is the model that will be used for this object in all tables
+         if some of the actions that are not valid based on context
+         we write validators/filters for them -->
+   <model name="more actions for choiceenable" menufor="com.ptc.windchill.option.model.ChoiceEnable">
+      <action name="view"                       type="object"/>
+      <action name="separator"                  type="separator"/>
+      <action name="setState"                   type="ChoiceRule"/> <!-- Set State -->
+      <action name="copy"                       type="object"/>
+      <action name="editChoiceEnable"           type="choiceEnable"/>
+      <action name="deleteChoiceEnable"         type="choiceEnable"/>
+      <action name="deleteLocalChoiceRule"      type="choiceRule"/>
+      <action name="removeLocalChoiceRule"      type="choiceRule"/>
+      <action name="undoCheckoutRule"           type="choiceRule"/>
+      <action name="reviseChoiceRule"           type="choiceRule"/>
+      <action name="reviseLocalChoiceRule"      type="choiceRule"/>
+      <action name="separator"                  type="separator"/>
+      <submodel name="more Choice Rule actions new"/>
+      <action name="separator"                  type="separator"/>
+      <action name="removeEnablesMembership"    type="filterTemplate"/>
+      <action name="addCandidateChoiceRule"     type="choiceRule"/>
+      <action name="ignoreCandidateChoiceRule"  type="choiceRule"/>
+      <action name="revertExplicitChoiceRule"   type="choiceRule"/>
+   </model>
+
+   <!-- toolbar action for enable table -->
+   <model name="choiceenabletable_toolbar_actions">
+      <action name="addEnablesMembership"       type="filterTemplate" shortcut="true"/>
+      <action name="removeChoiceRuleMembership" type="optionmanager" shortcut="true"/>
+      <action name="deleteChoiceRule"           type="optionmanager" shortcut="true"/>
+      <action name="revertChoiceEnable"         type="choiceEnable" shortcut="true"/>
+      <action name="list_copy"                  type="object" shortcut="true"/>
+      <action name="separator"                  type="separator"/>
+      <submodel name="more Choice Rule actions new"/>
+   </model>
+
+   <!-- toolbar action for enable table in option set -->
+   <model name="choiceenabletable_optionset_toolbar_actions">
+      <action name="addEnablesMembership"       type="filterTemplate" shortcut="true"/>
+      <action name="removeChoiceRuleMembership" type="optionmanager" shortcut="true"/>
+      <action name="deleteChoiceRule"           type="optionmanager" shortcut="true"/>
+      <action name="revertChoiceEnable"         type="choiceEnable" shortcut="true"/>
+      <action name="list_copy"                  type="object" shortcut="true"/>
+   </model>
+
+   <!-- toolbar action for local enable table -->
+   <model name="localchoiceenabletable_toolbar_actions">
+      <action name="removeLocalChoiceRuleTB"    type="optionmanager" shortcut="true"/>
+      <action name="list_copy"                  type="object" shortcut="true"/>
+   </model>
+
+   <!-- tabs for Exclude Rule Info Page -->
+   <model name="constraintInfoPageTabSet">
+      <submodel name="constraintDetails"/>
+      <submodel name="constraintWhereUsed"/>
+      <submodel name="changesTab"/>
+      <submodel name="ATO_HistoryTab"/>
+   </model>
+
+   <model name="constraintDetails" resourceBundle="com.ptc.windchill.option.optionResource">
+      <action name="primaryAttributes"     type="object"/>
+   </model>
+
+   <model name="constraintWhereUsed" resourceBundle="com.ptc.windchill.option.optionResource">
+      <action name="listOptionSetsFromChoiceRule"  type="choiceConstraint"/>
+   </model>
+
+   <model name="third_level_nav_constraint">
+      <submodel name="constraint_general"/>
+      <submodel name="changes"/>
+      <submodel name="history"/>
+   </model>
+
+   <model name="constraint_general" resourceBundle="com.ptc.windchill.option.optionResource">
+      <description>"General" 3rd level nav menu for Constraint</description>
+      <action name="primaryAttributes"  type="object"/>
+      <action name="listOptionSetsFromChoiceRule"  type="choiceConstraint"/>
+      <action name="effTableForPartsAndMPMLinkInfoPage" type="effectivity"/>
+   </model>
+
+   <!-- main tabs for VariantSpec -->
+   <model name="variantSpecInfoPageTabSet" resourceBundle="com.ptc.core.ui.navigationRB">
+      <!-- <action name="details" type="infoPage"/> -->
+      <submodel name="variantSpecDetails"/>
+      <action name ="productStructureGWT" type="psb"/>
+      <submodel name="changesTab"/>
+   </model>
+
+   <model name="variantSpecDetails" resourceBundle="com.ptc.wpcfg.wpcfgActionsRB">
+      <action name="primaryAttributes"     type="object"/>
+      <action name="choicesOfVariantSpec"  type="choiceMappable"/>
+      <action name="deliverables"          type="variantspec"/>
+      <action name="matchingVariants"      type="variantspec"/>
+   </model>
+
+   <!-- list used on variantspec details page -->
+   <model name="variantspec details actions"
+         menufor="com.ptc.wpcfg.doc.VariantSpec" resourceBundle="com.ptc.wpcfg.wpcfgActionsRB">
+      <action name="view" type="object"/>
+      <action name="separator" type="separator"/>
+      <action name="download_primary_attachment" type="attachments"/>
+      <action name="separator" type="separator"/>
+      <action name="openInMatrixEditorRMB" type="productfamily"/>  <!--Matrix editor for selected objects-->
+      <action name="separator" type="separator"/>
+      <action name="checkin" type="wip"/>
+      <action name="checkout" type="wip"/>
+      <action name="undocheckout" type="object"/>
+      <action name="edit" type="variantspec"/>
+      <action name="editOptionFilter" type="variantspec"/>
+      <action name="REVISEITEMS" type="pdmObject"/>               <!-- New Revision -->
+      <action name="separator" type="separator"/>
+      <submodel name="variantspec details actions new"/>
+      <action name="separator" type="separator"/>
+      <action name="cut" type="object"/>
+      <action name="copy" type="object"/>
+      <action name="saveAsVariantSpec" type="variantspec"/>
+      <action name="renameObjectWizard" type="object"/>
+      <action name="CONTAINERMOVE" type="pdmObject"/>
+      <action name="setState" type="lifecycle"/>                 <!-- Set State -->
+      <action name="MULTI_OBJ_DELETE" type="pdmObject"/>         <!-- Delete -->
+      <action name="MULTI_OBJ_DELETE_DETAILS" type="pdmObject"/> <!-- Delete -->
+      <action name="separator" type="separator"/>
+      <action name="previewECOptions" type="filterTemplate"/>
+      <action name="reconfigure" type="variantspec"/>
+      <action name="requestDeliverables" type="variantspec"/>
+      <action name="viewSolutionWizard" type="variantspec"/>
+      <action name="separator" type="separator"/>
+      <action name="SBAddToPrj" type="sandbox"/>
+      <action name="separator" type="separator"/>
+      <action name="removeShare" type="object"/>
+      <action name="sandboxCheckoutShare" type="object"/>
+      <action name="SBSendToPdm" type="sandbox"/>
+      <action name="sandboxUndoCheckoutDetails" type="object"/>
+      <action name="separator" type="separator"/>
+      <action name="wtObjCompare" type="ocmp"/>
+      <action name="compareSolution" type="variantspec"/>
+      <action name="separator" type="separator"/>
+      <action name="createSubscription" type="subscription"/>
+      <action name="separator" type="separator"/>
+      <action name="track_new_work" type="resourceAssignment" /><!-- Track new Work against subject of deliverable-->
+      <action name="new_plan_activity" type="planActivity" /><!-- New Plan Activity against subject -->      
+   </model>
+
+   <!-- 3rd level nav menu bar for variantspecs -->
+   <model name="third_level_nav_spec" resourceBundle="com.ptc.wpcfg.wpcfgActionsRB"
+         defaultActionName="deliverables" defaultActionType="variantspec">
+      <submodel name="spec_general"/>
+      <submodel name="changesTab"/>
+      <submodel name="vspec_relatedItems"/>
+      <submodel name="history"/>
+      <submodel name="collaboration"/>
+   </model>
+
+   <model name="vspec_relatedItems" resourceBundle="com.ptc.wpcfg.wpcfgActionsRB">
+      <action name="deliverables" type="variantspec"/>
+      <action name="matchingVariants" type="variantspec"/>
+     <action name="scheduledDeliverables" type="planActivity"/>             <!-- Associated PlanActivities which act as Scheduled Deliverables. -->
+   </model>
+
+   <model name="spec_general" resourceBundle="com.ptc.wpcfg.wpcfgActionsRB">
+      <description>"General" 3rd level nav menu for OptionSet</description>
+      <action name="primaryAttributes" type="object"/>
+      <action name="primaryContent" type="object"/>
+      <action name="reference" type="notebook"/>
+      <action name="choicesOfVariantSpec" type="choiceMappable"/>
+   </model>
+
+   <!-- Deliverables action -->
+   <model name="deliverable actions" resourceBundle="com.ptc.wpcfg.wpcfgActionsRB">
+      <action name="addDeliverables"       type="variantspec" shortcut="true"/>
+      <action name="deleteDeliverableLink" type="variantspec" shortcut="true"/>
+   </model>
+
+   <!-- Deliverables Request action -->
+   <model name="deliverable request actions" resourceBundle="com.ptc.wpcfg.wpcfgActionsRB">
+      <action name="deleteDeliverableRequest" type="variantspec" shortcut="true"/>
+   </model>
+
+   <!-- Variants 3rd level nav table toolbar menu for variants table-->
+   <model name="variants actions" resourceBundle="com.ptc.wpcfg.wpcfgActionsRB">
+      <action name="detachVariants"   type="variant" shortcut="true"/>
+      <action name="validateVariants" type="variant" shortcut="true"/>
+      <action name="attachVariants"   type="variant" shortcut="true"/>
+   </model>
+
+   <!-- Variants 3rd level nav table toolbar menu for generics table-->
+   <model name="generics actions" resourceBundle="com.ptc.wpcfg.wpcfgActionsRB">
+      <action name="deleteVariantAssociation" type="variant" shortcut="true"/>
+      <action name="validateVariants" type="variant" shortcut="true"/>
+   </model>
+
+   <model name="relatedVariantSpecsRowActions" resourceBundle="com.ptc.wpcfg.wpcfgActionsRB">
+      <action name="compareSpecForRelatedVariantSpecs" type="variantspec" shortcut="true"/>
+      <action name="wtObjCompareMultiple" type="ocmp" shortcut="true"/>
+      <action name="list_delete" type="object" shortcut="true"/>
+   </model>
+
+   <model name="viewSolutionmodel" resourceBundle="com.ptc.wpcfg.wpcfgActionsRB">
+      <action name="explode" type="folder" shortcut="true"/>
+      <action name="implode" type="folder" shortcut="true"/>
+   </model>
+
+   <model name="compareLogicWizardButtons" resourceBundle="com.ptc.wpcfg.wpcfgActionsRB">
+      <action name="compareLogicReportOKButton" type="generic"/>
+      <action name="cancelButton" type="object"/>
+   </model>
+
+   <!--  submodel for logicbase -->
+   <model name="logicbase" resourceBundle="com.ptc.wpcfg.wpcfgActionsRB">
+      <action name="parameters" type="logicbase"/>
+      <action name="constraints" type="logicbase"/>
+   </model>
+
+   <model name="variantspec details actions new" resourceBundle="com.ptc.wpcfg.wpcfgActionsRB">
+      <action name="create" type="changeNotice"/>      <!-- New Change Notice -->
+      <action name="create" type="changeRequest"/>     <!-- New Change Request -->
+      <action name="create" type="problemReport"/>     <!-- New Problem Report -->
+      <action name="create" type="promotionRequest"/>  <!-- Promote -->
+      <action name="separator" type="separator"/>
+      <action name="createPARFromVariantSpec" type="par"/>  <!-- New Configuration Context -->
+   </model>
+
+   <model name="ConfigureWizardButtons" resourceBundle="com.ptc.wpcfg.wpcfgActionsRB">
+      <action name="prevButton"        type="object"/>
+      <action name="nextButton"        type="object"/>
+      <action name="configSaveBtn"     type="configure"/>
+      <action name="okButton"          type="object"/>
+      <action name="configCancelBtn"   type="configure"/>
+   </model>
+
+   <model name="PreviewOptionSetButtons" resourceBundle="com.ptc.wpcfg.wpcfgActionsRB">
+      <action name="closeBtn"   type="choiceComponent"/>
+   </model>
+
+   <model name="LogicReferences_tableToolbar_actions" resourceBundle="com.ptc.wpcfg.wpcfgActionsRB">
+      <action name="addLogicReferences" type="generic" shortcut="true"/>
+      <action name="removeLogicReferences" type="generic" shortcut="true"/>
+   </model>
+
+   <model name="treetable.default.toolbaractions" resourceBundle="com.ptc.wpcfg.wpcfgActionsRB">
+      <action name="explode" type="folder" shortcut="true" />
+      <action name="implode" type="folder" shortcut="true" />
+   </model>
+
+   <model name="MinMaxWizardButtons" resourceBundle="com.ptc.wpcfg.wpcfgActionsRB">
+      <action name="minMaxCloseBtn"   type="configure"/>
+   </model>
+
+   <model name="choicecomponent.table.toolbaractions">
+      <action name="clearAll"         type="choiceComponent" shortcut="true" />
+      <submodel name="exportlisttofile_submenu" type="object"/>
+   </model>
+
+   <model name="choicecomponent.table.toolbaractions.noClear">
+      <submodel name="exportlisttofile_submenu" type="object"/>
+   </model>
+
+   <!-- toolbar action for choicerule table in option pool-->
+   <model name="globalchoicerule_toolbar_actions">
+      <action name="deleteGlobalConditionalRule"  type="choiceRule"  shortcut="true" />
+      <action name="createConditionalRule"        type="choiceRule"  shortcut="true" />
+      <action name="addChoiceRuleMembership"      type="choiceRule"  shortcut="true" />
+      <action name="removeChoiceRuleMembership"   type="optionmanager" shortcut="true" />
+      <action name="revertExplicitChoiceRule"     type="choiceRule"  shortcut="true" />
+      <action name="list_copy"                    type="object"      shortcut="true"/>
+      <action name="separator"                    type="separator"/>
+      <submodel name="more Choice Rule actions new"/>
+   </model>
+
+   <!-- toolbar action for choicerule table in option set -->
+   <model name="globalchoicerule_optionset_toolbar_actions">
+      <action name="deleteGlobalConditionalRule"  type="choiceRule"    shortcut="true" />
+      <action name="createConditionalRule"        type="choiceRule"    shortcut="true" />
+      <action name="addChoiceRuleMembership"      type="choiceRule"    shortcut="true" />
+      <action name="removeChoiceRuleMembership"   type="optionmanager" shortcut="true" />
+      <action name="revertExplicitChoiceRule"     type="choiceRule"    shortcut="true" />
+      <action name="list_copy"                    type="object" shortcut="true"/>
+   </model>
+
+   <!-- toolbar action for choicerule table -->
+   <model name="localchoicerule_toolbar_actions">
+      <action name="removeLocalConditionalRule"  type="choiceRule" shortcut="true"/>
+      <action name="createLocalConditionalRule"  type="choiceRule" shortcut="true"/>
+      <action name="list_copy"                   type="object" shortcut="true"/>
+   </model>
+
+    <!-- tool bar action for create Expression table -->
+   <model name="create_expression_toolbar_actions">
+      <action name="addRowsToTable"        type="expressionable" shortcut="true" />
+      <action name="removeRowsFromTable"   type="expressionable" shortcut="true" />
+   </model>
+
+   <model name="item_expression_toolbar_actions">
+      <action name="viewAssignedExpression"      type="expressionAssignable" shortcut="true" />
+      <action name="copyAssignedExpression"      type="expressionAssignable" shortcut="true" />
+      <action name="assignItemExpressionPreStep" type="expressionAssignable" shortcut="true" />
+   </model>
+
+   <model name="uses_expression_toolbar_actions">
+      <action name="assignUsesExpression"        type="expressionAssignable" shortcut="true" />
+   </model>
+
+   <model name="actionmemberstable_toolbar_actions">
+      <action name="addRowsToTable"              type="expressionable" shortcut="true" />
+      <action name="removeRowsFromTable"         type="expressionable" shortcut="true" />
+   </model>
+
+   <model name="Ignored_ChoiceRule_Membership_tabletoolbar_actions">
+      <action name="addCandidateChoiceRule"      type="choiceRule" shortcut="true" />
+   </model>
+
+   <model name="Candidate_ChoiceRule_Membership_tabletoolbar_actions">
+      <action name="addCandidateChoiceRule"      type="choiceRule" shortcut="true" />
+      <action name="ignoreCandidateChoiceRule"   type="choiceRule" shortcut="true" />
+   </model>
+
+   <model name="choicerule_forchoices_toolbar">
+      <action name="list_copy"   type="object" shortcut="true"/>
+   </model>
+
+   <model name="expressionAlias_inchoices_toolbar">
+      <action name="list_copy"   type="object" shortcut="true"/>
+   </model>
+
+   <model name="ExpressionAliasWizButtons">
+      <action name="prevButton"                  type="object"/>
+      <action name="nextButton"                  type="object"/>
+      <action name="validateExpressionBtn"       type="expressionable"/>
+      <action name="okButton"                    type="object"/>
+      <action name="editCancelButton"            type="object"/>
+   </model>
+
+   <model name="ExpressionWizButtons">
+      <action name="prevButton"                   type="object"/>
+      <action name="nextButton"                   type="object"/>
+      <action name="validateExpressionBtn"        type="expressionable"/>
+      <action name="okButton"                     type="object"/>
+      <action name="assignExpressionCancelButton" type="expressionAssignable"/>
+   </model>
+
+   <model name="EditWizardButtonsNoApply">
+      <action name="prevButton"                   type="object"/>
+      <action name="nextButton"                   type="object"/>
+      <action name="okButton"                     type="object"/>
+      <action name="editCancelButton"             type="object"/>
+   </model>
+
+   <model name="expressionAlias_toolbar_actions">
+      <action name="deleteExpressionAliasToolbar" type="expressionAlias" shortcut="true"/>
+      <action name="createExpressionAlias"        type="expressionAlias" shortcut="true"/>
+      <action name="list_copy"                    type="object" shortcut="true"/>
+      <action name="separator"                    type="separator"/>
+      <submodel name="more Choice Rule actions new"/>
+   </model>
+
+   <!-- tabs for expressionAlias Info Page -->
+   <model name="expressionAliasInfoPageTabSet">
+      <submodel name="expressionAliasDetails"/>
+      <submodel name="changesTab"/>
+      <submodel name="expressionAliasHistoryTab"/>
+      <submodel name="expressionAliasWhereUsedTab"/>
+   </model>
+
+   <model name="expressionAliasDetails" resourceBundle="com.ptc.windchill.option.optionResource">
+      <action name="primaryAttributes"     type="object"/>
+   </model>
+
+   <model name="expressionAliasHistoryTab" resourceBundle="com.ptc.windchill.option.optionResource">
+      <action name="maturityHistory" type="history"/>
+      <action name="versionHistory"  type="history"/>
+   </model>
+
+   <model name="expressionAliasWhereUsedTab" resourceBundle="com.ptc.windchill.option.optionResource">
+      <action name="whereAssigned"   type="expressionAlias"/>
+      <action name="expressionAliasInChoiceRules"    type="expressionAlias"/>
+      <action name="listAliases"    type="expressionAlias"/>
+   </model>
+
+   <model name="third_level_nav_expressionAlias">
+      <submodel name="expressionAlias_general"/>
+      <submodel name="changesTab"/>
+      <submodel name="expressionAlias_third_level_history"/>
+      <submodel name="ATO_collaboration" />              <!-- Collaboration -->
+   </model>
+
+   <model name="expressionAlias_general" resourceBundle="com.ptc.windchill.option.optionResource">
+      <description>"General" 3rd level nav menu for Alias</description>
+      <action name="primaryAttributes" type="object"/>
+      <action name="effTableForPartsAndMPMLinkInfoPage" type="effectivity"/>
+      <submodel name="expressionAliasWhereUsedTab"/>
+   </model>
+
+   <model name="expressionAlias_third_level_history" resourceBundle="com.ptc.windchill.option.optionResource">
+      <description>"History" 3rd level nav menu for Alias</description>
+      <action name="timelineHistory" type="history"/>
+      <action name="separator" type="separator"/>
+      <action name="maturityHistory" type="history"/>
+      <action name="versionHistory" type="history"/>
+      <action name="separator" type="separator"/>
+      <action name="processHistory" type="workflow"/>
+      <action name="legacyLCHistory" type="history"/>
+      <action name="separator" type="separator"/>
+      <action name="renameHistory" type="object"/>
+      <action name="separator" type="separator"/>
+      <action name="effectivityHistory" type="history"/>
+   </model>
+
+   <!-- tabs for Assigned Expression Info Page -->
+   <model name="assignedExpressionInfoPageTabSet">
+      <submodel name="assignedExpressionDetails"/>
+      <submodel name="changesTab"/>
+      <submodel name="assignedExpressionHistoryTab"/>
+   </model>
+
+   <model name="assignedExpressionDetails" resourceBundle="com.ptc.windchill.option.optionResource">
+      <action name="primaryAttributes"     type="object"/>
+      <action name="attributes"            type="object"/>
+   </model>
+
+   <model name="assignedExpressionHistoryTab" resourceBundle="com.ptc.windchill.option.optionResource">
+      <action name="maturityHistory" type="history"/>
+      <action name="versionHistory"  type="history"/>
+   </model>
+
+   <model name="third_level_nav_assignedExpression">
+      <submodel name="assignedExpression_general"/>
+      <submodel name="changesTab"/>
+      <submodel name="assignedExpression_third_level_history"/>
+   </model>
+
+   <model name="assignedExpression_general" resourceBundle="com.ptc.windchill.option.optionResource">
+      <description>"General" 3rd level nav menu for Assigned Expressions</description>
+      <action name="primaryAttributes" type="object"/>
+      <action name="effTableForPartsAndMPMLinkInfoPage" type="effectivity"/>
+   </model>
+
+   <model name="assignedExpression_third_level_history" resourceBundle="com.ptc.windchill.option.optionResource">
+      <description>"History" 3rd level nav menu for Alias</description>
+      <action name="timelineHistory"    type="history"/>
+      <action name="separator"          type="separator"/>
+      <action name="maturityHistory"    type="history"/>
+      <action name="versionHistory"     type="history"/>
+      <action name="separator"          type="separator"/>
+      <action name="processHistory"     type="workflow"/>
+      <action name="legacyLCHistory"    type="history"/>
+      <action name="separator"          type="separator"/>
+      <action name="renameHistory"      type="object"/>
+      <action name="separator"          type="separator"/>
+      <action name="effectivityHistory" type="history"/>
+   </model>
+
+   <!-- more action for Independent Assigned Expression -->
+   <model name="IAE_infopage_actions_platform_structure" menufor="com.ptc.windchill.option.model.IndependentAssignedExpression" >
+      <action name="view"               type="object"/>
+      <action name="separator"          type="separator"/>
+      <action name="undocheckout"       type="object"/>
+      <action name="editExpression"     type="independentExpression"/>
+      <action name="reviseExpression"   type="expressionable"/>
+      <action name="separator"          type="separator"/>
+      <submodel name="more Choice actions new"/>
+      <action name="separator"          type="separator"/>
+      <action name="copy"               type="object"/>
+      <action name="renameObjectWizard" type="object"/>
+      <action name="setState"           type="lifecycle"/>
+      <action name="deleteExpression"   type="independentExpression"/>
+   </model>
+
+   <!-- Action model to be displayed if non Platform Structure User for IAEs -->
+   <model name="IAE_infopage_actions_non_platform_structure" resourceBundle="com.ptc.windchill.option.optionResource" >
+      <action name="view"               type="object"/>
+      <action name="separator"          type="separator"/>
+      <action name="undocheckout"       type="object"/>
+      <action name="separator"          type="separator"/>
+      <submodel name="more Choice actions new"/>
+      <action name="separator"          type="separator"/>
+      <action name="copy"               type="object"/>
+   </model>
+
+</actionmodels>

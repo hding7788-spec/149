@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE NmLoader
+  SYSTEM "standardX20.dtd">
+<NmLoader>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>ResourceAttributeOrg</csvname>
+      <csvhierarchyDisplayName>Resource_Attribute_Org</csvhierarchyDisplayName>
+      <csvorganizerPaths></csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name/>
+      <csvdescription>organizer host MPM objects attributes</csvdescription>
+      <csvdata_type>ORG</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier/>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>MPM_Attr_QueueCostWithUnit</csvname>
+      <csvhierarchyDisplayName>Standard Queue Cost</csvhierarchyDisplayName>
+      <csvorganizerPaths>ResourceAttributeOrg</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>Standard Queue Cost</csvdisplay_name>
+      <csvdescription>Standard Queue Cost</csvdescription>
+      <csvdata_type>UNIT</csvdata_type>
+      <csvQoMName>MPM_QoM_CostUnit</csvQoMName>
+      <csvnameValuePairs></csvnameValuePairs>
+      <csvlogicalIdentifier>com.ptc.MPM_Attr_QueueCostWithUnit</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>149IBA</csvname>
+      <csvhierarchyDisplayName>149IBA</csvhierarchyDisplayName>
+      <csvorganizerPaths></csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name/>
+      <csvdescription/>
+      <csvdata_type>ORG</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier/>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>PTC_MATERIA_NAME</csvname>
+      <csvhierarchyDisplayName>材料名称</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>材料名称</csvdisplay_name>
+      <csvdescription>材料名称</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>PTC_MATERIA_NAME</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>MPM_Attr_Std8CostWithUnit</csvname>
+      <csvhierarchyDisplayName>Standard Other Cost</csvhierarchyDisplayName>
+      <csvorganizerPaths>ResourceAttributeOrg</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>Standard Other Cost</csvdisplay_name>
+      <csvdescription>Standard Other Cost</csvdescription>
+      <csvdata_type>UNIT</csvdata_type>
+      <csvQoMName>MPM_QoM_CostUnit</csvQoMName>
+      <csvnameValuePairs></csvnameValuePairs>
+      <csvlogicalIdentifier>com.ptc.MPM_Attr_Std8CostWithUnit</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>MPM_Attr_DimensionZWithUnit</csvname>
+      <csvhierarchyDisplayName>Dimension Z</csvhierarchyDisplayName>
+      <csvorganizerPaths>ResourceAttributeOrg</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>Dimension Z</csvdisplay_name>
+      <csvdescription>Dimension Z</csvdescription>
+      <csvdata_type>UNIT</csvdata_type>
+      <csvQoMName>MPMLink_Length</csvQoMName>
+      <csvnameValuePairs></csvnameValuePairs>
+      <csvlogicalIdentifier>com.ptc.MPM_Attr_DimensionZWithUnit</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>KEYCOMPONENT</csvname>
+      <csvhierarchyDisplayName>关重件标识</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>关重件标识</csvdisplay_name>
+      <csvdescription>关重件标识</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>KEYCOMPONENT</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>DesignDept</csvname>
+      <csvhierarchyDisplayName>设计单位</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>设计单位</csvdisplay_name>
+      <csvdescription>设计单位</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>DesignDept</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>REMARK</csvname>
+      <csvhierarchyDisplayName>备注</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>备注</csvdisplay_name>
+      <csvdescription>备注</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>REMARK</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>MINDEX</csvname>
+      <csvhierarchyDisplayName>所属型号</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>所属型号</csvdisplay_name>
+      <csvdescription>所属型号</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>MINDEX</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>MPM_Attr_TeardownTimeWithUnit</csvname>
+      <csvhierarchyDisplayName>Standard Tear Down Time</csvhierarchyDisplayName>
+      <csvorganizerPaths>ResourceAttributeOrg</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>Standard Tear Down Time</csvdisplay_name>
+      <csvdescription>Standard Tear Down Time</csvdescription>
+      <csvdata_type>UNIT</csvdata_type>
+      <csvQoMName>MPMLink_Time</csvQoMName>
+      <csvnameValuePairs></csvnameValuePairs>
+      <csvlogicalIdentifier>com.ptc.MPM_Attr_TeardownTimeWithUnit</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>MPM_Attr_ProcessingCostWithUnit</csvname>
+      <csvhierarchyDisplayName>Standard Processing Cost</csvhierarchyDisplayName>
+      <csvorganizerPaths>ResourceAttributeOrg</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>Standard Processing Cost</csvdisplay_name>
+      <csvdescription>Standard Processing Cost</csvdescription>
+      <csvdata_type>UNIT</csvdata_type>
+      <csvQoMName>MPM_QoM_CostUnit</csvQoMName>
+      <csvnameValuePairs></csvnameValuePairs>
+      <csvlogicalIdentifier>com.ptc.MPM_Attr_ProcessingCostWithUnit</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>CurrentStage</csvname>
+      <csvhierarchyDisplayName>当前阶段</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>当前阶段</csvdisplay_name>
+      <csvdescription>当前阶段</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>CurrentStage</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>CTYPE</csvname>
+      <csvhierarchyDisplayName>零部件分类</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>零部件分类</csvdisplay_name>
+      <csvdescription>零部件分类</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>CTYPE</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>PRO_MP_MASS</csvname>
+      <csvhierarchyDisplayName>质量</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>质量</csvdisplay_name>
+      <csvdescription>质量</csvdescription>
+      <csvdata_type>FLOAT</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>PRO_MP_MASS</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>MPM_Attr_DimensionYWithUnit</csvname>
+      <csvhierarchyDisplayName>Dimension Y</csvhierarchyDisplayName>
+      <csvorganizerPaths>ResourceAttributeOrg</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>Dimension Y</csvdisplay_name>
+      <csvdescription>Dimension Y</csvdescription>
+      <csvdata_type>UNIT</csvdata_type>
+      <csvQoMName>MPMLink_Length</csvQoMName>
+      <csvnameValuePairs></csvnameValuePairs>
+      <csvlogicalIdentifier>com.ptc.MPM_Attr_DimensionYWithUnit</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>MPM_Attr_WaitTimeWithUnit</csvname>
+      <csvhierarchyDisplayName>Standard Waiting Time</csvhierarchyDisplayName>
+      <csvorganizerPaths>ResourceAttributeOrg</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>Standard Waiting Time</csvdisplay_name>
+      <csvdescription>Standard Waiting Time</csvdescription>
+      <csvdata_type>UNIT</csvdata_type>
+      <csvQoMName>MPMLink_Time</csvQoMName>
+      <csvnameValuePairs></csvnameValuePairs>
+      <csvlogicalIdentifier>com.ptc.MPM_Attr_WaitTimeWithUnit</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>MPM_Attr_SetupTimeWithUnit</csvname>
+      <csvhierarchyDisplayName>Standard Setup Time</csvhierarchyDisplayName>
+      <csvorganizerPaths>ResourceAttributeOrg</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>Standard Setup Time</csvdisplay_name>
+      <csvdescription>Standard Setup Time</csvdescription>
+      <csvdata_type>UNIT</csvdata_type>
+      <csvQoMName>MPMLink_Time</csvQoMName>
+      <csvnameValuePairs></csvnameValuePairs>
+      <csvlogicalIdentifier>com.ptc.MPM_Attr_SetupTimeWithUnit</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>MPM_Attr_WaitingCostWithUnit</csvname>
+      <csvhierarchyDisplayName>Standard Waiting Cost</csvhierarchyDisplayName>
+      <csvorganizerPaths>ResourceAttributeOrg</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>Standard Waiting Cost</csvdisplay_name>
+      <csvdescription>Standard Waiting Cost</csvdescription>
+      <csvdata_type>UNIT</csvdata_type>
+      <csvQoMName>MPM_QoM_CostUnit</csvQoMName>
+      <csvnameValuePairs></csvnameValuePairs>
+      <csvlogicalIdentifier>com.ptc.MPM_Attr_WaitingCostWithUnit</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>MPM_Attr_WorkingVolumeZWithUnit</csvname>
+      <csvhierarchyDisplayName>Working Volume Z</csvhierarchyDisplayName>
+      <csvorganizerPaths>ResourceAttributeOrg</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>Working Volume Z</csvdisplay_name>
+      <csvdescription>Working Volume Z</csvdescription>
+      <csvdata_type>UNIT</csvdata_type>
+      <csvQoMName>MPMLink_Length</csvQoMName>
+      <csvnameValuePairs></csvnameValuePairs>
+      <csvlogicalIdentifier>com.ptc.MPM_Attr_WorkingVolumeZWithUnit</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>CINDEX</csvname>
+      <csvhierarchyDisplayName>图号</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>图号</csvdisplay_name>
+      <csvdescription>图号</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>CINDEX</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>SECRET</csvname>
+      <csvhierarchyDisplayName>密级</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>密级</csvdisplay_name>
+      <csvdescription>密级</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>SECRET</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>SETMARK</csvname>
+      <csvhierarchyDisplayName>成套件标识</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>成套件标识</csvdisplay_name>
+      <csvdescription>成套件标识</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>SETMARK</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>MATERIA</csvname>
+      <csvhierarchyDisplayName>材料</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>材料</csvdisplay_name>
+      <csvdescription>材料</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>MATERIA</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>MPM_Attr_PrecisionWithUnit</csvname>
+      <csvhierarchyDisplayName>Precision</csvhierarchyDisplayName>
+      <csvorganizerPaths>ResourceAttributeOrg</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>Precision</csvdisplay_name>
+      <csvdescription>Precision</csvdescription>
+      <csvdata_type>UNIT</csvdata_type>
+      <csvQoMName>MPMLink_Length</csvQoMName>
+      <csvnameValuePairs></csvnameValuePairs>
+      <csvlogicalIdentifier>com.ptc.MPM_Attr_PrecisionWithUnit</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>MPM_Attr_MoveCostWithUnit</csvname>
+      <csvhierarchyDisplayName>Standard Move Cost</csvhierarchyDisplayName>
+      <csvorganizerPaths>ResourceAttributeOrg</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>Standard Move Cost</csvdisplay_name>
+      <csvdescription>Standard Move Cost</csvdescription>
+      <csvdata_type>UNIT</csvdata_type>
+      <csvQoMName>MPM_QoM_CostUnit</csvQoMName>
+      <csvnameValuePairs></csvnameValuePairs>
+      <csvlogicalIdentifier>com.ptc.MPM_Attr_MoveCostWithUnit</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>MPM_Attr_QueueTimeWithUnit</csvname>
+      <csvhierarchyDisplayName>Standard Queue Time</csvhierarchyDisplayName>
+      <csvorganizerPaths>ResourceAttributeOrg</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>Standard Queue Time</csvdisplay_name>
+      <csvdescription>Standard Queue Time</csvdescription>
+      <csvdata_type>UNIT</csvdata_type>
+      <csvQoMName>MPMLink_Time</csvQoMName>
+      <csvnameValuePairs></csvnameValuePairs>
+      <csvlogicalIdentifier>com.ptc.MPM_Attr_QueueTimeWithUnit</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>MPM_Attr_Std8TimeWithUnit</csvname>
+      <csvhierarchyDisplayName>Standard Other Time</csvhierarchyDisplayName>
+      <csvorganizerPaths>ResourceAttributeOrg</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>Standard Other Time</csvdisplay_name>
+      <csvdescription>Standard Other Time</csvdescription>
+      <csvdata_type>UNIT</csvdata_type>
+      <csvQoMName>MPMLink_Time</csvQoMName>
+      <csvnameValuePairs></csvnameValuePairs>
+      <csvlogicalIdentifier>com.ptc.MPM_Attr_Std8TimeWithUnit</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>CSIZE</csvname>
+      <csvhierarchyDisplayName>规格</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>规格</csvdisplay_name>
+      <csvdescription>规格</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>CSIZE</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>MPM_Attr_DimensionXWithUnit</csvname>
+      <csvhierarchyDisplayName>Dimension X</csvhierarchyDisplayName>
+      <csvorganizerPaths>ResourceAttributeOrg</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>Dimension X</csvdisplay_name>
+      <csvdescription>Dimension X</csvdescription>
+      <csvdata_type>UNIT</csvdata_type>
+      <csvQoMName>MPMLink_Length</csvQoMName>
+      <csvnameValuePairs></csvnameValuePairs>
+      <csvlogicalIdentifier>com.ptc.MPM_Attr_DimensionXWithUnit</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>MPM_Attr_LaborTimeWithUnit</csvname>
+      <csvhierarchyDisplayName>Standard Labor Time</csvhierarchyDisplayName>
+      <csvorganizerPaths>ResourceAttributeOrg</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>Standard Labor Time</csvdisplay_name>
+      <csvdescription>Standard Labor Time</csvdescription>
+      <csvdata_type>UNIT</csvdata_type>
+      <csvQoMName>MPMLink_Time</csvQoMName>
+      <csvnameValuePairs></csvnameValuePairs>
+      <csvlogicalIdentifier>com.ptc.MPM_Attr_LaborTimeWithUnit</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>MPM_Attr_TeardownCostWithUnit</csvname>
+      <csvhierarchyDisplayName>Standard Tear Down Cost</csvhierarchyDisplayName>
+      <csvorganizerPaths>ResourceAttributeOrg</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>Standard Tear Down Cost</csvdisplay_name>
+      <csvdescription>Standard Tear Down Cost</csvdescription>
+      <csvdata_type>UNIT</csvdata_type>
+      <csvQoMName>MPM_QoM_CostUnit</csvQoMName>
+      <csvnameValuePairs></csvnameValuePairs>
+      <csvlogicalIdentifier>com.ptc.MPM_Attr_TeardownCostWithUnit</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>size</csvname>
+      <csvhierarchyDisplayName>二维工程图的图幅</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>二维工程图的图幅</csvdisplay_name>
+      <csvdescription>二维工程图的图幅</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>size</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>CMATDOWN</csvname>
+      <csvhierarchyDisplayName>材料（双行标注下）</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>材料（双行标注下）</csvdisplay_name>
+      <csvdescription>材料（双行标注下）</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>CMATDOWN</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>MPM_Attr_SetupCostWithUnit</csvname>
+      <csvhierarchyDisplayName>Standard Setup Cost</csvhierarchyDisplayName>
+      <csvorganizerPaths>ResourceAttributeOrg</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>Standard Setup Cost</csvdisplay_name>
+      <csvdescription>Standard Setup Cost</csvdescription>
+      <csvdata_type>UNIT</csvdata_type>
+      <csvQoMName>MPM_QoM_CostUnit</csvQoMName>
+      <csvnameValuePairs></csvnameValuePairs>
+      <csvlogicalIdentifier>com.ptc.MPM_Attr_SetupCostWithUnit</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>MPM_Attr_MoveTimeWithUnit</csvname>
+      <csvhierarchyDisplayName>Standard Move Time</csvhierarchyDisplayName>
+      <csvorganizerPaths>ResourceAttributeOrg</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>Standard Move Time</csvdisplay_name>
+      <csvdescription>Standard Move Time</csvdescription>
+      <csvdata_type>UNIT</csvdata_type>
+      <csvQoMName>MPMLink_Time</csvQoMName>
+      <csvnameValuePairs></csvnameValuePairs>
+      <csvlogicalIdentifier>com.ptc.MPM_Attr_MoveTimeWithUnit</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>MPM_Attr_WorkingVolumeYWithUnit</csvname>
+      <csvhierarchyDisplayName>Working Volume Y</csvhierarchyDisplayName>
+      <csvorganizerPaths>ResourceAttributeOrg</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>Working Volume Y</csvdisplay_name>
+      <csvdescription>Working Volume Y</csvdescription>
+      <csvdata_type>UNIT</csvdata_type>
+      <csvQoMName>MPMLink_Length</csvQoMName>
+      <csvnameValuePairs></csvnameValuePairs>
+      <csvlogicalIdentifier>com.ptc.MPM_Attr_WorkingVolumeYWithUnit</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>MPM_Attr_ProcessTimeWithUnit</csvname>
+      <csvhierarchyDisplayName>Standard Processing Time</csvhierarchyDisplayName>
+      <csvorganizerPaths>ResourceAttributeOrg</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>Standard Processing Time</csvdisplay_name>
+      <csvdescription>Standard Processing Time</csvdescription>
+      <csvdata_type>UNIT</csvdata_type>
+      <csvQoMName>MPMLink_Time</csvQoMName>
+      <csvnameValuePairs></csvnameValuePairs>
+      <csvlogicalIdentifier>com.ptc.MPM_Attr_ProcessTimeWithUnit</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>CMATUP</csvname>
+      <csvhierarchyDisplayName>材料（双行标注上）</csvhierarchyDisplayName>
+      <csvorganizerPaths>149IBA</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>材料（双行标注上）</csvdisplay_name>
+      <csvdescription>材料（双行标注上）</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier>CMATUP</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>MPM_Attr_LaborCostWithUnit</csvname>
+      <csvhierarchyDisplayName>Standard Labor Cost</csvhierarchyDisplayName>
+      <csvorganizerPaths>ResourceAttributeOrg</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>Standard Labor Cost</csvdisplay_name>
+      <csvdescription>Standard Labor Cost</csvdescription>
+      <csvdata_type>UNIT</csvdata_type>
+      <csvQoMName>MPM_QoM_CostUnit</csvQoMName>
+      <csvnameValuePairs></csvnameValuePairs>
+      <csvlogicalIdentifier>com.ptc.MPM_Attr_LaborCostWithUnit</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>MPM_Attr_WorkingVolumeXWithUnit</csvname>
+      <csvhierarchyDisplayName>Working Volume X</csvhierarchyDisplayName>
+      <csvorganizerPaths>ResourceAttributeOrg</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>Working Volume X</csvdisplay_name>
+      <csvdescription>Working Volume X</csvdescription>
+      <csvdata_type>UNIT</csvdata_type>
+      <csvQoMName>MPMLink_Length</csvQoMName>
+      <csvnameValuePairs></csvnameValuePairs>
+      <csvlogicalIdentifier>com.ptc.MPM_Attr_WorkingVolumeXWithUnit</csvlogicalIdentifier>
+   </csvAttrDefinizer>
+</NmLoader>

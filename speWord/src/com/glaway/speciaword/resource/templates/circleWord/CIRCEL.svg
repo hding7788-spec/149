@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+]>
+
+ <#assign rWidth = 0 />
+ <#assign mWidth = 0 />
+ <#if text_width < 10>
+ 	<#assign rWidth = 12.4 />
+ <#else>
+ 	<#assign rWidth = text_width/2 + 0.5 />
+ </#if>
+ <#assign mWidth = rWidth*2  />
+
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0" y="0" width="${mWidth + 1}" height="${mWidth +1}" viewBox="0 0 ${mWidth +1} ${mWidth +1}" enable-background="new 0 0 ${mWidth +1} ${mWidth +1}" xml:space="preserve">
+<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="${mWidth/2}" cy="${mWidth/2}" r="${rWidth}"/>
+<text transform="matrix(1 0 0 1 ${rWidth - text_width/2} ${mWidth/2 + 6})" font-family="'宋体'" font-size="14">${text}</text>
+</svg>

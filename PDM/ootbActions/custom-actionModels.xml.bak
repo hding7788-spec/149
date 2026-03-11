@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE actionmodels SYSTEM "actionmodels.dtd">
+<actionmodels>
+
+	<include href="config/actions/glaway-mpm-pbom-actionModels.xml"/>
+	<include href="config/actions/glaway-mpm-mpmresource-actionModels.xml"/>
+	<include href="config/actions/glaway-mpm-parameterManager-actionModels.xml"/>
+	<!-- <include href="config/actions/custom-149-actionModels.xml"/> -->
+    <include href="config/actions/preview-actionModels.xml"/>
+    <include href="config/actions/custom-psb-actionmodels.xml"/>
+</actionmodels>

@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+
+  <!-- define the actions on the UI components -->
+<actionmodels>
+
+  <model name="carRelatedCADDocsTreeContextMenuProE">
+  	<action name="editIncludeExcludeRulesRMC1GWT" type="contextbuildercustom" />
+    <action name="editIncludeExcludeRulesRMC2GWT" type="contextbuildercustom" />
+    <action name="viewInfoGWT" type="car" />
+    <action name="separator" type="separator" />
+    <action name="expandAllLevelsGWT" type="cat" />
+    <action name="collapseAllLevelsGWT" type="cat" />
+    <action name="separator" type="separator" />
+    <action name="setProximityFilter"     type="car"/>
+    <action name="setProximityRule" type="car" />
+    <action name="separator" type="separator" />
+    <submodel name="includeRepGroupProE" />
+    <action name="separator" type="separator" />
+    <action name="clearRep" type="car" />
+    <action name="separator" type="separator" />
+    <action name="excludeRep" type="car" />
+  </model>
+  
+  <model name="carRelatedCADDocsTreeContextMenuCatiaV5">
+	<action name="editIncludeExcludeRulesRMC1GWT" type="contextbuildercustom" />
+    <action name="editIncludeExcludeRulesRMC2GWT" type="contextbuildercustom" />
+    <action name="viewInfoGWT" type="car" />
+    <action name="separator" type="separator" />
+    <action name="expandAllLevelsGWT" type="cat" />
+    <action name="collapseAllLevelsGWT" type="cat" />
+    <action name="separator" type="separator" />
+    <action name="setProximityFilter"     type="car"/>
+    <action name="setProximityRule" type="car" />
+    <action name="separator" type="separator" />
+    <submodel name="includeRepGroupCatiaV5" />
+    <action name="separator" type="separator" />
+    <action name="clearRep" type="car" />
+    <action name="separator" type="separator" />
+    <action name="excludeRep" type="car" />
+  </model>
+  
+  <model name="carRelatedCADDocsTreeContextMenuWindchill">
+	<action name="editIncludeExcludeRulesRMC1GWT" type="contextbuildercustom" />
+	<action name="editIncludeExcludeRulesRMC2GWT" type="contextbuildercustom" />
+	<action name="viewInfoGWT" type="car" />
+	<action name="separator" type="separator" />
+	<action name="expandAllLevelsGWT" type="cat" />
+	<action name="collapseAllLevelsGWT" type="cat" />
+	<action name="separator" type="separator" />
+	<action name="setProximityFilter"     type="car"/>
+	<action name="setProximityRule" type="car" />
+	<action name="separator" type="separator" />
+	<submodel name="includeRepGroupWindchill" />
+	<action name="separator" type="separator" />
+	<action name="clearRep" type="car" />
+	<action name="separator" type="separator" />
+	<action name="excludeRep" type="car" />
+  </model>
+
+  <model name="carRulesToolBar">
+    <action name="deleteRuleGWT" type="car" />
+    <action name="editIncludeExcludeRulesGWT" type="contextbuildercustom" />
+    <action name="editIncludeExcludeRules2GWT" type="contextbuildercustom" />
+  </model>
+
+</actionmodels>

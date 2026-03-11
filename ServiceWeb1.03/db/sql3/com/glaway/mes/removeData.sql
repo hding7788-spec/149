@@ -1,0 +1,15 @@
+truncate table GWOPERATIONTOPARAMTABLELINK;
+truncate table GWPARAMETERTABLECOLUMN;
+truncate table GWPARAMETERTABLETYPE;
+truncate table GWPARAMETERTYPE;
+truncate table GWPARAMTABLETYPEMASTER;
+
+drop table COMMONPARAMTABLE;
+drop table MESCOMMONPARAMTABLE;
+drop table GL_MESCOMMONPARAMTABLE;
+
+select * from GWPARAMETERTABLECOLUMN order by ORDERNO asc;
+
+select * from COMMONPARAMTABLE;
+
+select count(*) from mesCommonParamTablet where t.PRODUCTNUMBER='123' and t.TECHNICSNUMBER='1473755555025' and t.OBJTYPE='¹¤Ðò' and t.OBJNUMBER='10'

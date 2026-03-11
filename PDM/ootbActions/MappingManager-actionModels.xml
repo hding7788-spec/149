@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+<!-- define the actions on the UI components -->
+<actionmodels resourceBundle="com.ptc.windchill.fedInfra.mapping.mappingManagerResource">
+   
+    <!-- Mapping Manager ToolBar-->
+    <model name="mappingManager table toolbar">                              
+        <action name="defineMapping" type="fedInfraUI" shortcut="true"/>
+        <action name="editSourceInfo" type="fedInfraUI" shortcut="true"/>
+        <action name="deleteSourceInfo" type="fedInfraUI" shortcut="true"/>    
+        <action name="downloadconflictresolutions" type="fedInfraUI" shortcut="true"/>
+    </model>  
+    
+    <!-- Mapping Table ToolBar-->
+    <model name="mapping table toolbar"> 
+        <action name="addMapping" type="fedInfraUI" shortcut="true"/>
+        <action name="addMultipleMappings" type="fedInfraUI" shortcut="true"/>         
+        <action name="removeMappings" type="fedInfraUI" shortcut="true"/>                
+    </model>  
+    
+</actionmodels>

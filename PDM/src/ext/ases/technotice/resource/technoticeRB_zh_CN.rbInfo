@@ -1,0 +1,92 @@
+ResourceInfo.class=wt.tools.resource.StringResourceInfo
+ResourceInfo.customizable=true
+ResourceInfo.deprecated=false
+
+
+# Entry Format (values equal to default value are not included)
+# <key>.value=
+# <key>.category=
+# <key>.comment=
+# <key>.argComment<n>=
+# <key>.constant=
+# <key>.customizable=
+# <key>.deprecated=
+# <key>.abbreviatedDisplay=
+# <key>.fullDisplay=
+# <key>.shortDescription=
+# <key>.longDescription=
+
+# Entry Contents
+
+#Create technotice wizard action
+technotice.create.description.value=\u521b\u5efa\u6280\u672f\u901a\u77e5\u5355
+technotice.create.description.comment=\u521b\u5efa\u6280\u672f\u901a\u77e5\u5355
+technotice.create.title.value=\u521b\u5efa\u6280\u672f\u901a\u77e5\u5355
+technotice.create.title.comment=\u521b\u5efa\u6280\u672f\u901a\u77e5\u5355
+technotice.create.tooltip.value=\u521b\u5efa\u6280\u672f\u901a\u77e5\u5355
+technotice.create.tooltip.comment=\u521b\u5efa\u6280\u672f\u901a\u77e5\u5355
+technotice.create.icon.value=newdoc.gif
+technotice.create.icon.comment=\u521b\u5efa\u6280\u672f\u901a\u77e5\u5355
+
+technotice.technoticeObjects.description.value=\u5173\u8054\u6570\u636e
+technotice.technoticeObjects.description.comment=\u5173\u8054\u6570\u636e
+technotice.technoticeObjects.title.value=\u5173\u8054\u6570\u636e
+technotice.technoticeObjects.title.comment=\u5173\u8054\u6570\u636e
+technotice.technoticeObjects.tooltip.value=\u5173\u8054\u6570\u636e
+technotice.technoticeObjects.tooltip.comment=\u5173\u8054\u6570\u636e
+technotice.technoticeObjects.icon.value=newobj.gif
+technotice.technoticeObjects.icon.comment=\u5173\u8054\u6570\u636e
+
+technotice.relatedTechNoticeObjects.description.value=\u6280\u672f\u901a\u77e5\u5355\u5173\u8054\u6570\u636e
+technotice.relatedTechNoticeObjects.description.comment=\u6280\u672f\u901a\u77e5\u5355\u5173\u8054\u6570\u636e
+technotice.relatedTechNoticeObjects.title.value=\u6280\u672f\u901a\u77e5\u5355\u5173\u8054\u6570\u636e
+technotice.relatedTechNoticeObjects.title.comment=\u6280\u672f\u901a\u77e5\u5355\u5173\u8054\u6570\u636e
+technotice.relatedTechNoticeObjects.tooltip.value=\u6280\u672f\u901a\u77e5\u5355\u5173\u8054\u6570\u636e
+technotice.relatedTechNoticeObjects.tooltip.comment=\u6280\u672f\u901a\u77e5\u5355\u5173\u8054\u6570\u636e
+technotice.relatedTechNoticeObjects.icon.value=newobj.gif
+technotice.relatedTechNoticeObjects.icon.comment=\u6280\u672f\u901a\u77e5\u5355\u5173\u8054\u6570\u636e
+
+technotice.updatetechnotice.description.value=\u7f16\u8f91\u6280\u672f\u901a\u77e5\u5355\u76f8\u5173\u6570\u636e
+technotice.updatetechnotice.description.comment=\u7f16\u8f91\u6280\u672f\u901a\u77e5\u5355\u76f8\u5173\u6570\u636e
+technotice.updatetechnotice.title.value=\u7f16\u8f91\u6280\u672f\u901a\u77e5\u5355\u76f8\u5173\u6570\u636e
+technotice.updatetechnotice.title.comment=\u7f16\u8f91\u6280\u672f\u901a\u77e5\u5355\u76f8\u5173\u6570\u636e
+technotice.updatetechnotice.tooltip.value=\u7f16\u8f91\u6280\u672f\u901a\u77e5\u5355\u76f8\u5173\u6570\u636e
+technotice.updatetechnotice.tooltip.comment=\u7f16\u8f91\u6280\u672f\u901a\u77e5\u5355\u76f8\u5173\u6570\u636e
+technotice.updatetechnotice.icon.value=multi_update.gif
+technotice.updatetechnotice.icon.comment=\u7f16\u8f91\u6280\u672f\u901a\u77e5\u5355\u76f8\u5173\u6570\u636e
+
+technotice.deletetechnotice.description.value=\u5220\u9664
+technotice.deletetechnotice.description.comment=\u5220\u9664
+technotice.deletetechnotice.title.value=\u5220\u9664
+technotice.deletetechnotice.title.comment=\u5220\u9664
+technotice.deletetechnotice.tooltip.value=\u5220\u9664
+technotice.deletetechnotice.tooltip.comment=\u5220\u9664
+technotice.deletetechnotice.icon.value=delete.gif
+technotice.deletetechnotice.icon.comment=\u5220\u9664
+
+technotice.downloadContents.description.value=\u4e0b\u8f7d\u5185\u5bb9
+technotice.downloadContents.description.comment=\u4e0b\u8f7d\u5185\u5bb9
+technotice.downloadContents.title.value=\u4e0b\u8f7d\u5185\u5bb9
+technotice.downloadContents.title.comment=\u4e0b\u8f7d\u5185\u5bb9
+technotice.downloadContents.tooltip.value=\u4e0b\u8f7d\u5185\u5bb9
+technotice.downloadContents.tooltip.comment=\u4e0b\u8f7d\u5185\u5bb9
+technotice.downloadContents.icon.value=export.gif
+technotice.downloadContents.icon.comment=\u4e0b\u8f7d\u5185\u5bb9
+
+# Create technotice Wizard labels
+technotice.create.DEFINE_ITEM_WIZ_STEP_LABEL.value=\u5b9a\u4e49\u7c7b\u578b
+technotice.create.DEFINE_ITEM_WIZ_STEP_LABEL.comment=Label for define item step in the Create technotice Wizard
+technotice.create.SET_ATTRIBUTES_WIZ_STEP_LABEL.value=\u8bbe\u7f6e\u5c5e\u6027
+technotice.create.SET_ATTRIBUTES_WIZ_STEP_LABEL.comment=Label for set attributes step in the Create technotice Wizard
+technotice.create.SET_RELATEDDATA_WIZ_STEP_LABEL.value=\u8bbe\u7f6e\u5173\u8054\u6570\u636e
+technotice.create.SET_RELATEDDATA_WIZ_STEP_LABEL.comment=Used as the label for a wizard step
+technotice.create.ATTACHMENTS_WIZ_STEP_LABEL.value=\u8bbe\u7f6e\u9644\u4ef6
+technotice.create.ATTACHMENTS_WIZ_STEP_LABEL.comment=Used as the label for a wizard step
+technotice.create.LOCATION_LABEL.value=\u4f4d\u7f6e
+technotice.create.LOCATION_LABEL.comment=lable for Location in the Create technotice Wizard
+
+technotice.BEFORE_DATA_TABLE.value=\u504f\u79bb\u524d\u6570\u636e
+technotice.BEFORE_DATA_TABLE.comment=\u504f\u79bb\u524d\u6570\u636e
+
+technotice.AFTER_DATA_TABLE.value=\u504f\u79bb\u540e\u6570\u636e
+technotice.AFTER_DATA_TABLE.comment=\u504f\u79bb\u540e\u6570\u636e

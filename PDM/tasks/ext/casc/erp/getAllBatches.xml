@@ -1,0 +1,42 @@
+
+<%@page language="java" session="false" access="http|soap" contentType="text/xml"%>
+
+<%@taglib uri="http://www.ptc.com/infoengine/taglib/core" prefix="ie"%>
+<%@page import="java.io.*"%>
+<%@page import="java.util.*"%>
+<%@page import="ext.casc.integrate.version.ProductVersionService"%>
+<%@page import=" wt.util.WTException"%>
+
+
+
+
+ 
+<%
+String number =  (String)getParam("number");
+String bomType = (String)getParam("bomType");
+//String guid = (String)getParam("guid");
+//String number =  "PART-T-111300";
+//String bomType ="Manufacturing";
+String guid ="";
+String result = "";
+ProductVersionService  batchVersion = new ProductVersionService();
+try{
+         result = batchVersion.getAllBatches(number, bomType, guid);
+}
+catch (WTException e) {
+            // TODO Auto-generated catch block
+           result = e.getLocalizedMessage();
+}
+System.out.println("----result----"+result);
+%>
+
+      <ie:webject name="Create-Group" type="GRP">
+            <ie:param name="ELEMENT" data="<%=result%>"/>
+           <ie:param name="CLASS" data="Status"/>
+           <ie:param name="GROUP_OUT" data="${@FORM[]group_out[]}"  default="output"/>
+        </ie:webject> 
+    
+
+ 
+     
+     

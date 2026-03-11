@@ -1,0 +1,2765 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE listofactions SYSTEM "actions.dtd">
+<listofactions>
+
+<!-- added by xuetao -->
+<!-- 新建工艺规则包按钮 -->
+	<objecttype name="gyrulefile" class="wt.doc.WTDocument"
+		resourceBundle="ext.casc.dfmRule.resource.actionsRB">
+		<action name="create" uicomponent="CREATE_DOC" ajax="row">
+			<command url="/netmarkets/jsp/ext/casc/document/create.jsp?type=wt.doc.WTDocument|casc.sast.149.PROCESS_DOC|casc.sast.149.GYRULEFILE"
+				class="ext.casc.dfmRule.processor.CreateDfmRuleFormProcessor"
+				method="execute" windowType="popup"  />
+			<includeFilter name="CreateGYRuleFileValidator" />
+		</action>
+	</objecttype>
+<!--  end added-->
+	<objecttype name="search" class="java.lang.Object" resourceBundle="com.ptc.windchill.enterprise.search.client.searchClientResource">
+		<action name="list_delete" multiselect="true" uicomponent="DELETE" ajax="page" ajaxActionClass="netmarkets/jsp/object/delete.jsp" selectRequired="true" afterJS="loadAdvSearchPage(event)">
+			<command class="com.ptc.netmarkets.search.NmSearchCommands" method="list_delete" onClick="deleteObject()"/>
+			<includeFilter name="AdminValidator"/>
+		</action>
+	</objecttype>
+ 	<objecttype name="object" class="wt.fc.Persistable">
+		<action name="list_delete" multiselect="true" uicomponent="DELETE" ajax="row" ajaxActionClass="netmarkets/jsp/object/delete.jsp" selectRequired="true">
+	         <command class="com.ptc.netmarkets.model.NmObjectCommands" method="list_delete" onClick="PTC.validation.deleteObjectsValidation(event)"/>
+	         <includeFilter name="projectM4D"/>
+	         <includeFilter name="hideFromNonAgreementMgrs"/>
+	         <includeFilter name="DeleteDocValidator"/>
+      	</action>
+		<action name="exportTableXLS" resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB"><!-- add by cjh 20201117 -->
+			<command class="com.ptc.core.components.export.table.ExportListCommands" method="export" url="netmarkets/jsp/object/exportTable.jsp?fileType=xls" windowType="popup"/>
+		</action>
+    </objecttype>
+	<objecttype name="wvs" class=""
+		resourceBundle="com.ptc.windchill.enterprise.wvs.WVSactionsResource">
+		<action name="deleteSelectedRepsAndMarkups" multiselect="true"
+			selectRequired="true" ajax="component">
+			<command
+				class="com.ptc.windchill.enterprise.wvs.repsAndMarkups.commands.RepsAndMarkupsCommands"
+				method="deleteSelectedRepsAndMarkups"
+				onClick="onClickValidation(event,&apos;deleteSelectedRepsAndMarkups&apos;)" />
+			<includeFilter name="DeleteSelectedRepsAndMarkupsValidator" />
+		</action>
+	</objecttype>
+
+
+	<objecttype name="ccr">
+		<!-- 结构检验记录-操作项目配置 by hz 171018-->
+		<action name="addProConfig" ajax="component" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.consCheckRecords.ProConfigAddRowProcessor" method="execute"/>
+			<includeFilter name="AdminValidator"/>
+
+		</action>
+		<action name="deleteProConfig" ajax="component" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.consCheckRecords.ProConfigDeleteRowProcessor" method="execute"/>
+			<includeFilter name="AdminValidator"/>
+		</action>
+		<action name="saveProConfig" ajax="component" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.consCheckRecords.ProConfigSaveProcessor" method="execute"/>
+			<includeFilter name="AdminValidator"/>
+		</action>
+
+		<!-- 结构检验记录-操作套表配置 by hz 171018-->
+		<action name="addTableConfig" ajax="component" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.consCheckRecords.TableConfigAddRowProcessor" method="execute"/>
+			<includeFilter name="AdminValidator"/>
+		</action>
+		<action name="deleteTableConfig" ajax="component" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.consCheckRecords.TableConfigDeleteRowProcessor" method="execute"/>
+			<includeFilter name="AdminValidator"/>
+		</action>
+		<action name="saveTableConfig" ajax="component" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.consCheckRecords.TableConfigSaveProcessor" method="execute"/>
+			<includeFilter name="AdminValidator"/>
+		</action>
+	</objecttype>
+
+	<objecttype name="custom">
+		<action name="ncImportRecord" resourceBundle="ext.casc.ui.actionsRB">
+			<command url="netmarkets/jsp/ext/casc/part/ncImportRecordTable.jsp" />
+		</action>
+		<action name="importBomStructure"  multiselect="true"  resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.nc.ImportBomStructureProcessor" method="execute" />
+			<includeFilter name="EditPartValidator2"/>
+		</action>
+		<action name="exchangeProcessDoc"  multiselect="true"  resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.product.ExchangeProcessDocProcessor" method="execute" />
+			<includeFilter name="EditPartValidator2"/>
+		</action>
+		<action name="exchangeProcessDocCS"  multiselect="true"  resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.product.ExchangeProcessDocProcessorCS" method="execute" />
+			<includeFilter name="EditPartValidator2"/>
+		</action>
+
+		<action name="userManual"  multiselect="true"  resourceBundle="ext.casc.ui.actionsRB">
+			<command url="netmarkets/jsp/ext/casc/report/UserManual.jsp" windowType="popup"/>
+		</action>
+		<action name="sysUpdateRecord"  multiselect="true"  resourceBundle="ext.casc.ui.actionsRB">
+			<command url="netmarkets/jsp/ext/casc/report/SysUpdateRecordDownload.jsp" windowType="popup"/>
+		</action>
+		<action name="FAQDownload"  multiselect="true"  resourceBundle="ext.casc.ui.actionsRB">
+			<command url="netmarkets/jsp/ext/casc/report/FAQDownload.jsp" windowType="popup"/>
+		</action>
+         <action name="reloadPower"  multiselect="true"  resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.product.ReloadPowerProcessor" method="execute" />
+		</action>
+
+		<action name="importNCMap" resourceBundle="ext.casc.ui.actionsRB">
+			<command url="/netmarkets/jsp/ext/casc/importdata/importNCMap.jsp" class="ext.casc.importdata.process.ImportNCMapProcessor" method="importNCMap" windowType="popup"/>
+		</action>
+		<action name="importNCMapStep">
+			<command url="/netmarkets/jsp/ext/casc/importdata/importNCMapStep.jsp" windowType="wizards_step"/>
+		</action>
+
+		<action name="importSyncDataMap" resourceBundle="ext.casc.ui.actionsRB">
+			<command url="/netmarkets/jsp/ext/casc/sync/mapping/importSyncDataMap.jsp" class="ext.casc.integrate.process.ImportSyncDataMapProcessor" method="importSyncDataMap" windowType="popup"/>
+			<includeFilter name="AdminValidator"/>
+		</action>
+		<action name="importSyncDataMapStep">
+			<command url="/netmarkets/jsp/ext/casc/sync/mapping/importSyncDataMapStep.jsp" windowType="wizards_step"/>
+		</action>
+		<action name="exportSyncDataMap" resourceBundle="ext.casc.ui.actionsRB">
+			<command url="/netmarkets/jsp/ext/casc/sync/mapping/downloadSyncDataMap.jsp" windowType="popup" />
+			<includeFilter name="AdminValidator" />
+		</action>
+
+		<action name="downloadshouKongDocPrintFile"  multiselect="true"  resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.doc.DownloadSearchDocProcessor"  method="execute" />
+		</action>
+		<action name="synchDangan"  multiselect="true"  resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.doc.SynchDanganProcessor" method="execute" />
+			<includeFilter name="SetPrintStateValidator" />
+		</action>
+		<action name="synchDangan2"  multiselect="true"  resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.doc.SynchDanganProcessor2" method="execute" />
+			<includeFilter name="EditPartValidator2" />
+		</action>
+		<!--一键重启流转-->
+		<action name="quickReCycle"  multiselect="false"  resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.doc.QuickReCycleProcessor" method="execute" />
+			<includeFilter name="AdminValidator"/>
+		</action>
+	    <!--一键批准-->
+		<action name="quickApproved"  multiselect="false"  resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.doc.QuickApprovedProcessor" method="execute" />
+			<includeFilter name="AdminValidator"/>
+		</action>
+
+		<!-- 隐藏所有涉密型号代号 -->
+		<action name="hideAllMindex" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.doc.HideAllMindexProcessor"
+				method="execute" />
+			<includeFilter name="NewOtherTaskValidator" />
+		</action>
+
+		 <!--清空历史数据-->
+		<action name="deleteIterations"  multiselect="false"  resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.doc.DeleteIterationsProcessor" method="execute" />
+			<!-- <includeFilter name="ProcessPlanDocumentValidator"/> -->
+			<includeFilter name="AdminValidator"/>
+		</action>
+
+		 <!--清空历史数据-->
+		<action name="list_rollup"  multiselect="true"  resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.doc.RollupIterationsProcessor" method="execute" />
+			<includeFilter name="AdminValidator"/>
+		</action>
+
+		<!--重置队列状况-->
+		<action name="resetReadyState"  multiselect="true"  resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.queue.datautil.MVCQueuePage" method="resetEntryState" />
+		</action>
+	    <action name="dingeInformation"
+            resourceBundle="ext.casc.ui.actionsRB">
+            <command url="/netmarkets/jsp/ext/casc/dingeInformation/dingeInfor.jsp"
+				class="ext.casc.importdata.ImportStructureProcessor" method="execute"
+				windowType="popup" />
+				<includeFilter name="ProcessPlanDocumentValidator"/>
+        </action>
+        <!-- 导出到DNC -->
+        <action name="exportDNC" resourceBundle="ext.casc.ui.actionsRB">
+        <command class="ext.casc.importdata.ExportToDncProcessor" method="execute" />
+				<includeFilter name="ProcessPlanDocumentValidator"/>
+				<includeFilter name="SetPrintStateValidator"/>
+        </action>
+		<!-- 数控工艺上传附件 -->
+		<action name="uploadAttachment4SK" resourceBundle="ext.casc.ui.actionsRB">
+			<command url="/netmarkets/jsp/ext/casc/document/uploadAttachment.jsp"
+					 windowType="popup" />
+			<includeFilter name="SetPrintStateValidator"/>
+		</action>
+		<action name="addAttachment4SK" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.doc.AddAttachment4SKProcessor"
+					 url="/netmarkets/jsp/ext/casc/document/addAttachment4SK.jsp"
+					 method="execute" windowType="popup"/>
+		</action>
+		<action name="addAttachment4SK_step">
+			<command url="netmarkets/jsp/ext/casc/document/addAttachment4SK_step.jsp"
+					windowType="wizard_step"/>
+		</action>
+		<action name="deleteAttachment4SK" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.doc.DeleteAttachment4SKProcessor" method="execute"/>
+		</action>
+        <!-- 工时定额  add by liangbo -->
+        <action name = "workTimeDE" resourceBundle="ext.casc.ui.actionsRB">
+			<command url="/netmarkets/jsp/ext/casc/dingeInformation/workTimeDEInfo.jsp"
+				class="ext.casc.importdata.ImportStructureProcessor" method="execute"
+				windowType="popup" />
+				<includeFilter name="ProcessPlanDocumentValidator"/>
+        </action>
+
+		<action name="complete" id="taskcomplete" class="wt.workflow.work.WorkItem"
+			resourceBundle="ext.casc.workitem.WorkActionsRB">
+			<command class="ext.casc.workflow.CmWorkItemCommands" method="complete" />
+		</action>
+		<action name="submitApproval" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.doc.SubmitApprovalProcessor" method="execute" />
+			<includeFilter name="SubmitReviewMPMPPlanValidator" />
+		</action>
+		<!-- <action name="GZBzuofei" resourceBundle="ext.casc.dfmRule.resource.actionsRB">
+			<command class="ext.casc.dfmRule.processor.GZBZuofeiProcessor" method="execute"
+			onClick="JCAConfirm(&apos;com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE&apos;)" />
+			<includeFilter name="CreateGYRuleFileValidator" />
+		</action> -->
+		<action name="rePdf" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.doc.RePdfProcessor" method="execute" />
+			<includeFilter name="ProcessPlanDocumentValidator"/>
+			<includeFilter name="AdminValidator"/>
+		</action>
+		<action name="rePrintPdf" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.doc.RePrintPdfProcessor" method="execute" />
+			<includeFilter name="AdminValidator"/>
+		</action>
+		<action name="rePdfVersion" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.doc.RePdfVersionProcessor" method="execute" />
+			<includeFilter name="AdminValidator"/>
+		</action>
+		<action name="relateTypecialProcess" resourceBundle="ext.casc.ui.actionsRB">
+			<command url="/netmarkets/jsp/ext/glaway/mpm/startRelateTypecialProcess.jsp" windowType="popup" />
+			<includeFilter name="AdminValidator"/>
+		</action>
+		<action name="reviseProcessPlanDoc" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.doc.ReviseProcessPlanDocProcessor" method="execute" />
+			<includeFilter name="ReviseProcessPlanValidator"/>
+		</action>
+
+		<action name="setPartType" ajax="component" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.part.SetPartTypeProcessor"
+				windowType="popup" method="execute" />
+			<includeFilter name="EditPartValidator" />
+		</action>
+
+		<action name="setPartType_step">
+			<command windowType="wizard_step" />
+		</action>
+
+		<action name="setProcessPath" ajax="component" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.part.SetProcessPathProcessor"
+				windowType="popup" method="execute" />
+			<includeFilter name="EditPartValidator" />
+		</action>
+
+		<action name="setProcessPath_step">
+			<command windowType="wizard_step" />
+		</action>
+
+		<action name="productstructure" resourceBundle="ext.casc.product.resource.productResource">
+			<command url="/netmarkets/jsp/ext/casc/importdata/importStructure.jsp"
+				class="ext.casc.importdata.ImportStructureProcessor" method="importObjects"
+				windowType="popup" />
+			<includeFilter name="ImportActionValidator" />
+		</action>
+
+		<action name="importStructureStep">
+			<command
+				url="/netmarkets/jsp/ext/casc/importdata/importStructureStep.jsp"
+				windowType="wizards_step" />
+		</action>
+
+
+		<action name="document" resourceBundle="ext.casc.product.resource.productResource">
+			<command url="/netmarkets/jsp/ext/casc/importdata/importDoc.jsp"
+				windowType="popup" method="importObjects" class="ext.casc.importdata.ImportDocProcessor" />
+			<includeFilter name="ImportActionValidator" />
+		</action>
+
+		<action name="importDocStep">
+			<command url="/netmarkets/jsp/ext/casc/importdata/importDocStep.jsp"
+				windowType="wizards_step" />
+		</action>
+
+		<action name="saveWriteInfo" ajax="component" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.workflow.WorkflowSaveWriteInfoProcessor"
+				method="execute" />
+			<includeFilter name="WorkflowValidator" />
+		</action>
+
+		<action name="viewSignatureListInfo" ajax="component"
+			resourceBundle="ext.casc.ui.actionsRB">
+			<command
+				url="/netmarkets/jsp/ext/workflow/tree/popShowSignatureImplement.jsp"
+				windowType="popup" />
+		</action>
+
+		<action name="dynamicAuthorization" selectRequired="true"
+			resourceBundle="ext.casc.ui.actionsRB" required="true">
+			<command url="netmarkets/jsp/ext/casc/folder/authorisePermission.jsp"
+				class="ext.casc.folder.DynamicAuthorizationProcessor" method="execute"
+				windowType="popup" />
+		</action>
+		<action name="quickdynamicAuthorization" selectRequired="true"
+			resourceBundle="ext.casc.ui.actionsRB" required="true">
+			<command url="netmarkets/jsp/ext/casc/folder/quickauthorisePermission.jsp"
+				class="ext.casc.folder.QuickDynamicAuthorizationProcessor" method="execute"
+				windowType="popup" />
+		</action>
+
+		<action name="selectNeedAuthoriseUser">
+			<command url="netmarkets/jsp/ext/casc/folder/selectNeedAuthoriseUser.jsp"
+				windowType="wizard_step" />
+		</action>
+		<action name="quickselectNeedAuthoriseUser">
+			<command url="netmarkets/jsp/ext/casc/folder/quickselectNeedAuthoriseUser.jsp"
+				windowType="wizard_step" />
+		</action>
+
+		<action name="updatePartAttr" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.part.UpdatePartAttrProcessor"
+				method="execute" />
+			<includeFilter name="EditPartValidator" />
+		</action>
+
+		<action name="userGuideDownload" resourceBundle="ext.casc.ui.actionsRB">
+			<command
+				url="/netmarkets/jsp/ext/casc/userGuideDownload/userGuideDownload.jsp"
+				windowType="popup" />
+		</action>
+
+		<action name="downloadPrimaryContent" resourceBundle="ext.casc.ui.actionsRB">
+			<command
+				url="/netmarkets/jsp/ext/casc/download/downloadPrimaryContent.jsp"
+				windowType="popup" />
+			<!-- <includeFilter name="DownloadPrimaryContentValidator" /> -->
+		</action>
+
+		<action name="productManagment" resourceBundle="ext.casc.ui.actionsRB">
+			<command url="netmarkets/jsp/customProduct/productList.jsp"
+				windowType="page" />
+			<includeFilter name="SYFLValidator"/>
+			<includeFilter name="ProductTeamManagementValidator" />
+		</action>
+
+		<action name="updateRoleUsers" resourceBundle="ext.casc.ui.actionsRB"
+			selectRequired="true">
+			<command class="" method="" windowType="popup" />
+		</action>
+
+		<action name="updateRoleUsers_step">
+			<command windowType="wizard_step" />
+		</action>
+
+		<action name="deleteAllQuitUsers" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.product.DeleteAllQuitUsers"
+				method="execute" />
+			<includeFilter name="AdminValidator" />
+		</action>
+
+		<action name="addUsers" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.product.ProductTeamAddRoleUsersCommands"
+				method="addUsers" windowType="popup" />
+		</action>
+
+		<action name="deleteUsers" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.product.ProductTeamRemoveRoleUsersProcessor"
+				method="execute" />
+		</action>
+
+		<action name="updateRoles" resourceBundle="ext.casc.ui.actionsRB"
+			selectRequired="true">
+			<command class="" method="" windowType="popup" />
+		</action>
+
+		<action name="updateRoles_step">
+			<command windowType="wizard_step" />
+		</action>
+
+		<action name="addRoles" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.product.ProductTeamAddRoleUsersCommands"
+				method="addRoles" windowType="popup" />
+		</action>
+
+		<action name="addRoles_step" resourceBundle="ext.casc.ui.actionsRB">
+			<command windowType="wizard_step" />
+		</action>
+
+		<action name="deleteRoles" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.product.ProductTeamRemoveRolesProcessor"
+				method="execute" />
+		</action>
+
+		<!-- 工艺文件打印申请流程 -->
+		<action name="gywjPrintTask" ajax="component" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.part.GYWJPrintTaskProcessor"
+				windowType="popup" method="execute" />
+			<includeFilter name="GYWJPrintTaskValidator" />
+		</action>
+
+		<action name="gywjPrintTask_step">
+			<command windowType="wizard_step" />
+		</action>
+
+		<action name="removeAffectedData" renderType="GENERAL" ajax="row"
+			resourceBundle="ext.casc.ui.actionsRB">
+			<description>Remove affected data</description>
+			<command onClick="changeRowHandler.removeAffectedObjects(event)"
+				windowType="no_content" />
+		</action>
+
+
+		<!-- 流程报表 -->
+		<action name="allWorkFlowReport" resourceBundle="ext.casc.ui.actionsRB">
+			<command windowType="page"
+				url="/netmarkets/jsp/ext/casc/report/allworkflowReport.jsp" />
+			<includeFilter name="SYFLValidator"/>
+		</action>
+
+		<action ajax="page" name="searchAllWorkFlow" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.report.command.AllWorkFlowCommand"
+				method="search" url="" />
+		</action>
+
+		<action ajax="page" name="reportAllWorkFlow" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.report.process.AllWorkFlowProcess"
+				method="execute"
+				url="/netmarkets/jsp/ext/casc/report/downloadAllWorkFlowReport.jsp" />
+		</action>
+
+		<!-- 加载工具 -->
+		<action name="LoadTools" resourceBundle="ext.casc.ui.actionsRB">
+			<command windowType="page"
+				url="/netmarkets/jsp/ext/casc/loadtools/list.jsp" />
+			<includeFilter name="SYFLValidator"/>
+		</action>
+
+		<!-- 技术文档配置 -->
+		<action name="technicsTechnologyManager" resourceBundle="ext.casc.ui.actionsRB">
+			<command windowType="page"
+				url="/netmarkets/jsp/ext/casc/technicsTechnology/technicsTechnologyManager.jsp" />
+			<includeFilter name="SYFLValidator"/>
+		</action>
+
+		<!-- 工艺编辑器启动配置 -->
+		<action name="processEditorManager" resourceBundle="ext.casc.ui.actionsRB">
+			<command windowType="page"
+				url="/netmarkets/jsp/ext/glaway/mpm/processEditor/processEditorManager.jsp" />
+			<includeFilter name="SYFLValidator"/>
+		</action>
+		<!-- 工号维护界面 -->
+		<action name="employeeNoManager" resourceBundle="ext.casc.ui.actionsRB">
+			<command windowType="page" url="/netmarkets/jsp/ext/glaway/mpm/print/employeeNumManager.jsp" />
+			<includeFilter name="SYFLValidator"/>
+			<includeFilter name="AdminValidator"/>
+		</action>
+
+		<!-- BOM查询 -->
+		<action name="BOMReport" resourceBundle="ext.casc.ui.actionsRB">
+			<command windowType="page"
+				url="/netmarkets/jsp/ext/casc/report/BOMReport.jsp" />
+			<includeFilter name="SYFLValidator"/>
+		</action>
+
+		<action ajax="page" name="searchBOMReport" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.report.command.BOMReportCommand"
+				method="search" url="" />
+		</action>
+
+		<action name="managerBatches" resourceBundle="ext.casc.ui.actionsRB">
+			<component name="ext.casc.product.mvc.builder.ProductBatchesBuilder"
+				windowType="page" />
+		</action>
+
+		<action name="addBatch" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.product.ProductBatchCommands"
+				method="addBatch" windowType="popup" />
+		</action>
+
+		<action name="addBatch_step" resourceBundle="ext.casc.ui.actionsRB">
+			<command windowType="wizard_step" />
+		</action>
+
+		<action name="deleteBatch" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.product.ProductBatchesProcessor"
+				method="execute" />
+		</action>
+
+		<action name="addPboWorkFlowAttach" ajax="component"
+			resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.workflow.WorkflowPboAttachmentsProcessor"
+				url="/netmarkets/jsp/custom/addPboWorkFlowAttach.jsp" windowType="popup"
+				method="uploadFile" />
+			<includeFilter name="WorkflowPboAttachmentsValidator" />
+		</action>
+
+		<action name="addPboWorkFlowAttach_step">
+			<command windowType="wizard_step" />
+		</action>
+
+		<action name="deletePboWorkFlowAttach" ajax="component"
+			resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.workflow.WorkflowPboAttachmentsProcessor"
+				method="deleteFile" />
+			<includeFilter name="WorkflowPboAttachmentsValidator" />
+		</action>
+
+
+		<action name="addPboAttach" ajax="component" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.process.assign.ProcessTaskAttachmentsProcessor"
+				url="/netmarkets/jsp/custom/addPboAttach.jsp" windowType="popup"
+				method="uploadFile" />
+			<includeFilter name="WorkflowPboAttachmentsValidator" />
+		</action>
+
+		<action name="addPboAttach_step">
+			<command windowType="wizard_step" />
+		</action>
+
+		<action name="deletePboAttach" ajax="component" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.process.assign.ProcessTaskAttachmentsProcessor"
+				method="deleteFile" />
+			<includeFilter name="WorkflowPboAttachmentsValidator" />
+		</action>
+
+		<action name="downloadPboAttach" ajax="component"
+			resourceBundle="ext.casc.ui.actionsRB">
+			<command class="" method="execute" />
+		</action>
+		<action name="setOutSignInfo" preloadWizardPage="false"
+			resourceBundle="ext.casc.ui.actionsRB">
+			<command windowType="popup"
+				class="ext.casc.workflow.processor.AddOutSignFormProcessor" method="execute"
+				url="/netmarkets/jsp/ext/workflow/outsign/outSign.jsp" />
+		</action>
+
+		<action name="outSignStep" preloadWizardPage="false"
+			resourceBundle="ext.casc.ui.actionsRB">
+			<command windowType="wizard_step"
+				url="/netmarkets/jsp/ext/workflow/outsign/outSignStep.jsp" />
+		</action>
+		<action name="startPbomWorkflow" resourceBundle="ext.casc.ui.actionsRB">
+			<command
+				class="com.glaway.mpm.pbom.processors.StartPBOMWorkflowForPackageProcessor"
+				method="execute" />
+		</action>
+
+		<action name="startPE" resourceBundle="ext.casc.ui.actionsRB">
+			<command url="/netmarkets/jsp/ext/glaway/mpm/startPE.jsp"
+				windowType="popup" />
+		</action>
+
+
+		<action name="saveGongShiDingE" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.workflow.WorkflowSaveGongShiDingEProcessor"
+				method="execute" />
+		</action>
+		<action name="recycle" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.work.RecycleProcessor" method="execute" />
+			<includeFilter name="RecycleWorkItemValidator" />
+		</action>
+
+		<action name="relatedPackageObjects" id="relatedPackageObjects"
+			preloadWizardPage="true" required="false" resourceBundle="ext.casc.ui.actionsRB">
+			<command url="netmarkets/jsp/ext/ases/document/packageRelatedData.jsp"
+				windowType="wizard_step" />
+		</action>
+
+		<action name="editPrintStateWizardStep" ajax="true">
+			<command url="/netmarkets/jsp/ext/casc/document/editPrintFlagStep.jsp"
+				windowType="wizard_step" />
+		</action>
+
+		<action name="editPrintStateWizard" ajax="component"
+			resourceBundle="ext.casc.ui.PrintFlagActionRB">
+			<command url="/netmarkets/jsp/ext/casc/document/editPrintFlag.jsp"
+				class="ext.casc.doc.EditPrintFlagProcessor" method="execute"
+				windowType="popup" />
+			<includeFilter name="SetPrintStateValidator" />
+		</action>
+		<!-- 批量下载打印 -->
+		<action name="DownloadPrint" ajax="component"
+			resourceBundle="ext.casc.ui.PrintFlagActionRB">
+			<command url="/netmarkets/jsp/ext/casc/part/downloadPrint.jsp"
+				class="ext.casc.part.DownloadPrintProcessor" method="execute"
+				windowType="popup" />
+				<includeFilter name="SetPrintStateValidator" />
+		</action>
+		<!-- 修改部件名称 -->
+		<action name="CustomRename" ajax="component"
+			resourceBundle="ext.casc.ui.PrintFlagActionRB">
+			<command url="/netmarkets/jsp/ext/casc/part/customRename.jsp"
+				class="ext.casc.process.mvc.builder.PartRenameProcessor" method="doOperation"
+				windowType="popup" />
+				<includeFilter name="EditPartValidator2" />
+		</action>
+
+		<action name="customRenameStep" ajax="true">
+			<command url="/netmarkets/jsp/ext/casc/part/customRenameStep.jsp"
+				windowType="wizard_step" />
+		</action>
+
+    <!--      下载查询流程 -->
+         <action name="searchWorkItemDownload" ajax="component"
+			resourceBundle="ext.casc.ui.PrintFlagActionRB">
+			<command class="com.ptc.core.components.export.table.ExportListCommands" method="export"
+			 url="/netmarkets/jsp/object/exportTable.jsp?fileType=xls"
+
+				windowType="popup" />
+		</action>
+		<!-- 工艺技术文档管理 添加行 add by liangbo -->
+		<action name="addRow" ajax="component" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.doc.technology.TechnilogyAddRowProcessor" method="execute"/>
+		</action>
+		<!-- 工艺技术文档管理 删除行 add by liangbo -->
+		<action name="deleteRow" ajax="component" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.doc.technology.TechnologyDeleteRowProcessor" method="execute"/>
+		</action>
+		<!-- 工艺技术文档管理 保存 add by liangbo -->
+		<action name="saveItem" ajax="component" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.doc.technology.TechnologySaveItemProcessor" method="execute"/>
+		</action>
+
+		<!-- 工艺编辑器启动配置 添加行 add by likaicheng -->
+		<!--  <action name="addUserInfo" ajax="component" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.doc.technology.TechnilogyAddRowProcessor" method="execute"/>
+		</action>-->
+		<!-- 工艺编辑器启动配置 删除行 add by add by likaicheng -->
+		<!--<action name="deleteUserInfo" ajax="component" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.doc.technology.TechnologyDeleteRowProcessor" method="execute"/>
+		</action>-->
+		<!-- 工艺编辑器启动配置 保存 add by add by likaicheng -->
+		<action name="saveUserInfo" ajax="component" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="com.glaway.mpm.mvc.builders.processEditor.ProcessEditorSaveProcessor" method="execute"/>
+		</action>
+		<action name="saveEmployeeNo" ajax="component" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="com.glaway.mpm.print.commands.PrintCommands" method="save"/>
+		</action>
+
+		<action name="exportPeiTaoMingXi" resourceBundle="ext.casc.ui.actionsRB">
+			<command
+				url="/netmarkets/jsp/ext/casc/report/downloadPeiTaoMingXiReport.jsp"
+				windowType="popup" />
+			<includeFilter name="ProcessPlanDocumentValidator" />
+		</action>
+		<!-- 导出工序配套表 add by liangbo -->
+		<action name="exportGongXuPeiTao" resourceBundle="ext.casc.ui.actionsRB">
+			<command
+				url="/netmarkets/jsp/ext/casc/report/downloadGongXuPeiTaoReport.jsp"
+				windowType="popup" />
+			<includeFilter name="ProcessPlanDocumentValidator" />
+		</action>
+		<!-- 检验记录及照片样张查看 add by liangbo -->
+		<action name="recordCollectTable" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="com.glaway.mpm.parameter.CheckTableCommands" method="recordCollect" />
+			<includeFilter name="ProcessPlanDocumentValidator" />
+		</action>
+		<!--离线数据打包下载-->
+   		<!-- add by zhudong 2017.02.06 begin -->
+        <action name="off_lineDataPackDownload"  resourceBundle="ext.casc.ui.actionsRB">
+         <command url="/netmarkets/jsp/ext/casc/download/downloadPackets.jsp"  windowType="popup" />
+              <includeFilter name="DownloadTechnicsReportValidtor" />
+      	</action>
+		<!-- add by zhudong 2017.02.06 end -->
+		<action name="technologySearch" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.doc.technology.TechnologySearchCommana" method="search"/>
+		</action>
+        <!--导出会签意见  add by liangbo 20180529-->
+        <action name="exportSignatureAdvise" resourceBundle="ext.casc.ui.actionsRB">
+            <command url="/netmarkets/jsp/ext/casc/report/exportSignatureAdvise.jsp" windowType="popup" />
+        </action>
+        <!-- 自定义签名 add by zhuhao 20181023 -->
+        <action name="signature" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.doc.SetSignatureProcessor" method="setSignature" />
+			<includeFilter name="SetPrintStateValidator" />
+        </action>
+        <!-- 编码申请 add by hz 20191217 -->
+        <action name="applyCode" resourceBundle="com.ptc.core.ui.navigationRB">
+          <command url="http://kuaiapp.sast.casc/alms/logout.action" windowType="new" />
+      </action>
+		<action name="refreshBatches" resourceBundle="ext.casc.ui.actionsRB">
+			<command url="/netmarkets/jsp/ext/casc/process/refreshBatches.jsp"
+					 class="ext.casc.process.mvc.builder.RefreshBatchesProcessor" method="doOperation"
+					 windowType="popup" />
+			<includeFilter name="NewOtherTaskValidator" />
+		</action>
+		<action name="refreshBatches_step" resourceBundle="ext.casc.ui.actionsRB" afterJS="preSubmit">
+			<command url="/netmarkets/jsp/ext/casc/process/refreshBatches_step.jsp" windowType="wizard_step" />
+		</action>
+		<action name="refreshBatches_step2" resourceBundle="ext.casc.ui.actionsRB">
+			<command url="/netmarkets/jsp/ext/casc/process/refreshBatches_step2.jsp" windowType="wizard_step" />
+		</action>
+		<action name="createPhotoTemplate" resourceBundle="ext.casc.ui.actionsRB" uicomponent="CREATE_DOC">
+			<command url="netmarkets/jsp/ext/casc/document/create.jsp?type=wt.doc.WTDocument|casc.sast.149.PhotoTemplate"
+					 class="com.ptc.windchill.enterprise.doc.forms.CreateDocFormProcessor" method="execute"
+					 windowType="popup" />
+			<includeFilter name="NewOtherTaskValidator" />
+		</action>
+		<action name="importPhotoTemplate" resourceBundle="ext.casc.ui.actionsRB"> <!--照片样张库导入-->
+			<command class="ext.casc.photo.processors.ImportPhotoTemplateProcessor" url="netmarkets/jsp/ext/casc/importdata/importPhotoTemplate.jsp" method="execute" windowType="popup"/>
+			<includeFilter name="NewOtherTaskValidator" />
+		</action>
+		<action name="importPhotoTemplate_step" ><!--照片样张库导入 step-->
+			<command url="netmarkets/jsp/ext/casc/importdata/importPhotoTemplate_step.jsp" windowType="wizard_step"/>
+		</action>
+
+		<action name="downloadToCompressedFile" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.product.process.ExtNmObjectCommands" url="netmarkets/jsp/ext/casc/product/downloadDocumentsToCompressedFile.jsp" method="downloadFolderContentFiles" windowType="popup"/>
+		</action>
+		<action name="downloadDocumentsToCompressedFileStep" >
+			<command url="netmarkets/jsp/ext/casc/product/downloadDocumentsToCompressedFileStep.jsp" windowType="wizard_step"/>
+		</action>
+		<action name="batchFinish" selectRequired="true" multiselect="true" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.product.process.ExtNmObjectCommands" method="batchFinish" />
+		</action>
+		<action name="submitSign3" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.doc.SubmitSign3Processor" method="execute" />
+			<includeFilter name="E3SubmitValidator"/>
+		</action>
+		<action name="submitSign5" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.doc.SubmitSign5Processor" method="execute" />
+			<includeFilter name="E3SubmitValidator"/>
+		</action>
+		<action name="matchHistoryQuota" ajax="component" resourceBundle="ext.casc.ui.actionsRB">
+			<command url="/netmarkets/jsp/ext/casc/part/matchHistoryQuota.jsp" windowType="popup" />
+			<includeFilter name="AdminValidator"/>
+		</action>
+
+		<action name="processParamsManage"  resourceBundle="ext.casc.ui.actionsRB">
+			<command url="netmarkets/jsp/ext/casc/processParams/processParamsManage.jsp"
+					 windowType="page" />
+			<includeFilter name="AdminValidator"/>
+		</action>
+
+		<action name="addProcessParam" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.processPlan.processor.ProcessParamsCommand"
+					 method="addProcessParam" windowType="popup" />
+		</action>
+
+		<action name="addProcessParam_step" resourceBundle="ext.casc.ui.actionsRB">
+			<command windowType="wizard_step" />
+		</action>
+
+		<action name="deleteProcessParam" resourceBundle="ext.casc.ui.actionsRB" selectRequired="true" multiselect="true">
+			<command class="ext.casc.processPlan.processor.ProcessParamsCommand"
+					 method="deleteProcessParam"
+					 onClick="JCAConfirm(&apos;com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE&apos;)" />
+		</action>
+
+		<action name="editProcessParam" resourceBundle="ext.casc.ui.actionsRB" selectRequired="true" multiselect="false">
+			<command class="ext.casc.processPlan.processor.ProcessParamsCommand"
+					 method="editProcessParam" windowType="popup" />
+		</action>
+
+		<action name="editProcessParam_step" resourceBundle="ext.casc.ui.actionsRB">
+			<command windowType="wizard_step" />
+		</action>
+
+		<action name="processKnowledgeManage"  resourceBundle="ext.casc.ui.actionsRB">
+			<command url="netmarkets/jsp/ext/casc/processParams/processKnowledgeManage.jsp"
+					 windowType="page" />
+			<includeFilter name="SetPrintStateValidator"/>
+		</action>
+
+		<action name="setTemplateEnum" beforeJS="validateSelected"  selectRequired="true" multiselect="false" resourceBundle="ext.casc.ui.actionsRB" >
+			<command url="netmarkets/jsp/ext/casc/processPlan/setTemplateEnum.jsp"  class="ext.casc.processPlan.processor.SaveParamsTemplateEnumProcessor" method="execute" windowType="popup"/>
+			<includeFilter name="AdminValidator"/>
+		</action>
+		<action name="setTemplateEnumStep">
+			<command url="netmarkets/jsp/ext/casc/processPlan/setTemplateEnum_step.jsp" windowType="wizard_step"/>
+		</action>
+
+		<action name="openBaiYuTool" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.doc.OpenBaiYuToolProcessor" method="execute" />
+			<includeFilter name="AdminValidator"/>
+		</action>
+		<action name="maturityHistory" preloadWizardPage="true" required="false" resourceBundle="ext.casc.ui.actionsRB">
+			<command url="netmarkets/jsp/ext/casc/document/maturityHistory.jsp"
+					 windowType="wizard_step" />
+		</action>
+		<!--工时定额管理-->
+		<action name="gongshiDingeManage" ajax="component" resourceBundle="ext.casc.ui.actionsRB">
+			<command url="netmarkets/jsp/ext/casc/gongshidinge/gongshiDingeManage.jsp" windowType="popup" />
+			<includeFilter name="NewOtherTaskValidator"/>
+		</action>
+		<action name="gongshiDingeManage_step">
+			<command url="netmarkets/jsp/ext/casc/gongshidinge/gongshiDingeManage_step.jsp" windowType="wizard_step"/>
+		</action>
+		<action name="importGongshi" resourceBundle="ext.casc.ui.actionsRB">
+			<command url="/netmarkets/jsp/ext/casc/gongshidinge/importGongshi.jsp" class="ext.casc.gongshidinge.processor.ImportGongshiProcessor" method="execute" windowType="popup"/>
+		</action>
+		<action name="importGongshiStep">
+			<command url="/netmarkets/jsp/ext/casc/gongshidinge/importGongshiStep.jsp" windowType="wizards_step"/>
+		</action>
+		<action name="exportGongshi" resourceBundle="ext.casc.ui.actionsRB">
+			<command url="/netmarkets/jsp/ext/casc/gongshidinge/exportGongshi.jsp" class="ext.casc.gongshidinge.processor.ExportGongshiProcessor" method="execute" windowType="popup"/>
+		</action>
+		<action name="exportGongshiStep">
+			<command url="/netmarkets/jsp/ext/casc/gongshidinge/exportGongshiStep.jsp" windowType="wizards_step"/>
+		</action>
+		<action name="generateProcessPlan" resourceBundle="ext.casc.ui.actionsRB">
+			<command url="/netmarkets/jsp/ext/casc/gongshidinge/generateProcessPlan.jsp" class="ext.casc.gongshidinge.processor.GenerateProcessPlanProcessor" method="execute" windowType="popup"/>
+		</action>
+		<action name="generateProcessPlanStep">
+			<command url="/netmarkets/jsp/ext/casc/gongshidinge/generateProcessPlanStep.jsp" windowType="wizards_step"/>
+		</action>
+		<action name="importGongshiSign" resourceBundle="ext.casc.ui.actionsRB">
+			<command url="/netmarkets/jsp/ext/casc/gongshidinge/importGongshiSign.jsp" class="ext.casc.gongshidinge.processor.ImportGongshiSignProcessor" method="execute" windowType="popup"/>
+		</action>
+		<action name="importGongshiSignStep">
+			<command url="/netmarkets/jsp/ext/casc/gongshidinge/importGongshiSignStep.jsp" windowType="wizards_step"/>
+		</action>
+		<action name="importGongshiHistory" resourceBundle="ext.casc.ui.actionsRB">
+			<command url="/netmarkets/jsp/ext/casc/gongshidinge/importGongshiHistory.jsp" class="ext.casc.gongshidinge.processor.ImportGongshiHistoryProcessor" method="execute" windowType="popup"/>
+		</action>
+		<action name="importGongshiHistoryStep">
+			<command url="/netmarkets/jsp/ext/casc/gongshidinge/importGongshiHistoryStep.jsp" windowType="wizards_step"/>
+		</action>
+		<!-- SOP数据治理导入 -->
+		<action name="sopDataManage" resourceBundle="ext.casc.ui.actionsRB">
+			<command url="/netmarkets/jsp/ext/casc/sop/import/sopDataManage.jsp" class="ext.casc.sop.processor.SopDataManageProcessor" method="execute" windowType="popup"/>
+			<includeFilter name="AdminValidator"/>
+		</action>
+		<action name="sopDataManage_step">
+			<command url="/netmarkets/jsp/ext/casc/sop/import/sopDataManageStep.jsp" windowType="wizard_step" />
+		</action>
+
+
+		<action name="addProcessKnowledge" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.processPlan.processor.ProcessParamsCommand"
+					 method="addProcessKnowledge" windowType="popup" />
+		</action>
+
+		<action name="addProcessKnowledge_step" resourceBundle="ext.casc.ui.actionsRB">
+			<command windowType="wizard_step" />
+		</action>
+
+		<action name="deleteProcessKnowledge" resourceBundle="ext.casc.ui.actionsRB" selectRequired="true" multiselect="true">
+			<command class="ext.casc.processPlan.processor.ProcessParamsCommand"
+					 method="deleteProcessKnowledge"
+					 onClick="JCAConfirm(&apos;com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE&apos;)" />
+		</action>
+
+		<action name="editProcessKnowledge" resourceBundle="ext.casc.ui.actionsRB" selectRequired="true" multiselect="false">
+			<command class="ext.casc.processPlan.processor.ProcessParamsCommand"
+					 method="editProcessKnowledge" windowType="popup" />
+		</action>
+
+		<action name="editProcessKnowledge_step" resourceBundle="ext.casc.ui.actionsRB">
+			<command windowType="wizard_step" />
+		</action>
+
+		<action name="importProcessKnowledgeData" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.processPlan.processor.ProcessParamsCommand" method="importProcessKnowledgeData" windowType="popup"/>
+		</action>
+		<action name="importProcessKnowledgeDataStep">
+			<command  windowType="wizard_step"/>
+		</action>
+
+		<!-- 系统配置管理 -->
+		<action name="systemConfiguration" resourceBundle="ext.casc.ui.actionsRB">
+			<command windowType="page" url="/netmarkets/jsp/ext/casc/system/systemConfiguration.jsp" />
+			<includeFilter name="AdminValidator"/>
+		</action>
+		<!-- 新建系统变量 -->
+		<action name="addSystemConfiguration" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.system.SystemConfigurationProcessor" url="netmarkets/jsp/ext/casc/system/addSystemConfiguration.jsp"
+					 method="addSystemConfiguration" windowType="popup"/>
+		</action>
+		<action name="addSystemConfiguration_step">
+			<command url="netmarkets/jsp/ext/casc/system/addSystemConfiguration_step.jsp" windowType="wizard_step"/>
+		</action>
+		<!-- 删除系统变量 -->
+		<action name="deleteSystemConfiguration" resourceBundle="ext.casc.ui.actionsRB" selectRequired="true" multiselect="true">
+			<command class="ext.casc.system.SystemConfigurationProcessor" method="deleteSystemConfiguration"
+					 onClick="JCAConfirm(&apos;com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE&apos;)" />
+		</action>
+		<!-- 修改系统变量 -->
+		<action name="editSystemConfiguration" resourceBundle="ext.casc.ui.actionsRB" selectRequired="true" multiselect="false">
+			<command class="ext.casc.system.SystemConfigurationProcessor" url="netmarkets/jsp/ext/casc/system/editSystemConfiguration.jsp"
+					 method="editSystemConfiguration" windowType="popup" />
+		</action>
+		<action name="editSystemConfiguration_step">
+			<command url="netmarkets/jsp/ext/casc/system/editSystemConfiguration_step.jsp" windowType="wizard_step"/>
+		</action>
+
+		<!-- 发起授权申请 -->
+		<action name="requestAuthorization" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.folder.RequestAuthorizationCommand" method="requestAuthorization"
+					 onClick="JCAConfirm(&apos;ext.casc.ui.actionsRB.ISREQUESTAUTHORIZATION&apos;)" />
+			<includeFilter name="NewOtherTaskValidator"/>
+		</action>
+
+		<!-- 发起工时定额签审流程 -->
+		<action name="startGongShiSign" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.gongshidinge.processor.StartGongshiSignCommand" method="startGongShiSign"
+					 onClick="JCAConfirm(&apos;ext.casc.ui.actionsRB.ISSTARTGONGSHISIGN&apos;)" />
+			<includeFilter name="NewOtherTaskValidator"/>
+		</action>
+
+		<!-- 设计资源库编码市场参考价查询页面 -->
+		<action name="sjzykPartReferencePrice" resourceBundle="ext.casc.ui.actionsRB">
+			<command url="netmarkets/jsp/ext/casc/part/sjzykPartReferencePrice.jsp" />
+			<includeFilter name="NewOtherTaskValidator"/>
+		</action>
+	</objecttype>
+
+	<objecttype name="MPMResource"
+		resourceBundle="com.glaway.mpm.mpmresource.ui.MPMResourceRB">
+		<action name="openInTechnicPreview1">
+			<command url="netmarkets/jsp/ext/glaway/mpm/technicPreview1.jsp"
+				windowType="popup" />
+			<includeFilter name="TechnicPreviewValidationFilter" />
+		</action>
+	</objecttype>
+
+	<objecttype name="customChangeNotice" class="wt.change2.WTChangeOrder2"
+		resourceBundle="ext.casc.ui.actionsRB">
+		<action name="createCustomChangeNotice" uicomponent="CREATE_CHANGENOTICE"
+			ajax="component">
+			<description>Create change notice</description>
+			<command url="/netmarkets/jsp/ext/casc/changeNotice/create.jsp"
+				class="ext.casc.change.process.ExtCreateChangeOrderProcessor"
+				method="execute" windowType="popup" />
+			<includeFilter name="CreateProcessChangeNoticeValidator" />
+		</action>
+
+
+		<action name="collectProcessDocStep" id="collectProcessDocStep" preloadWizardPage="false" required="false" afterJS="collectProcessDoc" resourceBundle="ext.casc.ui.actionsRB">
+			<command windowType="wizard_step" url="/netmarkets/jsp/ext/casc/changeNotice/collectProcessDocStep.jsp"/>
+		</action>
+
+
+		<action ajax="row" name="customEdit" >
+            <command url="/netmarkets/jsp/ext/casc/changeNotice/edit.jsp"
+               class="ext.casc.change.process.ExtEditChangeOrderProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="sandboxSharingValidationSimple"/>
+            <includeFilter name="EditDocumentValidator"/>
+       </action>
+       <action ajax="row" name="customEditChangeinfo">
+       		<command url="/netmarkets/jsp/ext/ases/ecn/turnChangeinfo.jsp"
+       			method="execute" windowType="popup"/>
+       			<includeFilter name="sandboxSharingValidationSimple"/>
+            <includeFilter name="EditDocumentValidator"/>
+       </action>
+       <action ajax="row" name="customReCreatePDF" >
+            <command class="ext.casc.ecn.ReCreatePDFProcessor" method="execute"/>
+       </action>
+
+		<action name="createDocCustomChangeNotice" uicomponent="CREATE_CHANGENOTICE"
+				ajax="component">
+			<description>Create doc change notice</description>
+			<command url="/netmarkets/jsp/ext/casc/changeNotice/changeNotice/create.jsp"
+					 class="com.ptc.windchill.enterprise.change2.forms.processors.CreateChangeNoticeFormProcessor"
+					 method="execute" windowType="popup" />
+			<includeFilter name="CreateChangeNoticeValidator" />
+		</action>
+	</objecttype>
+	<objecttype name="customDocument" class="wt.fc.Persistable"
+		resourceBundle="ext.casc.ui.actionsRB">
+		<action name="createCustomProcessNotice" uicomponent="CREATE_DOC"
+			dtiUpload="true" ajax="row">
+			<!-- <command url="/netmarkets/jsp/ext/casc/document/create.jsp"
+				class="com.ptc.windchill.enterprise.doc.forms.CreateDocFormProcessor"
+				method="execute" windowType="popup" onClick="validateCreateLocation(event)" />-->
+			<command url="/netmarkets/jsp/ext/casc/document/create.jsp"
+				class="ext.cirpoint.securitymgr.doc.forms.NfCreateDocFormProcessor"
+				method="execute" windowType="popup" /> <!--典道代码部署生产机需使用该配置 -->
+			<includeFilter name="projectM4D" />
+			<includeFilter name="showNewActionPreValidation" />
+		</action>
+		<action name="createJishuketi" uicomponent="CREATE_DOC"
+			dtiUpload="true" ajax="row">
+			<command url="netmarkets/jsp/ext/casc/document/create.jsp?type=wt.doc.WTDocument|casc.sast.149.PROCESS_DOC|casc.sast.149.JISHUKETI"
+				class="ext.casc.doc.CreateJsktFormProcessor"
+				method="execute" windowType="popup" onClick="validateCreateLocation(event)" />
+			<includeFilter name="projectM4D" />
+			<includeFilter name="showNewActionPreValidation" />
+			<includeFilter name="CreateJishuketiValidator" />
+		</action>
+	</objecttype>
+	<objecttype name="envelope" class="ext.ases.envelope.ProcessEnvelope"
+		resourceBundle="ext.ases.envelope.envelopeResource">
+
+		<action name="createApproveForm" uicomponent="CREATE_ENVELOPE"
+			ajax="row">
+			<command
+				url="netmarkets/jsp/ext/ases/envelope/createApproveForm.jsp?type=ext.ases.envelope.ProcessEnvelope|casc.sast.149.APPROVEFORM"
+				class="ext.ases.envelope.CreateSubEnvelopeFormProcessor" method="execute"
+				windowType="popup" />
+			<includeFilter name="CreateProcessEnvelopeValidator" />
+		</action>
+
+		<action name="createReleaseForm" uicomponent="CREATE_ENVELOPE"
+			ajax="row">
+			<command
+				url="netmarkets/jsp/ext/ases/envelope/createReleaseForm.jsp?type=ext.ases.envelope.ProcessEnvelope|casc.sast.149.RELEASEFORM"
+				class="ext.ases.envelope.CreateSubEnReleaseFormProcessor" method="execute"
+				windowType="popup" />
+		</action>
+
+		<action name="createDSO" uicomponent="CREATE_ENVELOPE"
+			ajax="row">
+			<command
+				url="netmarkets/jsp/ext/ases/envelope/createDSO.jsp?type=ext.ases.envelope.ProcessEnvelope|casc.sast.149.DSO"
+				class="ext.ases.envelope.CreateSubEnDSOProcessor" method="execute"
+				windowType="popup" />
+			<includeFilter name="CreateSubEnDSOFilter"/>
+		</action>
+
+		<action name="createEnvelopeSetAttributesWizStep">
+			<command
+				url="netmarkets/jsp/ext/ases/envelope/createEnvelopeSetAttributesWizStep.jsp"
+				windowType="wizard_step" />
+		</action>
+
+		<action name="affectedDataStep" id="affectedDataStep"
+			preloadWizardPage="false" required="true">
+			<description>Affected data wizard step</description>
+			<command url="netmarkets/jsp/ext/ases/envelope/affectedDataStep.jsp"
+				windowType="wizard_step" />
+		</action>
+
+		<action name="affectedSubEnvelopeDataStep" id="affectedDataStep"
+			preloadWizardPage="false" required="true">
+			<description>Affected data wizard step</description>
+			<command
+				url="netmarkets/jsp/ext/ases/envelope/affectedSubEnvelopeDataStep.jsp"
+				windowType="wizard_step" />
+		</action>
+
+		<action name="affectedSubEnReleaseDataStep" id="affectedDataStep"
+			preloadWizardPage="false" required="true">
+			<description>Affected data wizard step</description>
+			<command
+				url="netmarkets/jsp/ext/ases/envelope/affectedSubEnReleaseDataStep.jsp"
+				windowType="wizard_step" />
+		</action>
+		<action name="envelopeObjects">
+			<command url="netmarkets/jsp/ext/ases/envelope/envelopeObjects.jsp" />
+		</action>
+
+		<action name="updateEnvelope" resourceBundle="ext.ases.envelope.envelopeResource">
+			<command url="netmarkets/jsp/ext/ases/envelope/updateEnvelope.jsp"
+				class="ext.ases.envelope.EditEnvelopeFormProcessor" method="execute"
+				windowType="popup" />
+			<includeFilter name="updateEnvelopeValidation" />
+		</action>
+
+		<action name="edit_details">
+			<command url="netmarkets/jsp/ext/ases/envelope/edit_details.jsp"
+				windowType="wizard_step" />
+		</action>
+
+		<action name="editAffectedDataStep" id="editAffectedDataStep"
+			preloadWizardPage="false" required="false">
+			<description>Edit Affected data wizard step</description>
+			<command url="netmarkets/jsp/ext/ases/envelope/editAffectedDataStep.jsp"
+				windowType="wizard_step" />
+		</action>
+
+		<action name="deleteEnvelope" ajax="row" uicomponent="DELETE"
+			ajaxActionClass="netmarkets/jsp/object/delete.jsp?refresh=true">
+			<command url="netmarkets/jsp/ext/ases/envelope/deleteEnvelope.jsp"
+				class="com.ptc.windchill.enterprise.object.commands.DeleteObjectCommands"
+				method="delete"
+				onClick="JCAConfirm(&apos;com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE&apos;)" />
+			<includeFilter name="deleteEnvelopeValidation" />
+		</action>
+
+		<action name="downloadContents" resourceBundle="ext.ases.envelope.envelopeResource">
+			<command url="netmarkets/jsp/ext/ases/envelope/downloadContents.jsp"
+				windowType="popup" />
+		</action>
+
+		<action name="downloadContents_Step" resourceBundle="ext.ases.envelope.envelopeResource">
+			<command url="netmarkets/jsp/ext/ases/envelope/downloadContents_Step.jsp"
+				windowType="popup" />
+		</action>
+
+		<action name="listEnvelope"
+			resourceBundle="ext.ases.envelope.mvc.builder.ProcessEnvelopeReourceRB">
+			<component name="ext.ases.envelope.mvc.builder.ProcessEnvelopeListBuilder"
+				windowType="page" />
+		</action>
+		<action name="centerWorkflow" resourceBundle="ext.sast.center.resource.CenterActionsRB">
+			<command url="netmarkets/jsp/ext/sast/center/workflow/centerWorkflowInfo.jsp" />
+		</action>
+
+		<action name="yqjChaoMuluList" resourceBundle="ext.sast.center.resource.CenterActionsRB">
+			<command url="netmarkets/jsp/ext/sast/center/workflow/viewChaoMuluMemberLink.jsp" />
+		</action>
+	</objecttype>
+
+	<objecttype name="processEnvelope" class="ext.ases.envelope.ProcessEnvelope"
+		resourceBundle="ext.ases.envelope.mvc.builder.ProcessEnvelopeReourceRB">
+		<action name="attributes">
+			<component name="attributes" windowType="page" />
+		</action>
+	</objecttype>
+
+	<objecttype name="customMPMPPlan"
+		class="com.ptc.windchill.mpml.processplan.MPMProcessPlan"
+		resourceBundle="ext.casc.ui.actionsRB">
+		<action name="submitReview">
+			<command class="ext.casc.mpm.SubmitMPMReviewProcessor"
+				method="execute" />
+			<includeFilter name="SubmitReviewMPMPPlanValidator" />
+		</action>
+	</objecttype>
+
+	<objecttype name="technotice" class="wt.doc.WTDocument"
+		resourceBundle="ext.ases.technotice.resource.technoticeRB">
+		<action name="create" uicomponent="CREATE_TECHNOTICE" ajax="row">
+			<command
+				url="netmarkets/jsp/ext/ases/technotice/create.jsp?type=wt.doc.WTDocument|casc.sast.149.DESIGN_DOC|casc.sast.149.TECHNOTICE_DOC"
+				class="ext.ases.technotice.CreateTechNoticeFormProcessor" method="execute"
+				windowType="popup" />
+		</action>
+
+		<action name="createTechnoticeFromTemplateSetAttributesWizStep">
+			<command
+				url="netmarkets/jsp/ext/ases/technotice/createTechnoticeFromTemplateSetAttributesWizStep.jsp"
+				windowType="wizard_step" />
+		</action>
+
+		<action name="affectedDataStep" id="affectedDataStep"
+			preloadWizardPage="false" required="true">
+			<description>Affected data wizard step</description>
+			<command url="netmarkets/jsp/ext/ases/technotice/affectedDataStep.jsp"
+				windowType="wizard_step" />
+		</action>
+
+		<action name="updatetechnotice" uicomponent="CREATE_TECHNOTICE"
+			ajax="row">
+			<command url="netmarkets/jsp/ext/ases/technotice/updatetechnotice.jsp"
+				class="ext.ases.technotice.EditTechNoticeFormProcessor" method="execute"
+				windowType="popup" />
+			<includeFilter name="updateTechNoticeValidation" />
+		</action>
+
+		<action name="editAffectedDataStep" id="editAffectedDataStep"
+			preloadWizardPage="false" required="false">
+			<description>Edit Affected data wizard step</description>
+			<command
+				url="netmarkets/jsp/ext/ases/technotice/editAffectedDataStep.jsp"
+				windowType="wizard_step" />
+		</action>
+
+		<action name="relatedTechNoticeObjects" id="editAffectedDataStep"
+			preloadWizardPage="false" required="false">
+			<description>Related Tech Notice Objects</description>
+			<command
+				url="netmarkets/jsp/ext/ases/technotice/technoticeRelatedData.jsp"
+				windowType="wizard_step" />
+			<includeFilter name="relatedTechNoticeDataValidation" />
+		</action>
+	</objecttype>
+
+	<objecttype name="changeNotice" class="wt.change2.WTChangeOrder2"
+		resourceBundle="com.ptc.windchill.enterprise.change2.changeManagementActionsRB">
+		<action name="create" uicomponent="CREATE_CHANGENOTICE" ajax="component">
+			<description>Create change notice</description>
+			<command
+				class="com.ptc.windchill.enterprise.change2.forms.processors.CreateChangeNoticeFormProcessor"
+				method="execute" windowType="popup" />
+			<includeFilter name="sandboxSharingValidationSimple" />
+			<includeFilter name="restrictGuestMembers" />
+			<includeFilter name="CreateChangeNoticeValidator" />
+		</action>
+	</objecttype>
+
+
+	<objecttype name="changepackaged" class="ext.ases.changepackaged.ChangePackaged"
+		resourceBundle="ext.ases.changepackaged.changepackagedResource">
+
+		<action name="affectedAndresultIems" id="affectedAndresultIems"
+			preloadWizardPage="false" required="true">
+			<description>Affected data wizard step</description>
+			<command
+				url="netmarkets/jsp/ext/ases/changepackaged/affectedPackagedData.jsp"
+				windowType="wizard_step" />
+		</action>
+
+		<action name="updatePackaged" resourceBundle="ext.ases.changepackaged.changepackagedResource">
+			<command url="netmarkets/jsp/ext/ases/changepackaged/updatePackaged.jsp"
+				class="com.ptc.core.components.forms.DefaultEditFormProcessor"
+				method="execute" windowType="popup" />
+		</action>
+
+
+		<action name="deletePackaged" ajax="row" uicomponent="DELETE"
+			ajaxActionClass="netmarkets/jsp/object/delete.jsp?refresh=true">
+			<command url=""
+				class="com.ptc.windchill.enterprise.object.commands.DeleteObjectCommands"
+				method="delete"
+				onClick="JCAConfirm(&apos;com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE&apos;)" />
+			<includeFilter name="deleteEnvelopeValidation" />
+		</action>
+
+		<action name="attributes">
+			<component name="changeAttributes" windowType="page" />
+		</action>
+
+	</objecttype>
+	<objecttype name="changerequest" class="ext.ases.changerequest.ChangeRequest"
+		resourceBundle="ext.ases.changerequest.changerequestResource">
+
+		<action name="affectedItems" id="affectedItems"
+			preloadWizardPage="false" required="true">
+			<description>Affected data wizard step</description>
+			<command
+				url="netmarkets/jsp/ext/ases/changerequest/affectedRequestData.jsp"
+				windowType="wizard_step" />
+		</action>
+
+		<action name="attributes">
+			<component name="requestAttributes" windowType="page" />
+		</action>
+
+		<action name="updateRequest" resourceBundle="ext.ases.changerequest.changerequestResource">
+			<command url="netmarkets/jsp/ext/ases/changerequest/updateRequest.jsp"
+				class="com.ptc.core.components.forms.DefaultEditFormProcessor"
+				method="execute" windowType="popup" />
+		</action>
+
+		<action name="deleteRequest" ajax="row" uicomponent="DELETE"
+			ajaxActionClass="netmarkets/jsp/object/delete.jsp?refresh=true">
+			<command url=""
+				class="com.ptc.windchill.enterprise.object.commands.DeleteObjectCommands"
+				method="delete"
+				onClick="JCAConfirm(&apos;com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE&apos;)" />
+		</action>
+
+	</objecttype>
+
+	<objecttype name="customProcessTask">
+		<action name="saveGYRWFGInfo" ajax="component" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.process.assign.SaveGYRWFGInfoProcessor"
+				method="execute" />
+		</action>
+		<!--工艺设计任务分工  old-->
+		<action name="PBOMProAssignTask" ajax="component"
+			resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command class="ext.casc.process.assign.ProProcessor"
+				windowType="popup" method="execute" />
+			<includeFilter name="EditPartValidator" />
+			<includeFilter name="ProcessTaskActionsValidators" />
+		</action>
+		<action name="PBOMProAssignTask_step">
+			<command windowType="wizard_step" />
+		</action>
+
+		<!--工艺设计任务分工  new-->
+		<action name="PBOMProAssignTaskNew" ajax="component"
+				resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command class="ext.casc.process.assign.ProProcessor"
+					 windowType="popup" method="execute" />
+			<includeFilter name="EditPartValidator" />
+			<includeFilter name="ProcessTaskActionsValidators" />
+		</action>
+		<action name="PBOMProAssignTaskNew_step">
+			<command windowType="wizard_step" />
+		</action>
+
+		<!--工艺更改任务分工  old-->
+		<action name="ChangeProAssignTask" ajax="component"
+				resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command class="ext.casc.process.assign.ProProcessor"
+					 windowType="popup" method="execute" />
+			<includeFilter name="EditPartValidator" />
+			<includeFilter name="ProcessTaskActionsValidators" />
+		</action>
+		<action name="ChangeProAssignTask_step" afterJS="validateValue">
+			<command windowType="wizard_step" />
+		</action>
+
+		<!--工艺更改任务分工  new-->
+		<action name="ChangeProAssignTaskNew" ajax="component"
+				resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command class="ext.casc.process.assign.ProProcessor"
+					 windowType="popup" method="execute" />
+			<includeFilter name="EditPartValidator" />
+			<includeFilter name="ProcessTaskActionsValidators" />
+		</action>
+		<action name="ChangeProAssignTaskNew_step">
+			<command windowType="wizard_step" />
+		</action>
+
+		<!--临时工艺任务分工 old-->
+		<action name="tempProAssignTask" ajax="component"
+			resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command class="ext.casc.process.assign.ProProcessor"
+				windowType="popup" method="execute" />
+			<includeFilter name="EditPartValidator" />
+			<includeFilter name="ProcessTaskActionsValidators" />
+		</action>
+		<action name="tempProAssignTask_step" afterJS="validateValue">
+			<command windowType="wizard_step" />
+		</action>
+
+		<!--临时工艺任务分工 new-->
+		<action name="tempProAssignTaskNew" ajax="component"
+				resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command class="ext.casc.process.assign.ProProcessor"
+					 windowType="popup" method="execute" />
+			<includeFilter name="EditPartValidator" />
+			<includeFilter name="ProcessTaskActionsValidators" />
+		</action>
+		<action name="tempProAssignTaskNew_step">
+			<command windowType="wizard_step" />
+		</action>
+
+		<!--报表类工艺任务分工 old-->
+		<action name="TechnicsReportAssignTask" ajax="component"
+				resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command class="ext.casc.process.assign.TechnicsReportProProcessor"
+					 method="execute" />
+			<!-- <includeFilter name="EditPartValidator" /> -->
+			<includeFilter name="ProcessTaskActionsValidators" />
+		</action>
+		<action name="TechnicsReportAssignTask_step" afterJS="validateValue">
+			<command windowType="wizard_step" />
+		</action>
+
+		<!--报表类工艺任务分工 new-->
+		<action name="TechnicsReportAssignTaskNew" ajax="component"
+				resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command class="ext.casc.process.assign.TechnicsReportProProcessor"
+					 method="execute" />
+			<includeFilter name="ProcessTaskActionsValidators" />
+		</action>
+		<action name="TechnicsReportAssignTaskNew_step">
+			<command windowType="wizard_step" />
+		</action>
+
+		<action name="tempGYZZProAssignTask" ajax="component"
+			resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command class="ext.casc.process.assign.ProGYZZProcessor"
+				windowType="popup" method="execute" />
+			<includeFilter name="ProcessTaskGYZZActionsValidators" />
+		</action>
+
+		<action name="tempGYZZProAssignTask_step" afterJS="validateValue">
+			<command windowType="wizard_step" />
+		</action>
+
+		<action name="ChangeGYZZProAssignTask" ajax="component"
+			resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command class="ext.casc.process.assign.ProGYZZProcessor"
+				windowType="popup" method="execute" />
+			<includeFilter name="ProcessTaskGYZZActionsValidators" />
+		</action>
+		<action name="ChangeGYZZProAssignTask_step">
+			<command windowType="wizard_step" />
+		</action>
+
+
+		<action name="PartProAssignTask" ajax="component"
+			resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command class="ext.casc.process.assign.ProProcessor"
+				windowType="popup" method="execute" />
+			<includeFilter name="EditPartValidator" />
+			<includeFilter name="ProcessTaskActionsValidators" />
+		</action>
+
+		<action name="PartProAssignTask_step" afterJS="validateValue">
+			<command windowType="wizard_step" />
+		</action>
+
+		<action name="addProAssignTask" ajax="component"
+			resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command class="ext.casc.process.assign.AddProTaskProcessor"
+				windowType="popup" method="execute" />
+			<includeFilter name="ProcessTaskActionsValidators" />
+		</action>
+
+		<action name="addProAssignTask_step">
+			<command windowType="wizard_step" />
+		</action>
+
+		<action name="processReport" resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command
+				url="/netmarkets/jsp/ext/casc/process/assign/processAssignReport.jsp"
+				windowType="page" />
+		</action>
+
+		<action name="listProcessAssignments" enabledwhensuspended="true"
+			resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<component name="ProcessAssignmentsBuilder_table_id13"
+				windowType="page" />
+		</action>
+
+		<action name="rejectTask" selectRequired="true"
+			resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command class="ext.casc.process.assign.ProcessTaskItemProcessor"
+				method="rejectTask" />
+		</action>
+
+		<action name="completeTask" selectRequired="true"
+			resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command class="ext.casc.process.assign.ProcessTaskItemProcessor"
+				method="completeTask" />
+		</action>
+
+		<action name="zhipaigongyiyuan" selectRequired="true"
+			resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command class="ext.casc.process.assign.AssignGongYiYuanProcessor"
+				windowType="popup" method="execute" />
+		</action>
+
+		<action name="zhipaigongyiyuan_step" beforeJS="validateSelectedTaskItem">
+			<command windowType="wizard_step" />
+		</action>
+
+		<action name="reassignTaskItem" selectRequired="true"
+			resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command class="ext.casc.process.assign.ProcessTaskItemProcessor"
+				method="reassignTaskItem" windowType="popup" />
+		</action>
+
+		<action name="reassignTaskItem_step" checkaccess="true">
+			<command windowType="wizard_step" />
+		</action>
+
+		<action name="reassignTaskItem2" selectRequired="true"
+			resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command class="ext.casc.process.assign.ProcessTaskItemProcessor"
+				method="reassignTaskItem" windowType="popup" />
+			<includeFilter name="ProcessTaskActionsValidators" />
+		</action>
+
+		<action name="reassignTaskItem2_step" checkaccess="true">
+			<command windowType="wizard_step" />
+		</action>
+
+		<action name="deleteTaskItem" selectRequired="true"
+			resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command class="ext.casc.process.assign.ProcessTaskItemProcessor"
+				method="deleteTask" />
+			<includeFilter name="ProcessTaskActionsValidators" />
+		</action>
+
+		<action name="deleteProcessTask" selectRequired="true"
+			resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command class="ext.casc.process.assign.ProcessTaskItemProcessor"
+				method="deleteProcessTask" />
+			<!-- <includeFilter name="ProcessTaskActionsValidators" /> -->
+		</action>
+
+		<action name="addPart" resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command
+				class="ext.casc.process.assign.ProAssignTaskBuilderAddPartProcessor"
+				method="execute" windowType="popup" />
+		</action>
+
+		<action name="addPart_step">
+			<command windowType="wizard_step" />
+		</action>
+
+		<action name="addPartNew" resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command
+					class="ext.casc.process.assign.ProAssignTaskBuilderAddPartProcessor"
+					method="execute" windowType="popup" />
+		</action>
+		<action name="addPartNew_step">
+			<command windowType="wizard_step" />
+		</action>
+
+		<action name="deletePart" resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB"
+			selectRequired="true">
+			<command onClick="removeParts(event)" windowType="no_content" />
+		</action>
+	</objecttype>
+
+	<objecttype name="customProcessCompletedTask">
+		<action name="completeTask" id="processtaskcomplete"
+			class="ext.casc.process.ProcessTaskItem" resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command class="ext.casc.process.assign.ProcessTaskItemProcessor"
+				method="completeTask" />
+		</action>
+
+		<action name="completeTask2" id="processtaskcomplete2"
+			class="ext.casc.process.ProcessTaskItem" resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command class="ext.casc.process.assign.ProcessTaskItemProcessor"
+				method="completeTask2" />
+		</action>
+
+		<action name="completeTask3" id="processtaskcomplete3"
+			class="ext.casc.process.ProcessTaskItem" resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command class="ext.casc.process.assign.ProcessTaskItemProcessor"
+				method="completeTask3" />
+		</action>
+		<action name="completeTask4" id="processtaskcomplete4"
+			class="ext.casc.process.ProcessTaskItem" resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command class="ext.casc.process.assign.ProcessTaskItemProcessor"
+				method="completeTask3" />
+		</action>
+		<action name="completeReportTask" id="processtaskcompleteReportTask"
+			class="ext.casc.process.ProcessTaskItem" resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command class="ext.casc.process.assign.ProcessTaskItemProcessor"
+				method="completeReportTask" />
+		</action>
+
+
+
+	</objecttype>
+
+	<objecttype name="customProcessRejectTask">
+		<action name="rejectTask" id="processtaskreject" class="ext.casc.process.ProcessTaskItem"
+			resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command class="ext.casc.process.assign.ProcessTaskItemProcessor"
+				method="rejectTask" />
+		</action>
+
+
+		<action name="rejectTask3" id="processtaskreject3" class="ext.casc.process.ProcessTaskItem"
+			resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command class="ext.casc.process.assign.ProcessTaskItemProcessor"
+				method="rejectTask3" />
+		</action>
+	</objecttype>
+
+	<objecttype name="navigation"
+		resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+		<action name="customProcessTask" renderType="GENERAL">
+			<command url="netmarkets/jsp/ext/casc/process/processTaskNavigation.jsp"
+				windowType="page" />
+			<includeFilter name="SYFLValidator"/>
+		</action>
+	</objecttype>
+
+	<objecttype name="customPartReport">
+		<action name="chglReport" ajax="page" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.capp.report.CHGLReportProcessor"
+				method="execute" url="/netmarkets/jsp/ext/casc/report/downloadCHGLReport.jsp" />
+			<includeFilter name="CHGLReportValidator" />
+		</action>
+	</objecttype>
+
+	<objecttype name="showListSignature">
+		<action name="exportReport" ajax="page" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.workflow.tree.SignatureReportProcessor"
+				method="execute" url="/netmarkets/jsp/ext/casc/report/downloadSignatureReport.jsp" />
+			<includeFilter name="SignatrueReportValidator" />
+		</action>
+	</objecttype>
+
+	<objecttype name="navigation" class=""
+		resourceBundle="ext.ases.dataSearch.resource.viewHelperResource">
+		<action name="datasendrecord">
+			<command url="netmarkets/jsp/ext/ases/dataSearch/searchdata.jsp"
+				windowType="popup" />
+			<includeFilter name="SYFLValidator"/>
+		</action>
+	</objecttype>
+	<objecttype name="securityLabels" class="wt.access.SecurityLabeled"
+		resourceBundle="com.ptc.core.security.securityResource">
+		<action name="securityLabelsForSingleObj" id="slForSingleObj"
+			preloadWizardPage="true" required="true" hidden="true">
+			<command class="com.ptc.core.security.forms.SecurityLabelFormDelegate"
+				method="" windowType="wizard_step" />
+		</action>
+	</objecttype>
+
+
+
+
+
+
+
+	<objecttype name="purgeData">
+		<action name="deleteData" ajax="component"
+			resourceBundle="ext.casc.purge.purgeDataResource">
+			<command class="ext.casc.purge.PurgeDataProcessor"
+				windowType="popup" method="execute" />
+			<includeFilter name="deleteInvalidDataValidator" />
+		</action>
+
+		<action name="deleteData_step">
+			<command windowType="wizard_step" />
+		</action>
+	</objecttype>
+
+	<objecttype name="customReport">
+		<action name="gongxugongshidingehuizong" ajax="page" resourceBundle="ext.casc.ui.actionsRB">
+			<!-- <command
+				url="/netmarkets/jsp/ext/casc/report/downloadTchnicsReport.jsp?type=gongxugongshidingehuizong"
+				windowType="popup" /> -->
+			<command class="ext.casc.report.technics.DownloadTechnicsReportProcessor" method="execute"
+				url="/netmarkets/jsp/ext/casc/report/outputWay.jsp" windowType="popup" />
+			<includeFilter name="DownloadTechnicsReportValidtor" />
+		</action>
+
+		<action name="gongyiluxianhuizong" ajax="page" resourceBundle="ext.casc.ui.actionsRB">
+			<!-- <command
+				url="/netmarkets/jsp/ext/casc/report/downloadTchnicsReport.jsp?type=gongyiluxianhuizong"
+				windowType="popup" /> -->
+			<command class="ext.casc.report.technics.DownloadTechnicsReportProcessor" method="execute"
+				url="/netmarkets/jsp/ext/casc/report/outputWay.jsp" windowType="popup" />
+			<includeFilter name="DownloadTechnicsReportValidtor" />
+		</action>
+
+		<action name="cailiaoxiaihaohuizong" ajax="page"
+			resourceBundle="ext.casc.ui.actionsRB">
+			<!-- <command
+				url="/netmarkets/jsp/ext/casc/report/downloadTchnicsReport.jsp?type=cailiaoxiaihaohuizong"
+				windowType="popup" /> -->
+			<command class="ext.casc.report.technics.DownloadTechnicsReportProcessor" method="execute"
+				url="/netmarkets/jsp/ext/casc/report/outputWay.jsp" windowType="popup" />
+			<includeFilter name="DownloadTechnicsReportValidtor" />
+		</action>
+
+		<action name="fuliaoxiaohaohuizong" ajax="page"
+			resourceBundle="ext.casc.ui.actionsRB">
+			<!-- <command
+				url="/netmarkets/jsp/ext/casc/report/downloadTchnicsReport.jsp?type=fuliaoxiaohaohuizong"
+				windowType="popup" /> -->
+			<command class="ext.casc.report.technics.DownloadTechnicsReportProcessor" method="execute"
+				url="/netmarkets/jsp/ext/casc/report/outputWay.jsp" windowType="popup" />
+			<includeFilter name="DownloadTechnicsReportValidtor" />
+		</action>
+
+		<action name="yuanqijianxiaohaohuizong" ajax="page"
+			resourceBundle="ext.casc.ui.actionsRB">
+			<!-- <command
+				url="/netmarkets/jsp/ext/casc/report/downloadTchnicsReport.jsp?type=yuanqijianxiaohaohuizong"
+				windowType="popup" /> -->
+			<command class="ext.casc.report.technics.DownloadTechnicsReportProcessor" method="execute"
+				url="/netmarkets/jsp/ext/casc/report/outputWay.jsp" windowType="popup" />
+			<includeFilter name="DownloadTechnicsReportValidtor" />
+		</action>
+
+		<action name="biaozhunjianxiaohaohuizong" ajax="page"
+			resourceBundle="ext.casc.ui.actionsRB">
+			<!-- <command
+				url="/netmarkets/jsp/ext/casc/report/downloadTchnicsReport.jsp?type=biaozhunjianxiaohaohuizong"
+				windowType="popup" /> -->
+			<command class="ext.casc.report.technics.DownloadTechnicsReportProcessor" method="execute"
+				url="/netmarkets/jsp/ext/casc/report/outputWay.jsp" windowType="popup" />
+			<includeFilter name="DownloadTechnicsReportValidtor" />
+		</action>
+
+		<action name="waigoujianhuizong" ajax="page" resourceBundle="ext.casc.ui.actionsRB">
+			<!-- <command
+				url="/netmarkets/jsp/ext/casc/report/downloadTchnicsReport.jsp?type=waigoujianhuizong"
+				windowType="popup" /> -->
+			<command class="ext.casc.report.technics.DownloadTechnicsReportProcessor" method="execute"
+				url="/netmarkets/jsp/ext/casc/report/outputWay.jsp" windowType="popup" />
+			<includeFilter name="DownloadTechnicsReportValidtor" />
+		</action>
+
+		<action name="waixiejianhuizong" ajax="page" resourceBundle="ext.casc.ui.actionsRB">
+			<!-- <command
+				url="/netmarkets/jsp/ext/casc/report/downloadTchnicsReport.jsp?type=waixiejianhuizong"
+				windowType="popup" /> -->
+			<command class="ext.casc.report.technics.DownloadTechnicsReportProcessor" method="execute"
+				url="/netmarkets/jsp/ext/casc/report/outputWay.jsp" windowType="popup" />
+			<includeFilter name="DownloadTechnicsReportValidtor" />
+		</action>
+
+		<action name="gongyizhuangbeihuizong" ajax="page"
+			resourceBundle="ext.casc.ui.actionsRB">
+			<!-- <command
+				url="/netmarkets/jsp/ext/casc/report/downloadTchnicsReport.jsp?type=gongyizhuangbeihuizong"
+				windowType="popup" /> -->
+			<command class="ext.casc.report.technics.DownloadTechnicsReportProcessor" method="execute"
+				url="/netmarkets/jsp/ext/casc/report/outputWay.jsp" windowType="popup" />
+			<includeFilter name="DownloadTechnicsReportValidtor" />
+		</action>
+
+		<action name="daoliangjuhuizong" ajax="page" resourceBundle="ext.casc.ui.actionsRB">
+			<!-- <command
+				url="/netmarkets/jsp/ext/casc/report/downloadTchnicsReport.jsp?type=daoliangjuhuizong"
+				windowType="popup" /> -->
+			<command class="ext.casc.report.technics.DownloadTechnicsReportProcessor" method="execute"
+				url="/netmarkets/jsp/ext/casc/report/outputWay.jsp" windowType="popup" />
+			<includeFilter name="DownloadTechnicsReportValidtor" />
+		</action>
+
+		<action name="yiqiyibiaohuizong" ajax="page" resourceBundle="ext.casc.ui.actionsRB">
+			<!-- <command
+				url="/netmarkets/jsp/ext/casc/report/downloadTchnicsReport.jsp?type=yiqiyibiaohuizong"
+				windowType="popup" /> -->
+			<command class="ext.casc.report.technics.DownloadTechnicsReportProcessor" method="execute"
+				url="/netmarkets/jsp/ext/casc/report/outputWay.jsp" windowType="popup" />
+			<includeFilter name="DownloadTechnicsReportValidtor" />
+		</action>
+		<!-- add by zhuhao 2017.6.13 -->
+		<action name="chanpinbutaodingehuizong" ajax="page" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.report.technics.DownloadTechnicsReportProcessor" method="execute"
+				url="/netmarkets/jsp/ext/casc/report/outputWay.jsp" windowType="popup" />
+			<includeFilter name="DownloadTechnicsReportValidtor" />
+		</action>
+
+		<action name="cldewczthz" ajax="page" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.report.technics.DownloadTechnicsReportProcessor" method="execute"
+					 url="/netmarkets/jsp/ext/casc/report/outputWay.jsp" windowType="popup" />
+			<includeFilter name="DownloadTechnicsReportValidtor" />
+		</action>
+
+		 <!-- add by chum 2017.2.6 begin-->
+        <action name="EBOMCompareToPBOM" ajax="page"  resourceBundle="ext.casc.ui.actionsRB">
+            <command url="/netmarkets/jsp/ext/casc/report/downloadBomCompareReport.jsp?type=EBOMCompareToPBOM" windowType="popup"/>
+            <includeFilter name="DownloadTechnicsReportValidtor" />
+        </action>
+        <!-- add by chum 2017.2.6 end-->
+        <action name="reportWizardStep">
+			<command url="/netmarkets/jsp/ext/casc/report/chooseOutputWay.jsp" windowType="wizard_step" />
+		</action>
+        <action name="ebomExport" resourceBundle="ext.casc.ui.actionsRB">
+			<command url="/netmarkets/jsp/ext/casc/report/downloadBomCompareReport.jsp?type=ebomExport" windowType="popup"/>
+			<includeFilter name="DownloadTechnicsReportValidtor" />
+		</action>
+		<action name="faciBomExport" resourceBundle="ext.casc.ui.actionsRB">
+			<command url="/netmarkets/jsp/ext/casc/report/downloadBomCompareReport.jsp?type=faciExport" windowType="popup"/>
+			<includeFilter name="DownloadTechnicsReportValidtor" />
+		</action>
+	</objecttype>
+
+
+	<objecttype name="wip" class="wt.vc.wip.Workable"
+		resourceBundle="com.ptc.windchill.enterprise.wip.WIPResource">
+		<action name="checkout" ajax="row">
+			<includeFilter name="disableForNewObjectInWorkspace" />
+			<includeFilter name="sandboxSharingValidationSimple" />
+			<includeFilter name="hideFromNonAgreementMgrs" />
+			<includeFilter name="hideSBHiddenFilter" />
+			<includeFilter name="EditPartValidator2" />
+			<command
+				class="com.ptc.windchill.enterprise.wip.CheckoutObjectFormProcessor"
+				method="execute" onClick="onClickValidation(event,'checkout')" />
+		</action>
+
+		<action name="checkout_and_download" ajax="page">
+			<includeFilter name="sandboxSharingValidationSimple" />
+			<includeFilter name="hideSBHiddenFilter" />
+			<includeFilter name="EditPartValidator2" />
+			<includeFilter name="EditDocumentValidator" />
+			<command windowType="popup"
+				url="netmarkets/jsp/wip/checkout_and_download.jsp" onClick="onClickValidation(event,'checkout')" />
+		</action>
+	</objecttype>
+
+	<objecttype name="part" class="wt.part.WTPart"
+		resourceBundle="com.ptc.windchill.enterprise.part.partResource">
+
+		<!-- Edit Part Actions - Start -->
+
+		<action name="edit" ajax="row">
+			<command class="com.ptc.core.components.forms.EditWorkableFormProcessor"
+				method="execute" windowType="popup" />
+			<includeFilter name="sandboxSharingValidationSimple" />
+			<includeFilter name="hideForNewObjectInWorkspace" />
+			<includeFilter name="hideForCheckedoutObjectInWorkspace" />
+			<includeFilter name="hideSBHiddenFilter" />
+			<includeFilter name="EditPartValidator2" />
+		</action>
+
+		<action name="checkoutAndEdit" ajax="row">
+			<command class="com.ptc.core.components.forms.EditWorkableFormProcessor"
+				method="execute" windowType="popup" url="/netmarkets/jsp/part/edit.jsp" />
+			<includeFilter name="sandboxSharingValidationSimple" />
+			<includeFilter name="disableForNewObjectInWorkspace" />
+			<includeFilter name="hideSBHiddenFilter" />
+			<includeFilter name="EditPartValidator2" />
+		</action>
+
+		<action name="editNewPartInWorkspace" ajax="row">
+			<includeFilter name="EditPartValidator2" />
+			<command
+				class="com.ptc.windchill.enterprise.part.forms.EditNewPartInWorkspaceProcessor"
+				method="execute" windowType="popup"
+				url="/netmarkets/jsp/part/edit.jsp?newInWorkspace=true" />
+		</action>
+
+		<action name="editCheckedOutPartInWorkspace" ajax="row">
+			<includeFilter name="EditPartValidator2" />
+			<command class="com.ptc.core.components.forms.EditWorkableFormProcessor"
+				method="execute" windowType="popup"
+				url="/netmarkets/jsp/part/edit.jsp?checkedOutInWorkspace=true" />
+		</action>
+
+		<action name="editPartCommonAttrsWizard" ajax="row">
+			<command
+				class="com.ptc.windchill.enterprise.part.forms.EditPartCommonAttrsFormProcessor"
+				method="execute" windowType="popup" />
+			<includeFilter name="sandboxSharingValidationSimple" />
+			<includeFilter name="hideSBHiddenFilter" />
+			<includeFilter name="EditPartValidator2" />
+		</action>
+
+	</objecttype>
+	<objecttype name="pdmObject" class="wt.fc.WTObject">
+
+	<action name="CONTAINERMOVE" selectRequired="true" checkaccess="true" enabledwhensuspended="true" renderType="PDM" uicomponent="CONTAINERMOVE">
+         <command windowType="popup" class="java.lang.Object" method="CONTAINERMOVE"/>
+         <includeFilter name="sandboxSharingValidationSimple"/>
+         <includeFilter name="hideFromNonAgreementMgrs"/>
+         <includeFilter name="hideForNoteTemplates"/>
+         <includeFilter name="EditPartValidator2"/>
+      </action>
+		<action name="REVISEITEMS" checkaccess="true"
+			enabledwhensuspended="true" renderType="PDM">
+			<command windowType="popup" class="java.lang.Object" method="REVISEITEMS" />
+			<includeFilter name="hideForNewObjectInWorkspace" />
+			<includeFilter name="sandboxSharingValidationSimple" />
+			<includeFilter name="hideFromNonAgreementMgrs" />
+			<includeFilter name="EditPartValidator2" />
+		</action>
+
+		<action name="MULTI_OBJ_DELETE" checkaccess="true"
+			enabledwhensuspended="true" renderType="PDM" uicomponent="DELETE">
+			<command windowType="popup" class="java.lang.Object" method="MULTI_OBJ_DELETE" />
+			<includeFilter name="sandboxSharingValidationSimple" />
+			<includeFilter name="DeleteDocValidator" />
+			<includeFilter name="EditDocumentValidator" />
+		</action>
+		<action name="MULTI_OBJ_DELETE_DETAILS" checkaccess="true"
+			enabledwhensuspended="true" renderType="PDM" uicomponent="DELETE">
+			<command windowType="popup" class="java.lang.Object" method="MULTI_OBJ_DELETE_DETAILS" />
+			<includeFilter name="sandboxSharingValidationSimple" />
+			<includeFilter name="DeleteDocValidator" />
+			<includeFilter name="EditDocumentValidator" />
+		</action>
+
+	</objecttype>
+
+	<objecttype name="object" class="wt.fc.Persistable"
+		resourceBundle="com.ptc.windchill.enterprise.object.objectResource">
+		<action name="renameObjectWizard">
+			<command
+				class="com.ptc.windchill.enterprise.object.forms.RenameObjectFormProcessor"
+				method="execute" windowType="popup" />
+			<includeFilter name="sandboxSharingValidationSimple" />
+			<includeFilter name="hideFromNonAgreementMgrs" />
+			<includeFilter name="hideSBHiddenFilter" />
+			<includeFilter name="EditPartValidator2" />
+		</action>
+	</objecttype>
+
+	<objecttype name="object" class="wt.fc.Persistable"
+		resourceBundle="com.ptc.windchill.enterprise.wip.WIPResource">
+		<action name="checkout" ajax="component">
+			<includeFilter name="disableForNewObjectInWorkspace" />
+			<includeFilter name="sandboxSharingValidationSimple" />
+			<includeFilter name="hideSBHiddenFilter" />
+			<includeFilter name="EditDocumentValidator" />
+			<command
+				class="com.ptc.windchill.enterprise.wip.CheckoutObjectFormProcessor"
+				method="execute" onClick="onClickValidation(event,'checkout')" />
+		</action>
+		<action name="checkout_and_download" ajax="page">
+			<includeFilter name="sandboxSharingValidationSimple" />
+			<includeFilter name="hideSBHiddenFilter" />
+			<includeFilter name="EditDocumentValidator" />
+			<command windowType="popup"
+				url="netmarkets/jsp/wip/checkout_and_download.jsp" onClick="onClickValidation(event,'checkout')" />
+		</action>
+	</objecttype>
+	<objecttype name="lifecycle" class="wt.lifecycle.LifeCycleTemplate"
+		resourceBundle="com.ptc.netmarkets.lifecycle.lifecycleResource">
+		<action name="setState">
+         <command class="com.ptc.netmarkets.lifecycle.NmLifeCycleCommands" method="setState" windowType="popup"/>
+         <includeFilter name="hideForNewObjectInWorkspace"/>
+         <includeFilter name="sandboxSharingValidationSimple"/>
+         <includeFilter name="hideFromNonAgreementMgrs"/>
+         <includeFilter name="hideSBHiddenFilter"/>
+         <includeFilter name="EditPartValidator2"/>
+          <includeFilter name="EditDocumentValidator"/>
+      </action>
+		<action name="reassignLC" multiselect="true" selectRequired="true">
+			<command class="com.ptc.netmarkets.lifecycle.NmLifeCycleCommands"
+				method="reassignLC" windowType="popup" />
+			<includeFilter name="hideForNewObjectInWorkspace" />
+			<includeFilter name="sandboxSharingValidationSimple" />
+			<includeFilter name="projectM4D" />
+			<includeFilter name="ghostEpmDoc" />
+			<includeFilter name="EditPartValidator2" />
+			<includeFilter name="EditDocumentValidator" />
+		</action>
+	</objecttype>
+
+
+	<objecttype name="part" class="wt.part.WTPart"
+		resourceBundle="com.ptc.windchill.enterprise.part.partResource">
+
+		<action name="assignView" checkaccess="true" ajax="true">
+			<command
+				class="com.ptc.windchill.enterprise.part.forms.AssignViewFormProcessor"
+				method="execute" windowType="popup" />
+			<includeFilter name="sandboxSharingValidationSimple" />
+			<includeFilter name="EditPartValidator2" />
+		</action>
+	</objecttype>
+	<objecttype name="subscription"
+		resourceBundle="com.ptc.core.subscription.subscriptionResource">
+
+		<action name="createSubscription" uicomponent="SUBSCRIBE"
+			selectRequired="true" multiselect="true">
+			<command
+				class="com.ptc.core.subscription.forms.CreateSubscriptionFormProcessor"
+				method="execute" windowType="popup" />
+			<includeFilter name="hideForNewObjectInWorkspace" />
+			<includeFilter name="ghostEpmDoc" />
+			<includeFilter name="EditPartValidator2" />
+		</action>
+	</objecttype>
+	<objecttype name="part" class="wt.part.WTPart"
+		resourceBundle="com.ptc.windchill.enterprise.part.partResource">
+		<!-- Create Part Actions - Start -->
+
+		<action name="createPartWizard" uicomponent="CREATE_PART" ajax="row">
+			<command
+				class="com.ptc.windchill.enterprise.part.forms.CreatePartAndCADDocFormProcessor"
+				method="execute"
+				url="/netmarkets/jsp/part/createPartWizard.jsp?showNewCADDocStep=true&amp;hideRevisionPicker=true&amp;hideAssociatePart=true"
+				onClick="validateCreateLocation(event)" windowType="popup" />
+			<includeFilter name="showNewActionPreValidation" />
+			<includeFilter name="EditPartValidator2" />
+		</action>
+
+	</objecttype>
+	<objecttype name="changeRequest" class="wt.change2.WTChangeRequest2"
+		resourceBundle="com.ptc.windchill.enterprise.change2.changeManagementActionsRB">
+		<action name="create" uicomponent="CREATE_CHANGEREQUEST" ajax="component">
+			<description>Create a change request</description>
+			<command
+				class="com.ptc.windchill.enterprise.change2.forms.processors.CreateChangeRequestFormProcessor"
+				method="execute" windowType="popup" />
+			<includeFilter name="sandboxSharingValidationSimple" />
+			<includeFilter name="restrictGuestMembers" />
+			<includeFilter name="WorkflowValidator" />
+		</action>
+	</objecttype>
+	<objecttype name="problemReport" class="wt.change2.WTChangeIssue"
+		resourceBundle="com.ptc.windchill.enterprise.change2.changeManagementActionsRB">
+		<action name="create" uicomponent="CREATE_PROBLEMREPORT" ajax="component">
+			<description>Create a problem report</description>
+			<command
+				class="com.ptc.windchill.enterprise.change2.forms.processors.CreateProblemReportFormProcessor"
+				method="execute" windowType="popup" />
+			<includeFilter name="restrictGuestMembers" />
+			<includeFilter name="sandboxSharingValidationSimple" />
+			<includeFilter name="WorkflowValidator" />
+		</action>
+	</objecttype>
+	<objecttype name="variance" class="wt.change2.WTVariance"
+		resourceBundle="com.ptc.windchill.enterprise.change2.changeManagementActionsRB">
+		<action name="create" uicomponent="CREATE_VARIANCE" ajax="component">
+			<description>Create variance</description>
+			<command
+				class="com.ptc.windchill.enterprise.change2.forms.processors.CreateVarianceFormProcessor"
+				method="execute" windowType="popup" />
+			<includeFilter name="restrictGuestMembers" />
+			<includeFilter name="WorkflowValidator" />
+		</action>
+	</objecttype>
+
+	<objecttype class="wt.doc.WTDocument" name="document" resourceBundle="com.ptc.windchill.enterprise.doc.documentResource" >
+      <action ajax="row" dtiUpload="true" name="checkoutAndEdit" >
+            <includeFilter name="sandboxSharingValidationSimple"/>
+            <includeFilter name="hideSBHiddenFilter"/>
+            <includeFilter name="hideForClashJobDefinition"/>
+            <includeFilter name="EditDocumentValidator"/>
+            <command class="com.ptc.core.components.forms.EditWorkableFormProcessor" method="execute" onClick="onClickValidation(event,'checkout')" url="netmarkets/jsp/document/edit.jsp" windowType="popup"/>
+      </action>
+      <action name="renameDocumentWizard" >
+            <includeFilter name="sandboxSharingValidationSimple"/>
+            <includeFilter name="hideSBHiddenFilter"/>
+            <includeFilter name="EditDocumentValidator"/>
+            <command class="com.ptc.windchill.enterprise.object.forms.RenameObjectFormProcessor" method="execute" windowType="popup"/>
+      </action>
+
+</objecttype>
+
+
+
+<!-- part相关对象的添加和删除不升版文档 -->
+    <objecttype name="part" class="wt.part.WTPart" resourceBundle="ext.casc.ui.actionsRB">
+      <action name="custom_related_add_described" multiselect="true" ajax="component">
+         <command url="/netmarkets/jsp/ext/casc/part/custom_related_add.jsp"
+         class="ext.casc.part.PartDocDescRelationFormProcessor" method="execute"  windowType="popup"/>
+          <includeFilter name="AdminValidator"/>
+
+      </action>
+     <action name="custom_related_delete_described" multiselect="true" ajax="component">
+         <command
+         class="ext.casc.part.PartDocDescDeleteRelationFormProcessor" method="execute" />
+      </action>
+
+	</objecttype>
+	<!-- 添加批量设置流程参与者 -->
+	<objecttype name="projmgmt" class="">
+		<action name="setJoiner" multiselect="true" ajax="component"
+			resourceBundle="ext.casc.ui.actionsRB">
+			<command url="/netmarkets/jsp/ext/casc/workflow/setJoiner.jsp"
+				class="ext.casc.workflow.SetJoinerProcessor" method="execute"
+				windowType="popup" />
+		</action>
+		<action name="setJoiner_step">
+			<command url="/netmarkets/jsp/ext/casc/workflow/setJoiner_step.jsp"
+				windowType="wizard_step" />
+		</action>
+		<action name="setFinish" multiselect="true" ajax="component"
+			resourceBundle="ext.casc.ui.actionsRB">
+			<command url="/netmarkets/jsp/ext/casc/workflow/setFinish.jsp"
+				class="ext.casc.workflow.SetJoinerProcessor" method="execute"
+				windowType="popup" />
+		</action>
+		<action name="setHideProcess" multiselect="true" ajax="component" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.workflow.processor.SetHideProcessor" method="setHideProcess" />
+			<includeFilter name="WorkflowValidator"/>
+		</action>
+		<action name="setShowProcess" multiselect="true" ajax="component" resourceBundle="ext.casc.ui.actionsRB">
+			<command class="ext.casc.workflow.processor.SetHideProcessor" method="setShowProcess" />
+			<includeFilter name="WorkflowValidator"/>
+		</action>
+	</objecttype>
+	<objecttype name="document" class="wt.doc.WTDocument"
+		resourceBundle="com.ptc.windchill.enterprise.doc.documentResource">
+
+      <action name="related_doc_create_wizard_part_references" ajax="component">
+         <command class="com.ptc.windchill.enterprise.part.forms.PartDocRefCreateRelationFormProcessor" method="execute" onClick="onClickValidation(event,&apos;related_doc_create_wizard_part_references&apos;)" windowType="popup"/>
+      </action>
+       <action name="related_doc_create_wizard_part_described" ajax="component">
+         <command class="com.ptc.windchill.enterprise.part.forms.PartDocDescCreateRelationFormProcessor" method="execute" onClick="onClickValidation(event,&apos;related_doc_create_wizard_part_described&apos;)" windowType="popup" url="?noRefDoc=true"/>
+      </action>
+
+      <action name="REMOVEDOCUMENTFROMPART" ajax="component">
+          <includeFilter name="psbSessionValidation" />
+          <command class="com.ptc.windchill.enterprise.part.forms.RemoveAssociateDocumentToPartFormProcessor" method="execute" onClick="onClickValidation(event,&apos;REMOVEDOCUMENTFROMPART&apos;)"/>
+      </action>
+   </objecttype>
+   <objecttype name="document" class="wt.doc.WTDocument" resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+
+   <action ajax="row" name="createZFA"  >
+            <command class="com.ptc.windchill.enterprise.doc.forms.CreateDocFormProcessor" method="execute" onClick="validateCreateLocation(event)" url="/netmarkets/jsp/ext/casc/document/create.jsp" windowType="popup"/>
+
+</action>
+</objecttype>
+   <objecttype name="part" class="wt.part.WTPart" resourceBundle="com.ptc.windchill.enterprise.part.partResource">
+      <action name="relatedPartsDocuments" uicomponent="THIRD_LEVEL_RELATED_DOCUMENTS">
+			<component name = "relatedParts.DescribedByDocuments" />
+	  </action>
+      <action name="relatedPartsReferences" uicomponent="THIRD_LEVEL_RELATED_DOCUMENTS">
+			<component name = "relatedParts.ReferencesDocuments" />
+	  </action>
+      <action name="relatedPartsCADDocuments" uicomponent="THIRD_LEVEL_RELATED_CAD_DOCS">
+	   <component name = "relatedObjects.CadDynamicDocuments" />
+      </action>
+      <action name="relatedMPMProcessPlans"/>
+      <action name="relatedPartsLists"/>
+
+      <action name="related_delete_references" multiselect="true" ajax="component">
+         <command class="com.ptc.windchill.enterprise.part.forms.PartDocRefDeleteRelationFormProcessor" method="execute" onClick="onClickValidation(event,&apos;related_delete_references&apos;)"/>
+      </action>
+      <action name="related_delete_described" multiselect="true" ajax="component">
+         <command class="com.ptc.windchill.enterprise.part.forms.PartDocDescDeleteRelationFormProcessor" method="execute" onClick="onClickValidation(event,&apos;related_delete_described&apos;)"/>
+      </action>
+      <action name="related_copy_references" multiselect="true">
+         <command class="com.ptc.netmarkets.model.NmObjectCommands" method="list_copy" windowType="no_content"/>
+      </action>
+      <action name="related_paste_references" ajax="component">
+         <command class="com.ptc.windchill.enterprise.part.forms.PartDocRefPasteRelationFormProcessor" method="execute" onClick="onClickValidation(event,&apos;related_paste_references&apos;)"/>
+      </action>
+      <action name="related_paste_described" ajax="component">
+         <command class="com.ptc.windchill.enterprise.part.forms.PartDocDescPasteRelationFormProcessor" method="execute" onClick="onClickValidation(event,&apos;related_paste_described&apos;)"/>
+      </action>
+      <action name="related_paste_select_references" multiselect="true" uicomponent="PASTE" ajax="component">
+         <command class="com.ptc.windchill.enterprise.part.forms.PartDocRefPasteRelationFormProcessor" method="execute" onClick="onClickValidation(event,&apos;related_paste_select_references&apos;)" windowType="popup"/>
+      </action>
+      <action name="related_paste_select_described" multiselect="true" uicomponent="PASTE" ajax="component">
+         <command class="com.ptc.windchill.enterprise.part.forms.PartDocDescPasteRelationFormProcessor" method="execute" onClick="onClickValidation(event,&apos;related_paste_select_described&apos;)" windowType="popup"/>
+      </action>
+      <action name="related_add_references" multiselect="true" ajax="component">
+          <command class="com.ptc.windchill.enterprise.part.forms.PartDocRefRelationFormProcessor" method="execute" onClick="onClickValidation(event,&apos;related_add_references&apos;)" windowType="popup"/>
+      </action>
+      <action name="related_add_described" multiselect="true" ajax="component">
+         <command class="com.ptc.windchill.enterprise.part.forms.PartDocDescRelationFormProcessor" method="execute" onClick="onClickValidation(event,&apos;related_add_described&apos;)" windowType="popup"/>
+      </action>
+
+      <action name="associate_document_to_part_references" multiselect="true" ajax="component">
+        <includeFilter name="psbSessionValidation" />
+        <command class="com.ptc.windchill.enterprise.part.forms.AssociateDocumentToPartReferencesFormProcessor" method="execute" onClick="onClickValidation(event,&apos;associate_document_to_part_references&apos;)" windowType="popup"/>
+      </action>
+
+      <action name="associate_document_to_part_described" multiselect="true" ajax="component">
+        <includeFilter name="psbSessionValidation" />
+        <command class="com.ptc.windchill.enterprise.part.forms.AssociateDocumentToPartDescribedByFormProcessor" method="execute" onClick="onClickValidation(event,&apos;associate_document_to_part_described&apos;)" windowType="popup"/>
+      </action>
+
+      <action name="REMOVEDOCUMENTFROMPART" ajax="component">
+        <includeFilter name="psbSessionValidation" />
+        <command class="com.ptc.windchill.enterprise.part.forms.RemoveAssociateDocumentToPartFormProcessor" method="execute" onClick="onClickValidation(event,&apos;REMOVEDOCUMENTFROMPART&apos;)"/>
+      </action>
+
+      <action name="ASSOCIATEDOCUMENTSTOPART" renderType="PDM">
+          <command windowType="page" class="java.lang.Object" method="ASSOCIATEDOCUMENTSTOPART"/>
+      </action>
+
+   </objecttype>
+
+   <objecttype name="customProcessPlan">
+        <action name="newOtherTask"
+			resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command url="netmarkets/jsp/ext/casc/process/newTask.jsp"
+				class="ext.casc.process.assign.CreatProcessPlan"
+				method="execute" windowType="popup" />
+		</action>
+
+	    <action name="newOtherTaskStep"
+	         resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command url="netmarkets/jsp/ext/casc/process/newTaskStep.jsp" windowType="wizard_step" />
+		</action>
+
+		<action name="newChildProcessPlan"
+	         resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command url="netmarkets/jsp/ext/casc/process/newChildTask.jsp"
+				class="ext.casc.process.assign.CreatChildProcessPlan"
+				method="execute" windowType="popup" />
+		</action>
+
+		 <action name="newChildProcessPlanStep"
+	         resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command url="netmarkets/jsp/ext/casc/process/newChildTaskStep.jsp" windowType="wizard_step" />
+		</action>
+
+		<action name="otherChildDesingTaskManageStep"
+	         resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+			<command url="netmarkets/jsp/ext/casc/process/otherChildDesingTaskManageStep.jsp" windowType="wizard_step" />
+		</action>
+
+        <action name="zhiPaiFeiGongYiRenWu"
+            resourceBundle="ext.casc.process.resource.ProcessTaskActionsRB">
+            <command class="ext.casc.process.assign.CreatFGYProcessTaskItem" method="execute" />
+        </action>
+
+	</objecttype>
+		<!-- 工艺分方案 -->
+	<objecttype name="gongyiFenfangan" class="wt.doc.WTDocument"
+		resourceBundle="ext.casc.ui.actionsRB">
+
+		<action name="create" ajax="component" >
+			<command
+				url="netmarkets/jsp/ext/casc/document/createGyffa.jsp?type=wt.doc.WTDocument|casc.sast.149.GONGYIFENFANGAN"
+				class="ext.casc.doc.CreateGyffaFormProcessor" method="execute"
+				windowType="popup" />
+		</action>
+	</objecttype>
+	<!-- 工艺分析策划总结 -->
+	<objecttype name="gongyiFenxicehuazongjie" class="wt.doc.WTDocument" resourceBundle="ext.casc.ui.actionsRB">
+		<action name="create" ajax="component" >
+			<command class="ext.casc.doc.CreateGyfxcezjFormProcessor" method="execute"
+				url="netmarkets/jsp/ext/casc/document/create.jsp?type=wt.doc.WTDocument|casc.sast.149.PROCESS_DOC|casc.sast.149.GONGYIFENXICEHUAZONGJIE"
+				windowType="popup" />
+		</action>
+	</objecttype>
+
+	<!-- 综合测试报告
+	<objecttype name="comprehensiveTestReport" class="wt.doc.WTDocument" resourceBundle="ext.casc.ui.actionsRB">
+		<action name="create" ajax="component" >
+			<command class="ext.casc.doc.CreateComprehensiveTestReportProcessor" method="execute"
+					 url="netmarkets/jsp/ext/casc/document/create.jsp?type=wt.doc.WTDocument|casc.sast.149.PROCESS_DOC|casc.sast.149.TEST_REPORT"
+					 windowType="popup" />
+		</action>
+	</objecttype>
+	 -->
+	<!-- 工艺定型 -->
+	<objecttype name="gongyiDingxing" class="wt.doc.WTDocument" resourceBundle="ext.casc.ui.actionsRB">
+		<action name="create" ajax="component" >
+			<command class="ext.casc.doc.CreateGydxFormProcessor" method="execute"
+				url="netmarkets/jsp/ext/casc/document/create.jsp?type=wt.doc.WTDocument|casc.sast.149.PROCESS_DOC|casc.sast.149.GONGYIDINGXING"
+				windowType="popup" />
+		</action>
+	</objecttype>
+	<!-- 工艺鉴定 -->
+	<objecttype name="gongyiJianding" class="wt.doc.WTDocument" resourceBundle="ext.casc.ui.actionsRB">
+		<action name="create" ajax="component" >
+			<command class="ext.casc.doc.CreateGyjdFormProcessor" method="execute"
+				url="netmarkets/jsp/ext/casc/document/create.jsp?type=wt.doc.WTDocument|casc.sast.149.PROCESS_DOC|casc.sast.149.GONGYIJIANDING"
+				windowType="popup" />
+		</action>
+	</objecttype>
+
+	<objecttype name="product" class="wt.pdmlink.PDMLinkProduct"
+		resourceBundle="ext.casc.ui.actionsRB">
+		<action name="gongyizongfangan" />
+
+	</objecttype>
+
+<!-- 其他类文档 -->
+	<objecttype name="qitaleiwendang" class="wt.doc.WTDocument"
+		resourceBundle="ext.casc.ui.actionsRB">
+
+		<action name="create" ajax="component" >
+			<command
+				url="netmarkets/jsp/ext/casc/document/createQtlwd.jsp?type=wt.doc.WTDocument|casc.sast.149.QITALEIWENDANG"
+				class="ext.casc.doc.CreateQtlwdFormProcessor" method="execute"
+				windowType="popup" />
+		</action>
+
+	</objecttype>
+   <objecttype name="custom_attachments" class="wt.content.ContentHolder" resourceBundle="ext.casc.ecn.ecnResource">
+      <action name="custom_attachments_step" id="custom_attachments_step" uicomponent="ATTACHMENTS" ajax="row" required="true" postloadJS="preAttachmentsStep" preloadWizardPage="false" afterJS="validateAttachments">
+         <command class="com.ptc.windchill.enterprise.attachments.forms.SecondaryAttachmentsSubFormProcessor" windowType="wizard_step"/>
+         <includeFilter name="hideFromDTI" />
+         <includeFilter name="EDACompareFilter" />
+      </action>
+   </objecttype>
+
+
+   <objecttype name="custom_defineItemAttributes" class="wt.fc.Persistable">
+         <action name="custom_defineItemAttributesWizStep" afterVK="setAttributesWizStep" id="defineItemAttributesWizStep" preloadWizardPage="false" required="true" resourceBundle="ext.casc.ecn.ecnResource" afterJS="validateCreateChangeOrder2">
+          <component name="defineItemAttributesWizStep" typeBased="true" windowType="wizard_step"/>
+         </action>
+   </objecttype>
+   <objecttype name="custom_object" class="wt.fc.Persistable">
+    <action name="custom_editAttributesWizStep" id="editAttributesWizStep" preloadWizardPage="false" required="true" afterVK="editAttributes" resourceBundle="ext.casc.ecn.ecnResource" afterJS="validateCreateChangeOrder2">
+         <!--<command windowType="wizard_step" url="servlet/TypeBasedIncludeServlet?contextAction=editAttributesWizStep"/> -->
+         <component name="editAttributesWizStep" typeBased="true" windowType="wizard_step"/>
+      </action>
+   </objecttype>
+
+	<!--中心域Start-->
+	<objecttype name="center" >
+		<action name="centerWorkflow" resourceBundle="ext.sast.center.resource.CenterActionsRB">
+			<command url="netmarkets/jsp/ext/sast/center/workflow/centerWorkflowInfoSearch.jsp" />
+		</action>
+
+		<action name="sendToKR" ajax="component"
+				resourceBundle="ext.sast.center.resource.CenterActionsRB">
+			<command url="/netmarkets/jsp/ext/casc/envelope/sendToKR.jsp"
+					 class="ext.sast.center.processor.SendToKRProcessor" method="sendToKR"
+					 windowType="popup" />
+			<includeFilter name="EditPartValidator" />
+		</action>
+
+		<action name="sendToKRStep" ajax="true">
+			<command url="/netmarkets/jsp/ext/casc/envelope/sendToKRStep.jsp"
+					 windowType="wizard_step" />
+		</action>
+	</objecttype>
+	<!--   wyq  -->
+	<objecttype name="syncProductModel" resourceBundle="ext.sast.center.resource.CustomActionRB">
+		<action name="syncProductMapping">
+			<command url="netmarkets/jsp/ext/sast/center/productModel/syncProductMapping.jsp" windowType="popup" />
+		</action>
+		<action name="syncModelTypeMapping">
+			<command url="netmarkets/jsp/ext/sast/center/productModel/syncModelTypeMapping.jsp" windowType="popup" />
+		</action>
+		<action name="editProductInfo">
+			<command windowType="popup" url="netmarkets/jsp/ext/sast/center/productModel/editProductInfo.jsp"/>
+		</action>
+		<action name="editProductInfo_step">
+			<command  windowType="wizard_step" url="netmarkets/jsp/ext/sast/center/productModel/editProductInfo_step.jsp"/>
+		</action>
+		<action name="saveProductInfo">
+			<command class="ext.sast.center.productModel.SaveSyncProductInfoProcessor" method="execute" onClick="preSumbit()"/>
+		</action>
+		<action name="cancelProductInfo">
+			<command onClick="cancelSumbit()"/>
+		</action>
+		<action name="editModelType">
+			<command onClick="showEditCombox()"/>
+		</action>
+		<action name="saveModelType" >
+			<command class="ext.sast.center.productModel.SaveSyncModelTypeInfoProcessor" method="saveModelType" onClick="JCAConfirm(&apos;ext.sast.center.resource.CustomActionRB.ISSUBMIT&apos;)"/>
+		</action>
+		<action name="editModelAttribute">
+			<command windowType="popup"  url="netmarkets/jsp/ext/sast/center/productModel/editModelAttributeInfo.jsp"/>
+		</action>
+		<action name="editModelAttribute_step">
+			<command windowType="wizard_step"  url="netmarkets/jsp/ext/sast/center/productModel/editModelAttributeInfo_step.jsp"/>
+		</action>
+		<action name="editModelAttr">
+			<command onClick="showEditCombox()"/>
+		</action>
+		<action name="saveModelAttr" >
+			<command class="ext.sast.center.productModel.SaveSyncModelAttributeInfoProcessor" method="saveInfo" onClick="JCAConfirm(&apos;ext.sast.center.resource.CustomActionRB.ISSUBMIT&apos;)"/>
+		</action>
+		<action name="showAllAttr">
+			<command onClick="showAllAttrs()"/>
+		</action>
+		<action name="hiddenAttr">
+			<command onClick="hiddenAttrs()"/>
+		</action>
+		<!-- 协同站点管理 -->
+		<action name="collaborativeSiteManagement">
+			<command windowType="page" url="/netmarkets/jsp/ext/sast/center/collaborativeSiteManagement.jsp" />
+		</action>
+		<!-- 协同站点管理 -->
+		<action name="synchDomainInfo">
+			<command class="ext.sast.center.processor.CenterManagerProcessor" method="synchDomainInfo"/>
+		</action>
+
+	</objecttype>
+	<!--中心域End-->
+
+	<objecttype name="pfmea" resourceBundle="ext.casc.integrate.pfmea.resource.PfmeaActionsRB">
+		<action name="choosePfmeaTemplate">
+			<command windowType="popup" url="netmarkets/jsp/ext/casc/pfmea/choosePfmeaTemplate.jsp" afterJS="openPfmeaHome()"/>
+		</action>
+		<action name="choosePfmeaTemplate_step">
+			<command  windowType="wizard_step" url="netmarkets/jsp/ext/casc/pfmea/choosePfmeaTemplate_step.jsp" afterJS="openPfmeaHome()"/>
+		</action>
+
+		<action name="submit">
+			<command  class="ext.casc.integrate.pfmea.processor.PfmeaRequestProcessor" method="sendRequest" onClick="preSubmit()"/>
+		</action>
+	</objecttype>
+	<!--SOP项目相关定制 START-->
+	<objecttype name="sopCustom" resourceBundle="ext.casc.sop.ui.SopActionsRB">
+		<!--SOP资源管理  add by chengjianhui-->
+		<action name="edit_sopziyuan" ajax="component">
+			<command
+				url="netmarkets/jsp/ext/glaway/mpm/mpmresource/editMPMResourceWizard.jsp?sopType=sop"
+				class="com.glaway.mpm.mpmresource.processors.EditMPMResourceProcessor"
+				method="execute" windowType="popup" />
+				<includeFilter name="SopObjectValidator" />
+		</action>
+
+		<action name="createSOPCSXM"><!--新建参数项目-->
+			<command class="ext.casc.sop.processor.CreateSOPZYProcessor" method="execute"
+					url="/netmarkets/jsp/ext/casc/sop/resource/createSOPZY.jsp?mpmResourceType=CSXM" windowType="popup" />
+			<includeFilter name="SopObjectValidator" />
+		</action>
+
+		<action name="createSOPDZQY"><!--新建定制区域-->
+			<command class="ext.casc.sop.processor.CreateSOPZYProcessor" method="execute"
+					url="/netmarkets/jsp/ext/casc/sop/resource/createSOPZY.jsp?mpmResourceType=DZQY" windowType="popup" />
+			<includeFilter name="SopObjectValidator" />
+		</action>
+
+		<action name="createSOPCZGW"><!--新建操作岗位-->
+			<command class="ext.casc.sop.processor.CreateSOPZYProcessor" method="execute"
+					url="/netmarkets/jsp/ext/casc/sop/resource/createSOPZY.jsp?mpmResourceType=CZGW" windowType="popup" />
+			<includeFilter name="SopObjectValidator" />
+		</action>
+
+		<action name="createSOPZYLB"><!--新建专业类别-->
+			<command class="ext.casc.sop.processor.CreateSOPZYProcessor" method="execute"
+					url="/netmarkets/jsp/ext/casc/sop/resource/createSOPZY.jsp?mpmResourceType=ZYLB" windowType="popup" />
+			<includeFilter name="SopObjectValidator" />
+		</action>
+
+		<action name="createSOPGXMC"><!--新建工序名称-->
+			<command class="ext.casc.sop.processor.CreateSOPZYProcessor" method="execute"
+					url="/netmarkets/jsp/ext/casc/sop/resource/createSOPZY.jsp?mpmResourceType=GXMC" windowType="popup" />
+			<includeFilter name="SopObjectValidator" />
+		</action>
+
+		<action name="createSOPCSXMMC"><!--新建参数项目名称-->
+			<command class="ext.casc.sop.processor.CreateSOPZYProcessor" method="execute"
+					url="/netmarkets/jsp/ext/casc/sop/resource/createSOPZY.jsp?mpmResourceType=CSXMMC" windowType="popup" />
+			<includeFilter name="SopObjectValidator" />
+		</action>
+
+		<action name="createSOPWZLB"><!--新建物资类别-->
+			<command class="ext.casc.sop.processor.CreateSOPZYProcessor" method="execute"
+					 url="/netmarkets/jsp/ext/casc/sop/resource/createSOPZY.jsp?mpmResourceType=WZLB" windowType="popup" />
+			<includeFilter name="SopObjectValidator" />
+		</action>
+
+		<action name="createSOPCZMC"><!--新建操作名称-->
+			<command class="ext.casc.sop.processor.CreateSOPZYProcessor" method="execute"
+					 url="/netmarkets/jsp/ext/casc/sop/resource/createSOPZY.jsp?mpmResourceType=CZMC" windowType="popup" />
+			<includeFilter name="SopObjectValidator" />
+		</action>
+
+		<action name="createSOPZYStep">
+			<command url="/netmarkets/jsp/ext/casc/sop/resource/createSOPZYStep.jsp" windowType="wizard_step" />
+		</action>
+
+		<!-- SOP资源导入 add by chenjianhui 20191102 -->
+		<action name="sopMPMResourceImport">
+			<command url="/netmarkets/jsp/ext/casc/sop/resource/sopMPMResourceImport.jsp" windowType="popup"
+					 class="ext.casc.sop.resource.SopMPMResourceImportProcessor" method="importObjects"/>
+			<includeFilter name="SopObjectValidator" />
+		</action>
+		<action name="sopMPMResourceImportStep">
+			<command url="/netmarkets/jsp/ext/casc/sop/resource/sopMPMResourceImportStep.jsp" windowType="wizards_step" />
+		</action>
+
+		<!--SOP体系BOM管理-->
+		<action name="createSOPPart"><!--创建SOPPart-->
+			<command class="ext.casc.sop.processor.CreateSopPartProcessor" method="execute"
+					url="netmarkets/jsp/ext/casc/sop/part/createPartWizard.jsp?type=wt.part.WTPart|casc.sast.149.SOPPart" windowType="popup"/>
+			<includeFilter name="SopObjectValidator" />
+		</action>
+		<action name="importSOPPart" > <!--SOP体系BOM导入-->
+			<command class="ext.casc.sop.resource.ImportSOPPart" url="netmarkets/jsp/ext/casc/sop/part/importSOPPart.jsp" method="execute" windowType="popup"/>
+			<includeFilter name="SopObjectValidator" />
+		</action>
+		<action name="importSOPPart_step"><!--SOP体系BOM导入 step-->
+			<command url="netmarkets/jsp/ext/casc/sop/part/importSOPPart_step.jsp" windowType="wizard_step"/>
+		</action>
+		<!--SOP任务分工管理-->
+		<action name="sopProAssignTask"><!--SOP设计任务分工-->
+			<command class="ext.casc.sop.task.SopTaskProcessor" method="createSopTask"
+					 url="netmarkets/jsp/ext/casc/sop/task/sopProAssignTask.jsp" windowType="popup"  />
+			<includeFilter name="SopObjectValidator" />
+		</action>
+		<action name="sopProAssignTask_step"><!--SOP设计任务分工 step-->
+			<command url="netmarkets/jsp/ext/casc/sop/task/sopProAssignTask_step.jsp" windowType="wizard_step" />
+		</action>
+		<action name="sopChangeProAssignTask"><!--SOP更改任务分工-->
+			<command class="ext.casc.sop.task.SopTaskProcessor" method="createSopChangeTask"
+					 url="netmarkets/jsp/ext/casc/sop/task/sopChangeProAssignTask.jsp" windowType="popup"  />
+			<includeFilter name="SopObjectValidator" />
+		</action>
+		<action name="sopChangeProAssignTask_step"><!--SOP更改任务分工 step-->
+			<command url="netmarkets/jsp/ext/casc/sop/task/sopChangeProAssignTask_step.jsp" windowType="wizard_step" />
+		</action>
+		<action name="rejectTask"><!--SOP任务分工，拒绝任务-->
+			<command class="ext.casc.sop.task.SopTaskProcessor" method="rejectTask" />
+		</action>
+		<action name="deleteTask"><!--SOP任务分工，作废任务-->
+			<command class="ext.casc.sop.task.SopTaskProcessor" method="deleteTask" />
+		</action>
+		<action name="completeTask"><!--SOP任务分工，完成任务-->
+			<command class="ext.casc.sop.task.SopTaskProcessor" method="completeTask" />
+		</action>
+		<!--SOP工艺编制-->
+		<action name="openSopProcecssEditor"><!--启动SOP工艺编辑器-->
+			<command url="netmarkets/jsp/ext/casc/sop/process/startSopPE.jsp?startType=SOP" windowType="popup" />
+			<includeFilter name="SopObjectValidator" />
+		</action>
+		<action name="relatedSopProcessPlan" preloadWizardPage="true" required="false" ><!--依据文件关联的工艺文件-->
+			<command url="netmarkets/jsp/ext/casc/sop/relatedProcessPlanData.jsp" windowType="wizard_step"/>
+			<includeFilter name="SopObjectValidator" />
+		</action>
+
+	</objecttype>
+	<!--SOP项目相关定制 END-->
+
+	<!--	add by ty -->
+	<!--	跨域协同管理 START-->
+	<objecttype name="navigation" resourceBundle="ext.sast.synergy.resource.SynergyActionsRB">
+		<action name="customSynergyManage" renderType="GENERAL">
+			<command  url="netmarkets/jsp/ext/sast/synergy/customSynergyManage.jsp" windowType="page"/>
+			<includeFilter name="AdminValidator" />
+		</action>
+		<action name="customSynergy" renderType="GENERAL">
+			<command  url="netmarkets/jsp/ext/sast/synergy/searchSynergyRecord.jsp" windowType="page"/>
+		</action>
+	</objecttype>
+
+	<objecttype name="customSynergyMenu">
+		<action name="finishItems" resourceBundle="ext.sast.synergy.resource.SynergyActionsRB">
+			<command class="ext.sast.synergy.mvc.command.SerchSyengyRecordCommand" method="execute"/>
+		</action>
+	</objecttype>
+	<!--	跨域协同管理 END-->
+ <!-- 工艺物资名称 -->
+    <objecttype name="technicsMaterial" class="ext.ases.techMaterial.TechnicsMaterial"
+                resourceBundle="ext.ases.techMaterial.mvc.builder.TechnicsMaterialReourceRB">
+        <!-- 详细信息 -->
+        <action name="attributes">
+            <component name="techMaterialattributes" windowType="page"/>
+        </action>
+        <!-- 数据字典信息 -->
+        <action name="dictionary">
+            <command url="netmarkets/jsp/ext/ases/techMaterial/tmDictionaryTable.jsp"/>
+        </action>
+        <action name="addDictionary" ajax="component">
+            <command
+                    url="netmarkets/jsp/ext/ases/techMaterial/addTechMaterialDic.jsp"
+                    class="ext.ases.techMaterial.process.CreateTechMaterialProcessor"
+                    method="execute" windowType="popup"/>
+            <includeFilter name="TechnicsMaterialFilter"/>
+        </action>
+        <action name="addDictionaryStep" ajax="true">
+            <command
+                    url="netmarkets/jsp/ext/ases/techMaterial/addTechMaterialDicStep.jsp"
+                    windowType="wizard_step"/>
+        </action>
+        <action name="deleteDictionary"><!--删除物资与数据字典的关联 -->
+            <command class="ext.ases.techMaterial.process.TechMaterialProcessor"
+                     method="deleteDictionary"/>
+            <includeFilter name="TechnicsMaterialFilter"/>
+        </action>
+        <action name="createTechnicsMaterial" ajax="component">
+            <command url="netmarkets/jsp/ext/ases/techMaterial/addTechMaterial.jsp"
+                     class="ext.ases.techMaterial.process.CreateTechnicsMaterialCommand"
+                     method="execute" windowType="popup"/>
+			<includeFilter name="TechnicsMaterialFilter"/>
+        </action>
+        <action name="addTechnicsMaterialStep" ajax="true">
+            <command
+                    url="netmarkets/jsp/ext/ases/techMaterial/addTechMaterialStep.jsp"
+                    windowType="wizard_step"/>
+        </action>
+
+        <!--删除工艺物资名称 -->
+        <action name="deleteTechMaterial">
+            <command class="ext.ases.techMaterial.process.TechMaterialProcessor"
+                     method="deleteTechMaterial"/>
+            <includeFilter name="TechnicsMaterialFilter"/>
+        </action>
+
+    </objecttype>
+    <!-- 工艺物资名称 -->
+    <!-- 工艺物资条目 -->
+    <objecttype name="technicsMaterialEntries"
+                class="ext.ases.techMaterial.TechnicsMaterialEntries"
+                resourceBundle="ext.ases.techMaterial.mvc.builder.TechnicsMaterialEntriesReourceRB">
+        <!-- 详细信息 -->
+        <action name="attributes">
+            <component name="techMaterialEntriesattributes" windowType="page"/>
+        </action>
+        <!-- 数据字典信息 -->
+        <action name="entries">
+            <command url="netmarkets/jsp/ext/ases/techMaterial/tmEntriesTable.jsp"/>
+        </action>
+        <!-- 导入工艺物资条目 -->
+        <action name="importTechnicsMaterialEntries">
+            <command
+                    class="ext.ases.techMaterial.process.ImportTechnicsMaterialProcess"
+                    url="/netmarkets/jsp/ext/ases/techMaterial/importTechnicsMaterialEntries.jsp"
+                    method="execute" windowType="popup"/>
+            <includeFilter name="TechnicsMaterialFilter"/>
+        </action>
+        <action name="importTechnicsMaterialEntries_step">
+            <command
+                    url="netmarkets/jsp/ext/ases/techMaterial/importTechnicsMaterialEntries_step.jsp"
+                    windowType="wizard_step"/>
+        </action>
+
+        <action name="exportStandardInfo">
+            <command
+                    url="netmarkets/jsp/ext/ases/techMaterial/downloadTechnicsMaterialInfot.jsp?tmType=exportStandardInfo"
+                    windowType="popup"/>
+            <includeFilter name="TechnicsMaterialFilter"/>
+        </action>
+        <action name="exportEleComponentsInfo">
+            <command
+                    url="netmarkets/jsp/ext/ases/techMaterial/downloadTechnicsMaterialInfot.jsp?tmType=exportEleComponentsInfo"
+                    windowType="popup"/>
+            <includeFilter name="TechnicsMaterialFilter"/>
+        </action>
+        <action name="exportNonMetallicInfo">
+            <command
+                    url="netmarkets/jsp/ext/ases/techMaterial/downloadTechnicsMaterialInfot.jsp?tmType=exportNonMetallicInfo"
+                    windowType="popup"/>
+            <includeFilter name="TechnicsMaterialFilter"/>
+        </action>
+        <action name="exportCompoundMaterialInfo">
+            <command
+                    url="netmarkets/jsp/ext/ases/techMaterial/downloadTechnicsMaterialInfot.jsp?tmType=exportCompoundMaterialInfo"
+                    windowType="popup"/>
+            <includeFilter name="TechnicsMaterialFilter"/>
+        </action>
+        <action name="exportMetallicInfo">
+            <command
+                    url="netmarkets/jsp/ext/ases/techMaterial/downloadTechnicsMaterialInfot.jsp?tmType=exportMetallicInfo"
+                    windowType="popup"/>
+            <includeFilter name="TechnicsMaterialFilter"/>
+        </action>
+        <action name="exportEleMachineInfo">
+            <command
+                    url="netmarkets/jsp/ext/ases/techMaterial/downloadTechnicsMaterialInfot.jsp?tmType=eleMachineInfo"
+                    windowType="popup"/>
+            <includeFilter name="TechnicsMaterialFilter"/>
+        </action>
+        <action name="exporExpDeviceInfo">
+            <command
+                    url="netmarkets/jsp/ext/ases/techMaterial/downloadTechnicsMaterialInfot.jsp?tmType=expDeviceInfo"
+                    windowType="popup"/>
+            <includeFilter name="TechnicsMaterialFilter"/>
+        </action>
+        <!--删除工艺物资名称 -->
+        <action name="deleteTechMaterialEntries">
+            <command class="ext.ases.techMaterial.process.TechMaterialProcessor"
+                     method="deleteTechMaterialEntries"/>
+            <includeFilter name="TechnicsMaterialFilter"/>
+        </action>
+
+		<!--    begin add by yfn 20231012-->
+<!--		导入工艺参数-->
+		<action name="importGLProcessParams">
+			<command url="/netmarkets/jsp/ext/casc/importdata/process/importGLProcessParams.jsp" class="ext.casc.importdata.process.ImportGLProcessProcessor" method="importGLProcessParams" windowType="popup"/>
+			<includeFilter name="ImportActionValidator"/>
+		</action>
+		<action name="importGLProcessParamsStep">
+			<command url="/netmarkets/jsp/ext/casc/importdata/process/importGLProcessParamsStep.jsp" windowType="wizard_step"/>
+		</action>
+
+<!--		导出工艺参数-->
+		<action name="exportGLProcessParams">
+			<command url="netmarkets/jsp/ext/ases/techMaterial/downloadTechnicsMaterialInfot.jsp?tmType=exportGLProcessParams" windowType="popup"/>
+		</action>
+
+		<!--		导入工艺知识-->
+		<action name="importGLProcessKnowledge">
+			<command url="/netmarkets/jsp/ext/casc/importdata/process/importGLProcessKnowledge.jsp" class="ext.casc.importdata.process.ImportGLProcessProcessor" method="importGLProcessKnowledge" windowType="popup"/>
+			<includeFilter name="ImportActionValidator"/>
+		</action>
+		<action name="importGLProcessKnowledgeStep">
+			<command url="/netmarkets/jsp/ext/casc/importdata/process/importGLProcessKnowledgeStep.jsp" windowType="wizard_step"/>
+		</action>
+
+		<!--		导出工艺知识-->
+		<action name="exportGLProcessKnowledge">
+			<command url="netmarkets/jsp/ext/ases/techMaterial/downloadTechnicsMaterialInfot.jsp?tmType=exportGLProcessKnowledge" windowType="popup"/>
+		</action>
+
+		<!--		导入工艺知识-->
+		<action name="importGLProcessOtherKnowledge">
+			<command url="/netmarkets/jsp/ext/casc/importdata/process/importGLProcessKnowledge.jsp" class="ext.casc.importdata.process.ImportGLProcessProcessor" method="importGLProcessOtherKnowledge" windowType="popup"/>
+			<includeFilter name="ImportActionValidator"/>
+		</action>
+		<action name="importGLProcessOtherKnowledgeStep">
+			<command url="/netmarkets/jsp/ext/casc/importdata/process/importGLProcessKnowledgeStep.jsp" windowType="wizard_step"/>
+		</action>
+
+		<!--		导出工艺知识-->
+		<action name="exportGLProcessOtherKnowledge">
+			<command url="netmarkets/jsp/ext/ases/techMaterial/downloadTechnicsMaterialInfot.jsp?tmType=exportGLProcessOtherKnowledge" windowType="popup"/>
+		</action>
+
+		<!--		批量创建工艺规程-->
+		<action name="batchCreateMPMProcessPlan" ajax="component">
+			<command url="netmarkets/jsp/ext/casc/processPlan/batchCreateMPMProcessPlan.jsp" windowType="popup" />
+		</action>
+		<action name="batchCreateMPMPlan_step">
+			<command url="netmarkets/jsp/ext/casc/processPlan/batchCreateMPMProcessPlan_step.jsp" windowType="wizard_step"/>
+		</action>
+
+
+
+	    <!--		批量设置工艺参数窗口-->
+		<action name="batchSetProcessParams" beforeJS="validateSelected"  selectRequired="true" multiselect="true" >
+			<command url="netmarkets/jsp/ext/casc/processPlan/setProcessParams.jsp"  class="ext.casc.processPlan.processor.BatchSaveParamsProcessor" method="execute" windowType="popup"/>
+		</action>
+		<action name="batchSetProcessParamsStep">
+			<command url="netmarkets/jsp/ext/casc/processPlan/setProcessParams_step.jsp" windowType="wizard_step"/>
+		</action>
+
+		<!--		批量初始化参数-->
+		<action name="batchInitProcessParams" ajax="component" selectRequired="true" multiselect="true" >
+			<command url="netmarkets/jsp/ext/casc/processPlan/initProcessParams.jsp"
+					 class="ext.casc.processPlan.processor.InitParasProcessor" method="execute" windowType="popup"/>
+		</action>
+		<action name="batchInitProcessParamsStep">
+			<command url="netmarkets/jsp/ext/casc/processPlan/initProcessParams_step.jsp" windowType="wizard_step"/>
+		</action>
+
+		<action name="exportParams"  beforeJS="validateSelected"  selectRequired="true" multiselect="true">
+			<command url="netmarkets/jsp/ext/casc/processPlan/downloadParamsExcel.jsp" windowType="popup"/>
+		</action>
+		<action name="importParams"  >
+			<command url="/netmarkets/jsp/ext/casc/processPlan/importParams.jsp" class="ext.casc.processPlan.processor.ProcessParamsCommand" method="importParams" windowType="popup"/>
+		</action>
+		<action name="importParams_step">
+			<command url="netmarkets/jsp/ext/casc/processPlan/importParamsStep.jsp" windowType="wizard_step"/>
+		</action>
+
+		<!--    end add by yfn 20231012-->
+
+    </objecttype>
+    <!-- 工艺物资条目 -->
+    <objecttype name="customProduct" resourceBundle="ext.casc.product.resource.productResource">
+        <action name="customCreateProduct" ajax="component">
+            <command
+                    url="netmarkets/jsp/ext/casc/product/customCreateProductWizard.jsp"
+                    class="ext.casc.product.process.CustomCreateProductProcess"
+                    method="execute" windowType="popup"/>
+            <includeFilter name="TechnicsMaterialFilter"/>
+        </action>
+        <action name="customCreateProductStep" ajax="true">
+            <command
+                    url="netmarkets/jsp/ext/casc/product/customCreateProductWizardStep.jsp"
+                    windowType="wizard_step"/>
+        </action>
+    </objecttype>
+
+	<objecttype name="changeRequest" class="wt.change2.WTChangeRequest2" resourceBundle="ext.casc.ui.actionsRB">
+		<!-- creat -->
+		<action name="createECR" uicomponent="CREATE_CHANGEREQUEST" ajax="component">
+			<description>Create a change request</description>
+			<command url="netmarkets/jsp/ext/casc/changeRequest/createECR.jsp"
+					class="ext.casc.changeRequest.ExtCreateChangeRequestFormProcessor" method="execute" windowType="popup"/>
+		</action>
+	</objecttype>
+
+	<objecttype name="analysisActivity" class="wt.change2.WTAnalysisActivity" resourceBundle="ext.casc.ui.actionsRB">
+		<!-- 基于更改流程主对象创建更改影响分析 -->
+		<action name="createAnalysisActivity">
+			<command class="ext.casc.analysisActivity.process.ExtCreateAnalysisFromPboProcessor" method="create" />
+			<includeFilter name="NewOtherTaskValidator" />
+		</action>
+
+		<!-- 自主创建更改影响分析 -->
+		<action name="customCreateAnalysis" ajax="component">
+			<command
+					url="netmarkets/jsp/ext/casc/analysisActivity/customCreateAnalysis.jsp"
+					class="ext.casc.analysisActivity.process.ExtCreateAnalysisProcessor"
+					method="execute" windowType="popup"/>
+		</action>
+
+		<action name="customCreateAnalysisStep" ajax="true">
+			<command url="netmarkets/jsp/ext/casc/analysisActivity/customCreateAnalysisStep.jsp" windowType="wizard_step"/>
+		</action>
+
+		<action name="relatedObjects" preloadWizardPage="true" required="false" >
+			<command url="netmarkets/jsp/ext/casc/analysisActivity/relatedObjects.jsp" windowType="wizard_step"/>
+		</action>
+
+		<action name="analysisWorkflowTab" preloadWizardPage="true" required="false" >
+			<command url="netmarkets/jsp/ext/casc/analysisActivity/analysisWorkflowTab.jsp" windowType="popup" />
+		</action>
+
+		<action name="replaceAnalysis">
+			<command url="netmarkets/jsp/ext/casc/analysisActivity/addRelatedObj.jsp?objType=analysis"
+					 class="ext.casc.analysisActivity.process.ExtReplaceAnalysisProcessor"
+					 method="execute" windowType="popup" />
+			<includeFilter name="NewOtherTaskValidator" />
+		</action>
+
+		<action name="deleteAnalysis" ajax="row" uicomponent="DELETE" ajaxActionClass="netmarkets/jsp/object/delete.jsp?refresh=true">
+			<command class="com.ptc.windchill.enterprise.object.commands.DeleteObjectCommands" method="delete" onClick="JCAConfirm(event,&apos;com.ptc.core.ui.confirmationMessagesRB.DELETE&apos;)"/>
+			<includeFilter name="NewOtherTaskValidator"/>
+		</action>
+
+		<!-- 添加受影响制品 -->
+		<action name="customAddProduct" ajax="component">
+			<command
+					url="netmarkets/jsp/ext/casc/analysisActivity/addProduct/customAddProduct.jsp"
+					class="ext.casc.analysisActivity.process.ExtAddRelatedProductProcessor"
+					method="execute" windowType="popup"/>
+		</action>
+
+		<action name="customAddProductStep" ajax="true">
+			<command url="netmarkets/jsp/ext/casc/analysisActivity/addProduct/customAddProductStep.jsp" windowType="wizard_step"/>
+		</action>
+	</objecttype>
+	
+	<!-- 部件操作菜单BOM删除功能 -->
+	<objecttype resourceBundle="ext.casc.part.resource.PartResource" name="object">
+		<action name="bomDelete" ajax="row">
+			<command onClick="JCAConfirm(event,'ext.casc.part.resource.PartResource.WHETHER_DELETE_BOM')"
+                class="ext.casc.part.processor.BomDeleteProcessor"
+                method="execute"  />
+            <includeFilter name="BomDeleteFilter"/>
+		</action>
+	</objecttype>
+	
+		<!-- 重写队列表格 -->
+	<objecttype name="queueTableEntries" class="wt.fc.Persistable" resourceBundle="wt.queue.jca.queueActionResource" > 
+       <action name="queueEntryTable"> 
+           <component name="queueCustom.entry.table" windowType="page"/>
+       </action>
+       <action name="queueAttributesTable"> 
+           <component name="queue.attributes.view.table" windowType="page"/>
+       </action>
+   </objecttype>
+</listofactions>

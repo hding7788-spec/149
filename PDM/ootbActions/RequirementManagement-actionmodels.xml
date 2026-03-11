@@ -1,0 +1,541 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+
+<!-- define the actions on the UI components -->
+<actionmodels>
+
+   <model name="requirements list">
+      <action name="pasteRequirements" type="requirement"/>
+      <action name="addToBaseline"  type="baseline"/>
+      <action name="createPromotionRequest" type="promotionRequest"/>
+      <action name="separator" type="separator"/>
+      <action name="exportRequirementTemplateToExcelXML" type="requirement"/>
+      <action name="exportRequirementToExcelXML" type="requirement"/>
+      <action name="importWordRequirements" type="requirement"/>
+   </model>
+
+   <model name="req info page structure toolbar">
+      <action name="list_cut" type="object"/>
+      <action name="separator" type="separator"/>
+   </model>
+
+   <model name="requirements row actions" menufor="com.ptc.windchill.enterprise.requirement.Requirement">
+      <action name="view"                            type="object"/>
+	  <action name="sysnavTabShortcut"               type="sysnav"/>        <!-- Open Info Page in Relationship Eplorer Tab-->
+      <action name="separator"                       type="separator"/>     <!-- ===================================== -->
+      <action name="reqlEdit"                        type="requirement"/>	<!-- edit -->      
+      <action name="markLinkAsSuspect"               type="requirement"/>
+      <action name="NewUpstreamTraceabilityLink"     type="requirement"/>
+      <action name="NewDownstreamTraceabilityLink"   type="requirement"/>      
+      <action name="separator"                       type="separator"/>     <!-- ===================================== -->
+      <submodel name="submodel_req_new"/> <!-- New -->
+      <action name="separator"                       type="separator"/>     <!-- ===================================== -->
+      <action name="REVISEITEMS"                     type="pdmObject"/>         <!-- Revise -->
+      <action name="copy"      				 		 type="object"/> <!-- Copy -->
+      <action name="CONTAINERMOVE"                   type="pdmObject" />    <!-- Move -->
+      <action name="MULTI_OBJ_DELETE"      			 type="pdmObject"/> <!-- Delete - info page-->
+      <action name="MULTI_OBJ_DELETE_DETAILS"      	 type="pdmObject"/> <!-- Delete - non info page-->
+      <!--action name="deleteIterations"                type="object"/-->            <!-- Delete Non-latest Iterations -->
+      <action name="reassignLC"      				 type="lifecycle"/> <!-- Reassign Life Cycles -->
+      <action name="setState"      		 			 type="lifecycle"/> <!-- Set State -->
+      <action name="separator"                       type="separator"/>     <!-- ===================================== -->
+      <submodel name="submodel_req_addto"/>      
+      <action name="separator"                       type="separator"/>     <!-- ===================================== -->
+      <action name="wtObjCompare"                    type="ocmp"/>		    <!-- Compare Information -->
+      <action name="separator"                       type="separator"/>     <!-- ===================================== -->
+      <action name="ManageSecurity"                  type="accessPermission"/> <!-- Edit Access Control -->
+      <action name="securityLabelsSingleObjJCA"      type="securityLabels"/>   <!-- Edit Security Labels -->
+      <action name="EDITSECURITYLABELSNONCOLLECTED"  type="object"/>           <!-- Edit Security Labels -->
+      <action name="createSubscription"              type="subscription"/>      <!-- Subscribe -->
+      <action name="associate_activities"            type="planActivity"/>      <!-- Associate Activities -->
+   </model>
+   
+   <!-- Specification Structure Browser - Requirement row level See Actions list -->
+   <model name="ssb requirements row actions">
+      <action name="view"                            type="object"/>
+	  <action name="sysnavTabShortcut"               type="sysnav"/>        <!-- Open Info Page in Relationship Eplorer Tab-->
+      <action name="separator"                       type="separator"/>     <!-- ===================================== -->
+      <action name="reqlEditInRightpane"        type="reqlObject"/>    
+      <action name="markLinkAsSuspect"               type="requirement"/>   
+      <action name="NewUpstreamTraceabilityLink"     type="requirement"/>
+      <action name="NewDownstreamTraceabilityLink"   type="requirement"/>
+      <action name="separator"                       type="separator"/>     <!-- ===================================== -->
+      <submodel name="submodel_req_new"/> <!-- New -->
+      <action name="separator"                       type="separator"/>     <!-- ===================================== -->
+      <action name="REVISEITEMS"                     type="pdmObject"/>         <!-- Revise -->
+      <action name="copy"                            type="object"/>               <!-- Copy -->
+      <action name="CONTAINERMOVE"                   type="pdmObject" />    <!-- Move -->
+      <action name="MULTI_OBJ_DELETE"                type="pdmObject"/>         <!-- Delete (Non-Information page) -->
+      <action name="MULTI_OBJ_DELETE_DETAILS"        type="pdmObject"/>         <!-- Delete (Information page) -->
+      <!--action name="deleteIterations"                type="object"/-->            <!-- Delete Non-latest Iterations -->
+      <action name="reassignLC"                      type="lifecycle"/>         <!-- Reassign Life Cycle -->
+      <action name="setState"                        type="lifecycle"/>
+      <action name="separator"                       type="separator"/>     <!-- ===================================== -->
+      <submodel name="ssb_submodel_req_addto"/>      
+      <action name="separator"                       type="separator"/>     <!-- ===================================== -->
+      <action name="wtObjCompare"                    type="ocmp"/>		    <!-- Compare Information -->
+      <action name="separator"                       type="separator"/>   <!-- ===================================== -->      
+      <action name="ManageSecurity"                  type="accessPermission"/> <!-- Edit Access Control -->
+      <action name="securityLabelsSingleObjJCA"      type="securityLabels"/>   <!-- Edit Security Labels -->
+      <action name="EDITSECURITYLABELSNONCOLLECTED"  type="object"/>           <!-- Edit Security Labels -->
+      <action name="createSubscription"              type="subscription"/>      <!-- Subscribe -->
+      <action name="associate_activities"            type="planActivity"/>      <!-- Associate Activities -->
+   </model>
+
+    <model name="submodel_req_new" resourceBundle="com.ptc.windchill.enterprise.requirement.requirementActionsRB">
+	  <action name="create"          type="changeRequest"/>
+   	  <action name="create"          type="problemReport"/>
+      <action name="create"          type="softwareIssue"/>
+   	  <action name="create" 	 type="promotionRequest"/> 	   <!-- Promote -->
+   	  <action name="create_activity" type="planActivity"/>
+    </model>
+    
+    <model name="submodel_req_addto" resourceBundle="com.ptc.windchill.enterprise.requirement.requirementActionsRB">
+      <action name="SBAddToPrj"                   type="sandbox"/>
+      <action name="addToBaselineSingle"          type="baseline"/>
+      <action name="addToManagedCollectionSingle" type="managedcollection"/> <!-- Add to Managed Collection -->
+      <action name="bookmarkIt"                   type="bookmark"/>
+    </model>
+    
+    <!-- Specification Structure Browser - Requirement row level addto Actions list -->
+    <model name="ssb_submodel_req_addto" resourceBundle="com.ptc.windchill.enterprise.requirement.requirementActionsRB">
+      <action name="SBAddToPrj"                   type="sandbox"/>
+      <action name="addToBaselineSingle"          type="baseline"/>
+      <action name="addToManagedCollectionSingle" type="managedcollection"/> <!-- Add to Managed Collection -->
+      <action name="bookmarkIt"                   type="bookmark"/>
+    </model>
+
+   <model name="requirement.create downstream traceability list actions">
+      <description>Toolbar actions for the Requirement Associations table</description>
+      <action name="explode"         type="folder" resourceBundle="com.ptc.windchill.enterprise.requirement.specificationActionsRB" shortcut="true"/>
+      <action name="implode"         type="folder" resourceBundle="com.ptc.windchill.enterprise.requirement.specificationActionsRB" shortcut="true"/>
+      <action name="removeTraceabilityLinksDownstream"     type="requirement" shortcut="true"/>
+      <action name="clearSuspect"                type="requirement" shortcut="true"/>
+      <action name="separator"                             type="separator"/>
+      <action name="createDownStreamTraceabilityLinks"     type="requirement" shortcut="true"/>
+   </model>
+
+   <model name="requirement.create upstream traceability list actions">
+      <description>Toolbar actions for the Requirement Upstream Associations table</description>
+      <action name="explode"         type="folder" resourceBundle="com.ptc.windchill.enterprise.requirement.specificationActionsRB" shortcut="true"/>
+      <action name="implode"         type="folder" resourceBundle="com.ptc.windchill.enterprise.requirement.specificationActionsRB" shortcut="true"/>
+      <action name="removeTraceabilityLinksUpstream"     type="requirement" shortcut="true"/>
+      <action name="clearSuspect"                type="requirement" shortcut="true"/>
+      <action name="separator"                   type="separator"/>
+      <action name="createTraceabilityLinks"     type="requirement" shortcut="true"/>
+   </model>
+
+    <model name="requirement.addRelatedItems.table">
+      <description>Toolbar actions for the add related items tables on the New Traceability Link wizard</description>
+      <action name="remove"                      type="object" shortcut="true" resourceBundle="com.ptc.windchill.enterprise.requirement.requirementActionsRB"/>
+      <action name="list_copy"                   type="object" shortcut="true"/>
+      <action name="separator"                   type="separator"/>
+      <action name="addRelatedItems"             type="requirement" shortcut="true"/>
+      <action name="pasteRelatedItems"           type="requirement" shortcut="true"/>
+   </model>
+   
+   <model name="requirement.multiSelectSaveAs.table">
+		<description>Toolbar actions of multi-select save as table</description>    
+       <action name="remove" type="object" shortcut="true" resourceBundle="com.ptc.windchill.enterprise.requirement.requirementActionsRB"/>
+       <action name="collectItems" type="object" shortcut="true" resourceBundle="com.ptc.windchill.enterprise.requirement.requirementActionsRB"/>
+       <action name="separator" type="separator"/>
+       <action name="addReqlObjs" type="reqlObject" shortcut="true"/>
+       <action name="pasteReqlObjs" type="reqlObject" shortcut="true"/>
+   </model>
+
+   <model name="requirementGeneral" resourceBundle="com.ptc.windchill.enterprise.requirement.requirementActionsRB">
+      <action name="primaryAttributes"					   type="object"/>
+	  <action name="attributes"                            type="object"/>
+      <action name="primaryContent"                        type="object"/>
+      <action name="attachments"                           type="object"/>
+      <action name="reference"  type="notebook"/>
+      <!-- <action name="sysnavTab"                             type="sysnav"/>-->
+   </model>
+
+   <model name="requirement third level nav" defaultActionName="singleLevelTraceability" defaultActionType="object">
+      <submodel name="requirementGeneral"/>
+      <submodel name="relatedItems"/>
+      <submodel name="changes"/>
+      <submodel name="history"/>
+      <submodel name="collaboration"/>
+   </model>
+
+   <model name="specification structure toolbar">
+      <action name="addSpecificationMember"             type="requirement" resourceBundle="com.ptc.windchill.enterprise.requirement.requirementActionsRB" shortcut="true"/>
+      <action name="removeSpecificationUsageLinks"      type="specification" resourceBundle="com.ptc.windchill.enterprise.requirement.specificationActionsRB" shortcut="true"/>
+      <action name="pasteToSpecification"               type="specification" resourceBundle="com.ptc.windchill.enterprise.requirement.specificationActionsRB" shortcut="true"/>
+      <action name="editMultiObjectsInSpecStructure"    type="specification" resourceBundle="com.ptc.windchill.enterprise.requirement.specificationActionsRB"/>
+      <action name="copy"                          type="object" resourceBundle="com.ptc.windchill.enterprise.requirement.specificationActionsRB"/>     
+      <action name="separator"                          type="separator"/>
+      <action name="explode"         type="folder" resourceBundle="com.ptc.windchill.enterprise.requirement.specificationActionsRB" shortcut="true"/>
+      <action name="implode"         type="folder" resourceBundle="com.ptc.windchill.enterprise.requirement.specificationActionsRB" shortcut="true"/>
+	  <action name="separator"                          type="separator"/>
+	  <action name="createAndLinkReqDocument"			type="requirement" resourceBundle="com.ptc.windchill.enterprise.requirement.requirementActionsRB"/>
+	  <action name="createAndLinkRequirement" 			type="requirement" resourceBundle="com.ptc.windchill.enterprise.requirement.requirementActionsRB"/>
+	  <action name="importExcelXMLRequirements"			type="requirement" resourceBundle="com.ptc.windchill.enterprise.requirement.requirementActionsRB"/>
+	  <action name="exportRequirementToExcelXML"		type="requirement" resourceBundle="com.ptc.windchill.enterprise.requirement.requirementActionsRB"/>
+	  <action name="multiSelectSaveAs"					type="reqlObject" resourceBundle="com.ptc.windchill.enterprise.requirement.requirementActionsRB"/>
+   </model> 
+
+   <model name="specification third level nav">
+      <submodel name="specificationGeneral"/>
+      <submodel name="relatedItems"/>
+      <submodel name="changes"/>
+      <submodel name="history"/>
+      <submodel name="collaboration"/>
+   </model>
+
+   <model name="specificationGeneral" resourceBundle="com.ptc.windchill.enterprise.requirement.specificationActionsRB">
+      <action name="primaryAttributes"					   type="object"/>
+	  <action name="attributes"                            type="object"/>
+      <action name="primaryContent"                        type="object"/>
+      <action name="attachments"                           type="object"/>
+      <action name="reference"  type="notebook"/>
+      <!-- <action name="sysnavTab"                             type="sysnav"/>-->
+   </model>
+
+   <model name="specifications row actions" menufor="com.ptc.windchill.enterprise.requirement.Specification">
+      <action name="view"                            type="object"/>
+	  <action name="sysnavTabShortcut"               type="sysnav"/>        <!-- Open Info Page in Relationship Eplorer Tab-->
+      <action name="separator"                       type="separator"/>     <!-- ===================================== -->
+      <action name="reqlEdit"		 				 type="requirement"/> <!-- edit -->
+      <action name="markLinkAsSuspect"               type="requirement"/>
+      <action name="addSpecificationMember"     	 type="requirement"/> <!-- Add Specification Member -->
+      <action name="NewUpstreamTraceabilityLink"     type="requirement"/>
+      <action name="NewDownstreamTraceabilityLink"   type="requirement"/>
+      <action name="establishTraceability"           type="requirement"/>
+      <action name="exportSpecStructure"     	 	 type="specification"/> <!-- Export to File -->
+      <action name="exportRequirementToExcelXML"     type="requirement"/> <!-- Export to Excel -->
+      <action name="importExcelXMLRequirements"      type="requirement"/> <!-- Import from Excel -->
+      <action name="exportRequirementTemplateToExcelXML"      type="requirement"/> <!-- Download Excel Template -->
+      <action name="REVISEITEMS"                     type="pdmObject"/>         <!-- Revise --> 
+      <action name="separator"                       type="separator"/>   <!-- ===================================== -->
+      <submodel name="submodel_spec_new"/> <!-- New -->
+      <action name="separator"                       type="separator"/>     <!-- ===================================== -->
+      <action name="copy"      				 		 type="object"/> <!-- Copy -->
+      <action name="CONTAINERMOVE"                   type="pdmObject" />    <!-- Move -->
+      <action name="MULTI_OBJ_DELETE"      			 type="pdmObject"/> <!-- Delete - info page-->
+      <action name="MULTI_OBJ_DELETE_DETAILS"      	 type="pdmObject"/> <!-- Delete - non info page-->
+      <action name="deleteIterations" 				 type="object"/> <!-- Delete Non-latest Iterations -->
+      <action name="reassignLC"      				 type="lifecycle"/> <!-- Reassign Life Cycles -->
+      <action name="setState"      		 			 type="lifecycle"/> <!-- Set State -->
+      <action name="separator"                       type="separator"/>     <!-- ===================================== -->
+      <action name="saveasSpecification"      		 type="specification"/> <!-- Save As -->
+      <!--action name="saveAsTemplate"                  type="specification"/-->  <!-- Save As Template -->
+      <action name="separator"                       type="separator"/>   <!-- ===================================== -->
+      <!--action name="SBAddToPrj"                      type="sandbox"/-->
+      <submodel name="submodel_spec_addto"/>
+      <action name="separator"                       type="separator"/>     <!-- ===================================== -->
+      <action name="wtObjCompare"                    type="ocmp"/>		    <!-- Compare Information -->
+      <action name="separator"                       type="separator"/>     <!-- ===================================== -->
+      <action name="ManageSecurity"                  type="accessPermission"/> <!-- Edit Access Control -->
+      <action name="securityLabelsSingleObjJCA"      type="securityLabels"/>   <!-- Edit Security Labels -->
+      <action name="EDITSECURITYLABELSNONCOLLECTED"  type="object"/>           <!-- Edit Security Labels -->
+      <action name="createSubscription"              type="subscription"/>      <!-- Subscribe -->
+   </model>
+
+   <!-- Specification Structure Browser - Specification row level See Actions list -->
+   <model name="ssb specifications row actions">
+      <action name="view"                            type="object"/>
+	  <action name="sysnavTabShortcut"               type="sysnav"/>        <!-- Open Info Page in Relationship Eplorer Tab-->
+      <action name="separator"                       type="separator"/>     <!-- ===================================== -->
+      <action name="reqlEditInRightpane"             type="reqlObject"/>
+      <action name="markLinkAsSuspect"               type="requirement"/>
+      <action name="addSpecificationMember"          type="requirement"/>
+      <action name="decomposeSpecification" 		 type="specification"/>
+      <action name="decomposeSpecToSection" 		 type="specification"/>
+      <action name="NewUpstreamTraceabilityLink"     type="requirement"/>
+      <action name="NewDownstreamTraceabilityLink"   type="requirement"/>
+      <action name="establishTraceability"           type="requirement"/>
+      <action name="separator"                       type="separator"/>     <!-- ===================================== -->
+      <action name="exportSpecStructure"             type="specification"/>
+      <action name="exportRequirementToExcelXML"     type="requirement"/>
+      <action name="importExcelXMLRequirements"      type="requirement"/>
+      <action name="exportRequirementTemplateToExcelXML" type="requirement"/>
+      <action name="REVISEITEMS"                     type="pdmObject"/>         <!-- Revise --> 
+      <action name="separator"                       type="separator"/>   <!-- ===================================== -->
+      <submodel name="submodel_spec_new"/>     
+      <action name="separator"                       type="separator"/>   <!-- ===================================== -->
+      <action name="copy"                            type="object"/>               <!-- Copy -->
+      <action name="CONTAINERMOVE"                   type="pdmObject" />    <!-- Move -->
+      <action name="MULTI_OBJ_DELETE"                type="pdmObject"/>         <!-- Delete (Non-Information page) -->
+      <action name="MULTI_OBJ_DELETE_DETAILS"        type="pdmObject"/>         <!-- Delete (Information page) -->
+      <action name="deleteIterations"                type="object"/>            <!-- Delete Non-latest Iterations -->      
+      <action name="reassignLC"                      type="lifecycle"/>         <!-- Reassign Life Cycle -->
+      <action name="setState"                        type="lifecycle"/>
+      <action name="separator"                       type="separator"/>   <!-- ===================================== -->            
+      <action name="saveasSpecification"             type="specification"/>     <!-- Save As -->
+      <!--action name="saveAsTemplate"                  type="specification"/-->  <!-- Save As Template -->
+      <!--action name="SBAddToPrj"                      type="sandbox"/-->
+      <action name="separator"                       type="separator"/>     <!-- ===================================== -->
+      <submodel name="ssb_submodel_spec_addto"/>      
+      <action name="separator"                       type="separator"/>     <!-- ===================================== -->
+      <action name="wtObjCompare"                    type="ocmp"/>		    <!-- Compare Information -->
+      <action name="separator"                       type="separator"/>   <!-- ===================================== --> 
+      <action name="ManageSecurity"                  type="accessPermission"/> <!-- Edit Access Control -->
+      <action name="securityLabelsSingleObjJCA"      type="securityLabels"/>   <!-- Edit Security Labels -->
+      <action name="EDITSECURITYLABELSNONCOLLECTED"  type="object"/>           <!-- Edit Security Labels -->
+      <action name="createSubscription"              type="subscription"/>      <!-- Subscribe -->
+   </model>
+
+   <model name="submodel_spec_new" resourceBundle="com.ptc.windchill.enterprise.requirement.requirementActionsRB">
+      <action name="createAndLinkReqDocument"                type="requirement"/>
+      <action name="createAndLinkRequirement"                type="requirement"/>
+      <action name="create"          type="changeRequest"/>
+      <action name="create"          type="problemReport"/>
+      <action name="create"          type="softwareIssue"/>
+      <action name="create" 		 type="promotionRequest"/> 	   <!-- Promote -->
+      <action name="create_activity" type="planActivity"/>
+   </model>
+   
+      
+   <model name="submodel_spec_addto" resourceBundle="com.ptc.windchill.enterprise.requirement.requirementActionsRB">
+	  <action name="SBAddToPrj"      type="sandbox"/>
+	  <action name="addToBaselineSingle"  type="baseline"/>
+	  <action name="addToManagedCollectionSingle" type="managedcollection"/> <!-- Add to Managed Collection -->
+	  <action name="bookmarkIt"           type="bookmark"/>
+   </model>
+   
+   <!-- Specification Structure Browser - Specification row level addto Actions list -->
+   <model name="ssb_submodel_spec_addto" resourceBundle="com.ptc.windchill.enterprise.requirement.requirementActionsRB">
+	  <action name="SBAddToPrj"      type="sandbox"/>
+	  <action name="addToBaselineSingle"          type="baseline"/>
+	  <action name="addToManagedCollectionSingle" type="managedcollection"/> <!-- Add to Managed Collection -->
+	  <action name="bookmarkIt"           type="bookmark"/>
+   </model>
+   
+   <model name="ImportWordWizardButtonsNoApply">
+      <action name="prevButton"    type="object"/>
+      <action name="nextButton"    type="requirement"/>
+      <action name="okButton"      type="requirement"/>
+      <action name="cancelButton"  type="requirement"/>
+   </model>
+   
+    <model name="CreateRemaWizardButtonsNoApply">
+       <action name="prevButton"    type="object"/>
+       <action name="nextButton"    type="object"/>
+       <action name="createRemaOkButton"      type="requirement"/>
+       <action name="cancelButton"  type="object"/>
+   </model>
+   
+   <model name="CreateRemaWizardButtons">
+       <action name="prevButton"    type="object"/>
+       <action name="nextButton"    type="object"/>
+       <action name="createRemaOkButton"      type="requirement"/>
+       <action name="createRemaApplyButton"   type="requirement"/>
+       <action name="cancelButton"  type="object"/>
+   </model>
+   
+    <model name="EditRemaWizardButtons">
+       <action name="prevButton"    type="object"/>
+       <action name="nextButton"    type="object"/>
+       <action name="editRemaOkButton"      type="requirement"/>
+       <action name="cancelButton"  type="object"/>
+   </model>
+
+   <model name="ReplaceWizardButtonsNoApply">
+      <action name="replaceButton" type="requirement"/>
+      <action name="cancelButton"  type="object"/>
+   </model>
+   
+   <model name="RequirementReportButtons">
+        <action name="reportOkButton" type="requirement"/>
+        <action name="cancelButton" type="object"/>
+   </model>
+   
+   <model name="RequirementDetailsReportButtons">
+        <action name="reportDetailsOkButton" type="requirement"/>
+        <action name="cancelButton" type="object"/>
+   </model>
+
+   <model name="SingleLevelTraceUpstreamActions">
+      <description>Toolbar actions for the single level traceability tables</description>
+      <action name="createTraceabilityLinks"     type="requirement" shortcut="true"/>
+   </model>
+
+   <model name="SingleLevelTraceDownstreamActions">
+         <description>Toolbar actions for the single level traceability tables</description>
+         <action name="createDownStreamTraceabilityLinks"     type="requirement" shortcut="true"/>
+   </model>
+
+   <model name="SpecificationInfoPageTabSet" resource="com.ptc.core.ui.navigationRB">
+   	   	<submodel name="reqlInfoDefaultDetails" />
+   	   	<action name="specStructure" type="specification"/>
+   	   	<submodel name="specificationRelatedTab" />
+   	   	<submodel name="requirementChangesTab"/>
+   	   	<submodel name="requirementHistoryTab" />
+		<submodel name="requirementTraceabilityTab" />
+		<action name="sysnavTab" type="sysnav"/>
+   </model>
+   
+   <model name="SectionInfoPageTabSet" resource="com.ptc.core.ui.navigationRB">
+   	   	<submodel name="reqlInfoDefaultDetails" />
+   	   	<action name="specStructure" type="specification"/>
+   	   	<submodel name="sectionRelatedTab" />
+   	   	<submodel name="requirementChangesTab"/>
+   	   	<submodel name="requirementHistoryTab" />             
+		<submodel name="requirementTraceabilityTab" />
+		<action name="sysnavTab" type="sysnav"/>
+   </model>
+   
+   <model name="RequirementInfoPageTabSet" resource="com.ptc.core.ui.navigationRB">
+        <submodel name="reqlInfoDefaultDetails" />
+<!--   	   	<action name="specStructure" type="specification"/> --> <!-- Defect D-22964 : To remove Info Page Structure tab for Item and its soft types -->
+        <submodel name="requirementRelatedTab"/>
+        <submodel name="requirementChangesTab"/>
+        <submodel name="requirementHistoryTab" />
+		<submodel name="requirementTraceabilityTab" />
+		<action name="sysnavTab" type="sysnav"/>
+   </model>
+   
+   <model name="SpecTemplateInfoPageTabSet" resource="com.ptc.core.ui.navigationRB">
+        <submodel name="spectemplateInfoDefaultDetails" />
+   </model>
+
+   <model name="reqlInfoDefaultDetails" resourceBundle="com.ptc.windchill.enterprise.requirement.requirementActionsRB">
+      <action name="primaryAttributes"  type="object"/>
+      <action name="attributes"         type="object"/>
+	  <action name="attachments"     type="object"/>
+   </model>
+   
+   <model name="spectemplateInfoDefaultDetails" resourceBundle="com.ptc.windchill.enterprise.requirement.requirementActionsRB">
+      <action name="attributePanel"  type="specification"/>
+      <action name="specTemplateIterationHistory"   type="specification"/>
+   </model>
+
+   <model name="specification templates toolbar actions" >
+       <action name="list_hide_template" type="object" shortcut="true" />
+       <action name="list_show_template" type="object" shortcut="true" />
+       <action name="separator"          type="separator"/>
+       <action name="createSpecificationTemplate"     type="specification" shortcut="true" />
+   </model>
+
+
+   <model name="specification template row actions" menufor="com.ptc.windchill.enterprise.requirement.SpecificationTemplate">
+
+      <action name="enableSpecificationTemplate"         type="specification"/>
+      <action name="disableSpecificationTemplate"        type="specification"/>
+      <action name="editSpecificationTemplate"           type="specification"/>
+      <action name="deleteSpecificationTemplate"         type="specification"/>
+      <action name="checkout"         type="object"/>
+      <action name="checkin"          type="object"/>
+      <action name="undocheckout"     type="object"/>
+      <action name="showSpecificationTemplate"     type="specification"/>
+      <action name="hideSpecificationTemplate"     type="specification"/>
+   </model>
+
+   <model name="SpecTemplate third level nav" >
+     <action name="attributePanel"  type="specification"/>
+     <action name="specTemplateIterationHistory"        type="specification"/>
+   </model>
+   <model name="single level upstream traceability row actions" >
+     <action name="rowRemoveSingleUpstreamLink"        type="requirement"/>     
+   </model>
+   
+   <model name="single level downstream traceability row actions" >     
+     <action name="rowRemoveSingleDownstreamLink"  type="requirement"/>
+   </model>
+   
+   <model name="requirementTraceabilityTab"  resourceBundle="com.ptc.windchill.enterprise.requirement.requirementActionsRB">
+   	<action name="TraceabilityLinksTable" type="requirement"/>
+   </model>
+	
+   <model name="requirementRelatedTab"  resourceBundle="com.ptc.windchill.enterprise.requirement.requirementActionsRB">
+   	  <action name="SpecificationsTable" type="requirement"/>      
+	  <action name="relatedBaselines" type="object"/>
+      <action name="relatedManagedCollection" type="managedcollection"/>
+      <action name="missingObjectsTable" type="persistedCollectable" />
+      <action name="relatedPackages" type="wp"/>
+   	</model>
+	
+	<model name="specificationRelatedTab"  resourceBundle="com.ptc.windchill.enterprise.requirement.requirementActionsRB">     
+	  <action name="SpecificationsTable" type="requirement"/>
+	  <action name="relatedBaselines" type="object"/>
+      <action name="relatedManagedCollection" type="managedcollection"/>
+      <action name="missingObjectsTable" type="persistedCollectable" />
+      <action name="relatedPackages" type="wp"/>
+   	</model>
+		
+	<model name="sectionRelatedTab"  resourceBundle="com.ptc.windchill.enterprise.requirement.requirementActionsRB">
+	   <action name="SpecificationsTable" type="requirement"/>	   
+	   <action name="relatedBaselines" type="object"/>
+	   <action name="relatedManagedCollection" type="managedcollection"/>
+	   <action name="relatedPackages" type="wp"/>
+   	</model>
+	
+	<model name="requirementChangesTab"  resourceBundle="com.ptc.windchill.enterprise.requirement.requirementActionsRB">
+		  <action name="relatedChangeIssues" type="change"/>
+		  <action name="relatedChangeRequests" type="change"/>
+		  <action name="relatedAffectedByChangeNotices" type="change"/>
+		  <action name="relatedResultingFromChangeNotices" type="change"/>
+   	</model>
+   		
+   	<model name="requirementHistoryTab"  resourceBundle="com.ptc.windchill.enterprise.requirement.requirementActionsRB">
+   	      <action name="versionHistory" type="history"/>
+   	      <action name="timelineHistory" type="history"/>
+    </model>
+    
+    <!-- Part row level Actions list (SPR 2040653) -->
+    <model name="reql parts row actions">
+       <action name="view" type="object"/>            <!-- View Information -->
+	   <action name="sysnavTabShortcut" type="sysnav"/>   <!-- Open Info Page in Relationship Eplorer Tab-->
+       <action name="separator" type="separator"/>         <!-- ===================================== -->
+       <submodel name="more parts actions open"/>
+       <action name="separator" type="separator"/>         <!-- ===================================== -->
+       <action name="copy" type="object"/>            <!-- Copy -->
+       <submodel name="more parts toolbar actions add"/>
+       <action name="separator" type="separator"/>
+       <action name="markLinkAsSuspect" type="requirement"/>       <!-- Mark Link As Suspect -->
+       <action name="separator" type="separator"/>
+       <submodel name="more parts actions compare"/>
+       <action name="separator" type="separator"/>
+       <action name="createSubscription" type="subscription"/>      <!-- Subscribe -->
+       <action name="separator" type="separator"/>         <!-- ===================================== -->
+    </model>
+   
+    <!-- Document row level Actions list (SPR 2040666) -->
+    <model name="reql docs row actions">
+         <action name="view"   type="object"/>    <!-- Info page -->
+		 <action name="sysnavTabShortcut" type="sysnav"/>   <!-- Open Info Page in Relationship Eplorer Tab-->
+         <action name="separator"              type="separator"/>
+         <action name="download_primary_attachment"   type="attachments"/>
+         <action name="redirect_primary_attachment"   type="attachments"/>
+         <action name="separator"              type="separator"/>
+         <action name="openProductView"               type="wvs"/>    <!-- Enabled per User Preference -->
+         <action name="separator" type="separator"/>
+         <action name="copy"                   type="object"/>       <!-- Copy -->
+         <action name="separator"              type="separator"/>      
+         <action name="markLinkAsSuspect" type="requirement"/>   
+         <action name="separator"              type="separator"/>
+         <action name="createSubscription"     type="subscription"/> <!-- Subscribe -->
+         <action name="separator"              type="separator"/>
+    </model>
+   
+      
+   <model name="MultiEditReqlWizardButtons">
+       <action name="prevButton" type="object"/>
+       <action name="nextButton" type="object"/>
+       <action name="saveButton" type="object"/>
+       <action name="cancelButton" type="object"/>
+   </model>
+   
+   <model name="edit multi reql actions">
+       <action name="editProperties" type="object"  shortcut="true"/>
+   </model>
+   
+    <model name="reql.specStructure.rightpane.edit.tabs">
+        <action name="reqlQuickEdit" type="reqlObject"/>
+        <submodel name="requirementTraceabilityTab" />       
+    </model>
+    <model name="reql.specStructure.rightpane.view.tabs">
+        <submodel name="reqlInfoDefaultDetails" />
+        <submodel name="requirementTraceabilityTab" />       
+    </model>
+    <model name="reqlQucikEditCheckInWizardButtons">
+    	<action name="checkInOkButton" type="reqlObject"/>
+    	<action name="checkInCancelButton" type="reqlObject"/>
+    </model>
+   
+   
+   
+</actionmodels>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+
+    <objecttype name="persistedCollectable" class="wt.facade.persistedcollection.PersistedCollectable" resourceBundle="com.ptc.windchill.enterprise.part.partResource">
+    <action name="missingObjectsTable">
+        <component name="missingObjectsRelatedTable" />
+        <includeFilter name="missingObjectsTableValidation" />
+    </action> 
+    </objecttype>
+
+</listofactions>

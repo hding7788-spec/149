@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+]>
+
+ <#assign rectW = text_width + 37.686 />
+ <#if isShowPrinciple = "true">
+ 	<#assign rectW = text_width + 62.681 + 7.686 />
+ </#if>
+  <#if isShowR = "true">
+ 	<#assign rectW = text_width + 81.381 + 7.686 />
+ </#if>
+
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="${rectW+5}" height="30px" viewBox="-1.5 0 ${rectW+5} 30" enable-background="new -1.5 0 ${rectW+5} 30" xml:space="preserve">
+
+<#if isShowText = "true">
+	<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="35.686" y1="0" x2="35.686" y2="29.688"/>
+</#if>
+
+<text transform="matrix(1 0 0 1 39.4224 20.084)" font-family="'宋体'" font-size="16">${text}</text>
+<#if isShowR = "true">
+	<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="${text_width + 81.381}" cy="14.873" r="7.686"/>
+	<text transform="matrix(1 0 0 1 ${text_width + 77} 20.3682)" font-family="'宋体'" font-size="16">R</text>
+</#if>
+<#if isShowPrinciple = "true">
+	<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="${text_width + 62.681}" cy="14.873" r="7.686"/>
+	<text transform="matrix(1 0 0 1 ${text_width + 58.5371} 20.3682)" font-family="'宋体'" font-size="16">${PrincipleText}</text>
+</#if>
+<#if isShowC = "true">
+	<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="5.667" cy="15" r="5.167"/>
+</#if>
+
+<#if isShowText = "false">
+	<rect x="1" y="0.5" fill="none" stroke="#000000" stroke-miterlimit="10" width="30.686" height="29"/>
+<#else>
+	<rect x="1" y="0.5" fill="none" stroke="#000000" stroke-miterlimit="10" width="${rectW}" height="29"/>
+</#if>
+
+<#switch model_1>
+	<#case "1">
+		<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="10.416" y1="15" x2="31.412" y2="15"/>
+	<#break>
+	<#case "2">
+		<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="28.24,24.5 9.24,24.5 14.346,5.5 32.779,5.5 "/>
+	<#break>
+	<#case "3">
+		<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="17.142,24.469 11.595,18.922 11.595,11.077 17.142,5.531 
+	24.987,5.531 30.534,11.077 30.534,18.922 24.987,24.469 "/>
+	<#break>
+	<#case "4">
+		<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="13.604" y1="24.123" x2="17.008" y2="5.179"/>
+		<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="28.287" y1="5.179" x2="25.449" y2="24.123"/>
+		<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="21.214" cy="14.491" r="5.438"/>
+	<#break>
+</#switch>
+</svg>

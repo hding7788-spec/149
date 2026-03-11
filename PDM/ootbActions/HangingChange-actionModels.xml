@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+<!-- define the actions on the UI components -->
+<actionmodels>
+   <model name="hangingChanges.toolbar.actions">
+        <description>Toolbar actions for unincorporated changes table</description>
+        <action name="setPlannedRevision" type="hangingChanges" shortcut="true"/>
+   </model>
+ </actionmodels>

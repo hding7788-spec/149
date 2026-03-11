@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+]>
+ <#assign line_width = text_width + 0.5 />
+ <#assign up = (text_width  - up_width)/2 + 1 />
+ <#assign down = (text_width  - down_width)/2 + 1 />
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="${line_width}" height="30px" viewBox="0 0 ${line_width} 30" enable-background="new 0 0 ${line_width} 30"
+	 xml:space="preserve">
+<text transform="matrix(1 0 0 1 ${up} 17.3125)" font-family="'宋体'" font-size="13">${upText}</text>
+<text transform="matrix(1 0 0 1 ${down} 30.4326)" font-family="'宋体'" font-size="13">${downText}</text>
+<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="0" y1="19.69" x2="${line_width}" y2="19.69"/>
+</svg>

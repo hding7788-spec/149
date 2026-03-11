@@ -1,0 +1,74 @@
+<%@page language="java" access="http|soap" %>
+<%@taglib uri="http://www.ptc.com/infoengine/taglib/core" prefix="ie"%>
+<%@page import="ext.casc.product.CSCProduct"%>
+<%@page import="wt.pdmlink.PDMLinkProduct,ext.casc.constants.Constants"%>
+
+<%
+
+ String productName= (String)getParam("name","");
+ System.out.println(productName);
+ PDMLinkProduct product = CSCProduct.getPDMLinkProduct(productName);
+  System.out.println(product);
+ String setmarket = Constants.SETMARK_IS;
+  System.out.println(setmarket);
+  System.out.println(java.util.Locale.getDefault());
+  
+%>
+
+
+<ie:webject name="Query-Objects" type="OBJ">
+    <ie:param name="INSTANCE" data="$(@FORM[]supporting-adapter[*])" delim="!" valueSeparator="!" default="<%=com.infoengine.au.NamingService.getVMName()%>"/>
+    <ie:param name="ATTRIBUTE" data="name"/>
+    <ie:param name="TYPE" data="wt.vc.views.View"/>
+    <ie:param name="GROUP_OUT" data="viewRef"/>
+    <ie:param name="WHERE" data="(name=Manufacturing)"/>
+</ie:webject>
+
+<ie:webject name="Query-Objects" type="OBJ">
+    <ie:param name="INSTANCE" data="$(@FORM[]supporting-adapter[*])" delim="!" valueSeparator="!" default="<%=com.infoengine.au.NamingService.getVMName()%>"/>
+    <ie:param name="ATTRIBUTE" data="number"/>
+    <ie:param name="ATTRIBUTE" data="name"/>
+    <ie:param name="ATTRIBUTE" data="version"/>
+    <ie:param name="ATTRIBUTE" data="PHASE_CODE"/>
+    <ie:param name="ATTRIBUTE" data="SETMARK"/>
+    <ie:param name="ATTRIBUTE" data="containerName"/>
+     <ie:param name="Attribute" data="CTYPE"/>
+	 <ie:param name="Attribute" data="REMARK"/>
+	 <ie:param name="Attribute" data="CMAT"/>
+	 <ie:param name="Attribute" data="PTC_MATERIAL_NAME"/>
+	<ie:param name="Attribute" data="CMAT_UP"/>
+	<ie:param name="Attribute" data="CMAT_DOWN"/>
+	<ie:param name="Attribute" data="KEYCOMPONENT"/>
+	<ie:param name="Attribute" data="CSIZE"/>
+	<ie:param name="Attribute" data="SECRET"/>
+	<ie:param name="Attribute" data="ENDITEMIN"/>
+	<ie:param name="Attribute" data="MINDEX"/>
+	<ie:param name="Attribute" data="CINDEX"/>
+	<ie:param name="Attribute" data="PTC_COMMON_NAME"/>
+	<ie:param name="Attribute" data="ROUTING"/>
+	<ie:param name="Attribute" data="COMPANY"/>
+	<ie:param name="Attribute" data="PRODUCT_INDEX"/>
+	<ie:param name="Attribute" data="DESIGNER"/>
+	<ie:param name="Attribute" data="size"/>
+	<ie:param name="Attribute" data="PINDEX"/>
+	<ie:param name="Attribute" data="ZZJC"/>
+	<ie:param name="Attribute" data="FZCJ"/>
+	<ie:param name="Attribute" data="MATERIAL"/>
+	<ie:param name="Attribute" data="PZGGBZH"/>
+	<ie:param name="Attribute" data="JSTJBZH"/>
+	<ie:param name="Attribute" data="JDDJ"/>
+	<ie:param name="Attribute" data="ZLDJ"/>
+	<ie:param name="Attribute" data="CLZT"/>
+	<ie:param name="Attribute" data="CLDW"/>
+	<ie:param name="Attribute" data="ZQCLMC"/>
+	<ie:param name="Attribute" data="JBCLMC"/>
+	<ie:param name="Attribute" data="ZQCLBZH"/>
+    <ie:param name="TYPE" data="wt.part.WTPart"/>
+    <ie:param name="WHERE" data="(SETMARK=<%=setmarket%>)"/> 
+    <ie:param name="WHERE" data="(view.id=$(viewRef[0]obid[0]))"/> 
+	 <ie:param name="WHERE" data="(checkoutInfo.state=c/i)"/>
+	 <ie:param name="WHERE" data="(state.state=APPROVED)"/>
+	<%if(product!=null){%>
+	<ie:param name="WHERE" data="(containerReference=<%=product%>)"/> 
+	<%}%>
+</ie:webject>

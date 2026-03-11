@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="${text_width + 80}" height="25px" viewBox="0 0 ${text_width + 80} 25" enable-background="new 0 0 ${text_width + 80} 25" xml:space="preserve">
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" points="23.268,6.504 16.117,23.643 
+	15.786,24.434 "/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" points="8.51,14.65 15.767,24.326 19.826,14.572 
+	"/>
+<text transform="matrix(1 0 0 1 0 5.4722)" font-family="'SimSun'" font-size="5">${upCV}</text>
+<text transform="matrix(1 0 0 1 0 12.605)" font-family="'SimSun'" font-size="5">${downCV}</text>
+<text transform="matrix(1 0 0 1 26.8105 4.3296)" font-family="'SimSun'" font-size="5">${upDesc}</text>
+<text transform="matrix(1 0 0 1 26.8105 11.6089)" font-family="'SimSun'" font-size="5">${downDesc}</text>
+<text transform="matrix(1 0 0 1 20.771 23.1445)" fill="#040000" font-family="'SimSun'" font-size="6.602">${GrainType}</text>
+<#if isLineShow == "true">
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="${text_width + 10.265}" y1="6.518" x2="23.114" y2="6.518"/>
+</#if>
+<#if requestCheck == "true">
+	<circle fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" cx="23.211" cy="6.53" r="3.282"/>
+</#if>
+<circle fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" cx="14.928" cy="17.114" r="3.282"/>
+</svg>

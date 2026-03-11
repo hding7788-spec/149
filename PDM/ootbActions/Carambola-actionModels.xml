@@ -1,0 +1,682 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM "../../actionmodels.dtd">
+    <!-- define the actions on the UI components -->
+
+<actionmodels resourceBundle="com.ptc.carambola.carambolaResource">
+
+    <model name="recentDocsMiniTableEditActions">
+        <action name="checkoutAndEdit"  type="document"/>
+        <action name="edit"             type="document"/>
+    </model>
+
+    <!-- Table examples related entries -->
+    <model name="CustEx_submodel_simpleTable">
+        <action name="CustEx_simpleTable1" type="object" />
+        <action name="CustEx_simpleTable2" type="object" />
+        <action name="CustEx_simpleTable3" type="object" />
+    </model>
+
+    <model name="CustEx_submodel_advancedTable">
+        <action name="CustEx_advancedTable1" type="object" />
+        <action name="CustEx_advancedTable_custom_oid_actions" type="object" />
+    </model>
+
+    <model name="CustEx_submodel_simpleTree">
+        <action name="CustEx_simpleTree1" type="object" />
+        <action name="CustEx_simpleTree2" type="object" />
+        <action name="CustEx_simpleTree3" type="object" />
+    </model>
+
+   <model name="CustEx_table_third_level_navigation">
+        <submodel name="CustEx_submodel_advancedTable" />
+        <submodel name="CustEx_submodel_simpleTable" />
+    </model>
+
+   <model name="CustEx_infoPage_third_level_navigation" >
+        <submodel name="CustEx_InfoPage_attributes" />
+        <submodel name="CustEx_submodel_mvc_tables" />
+    </model>
+
+    <model name="CustEx_InfoPage_attributes">
+        <action name="propertyPanel" type="object" />
+        <action name="attributePanel" type="carambola" />
+        <action name="visualizationAndAttributes" type="object"/>
+    </model>
+
+    <model name="CustomToolbar">
+        <action name="list_delete" type="object" />
+        <action name="list_cut" type="object" />
+        <action name="list_copy" type="object" />
+        <action name="separator" type="separator" />
+        <action name="createPartWizard" type="part" />
+        <action name="create" type="document" />
+        <action name="separator" type="separator" />
+        <action name="newWizardExampleOne" type="object" />
+        <action name="wizardExampleTwo" type="object" />
+        <action name="clerkExampleOne" type="object" />
+        <action name="newPartAction" type="object">
+            <label>My new Action</label>
+            <icon>newPart.gif</icon>
+            <tooltip>Inline Action</tooltip>
+        </action>
+        <action name="attributeWizardExample" type="object" />
+        <action name="twoPaneWizardExample" type="object" />
+        <action name="twoPaneWizardExampleTwo" type="object" />
+        <action name="onclickIsInvalid"   type="carambola"/>
+        <action name="onclickToBeWrapped" type="carambola"/>
+    </model>
+
+    <model name="CustEx_table_row_level_menus">
+        <action name="TestAction1" type="object" />
+        <action name="TestAction2" type="object" />
+        <action name="TestAction3" type="object" />
+        <action name="TestAction4" type="object" />
+        <action name="TestAction5" type="object" />
+    </model>
+
+    <model name="CustEx_tree_row_level_actions">
+        <action name="OpenTreeInWizard" type="object"/>
+    </model>
+
+    <model name="CustEx_table_menubar">
+        <submodel name="CustEx_table_file" />
+        <submodel name="CustEx_table_edit" />
+    </model>
+
+    <model name="CustEx_table_file">
+        <action name="createPartWizard" type="part" />
+        <action name="create" type="document" />
+    </model>
+
+    <model name="CustEx_table_edit">
+        <action name="list_delete" type="object" />
+        <action name="list_cut" type="object" />
+        <action name="list_copy" type="object" />
+    </model>
+    
+    <model name="CustEx_GraphicalAttributes">
+        <action name="create" type="document" shortcut="true"/>
+        <submodel name="folderbrowser_toolbar_exportlisttofile_submenu"/>
+    </model>
+
+    <!-- Tree examples related entries -->
+    <model name="CustEx_tree_toolbar">
+        <action name="list_copy" type="object" shortcut="true"/>
+        <action name="tree_dynamic_row_add" type="carambola" shortcut="true"/>
+        <action name="separator" type="separator" />
+        <action name="carambola.multistep.wiz" type="carambola" />
+
+        <action name="explode" type="folder" shortcut="true"/>
+        <action name="implode" type="folder" shortcut="true"/>
+        <submodel name ="CustEx_table_edit"/>
+    </model>
+
+    <model name="CustEx_tree_menubar">
+        <submodel name="CustEx_tree_file" />
+        <submodel name="CustEx_tree_edit" />
+    </model>
+
+    <model name="CustEx_tree_file">
+        <action name="explode" type="folder" shortcut="true"/>
+        <action name="implode" type="folder" shortcut="true"/>
+    </model>
+
+    <model name="CustEx_tree_edit">
+        <action name="list_copy" type="object" />
+    </model>
+
+    <model name="CustEx_tree_third_level_navigation">
+        <submodel name="CustEx_submodel_simpleTree" />
+        <submodel name="CustEx_submodel_advancedTree" />
+    </model>
+
+    <model name="CustEx_submodel_advancedTree">
+        <action name="CustEx_advancedTree1" type="object" />
+        <action name="CustEx_advancedTree2" type="object" />
+        <action name="CustEx_advancedTree3" type="object" />
+        <action name="CustEx_advancedTree4" type="object" />
+    </model>
+
+    <model name="CustEx_submodel_mvc_exceptionHandling">
+        <action name="CustEx_ExtJs_exceptionHandle1" type="object" />
+        <action name="CustEx_ExtJs_exceptionHandle2" type="object" />
+        <action name="CustEx_ExtJs_exceptionHandle3" type="object" />
+        <action name="CustEx_Ajax_exceptionHandle" type="object" />
+    </model>
+
+    <model name="CustEx_submodel_mvc_tables">
+        <action name="CustEx_mvc_table" type="carambola" />
+        <action name="CustEx_mvc_table_separateBuilders" type="carambola" />
+        <action name="CustEx_mvc_table_nonPersistedData" type="carambola" />
+        <action name="CustEx_mvc_table_IE" type="carambola" />
+        <action name="CustEx_mvc_table_AsyncDataSourceEnabled" type="carambola" />
+    </model>
+
+    <model name="mvc_tables_toolbar">
+        <action name="sortByState" type="carambola"/>
+        <action name="reloadTable" type="carambola"/>
+      <action name="strikeThroughRows" type="carambola"/>
+      <action name="clearStrikeThrough" type="carambola"/>
+        <submodel name="CustEx_exportlisttofile_submenu" />
+    </model>
+
+    <model name="mvc_tables_toolbar_withRemove">
+        <action name="sortByState" type="carambola"/>
+        <action name="reloadTable" type="carambola"/>
+        <action name="removeRowFromView" type="carambola"/>
+      <action name="strikeThroughRows" type="carambola"/>
+      <action name="clearStrikeThrough" type="carambola"/>
+        <submodel name="CustEx_exportlisttofile_submenu" />
+    </model>
+
+    <!-- Navigation entry for Customization  II level -->
+    <model name="customization navigation">
+        <action name="componentCatalog" type="object" />
+        <action name="tools" type="object" />
+        <action name="testClients" type="carambola"/>
+        <action name="apiDocs" type="object" />
+        <action name="participantPicker" type="object" />
+    </model>
+
+    <model name="action model table toolbar">
+        <action name="createAction" type="carambola" />
+        <action name="removeAction" type="carambola" />
+        <action name="pasteAction" type="carambola" />
+    </model>
+
+    <model name="action search table toolbar">
+        <action name="createAction" type="carambola" />
+        <action name="list_copy" type="object" />
+    </model>
+
+    <model name="carambola_info_page">
+        <action name="slice" type="carambola" />
+        <action name="eat" type="carambola" />
+        <submodel name="carambola_sub_model" />
+    </model>
+
+    <model name="carambola_sub_model">
+        <action name="ripe" type="carambola" />
+        <action name="grow" type="carambola" />
+    </model>
+
+    <model name="CustEx_infoPage_tabset" resourceBundle="com.ptc.core.ui.navigationRB">
+        <submodel name="carambola_details" />
+        <submodel name="CustEx_default_myTab" />
+    </model>
+
+    <model name="CustEx_default_myTab">
+        <action name="CustEx_mvc_table" type="carambola" />
+        <action name="CustEx_mvc_table_nonPersistedData" type="carambola" />
+    </model>
+
+    <model name="carambola_details">
+        <action name="visualizationAndAttributes" type="object"/>
+        <action name="primaryAttributes" type="object"/>
+        <action name="CustEx_mvc_table_AsyncDataSourceEnabled" type="carambola" />
+    </model>
+
+    <model name="example_paste_toolbar_actions">
+        <action name="pasteLocation" type="carambola"/>
+    </model>
+
+    <model name="download_file_toolbar">
+        <action name="downloadFileWizard" type="carambola" shortcut="true" />
+    </model>
+
+    <model name="CustEx_table_row_actions">
+      <action name="view" type="object"/>
+      <action name="separator" type="separator"/>
+      <action name="checkin" type="wip"/>
+      <action name="checkout" type="wip"/>
+      <action name="checkoutAndEdit" type="part"/>
+      <action name="undocheckout" type="object"/>
+      <action name="separator" type="separator"/>
+        <action name="copy"                             type="object"/>
+      <action name="strikeThroughRow" type="carambola"/>
+    </model>
+
+    <model name="carambola_menu_sliceOnly">
+        <action name="slice" type="carambola" />
+    </model>
+
+    <model name="carambola_menu_eatOnly">
+        <action name="eat" type="carambola" />
+    </model>
+
+    <!--  Pineapple -->
+    <model name="pineapple_infoPage_tabset" resourceBundle="com.ptc.core.ui.navigationRB">
+        <submodel name="pineapple_details" />
+        <submodel name="ajaxNumericRendering" />
+        <submodel name="performanceTesting" />
+        <submodel name="CustEx_submodel_mvc_exceptionHandling" />
+        <action name="CustEx_error_on_page" type="object" />
+        <action name="CustEx_error_404" type="object" />
+    </model>
+
+    <model name="pineapple_details">
+        <action name="visualizationAndAttributes" type="object"/>
+    </model>
+
+    <model name="pineapple_infoPage_toc">
+        <action name="visualizationAndAttributes" type="object"/>
+        <submodel name="ajaxNumericRendering" />
+        <submodel name="performanceTesting" />
+        <submodel name="pineapple_error_pages" />
+        <submodel name="CustEx_submodel_mvc_exceptionHandling" />
+    </model>
+
+    <model name="pineapple_error_pages">
+        <action name="CustEx_error_on_page" type="object" />
+        <action name="CustEx_error_404" type="object" />
+    </model>
+
+    <!-- added separators to verify fix for SPR 1994380 -->
+    <model name="pineapple_infoPage_actions">
+        <action name="separator" type="separator"/>
+        <action name="slice" type="carambola" />
+        <action name="eat" type="carambola" />
+        <submodel name="carambola_sub_model" />
+        <action name="separator" type="separator"/>
+        <action name="separator" type="separator"/>
+        <action name="separator" type="separator"/>
+        <action name="fake" type="fake"/>
+        <action name="separator" type="separator"/>
+        <action name="onclickIsInvalid"   type="carambola"/>
+        <action name="separator" type="separator"/>
+        <action name="onclickToBeWrapped" type="carambola"/>
+        <action name="separator" type="separator"/>
+    </model>
+
+    <model name="ajaxNumericRendering">
+        <action name="ajaxNumericRenderingTestPanel" type="carambola"/>
+        <action name="ajaxNumericRenderingTestPanel2" type="carambola"/>
+    </model>
+
+    <model name="performanceTesting">
+        <action name="performanceFakeTableData" type="carambola" />
+        <action name="performanceOneLevelDeep" type="carambola" />
+    </model>
+
+
+    <!-- models to use for testing wizard infrastructure (wizard steps, object handles, FormProcessing, FormResults etc.) -->
+    <model name="test_wizard_infrastructure_toolbar_actions">
+        <action name="addRow" type="carambola_test"/>
+        <action name="removeRow" type="carambola_test"/>
+    </model>
+
+    <model name="test_wizard_infrastructure_row_level_actions">
+        <action name="removeRow" type="carambola_test"/>
+    </model>
+
+    <model name="CustEx_exportlisttofile_submenu">
+        <description>"Export List to File" submenu for MVC table toolbar Actions menu</description>
+      <action name="exportTableCSV" type="object"/>
+      <action name="exportTableHTML" type="object"/>
+      <action name="exportTableTEXT" type="object"/>
+      <action name="exportTableXLS" type="object"/>
+      <action name="exportTableXLSX" type="object"/>
+      <action name="exportTableXLSReport" type="object"/>
+      <action name="exportTableXML" type="object"/>
+   </model>
+
+   <!--these are actions for the modeled object info page -->
+   <model name="ModeledObjectInfoPageTOC">
+      <!--action name="visualizationAndAttributes" type="object"/-->
+      <action name="Java_attributes" type="modeledObject"/>
+      <!-- commenting out this :action name="attributes" type="modeledObject" :uncomment this if you want only attributes and comment viz&attr-->
+      <action name="Properties_table_for_infoPage" type="modeledObject"/>
+      <action name="Roles_table_for_classinfoPage" type="modeledObject"/>
+      <action name="ParentInterface_table_for_classinfoPage" type="modeledObject"/>
+      <action name="Descendents_table_for_classinfoPage" type="modeledObject"/>
+      <action name="attributesForTable" type="modeledObjectTableDetails"/>
+      <action name="ColumnDescriptors_table_for_infoPage" type="modeledObjectTableDetails"/>
+      <action name="Indices_table_for_classinfoPage" type="modeledObject"/>
+      <action name="CompositeUniques_table_for_classinfoPage" type="modeledObject"/>
+      <action name="UML" type="modeledObject"/>
+      <action name="Javadoc" type="modeledObject"/>
+   </model>
+
+   <!--TOC for the modeled object info page without UML-->
+   <model name="ModeledObject2InfoPageTOC">
+      <!--action name="visualizationAndAttributes" type="object"/-->
+      <action name="Java_attributes" type="modeledObject"/>
+      <!-- commenting out this :action name="attributes" type="modeledObject" :uncomment this if you want only attributes and comment viz&attr-->
+      <action name="Properties_table_for_infoPage" type="modeledObject"/>
+      <action name="Roles_table_for_classinfoPage" type="modeledObject"/>
+      <action name="ParentInterface_table_for_classinfoPage" type="modeledObject"/>
+      <action name="Descendents_table_for_classinfoPage" type="modeledObject"/>
+      <action name="attributesForTable" type="modeledObjectTableDetails"/>
+      <action name="ColumnDescriptors_table_for_infoPage" type="modeledObjectTableDetails"/>
+      <action name="Indices_table_for_classinfoPage" type="modeledObject"/>
+      <action name="CompositeUniques_table_for_classinfoPage" type="modeledObject"/>
+      <action name="Javadoc" type="modeledObject"/>
+   </model>
+
+<!-- TOC's without javadoc-->
+   <model name="ModeledObjectInfoPageNoJavadocTOC">
+      <!--action name="visualizationAndAttributes" type="object"/-->
+      <action name="Java_attributes" type="modeledObject"/>
+      <!-- commenting out this :action name="attributes" type="modeledObject" :uncomment this if you want only attributes and comment viz&attr-->
+      <action name="Properties_table_for_infoPage" type="modeledObject"/>
+      <action name="Roles_table_for_classinfoPage" type="modeledObject"/>
+      <action name="ParentInterface_table_for_classinfoPage" type="modeledObject"/>
+      <action name="Descendents_table_for_classinfoPage" type="modeledObject"/>
+      <action name="attributesForTable" type="modeledObjectTableDetails"/>
+      <action name="ColumnDescriptors_table_for_infoPage" type="modeledObjectTableDetails"/>
+      <action name="Indices_table_for_classinfoPage" type="modeledObject"/>
+      <action name="CompositeUniques_table_for_classinfoPage" type="modeledObject"/>
+      <action name="UML" type="modeledObject"/>
+   </model>
+
+   <!--TOC for the modeled object info page without UML-->
+   <model name="ModeledObject2InfoPageNoJavadocTOC">
+      <!--action name="visualizationAndAttributes" type="object"/-->
+      <action name="Java_attributes" type="modeledObject"/>
+      <!-- commenting out this :action name="attributes" type="modeledObject" :uncomment this if you want only attributes and comment viz&attr-->
+      <action name="Properties_table_for_infoPage" type="modeledObject"/>
+      <action name="Roles_table_for_classinfoPage" type="modeledObject"/>
+      <action name="ParentInterface_table_for_classinfoPage" type="modeledObject"/>
+      <action name="Descendents_table_for_classinfoPage" type="modeledObject"/>
+      <action name="attributesForTable" type="modeledObjectTableDetails"/>
+      <action name="ColumnDescriptors_table_for_infoPage" type="modeledObjectTableDetails"/>
+      <action name="Indices_table_for_classinfoPage" type="modeledObject"/>
+      <action name="CompositeUniques_table_for_classinfoPage" type="modeledObject"/>
+   </model>
+
+   <model name="ModeledObjectInfoPageTabSet">
+      <submodel name="ModeledObjectInfoPage_DBdetails"/>
+      <submodel name="ModeledObjectInfoPage_details"/>
+   </model>
+
+   <model name="ModeledObject2InfoPageTabSet">
+      <submodel name="ModeledObjectInfoPage_details"/>
+   </model>
+
+   <!-- this is the new tabset for infopage for classes without UML diagrams-->
+   <model name="ModeledObject3InfoPageTabSet">
+      <submodel name="ModeledObjectInfoPage_DBdetails"/>
+      <submodel name="ModeledObjectInfoPage3_details"/>
+   </model>
+
+   <model name="ModeledObjectNoJavadocInfoPageTabSet">
+      <submodel name="ModeledObjectInfoPage_DBdetails"/>
+      <submodel name="ModeledObjectInfoPageNoJavadoc_details"/>
+   </model>
+
+   <model name="ModeledObject2NoJavadocInfoPageTabSet">
+      <submodel name="ModeledObjectInfoPageNoJavadoc_details"/>
+   </model>
+
+   <!-- this is the new tabset for infopage for classes without UML diagrams-->
+   <model name="ModeledObject3NoJavadocInfoPageTabSet">
+      <submodel name="ModeledObjectInfoPage_DBdetails"/>
+      <submodel name="ModeledObjectInfoPage3NoJavadoc_details"/>
+   </model>
+
+   <model name="ModeledObjectNoTableNoUMLInfoPageTabset">
+    <submodel name="ModeledObjectInfoPage3_details"/>
+   </model>
+
+   <model name="ModeledObjectNoTableNoUMLNoJavadocInfoPageTabset">
+    <submodel name="ModeledObjectInfoPage3NoJavadoc_details"/>
+   </model>
+
+   <model name="ModeledObjectInfoPage_details">
+      <!--action name="visualizationAndAttributes" type="object"/-->
+      <action name="Java_attributes" type="modeledObject"/>
+      <action name="ParentInterface_table_for_classinfoPage" type="modeledObject"/>
+      <action name="Descendents_table_for_classinfoPage" type="modeledObject"/>
+      <action name="Properties_table_for_infoPage" type="modeledObject"/>
+      <action name="Roles_table_for_classinfoPage" type="modeledObject"/>
+      <action name="UML" type="modeledObject"/>
+      <action name="Javadoc" type="modeledObject"/>
+   </model>
+
+   <!-- this is the new javainfo tab for classes without the UML diagrams-->
+   <model name="ModeledObjectInfoPage3_details">
+      <!--action name="visualizationAndAttributes" type="object"/-->
+      <action name="Java_attributes" type="modeledObject"/>
+      <action name="ParentInterface_table_for_classinfoPage" type="modeledObject"/>
+      <action name="Descendents_table_for_classinfoPage" type="modeledObject"/>
+      <action name="Properties_table_for_infoPage" type="modeledObject"/>
+      <action name="Roles_table_for_classinfoPage" type="modeledObject"/>
+      <action name="Javadoc" type="modeledObject"/>
+   </model>
+
+   <model name="ModeledObjectInfoPageNoJavadoc_details">
+      <!--action name="visualizationAndAttributes" type="object"/-->
+      <action name="Java_attributes" type="modeledObject"/>
+      <action name="ParentInterface_table_for_classinfoPage" type="modeledObject"/>
+      <action name="Descendents_table_for_classinfoPage" type="modeledObject"/>
+      <action name="Properties_table_for_infoPage" type="modeledObject"/>
+      <action name="Roles_table_for_classinfoPage" type="modeledObject"/>
+      <action name="UML" type="modeledObject"/>
+   </model>
+
+   <!-- this is the new javainfo tab for classes without the UML diagrams-->
+   <model name="ModeledObjectInfoPage3NoJavadoc_details">
+      <!--action name="visualizationAndAttributes" type="object"/-->
+      <action name="Java_attributes" type="modeledObject"/>
+      <action name="ParentInterface_table_for_classinfoPage" type="modeledObject"/>
+      <action name="Descendents_table_for_classinfoPage" type="modeledObject"/>
+      <action name="Properties_table_for_infoPage" type="modeledObject"/>
+      <action name="Roles_table_for_classinfoPage" type="modeledObject"/>
+   </model>
+
+   <model name="ModeledObjectInfoPage_DBdetails">
+      <action name="attributesForTable" type="modeledObjectTableDetails"/>
+      <action name="ColumnDescriptors_table_for_infoPage" type="modeledObjectTableDetails"/>
+      <action name="CompositeUniques_table_for_classinfoPage" type="modeledObject"/>
+      <action name="Indices_table_for_classinfoPage" type="modeledObject"/>
+   </model>
+
+   <!-- these are actions for the modeled object table details info page -->
+   <model name="ModeledObjectTableDetailsInfoPageTOC">
+      <action name="attributesForTable" type="modeledObjectTableDetails"/>
+      <action name="ColumnDescriptors_table_for_infoPage" type="modeledObjectTableDetails"/>
+   </model>
+
+   <model name="ModeledObjectTableDetailsInfoPageTabSet">
+      <submodel name="ModeledObjectTableDetailsInfoPage_details"/>
+   </model>
+
+   <model name="ModeledObjectTableDetailsInfoPage_details">
+      <action name="attributesForTable" type="modeledObjectTableDetails"/>
+   </model>
+
+   <!--these are actions for the modeled object properties info page -->
+   <model name="ModeledObjectPropertiesInfoPageTOC">
+      <action name="attributes_properties" type="modeledObjectProperties"/>
+      <action name="Properties_table_for_infoPage" type="modeledObject"/>
+   </model>
+
+   <model name="ModeledObjectPropertiesInfoPageTabSet">
+      <submodel name="ModeledObjectPropertiesInfoPage_details"/>
+   </model>
+
+   <model name="ModeledObjectPropertiesInfoPage_details">
+      <action name="attributes_properties" type="modeledObjectProperties"/>
+   </model>
+
+   <!--these are actions for the modeled object column descriptor info page-->
+   <model name="ModeledObjectColDescInfoPageTOC">
+      <action name="attributes_columndescriptors" type="modeledObjectColumnDescriptors"/>
+   </model>
+
+   <model name="ModeledObjectColDescInfoPageTabSet">
+      <submodel name="ModeledObjectColDescInfoPage_details"/>
+   </model>
+
+   <model name="ModeledObjectColDescInfoPage_details">
+      <action name="attributes_columndescriptors" type="modeledObjectColumnDescriptors"/>
+   </model>
+
+   <!--these are actions for the modeled object roles info page-->
+   <model name="ModeledObjectRolesInfoPageTOC">
+      <action name="attributes_roles" type="modeledObjectRoles"/>
+   </model>
+
+   <model name="ModeledObjectRolesInfoPageTabSet">
+      <submodel name="ModeledObjectRolesInfoPage_details"/>
+   </model>
+
+   <model name="ModeledObjectRolesInfoPage_details">
+      <action name="attributes_roles" type="modeledObjectRoles"/>
+    </model>
+
+    <!-- models to use for testing wizard infrastructure (wizard steps, object handles, FormProcessing, FormResults etc.) -->
+    <model name="test_wizard_infrastructure_toolbar_actions">
+        <action name="addRow" type="carambola_test"/>
+        <action name="removeRow" type="carambola_test"/>
+        <action name="moveRow" type="carambola_test"/>
+    </model>
+
+    <model name="test_wizard_infrastructure_row_level_actions">
+        <action name="removeRow" type="carambola_test"/>
+        <action name="moveRow" type="carambola_test"/>
+    </model>
+    <model name="CarambolaMultiStepWizExampleButtons">
+      <action name="prevButton"    type="object"/>
+      <action name="nextButton"    type="object"/>
+      <action name="cancelButton"  type="object"/>
+    </model>
+    <model name="TestCreateWizardButtonsWithSave">
+      <action name="prevButton"    type="object"/>
+      <action name="nextButton"    type="object"/>
+      <action name="saveButtonForCreate"   type="fakeLiterature"/>
+      <action name="okButton"      type="object"/>
+      <action name="cancelButton"  type="object"/>
+    </model>
+
+
+    <!-- Literature models -->
+   <model name="literatureInfoPageTOC">
+      <action name="attributes" type="object"/>
+      <action name="primaryAttributes" type="object"/>
+      <action name="visualizationAndAttributes" type="object"/>
+      <action name="attributesFromAnotherObject" type="fakeLiterature"/>
+	  <action name="attachments" type="object"/>
+	  <action name="versionHistory" type="history" />
+   </model>
+
+   <model name="literatureInfoPageTabSet">
+      <submodel name="literatureInfoPageDetails"/>
+   </model>
+
+   <model name="literatureInfoPageDetails">
+      <action name="primaryAttributes" type="object"/>
+      <action name="visualizationAndAttributes" type="object"/>
+      <action name="attributes" type="object"/>
+   </model>
+
+
+    <!-- temp copy of WTDocument row actions, can delete once addToGatheringSpace action is ready and added into the real model -->
+   <model name="literatureActions" menufor="WCTYPE|wt.doc.WTDocument|org.example.FakeLiterature">
+      <action name="view"   type="object"/>    <!-- Info page -->
+      <action name="separator"              type="separator"/>
+      <action name="download_primary_attachment"   type="attachments"/>
+      <action name="redirect_primary_attachment"   type="attachments"/>
+      <action name="separator"              type="separator"/>
+      <action name="openProductView"               type="wvs"/>    <!-- Enabled per User Preference -->
+      <action name="separator" type="separator"/>
+      <action name="checkin"                type="wip"/>       <!-- Check In -->
+      <action name="checkin"                type="clashDefinition"/> <!-- Enabled only if Clash Definition (replaces wip version) -->
+      <action name="checkout"               type="object"/>    <!-- Check Out -->
+      <action name="checkout_and_download"  type="wip"/>       <!-- Check Out and Download -->
+      <action name="checkoutAndEdit"        type="document"/>  <!-- Check Out and Edit -->
+      <action name="checkoutAndEditClashJobDefinition" type="clashDefinition"/>  <!-- Check Out and Edit a Clash -->
+      <action name="undocheckout"           type="object"/>    <!-- Undo Checkout -->
+      <action name="edit"                   type="document"/> <!-- Edit -->
+      <action name="editClashJobDefinition" type="clashDefinition"/>  <!-- Edit a Clash -->
+      <action name="viewClashJobDefinition" type="clashDefinition"/>  <!-- View a Clash -->
+      <action name="submitClashJobDefinition" type="clashDefinition"/>
+      <action name="replace_content"        type="wip"/>       <!-- Replace Content -->
+      <action name="REVISEITEMS"     type="pdmObject"/> <!-- Revise -->
+      <action name="separator"              type="separator"/>
+      <submodel name="docs row actions new"/>
+      <action name="separator"              type="separator"/>
+      <action name="copy"                   type="object"/>       <!-- Copy -->
+      <action name="renameDocumentWizard"   type="document"/>  <!-- doc specific Rename -->
+      <action name="route"                  type="workflow"/>  <!-- Route ProjectLink -->
+      <action name="CONTAINERMOVE"          type="pdmObject"/> <!-- Move -->
+      <action name="setState"               type="lifecycle"/> <!-- Set State -->
+      <action name="export"                 type="object"/>    <!-- Export ProjectLink -->
+      <action name="EXPORT"                 type="pdmObject"/> <!-- Export PDMLink -->
+      <action name="MULTI_OBJ_DELETE"       type="pdmObject"/> <!-- Delete -->
+      <action name="MULTI_OBJ_DELETE_DETAILS"  type="pdmObject"/>  <!-- Delete -->
+      <action name="deleteIterations"       type="object"/>  <!-- Delete all old iterations -->
+      <action name="reassignLC"             type="lifecycle"/>    <!-- Reassign Life Cycle -->
+      <action name="resetTeam"              type="team"/>      <!-- Reset Team -->
+      <action name="disable"                type="document"/>  <!-- Disable template -->
+      <action name="enable"                 type="document"/>  <!-- Enable template -->
+      <action name="userInitiatedReplication"   type="replication"/>    <!-- Use Initiated Replication -->
+      <action name="separator"              type="separator"/>
+      <action name="addToGatheringSpace"    type="object"/>
+      <submodel name="docs row actions add"/>
+      <action name="separator"              type="separator"/>
+      <action name="SBSendToPdm"            type="sandbox"/>      <!-- Send to PDM -->
+      <action name="sandboxUndoCheckoutDetails" type="object"/>  <!-- Undo PDM Checkout Details -->
+      <action name="sandboxCheckoutShare"   type="object"/>    <!-- PDM Checkout when shared -->
+      <action name="convertToShare"         type="sandbox"/>   <!-- Convert to Share -->
+      <action name="removeShare"            type="object"/>    <!-- Remove Share -->
+      <action name="separator"              type="separator"/>
+      <submodel name="docs row actions compare"/>
+      <action name="separator"              type="separator"/>
+      <action name="DISPLAYRELATEDMANUFACTURINGITEMS" type="object"/>            <!-- MPMLink Display Related Manufacturing items report -->
+      <action name="batchPrint"                    type="wvs"/>
+      <action name="separator"              type="separator"/>
+      <action name="markLinkAsSuspect" type="requirement"/>
+      <action name="separator"              type="separator"/>
+      <action name="RefreshAssociationsDB"  type="SoftwareBuild"/>    <!-- Update Defect Associations -->
+      <action name="ManageSecurityMain"     type="accessPermission"/> <!-- Security -->
+      <submodel name="object_manage_security_submenu" />
+      <action name="createSubscription"     type="subscription"/>     <!-- Subscribe -->
+   </model>
+
+   <model name="multi lit create table toolbar actions">
+      <action name="addLitObject" type="fakeLiterature" shortcut="true"/>
+      <action name="remove" type="object" shortcut="true"/>
+   </model>
+
+   <model name="multi lit table toolbar actions">
+      <action name="addLitObject" type="fakeLiterature" shortcut="true"/>
+      <action name="remove" type="object" shortcut="true"/>
+   </model>
+
+   <model name="multi_lit_create_table_row_actions">
+      <action name="editPopupExample" type="fakeLiterature" shortcut="true"/>
+   </model>
+
+   <model name="widget crud table toolbar actions">
+      <action name="createWidgetAndMultiLitDoc" type="fakeLiterature" shortcut="true"/>
+   </model>
+
+   <model name="widget row actions">
+      <action name="editWidgetAndMultiLitDoc" type="fakeLiterature"/>
+      <action name="undocheckout" type="object"/>
+      <action name="checkin" type="wip"/>
+   </model>
+
+   <!-- Added as a workaround to the save button not working properly in the "Edit Widget" wizard. Should be using "EditWizardButtons" model instead.
+        This is not intended to be used outside of carambola examples. -->
+   <model name="CheckinOnlyWizardButtons">
+      <action name="checkinButton" type="object"/>
+      <action name="editCancelButton" type="object"/>
+   </model>
+
+    <model name="Action_model_for_action_groups">
+      <action name="view" type="object"/>
+      <action name="separator" type="separator"/>
+      <action name="create" type="changeRequest"/>
+      <action name="create" type="problemReport"/>
+      <action name="create" type="variance"/>
+      <action name="separator" type="separator"/>
+      <action name="copy" type="object"/>
+    </model>
+
+    <model name="Empty_action_model_for_action_groups">
+      <!--  this action is always hidden -->
+      <action name="signOut" type="fba"/>
+    </model>
+</actionmodels>

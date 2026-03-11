@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+ <objecttype name="object" class="wt.fc.Persistable" resourceBundle="com.ptc.core.security.securityResource">
+ 	<action name="AccessControlCC" id="AccessControlCC" preloadWizardPage="true" required="true">
+     		<command class="" method="" windowType="wizard_step"/>
+ 	</action>
+ 	<action name="accessControlOnContext" id="accessControlOnContext" preloadWizardPage="true" required="true">
+     		<command class="com.ptc.core.security.delegates.SelectedObjPermissionsUpdateDelegate" method="" windowType="wizard_step"/>
+ 	</action>
+ 	<action name="accessControlOnSingle" id="accessControlOnSingle" preloadWizardPage="true" required="true">
+     		<command class="com.ptc.core.security.delegates.SelectedObjPermissionsUpdateDelegate" method="" windowType="wizard_step"/>
+ 	</action>
+ 	<action name="findParticipant" ajax="row">
+     		<command class="com.ptc.windchill.enterprise.picker.principal.PrincipalCommands" method="addPrincipal" windowType="popup"/>
+ 	</action>
+        <action name="removeParticipant" multiselect="true" uicomponent="DELETE" ajax="row" ajaxActionClass="netmarkets/jsp/object/delete.jsp" selectRequired="true">
+         	<command class="com.ptc.netmarkets.model.NmObjectCommands" method="list_delete"/>
+        </action>
+ 	<action name="setAccessControlWizStep" id="setAccessControlWizStep" preloadWizardPage="true">
+ 			<command class="com.ptc.core.security.delegates.UpdatePermissionsFormDelegate" method="" windowType="wizard_step"/>
+  	</action>
+
+ 	<action name="showMultiObjPermissionStep" id="showMultiObjPermissionStep" required="true" preloadWizardPage="false">
+ 			<command class="com.ptc.core.security.delegates.MultiUpdatePermissionsFormDelegate" method="" windowType="wizard_step"/>
+  	</action>
+
+  	<action name="singleAccessInSharing" id="singleAccessInSharing" preloadWizardPage="false" required="false" hidden="true">
+     		<command class="com.ptc.core.security.delegates.UpdateSharingPermissionsFormDelegate" method="" windowType="wizard_step"/>
+ 	</action>
+
+ 	<action name="EDITSECURITYLABELS" selectRequired="true" checkaccess="true" enabledwhensuspended="true" renderType="PDM" uicomponent="EDIT_SECURITY_LABELS">
+	 	<command windowType="popup" class="java.lang.Object" method="EDITSECURITYLABELS" />
+ 	</action>
+
+ 	<action name="EDITSECURITYLABELSNONCOLLECTED" selectRequired="true" checkaccess="true" enabledwhensuspended="true" renderType="PDM" uicomponent="EDIT_SECURITY_LABELS">
+	 	<command windowType="popup" class="java.lang.Object" method="EDITSECURITYLABELSNONCOLLECTED" />
+ 	</action>
+
+ 	<action name="MULTIEDITSECURITYLABELS" selectRequired="true" checkaccess="true" enabledwhensuspended="true" renderType="PDM" uicomponent="EDIT_SECURITY_LABELS">
+	 	<command windowType="popup" class="java.lang.Object" onClick="PTC.security.validateSelectRequired(event)" method="MULTIEDITSECURITYLABELS" />
+ 	</action>
+
+ </objecttype>
+
+ <objecttype name="accessPermission" class="wt.access.AccessPermission" resourceBundle="com.ptc.core.security.securityResource">
+ 	<action name="ManageSecurity" uicomponent="EDIT_ACCESS_CONTROL">
+ 		<command class="com.ptc.core.security.processor.UpdatePermissionsFormProcessor" method="execute" windowType="popup"/>
+       		<access name="read"/>
+         	<includeFilter name="ghostEpmDoc"/>
+ 	</action>
+
+ 	<action name="ManageSecurityMain" uicomponent="EDIT_ACCESS_CONTROL">
+ 		<command class="com.ptc.core.security.processor.UpdatePermissionsFormProcessor" method="execute" windowType="popup"/>
+       		<access name="read"/>
+                <includeFilter name="ghostEpmDoc"/>
+ 	</action>
+
+ 	<action name="multiObjManageSecurityMain" uicomponent="EDIT_ACCESS_CONTROL">
+ 		<command class="com.ptc.core.security.processor.MultiUpdatePermissionsFormProcessor" method="execute" windowType="popup"/>
+       		<access name="read"/>
+ 	</action>
+
+ 	<action name="multiObjManageSecurity" uicomponent="EDIT_ACCESS_CONTROL">
+ 		<command class="com.ptc.core.security.processor.MultiUpdatePermissionsFormProcessor" method="execute" windowType="popup"/>
+       		<access name="read"/>
+ 	</action>
+ 	<!-- Use noParentFolderedMultiObjManageSecurity on the Packages->Packages Table -->
+ 	<action name="noParentFolderedMultiObjManageSecurity" uicomponent="EDIT_ACCESS_CONTROL" selectRequired="true">
+ 		<command class="com.ptc.core.security.processor.MultiUpdatePermissionsFormProcessor" method="execute" windowType="popup"/>
+       		<access name="read"/>
+       		<includeFilter name="HideForPackageListTableOnHomePage"/>
+ 	</action>
+
+ 	<!-- Use noParentFolderedMultiObjManageSecurityMain on the Packages->Packages Table -->
+ 	<action name="noParentFolderedMultiObjManageSecurityMain" uicomponent="EDIT_ACCESS_CONTROL" selectRequired="true">
+ 		<command class="com.ptc.core.security.processor.MultiUpdatePermissionsFormProcessor" method="execute" windowType="popup"/>
+       		<access name="read"/>
+       		<includeFilter name="HideForPackageListTableOnHomePage"/>
+ 	</action>
+
+       	<action name="accessDetails" enabledwhensuspended="true">
+          	<command class="" method="accessDetails" windowType="new"/>
+       	</action>
+       	<action name="mvcAccessDetailsStep" id="mvcAccessDetailsStep" required="true">
+        	 <component name="security.acessDetailsRules" windowType="popup" />
+       	</action>
+    <action name="SecurityApplyButton" id="PJL_wizard_apply">
+	         <command class="" method="" windowType="page" url="javascript:onApply();"/>
+      </action>
+ </objecttype>
+
+
+ <objecttype name="securityLabels" class="wt.access.SecurityLabeled" resourceBundle="com.ptc.core.security.securityResource">
+ 	<action name="securityLabelsSingleObjJCA" id="slForSingleObjJCA" uicomponent="EDIT_SECURITY_LABELS">
+     		<command class="com.ptc.core.security.processor.SecurityLabelFormProcessor" method="execute" windowType="popup"/>
+ 	</action>
+ 	<action name="securityLabelsForSingleObj" id="slForSingleObj" preloadWizardPage="true" required="true">
+     		<command class="com.ptc.core.security.delegates.SecurityLabelFormDelegate" method="" windowType="wizard_step"/>
+ 	</action>
+ 	<action name="securityLabelsForMultipleObjs" id="slForMultipleObjs" preloadWizardPage="true" required="true">
+     		<command class="com.ptc.core.security.delegates.MultiSecurityLabelFormDelegate" method="" windowType="wizard_step"/>
+ 	</action>
+ 	<action name="securityLabelsTab" uicomponent="EDIT_SECURITY_LABELS">
+ 		<command class="" method="" windowType="popup"/>
+       		<access name="read"/>
+ 	</action>
+ 	<action name="securityLabelsOnContext" id="slOnContext" preloadWizardPage="true" required="true">
+     		<command class="com.ptc.core.security.delegates.SelectedObjSecurityLabelFormDelegate" method="" windowType="wizard_step"/>
+ 	</action>
+ 	<action name="securityLabelsOnSingle" id="slOnSingle" preloadWizardPage="true" required="true">
+     		<command class="com.ptc.core.security.delegates.SelectedObjSecurityLabelFormDelegate" method="" windowType="wizard_step"/>
+ 	</action>
+
+ 	<action name="securityLabelInfo" enabledwhensuspended="true">
+          	<command class="" method="securityLabelInfo" windowType="new"/>
+    </action>
+
+    <action name="securityLabelInfoStep" id="securityLabelInfoStep" required="true">
+		<command windowType="wizard_step"/>
+	</action>
+
+    <action name="securityLabelStep" id="securityLabelStep" preloadWizardPage="false" required="true" afterVK="securityLabelStep" >
+       <component name="security.securityLabelStep" method="" windowType="wizard_step"/>
+    </action>
+
+ 	<action name="editSecurityLabelsAttributes_step" id="editSecurityLabelsAttributes_step" required="true">
+     		<component name="security.editSecurityLabelsAttributeValuesTable" method="" windowType="wizard_step"/>
+ 	</action>
+
+ 	<action name="editSecurityLabelsAttributes" id="editSLForMultipleObjs" required="true">
+     		<command class="" method="" windowType="popup"/>
+ 	</action>
+ 	      
+   	<action name="listAuthAgreements" id="listAuthAgreements" required="true">
+	   	<component name="authobjects.listAgreements" windowType="page"/>
+   	</action>
+
+ </objecttype>
+
+
+</listofactions>

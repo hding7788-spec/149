@@ -1,0 +1,927 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+<!-- define the actions on the UI components -->
+<actionmodels>
+    <model name="search_resulttable_menubar"> <!--This action model is used for persistable object type-->
+        <submodel name="search_resulttable_file_menubar"/>
+        <submodel name="search_resulttable_edit_menubar"/>
+    </model>
+
+    <model name="search_resulttable_file_menubar">
+        <action name="reassignLC" type="lifecycle"/>  <!-- Reassign Life Cycle -->
+        <action name="resetTeam" type="team"/>     <!-- Reset Team -->
+        <action name="createSubscription" type="subscription"/> <!-- Subscribe -->
+        <action name="separator" type="separator"/><!-- Seperator -->
+        <action name="WFMULTICHECKOUT" type="folder"/>   <!--checkout to workspace-->
+        <action name="WFADDTOWORKSPACE" type="folder"/>   <!--add to workspace-->
+        <action name="separator" type="separator"/> <!-- Seperator -->
+        <action name="CONTAINERMOVE" type="pdmObject"/>         <!-- Move -->
+        <action name="WFSAVEASFROMSEARCH" type="pdmObject"/> <!-- Save As -->
+        <action name="separator" type="separator"/>  <!-- Seperator -->
+        <action name="addToBaseline" type="baseline"/>  <!-- Add To Baseline -->
+        <action name="addToPackageMultiple" type="wpcollection"/>  <!-- Add To Package -->
+	      <action name="addToManagedCollectionMultiple"  type="managedcollection" />
+        <action name="add_to_hotlist" type="bookmark"/>  <!-- Add To Hot Links -->
+        <action name="SBAddToPrj" type="sandbox"/>  <!-- Add to Project -->
+        <action name="separator" type="separator"/> <!-- Seperator -->
+        <action name="multiSelectLaunchStructureCompare"       type="structureCompare"/>  <!-- BOM Structure Compare -->
+        <action name="wtObjCompareMultiple" type="ocmp"/>         <!-- Information Compare -->
+        <action name="separator" type="separator"/> <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="downloadDocumentsToCompressedFile" type="document" /> <!-- Download Document To Compressed File-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <model name="search_resulttable_edit_menubar">
+    	<action name="separator" type="separator"/>    <!-- Seperator -->
+        <action name="editMultiObjects" type="object"/><!-- Edit Multi Object -->
+        <action name="separator" type="separator"/>    <!-- Seperator -->
+        <action name="list_copy" type="object"/>        <!-- Copy -->
+        <action name="list_delete" type="search"/>    <!--Delete-->
+        <action name="separator" type="separator"/>    <!-- Seperator -->
+        <action name="create" type="promotionRequest"/>    <!-- Promote -->
+        <action name="route" type="workflow"/>          <!-- Route -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+
+    </model>
+
+    <!--Action model for Archive (wt.dataops.archive.Archive)-->
+    <model name="search_resulttable_archive_menubar">
+        <submodel name="search_resulttable_archive_file_menubar"/>
+    </model>
+    <model name="search_resulttable_archive_file_menubar">
+        <action name="separator" type="separator"/>    <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>    <!-- Seperator -->
+    </model>
+
+    <!--Action model for Document (wt.doc.WTDocument)-->
+    <model name="search_resulttable_document_menubar">
+        <submodel name="search_resulttable_document_file_menubar"/>
+        <submodel name="search_resulttable_document_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_document_file_menubar">
+        <action name="separator" type="separator"/>      <!-- Seperator -->
+        <action name="reassignLC" type="lifecycle"/>  <!-- Reassign Life Cycle -->
+        <action name="resetTeam" type="team"/>     <!-- Reset Team -->
+        <action name="createSubscription" type="subscription"/> <!-- Subscribe -->
+        <action name="separator" type="separator"/>   <!-- Seperator -->
+        <action name="CONTAINERMOVE" type="pdmObject"/>         <!-- Move -->
+        <action name="separator" type="separator"/>   <!-- Seperator -->
+        <action name="addToBaseline" type="baseline"/>  <!-- Add To Baseline -->
+        <action name="addToPackageMultiple" type="wpcollection"/>  <!-- Add To Package -->
+        <action name="addToManagedCollectionMultiple"  type="managedcollection" />
+        <action name="add_to_hotlist" type="bookmark"/>  <!-- Add To Hot Links -->
+        <action name="SBAddToPrj" type="sandbox"/>  <!-- Add to Project -->
+        <action name="wtObjCompareMultiple" type="ocmp"/>         <!-- Information Compare -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_document_edit_menubar">
+        <action name="separator" type="separator"/>    <!-- Seperator -->
+        <action name="editMultiObjects" type="object"/><!-- Edit Multi Object -->
+        <action name="separator" type="separator"/>    <!-- Seperator -->
+        <action name="list_copy" type="object"/>        <!-- Copy -->
+        <action name="list_delete" type="search"/>  <!--Delete-->
+        <action name="separator" type="separator"/>    <!-- Seperator -->
+        <action name="separator" type="separator"/>      <!-- Seperator -->
+        <action name="create" type="promotionRequest"/>    <!-- Promote -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Part (wt.part.WTPart)-->
+    <model name="search_resulttable_part_menubar">
+        <submodel name="search_resulttable_part_file_menubar"/>
+        <submodel name="search_resulttable_part_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_part_file_menubar">
+        <action name="separator" type="separator"/>      <!-- Seperator -->
+        <action name="reassignLC" type="lifecycle"/>  <!-- Reassign Life Cycle -->
+        <action name="resetTeam" type="team"/>     <!-- Reset Team -->
+        <action name="createSubscription" type="subscription"/> <!-- Subscribe -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="WFMULTICHECKOUT" type="folder"/>   <!--checkout to workspace-->
+        <action name="WFADDTOWORKSPACE" type="folder"/>   <!--add to workspace-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="CONTAINERMOVE" type="pdmObject"/>         <!-- Move -->
+        <action name="WFSAVEASFROMSEARCH" type="pdmObject"/> <!-- Save As -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="addToBaseline" type="baseline"/>  <!-- Add To Baseline -->
+        <action name="addToPackageMultiple" type="wpcollection"/>  <!-- Add To Package -->
+        <action name="addToManagedCollectionMultiple"  type="managedcollection" />
+        <action name="add_to_hotlist" type="bookmark"/>  <!-- Add To Hot Links -->
+        <action name="SBAddToPrj" type="sandbox"/>  <!-- Add to Project -->
+        <action name="separator" type="separator"/> <!-- Seperator -->
+        <action name="multiSelectLaunchStructureCompare"       type="structureCompare"/>  <!-- BOM Structure Compare -->
+        <action name="wtObjCompareMultiple" type="ocmp"/>         <!-- Information Compare -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_part_edit_menubar">
+        <action name="separator" type="separator"/>    <!-- Seperator -->
+        <action name="editMultiObjects" type="object"/><!-- Edit Multi Object -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_copy" type="object"/>        <!-- Copy -->
+        <action name="list_delete" type="search"/>  <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="create" type="promotionRequest"/>    <!-- Promote -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Action Item (wt.meeting.actionitem.ActionItem)-->
+    <model name="search_resulttable_actionitem_menubar">
+        <submodel name="search_resulttable_actionitem_file_menubar"/>
+        <submodel name="search_resulttable_actionitem_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_actionitem_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_actionitem_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_copy" type="object"/>        <!-- Copy -->
+        <action name="list_delete" type="search"/>  <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Activity ()-->
+    <model name="search_resulttable_activity_menubar">
+        <submodel name="search_resulttable_activity_file_menubar"/>
+        <submodel name="search_resulttable_activity_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_activity_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="createSubscription" type="subscription"/> <!-- Subscribe -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_activity_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_copy" type="object"/>        <!-- Copy -->
+        <action name="list_delete" type="search"/>  <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Change Notice (wt.change2.WTChangeOrder2)-->
+    <model name="search_resulttable_changenotice_menubar">
+        <submodel name="search_resulttable_changenotice_file_menubar"/>
+        <submodel name="search_resulttable_changenotice_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_changenotice_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="reassignLC" type="lifecycle"/>  <!-- Reassign Life Cycle -->
+        <action name="createSubscription" type="subscription"/> <!-- Subscribe -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="CONTAINERMOVE" type="pdmObject"/>         <!-- Move -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="addToBaseline" type="baseline"/>  <!-- Add To Baseline -->
+        <action name="addToPackageMultiple" type="wpcollection"/>  <!-- Add To Package -->
+	<action name="addToManagedCollectionMultiple"  type="managedcollection" />
+
+        <action name="add_to_hotlist" type="bookmark"/>  <!-- Add To Hot Links -->
+        <action name="SBAddToPrj" type="sandbox"/>  <!-- Add to Project -->
+        <action name="separator" type="separator"/>   <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_changenotice_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_copy" type="object"/>        <!-- Copy -->
+        <action name="list_delete" type="search"/>  <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Change Request (wt.change2.WTChangeRequest2)-->
+    <model name="search_resulttable_changerequest_menubar">
+        <submodel name="search_resulttable_changerequest_file_menubar"/>
+        <submodel name="search_resulttable_changerequest_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_changerequest_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="reassignLC" type="lifecycle"/>  <!-- Reassign Life Cycle -->
+        <action name="createSubscription" type="subscription"/> <!-- Subscribe -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="CONTAINERMOVE" type="pdmObject"/>         <!-- Move -->
+        <action name="separator" type="separator"/>   <!-- Seperator -->
+        <action name="addToBaseline" type="baseline"/>  <!-- Add To Baseline -->
+        <action name="addToPackageMultiple" type="wpcollection"/>  <!-- Add To Package -->
+        <action name="addToManagedCollectionMultiple"  type="managedcollection" />
+        <action name="add_to_hotlist" type="bookmark"/>  <!-- Add To Hot Links -->
+        <action name="SBAddToPrj" type="sandbox"/>  <!-- Add to Project -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_changerequest_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_copy" type="object"/>        <!-- Copy -->
+        <action name="list_delete" type="search"/>  <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Deliverable (wt.projmgmt.resource.Deliverable)-->
+    <model name="search_resulttable_deliverable_menubar">
+        <submodel name="search_resulttable_deliverable_file_menubar"/>
+        <submodel name="search_resulttable_deliverable_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_deliverable_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="createSubscription" type="subscription"/> <!-- Subscribe -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_deliverable_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_delete" type="search"/>  <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Dynamic Document (WCTYPE|wt.epm.EPMDocument|org.r_and_d.DynamicDocument)-->
+    <model name="search_resulttable_dynamicdocument_menubar">
+        <submodel name="search_resulttable_dynamicdocument_file_menubar"/>
+        <submodel name="search_resulttable_dynamicdocument_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_dynamicdocument_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="reassignLC" type="lifecycle"/>  <!-- Reassign Life Cycle -->
+        <action name="resetTeam" type="team"/>     <!-- Reset Team -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="addToPackageMultiple" type="wpcollection"/>  <!-- Add To Package -->
+        <action name="addToManagedCollectionMultiple"  type="managedcollection" />
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_dynamicdocument_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_delete" type="search"/>  <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for EPM Document (wt.epm.EPMDocument)-->
+    <model name="search_resulttable_epmdocument_menubar">
+        <submodel name="search_resulttable_epmdocument_file_menubar"/>
+        <submodel name="search_resulttable_epmdocument_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_epmdocument_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="reassignLC" type="lifecycle"/>  <!-- Reassign Life Cycle -->
+        <action name="resetTeam" type="team"/>     <!-- Reset Team -->
+        <action name="createSubscription" type="subscription"/> <!-- Subscribe -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="WFMULTICHECKOUT" type="folder"/>   <!--checkout to workspace-->
+        <action name="WFADDTOWORKSPACE" type="folder"/>   <!--add to workspace-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="CONTAINERMOVE" type="pdmObject"/>         <!-- Move -->
+        <action name="WFSAVEASFROMSEARCH" type="pdmObject"/> <!-- Save As -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="addToBaseline" type="baseline"/>  <!-- Add To Baseline -->
+        <action name="addToPackageMultiple" type="wpcollection"/>  <!-- Add To Package -->
+        <action name="addToManagedCollectionMultiple"  type="managedcollection" />
+        <action name="add_to_hotlist" type="bookmark"/>  <!-- Add To Hot Links -->
+        <action name="SBAddToPrj" type="sandbox"/>  <!-- Add to Project -->
+        <action name="wtObjCompareMultiple" type="ocmp"/>         <!-- Information Compare -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_epmdocument_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_copy" type="object"/>        <!-- Copy -->
+        <action name="list_delete" type="search"/>  <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="create" type="promotionRequest"/>    <!-- Promote -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Library (wt.inf.library.WTLibrary)-->
+    <model name="search_resulttable_library_menubar">
+        <submodel name="search_resulttable_library_file_menubar"/>
+        <submodel name="search_resulttable_library_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_library_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="createSubscription" type="subscription"/> <!-- Subscribe -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_library_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_delete" type="search"/>  <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Meeting (wt.meeting.Meeting)-->
+    <model name="search_resulttable_meeting_menubar">
+        <submodel name="search_resulttable_meeting_file_menubar"/>
+        <submodel name="search_resulttable_meeting_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_meeting_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_meeting_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_delete" type="search"/>  <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Milestone (wt.projmgmt.execution.Milestone)-->
+    <model name="search_resulttable_milestone_menubar">
+        <submodel name="search_resulttable_milestone_file_menubar"/>
+        <submodel name="search_resulttable_milestone_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_milestone_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="createSubscription" type="subscription"/> <!-- Subscribe -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_milestone_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_delete" type="search"/>  <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Notes (${domain}.Note)-->
+    <model name="search_resulttable_note_menubar">
+        <submodel name="search_resulttable_note_file_menubar"/>
+        <submodel name="search_resulttable_note_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_note_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="createSubscription" type="subscription"/> <!-- Subscribe -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="CONTAINERMOVE" type="pdmObject"/>  <!-- Move -->
+        <action name="separator" type="separator"/>   <!-- Seperator -->
+        <action name="addToBaseline" type="baseline"/>  <!-- Add To Baseline -->
+        <action name="addToPackageMultiple" type="wpcollection"/>  <!-- Add To Package -->
+        <action name="addToManagedCollectionMultiple"  type="managedcollection" />
+        <action name="add_to_hotlist" type="bookmark"/>  <!-- Add To Hot Links -->
+        <action name="SBAddToPrj" type="sandbox"/>  <!-- Add to Project -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_note_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_copy" type="object"/>        <!-- Copy -->
+        <action name="list_delete" type="search"/>  <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="create" type="promotionRequest"/>    <!-- Promote -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Organization (wt.org.WTOrganization)-->
+    <model name="search_resulttable_organization_menubar">
+        <submodel name="search_resulttable_organization_file_menubar"/>
+        <submodel name="search_resulttable_organization_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_organization_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="createSubscription" type="subscription"/> <!-- Subscribe -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="SBAddToPrj" type="sandbox"/>  <!-- Add to Project -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_organization_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_delete" type="search"/>  <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Part Configuration (wt.part.WTProductConfiguration)-->
+    <model name="search_resulttable_partconfiguration_menubar">
+        <submodel name="search_resulttable_partconfiguration_file_menubar"/>
+        <submodel name="search_resulttable_partconfiguration_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_partconfiguration_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_partconfiguration_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_delete" type="search"/>  <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Part Instance (wt.part.WTProductInstance2)-->
+    <model name="search_resulttable_partinstance_menubar">
+        <submodel name="search_resulttable_partinstance_file_menubar"/>
+        <submodel name="search_resulttable_partinstance_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_partinstance_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="addToPackageMultiple" type="wpcollection"/>  <!-- Add To Package -->
+        <action name="addToManagedCollectionMultiple"  type="managedcollection" />
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_partinstance_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_delete" type="search"/>  <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Part Request (com.ptc.windchill.suma.npi.WTPartRequest)-->
+    <model name="search_resulttable_partrequest_menubar">
+        <submodel name="search_resulttable_partrequest_file_menubar"/>
+        <submodel name="search_resulttable_partrequest_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_partrequest_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_partrequest_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_delete" type="search"/>  <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Problem Report (wt.change2.WTChangeIssue)-->
+    <model name="search_resulttable_problemreport_menubar">
+        <submodel name="search_resulttable_problemreport_file_menubar"/>
+        <submodel name="search_resulttable_problemreport_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_problemreport_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="reassignLC" type="lifecycle"/>  <!-- Reassign Life Cycle -->
+        <action name="createSubscription" type="subscription"/> <!-- Subscribe -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="CONTAINERMOVE" type="pdmObject"/>         <!-- Move -->
+        <action name="separator" type="separator"/>   <!-- Seperator -->
+        <action name="addToBaseline" type="baseline"/>  <!-- Add To Baseline -->
+        <action name="addToPackageMultiple" type="wpcollection"/>  <!-- Add To Package -->
+        <action name="addToManagedCollectionMultiple"  type="managedcollection" />
+        <action name="add_to_hotlist" type="bookmark"/>  <!-- Add To Hot Links -->
+        <action name="SBAddToPrj" type="sandbox"/>  <!-- Add to Project -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_problemreport_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_copy" type="object"/>        <!-- Copy -->
+        <action name="list_delete" type="search"/>  <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Product (wt.pdmlink.PDMLinkProduct)-->
+    <model name="search_resulttable_product_menubar">
+        <submodel name="search_resulttable_product_file_menubar"/>
+        <submodel name="search_resulttable_product_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_product_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="createSubscription" type="subscription"/> <!-- Subscribe -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_product_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_delete" type="search"/>  <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Project (wt.projmgmt.admin.Project2)-->
+    <model name="search_resulttable_project_menubar">
+        <submodel name="search_resulttable_project_file_menubar"/>
+    </model>
+    <model name="search_resulttable_project_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Project Resource(wt.projmgmt.resource.ProjectResource)-->
+    <model name="search_resulttable_projectresource_menubar">
+        <submodel name="search_resulttable_projectresource_file_menubar"/>
+    </model>
+    <model name="search_resulttable_projectresource_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Report(com.ptc.windchill.enterprise.report.Report)-->
+    <model name="search_resulttable_report_menubar">
+        <submodel name="search_resulttable_report_file_menubar"/>
+        <submodel name="search_resulttable_report_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_report_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="createSubscription" type="subscription"/> <!-- Subscribe -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_report_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_delete" type="search"/>  <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Report Template(wt.query.template.ReportTemplate)-->
+    <model name="search_resulttable_reporttemplate_menubar">
+        <submodel name="search_resulttable_reporttemplate_file_menubar"/>
+        <submodel name="search_resulttable_reporttemplate_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_reporttemplate_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="createSubscription" type="subscription"/> <!-- Subscribe -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_reporttemplate_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_delete" type="search"/>  <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Variance (wt.change2.WTVariance)-->
+    <model name="search_resulttable_variance_menubar">
+        <submodel name="search_resulttable_variance_file_menubar"/>
+        <submodel name="search_resulttable_variance_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_variance_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="reassignLC" type="lifecycle"/>  <!-- Reassign Life Cycle -->
+        <action name="createSubscription" type="subscription"/> <!-- Subscribe -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="CONTAINERMOVE" type="pdmObject"/>         <!-- Move -->
+        <action name="separator" type="separator"/>   <!-- Seperator -->
+        <action name="addToBaseline" type="baseline"/>  <!-- Add To Baseline -->
+        <action name="addToPackageMultiple" type="wpcollection"/>  <!-- Add To Package -->
+        <action name="addToManagedCollectionMultiple"  type="managedcollection" />
+        <action name="add_to_hotlist" type="bookmark"/>  <!-- Add To Hot Links -->
+        <action name="SBAddToPrj" type="sandbox"/>  <!-- Add to Project -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_variance_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_copy" type="object"/>        <!-- Copy -->
+        <action name="list_delete" type="search"/>  <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Variant Specification (com.ptc.wpcfg.doc.VariantSpec)-->
+    <model name="search_resulttable_variantspec_menubar">
+        <submodel name="search_resulttable_variantspec_file_menubar"/>
+        <submodel name="search_resulttable_variantspec_edit_menubar"/>
+    </model>
+
+    <model name="search_resulttable_variantspec_file_menubar">
+        <action name="separator" type="separator"/>   <!-- Seperator -->
+        <action name="createSubscription" type="subscription"/> <!-- Subscribe -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="CONTAINERMOVE" type="pdmObject"/>         <!-- Move -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="addToPackageMultiple" type="wpcollection"/>  <!-- Add To Package -->
+        <action name="addToManagedCollectionMultiple"  type="managedcollection" />
+        <action name="SBAddToPrj" type="sandbox"/>  <!-- Add to Project -->
+        <action name="wtObjCompareMultiple" type="ocmp"/>         <!-- Information Compare -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_variantspec_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_copy" type="object"/>        <!-- Copy -->
+        <action name="list_delete" type="search"/>  <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="create" type="promotionRequest"/>    <!-- Promote -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Workflow Process( wt.workflow.engine.WfProcess)-->
+    <model name="search_resulttable_workflowprocess_menubar">
+        <submodel name="search_resulttable_workflowprocess_file_menubar"/>
+        <submodel name="search_resulttable_workflowprocess_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_workflowprocess_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+         <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_workflowprocess_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_delete" type="search"/>  <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Work Item(wt.workflow.work.WorkItem)-->
+    <model name="search_resulttable_workitem_menubar">
+        <submodel name="search_resulttable_workitem_file_menubar"/>
+    </model>
+    <model name="search_resulttable_workitem_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Import Job (com.ptc.windchill.ixb.importer.ImportJob)-->
+    <model name="search_resulttable_importjob_menubar">
+        <submodel name="search_resulttable_importjob_file_menubar"/>
+        <submodel name="search_resulttable_importjob_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_importjob_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="createSubscription" type="subscription"/> <!-- Subscribe -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="add_to_hotlist" type="bookmark"/>  <!-- Add To Hot Links -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_importjob_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_delete" type="search"/>  <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Supplier(com.ptc.windchill.suma.supplier.Supplier.AbstractSupplier)-->
+    <model name="search_resulttable_supplier_menubar">
+        <submodel name="search_resulttable_supplier_file_menubar"/>
+        <submodel name="search_resulttable_supplier_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_supplier_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="createSubscription" type="subscription"/> <!-- Subscribe -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="add_to_hotlist" type="bookmark"/>  <!-- Add To Hot Links -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_supplier_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_delete" type="search"/>  <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="create" type="promotionRequest"/>    <!-- Promote -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Summary Activity(wt.projmgmt.execution.SummaryActivity)-->
+    <model name="search_resulttable_summaryactivity_menubar">
+        <submodel name="search_resulttable_summaryactivity_file_menubar"/>
+        <submodel name="search_resulttable_summaryactivity_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_summaryactivity_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="createSubscription" type="subscription"/> <!-- Subscribe -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_summaryactivity_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_copy" type="object"/>        <!-- Copy -->
+        <action name="list_delete" type="search"/>  <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Reference Attachment(wt.workflow.notebook.ImportedBookmark)-->
+    <model name="search_resulttable_referenceattachment_menubar">
+        <submodel name="search_resulttable_referenceattachment_file_menubar"/>
+        <submodel name="search_resulttable_referenceattachment_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_referenceattachment_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+          <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_referenceattachment_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_delete" type="search"/>  <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Process Plan(com.ptc.windchill.mpml.processplan.MPMProcessPlan) used in MPML-->
+    <model name="search_resulttable_processplan_menubar">
+        <submodel name="search_resulttable_processplan_file_menubar"/>
+        <submodel name="search_resulttable_processplan_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_processplan_file_menubar">
+        <action name="separator" type="separator"/>   <!-- Seperator -->
+        <action name="createSubscription" type="subscription"/> <!-- Subscribe -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="CONTAINERMOVE" type="pdmObject"/>         <!-- Move -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="addToBaseline" type="baseline"/>  <!-- Add To Baseline -->
+        <action name="add_to_hotlist" type="bookmark"/>  <!-- Add To Hot Links -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_processplan_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_delete" type="search"/>  <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="create" type="promotionRequest"/>    <!-- Promote -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Operation(com.ptc.windchill.mpml.processplan.operation.MPMOperation) used in MPML-->
+    <model name="search_resulttable_operation_menubar">
+        <submodel name="search_resulttable_operation_file_menubar"/>
+        <submodel name="search_resulttable_operation_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_operation_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="createSubscription" type="subscription"/> <!-- Subscribe -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="addToBaseline" type="baseline"/>  <!-- Add To Baseline -->
+        <action name="add_to_hotlist" type="bookmark"/>  <!-- Add To Hot Links -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_operation_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_delete" type="search"/>  <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="create" type="promotionRequest"/>    <!-- Promote -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Resource Sequence(com.ptc.windchill.mpml.processplan.sequence.MPMSequence) used in MPML-->
+    <model name="search_resulttable_resourcesequence_menubar">
+        <submodel name="search_resulttable_resourcesequence_file_menubar"/>
+        <submodel name="search_resulttable_resourcesequence_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_resourcesequence_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="createSubscription" type="subscription"/> <!-- Subscribe -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="CONTAINERMOVE" type="pdmObject"/>         <!-- Move -->
+        <action name="separator" type="separator"/>   <!-- Seperator -->
+        <action name="addToBaseline" type="baseline"/>  <!-- Add To Baseline -->
+        <action name="add_to_hotlist" type="bookmark"/>  <!-- Add To Hot Links -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_resourcesequence_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_delete" type="search"/>  <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="create" type="promotionRequest"/>    <!-- Promote -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+
+    <!--Action model for Managed Collection (wt.facade.persistedcollection.ManagedCollection)-->
+    <model name="search_resulttable_managed_collection_menubar">
+        <submodel name="search_resulttable_managed_collection_file_menubar"/>
+        <submodel name="search_resulttable_managed_collection_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_managed_collection_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="CONTAINERMOVE"  type="pdmObject"/>    <!-- Move -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="add_to_hotlist" type="bookmark"/>  <!-- Add To Hot Links -->
+        <action name="wtObjCompareMultiple" type="ocmp"/>         <!-- Information Compare -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_managed_collection_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_copy" type="object"/>				 <!-- Copy -->
+        <action name="list_delete" type="search"/>    <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for packages (com.ptc.windchill.wp.AbstractWorkPackage)-->
+    <model name="search_resulttable_workpackage_menubar">
+        <submodel name="search_resulttable_workpackage_file_menubar"/>
+        <submodel name="search_resulttable_workpackage_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_workpackage_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="createSubscription" type="subscription"/>	<!-- Subscribe -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="add_to_hotlist" type="bookmark"/>  <!-- Add To Hot Links -->
+        <action name="wtObjCompareMultiple" type="ocmp"/>         <!-- Information Compare -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_workpackage_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_copy" type="object"/>				 <!-- Copy -->
+        <action name="list_delete" type="search"/>    <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Discussion Posting (wt.workflow.forum.DiscussionPosting)-->
+    <model name="search_resulttable_discussionposting_menubar">
+        <submodel name="search_resulttable_discussionposting_file_menubar"/>
+        <submodel name="search_resulttable_discussionposting_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_discussionposting_file_menubar">
+        <action name="separator" type="separator"/><!-- Seperator -->
+        <action name="createSubscription" type="subscription"/> <!-- Subscribe -->
+        <action name="separator" type="separator"/> <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_discussionposting_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_delete" type="search"/>    <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Promotion Request (wt.maturity.PromotionNotice)-->
+    <model name="search_resulttable_promotionrequest_menubar">
+        <submodel name="search_resulttable_promotionrequest_file_menubar"/>
+        <submodel name="search_resulttable_promotionrequest_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_promotionrequest_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="reassignLC" type="lifecycle"/>  <!-- Reassign Life Cycle -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="CONTAINERMOVE" type="pdmObject"/>         <!-- Move -->
+        <action name="separator" type="separator"/><!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_promotionrequest_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_delete" type="search"/>    <!--Delete-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="create" type="promotionRequest"/>    <!-- Promote -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <!--Action model for Managed Baseline (wt.vc.baseline.ManagedBaseline)-->
+    <model name="search_resulttable_managedbaseline_menubar">
+        <submodel name="search_resulttable_managedbaseline_file_menubar"/>
+    </model>
+    <model name="search_resulttable_managedbaseline_file_menubar">
+        <action name="separator" type="separator"/><!-- Seperator -->
+        <action name="WFADDTOWORKSPACE" type="folder"/>   <!--add to workspace-->
+        <action name="separator" type="separator"/><!-- Seperator -->
+        <action name="CONTAINERMOVE" type="pdmObject"/>         <!-- Move -->
+        <action name="separator" type="separator"/> <!-- Seperator -->
+        <action name="wtObjCompareMultiple" type="ocmp"/>         <!-- Information Compare -->
+        <action name="separator" type="separator"/> <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+   <!--Action model for Authorization Agreement (wt.access.agreement.AuthorizationAgreement)-->
+    <model name="search_resulttable_authorizationagreement_menubar">
+        <submodel name="search_resulttable_authorizationagreement_file_menubar"/>
+        <submodel name="search_resulttable_authorizationagreement_edit_menubar"/>
+    </model>
+    <model name="search_resulttable_authorizationagreement_file_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="createSubscriptionMultiObj" type="subscription"/> <!-- Subscribe -->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/> <!-- Export Search Results Table-->
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+    <model name="search_resulttable_authorizationagreement_edit_menubar">
+        <action name="separator" type="separator"/>     <!-- Seperator -->
+        <action name="list_cut" type="object"/>
+		<action name="list_copy" type="object"/>
+		<action name="list_delete" type="object"/>
+		<action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+
+    <model name="search_resulttable_optionset_menubar">
+				<submodel name="search_resulttable_optionset_file_menubar"/>
+				<submodel name="search_resulttable_optionset_edit_menubar"/>
+		</model>
+		<model name="search_resulttable_optionset_file_menubar">
+				<action name="separator" type="separator"/>     <!-- Seperator -->
+				<submodel name="exportTable" resourceBundle="com.ptc.core.ui.actionsRB"/>
+				<action name="separator" type="separator"/>     <!-- Seperator -->
+		</model>
+		<model name="search_resulttable_optionset_edit_menubar">
+				<action name="separator" type="separator"/>     <!-- Seperator -->
+				<action name="list_copy" type="object"/>        <!-- Copy -->
+				<action name="deleteOptionSet" type="filterTemplate"/>  <!--Delete-->
+				<action name="separator" type="separator"/>     <!-- Seperator -->
+    </model>
+</actionmodels>

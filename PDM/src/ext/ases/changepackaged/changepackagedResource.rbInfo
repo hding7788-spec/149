@@ -1,0 +1,170 @@
+ResourceInfo.class=wt.tools.resource.StringResourceInfo
+ResourceInfo.customizable=true
+ResourceInfo.deprecated=false
+
+
+# Entry Format (values equal to default value are not included)
+# <key>.value=
+# <key>.category=
+# <key>.comment=
+# <key>.argComment<n>=
+# <key>.constant=
+# <key>.customizable=
+# <key>.deprecated=
+# <key>.abbreviatedDisplay=
+# <key>.fullDisplay=
+# <key>.shortDescription=
+# <key>.longDescription=
+
+# Entry Contents
+
+changepackaged.AFFECT_DATA_TABLE.value=Affected Object
+changepackaged.AFFECT_DATA_TABLE.comment=Affected Object
+
+changepackaged.RESULT_DATA_TABLE.value=Resulted Object
+changepackaged.RESULT_DATA_TABLE.comment=Resulted Object
+
+changepackaged.attributes.description.value=Details
+changepackaged.attributes.description.comment=Details
+
+changepackaged.affectedAndresultIems.description.value=Affected/Resulted Object
+changepackaged.affectedAndresultIems.description.comment=Affected/Resulted Object
+
+changepackaged.updatePackaged.description.value=Edit
+changepackaged.updatePackaged.description.comment=Edit
+
+changepackaged.deletePackaged.description.value=Delete
+changepackaged.deletePackaged.description.comment=Delete
+
+STRUCTURE_TABLEVIEW_NAME.value=Display as structure
+STRUCTURE_TABLEVIEW_NAME.constant=STRUCTURE_TABLEVIEW_NAME
+STRUCTURE_TABLEVIEW_NAME.comment=Text for tableview
+
+LIST_TABLEVIEW_NAME.value=Display as list
+LIST_TABLEVIEW_NAME.constant=LIST_TABLEVIEW_NAME
+LIST_TABLEVIEW_NAME.comment=Text for tableview
+
+changepackaged_NAME_LABEL.value=Name
+changepackaged_NAME_LABEL.constant=changepackaged_NAME_LABEL
+changepackaged_NAME_LABEL.comment=Name for tableview
+
+changepackaged_NUMBER_LABEL.value=Number
+changepackaged_NUMBER_LABEL.constant=changepackaged_NUMBER_LABEL
+changepackaged_NUMBER_LABEL.comment=Number for tableview
+
+changepackaged_UPDATESTAMP_LABEL.value=Lasted Modified Stamp
+changepackaged_UPDATESTAMP_LABEL.constant=changepackaged_UPDATESTAMP_LABEL
+changepackaged_UPDATESTAMP_LABEL.comment=Updatestamp for tableview
+
+changepackaged_STATE_LABEL.value=State
+changepackaged_STATE_LABEL.constant=changepackaged_STATE_LABEL
+changepackaged_STATE_LABEL.comment=State for tableview
+
+changepackaged_VERSION_LABEL.value=Version
+changepackaged_VERSION_LABEL.constant=changepackaged_VERSION_LABEL
+changepackaged_VERSION_LABEL.comment=Version for tableview
+
+General Attributes.value=General Attributes
+General Attributes.constant=General_Attributes
+General Attributes.comment=General Attributes
+
+complex.value=Complex
+complex.constant=complex
+complex.comment=Complex
+
+
+profession.value=Profession
+profession.constant=profession
+profession.comment=Profession
+
+
+changetype.value=Change Type
+changetype.constant=changetype
+changetype.comment=Change Type
+
+
+phasecode.value=Phase Code
+phasecode.constant=phasecode
+phasecode.comment=Phase Code
+
+
+affectdpage.value=Affected Page
+affectdpage.constant=affectdpage
+affectdpage.comment=Affected Page
+
+department.value=Edit Department
+department.constant=department
+department.comment=Edit Department
+
+implement.value=implement advise
+implement.constant=implement
+implement.comment=implement advise
+
+
+requestpriority.value=请求优先级
+requestpriority.constant=requestpriority
+requestpriority.comment=请求优先级
+
+
+changeleixing.value=变更类型
+changeleixing.constant=changeleixing
+changeleixing.comment=变更类型
+
+
+changereason.value=更改原因
+changereason.constant=changereason
+changereason.comment=更改原因
+
+
+edittime.value=编制日期
+edittime.constant=edittime
+edittime.comment=编制日期
+
+
+requesttime.value=需求时间
+requesttime.constant=requesttime
+requesttime.comment=需求时间
+
+avidmtype.value=类型
+avidmtype.constant=avidmtype
+avidmtype.comment=类型
+
+template.value=模板
+template.constant=template
+template.comment=模板
+
+cost.value=成本
+cost.constant=cost
+cost.comment=成本
+
+secret.value=密级
+secret.constant=secret
+secret.comment=密级
+
+pindex.value=产品代号
+pindex.constant=pindex
+pindex.comment=产品代号
+
+filenumber.value=文件代号
+filenumber.constant=filenumber
+filenumber.comment=文件代号
+
+guancanghao.value=馆藏号
+guancanghao.constant=guancanghao
+guancanghao.comment=馆藏号
+
+responsor.value=责任者
+responsor.constant=responsor
+responsor.comment=责任者
+
+remark.value=备注
+remark.constant=remark
+remark.comment=备注
+
+startphasename.value=开始阶段
+startphasename.constant=startphasename
+startphasename.comment=开始阶段
+
+targetphasename.value=目标阶段
+targetphasename.constant=startphasename
+targetphasename.comment=目标阶段

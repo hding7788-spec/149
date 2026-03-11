@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+
+<listofactions>
+  
+   <objecttype name="object" class="wt.fc.Persistable" resourceBundle="com.ptc.windchill.enterprise.object.configurableLinkExamplesResource">
+      <action name="childObjectsTable_customDescribeLink">
+         <command url="/netmarkets/jsp/object/configurableLinkRoleATable.jsp"/>
+         <includeFilter name="hideForChangeTemplates"/>
+      </action>
+      <action name="parentObjectsTable_customDescribeLink">
+         <command url="/netmarkets/jsp/object/configurableLinkRoleBTable.jsp"/>
+         <includeFilter name="hideForChangeTemplates"/>
+      </action>
+      <action name="childObjectsTable_customReferenceLink">
+         <command url="/netmarkets/jsp/object/configurableLinkRoleATable.jsp"/>
+         <includeFilter name="hideForChangeTemplates"/>
+      </action>
+      <action name="parentObjectsTable_customReferenceLink">
+         <command url="/netmarkets/jsp/object/configurableLinkRoleBTable.jsp"/>
+         <includeFilter name="hideForChangeTemplates"/>
+      </action>         
+      <action name="childObjectsTable_customMastersLink">
+         <command url="/netmarkets/jsp/object/configurableLinkRoleATable.jsp"/>
+         <includeFilter name="hideForChangeTemplates"/>
+      </action>
+      <action name="parentObjectsTable_customMastersLink">
+         <command url="/netmarkets/jsp/object/configurableLinkRoleBTable.jsp"/>
+         <includeFilter name="hideForChangeTemplates"/>
+      </action>	  
+      <action name="childObjectsTable_customRevisionLink">
+         <command url="/netmarkets/jsp/object/configurableLinkRoleATable.jsp"/>
+         <includeFilter name="hideForChangeTemplates"/>
+      </action>
+      <action name="parentObjectsTable_customRevisionLink">
+         <command url="/netmarkets/jsp/object/configurableLinkRoleBTable.jsp"/>
+         <includeFilter name="hideForChangeTemplates"/>
+      </action>
+
+  </objecttype>
+
+</listofactions>

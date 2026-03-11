@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Configuration SYSTEM "xconf.dtd">
+<Configuration xmlns:xlink="http://www.w3.org/1999/xlink">
+   <ConfigurationRef xlink:href="pbom/datautilities/PBOMUtilityProperties.xconf"/>
+   <ConfigurationRef xlink:href="task/datautilities/taskUtilityProperties.xconf"/>
+   <ConfigurationRef xlink:href="mpmresource/datautilities/mpmResourceProperties.xconf"/>
+   <ConfigurationRef xlink:href="processplan/datautilities/processPlanProperties.xconf"/>
+   <ConfigurationRef xlink:href="change/datautilities/TechnicChangeNoticeInfoDataUtilityProperties.xconf"/>
+
+
+
+   <ConfigurationRef xlink:href="task/validator/taskValidatorConfig.xconf"/>
+   <ConfigurationRef xlink:href="pbom/validator/pbomValidatorconfig.xconf"/>
+   <ConfigurationRef xlink:href="change/validator/changeValidatorconfig.xconf"/> 
+   <ConfigurationRef xlink:href="mpmresource/validator/mpmresourceValidatorconfig.xconf"/> 
+   
+   
+   
+   <ConfigurationRef xlink:href="config/config.xconf"/>
+</Configuration>

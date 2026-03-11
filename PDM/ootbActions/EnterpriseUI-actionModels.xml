@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+<!-- define the actions on the UI components -->
+<actionmodels>
+
+   <model name="whereUsedTablePart">
+      <action name="explode" type="folder" shortcut="true" />
+      <action name="implode" type="folder" shortcut="true" />
+      <action name="whereused_copy" type="object" shortcut="true" />
+      <action name="WFADDTOWORKSPACE" type="folder" shortcut="true" />
+      <submodel name="folderbrowser_toolbar_exportlisttofile_submenu"/>
+  </model>
+
+   <model name="OkCancelWizardButtons">
+      <action name="okButton" type="object"/>
+      <action name="cancelButton" type="object"/>
+   </model>
+
+   <model name="OkApplyCancelWizardButtons">
+      <action name="okButton" type="object"/>
+      <action name="applyButton" type="object"/>
+      <action name="cancelButton" type="object"/>
+   </model>
+
+
+<model name="teamcc tree toolbar manager actions">
+      <action name="list_copy" type="object" shortcut="true"/>
+      <action name="teamPaste" type="team" shortcut="true"/>
+      <action name="addUsersToRole" type="team" shortcut="true"/>
+      <action name="removeUsersFromTeam" type="team" shortcut="true"/>
+      <action name="separator" type="separator"/>
+      <action name="explode" type="folder" shortcut="true"/>
+      <action name="implode" type="folder" shortcut="true"/>
+      <action name="separator" type="separator"/>
+      <action name="emailMembers" type="team"/>
+      <action name="updateRole" type="group"/>
+      <action name="addRolesToTeam" type="team"/>
+      <action name="modifyRolePrivileges" type="roleAccess"/>
+      <action name="separator" type="separator"/>
+      <action name="emailTeam" type="team"/>
+      <action name="updateInvitation" type="project"/>
+      <action name="undoRolePrivileges" type="roleAccess"/>
+      <action name="updateTeam" type="sharedTeam"/>
+      <action name="show_team_uses" type="sharedTeam"/>
+</model>
+
+<model name="teamcc table toolbar manager actions">
+    <action name="emailMembers" type="team"/>
+    <action name="separator" type="separator"/>
+    <action name="addRolesToTeam" type="team"/>
+    <action name="addUsersToRole" type="team"/>
+    <action name="separator" type="separator"/>
+    <action name="emailTeam" type="team"/>
+</model>
+<model name="teamcc tree rowlevel manager actions">
+   <action name="addUsersToRole" type="team"/>
+   <action name="replaceUserInTeam" type="team"/>
+</model>
+<model name="teamcc table rowlevel manager actions">
+    <action name="replaceUserInTeam" type="team"/>
+</model>
+
+ <model name="containerteamcc table toolbar manager actions">
+     <action name="list_copy" type="object" shortcut="true"/>
+     <action name="teamPaste" type="team" shortcut="true"/>
+     <action name="removeUsersFromTeam" type="team" shortcut="true"/>
+     <action name="emailMembers" type="team"/>
+     <action name="updateRole" type="group"/>
+     <action name="separator" type="separator"/>
+     <action name="addRolesToTeam" type="team"/>
+     <action name="addUsersToRole" type="team" shortcut="true"/>
+     <action name="modifyRolePrivileges" type="roleAccess"/>
+     <action name="separator" type="separator"/>
+     <action name="emailTeam" type="team"/>
+     <action name="updateInvitation" type="project"/>
+     <action name="undoRolePrivileges" type="roleAccess"/>
+     <action name="updateTeam" type="sharedTeam"/>
+     <action name="show_team_uses" type="sharedTeam"/>
+ </model>
+
+ <model name="lcmteamcc table toolbar manager actions">
+     <action name="list_copy" type="object" shortcut="true"/>
+     <action name="teamPaste" type="team" shortcut="true"/>
+     <action name="removeUsersFromTeam" type="team" shortcut="true"/>
+   <action name="emailMembers" type="team"/>
+   <action name="separator" type="separator"/>
+   <action name="addRolesToTeam" type="team"/>
+     <action name="addUsersToRole" type="team" shortcut="true"/>
+   <action name="separator" type="separator"/>
+   <action name="emailTeam" type="team"/>
+</model>
+
+ <model name="lcmteamcc tree toolbar manager actions">
+     <action name="list_copy" type="object" shortcut="true"/>
+     <action name="teamPaste" type="team" shortcut="true"/>
+     <action name="removeUsersFromTeam" type="team" shortcut="true"/>
+   <action name="emailMembers" type="team"/>
+   <action name="separator" type="separator"/>
+      <action name="explode" type="folder" shortcut="true"/>
+      <action name="implode" type="folder" shortcut="true"/>
+   <action name="separator" type="separator"/>
+   <action name="addRolesToTeam" type="team"/>
+     <action name="addUsersToRole" type="team" shortcut="true"/>
+   <action name="separator" type="separator"/>
+   <action name="emailTeam" type="team"/>
+</model>
+
+<model name="sharedTeam_actions" menufor="wt.inf.team.ContainerTeam">
+      <action name="view" type="object"/>
+      <action name="updateTeam" type="sharedTeam"/>
+      <action name="deleteTeam" type="sharedTeam"/>
+      <action name="enableTeam" type="sharedTeam"/>
+      <action name="disableTeam" type="sharedTeam"/>
+      <action name="exportSharedTeam" type="sharedTeam"/>
+      <action name="show_team_uses" type="sharedTeam"/>
+</model>
+
+<model name="sharedTeamTabSet" resourceBundle="com.ptc.windchill.enterprise.team.teamActionsResource">
+    <description>Tab set for shared team info page</description>
+    <submodel name="SharedTeamInfoDetails"/>
+</model>
+
+<model name="sharedTeamThirdLevelNavModel">
+    <description>Third Level Nav is needed to provide actions the user can select to appear on different tabs</description>
+    <action name="attributePanel" type="sharedTeam"/>
+    <action name="sharedTeamTable" type="sharedTeam"/>
+</model>
+
+<model name="SharedTeamInfoDetails" resourceBundle="com.ptc.windchill.enterprise.team.teamActionsResource">
+    <description>The items that will appear on the info tab</description>
+    <action name="attributePanel" type="sharedTeam"/>
+    <action name="sharedTeamTable" type="sharedTeam"/>
+</model>
+
+
+<!-- Toolbar and actions  for History tables (Iteration, Maturity, REvision, Effectivitly,Version)-->
+   <model name="iteration history table toolbar">
+      <action name="wtObjCompareMultiple" type="ocmp"/>
+      <action name="compareLogic" type="generic"/>
+      <action name="compareSpec" type="variantspec"/>
+      <action name="PROECOMPARE" type="pdmObject"/>
+   </model>
+   <model name="version history table toolbar">
+      <action name="wtObjCompareMultiple" type="ocmp" shortcut="true" />
+      <action name="compareLogic" type="generic" shortcut="true" />
+      <action name="compareSpec" type="variantspec" shortcut="true" />
+      <action name="PROECOMPARE" type="pdmObject" shortcut="true" />
+      <action name="multiSelectLaunchStructureCompare" type="structureCompare" shortcut="true"/>
+   </model>
+   <model name="maturity history table toolbar">
+      <action name="wtObjCompareMultiple" type="ocmp" shortcut="true" />
+      <action name="compareLogic" type="generic" shortcut="true" />
+      <action name="compareSpec" type="variantspec" shortcut="true" />
+      <action name="PROECOMPARE" type="pdmObject" shortcut="true" />
+   </model>
+   <model name="revision history table toolbar">
+      <action name="list_copy" type="object" shortcut="true"/>
+      <action name="wtObjCompareMultiple" type="ocmp" shortcut="true"/>
+      <action name="compareLogic" type="generic" shortcut="true"/>
+      <action name="PROECOMPARE" type="pdmObject" shortcut="true" />
+   </model>
+
+   <model name="iteration history table row actions">
+      <action name="view" type="object"/>
+   </model>
+
+   <model name="edit timeline filter wiz buttons">
+      <action name="okButton" type="history"/>
+      <action name="closeButton" type="history"/>
+   </model>
+
+   <model name="exportlisttofile_submenu" resourceBundle="com.ptc.windchill.enterprise.enterpriseUIResource">
+      <description>'Export List to File' submenu for table toolbar actions menu.</description>
+      <action   name="exportTableCSV"                             type="object" />                                                 <!-- Export List to CSV -->
+      <action   name="exportTableHTML"                            type="object" />                                                 <!-- Export List to HTML -->
+      <action   name="exportTablePDF"                             type="object" />                                                 <!-- Export List to PDF -->
+      <action   name="exportTableTEXT"                            type="object" />                                                 <!-- Export List to Text -->
+      <action   name="exportTableXLS"                             type="object"/>                                                  <!-- Export List to XLS -->
+      <action   name="exportTableXLSX"                            type="object"/>                                                  <!-- Export List to XLSX -->
+      <action   name="exportTableXLSReport"                       type="object"/>                                                  <!-- Export List to XLS Report -->
+      <action   name="exportTableXML"                             type="object"/>                                                  <!-- Export List to XML -->
+   </model>
+
+    <model name="teamTemplateDetailsTabSet">
+		<submodel name="teamTemplateDetailsTab"/>
+	</model>
+
+
+	<model name="teamTemplateDetailsTab" resourceBundle="com.ptc.windchill.enterprise.team.teamResource">
+		<action name="teamTemplateDetails" type="teamTemplate" />
+    </model>
+
+	<model name="teamTemplateDetailsTab_nav" >
+		<action name="teamTemplateDetails" type="teamTemplate" />
+	</model>
+
+</actionmodels>

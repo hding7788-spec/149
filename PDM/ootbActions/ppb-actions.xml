@@ -1,0 +1,985 @@
+<?xml version="1.0"?>
+<listofactions>
+    <objecttype name="ppb" resourceBundle="com.ptc.windchill.mpml.ppb.ppbActionsRB">
+
+        <action name="mpmCheckoutGWT">
+            <command class="com.ptc.cat.ui.client.internal.action.CheckoutAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.CheckinFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="disableForNewObjectInWorkspace"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationHolder"/>
+            </supportedTypes>
+        </action>
+
+        <action name="mpmUndocheckoutGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.PPBUndoCheckoutAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.CheckoutConsiderSiteAdminFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationHolder"/>
+            </supportedTypes>
+        </action>
+
+        <action name="mpmCheckinGWT">
+            <command class="com.ptc.cat.ui.client.internal.action.CheckinAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.CheckoutConsiderSiteAdminFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationHolder"/>
+            </supportedTypes>
+        </action>
+
+        <action name="insertGWT">
+            <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+        
+       
+
+        <action name="insertExistingGWT">
+            <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+
+        <action name="allocateResourceGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.allocation.resource.AllocateResourceAction"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.OriginalCopyFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>
+            </supportedTypes>
+        </action>
+        <action name="allocateResourceProcessingResourcesGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.allocation.resource.AllocateResourceAction"/>
+			<includeFilter name="com.ptc.windchill.mpml.client.internal.filter.ParentOriginalCopyFilter"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>
+            </supportedTypes>
+        </action>
+
+        <action name="openRelatedPartInTreePickerGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.treepicker.OpenRelatedPartInTreePickerAction"/>
+        </action>
+
+        <action name="openRelatedPlantInTreePickerGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.treepicker.OpenRelatedPlantInTreePickerAction"/>
+        </action>
+
+        <action name="openRelatedPartPanelGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.treepicker.OpenRelatedPartPanelAction"/>
+        </action>
+
+        <action name="ppbRemoveGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.PPBRemoveAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.PPBRemoveActionFilter"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationHolder"/>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationUsageLink"/>
+                <type value="wt.part.WTPart"/>
+                <type value="wt.part.WTPartMaster"/>
+            </supportedTypes>
+        </action>
+
+        <action name="ppbRemoveChildGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.PPBRemoveAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.PPBRemoveActionFilter"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationHolder"/>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationUsageLink"/>
+                <type value="wt.part.WTPart"/>
+            </supportedTypes>
+        </action>
+
+          <action name="removePartAllocationTableGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.PPBRemoveAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartMaster"/>
+                        </supportedTypes>
+      </action>
+
+
+          <action name="reallocatePartGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.PartReallocationCutAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                        </supportedTypes>
+                        <nonSupportedTypes>
+                                <type value="com.ptc.windchill.mpml.resource.MPMResource"/>
+                        </nonSupportedTypes>
+      </action>
+
+        <action name="insertMultipleOperationsTreeGWT" uicomponent="INSERT_OPERATION">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.InsertMultipleOperationsAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.InsertMultipleOperationsFilter"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationHolder"/>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationUsageLink"/>
+            </supportedTypes>
+        </action>
+
+        <action name="insertMultipleOperationsUsesGWT" uicomponent="INSERT_OPERATION">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.InsertMultipleOperationsAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.InsertMultipleOperationsFilter"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationHolder"/>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationUsageLink"/>
+            </supportedTypes>
+        </action>
+
+        <action name="insertMultipleOperationsAfterTreeGWT" uicomponent="INSERT_OPERATION">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.InsertMultipleOperationsAfterAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.InsertMultipleOpsAfterFilter"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationUsageLink"/>
+                                <type value="com.ptc.windchill.mpml.processplan.MPMProcessPlan"/>
+                                <type value="com.ptc.windchill.mpml.MPMStandardProcedureLink"/>
+            </supportedTypes>
+        </action>
+
+        <action name="insertMultipleOperationsAfterUsesGWT" uicomponent="INSERT_OPERATION">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.InsertMultipleOperationsAfterAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.InsertMultipleOpsAfterFilter"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationUsageLink"/>
+                                <type value="com.ptc.windchill.mpml.processplan.MPMProcessPlan"/>
+                                <type value="com.ptc.windchill.mpml.MPMStandardProcedureLink"/>
+                                <type value="com.ptc.windchill.mpml.processplan.sequence.MPMSequenceHolder"/>
+            </supportedTypes>
+        </action>
+
+        <action name="assignPartTagsGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.parttag.AssignPartTagsAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.ParentCheckinOrCheckoutFilter"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationMaster"/>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationUsageLink"/>
+            </supportedTypes>
+        </action>
+        <action name="assignPartTagsResourcesGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.parttag.AssignPartTagsAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.ParentCheckinOrCheckoutFilter"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>
+                <type value="com.ptc.windchill.mpml.resource.MPMOperationAssignableResource"/>
+                <type value="com.ptc.windchill.mpml.resource.MPMOperationAssignableResourceMaster"/>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationToConsumableLink"/>
+            </supportedTypes>
+        </action>
+
+        <action name="assignPartTagsDescribeDocumentsGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.parttag.AssignPartTagsAction"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.SupportedTypesForDocumentTableActionFilter"/>           
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.ParentCheckinOrCheckoutFilter"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.MPMProcessPlan" />
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>
+                <type value="WCTYPE|wt.doc.WTDocument"/>
+                <type value="WCTYPE|com.ptc.windchill.mpml.MPMDocumentDescribeLink"/>
+            </supportedTypes>
+        </action>
+
+        <action name="assignPartTagsReferenceDocumentsGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.parttag.AssignPartTagsAction"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.SupportedTypesForDocumentTableActionFilter"/>           
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.ParentCheckinOrCheckoutFilter"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.MPMProcessPlan" />
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>
+                <type value="WCTYPE|wt.doc.WTDocument"/>
+                <type value="WCTYPE|com.ptc.windchill.mpml.MPMDocumentReferenceLink"/>
+            </supportedTypes>
+        </action>
+
+        <action name="assignPartTagsEPMDocumentsGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.parttag.AssignPartTagsAction"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.SupportedTypesForDocumentTableActionFilter"/>           
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.ParentCheckinOrCheckoutFilter"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.MPMProcessPlan" />
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>
+                <type value="WCTYPE|wt.epm.EPMDocument"/>
+                <type value="WCTYPE|com.ptc.windchill.mpml.MPMEPMDocumentDescribeLink"/>
+            </supportedTypes>
+        </action>
+
+    <action name="allocatePartGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.PartAllocationVizAction"/>
+        </action>
+
+        <action name="hideAllResourcesGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.HideAllResourcesAction"/>
+        </action>
+
+        <action name="newAddToGroupGWT">
+            <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+
+        <action name="newActionsGWT">
+            <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+
+        <action name="newPromotionRequestGWT" selectRequired="true" uicomponent="PROMOTE" >
+            <command class="com.ptc.cat.ui.client.action.NewPromotionRequestAction"/>
+            <includeFilter name="restrictGuestMembers"/>
+            <includeFilter name="hideForObjectInProject"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.MultiIsNotUnspecifiedIterationFilter"/>
+        </action>
+
+        <action name="newPromotionRequestTreeGWT" selectRequired="true" uicomponent="PROMOTE" >
+            <command class="com.ptc.cat.ui.client.action.NewPromotionRequestAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.SupplierPartTypeFilter"/>
+            <includeFilter name="restrictGuestMembers"/>
+            <includeFilter name="hideForObjectInProject"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.MultiIsNotUnspecifiedIterationFilter"/>
+        </action>
+
+        <action name="addToActionsGWT">
+            <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+
+        <action name="toolsGroupGWT">
+            <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+
+        <action name="reportsGroupGWT">
+            <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+
+        <action name="openActionsGWT">
+            <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+
+        <action name="openInProductViewGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.OpenInCreoViewPPBAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <includeFilter name="isNotInProject"/>
+            <nonSupportedTypes>
+                <type value="WCTYPE|wt.epm.EPMDocument|org.rnd.DynamicDocument|org.rnd.Note"/>
+            </nonSupportedTypes>
+        </action>
+
+                <action name="openInGanttGWT">
+                        <command
+                        class="com.ptc.cat.gxt.client.action.OpenProductStructureExplorerAction"
+                        url="/ptc1/mpml/launchGanttExplorerLotQuantityStep?"
+                        windowType="popup" />
+                        <includeFilter
+                                name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter" />
+                        <supportedTypes>
+                                <type value="com.ptc.windchill.mpml.processplan.MPMProcessPlan" />
+                        </supportedTypes>
+                </action>
+
+                <action name="ganttExplorerLotQuantityStep" resourceBundle="com.ptc.windchill.mpml.client.clientResource"
+                        required="true" preloadWizardPage="false">
+                        <command class="" windowType="wizard_step" />
+                </action>
+
+
+       <action name="openSelectedInTreePickerGWT">
+           <command class="com.ptc.windchill.mpml.client.treepicker.OpenSelectedInTreePickerAction"/>
+           <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+           <supportedTypes>
+               <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>
+               <type value="com.ptc.windchill.mpml.processplan.sequence.MPMSequenceHolder"/>
+               <type value="com.ptc.windchill.mpml.processplan.MPMProcessPlan"/>
+               <type value="com.ptc.windchill.mpml.MPMStandardProcedureLink"/>
+           </supportedTypes>
+        </action>
+
+       <action name="openSelectedInTreePickerRibbonGWT">
+           <command class="com.ptc.windchill.mpml.client.treepicker.OpenSelectedInTreePickerAction"/>
+           <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+           <supportedTypes>
+               <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>
+               <type value="com.ptc.windchill.mpml.processplan.sequence.MPMSequenceHolder"/>
+               <type value="com.ptc.windchill.mpml.processplan.MPMProcessPlan"/>
+               <type value="com.ptc.windchill.mpml.MPMStandardProcedureLink"/>
+           </supportedTypes>
+        </action>
+
+        <action name="pasteToTreeGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.TreePasteAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OriginalCopyFilter"/>
+            <supportedTypes>
+                                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationHolder"/>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationUsageLink"/>
+            </supportedTypes>
+        </action>
+
+        <action name="pasteToPATableGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.allocation.part.PartAllocationTablePasteAction"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>
+            </supportedTypes>
+        </action>
+
+        <action name="PPBTreePickerPartsCopyGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.allocation.part.TreePickerPartsCopyAction"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+            </supportedTypes>
+        </action>
+
+        <action name="pasteToRATableGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.allocation.resource.ResourceAllocationTablePasteAction"/>
+            <includeFilter name="com.ptc.windchill.mpml.client.internal.filter.ParentOriginalCopyFilter"/>            
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>
+            </supportedTypes>
+        </action>
+
+        <action name="PPBTreePickerResourcesCopyGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.allocation.resource.TreePickerResourcesCopyAction"/>
+                        <supportedTypes>
+                                <type value="com.ptc.windchill.mpml.resource.MPMResource"/>
+            </supportedTypes>
+        </action>
+
+        <action name="TreePickerMfgProcessCopyGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.mfgprocess.MfgProcessTreePickerCopyAction"/>
+                        <supportedTypes>
+                                <type value="com.ptc.windchill.mpml.mfgprocess.MPMMfgProcess"/>
+            </supportedTypes>
+        </action>
+
+        <action name="addStandardProcedureTreeGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.AddStandardProcedureAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.CheckinOrCheckoutFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationHolder"/>
+            </supportedTypes>
+        </action>
+
+        <action name="insertOperationsFromTemplateGWT" uicomponent="INSERT_OPERATION">
+            <command class="com.ptc.windchill.mpml.ppb.client.treepicker.OpenTreePickerSearchForTemplate"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.CheckinOrCheckoutFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationHolder"/>
+            </supportedTypes>
+        </action>
+
+        <action name="insertOperationsFromCapabilityGWT" uicomponent="INSERT_OPERATION">
+            <command class="com.ptc.windchill.mpml.ppb.client.treepicker.OpenTreePickerSearchForCapability"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.CheckinOrCheckoutFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationHolder"/>
+            </supportedTypes>
+        </action>
+
+        <action name="addStandardProcedureUsesGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.AddStandardProcedureAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.ParentCheckinOrCheckoutFilter"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationHolder"/>
+            </supportedTypes>
+        </action>
+
+        <action name="insertNewSequenceTreeGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.InsertNewSequenceAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.CheckinOrCheckoutFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.IsNotStandardProcedureFilter"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.sequence.MPMSequenceHolder"/>
+            </supportedTypes>
+        </action>
+
+        <action name="insertNewSequenceUsesGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.InsertNewSequenceAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.IsMPMSequenceHolderFilter"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.IsNotStandardProcedureFilter"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.ParentCheckinOrCheckoutFilter"/>
+        </action>
+
+        <action name="enableAlternateSequenceGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.playback.EnableAlternateSequenceAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.playback.IsPlayBackToolbarEnabled"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.playback.IsAlternateSequenceDisabled"/>
+        </action>
+
+        <action name="disableAlternateSequenceGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.playback.DisableAlternateSequenceAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.playback.IsPlayBackToolbarEnabled"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.playback.IsAlternateSequenceEnabled"/>
+        </action>
+
+        <action name="addRelatedAssemblyToPP" multiselect="true" ajax="table">
+           <command class="com.ptc.windchill.mpml.ppb.forms.AddRelatedAssembliesFormProcessor" method="execute" windowType="popup"/>
+        </action>
+
+        <action name="removeRelatedAssemblyFromPP" multiselect="true" ajax="component" selectRequired="true">
+                <command class="com.ptc.windchill.mpml.ppb.forms.RemoveRelatedAssembliesFormProcessor" method="execute" 
+                							onClick="PTC.mpml.selectRequiredAndConfirmation(event,target,table)"/>
+        </action>
+
+        <action name="pastePartsFromClipboard" ajax="component" multiselect="false" >
+                <command class="com.ptc.windchill.mpml.ppb.forms.PastePartsFromClipboardToPPFormProcessor" method="execute" onClick="onClickValidation(event,'pastePartsFromClipboard')"/>
+        </action>
+
+         <action name="related_copy_references_mpml" multiselect="true" uicomponent="COPY">
+            <command class="com.ptc.netmarkets.model.NmObjectCommands" method="list_copy" windowType="no_content"/>
+         </action>
+
+        <action name="hideInstanceTreeGWT">
+                <includeFilter name="com.ptc.windchill.mpml.client.action.IsVisualizationInstalled"/>
+                <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <command class="com.ptc.windchill.mpml.ppb.client.action.HideInstanceOnTreeAction"/>
+        </action>
+
+         <action name="showInstanceTreeGWT">
+                <includeFilter name="com.ptc.windchill.mpml.client.action.IsVisualizationInstalled"/>
+                <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <command class="com.ptc.windchill.mpml.ppb.client.action.ShowInstanceOnTreeAction"/>
+        </action>
+
+         <action name="isolateSelectedTreeGWT">
+                <includeFilter name="com.ptc.windchill.mpml.client.action.IsVisualizationInstalled"/>
+                <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <command class="com.ptc.windchill.mpml.ppb.client.action.IsolateSelectedOnTreeAction"/>
+        </action>
+
+        <action name="assignOptionalityGWT">
+      		<command class="com.ptc.cat.ui.client.action.EditOptionRulesAction" method="execute" url="/ptc1/optionality/assignUsesOptionality" windowType="popup"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.IsNotOperationToPartLinkFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+      	    <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+ 			<includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotProjectContainer"/>		
+            <includeFilter name="createEditExpressionFilter"/>		
+        </action>
+        
+        <action name="assignItemOptionalityGWT">
+    		<command class="com.ptc.cat.ui.client.action.EditItemOptionRulesAction" method="execute" url="/ptc1/optionality/assignItemOptionalityGWT" windowType="popup"/>
+    		<includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+    		<includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotProjectContainer"/>
+        </action>
+
+        <action name="setStateGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.SetStateAction" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.CheckinFilter" />
+        </action>
+
+        <action name="selectAllocationGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.viz.SelectAllocationAction"/>
+        </action>
+
+        <action name="removePartFromVizGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.RemovePartFromVizAction"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.action.IsPVInstanceSelected"/>
+        </action>
+
+        <action name="saveAsTreeGWT" ajax="row">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.SaveAsAction" method="execute" url="/ptc1/ppb/saveAsAttrsWizard" windowType="popup"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.CheckinFilter" />
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.MPMProcessPlan"/>
+            </supportedTypes>
+        </action>
+
+        <action name="saveAsAttrsWizard_Step">
+              <component name="processPlanSaveAs.mvc.attributes" windowType="wizards_step" typeBased="true"/>
+        </action>
+        <action name="newBranchPPBTreeGWT">
+            <command class="com.ptc.windchill.mpml.client.action.NewBranchAction" method="execute" url="/ptc1/mpml/new_branch/newBranch" windowType="popup"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationHolder"/>
+            </supportedTypes>
+        </action>
+
+        <action name="openWorkInstructionGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.LaunchWorkInstructionsAction" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter" />
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.MPMProcessPlan" />
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation" />
+            </supportedTypes>
+        </action>
+
+        <action name="isolateAllocatedPartsGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.IsolateAllocatedPartsAction"/>
+        </action>
+
+        <action name="isolateAllocatedPartsOptionsGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.IsolateAllocatedPartsOptionsAction"/>
+        </action>
+
+        <action name="insertExistingPPBDescDocGWT">
+           <command class="com.ptc.windchill.mpml.ppb.client.action.AddExistingDesDocAction"/>
+           <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.InsertActionSupportedTypesDocumentTablesFilter"/>
+           <includeFilter name="disableForTableContextAdminLocked"/>
+        </action>
+
+        <action name="insertNewPPBDescDocGWT" uicomponent="CREATE_DOC" ajax="row">
+           <command class="com.ptc.windchill.mpml.ppb.client.action.InsertNewDescDocAction" method="execute" url="/ptc1/document/create?invokedfrom=ppb" windowType="popup"/>
+           <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.InsertActionSupportedTypesDocumentTablesFilter"/>
+           <includeFilter name="disableForTableContextAdminLocked"/>
+        </action>
+
+        <action name="removePPBDescDocGWT">
+           <command class="com.ptc.windchill.mpml.ppb.client.action.PPBDocRemoveAction"/>
+           <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.SupportedTypesForDocumentTableActionFilter"/>           
+           <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+           <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+           <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotRootStructureModelFilter"/>
+           <includeFilter name="disableForTableContextAdminLocked"/>
+        </action>
+
+        <action name="insertExistingPPBRefDocGWT">
+           <command class="com.ptc.windchill.mpml.ppb.client.action.AddExistingRefDocAction"/>
+           <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.InsertActionSupportedTypesDocumentTablesFilter"/>
+           <includeFilter name="disableForTableContextAdminLocked"/>
+        </action>
+
+        <action name="insertNewPPBRefDocGWT">
+           <command class="com.ptc.windchill.mpml.ppb.client.action.InsertNewRefDocAction" method="execute" url="/ptc1/document/create?invokedfrom=ppb" windowType="popup"/>
+           <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.InsertActionSupportedTypesDocumentTablesFilter"/>
+           <includeFilter name="disableForTableContextAdminLocked"/>
+        </action>
+
+        <action name="removePPBRefDocGWT">
+           <command class="com.ptc.windchill.mpml.ppb.client.action.PPBDocRemoveAction"/>
+           <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.SupportedTypesForDocumentTableActionFilter"/>           
+           <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+           <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+           <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotRootStructureModelFilter"/>
+           <includeFilter name="disableForTableContextAdminLocked"/>
+        </action>
+
+        <action name="insertExistingPPBEPMDocGWT">
+           <command class="com.ptc.windchill.mpml.ppb.client.action.AddExistingEPMDocAction"/>
+           <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.InsertActionSupportedTypesDocumentTablesFilter"/>
+           <includeFilter name="disableForTableContextAdminLocked"/>
+        </action>
+
+        <action name="removePPBEPMDocGWT">
+           <command class="com.ptc.windchill.mpml.ppb.client.action.PPBDocRemoveAction"/>
+           <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.SupportedTypesForDocumentTableActionFilter"/>           
+           <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+           <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+           <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotRootStructureModelFilter"/>
+           <includeFilter name="disableForTableContextAdminLocked"/>
+        </action>
+
+		<action name="showModifiedPartsInPVGWT">
+			<command class="com.ptc.windchill.mpml.ppb.client.viz.DisplayModifiedAllocatedPartsAction" />
+			<includeFilter name="com.ptc.windchill.mpml.client.action.IsVisualizationInstalled" />
+		</action>
+
+		<action name="selectParentGWT">
+			<command class="com.ptc.cat.ui.client.action.NoAction"/>
+		</action>
+		
+		<action name="selectParentActionGWT">
+			<command class="com.ptc.windchill.mpml.ppb.client.action.SelectParentAction" />
+			<includeFilter name="com.ptc.windchill.baseclient.client.action.IsPVInstanceSelected" />
+		</action>
+
+		<action name="selectFirstLevelAssemblyActionGWT">
+			<command class="com.ptc.windchill.mpml.ppb.client.action.SelectFirstLevelAssemblyAction" />
+			<includeFilter name="com.ptc.windchill.baseclient.client.action.IsPVInstanceSelected" />
+		</action>
+		
+        <action name="acknowledgeNewIterationsGWT">
+                        <command class="com.ptc.windchill.mpml.ppb.client.action.AcknowledgeNewIterationsAction"/>
+        </action>
+        
+        <action name="acknowledgeNewIterationsTreeGWT">
+        	<command class="com.ptc.windchill.mpml.ppb.client.action.AcknowledgeNewIterationsTreeAction"/>
+        	<supportedTypes>
+        		<type value="wt.part.WTPart"/>
+        	</supportedTypes>
+                </action>
+
+        <action name="copyGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.PPBCopyAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>
+            </supportedTypes>
+        </action>
+
+	    <action name="pasteAndDuplicateOperationUsesGWT">
+           <command class="com.ptc.cat.ui.client.action.NoAction"/>           
+        </action>
+
+        <action name="pasteAndDuplicateOperationUnderGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.PasteAndDuplicateOperationsUnderAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.InsertMultipleOperationsFilter"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationHolder"/>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationUsageLink"/>
+            </supportedTypes>
+        </action>
+
+        <action name="pasteAndDuplicateOperationAfterGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.PasteAndDuplicateOperationsAfterAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.InsertMultipleOpsAfterFilter"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationUsageLink"/>
+                <type value="com.ptc.windchill.mpml.processplan.MPMProcessPlan"/>
+                <type value="com.ptc.windchill.mpml.MPMStandardProcedureLink"/>
+            </supportedTypes>
+        </action>
+
+        <action name="pasteAndDuplicateOperationUnderUsesGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.PasteAndDuplicateOperationsUnderAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.InsertMultipleOperationsFilter"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationHolder"/>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationUsageLink"/>
+            </supportedTypes>
+        </action>
+
+        <action name="pasteAndDuplicateOperationAfterUsesGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.PasteAndDuplicateOperationsAfterAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.InsertMultipleOpsAfterFilter"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationUsageLink"/>
+                <type value="com.ptc.windchill.mpml.processplan.MPMProcessPlan"/>
+                <type value="com.ptc.windchill.mpml.MPMStandardProcedureLink"/>
+            </supportedTypes>
+        </action>
+
+        <action name="renameOperationsGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.RenameOperationsAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                        <supportedTypes>
+                                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>
+                                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationUsageLink"/>
+                        </supportedTypes>
+                 </action>
+
+        <action name="findCheckoutItemsGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.PPBFindCheckedOutItemsAction"/>
+        </action>
+
+        <action name="checkinAndRemoveGWT">
+            <command class="com.ptc.cat.ui.client.internal.action.CheckInDifferentContextsAndRemoveRowAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+        </action>
+        <action name="undocheckoutAndRemoveGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.PPBUndoCheckoutForFindAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+        </action>
+
+       <action name="getNewRepInfoStep"
+               resourceBundle="com.ptc.windchill.enterprise.wvs.newrep.NewRepResource" afterVK="getNewRepInfoStepValidator"
+               required="true">
+            <command windowType="wizard_step" url="netmarkets/jsp/ppb/newRep/getNewPPBRepresentationInfoStep.jsp"
+               class="com.ptc.windchill.mpml.ppb.forms.CreateFromFileFormDelegateForMPM"/>
+       </action>
+
+       <action name="newRepresentationGWT" >
+            <command class="com.ptc.windchill.mpml.ppb.client.action.NewRepresentationForMPMAction" windowType="popup"
+               url="netmarkets/jsp/ppb/newRep/newRepresentation.jsp"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <includeFilter name="disableForNewObjectInWorkspace"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>
+            </supportedTypes>
+       </action>
+
+
+       <action name="createFromFileWizard"
+               resourceBundle="com.ptc.windchill.enterprise.wvs.newrep.NewRepResource">
+           <command windowType="popup"
+                     url="netmarkets/jsp/ppb/newRep/mpmlCreateFromFileForWizard.jsp" />
+        </action>
+
+       <action name="loadDataInPVGWT">
+             <command class="com.ptc.windchill.mpml.client.action.LoadVisualizationAction"/>
+        </action>
+
+        <action name="defineItemWizStep" id="newCADAlternateRep" preloadWizardPage="false" required="true">
+            <command windowType="wizard_step" url="netmarkets/jsp/ppb/createMfgContextObj/defineItemWizStep.jsp?isNewCARAction=true&amp;hideRevisionPicker=true&amp;hideAssociatePart=true&amp;hideWorkspacePicker=false&amp;hideCategory=true&amp;ActionSource=PJLseedObjects"/>
+        </action>
+
+        <action name="createPARWizard">
+            <command windowType="popup" url="netmarkets/jsp/ppb/createPARWizard?portlet=poppedup" />
+       </action>
+
+
+	<action name="loadDataWithResourcesInPVGWT">
+		<command class="com.ptc.windchill.mpml.ppb.client.action.LoadVisualizationWithResourcesAction" />
+		<includeFilter name="com.ptc.windchill.mpml.ppb.client.playback.DisableActionsInPlayBackFilter"/>
+	</action>
+
+
+	<action name="editAttrValuesGWT">
+		<command class="com.ptc.windchill.mpml.ppb.client.action.PPBEditAttributeValuesAction"/>
+		<includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+		<includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+		<includeFilter name="com.ptc.cat.ui.client.internal.action.ParentOriginalCopyFilter"/>
+		<includeFilter name="com.ptc.cat.ui.client.internal.action.SameObjectTypeFilter"/>
+		<includeFilter name="disableForTableContextAdminLocked"/>
+	</action>
+
+
+	<action name="displayPartAllocationStatusGWT">
+		<command class="com.ptc.windchill.mpml.ppb.client.treepicker.allocationStatus.DisplayPartAllocationStatusAction"/>
+	    <includeFilter name="com.ptc.windchill.mpml.ppb.client.treepicker.allocationStatus.DisplayPartAllocationStatusActionFilter"/>
+	</action>
+
+	<action name="reviewUpdateIllustrationGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.ReviewUpdateIllustrationsAction" />
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.IsOnlyMPMOperationTypesFilter" />
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation" />
+            </supportedTypes>
+        </action>
+
+        <action name="launchInMRBGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.LaunchInMRBAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.IsProcessPlanFilter"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.MPMProcessPlan"/>
+            </supportedTypes>
+        </action>
+
+        <action name="autoPartAllocationGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.AutoPartAllocationAction" />
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.IsOnlyMPMOperationTypesFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.AutoPartAllocationPreferenceFilter"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation" />
+            </supportedTypes>
+        </action>
+
+		<action name="showOperationColorCodesGWT">
+			<command class="com.ptc.windchill.mpml.ppb.client.viz.DisplayOperationColorCodeAction" />
+			<includeFilter name="com.ptc.windchill.mpml.client.action.IsVisualizationInstalled" />
+		</action>
+
+       <action name="setPPBVizPathFilterGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.PPBVizSetPathFilterAction"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.action.IsPVInstanceSelected" />
+       </action>
+       
+       <action name="selectForAllocationActionGWT">
+           <command class="com.ptc.windchill.mpml.ppb.client.action.SelectForAllocationAction"/>  
+           <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.IsTreePickerRootRelatedProcessPlanFilter"/>
+           <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.IsProcessPlanInUsageModeFilter"/>
+       </action>
+	   <action name="setPathFilterPPBTreePickerVizActionGWT">
+           <command class="com.ptc.windchill.mpml.ppb.client.viz.SetPathFilterPPBTreePickerVizAction"/>
+           <includeFilter name="com.ptc.windchill.baseclient.client.action.IsPVInstanceSelected" />
+       </action>
+        
+        <action name="disablePPBRelatedAssemblyPathFilterGWT">
+           <command class="com.ptc.windchill.mpml.ppb.client.action.DisablePPBRelatedAssemblyPathFilterAction"/>    
+        </action>
+
+        <action name="disablePPBVizPathFilterGWT">
+           <command class="com.ptc.windchill.mpml.ppb.client.action.DisablePPBVizPathFilterAction"/>    
+        </action>
+        
+        <action name="ppbSplitUsageActionGWT">
+ 	 		<command class="com.ptc.windchill.mpml.ppb.client.action.PPBSplitUsageAction"/>
+ 	 		<includeFilter name="com.ptc.windchill.baseclient.client.action.IsPVInstanceSelected" />
+ 	 	</action>
+        <action name="ppbTreePickerRefreshGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.PPBTreePickerRefreshAction" />
+        </action>
+ 
+		<!--Inconsistency Summary to report orphan allocated parts in PPB -->    
+		
+		<action name="reporttActionsGWT">
+            <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>   
+         
+        <action name="InconsistencySummaryOrphanAllocatedPartsGWT">
+          <command class="com.ptc.windchill.mpml.ppb.client.action.GenerateInconsistencyReportAction" />
+          <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>  
+          <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+          <includeFilter name="com.ptc.cat.ui.client.internal.action.CheckoutConsiderSiteAdminFilter"/>
+          <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.IsNotStandardProcedureFilter"/>
+          <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.IsNotChildOfStandardProcedureFilter"/>
+          <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationHolder"/>
+          </supportedTypes>        
+       </action>
+
+        <action name="ppbTreePartCopyGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.PPBTreePartCopyAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+			<supportedTypes>
+            	<type value="wt.part.WTPart"/>
+			</supportedTypes>
+        </action>
+        <action name="ppbTreePasteAsOperatedOnGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.PPBTreePasteAsOperatedOnAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OriginalCopyFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsTreeModelCheckedOutAnotherUser" />
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.PPBTreePasteAsOperatedOnActionFilter"/>
+			<supportedTypes>
+            	<type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation" />
+			</supportedTypes>
+        </action>
+        
+        <action name="ppbVizCopyGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.PPBVizCopyAction"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.action.IsPVInstanceSelected"/>
+        </action>
+        
+		
+	      <action name="ppbTreeAllocateOperatedOnGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.AllocateOperatedOnAction"/>     
+		    <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsTreeModelCheckedOutAnotherUser" />	
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>      
+            </supportedTypes>
+        </action>
+		<action name="removeOrphanAllocatedPartsGWT">
+          <command class="com.ptc.windchill.mpml.ppb.client.action.RemoveOrphanAllocatedPartsAction" />
+		  
+          <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>  
+          <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+		  <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsTreeModelCheckedOutAnotherUser"/>	          
+		  <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.IsNotChildOfStandardProcedureFilter"/>		  
+          <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>
+          </supportedTypes>        
+		</action>
+		
+		<action name="ppbEditAllocationTypeTableGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.EditAllocationTypeAction"/>
+                     <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/> 
+	             <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsTreeModelCheckedOutAnotherUser" />	 
+		     <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.InsertMultipleOpsAfterFilter" />
+		     <includeFilter name="com.ptc.windchill.mpml.client.internal.filter.DisableActionForOpsAssignableResourceFilter" />
+                     <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+		     <supportedTypes>
+            	        <type value="wt.part.WTPart"/>
+		     </supportedTypes> 
+        </action>
+      
+        <action name="ppbIllustrationMenu">
+            <command class="com.ptc.cat.ui.client.action.NoAction"/>
+             <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.ManageIllustrationPreferenceFilter"/>
+        </action>
+        
+        <action name="newIllustrationActionGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.NewIllustrationAction"/>
+                     <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/> 
+                     <includeFilter name="DisableActionForNonUwgmBrowser"/> 
+                     <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.HaveParentHideFilter"/>
+                     <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.ManageIllustrationPreferenceFilter"/>
+                     <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.IsNotChildOfStandardProcedureFilter"/>
+             <supportedTypes>
+                         <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>
+             </supportedTypes> 
+        </action>
+        
+         <action name="updateIllustrationActionGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.UpdateIllustrationAction"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.HaveParentHideFilter"/>
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.ManageIllustrationPreferenceFilter"/>
+             <supportedTypes>
+                         <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>                         
+             </supportedTypes> 
+        </action>
+        
+        <action name="removeIllustrationActionGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.RemoveIllustrateAction"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.HaveParentHideFilter"/>
+             <supportedTypes>
+                         <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>
+                         <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.ManageIllustrationPreferenceFilter"/>
+             </supportedTypes> 
+        </action>
+        
+        <action name="calculateTimeAndCostActionGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.CalculateTimeAndCostAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationHolder"/>
+            </supportedTypes>
+        </action>
+
+        <action name="setFormulatSetGWT">
+            <command class="com.ptc.windchill.mpml.ppb.client.action.SetFormulaSetAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>
+            </supportedTypes>
+        </action>	
+    </objecttype>
+
+</listofactions>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<processPlan>
+	<processType>电装工艺</processType>
+	<zfType>Z</zfType>
+	<ftType>临时工艺文件</ftType>
+	<processNumber>1484029673029</processNumber>
+	<processName>电装工艺规程(Rz/2Z05(批次号测试))</processName>
+	<processVersion>space.7</processVersion>
+	<pplanNumber>Rz/2Z05(批次号测试)</pplanNumber>
+	<batch>生一批二批三批四批五批</batch>
+	<operlink>
+		<number>10</number>
+		<name>电装</name>
+		<version></version>
+		<zrcj>1</zrcj>
+		<zjgs></zjgs>
+		<degs></degs>
+		<keyoper>false</keyoper>
+		<processType>电装工艺</processType>
+		<ftType>临时工艺文件</ftType>
+		<processNumber>1484029673029</processNumber>
+		<processName>电装工艺规程(Rz/2Z05(批次号测试))</processName>
+		<processVersion>space.7</processVersion>
+		<pplanNumber>Rz/2Z05(批次号测试)</pplanNumber>
+		<batch>生一批二批三批四批五批</batch>
+	</operlink>
+	<operlink>
+		<number>20</number>
+		<name>装填</name>
+		<version></version>
+		<zrcj>1</zrcj>
+		<zjgs></zjgs>
+		<degs></degs>
+		<keyoper>false</keyoper>
+	</operlink>
+	<operlink>
+		<number>30</number>
+		<name>立定处理</name>
+		<version></version>
+		<zrcj>1</zrcj>
+		<zjgs></zjgs>
+		<degs></degs>
+		<keyoper>false</keyoper>
+	</operlink>
+</processPlan>

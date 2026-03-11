@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+<!-- define the actions on the UI components -->
+<actionmodels>
+    <model name="masschange.previewlist.table.toolbar">
+        <description>Actions for the mass change preview list toolbar</description>
+        <action name="include" type="massChange" shortcut="true"/>
+        <action name="exclude" type="massChange" shortcut="true"/>
+        <submodel name="exportlisttofile_submenu" type="object"/>
+   </model>   
+</actionmodels>

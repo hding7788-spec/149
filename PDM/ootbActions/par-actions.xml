@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+<listofactions>
+   <objecttype name="par" class="wt.part.alternaterep.WTPartAlternateRep" resourceBundle="com.ptc.windchill.enterprise.part.alternaterep.parActionsRB">
+      <action name="parStructureGWT" resourceBundle="com.ptc.windchill.enterprise.part.alternaterep.parActionsRB">
+         <command url="netmarkets/jsp/par/par.jsp"/>
+      </action>
+      <action name="addSectionPartGWT">
+         <command class="com.ptc.windchill.enterprise.part.alternaterep.client.action.AddSectionPartAction"/>
+         <includeFilter name="com.ptc.windchill.enterprise.part.alternaterep.client.filters.AddSectionPartFilter"/>
+      </action>
+      <action name="removeSectionPartGWT">
+         <command class="com.ptc.windchill.enterprise.part.alternaterep.client.action.RemoveSectionPartAction"/>
+         <includeFilter name="com.ptc.windchill.enterprise.part.alternaterep.client.filters.RemoveSectionPartFilter"/>
+      </action>
+      <action name="addAttributeRuleGWT">
+         <command class="com.ptc.windchill.enterprise.object.alternaterep.client.action.AddAttributeRuleAction" method="com.ptc.windchill.enterprise.part.alternaterep.PAR"/>
+         <includeFilter name="com.ptc.windchill.enterprise.part.alternaterep.client.filters.EditPARFilter"/>
+      </action>
+      <action name="addAttributeRuleViaRulesTabGWT">
+         <command class="com.ptc.windchill.enterprise.object.alternaterep.client.action.AddAttributeRuleAction" method="com.ptc.windchill.enterprise.part.alternaterep.PAR"/>
+      </action>
+      <action name="editAttributeRuleGWT">
+         <command class="com.ptc.windchill.enterprise.object.alternaterep.client.action.EditAttributeRuleAction" method="com.ptc.windchill.enterprise.part.alternaterep.PAR"/>
+         <includeFilter name="com.ptc.windchill.enterprise.object.alternaterep.client.filters.EditAttributeRuleFilter"/>
+      </action>
+      <action name="reorderRulesGWT">
+         <command class="com.ptc.windchill.enterprise.part.alternaterep.client.action.ReorderParRulesAction" method="com.ptc.windchill.enterprise.part.alternaterep.PAR"/>
+      </action>
+      <action name="addAttributeRuleViaContextMenuGWT">
+         <command class="com.ptc.windchill.enterprise.object.alternaterep.client.action.AddAttributeRuleAction" method="com.ptc.windchill.enterprise.part.alternaterep.PAR"/>
+         <includeFilter name="com.ptc.windchill.enterprise.object.alternaterep.client.filters.AddAttributeRuleFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.part.alternaterep.client.filters.EditPARFilter"/>
+      </action>
+      <action name="renameGWT">
+         <command class="com.ptc.cat.gxt.client.action.RenameAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+      </action>
+      <action name="refreshContextWithLargeIconGWT">
+         <command class="com.ptc.windchill.enterprise.part.alternaterep.client.action.RefreshContextAction"/>
+         <includeFilter name="com.ptc.windchill.enterprise.part.alternaterep.client.filters.CheckoutPARFilter"/>
+      </action>
+      <action name="refreshContext">
+         <command class="com.ptc.windchill.enterprise.part.alternaterep.forms.RefreshContextFormProcessor" method="execute"/>
+      </action>
+      <action name="checkoutGWT">
+         <command class="com.ptc.windchill.enterprise.part.alternaterep.client.action.CheckoutPARAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.part.alternaterep.client.filters.CheckoutPARFilter"/>
+      </action>
+      <action name="checkoutWithLargeIconGWT">
+         <command class="com.ptc.windchill.enterprise.part.alternaterep.client.action.CheckoutPARAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.part.alternaterep.client.filters.CheckoutPARFilter"/>
+      </action>
+      <action name="checkinWithlargeIconGWT">
+         <command class="com.ptc.windchill.enterprise.part.alternaterep.client.action.CheckinPARAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.part.alternaterep.client.filters.CheckinPARFilter"/>
+      </action>
+      <action name="checkinGWT">
+         <command class="com.ptc.windchill.enterprise.part.alternaterep.client.action.CheckinPARAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.part.alternaterep.client.filters.CheckinPARFilter"/>
+      </action>
+      <action name="undoCheckoutGWT">
+         <command class="com.ptc.windchill.enterprise.part.alternaterep.client.action.UndoCheckoutPARAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.part.alternaterep.client.filters.CheckinPARFilter"/>
+      </action>
+
+      <action name="createPARWizard" ajax="row">
+         <command class="com.ptc.windchill.enterprise.part.alternaterep.forms.CreatePartAlternateRepFormProcessor" method="execute" windowType="popup"/>
+	  </action>
+      <action name="createPARFromPart" ajax="row">
+         <command class="com.ptc.windchill.enterprise.part.alternaterep.forms.CreatePARFromPartFormProcessor" method="execute" windowType="popup" url="/ptc1/par/createPARWizard?portlet=poppedup"/>
+         <includeFilter name="hideForObjectInProject"/>
+         <includeFilter name="createPARFromPart"/>
+		 <includeFilter name="restrictGuestMembers"/>
+		 <includeFilter name="hideForAdminLocked"/>
+		 <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+		 <includeFilter name="disableForNewObjectInWorkspace"/>
+      </action>
+      <action name="createPARFromVariantSpec" ajax="row">
+         <command class="com.ptc.windchill.enterprise.part.alternaterep.forms.CreatePARFromVariantSpecFormProcessor" method="execute" windowType="popup" url="/ptc1/par/createPARWizard?portlet=poppedup"/>
+         <includeFilter name="hideForObjectInProject"/>
+         <includeFilter name="hideForAdminLocked"/>
+         <includeFilter name="disableForNewObjectInWorkspace"/>
+         <includeFilter name="createPARFromVariantSpec"/>
+         <includeFilter name="hideForVariantSpecUsesSupplierPart"/>
+         <includeFilter name="configMgmtHiddenFeature"/> <!-- hide until feature is ready for release -->
+      </action>
+      <action name="defineItemWizStep" id="defineItemWizStep" preloadWizardPage="false" required="true">
+         <command windowType="wizard_step"/>
+      </action>
+      <action name="setPARAttributesWizStep" id="setPARAttributesWizStep" preloadWizardPage="false" required="true">
+         <command windowType="wizard_step"/>
+      </action>
+      <action name="checkoutAndEdit" ajax="row">
+         <command class="com.ptc.core.components.forms.EditWorkableFormProcessor" method="execute" url="netmarkets/jsp/par/edit.jsp" windowType="popup" onClick="onClickValidation(event,'checkout')"/>
+      </action>
+      <action name="editGWT">
+         <command class="com.ptc.windchill.enterprise.part.alternaterep.client.action.EditPARAction"/>
+	      <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.part.alternaterep.client.filters.OnlyPARFilter"/>
+      </action>
+      <action name="edit" ajax="row">
+         <command class="com.ptc.core.components.forms.EditWorkableFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="editPARAttributesWizStep" id="editPARAttributesWizStep" preloadWizardPage="true" required="true">
+         <command windowType="wizard_step"/>
+      </action>
+      <action name="deleteGWT">
+         <command class="com.ptc.windchill.enterprise.part.alternaterep.client.action.DeletePARAction"/>
+	      <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.part.alternaterep.client.filters.OnlyPARFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.part.alternaterep.client.filters.CheckoutPARFilter"/>
+      </action>
+      <action name="resetGWT">
+         <command class="com.ptc.windchill.enterprise.part.alternaterep.client.action.ResetAction"/>
+      </action>
+      <action name="setProximityExpansionCriteriaGWT">
+         <command class="com.ptc.windchill.enterprise.structurecomponent.client.action.SetProximityExpansionCriteriaAction"/>
+         <includeFilter name="showHideSpatialFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotSummaryRowOrHasSummaryParentFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.part.alternaterep.client.filters.SetProximityECPARSBFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.object.alternaterep.client.filters.PARLatestIterationFilter"/>
+      </action>
+      <action name="toggleFilter">
+         <command class="com.ptc.windchill.enterprise.part.alternaterep.client.action.ToggleFilterAction"/>
+      </action>
+      <action name="openActionsGWT">
+         <command class="com.ptc.cat.ui.client.action.NoAction"/>
+      </action>
+      <action name="openInProductViewGWT">
+         <command class="com.ptc.cat.ui.client.action.NoAction"/>
+      </action>
+      <action name="openInCADGWT">
+         <command class="com.ptc.windchill.enterprise.part.alternaterep.client.action.OpenCADAction"/>
+         <includeFilter name="com.ptc.windchill.enterprise.part.alternaterep.client.filters.OnlyPARFilter"/>
+      </action>
+      <action name="openInCAD2GWT">
+         <command class="com.ptc.windchill.enterprise.part.alternaterep.client.action.OpenCADAction"/>
+         <includeFilter name="com.ptc.windchill.enterprise.part.alternaterep.client.filters.OnlyPARFilter"/>
+      </action>
+      <action name="openInProe">
+         <command url="netmarkets/jsp/par/openInProe.jsp?action=openInProe" windowType="page"/>
+      </action>
+      <action name="newRevisionGWT">
+         <command class="com.ptc.cat.ui.client.action.NewRevisionAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.part.alternaterep.client.filters.CheckoutPARFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsIteratedFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.part.alternaterep.client.filters.OnlyPARFilter"/>
+      </action>
+      <action name="copyToWindchillGWT">
+	     <command class="com.ptc.cat.gxt.client.action.CopyAction"/>
+	     <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.part.alternaterep.client.filters.CopyToClipboardFilter"/>
+      </action>
+      <action name="newUpdateDesignContextWizardGWT">
+          <command class="com.ptc.windchill.enterprise.part.alternaterep.client.action.NewUpdateDesignContextAction"/>
+          <includeFilter name="com.ptc.windchill.enterprise.part.alternaterep.client.filters.NewCADAlternateRepFilter"/>
+          <includeFilter name="NewDesignContextActionEnabledFilter"/>
+      </action>
+      <action name="newCADAlternateRep" ajax="component">
+          <command class="com.ptc.windchill.enterprise.part.alternaterep.forms.CreatePARToCARFormProcessor" method="execute" windowType="popup" url="/netmarkets/jsp/workspaces/newcaddoc/newCADDocument.jsp?isNewCARAction=true&amp;hideRevisionPicker=true&amp;hideAssociatePart=true&amp;hideWorkspacePicker=false&amp;hideCategory=true&amp;ActionSource=PJLseedObjects"/>
+      </action>
+      <action name="openDesignContextInCADToolGWT">
+         <command class="com.ptc.windchill.enterprise.part.alternaterep.client.action.OpenDesignContextInCADToolAction"/>
+         <includeFilter name="com.ptc.windchill.enterprise.part.alternaterep.client.filters.NewCADAlternateRepFilter"/>
+         <includeFilter name="NewDesignContextActionEnabledFilter"/>
+         <includeFilter name="HasActiveWorkspaceValidator"/>
+      </action>
+      <action name="editFilterWithLargeIconGWT">
+         <command class="com.ptc.windchill.enterprise.part.alternaterep.client.action.EditFilterAction" method="com.ptc.windchill.enterprise.part.alternaterep.PAR"/>
+         <includeFilter name="com.ptc.windchill.enterprise.object.alternaterep.client.filters.PARLatestIterationFilter"/>
+      </action>
+      <action name="replacements">
+         <command class="com.ptc.cat.ui.client.action.ManageReplacementAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+      </action>
+      <action name="newRepresentationGWT">
+         <command class="com.ptc.windchill.enterprise.part.alternaterep.client.action.NewRepresentationPARAction"
+         url="/netmarkets/jsp/wvs/newRep/decideEpmOrFile.jsp"/>
+         <includeFilter name="com.ptc.windchill.enterprise.part.alternaterep.client.filters.OnlyPARFilter"/>
+      </action>
+      <action name="editingGroupGWT">
+         <command class="com.ptc.cat.ui.client.action.NoAction"/>
+      </action>
+      <action name="checkInOutGroupGWT">
+         <command class="com.ptc.cat.ui.client.action.NoAction"/>
+      </action>
+      <action name="clipboardGroupGWT">
+         <command class="com.ptc.cat.ui.client.action.NoAction"/>
+      </action>
+      <action name="viewingGroupGWT">
+         <command class="com.ptc.cat.ui.client.action.NoAction"/>
+      </action>
+      <action name="filterGroup">
+         <command class="com.ptc.cat.ui.client.action.NoAction"/>
+      </action>
+      <action name="designContextGroupGWT">
+         <command class="com.ptc.cat.ui.client.action.NoAction"/>
+      </action>
+      <action name="toolsGroupGWT">
+         <command class="com.ptc.cat.ui.client.action.NoAction"/>
+      </action>
+      <action name="newAddToGroupGWT">
+         <command class="com.ptc.cat.ui.client.action.NoAction"/>
+      </action>
+      <action name="newActionsGWT">
+         <command class="com.ptc.cat.ui.client.action.NoAction"/>
+      </action>
+      <action name="deletePAR"  ajax="row" uicomponent="DELETE">
+         <command class="com.ptc.windchill.enterprise.object.commands.DeleteObjectCommands" method="delete" onClick="JCAConfirm(event,'com.ptc.core.ui.confirmationMessagesRB.DELETE')"/>
+         <includeFilter name="disableForWorkingCopyWorkInProgress"/>
+         <includeFilter name="hideForNonLatestIteration" />
+      </action>
+      <action name="showExcludedNodes">
+         <command class="com.ptc.windchill.enterprise.object.alternaterep.client.action.ToggleExcludedNodesAction" />
+         <includeFilter name="com.ptc.windchill.enterprise.part.alternaterep.client.filters.CheckinPARFilter"/>
+      </action>
+   </objecttype>
+</listofactions>

@@ -1,0 +1,151 @@
+ResourceInfo.class=wt.tools.resource.StringResourceInfo
+ResourceInfo.customizable=true
+ResourceInfo.deprecated=false
+
+
+# Entry Format (values equal to default value are not included)
+# <key>.value=
+# <key>.category=
+# <key>.comment=
+# <key>.argComment<n>=
+# <key>.constant=
+# <key>.customizable=
+# <key>.deprecated=
+# <key>.abbreviatedDisplay=
+# <key>.fullDisplay=
+# <key>.shortDescription=
+# <key>.longDescription=
+
+# Entry Contents
+#Create preview Wizard action
+
+preview.attributes.description.value=Details
+preview.attributes.description.comment=Details
+preview.attributes.title.value=Details
+preview.attributes.title.comment=Details
+preview.attributes.tooltip.value=Details
+preview.attributes.tooltip.comment=Details
+preview.attributes.icon.value=newobj.gif
+preview.attributes.icon.comment=Details
+
+preview.updatePreview.description.value=Edit Content
+preview.updatePreview.description.comment=Edit Content
+preview.updatePreview.title.value=Edit Content
+preview.updatePreview.title.comment=Edit Content
+preview.updatePreview.tooltip.value=Edit Content
+preview.updatePreview.tooltip.comment=Edit Content
+preview.updatePreview.icon.value=multi_update.gif
+preview.updatePreview.icon.comment=Edit Content
+
+preview.previewObjects.description.value=Preview Data
+preview.previewObjects.description.comment=Preview Data
+preview.previewObjects.title.value=Preview Data
+preview.previewObjects.title.comment=Preview Data
+preview.previewObjects.tooltip.value=Preview Data
+preview.previewObjects.tooltip.comment=Preview Data
+preview.previewObjects.icon.value=newobj.gif
+preview.previewObjects.icon.comment=Preview Data
+
+preview.deletePreview.description.value=Delete
+preview.deletePreview.description.comment=Delete
+preview.deletePreview.title.value=Delete
+preview.deletePreview.title.comment=Delete
+preview.deletePreview.tooltip.value=Delete
+preview.deletePreview.tooltip.comment=Delete
+preview.deletePreview.icon.value=delete.gif
+preview.deletePreview.icon.comment=Delete
+
+
+object.previewContentInfo.description.value=Content
+object.previewContentInfo.description.comment=Content
+object.previewContentInfo.title.value=Content
+object.previewContentInfo.title.comment=Content
+object.previewContentInfo.tooltip.value=Content
+object.previewContentInfo.tooltip.comment=Content
+
+
+# Create preview Wizard labels
+preview.create.DEFINE_ITEM_WIZ_STEP_LABEL.value=Define type
+preview.create.DEFINE_ITEM_WIZ_STEP_LABEL.comment=Label for define item step in the Create preview Wizard
+preview.create.SET_ATTRIBUTES_WIZ_STEP_LABEL.value=Set Atrributes
+preview.create.SET_ATTRIBUTES_WIZ_STEP_LABEL.comment=Label for set attributes step in the Create preview Wizard
+preview.create.SET_RELATEDDATA_WIZ_STEP_LABEL.value=Set Related Data
+preview.create.SET_RELATEDDATA_WIZ_STEP_LABEL.comment=Used as the label for a wizard step
+preview.create.ATTACHMENTS_WIZ_STEP_LABEL.value=Set Attachments
+preview.create.ATTACHMENTS_WIZ_STEP_LABEL.comemnt=lable for Set Attachments step in the Create preview Wizard
+preview.create.LOCATION_LABEL.value=Location
+preview.create.LOCATION_LABEL.comment=lable for Location in the Create preview Wizard
+
+#previewObjects
+preview_RELATED_DATA.value=Related Data
+preview_RELATED_DATA.constant=preview_RELATED_DATA
+preview_RELATED_DATA.comment=Related Data for Process preview
+
+preview_CONTENTS_TEXT.value=Process preview Objects
+preview_CONTENTS_TEXT.constant=preview_CONTENTS_TEXT
+preview_CONTENTS_TEXT.comment=Text for the 3rd level navigation link and the table header text
+
+STRUCTURE_TABLEVIEW_NAME.value=Display as structure
+STRUCTURE_TABLEVIEW_NAME.constant=STRUCTURE_TABLEVIEW_NAME
+STRUCTURE_TABLEVIEW_NAME.comment=Text for tableview
+
+LIST_TABLEVIEW_NAME.value=Display as list
+LIST_TABLEVIEW_NAME.constant=LIST_TABLEVIEW_NAME
+LIST_TABLEVIEW_NAME.comment=Text for tableview
+
+preview_NAME_LABEL.value=Name
+preview_NAME_LABEL.constant=preview_NAME_LABEL
+preview_NAME_LABEL.comment=Name for tableview
+
+preview_NUMBER_LABEL.value=Number
+preview_NUMBER_LABEL.constant=preview_NUMBER_LABEL
+preview_NUMBER_LABEL.comment=Number for tableview
+
+preview_UPDATESTAMP_LABEL.value=Lasted Modified Stamp
+preview_UPDATESTAMP_LABEL.constant=preview_UPDATESTAMP_LABEL
+preview_UPDATESTAMP_LABEL.comment=Updatestamp for tableview
+
+preview_STATE_LABEL.value=State
+preview_STATE_LABEL.constant=preview_STATE_LABEL
+preview_STATE_LABEL.comment=State for tableview
+
+preview_VERSION_LABEL.value=Version
+preview_VERSION_LABEL.constant=preview_VERSION_LABEL
+preview_VERSION_LABEL.comment=Version for tableview
+
+preview_UPDATE_ACTION_PERM_ERROR.value=You can't update Processpreview,because you havn't enough access.
+preview_UPDATE_ACTION_PERM_ERROR.constant=preview_UPDATE_ACTION_PERM_ERROR
+preview_UPDATE_ACTION_PERM_ERROR.comment=Update Error for Processpreview
+
+preview_SELECT.value=Please Select a option:
+preview_SELECT.constant=preview_SELECT
+preview_SELECT.comment=SELECT for Download Print Contents
+
+preview_ALL.value=All Contents
+preview_ALL.constant=preview_ALL
+preview_ALL.comment=ALL for Download All Contents
+
+preview_PRIMARY.value=Primary Contents
+preview_PRIMARY.constant=preview_PRIMARY
+preview_PRIMARY.comment=PRIMARY for Download Primary Contents
+
+preview_PRINT.value=Print Files
+preview_PRINT.constant=preview_PRINT
+preview_PRINT.comment=PRINT for Download Print Contents
+
+preview_WVS.value=WVS Files
+preview_WVS.constant=preview_WVS
+preview_WVS.comment=WVS for Download Print Contents
+
+preview_ATTACHMENT.value=Attachments
+preview_ATTACHMENT.constant=preview_ATTACHMENT
+preview_ATTACHMENT.comment=ATTACHMENT for Download Attachment Contents
+
+preview_DOWNLOAD.value=Click Download
+preview_DOWNLOAD.constant=preview_DOWNLOAD
+preview_DOWNLOAD.comment=DOWNLOAD for Download Attachment Contents
+
+preview_NOCONTENT.value=No download contents,please select option from list
+preview_NOCONTENT.constant=preview_NOCONTENT
+preview_NOCONTENT.comment=NOCONTENT for Download Attachment Contents
+

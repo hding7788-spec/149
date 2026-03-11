@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+<actionmodels>
+
+   <!-- action model as applied to the whole queue table -->
+   <model name="queueTableActions_toolbar">
+      <action name="startSelectedQueues"    type="queueTable" shortcut="true"/>
+      <action name="stopSelectedQueues"     type="queueTable" shortcut="true"/>
+      <action name="enableSelectedQueues"   type="queueTable" shortcut="true"/>
+      <action name="disableSelectedQueues"  type="queueTable" shortcut="true"/>
+      <action name="createQueue"            type="queueTable" shortcut="true"/>
+   </model>
+
+   <!-- action model for individual queues -->
+   <model name="queueActions">
+      <action name="startQueue"  type="queue"/>
+      <action name="stopQueue"  type="queue"/>
+      <action name="enableQueue"  type="queue"/>
+      <action name="disableQueue"  type="queue"/>
+      <action name="queueInfo"  type="queue"/>
+      <action name="editAttributesFP"  type="queue"/>
+   </model>
+
+   <!-- queue action model for info page, no info page -->
+   <model name="queueActionsNV">
+      <action name="startQueue"  type="queue"/>
+      <action name="stopQueue"  type="queue"/>
+      <action name="enableQueue"  type="queue"/>
+      <action name="disableQueue"  type="queue"/>
+      <action name="editAttributesFP"  type="queue"/>
+   </model>
+
+   <!-- queue entry table action model, no info page -->
+   <model name="queueEntryActionsNV">
+      <action name="resetReady"    type="queueEntries" shortcut="true"/>
+      <action name="deleteEntries"  type="queueEntries" shortcut="true"/>
+      <action name="piks" type="queueEntries" shortcut="true"/>
+   </model>
+
+   <!-- queue entry action model, as applied to individual entries -->
+   <model name="queueEntryActions_toolbar"
+      defaultActionName="resetReady" defaultActionType="queueEntries">
+      <action name="viewInfo"    type="queueEntries"/>
+      <action name="resetReady"    type="queueEntries"/>
+      <action name="deleteEntry"  type="queueEntries"/>
+      <action name="piks" type="queueEntries"/>
+   </model>
+
+   <!-- queue entry "info" action model -->
+   <model name="queueEntryInfoActions"
+      defaultActionName="resetReady" defaultActionType="queueEntries">
+      <action name="resetReady"    type="queueEntries"/>
+      <action name="deleteEntryRedirect"  type="queueEntries"/>
+      <action name="piks" type="queueEntries"/>
+   </model>
+
+   <model name="third_level_nav_queue"
+      defaultActionName="queueEntryTable" defaultActionType="queueTableEntries">
+      <action name="queueEntryTable" type="queueTableEntries" />
+      <action name="queueAttributesTable" type="queueTableEntries" />
+   </model>
+
+   <model name="third_level_nav_queue_entry"
+      defaultActionName="queueEntryAttributes" defaultActionType="queueEntryArgsType">
+      <action name="queueEntryAttributes" type="queueEntries"/>
+      <action name="queueEntryArgs" type="queueEntryArgsType" />
+   </model>
+   
+   <model name="queueInfoDefaultDetails" resourceBundle="wt.queue.jca.queueActionResource">
+       <action name="queueAttributesTable" type="queueTableEntries"/>
+       <action name="queueEntryTable" type="queueTableEntries"/>
+   </model>
+
+   <model name="queueInfoPageTabset" resourceBundle="com.ptc.core.ui.navigationRB">
+   	<submodel name="queueInfoDefaultDetails"/>
+   	<submodel name="uninitialized_myTab"/>
+   </model>
+
+   <model name="queueEntryInfoDefaultDetails" resourceBundle="wt.queue.jca.queueActionResource">
+       <action name="queueEntryAttributes" type="queueEntries"/>
+       <action name="queueEntryArgs" type="queueEntryArgsType"/>
+   </model>
+
+   <model name="queueEntryInfoPageTabset" resourceBundle="com.ptc.core.ui.navigationRB">
+       <submodel name="queueEntryInfoDefaultDetails"/>
+       <submodel name="uninitialized_myTab"/>
+   </model>
+
+</actionmodels>
+

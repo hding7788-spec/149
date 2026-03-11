@@ -1,0 +1,1006 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+
+<actionmodels>
+
+    <!-- ******* Tree Tool Bar Definitions ******* -->
+
+    <model name="mapsbPanelContextMenu">
+    </model>
+
+    <model name="mapsbTreePanelContextMenu">
+    </model>
+
+    <model name="mapsbUpstreamSideToolBar">
+        <!-- Begin Editing Group -->
+        <action name="editingGroupASB" type="asb">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="insertExistingAPSBPartTreeGWT" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="insertPartStructureAPSB" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="insertMultiPartStructureAPSB" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="separator" type="separator"/>
+        <action name="duplicatePartMAPSB" type="mapsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="removePartsAPSB" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="removeViewSpecificEnterpriseDataASB" type="asb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="separator" type="separator"/>
+        <action name="splitUsageLink" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="separator" type="separator"/>
+        <action name="updateAlternateBOM" type="asb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="separator" type="separator"/>
+        <action name="assignOccurrencesOptionalityAPSBGWT" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="assignItemOptionalityAPSBGWT" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+		<action name="mpmViewAssignedOccurrencesExpressionGWT" type="baseclient" >
+            <ribbonInfo buttonType="menuitem" />
+        </action>	
+        <action name="mpmViewAssignedExpressionGWT" type="baseclient" >
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="mpmCopyAssignedExpressionGWT" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>  
+		
+		<action name="mpmCopyAssignedOccurrencesExpressionGWT" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="separator" type="separator"/>
+        <action name="editPartAPSB" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="editCommonAttrsGWT" type="psb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <!-- End Editing Group -->
+        <!-- Begin Version Control Menu -->
+        <action name="versionControlGroupASB" type="asb">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="asbCheckoutGWT" type="asb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="asbCheckinGWT" type="asb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="asbUndoCheckoutGWT" type="asb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="separator" type="separator"/>
+        <action name="findCheckoutItemsASPB" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <!-- End Version Control Menu -->
+        <!-- Begin Clipboard Control Menu -->
+        <action name="clipboardGroupAPSB" type="apsb">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="upstreamPartCutAPSB" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="upstreamPartCopyAPSB" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="upstreamPasteAPSB" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <!-- End Clipboard Control Menu -->
+        <!-- Begin Viewing Control Menu -->
+        <action name="viewingGroupAPSB" type="apsb">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="asbViewInfoInNewWindowGWT" type="asb" >
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+          <action name="separator" type="separator"/>
+        <action name="toggleUpstreamEquivelenceOccurrenceStatusActionASBGWT" type="asb">
+            <ribbonInfo buttonType="check"  buttonScale="small"/>
+        </action>
+          <action name="separator" type="separator"/>
+        <action name="emphasizeSelectionASB" type="asb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="clearEmphasizeASB" type="asb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="separator" type="separator"/>
+        <action name="expandSubmenuAPSB" type="apsb">
+            <ribbonInfo buttonType="submenu" />
+        </action>
+        <action name="expandOneLevelGWT" type="cat" >
+        <ribbonInfo buttonType="submenuitem" />
+        </action>
+        <action name="expandTwoLevelsGWT" type="cat" >
+            <ribbonInfo buttonType="submenuitem" />
+        </action>
+        <action name="expandThreeLevelsGWT" type="cat" >
+            <ribbonInfo buttonType="submenuitem" />
+        </action>
+        <action name="expandFourLevelsGWT" type="cat" >
+            <ribbonInfo buttonType="submenuitem" />
+        </action>
+        <action name="expandFiveLevelsGWT" type="cat" >
+            <ribbonInfo buttonType="submenuitem" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="expandAllSelectedLevelsGWT" type="cat" >
+            <ribbonInfo buttonType="submenuitem" />
+        </action>
+        <action name="expandNLevelsGWT" type="cat" >
+            <ribbonInfo buttonType="submenuitem" />
+        </action>
+        <action name="endExpandSubmenuAPSB" type="apsb">
+            <ribbonInfo buttonType="endsubmenu" />
+        </action>
+        <action name="separator" type="separator"/>
+        <action name="relatedObjectsGWT" type="asb" >
+            <ribbonInfo buttonType="menuitem"/>
+        </action>
+        <!-- End Viewing Control Menu -->
+        <!-- Begin New/Add Control Menu -->
+        <action name="newAddGroupAPSB" type="apsb">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="newDownstreamBranchUpstreamVersionAPSB" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="newDownstreamPartUpstreamVersionAPSB" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="separator" type="separator"/>
+        <action name="newViewSpecificEnterpriseDataAPSB" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="separator" type="separator"/>
+        <action name="addToBaselineGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="newPromotionRequestGWT" type="psb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="setStateActionGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <!-- End New/Add Control Menu -->
+        <!-- Begin Filter Menu -->
+        <action name="filterGroupASB" type="asb">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="baseWTPartInfoFilterAction" type="baseclient">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="setAPSBPathFilterGWT" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="disablePathFilterGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="partEditFilterAction" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="baseWTPartSaveFilterAction" type="baseclient">
+            <ribbonInfo buttonType="custommenu" buttonScale="small" />
+        </action>
+        <!-- End Filter Menu -->
+        <!-- Begin Tools Control Menu -->
+        <action name="toolsGroupAPSB" type="apsb">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="openPartAsUpstreamBOMActionAPSB" type="apsb">
+            <ribbonInfo buttonType="menuitem"/>
+        </action>
+        <action name="openInProductViewGWT" type="apsb">
+            <ribbonInfo buttonType="menuitem"/>
+        </action>
+        <action name="separator" type="separator"/>
+        <action name="selectEquivalentPartsAPSB" type="apsb">
+            <ribbonInfo buttonType="menuitem"/>
+        </action>
+        <action name="selectEquivalentOccurrencesGWT" type="asb">
+            <ribbonInfo buttonType="menuitem"/>
+        </action>
+        <action name="selectNonEquivalentOccurrencesGWT" type="asb">
+            <ribbonInfo buttonType="menuitem"/>
+        </action>
+        <action name="separator" type="separator"/>
+        <action name="updateDistributionTargetGWT" type="mapsb">
+            <ribbonInfo buttonType="menuitem"/>
+        </action>
+        <action name="sendToDistributionTargetGWT" type="mapsb">
+            <ribbonInfo buttonType="menuitem"/>
+        </action>
+        <action name="sendEnterpriseDataToDistributionTargetGWT" type="mapsb">
+            <ribbonInfo buttonType="menuitem"/>
+        </action>
+        <!-- End Tools Control Menu -->
+        <action name="refreshASBGWT" type="asb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+    </model>
+
+    <model name="mapsbDownstreamSideToolBar">
+        <!-- Begin Editing Group -->
+        <action name="editingGroupASB" type="asb">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="insertExistingAPSBPartTreeGWT" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="insertPartStructureAPSB" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="insertMultiPartStructureAPSB" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="separator" type="separator"/>
+        <action name="duplicatePartMAPSB" type="mapsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+	   <action name="extendDownstreamBranchDownstreamVersionAPSB" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="replacePartDownstreamVersionAPSB" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="removePartsAPSB" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="removeAllEquivalenceLinkMAPSB" type="mapsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="removeViewSpecificEnterpriseDataASB" type="asb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="separator" type="separator"/>
+        <action name="splitUsageLink" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="separator" type="separator"/>
+        <action name="updateAlternateBOM" type="asb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="separator" type="separator"/>
+        <action name="assignOccurrencesOptionalityAPSBGWT" type="apsb">
+			<ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="assignItemOptionalityAPSBGWT" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+		<action name="mpmViewAssignedOccurrencesExpressionGWT" type="baseclient" >
+            <ribbonInfo buttonType="menuitem" />
+        </action>	
+        <action name="mpmViewAssignedExpressionGWT" type="baseclient" >
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="mpmCopyAssignedExpressionGWT" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>  		
+		<action name="mpmCopyAssignedOccurrencesExpressionGWT" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="separator" type="separator"/>
+        <action name="updateEquivalenceLinkASB" type="asb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="editPartAPSB" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="editCommonAttrsGWT" type="psb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <!-- End Editing Group -->
+
+        <!-- Begin Version Control Menu -->
+        <action name="versionControlGroupASB" type="asb">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="asbCheckoutGWT" type="asb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="asbCheckinGWT" type="asb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="asbUndoCheckoutGWT" type="asb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="separator" type="separator"/>
+        <action name="findCheckoutItemsASPB" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="separator" type="separator"/>
+        <action name="reviseWithCurrentLinkASB" type="asb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <!-- End Version Control Menu -->
+        <!-- Begin Clipboard Control Menu -->
+        <action name="clipboardGroupAPSB" type="apsb">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="downstreamPartCutAPSB" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="downstreamPartCopyAPSB" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="pasteAsIsAPSB" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="separator" type="separator"/>
+        <action name="pasteAsNewBranchAPSB" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="pasteAsNewPartAPSB" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <!-- End Clipboard Control Menu -->
+        <!-- Begin Viewing Control Menu -->
+        <action name="viewingGroupAPSB" type="apsb">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="asbViewInfoInNewWindowGWT" type="asb" >
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+	<action name="separator" type="separator"/>
+        <action name="updateEquivalenceOccurrenceStatusASB" type="asb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+	<action name="separator" type="separator"/>
+        <action name="emphasizeSelectionASB" type="asb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="clearEmphasizeASB" type="asb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="separator" type="separator"/>
+        <action name="expandSubmenuAPSB" type="apsb">
+            <ribbonInfo buttonType="submenu" />
+        </action>
+        <action name="expandOneLevelGWT" type="cat" >
+            <ribbonInfo buttonType="submenuitem" />
+        </action>
+        <action name="expandTwoLevelsGWT" type="cat" >
+            <ribbonInfo buttonType="submenuitem" />
+        </action>
+        <action name="expandThreeLevelsGWT" type="cat" >
+            <ribbonInfo buttonType="submenuitem" />
+        </action>
+        <action name="expandFourLevelsGWT" type="cat" >
+            <ribbonInfo buttonType="submenuitem" />
+        </action>
+        <action name="expandFiveLevelsGWT" type="cat" >
+            <ribbonInfo buttonType="submenuitem" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="expandAllSelectedLevelsGWT" type="cat" >
+            <ribbonInfo buttonType="submenuitem" />
+        </action>
+        <action name="expandNLevelsGWT" type="cat" >
+            <ribbonInfo buttonType="submenuitem" />
+        </action>
+        <action name="endExpandSubmenuAPSB" type="apsb">
+            <ribbonInfo buttonType="endsubmenu" />
+        </action>
+        <action name="separator" type="separator"/>
+        <action name="relatedObjectsGWT" type="asb" >
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <!-- End Viewing Control Menu -->
+        <!-- Begin New/Add Control Menu -->
+        <action name="newAddGroupAPSB" type="apsb">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="newAlternateBOMDownstreamVersionAPSB" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="newBranchDownstreamVersionAPSB" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="newDownstreamBranchDownstreamVersionAPSB" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="newDownstreamPartDownstreamVersionAPSB" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="separator" type="separator"/>
+        <action name="newViewSpecificEnterpriseDataAPSB" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="separator" type="separator"/>
+        <action name="addToBaselineGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="newPromotionRequestGWT" type="psb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="setStateActionGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <!-- End New/Add Control Menu -->
+        <!-- Begin Filter Menu -->
+        <action name="filterGroupASB" type="asb">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="baseWTPartInfoFilterAction" type="baseclient">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="setAPSBPathFilterGWT" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="disablePathFilterGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="partEditFilterAction" type="apsb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="baseWTPartSaveFilterAction" type="baseclient">
+            <ribbonInfo buttonType="custommenu" />
+        </action>
+        <!-- End Filter Menu -->
+        <!-- Begin Tools Control Menu -->
+        <action name="toolsGroupAPSB" type="apsb">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="openPartAsDownstreamBOMActionAPSB" type="apsb">
+            <ribbonInfo buttonType="menuitem"/>
+        </action>
+        <action name="openInProductViewGWT" type="apsb">
+            <ribbonInfo buttonType="menuitem"/>
+        </action>
+        <action name="separator" type="separator"/>
+        <action name="selectEquivalentPartsAPSB" type="apsb">
+            <ribbonInfo buttonType="menuitem"/>
+        </action>
+      <action name="selectEquivalentOccurrencesGWT" type="asb">
+            <ribbonInfo buttonType="menuitem"/>
+        </action>
+        <action name="selectNonEquivalentOccurrencesGWT" type="asb">
+            <ribbonInfo buttonType="menuitem"/>
+        </action>
+        <action name="separator" type="separator"/>
+        <action name="updateDistributionTargetGWT" type="mapsb">
+            <ribbonInfo buttonType="menuitem"/>
+        </action>
+        <action name="sendToDistributionTargetGWT" type="mapsb">
+            <ribbonInfo buttonType="menuitem"/>
+        </action>
+        <action name="sendEnterpriseDataToDistributionTargetGWT" type="mapsb">
+            <ribbonInfo buttonType="menuitem"/>
+        </action>
+        <!-- End Tools Control Menu -->
+        <action name="refreshASBGWT" type="asb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+    </model>
+
+    <!-- ******* Context Menu Definitions ******* -->
+    
+    <model name="mapsbUpstreamSideTreeContextMenu">
+        <action name="asbViewInfoInNewWindowGWT" type="asb" />
+        <action name="openInProductViewGWT" type="apsb" />
+        <action name="selectEquivalentPartsAPSB" type="apsb"/>
+        <action name="selectEquivalentOccurrencesGWT" type="asb"/>
+        <action name="selectNonEquivalentOccurrencesGWT" type="asb"/>
+        <action name="separator" type="separator"/>
+        <action name="upstreamPartCutAPSB" type="apsb"/>
+        <action name="upstreamPartCopyAPSB" type="apsb"/>
+        <action name="upstreamPasteAPSB" type="apsb"/>
+        <action name="removePartsAPSB" type="apsb"/>
+        <action name="removeViewSpecificEnterpriseDataASB" type="asb"/>
+        <action name="separator" type="separator"/>
+        <action name="newDownstreamBranchUpstreamVersionAPSB" type="apsb"/>
+        <action name="newDownstreamPartUpstreamVersionAPSB" type="apsb"/>
+        <action name="separator" type="separator"/>
+        <action name="duplicatePartMAPSB" type="mapsb"/>
+        <action name="separator" type="separator"/>
+        <submodel name="apsbCheckOutInContextSubMenu"/>
+        <action name="separator" type="separator"/>
+        <submodel name="insertSubMenuUpstreamMAPSB"/>
+        <submodel name="editingSubMenuUpstreamMAPSB"/>
+        <action name="separator" type="separator"/>
+        <submodel name="apsbExpandContextSubmenuGWT"/>
+        <action name="showDefaultRelatedObjectsGWT" type="asb" />
+    </model>
+
+    <model name="mapsbDownstreamSideTreeContextMenu">
+        <action name="asbViewInfoInNewWindowGWT" type="asb" />
+        <action name="openInProductViewGWT" type="apsb" />
+        <action name="selectEquivalentPartsAPSB" type="apsb"/>
+        <action name="selectEquivalentOccurrencesGWT" type="asb"/>
+        <action name="selectNonEquivalentOccurrencesGWT" type="asb"/>
+        <action name="separator" type="separator"/>
+        <action name="reviseWithCurrentLinkASB" type="asb"/>
+        <action name="updateEquivalenceLinkASB" type="asb"/>
+        <action name="separator" type="separator"/>
+        <action name="downstreamPartCutAPSB" type="apsb"/>
+        <action name="downstreamPartCopyAPSB" type="apsb"/>
+        <action name="pasteAsIsAPSB" type="apsb"/>
+        <action name="pasteAsNewBranchAPSB" type="apsb"/>
+        <action name="pasteAsNewPartAPSB" type="apsb"/>
+        <action name="removePartsAPSB" type="apsb"/>
+        <action name="removeViewSpecificEnterpriseDataASB" type="asb"/>
+        <action name="separator" type="separator"/>
+        <action name="newDownstreamBranchDownstreamVersionAPSB" type="apsb"/>
+        <action name="newDownstreamPartDownstreamVersionAPSB" type="apsb"/>
+        <action name="separator" type="separator"/>
+        <action name="duplicatePartMAPSB" type="mapsb"/>
+        <action name="replacePartDownstreamVersionAPSB" type="apsb"/>
+        <action name="separator" type="separator"/>
+        <submodel name="apsbCheckOutInContextSubMenu"/>
+        <action name="separator" type="separator"/>
+        <submodel name="insertSubMenuDownstreamMAPSB"/>
+        <submodel name="editingSubMenuDownstreamMAPSB"/>
+        <action name="separator" type="separator"/>
+        <submodel name="apsbExpandContextSubmenuGWT"/>
+        <action name="showDefaultRelatedObjectsGWT" type="asb" />
+    </model>
+    <model name="showHideInfoSubMenuMAPSB">
+        
+    </model>
+    <model name="versionControlSubMenuMAPSB" resourceBundle="com.ptc.windchill.enterprise.associativity.part.mpml.mapsb.mapsbActionsRB">
+        <action name="asbCheckoutGWT" type="asb"/>
+        <action name="asbCheckinGWT" type="asb"/>
+        <action name="asbUndoCheckoutGWT" type="asb"/>
+        <action name="separator" type="separator"/>
+        <action name="findCheckoutItemsASPB" type="apsb"/>
+        <action name="separator" type="separator"/>
+        <action name="addToBaselineGWT" type="cat"/>
+        <action name="setStateActionGWT" type="baseclient"/>
+    </model>
+
+    <model name="editingSubMenuUpstreamMAPSB" resourceBundle="com.ptc.windchill.enterprise.associativity.part.mpml.mapsb.mapsbActionsRB">
+        <action name="updateAlternateBOM" type="asb"/>
+        <action name="separator" type="separator"/>
+        <action name="assignOccurrencesOptionalityAPSBGWT" type="apsb"/>
+        <action name="assignItemOptionalityAPSBGWT" type="apsb"/>
+        <action name="mpmViewAssignedOccurrencesExpressionGWT" type="baseclient" />    	
+        <action name="mpmViewAssignedExpressionGWT" type="baseclient" />      
+        <action name="mpmCopyAssignedExpressionGWT" type="apsb"/>
+		<action name="mpmCopyAssignedOccurrencesExpressionGWT" type="apsb"/>  
+        <action name="separator" type="separator"/>
+        <action name="editPartAPSB" type="apsb"/>
+        <action name="editCommonAttrsGWT" type="psb"/>
+    </model>
+
+    <model name="insertSubMenuUpstreamMAPSB" resourceBundle="com.ptc.windchill.enterprise.associativity.part.mpml.mapsb.mapsbActionsRB">
+        <action name="insertExistingAPSBPartTreeGWT" type="apsb"/>
+        <action name="insertPartStructureAPSB" type="apsb"/>
+        <action name="insertMultiPartStructureAPSB" type="apsb"/>
+        <action name="newViewSpecificEnterpriseDataAPSB" type="apsb"/>
+    </model>
+    
+    <model name="newSubMenuUpstreamMAPSB" resourceBundle="com.ptc.windchill.enterprise.associativity.part.mpml.mapsb.mapsbActionsRB">
+        <action name="newDownstreamBranchUpstreamVersionAPSB" type="apsb"/>
+        <action name="newDownstreamPartUpstreamVersionAPSB" type="apsb"/>
+        <action name="newPromotionRequestGWT" type="psb"/>
+    </model>
+
+    <model name="insertSubMenuDownstreamMAPSB" resourceBundle="com.ptc.windchill.enterprise.associativity.part.mpml.mapsb.mapsbActionsRB">
+        <action name="insertExistingAPSBPartTreeGWT" type="apsb"/>
+        <action name="insertPartStructureAPSB" type="apsb"/>
+        <action name="insertMultiPartStructureAPSB" type="apsb"/>
+        <action name="newViewSpecificEnterpriseDataAPSB" type="apsb"/>
+    </model>
+
+    <model name="editingSubMenuDownstreamMAPSB" resourceBundle="com.ptc.windchill.enterprise.associativity.part.mpml.mapsb.mapsbActionsRB">
+        <action name="updateAlternateBOM" type="asb"/>
+        <action name="separator" type="separator"/>
+        <action name="assignOccurrencesOptionalityAPSBGWT" type="apsb"/>
+        <action name="assignItemOptionalityAPSBGWT" type="apsb"/>
+        <action name="mpmViewAssignedOccurrencesExpressionGWT" type="baseclient" />    	
+        <action name="mpmViewAssignedExpressionGWT" type="baseclient" />      
+        <action name="mpmCopyAssignedExpressionGWT" type="apsb"/>
+		<action name="mpmCopyAssignedOccurrencesExpressionGWT" type="apsb"/>  
+        <action name="separator" type="separator"/>
+        <action name="editPartAPSB" type="apsb"/>
+        <action name="editCommonAttrsGWT" type="psb"/>
+    </model>
+
+    <model name="newSubMenuDownstreamMAPSB" resourceBundle="com.ptc.windchill.enterprise.associativity.part.mpml.mapsb.mapsbActionsRB">
+        <action name="newAlternateBOMDownstreamVersionAPSB" type="apsb"/>
+        <action name="newBranchDownstreamVersionAPSB" type="apsb"/>
+        <action name="newDownstreamBranchDownstreamVersionAPSB" type="apsb"/>
+        <action name="newDownstreamPartDownstreamVersionAPSB" type="apsb"/>
+    </model>
+
+    <!-- ******* Visualization Tool Bar Definitions ******* -->
+
+    <model name="mapsbUpstreamSideVizToolBar">
+        <action name="zoomAllGWT" type="cat">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="zoomSelectedGWT" type="cat">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="setSpinCenterGWT" type="cat">
+            <ribbonInfo buttonType="toggle" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="vizUpstreamOptionRenderGWT" type="asb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="defaultOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="iso1OrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="iso2OrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="topOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="bottomOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="leftOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="rightOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="frontOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="backOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="toggleAutoSelectionGWT" type="cat">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="toggleAutoSelectionFromStructToVIZGWT" type="cat">
+            <ribbonInfo buttonType="check" buttonScale="small" />
+        </action>
+        <action name="toggleAutoSelectionFromVIZToStructGWT" type="cat">
+            <ribbonInfo buttonType="check" buttonScale="small" />
+        </action>
+        <action name="setVizPathFilterGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="disablePathFilterVizGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="selectModeGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="defaultRenderModeGWT" type="baseclient">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="shadedRenderModeGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="shadedWithEdgesRenderModeGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="hiddenLineRemovalGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="wireframeRenderModeGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="meshRenderModeGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="hideInstanceGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="isolateSelectedGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="showAllInstancesGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="translateModeGWT" type="baseclient">
+            <ribbonInfo buttonType="toggle" buttonScale="small" />
+        </action>
+        <action name="rotateModeGWT" type="baseclient">
+            <ribbonInfo buttonType="toggle" buttonScale="small" />
+        </action>
+        <action name="restoreAllSplitGWT" type="baseclient">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="restoreAllGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="resetInstanceGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="defaultAssignExpressionGroupAPSB" type="apsb">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="assignExpressionToOccurrenceGWT" type="apsb">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="assignExpressionToUsageGWT" type="apsb">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="vizCopyActionASB" type="asb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+    </model>
+
+    <model name="mapsbDownstreamSideVizToolBar">
+        <action name="zoomAllGWT" type="cat">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="zoomSelectedGWT" type="cat">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="setSpinCenterGWT" type="cat">
+            <ribbonInfo buttonType="toggle" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="vizDownstreamOptionRenderGWT" type="asb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="defaultOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="iso1OrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="iso2OrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="topOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="bottomOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="leftOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="rightOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="frontOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="backOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="toggleAutoSelectionGWT" type="cat">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="toggleAutoSelectionFromStructToVIZGWT" type="cat">
+            <ribbonInfo buttonType="check" buttonScale="small" />
+        </action>
+        <action name="toggleAutoSelectionFromVIZToStructGWT" type="cat">
+            <ribbonInfo buttonType="check" buttonScale="small" />
+        </action>
+        <action name="setVizPathFilterGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="disablePathFilterVizGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="selectModeGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="defaultRenderModeGWT" type="baseclient">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="shadedRenderModeGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="shadedWithEdgesRenderModeGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="hiddenLineRemovalGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="wireframeRenderModeGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="meshRenderModeGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="hideInstanceGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="isolateSelectedGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="showAllInstancesGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="translateModeGWT" type="baseclient">
+            <ribbonInfo buttonType="toggle" buttonScale="small" />
+        </action>
+        <action name="rotateModeGWT" type="baseclient">
+            <ribbonInfo buttonType="toggle" buttonScale="small" />
+        </action>
+        <action name="restoreAllSplitGWT" type="baseclient">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="restoreAllGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="resetInstanceGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="defaultAssignExpressionGroupAPSB" type="apsb">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="assignExpressionToOccurrenceGWT" type="apsb">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="assignExpressionToUsageGWT" type="apsb">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+    </model>
+
+    <!-- ******* Other Definitions ******* -->
+
+    <model name="mapsbMiddleToolBar">
+        <action name="apsbOpenReconciliationPanelGWT" type="apsb"/>
+        <action name="createEquivalenceLinkASB" type="asb"/>
+        <action name="updateEquivalencyAPSB" type="apsb"/>
+        <action name="updateQuantityGWT" type="apsb"/>
+        <action name="updatePosition" type="apsb"/>
+        <action name="updateStructureAssociativityAPSB" type="apsb"/>
+        <action name="apsbDisplayOccurrencesGWT" type="apsb"/>
+        <action name="apsbNewDownstreamBranchVariant" type="apsb"/>
+        <action name="apsbNewDownstreamPartVariant" type="apsb"/>
+        <!-- <action name="bomReconciliationAPSB" type="apsb"/> -->
+    </model>
+
+    <model name="mapsbUpstreamEqPartsToolBar">
+        <action name="openEquivalentPartOnUpstreamSide" type="apsb"/>
+        <action name="removeEquivalenceLinkASB" type="asb"/>
+    </model>
+    
+    <model name="mapsbUpstreamEqPartsContextMenu">
+        <action name="openEquivalentPartOnUpstreamSide" type="apsb"/>
+    </model>
+
+    <model name="mapsbUpstreamOutdatedEquivalanceToolBar">
+        <action name="openEquivalentPartOnUpstreamSide" type="apsb"/>
+    </model>
+
+    <model name="mapsbUpstreamOutdatedEquivalanceContextMenu">
+        <action name="openEquivalentPartOnUpstreamSide" type="apsb"/>
+    </model>
+
+    <model name="mapsbDownstreamEqPartsToolBar">
+        <action name="openEquivalentPartOnDownstreamSide" type="apsb"/>
+    </model>
+    
+    <model name="mapsbDownstreamEqPartsContextMenu">
+        <action name="openEquivalentPartOnDownstreamSide" type="apsb"/>
+    </model>
+
+    <model name="mapsbDownstreamOutdatedEquivalenceToolBar">
+        <action name="openEquivalentPartOnDownstreamSide" type="apsb"/>
+    </model>
+    
+    <model name="mapsbDownstreamOutdatedEquivalenceContextMenu">
+        <action name="openEquivalentPartOnDownstreamSide" type="apsb"/>
+    </model>
+
+    <!-- action model for MAPSB describes table [start] -->
+    <model name="mapsbDescribesContextMenu">
+        <action name="removeAPSBDescDocGWT" type="apsb" />
+    </model>
+
+    <model name="mapsbDescribesToolBar">
+        <action name="insertExistingAPSBDescDocGWT" type="apsb" />
+        <action name="insertNewMAPSBDescDocGWT" type="mapsb" />
+        <action name="removeAPSBDescDocGWT" type="apsb" />
+    </model>
+    <!-- action model MAPSB describes table [end] -->
+
+    <!--  action model for MAPSB reference documents table [start]-->
+    <model name="mapsbReferencesContextMenu">
+        <action name="removeAPSBRefDocGWT" type="apsb" />
+    </model>
+
+    <model name="mapsbReferencesToolBar">
+        <action name="insertExistingAPSBRefDocGWT" type="apsb" />
+        <action name="insertNewMAPSBRefDocGWT" type="mapsb" />
+        <action name="removeAPSBRefDocGWT" type="apsb" />
+    </model>
+    <!--  action model MAPSB reference documents table  [end]-->
+
+    <!--  action model for MAPSB EPM documents table [start]-->
+    <model name="mapsbEpmContextMenu">
+        <action name="removeAPSBEPMDocGWT" type="apsb" />
+    </model>
+
+    <model name="mapsbEpmToolBar">
+        <action name="insertExistingAPSBEPMDocGWT" type="apsb" />
+        <action name="removeAPSBEPMDocGWT" type="apsb" />
+    </model>
+    <!--  action model MAPSB EPM documents table  [end]-->
+    <!--  action model for MAPSB Uses tab [start]-->
+
+    <model name="mapsbUsesContextMenu">
+       <action name="removeAPSBChildPartGWT" type="apsb" />
+       <action name="assignOptionalityAPSBGWT" type="apsb" />
+       <action name="mpmViewAssignedUsesExpressionGWT" type="baseclient" />
+	   <action name="copyAssignedUsesExpressionGWT" type="expressionAssignable" /> 
+    </model>
+    <model name="mapsbUsesToolBar">
+       <action name="insertExistingAPSBPartUsesGWT" type="apsb"/>
+        <action name="insertNewAPSBPartUsesGWT" type="mapsb"/>
+       <action name="removeAPSBChildPartGWT" type="apsb" />
+       <action name="separator" type="separator" />
+    </model>
+    <model name="mapsbIndicatorActionModel">
+    </model>
+
+    <!--  action model for MAPSB Uses tab [End]-->
+
+    <!-- action model for MAPSB Process Plan tab [start] -->
+    <model name="mapsbProcessPlanContextMenu">
+        <action name="asbViewInfoInNewWindowGWT" type="asb"/>
+        <action name="separator" type="separator"/>
+        <action name="removeMASPBProcessPlanGWT" type="mapsb"/>
+    </model>
+    <model name="mapsbProcessPlanToolBar">
+        <action name="insertExistingMAPSBProcessPlanGWT" type="mapsb"/>
+        <action name="insertNewMAPSBProcessPlanGWT" type="mapsb"/>
+        <action name="removeMASPBProcessPlanGWT" type="mapsb"/>
+    </model>
+    <!-- action model for MAPSB Process Plan tab [end] -->
+
+    <!-- action model for MAPSB Alternate BOM tab [start] -->
+    <model name="mapsbUpstreamAlternateBOMContextMenu">
+        <action name="asbViewInfoInNewWindowGWT" type="asb"/>
+        <action name="separator" type="separator"/>
+        <action name="openUpstreamPartInSameSideTree" type="apsb"/>
+    </model>
+    <model name="mapsbUpstreamAlternateBOMToolBar">
+        <action name="openUpstreamPartInSameSideTree" type="apsb"/>
+    </model>
+    <model name="mapsbDownstreamAlternateBOMContextMenu">
+        <action name="asbViewInfoInNewWindowGWT" type="asb"/>
+        <action name="separator" type="separator"/>
+        <action name="openDownstreamPartInSameSideTree" type="apsb"/>
+    </model>
+    <model name="mapsbDownstreamAlternateBOMToolBar">
+        <action name="openDownstreamPartInSameSideTree" type="apsb"/>
+        <action name="newAlternateBOMDownstreamTableVersionAPSB" type="apsb"/>
+    </model>
+    <!-- action model for MAPSB Alternate BOM tab [end] -->
+    <model name="mapsbMPMStandardCCToolBar">
+        <action name="insertExistingMPMStandardCCGWT" type="mapsb"/>
+        <action name="insertNewMPMStandardCCGWT" type="mapsb"/>
+        <action name="removeMPMStandardCCGWT" type="mapsb" />
+        <action name="copyToWindchillGWT" type="mapsb" />
+        <action name="pasteSCCFromClipboardToTableGWT" type="mapsb"/>
+    </model>
+</actionmodels>

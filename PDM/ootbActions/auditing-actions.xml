@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+   <objecttype name="principalpicker">
+      <action name="principalInfoPage">
+         <command class="com.ptc.windchill.enterprise.picker.principal.PrincipalCommands" method="getInfoPageUrlSelectedPrincipal"/>
+      </action>
+   </objecttype>
+   <objecttype name="site">
+      <action name="auditReports" resourceBundle="com.ptc.core.auditing.auditingResource">
+         <command windowType="page"/>
+      </action>
+   </objecttype>
+   <objecttype name="auditing" resourceBundle="com.ptc.core.auditing.auditingResource">
+      <action name="list" enabledwhensuspended="true">
+         <command windowType="page"/>
+      </action>
+      <action name="auditCriteria" enabledwhensuspended="true">
+         <command windowType="page"/>
+      </action>
+      <action name="purgeManager" enabledwhensuspended="true">
+		  <component name="auditing.purgeManager" windowType="page"/>
+      </action>
+      <action name="reportQueriesList" enabledwhensuspended="true">
+         <component name="auditing.reportQueries" windowType="page"/>
+      </action>
+      <action name="reportQueriesListSchedule" enabledwhensuspended="true">
+         <component name="auditing.reportQueries" windowType="page"/>
+      </action>      
+      <action name="auditReportGenerator">
+         <command class="" method="" windowType="new"/>
+      </action>
+      <action name="deleteReportQueryInfo" selectRequired="true" multiselect="true">
+         <command class="com.ptc.core.auditing.commands.AuditingCommands" method="deleteReportQueryInfo" onClick="JCAConfirm(event, 'com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE')"/>
+      </action>
+      <action name="export">
+         <command class="" method="" windowType="new" onClick="PTC.auditing.generateReport(event)"/>
+      </action>
+      <action name="exportReportQuery">
+         <command class="" method="execute" windowType="popup"/>
+      </action>
+      <action name="exportReportQueryStep1" id="exportReportQueryStep1" required="true" afterJS="PTC.auditing.exportCheckFields" beforeJS="PTC.auditing.exportOnLoad">
+         <command windowType="wizard_step"/>
+      </action>
+      <action name="scheduleReportQuery" ajax="component">
+         <command class="com.ptc.core.auditing.forms.ScheduleReportFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="scheduleReportQueryStep1" id="scheduleReportQueryStep1" required="true" selectRequired="true" afterJS="PTC.auditing.scheduleCheckFields" beforeJS="PTC.auditing.scheduleOnLoad">
+         <command windowType="wizard_step"/>
+      </action> 
+      <!--change ajax to component to force the table get refreshed after canceling a schedule-->    
+      <action name="cancelReportQuerySchedule" ajax="component">
+         <command class="com.ptc.core.auditing.commands.AuditingCommands" method="cancelSchedule"/>
+      </action>   
+      <action name="licenseCountChangeHistoryMenu">
+         <command class="com.ptc.core.auditing.commands.AuditingCommands" method="showLicenseCountChangeHistory"/>
+      </action>
+      <action name="licenseCountChangeHistory">
+		<component name="auditing.licenseCountChangeHistory" windowType="page"/>
+      </action>
+      <action name="editLicenseCount" multiselect="false" ajax="page" selectRequired="false">
+         <command class="com.ptc.core.auditing.forms.EditLicenseCountFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="editLicenseCountStep1" id="editLicenseCountStep1" required="true" afterJS="PTC.auditing.editCheckFields" beforeJS="PTC.auditing.editOnLoad">
+         <command windowType="wizard_step"/>
+      </action>   
+      <action name="licenseUsage" multiselect="false" ajax="page">
+         <command url="/app/#ptc1/tcomp/infoPage?typeIdForTypeLookup=com.ptc.core.auditing.mvc.builders.UsageInfoPage" windowType="page" />
+      </action>
+      <action name="usage">
+         <command url="/app/#ptc1/tcomp/infoPage?typeIdForTypeLookup=com.ptc.core.auditing.mvc.builders.UsageInfoPage" windowType="page" />
+      </action>
+      <action name="usage_reporting">
+         <command url="netmarkets/jsp/auditing/usage.jsp" windowType="page" />
+      </action>
+      <action name="license_usage_reporting">
+         <command url="netmarkets/jsp/auditing/licenseUsage.jsp" windowType="page" />
+      </action>
+      <action name="view_print_license_reporting">
+        <component name="auditing.viewPrintLicenseUsage" windowType="page"/>
+      </action>
+      <action name="view_print_member_size">
+         <description>Find the total member count of the View Print License Group</description>
+         <command class="com.ptc.core.auditing.commands.AuditingCommands" method="viewPrintMemberSize"/>
+      </action>
+      <action name="organizationUsage" multiselect="false" ajax="page">
+        <component name="auditing.organizationUsage" windowType="page"/>
+      </action> 
+      <action name="exportLicenseUsageReport">
+         <command class="com.ptc.core.auditing.forms.NoRefreshFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="exportLicenseUsageReportStep1" id="exportLicenseUsageReportStep1" required="true" afterJS="PTC.auditing.exportLicenseCheckFields" beforeJS="PTC.auditing.exportLicenseOnLoad">
+         <command windowType="wizard_step"/>
+      </action>
+      <action name="viewLicenseUsageDrillDown" ajax="page">
+         <component name="auditing.licenseUsageDrillDown" windowType="page"/>
+      </action>
+      <action name="viewUsageDrillDown" ajax="page">
+         <component name="auditing.usageDrillDown" windowType="page"/>
+      </action>
+      <action name="viewOrganizationUsageDrillDown" ajax="page">
+        <component name="auditing.organizationUsageDrillDown" windowType="page"/>
+      </action>
+      <action name="editReportDistribution" multiselect="false">
+         <command class="com.ptc.core.auditing.forms.EditReportDistributionFormProcessor" method="execute" windowType="popup"/>
+		 <includeFilter name="auditActionsForSiteAdminFilter"/>
+      </action>     
+      <action name="editReportDistributionStep1" id="editReportDistributionStep1" required="true" afterJS="PTC.auditing.editReportCheckFields" beforeJS="PTC.auditing.editReportOnLoad">
+         <command windowType="wizard_step"/>
+      </action>
+      <action name="auditReportProcessor">
+         <command windowType="new" onClick="PTC.auditing.previewReport(event)"/>
+      </action>
+      <action name="saveQuery">
+         <command class="com.ptc.core.auditing.forms.SaveReportQueryFormProcessor" method="execute" windowType="new" onClick="PTC.auditing.saveReportQuery(event)"/>
+      </action>
+      <action name="saveQueryStep" afterJS="PTC.auditing.saveProcessInput" beforeJS="PTC.auditing.saveOnLoad">
+         <command class="" windowType="wizard_step"/>
+      </action>
+      <action name="eventPicker">
+         <command class="" method="eventPicker" windowType="popup"/>
+      </action>
+      <action name="eventPickerStep" afterJS="PTC.auditing.eventProcessInput" beforeJS="PTC.auditing.eventOnLoad">
+         <command class="" windowType="wizard_step"/>
+      </action>
+      <action name="prodAttrPicker">
+         <command class="" method="prodAttrPicker" windowType="new"/>
+      </action>
+      <action name="prodAttrPickerStep" afterJS="PTC.auditing.prodProcessInput" beforeJS="PTC.auditing.prodOnLoad">
+         <command class="" windowType="wizard_step"/>
+      </action>      
+      <action name="purgeAuditLog" ajax="row" multiselect="false">
+         <command class="com.ptc.core.auditing.forms.PurgeAuditLogFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="purgeAuditLogStep1" id="purgeAuditLogStep1" required="true" afterJS="PTC.auditing.purgeCheckFields" beforeJS="PTC.auditing.purgeOnLoad">
+         <command windowType="wizard_step"/>
+      </action>     
+      <action name="cancelRMIRequest">
+         <command onClick="cancelAuditRequest()"/>
+      </action>
+      <action name="closeAuditWindow">
+         <command windowType="no_content" onClick="window.close()"/>
+      </action>
+      
+      <action name="importable_zip_licenses_reporting">
+        <command url="netmarkets/jsp/auditing/importablePackageLicenses.jsp" windowType="page" />
+      </action>
+      <action name="importable_zip_licenses_group_size">
+         <description>Find the total member count of the Importable Zip License Group</description>
+         <command class="com.ptc.core.auditing.commands.AuditingCommands" method="getImportablePackageLicenseGroupSize"/>
+      </action>      
+   </objecttype>
+</listofactions>

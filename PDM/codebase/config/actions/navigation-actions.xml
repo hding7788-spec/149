@@ -1,0 +1,688 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+    <objecttype name="navigation" class="" resourceBundle="com.ptc.core.ui.navigationRB">
+        <action name="recentContexts">
+            <includeFilter name="SYFLValidator"/>
+        </action>
+
+        <action name="program">
+            <includeFilter name="SYFLValidator"/>
+        </action>
+
+        <action name="product">
+            <includeFilter name="SYFLValidator"/>
+        </action>
+
+        <action name="project">
+            <includeFilter name="SYFLValidator"/>
+        </action>
+
+        <action name="library">
+            <includeFilter name="SYFLValidator"/>
+        </action>
+
+        <action name="change">
+            <includeFilter name="SYFLValidator"/>
+        </action>
+
+        <action name="clfAdmin">
+        </action>
+
+        <action name="site">
+            <includeFilter name="hideNonSiteOrAgreementAdmin"/>
+        </action>
+
+        <action name="org">
+            <includeFilter name="hideNonOrganizationOrAgreementAdmin"/>
+        </action>
+
+        <action name="supplier">
+            <includeFilter name="SYFLValidator"/>
+        </action>
+
+        <action name="product.list">
+            <component name="netmarkets.product.list" windowType="page"/>
+        </action>
+
+        <action name="project.list">
+            <component name="netmarkets.project.list.table" windowType="page"/>
+        </action>
+
+        <action name="program.list">
+            <component name="netmarkets.program.list.table" windowType="page"/>
+        </action>
+
+        <action name="library.list">
+            <component name="netmarkets.library.list" windowType="page"/>
+        </action>
+
+        <action name="org.list">
+            <command class="netmarkets" url="org/list" windowType="page"/>
+        </action>
+
+        <action name="search">
+            <includeFilter name="SYFLValidator"/>
+        </action>
+ 	<action name="reportList"/>
+		<action name="liuchengzhuangtai">
+		    <command url="netmarkets/jsp/ext/casc/report/liuchengzhuangtai.jsp" windowType="new" />
+            <includeFilter name="SYFLValidator"/>
+		</action>
+		<action name="gongyirenwu">
+		    <command url="netmarkets/jsp/ext/casc/report/gongyirenwu.jsp" windowType="new" />
+            <includeFilter name="SYFLValidator"/>
+		</action>
+		<action name="FGYSJLGYRW">
+		    <command url="netmarkets/jsp/ext/casc/report/feigongyirenwu.jsp" windowType="new" />
+            <includeFilter name="SYFLValidator"/>
+		</action>
+		<action name="GYWDHZ">
+		    <command url="netmarkets/jsp/ext/casc/report/gywdhz.jsp" windowType="new" />
+            <includeFilter name="SYFLValidator"/>
+		</action>
+		<action name="cldejh">
+		    <command url="netmarkets/jsp/ext/casc/report/cldejh.jsp" windowType="new" />
+            <includeFilter name="SYFLValidator"/>
+		</action>
+
+		<action name="yinyongsophuizong">
+		    <command url="netmarkets/jsp/ext/casc/sop/report/yinyongsop.jsp" windowType="new" />
+
+		</action>
+		<action name="sopyijvwenjianhuizong">
+		    <command url="netmarkets/jsp/ext/casc/sop/report/yijvwenjian.jsp" windowType="new" />
+
+		</action>
+		
+        <action name="myStuff">
+            <!--component name="carambola.mvc.widget" windowType="page"/-->
+            <command url="app/#ptc1/util/myStuffPage" windowType="page"/>
+        </action>
+
+        <action name="gatheringSpaces">
+            <component name="gatheringSpace.objects.mini" windowType="page"/>
+        </action>
+
+        <action name="myStuffTab">
+            <command url="ptc1/myStuff"/>
+            <label>My Stuff</label>
+        </action>
+
+        <action name="queryGongShiState">
+            <command url="netmarkets/jsp/ext/casc/gongshidinge/queryGongShiState.jsp" windowType="new" />
+        </action>
+
+    </objecttype>
+
+    <objecttype name="user" class="wt.org.WTUser" resourceBundle="com.ptc.core.ui.navigationRB">
+        <action name="reports" enabledwhensuspended="true" uicomponent="HOME_REPORTS">
+            <component windowType="page" name="reporting.home.listReports.savedReports"/>
+        </action>
+
+        <action name="savedReports" enabledwhensuspended="true" uicomponent="HOME_SAVED_REPORTS">
+            <component windowType="page" name="reporting.listReports.savedReports"/>
+        </action>
+
+        <action name="dataMonitors" enabledwhensuspended="true" uicomponent="HOME_DATA_MONITORS">
+            <component windowType="page" name="netmarkets.datamonitor.list"/>
+        </action>
+
+        <action name="hotList" enabledwhensuspended="true" uicomponent="HOT_LINK">
+            <component name="netmarkets.notebookfolder.userNotebook" windowType="page"/>
+        </action>
+
+        <action name="listCheckedOutWork" enabledwhensuspended="true" uicomponent="HOME_CHECKED_OUT_WORK">
+            <component windowType="page" name="checkedout.work.table"/>
+        </action>
+
+        <action name="userNotebook" enabledwhensuspended="true" uicomponent="HOME_NOTEBOOK">
+            <component name="netmarkets.notebookfolder.userNotebook" windowType="page"/>
+            <includeFilter name="hideForNonContainerAccess"/>
+        </action>
+
+        <action name="profile" enabledwhensuspended="true" uicomponent="HOME_UTILITIES">
+            <component name="profile" windowType="page"/>
+        </action>
+
+        <action name="preferences" enabledwhensuspended="true" uicomponent="HOME_UTILITIES">
+            <component name="preference.tree" windowType="page"/>
+        </action>
+
+        <action name="calendarmanagement" enabledwhensuspended="true" uicomponent="CALENDAR">
+            <command url="/netmarkets/jsp/calender/calenderMgmt.jsp" windowType="new"/>
+        </action>
+
+        <action name="actionGroup" >
+            <component name="component.actionGroup" windowType="page"/>
+            <includeFilter name="actionGroupAccessFilter"/>
+            <!-- configure filters to hide when there are no applicable action groups for the user -->
+            <!--
+            <includeFilter name="qmsInstalledFilter"/>
+            <includeFilter name="qmsAccessFilter"/>
+             -->
+        </action>
+    </objecttype>
+
+    <objecttype name="ccr" class="" resourceBundle="com.ptc.core.ui.navigationRB">
+    	<action name="proConfig" >
+            <command url="/netmarkets/jsp/ext/glaway/mpm/startConsCheckRecordFrame.jsp?type=PRO" windowType="popup" />
+    	</action>
+    	<action name="tableConfig" >
+            <command url="/netmarkets/jsp/ext/glaway/mpm/startConsCheckRecordFrame.jsp?type=TABLE" windowType="popup" />
+    	</action>
+    </objecttype>
+
+    <objecttype name="itf" class="" resourceBundle="com.ptc.core.ui.navigationRB">
+    	<action name="printApply" >
+    		<command url="/netmarkets/jsp/ext/glaway/mpm/startFilePrintFrame.jsp?type=WJDYSQ" windowType="popup" />
+    	</action>
+    	<action name="sealPlus" >
+    		<command url="/netmarkets/jsp/ext/glaway/mpm/startFilePrintFrame.jsp?type=JGYZGL" windowType="popup"/>
+<!--     		<includeFilter name="PrintRuleValidator" /> -->
+    	</action>
+    	<action name="fileRecycling" ><!--add by lkc 2018.02.09  厂内文件的回收-->
+    		<command url="/netmarkets/jsp/ext/glaway/mpm/startFilePrintFrame.jsp?type=CNWJZXFQHS" windowType="popup"/>
+<!--     		<includeFilter name="RecoverRuleOfRoleValidator" /> -->
+			<includeFilter name="PrintRuleValidator" />
+    	</action>
+    	<action name="fileInstore" ><!--add by lkc 2018.02.09  厂内文件的入库-->
+    		<command url="/netmarkets/jsp/ext/glaway/mpm/startFilePrintFrame.jsp?type=WJRK" windowType="popup"/>
+<!--     		<includeFilter name="RecoverRuleOfRoleValidator" /> -->
+			<includeFilter name="PrintRuleValidator" />
+    	</action>
+    	<action name="fileSafekeeping" ><!--add by lkc 2018.02.09  厂内文件的封存-->
+    		<command url="/netmarkets/jsp/ext/glaway/mpm/startFilePrintFrame.jsp?type=CNWJFC" windowType="popup"/>
+    	<!--<includeFilter name="RecoverRuleOfRoleValidator" />  -->
+    	</action>
+        <action name="fileTransfer" >
+            <command url="/netmarkets/jsp/ext/glaway/mpm/startFilePrintFrame.jsp?type=GYWJZY" windowType="popup" />
+            <includeFilter name="PrintRuleValidator" />
+        </action>
+    	<action name="historyInsideTechFileImport" > <!--add by lkc 2018.02.09  厂内文件的导入-->
+			<!--   <command class="com.glaway.mpm.print.util.InsideFileImport" method="importToDB"  onClick="JCAConfirm(&apos;com.glaway.mpm.print.resource.PrintManagerRB.INSIDEIMPORT&apos;)"/> -->
+			 <command class="com.glaway.mpm.print.util.InsideFileImport" url="netmarkets/jsp/ext/casc/printImport/importInsideFileInfo.jsp" method="execute" windowType="popup"/>
+    	</action>
+    	<action name="historyInsideTechFileImport_step">
+			<command url="netmarkets/jsp/ext/casc/printImport/importInsideFileInfo_step.jsp" windowType="wizard_step"/>
+    	</action>
+    	<action name="outFilePrintApply" >
+    		<command url="/netmarkets/jsp/ext/glaway/mpm/startFilePrintFrame.jsp?type=WJDYSQ_WL" windowType="popup" />
+    	</action>
+    	<action name="outFileSealPlus" >
+    		<command url="/netmarkets/jsp/ext/glaway/mpm/startFilePrintFrame.jsp?type=JGYZGL_WL" windowType="popup" />
+    	</action>
+    	<action name="outFileRecycling"><!-- add by lkc 2018.02.11 外来文件的回收 -->
+    		<command url="/netmarkets/jsp/ext/glaway/mpm/startFilePrintFrame.jsp?type=CNWJZXFQHS_WL" windowType="popup"/>
+    	</action>
+    	<action name="outFileInstore" >
+    		<command url="/netmarkets/jsp/ext/glaway/mpm/startFilePrintFrame.jsp?type=WJRK_WL" windowType="popup"/>
+    	</action>
+    	<action name="outFileSafekeeping" ><!-- add by lkc 2018.02.11 外来文件的封存-->
+    		<command url="/netmarkets/jsp/ext/glaway/mpm/startFilePrintFrame.jsp?type=CNWJFC_WL" windowType="popup"/>
+    	</action>
+    	 <action name="historyOutsideFileImport" >
+			 <command class="com.glaway.mpm.print.util.OutsideFileImport" url="netmarkets/jsp/ext/casc/printImport/importOutsideFileInfo.jsp" method="execute" windowType="popup"/>
+    	</action>
+		<action name="historyOutsideFileImport_step">
+			<command url="netmarkets/jsp/ext/casc/printImport/importOutsideFileInfo_step.jsp" windowType="wizard_step"/>
+    	</action>
+    	 <action name="paperFileRecycling"><!-- add by lkc 2018.02.11厂内纸质文件的回收 -->
+    		<command url="/netmarkets/jsp/ext/glaway/mpm/startFilePrintFrame.jsp?type=CNWJZXFQHS_ZZ" windowType="popup"/>
+    	</action>
+    	<action name="paperFileInstore" >
+    		<command url="/netmarkets/jsp/ext/glaway/mpm/startFilePrintFrame.jsp?type=WJRK_ZZ" windowType="popup"/>
+    	</action>
+    	<action name="paperFileSafekeeping" ><!-- add by lkc 2018.02.11 厂内纸质文件的封存-->
+    		<command url="/netmarkets/jsp/ext/glaway/mpm/startFilePrintFrame.jsp?type=CNWJFC_ZZ" windowType="popup"/>
+    	</action>
+    	<action name="outsideFileEntry">
+    		<command url="/netmarkets/jsp/ext/glaway/mpm/startFilePrintFrame.jsp?type=WLWJLR" windowType="popup"/>
+    	</action>
+    	<action name="insidePaperFileEntry">
+			<command url="/netmarkets/jsp/ext/glaway/mpm/startFilePrintFrame.jsp?type=WLWJLR_ZZ" windowType="popup"/>
+    	</action>
+    	<action name="insidePaperFileprintApply">
+    		<command url="/netmarkets/jsp/ext/glaway/mpm/startFilePrintFrame.jsp?type=WJDYSQ_ZZ" windowType="popup"/>
+    	</action>
+    	<action name="paperFileSealPlus">
+    		<command url="/netmarkets/jsp/ext/glaway/mpm/startFilePrintFrame.jsp?type=JGYZGL_ZZ" windowType="popup"/>
+    	</action>
+    </objecttype>
+
+	 <objecttype name="object" class="" resourceBundle="com.ptc.core.ui.navigationRB">
+	 <action name="sealManager" >
+     	<command url="/netmarkets/jsp/ext/glaway/mpm/startFilePrintFrame.jsp?type=YZGL" windowType="popup"/>
+<!--        	<includeFilter name="RecoverRuleOfRoleValidator" /> -->
+		<includeFilter name="PrintRuleValidator" />
+     </action> <!-- add by lkc 2017.12.05 -->
+     <action name="filePrintRecordQuery">
+      	<command url="/netmarkets/jsp/ext/glaway/mpm/startFilePrintFrame.jsp?type=DYFFJLCX" windowType="popup"/>
+     </action><!-- add by lkc 2017.12.11 -->
+	 <action name="fileReprint" >
+    	<command url="/netmarkets/jsp/ext/glaway/mpm/technicChange/startFilePrint.jsp?type=WJCXDY" windowType="popup" />
+     </action>
+     <action name="fileOffSetApply" >
+    		<command url="/netmarkets/jsp/ext/glaway/mpm/startFilePrintFrame.jsp?type=WJBDSQ" windowType="popup" />
+    	</action>
+     <action name="fileBarCodeQuery" >
+    	<command url="/netmarkets/jsp/ext/glaway/mpm/startFilePrintFrame.jsp?type=WJTMCX" windowType="popup" />
+     </action>
+	 </objecttype>
+    <objecttype name="netmarkets" class="" resourceBundle="com.ptc.core.ui.navigationRB">
+        <action name="homepage" enabledwhensuspended="true">
+            <command url="/ptc1/homepage"/>
+        </action>
+
+        <action name="globalSearch" enabledwhensuspended="true" renderType="GENERAL">
+            <command class="netmarkets" method="wtcore/jsp/com/ptc/windchill/search/Search.jsp" url="wtcore/jsp/com/ptc/windchill/search/Search.jsp" windowType="page"/>
+        </action>
+        <action name="classificationSearch" enabledwhensuspended="true" renderType="GENERAL">
+            <command class="netmarkets" method="netmarkets/jsp/websearch/start.jsp" url="netmarkets/jsp/websearch/start.jsp" windowType="page"/>
+        </action>
+
+        <action name="VISUALIZATION_COLLECTION" enabledwhensuspended="true" renderType="PDM">
+            <command method="VISUALIZATION_COLLECTION" windowType="popup"/>
+        </action>
+
+    </objecttype>
+
+    <objecttype name="help" class="" resourceBundle="com.ptc.core.ui.navigationRB">
+      <action name="accessibility">
+         <command windowType="new"/>
+      </action>
+
+      <action name="searchAll">
+         <command windowType="new"/>
+      </action>
+
+      <action name="about">
+          <command url="/netmarkets/jsp/util/about.jsp" windowType="new"/>
+      </action>
+
+      <action name="contactPubs">
+          <command window="new" onClick="PTC.help.contactPubs()"/>
+      </action>
+
+      <action name="support" enabledwhensuspended="true">
+          <command url="http://www.ptc.com/support/windchill.htm" windowType="new"/>
+      </action>
+
+      <action name="communities" >
+          <command url="http://communities.ptc.com/community/more_communities/windchill" windowType="new" />
+      </action>
+
+      <action name="helpCenter" enabledwhensuspended="true">
+          <command onClick="PTC.action.openHelpOverview()"/>
+      </action>
+
+      <action name="welcome" >
+          <command url="/netmarkets/jsp/netmarkets/welcomepage.jsp" windowType="new" />
+      </action>
+
+      <action name="quickstart" >
+          <command url="http://support.ptc.com/view?im_dbkey=171531" windowType="new" />
+      </action>
+
+      <action name="whatsnew" >
+          <command url="http://www.ptc.com/appserver/wcms/relnotes/index.jsp?show=y&amp;product=37" windowType="new" />
+      </action>
+
+      <action name="openLearningConnector">
+          <command window="new" onClick="PTC.learningConnector.open()"/>
+      </action>
+
+   </objecttype>
+
+    <objecttype name="product" class="wt.pdmlink.PDMLinkProduct" resourceBundle="com.ptc.core.ui.navigationRB">
+        <action name="info" uicomponent="PROJECT_DETAILS">
+            <component name="wt.pdmlink.PDMLinkProduct.infoPage" windowType="page"/>
+        </action>
+        <action name="listFiles">
+            <command class="product" method="listFiles" windowType="page"/>
+        </action>
+
+        <action name="list">
+            <command class="" method="list" windowType="page"/>
+        </action>
+
+        <action name="listTeam" uicomponent="PROJECT_TEAM">
+            <command class="product" method="listTeam" windowType="page"/>
+        </action>
+
+        <action name="listTemplates" uicomponent="PROJECT_TEMPLATES">
+            <component name="netmarkets.product.listTemplates" windowType="page"/>
+        </action>
+
+        <action name="listUtilities">
+            <command class="product" method="listUtilities" windowType="page"/>
+        </action>
+
+        <action name="reports">
+            <component name="reporting.product.listReports" windowType="page" />
+        </action>
+
+        <action name="structureSubTab" uicomponent="PRODUCT_STRUCTURE">
+            <command windowType="page"/>
+        </action>
+
+    </objecttype>
+
+    <objecttype name="library" class="wt.inf.library.WTLibrary" resourceBundle="com.ptc.core.ui.navigationRB">
+    <action name="info" uicomponent="PROJECT_DETAILS">
+       <component name="wt.inf.library.WTLibrary.infoPage" windowType="page"/>
+    </action>
+        <action name="listFiles">
+            <command class="library" method="listFiles" windowType="page"/>
+        </action>
+
+        <action name="list">
+            <command class="" method="list" windowType="page"/>
+        </action>
+
+        <action name="listTeam" uicomponent="PROJECT_TEAM">
+            <command class="library" method="listTeam" windowType="page"/>
+        </action>
+
+        <action name="listTemplates" uicomponent="PROJECT_TEMPLATES">
+            <component name="netmarkets.library.listTemplates" windowType="page"/>
+        </action>
+
+        <action name="listUtilities">
+            <command class="library" method="listUtilities" windowType="page"/>
+        </action>
+
+        <action name="reports">
+            <component name="reporting.library.listReports" windowType="page" />
+        </action>
+    </objecttype>
+
+    <objecttype name="change" class="wt.change2.ChangeItem" resourceBundle="com.ptc.core.ui.navigationRB">
+        <action name="list">
+           <component name="change.problemReports" windowType="page"/>
+        </action>
+
+        <action name="listChangeRequests">
+            <component name="change.changeRequests" windowType="page"/>
+        </action>
+
+        <action name="listChangeNotices">
+           <component name="change.changeNotices" windowType="page"/>
+        </action>
+
+        <action name="listVariances">
+            <component name="change.variances" windowType="page"/>
+        </action>
+
+        <action name="changeMonitor" uicomponent="CHANGE_MONITOR_SUB_TAB">
+            <command method="changeMonitor" windowType="page"/>
+        </action>
+
+        <action name="reports">
+            <component name="reporting.change.listReports" windowType="page" />
+        </action>
+    </objecttype>
+
+    <objecttype name="project" resourceBundle="com.ptc.core.ui.navigationRB">
+        <action name="list" enabledwhensuspended="true">
+            <command class="project" method="list" windowType="page"/>
+        </action>
+
+        <action name="listTeam" uicomponent="PROJECT_TEAM">
+            <command class="com.ptc.netmarkets.project.NmProjectCommands" method="listTeam" windowType="page"/>
+        </action>
+
+        <action name="listProjectResource" enabledwhensuspended="true" uicomponent="PROJECT_RESOURCES">
+            <command class="project" method="listProjectResource" windowType="page"/>
+        </action>
+
+        <action name="listFiles" enabledwhensuspended="true">
+            <command class="project" method="listFiles" windowType="page"/>
+        </action>
+
+        <action name="details" enabledwhensuspended="true" uicomponent="PROJECT_DETAILS">
+            <command class="project" method="details" windowType="page"/>
+        </action>
+
+        <action name="projectMonitor" enabledwhensuspended="true" uicomponent="monitor" installType="PJL">
+            <command class="project" method="projectMonitor" windowType="page"/>
+        </action>
+
+        <action name="reports" enabledwhensuspended="true" uicomponent="PROJECT_REPORTS">
+            <component name="reporting.project.listReports" windowType="page" />
+        </action>
+
+        <action name="view_forum" enabledwhensuspended="true" uicomponent="PROJECT_FORUM">
+            <component name="netmarkets.forum.discussion" windowType="page"/>
+        </action>
+
+        <action name="view_plan" enabledwhensuspended="true" uicomponent="PROJECT_PLAN">
+            <command class="project" method="view_plan" windowType="page"/>
+        </action>
+
+        <action name="view_plans" enabledwhensuspended="true" uicomponent="PROJECT_PLAN">
+            <component name="projectmanagement.plan.plansTable" windowType="page"/>
+        </action>
+
+        <action name="listUtilities">
+            <command class="project" method="listUtilities" windowType="page"/>
+        </action>
+
+        <action name="listTemplates" enabledwhensuspended="true" uicomponent="PROJECT_TEMPLATES">
+            <component name="netmarkets.project.listTemplates" windowType="page"/>
+        </action>
+
+        <action name="listChangeObjects">
+            <component name="project.changeObjects" windowType="page"/>
+        </action>
+    </objecttype>
+
+    <objecttype name="program" resourceBundle="com.ptc.core.ui.navigationRB">
+        <action name="list" enabledwhensuspended="true">
+            <command class="program" method="list" windowType="page"/>
+        </action>
+                <action name="listTemplates" enabledwhensuspended="true" uicomponent="PROGRAM_TEMPLATES">
+            <component name="netmarkets.program.listTemplates" windowType="page"/>
+        </action>
+    </objecttype>
+
+    <objecttype name="agreements" resourceBundle="com.ptc.core.ui.navigationRB">
+        <action name="listAgreements">
+            <command windowType="page"/>
+            <includeFilter name="SYFLValidator"/>
+        </action>
+    </objecttype>
+
+    <objecttype name="network" class="" resourceBundle="com.ptc.core.ui.navigationRB">
+          <action name="listNetwork" enabledwhensuspended="true" uicomponent="VIEW_NETWORK_PAGE">
+                <command windowType="page"/>
+          </action>
+    </objecttype>
+
+    <objecttype name="org" class="wt.inf.container.OrgContainer" resourceBundle="com.ptc.core.ui.navigationRB">
+        <action name="details" enabledwhensuspended="true" uicomponent="ORG_DETAIL">
+            <component name="wt.inf.container.OrgContainer.infoPage" windowType="page"/>
+            <includeFilter name="hideNonOrganizationAdmin"/>
+            <includeFilter name="SYFLValidator"/>
+        </action>
+
+        <action name="listFiles" enabledwhensuspended="true" uicomponent="ORG_LISTFILE">
+            <command windowType="page"/>
+            <includeFilter name="hideNonOrganizationAdmin"/>
+            <includeFilter name="SYFLValidator"/>
+        </action>
+
+        <action name="listOrgGroups" enabledwhensuspended="true" uicomponent="ORG_LISTGROUP">
+            <component name="principalAdmin.org.listOrgGroups" windowType="page"/>
+            <includeFilter name="SYFLValidator"/>
+            <includeFilter name="hideNonOrganizationAdmin"/>
+        </action>
+
+        <action name="listOrgTeams" enabledwhensuspended="true" uicomponent="ORG_LISTTEAM">
+            <component name="principalAdmin.org.listOrgTeams" windowType="page"/>
+            <includeFilter name="SYFLValidator"/>
+            <includeFilter name="hideNonOrganizationAdmin"/>
+        </action>
+
+        <action name="listOrgRoles" enabledwhensuspended="true" uicomponent="ORG_LISTROLE">
+            <component name="principalAdmin.org.listOrgRoles" windowType="page"/>
+            <includeFilter name="SYFLValidator"/>
+            <includeFilter name="hideNonOrganizationAdmin"/>
+        </action>
+
+        <action name="listTypes" enabledwhensuspended="true" uicomponent="ORG_LISTTYPE">
+            <command windowType="page"/>
+            <includeFilter name="SYFLValidator"/>
+            <includeFilter name="hideNonOrganizationAdmin"/>
+        </action>
+
+        <action name="listProfiles" enabledwhensuspended="true" uicomponent="ORG_LISTPROFILE">
+            <component name="roleAccess.org.listProfiles" windowType="page"/>
+            <includeFilter name="SYFLValidator"/>
+            <includeFilter name="hideNonOrganizationAdmin"/>
+        </action>
+
+        <action name="listTemplates" enabledwhensuspended="true" uicomponent="ORG_LISTTEMPLATE">
+            <component name="netmarkets.org.listTemplates" windowType="page"/>
+            <includeFilter name="SYFLValidator"/>
+            <includeFilter name="hideNonOrganizationAdmin"/>
+        </action>
+
+        <action name="listOrgProjects" enabledwhensuspended="true" uicomponent="ORG_LISTPROJECT">
+            <component name="reporting.org.reportsProjects" windowType="page" />
+            <includeFilter name="SYFLValidator"/>
+            <includeFilter name="hideNonOrganizationAdmin"/>
+        </action>
+
+        <action name="listOrgAdmin" enabledwhensuspended="true" uicomponent="ORG_LISTADMIN">
+             <component name="principalAdmin.org.listAdmins" windowType="page"/>
+            <includeFilter name="SYFLValidator"/>
+            <includeFilter name="hideNonOrganizationAdmin"/>
+        </action>
+
+        <action name="listCreators" enabledwhensuspended="true" uicomponent="ORG_LISTCREATOR">
+            <component name="principalAdmin.org.listCreators"/>
+            <includeFilter name="SYFLValidator"/>
+            <includeFilter name="hideNonOrganizationAdmin"/>
+        </action>
+
+        <action name="listUtilities" uicomponent="ORG_LISTUTIL">
+            <command class="org" method="listUtilities" windowType="page"/>
+            <includeFilter name="hideNonOrganizationAdmin"/>
+        </action>
+
+        <action name="listOrgs" enabledwhensuspended="true" uicomponent="ORG_LISTORG">
+            <component name="principalAdmin.org.listOrgs" windowType="page"/>
+            <includeFilter name="SYFLValidator"/>
+            <includeFilter name="hideNonOrganizationAdmin"/>
+        </action>
+
+    </objecttype>
+
+    <objecttype name="site" class="wt.inf.container.ExchangeContainer" resourceBundle="com.ptc.core.ui.navigationRB">
+        <action name="view" enabledwhensuspended="true">
+            <command windowType="page"/>
+            <includeFilter name="SYFLValidator"/>
+            <includeFilter name="hideNonSiteAdmin"/>
+        </action>
+
+        <action name="listFiles" enabledwhensuspended="true">
+            <command windowType="page"/>
+            <includeFilter name="SYFLValidator"/>
+            <includeFilter name="hideNonSiteAdmin"/>
+        </action>
+
+        <action name="listAdmin" enabledwhensuspended="true">
+            <component name="principalAdmin.site.listAdmins" windowType="page"/>
+            <includeFilter name="SYFLValidator"/>
+            <includeFilter name="hideNonSiteAdmin"/>
+        </action>
+
+        <action name="listProfiles" enabledwhensuspended="true">
+            <component name="roleAccess.site.listProfiles" windowType="page"/>
+            <includeFilter name="SYFLValidator"/>
+            <includeFilter name="hideNonSiteAdmin"/>
+        </action>
+
+        <action name="listTypes" enabledwhensuspended="true">
+            <command windowType="page"/>
+            <includeFilter name="SYFLValidator"/>
+            <includeFilter name="hideNonSiteAdmin"/>
+        </action>
+        <action name="listTemplates" enabledwhensuspended="true">
+            <component name="netmarkets.site.listTemplates" windowType="page"/>
+            <includeFilter name="SYFLValidator"/>
+            <includeFilter name="hideNonSiteAdmin"/>
+        </action>
+
+        <action name="listUtilities" enabledwhensuspended="true">
+            <command windowType="page"/>
+            <includeFilter name="hideNonSiteAdmin"/>
+        </action>
+
+        <action name="reports" enabledwhensuspended="true">
+            <component name="reporting.site.listReports" windowType="page" />
+            <includeFilter name="SYFLValidator"/>
+            <includeFilter name="hideNonSiteAdmin"/>
+        </action>
+    </objecttype>
+
+        <objecttype name="csm" resourceBundle="com.ptc.core.ui.navigationRB">
+                <action name="clfAdminGroup">
+                        <component name="clfAdmin.listAdmins" windowType="page"/>
+                        <includeFilter name="hideNonSiteAdmin"/>
+                </action>
+                <action name="manageClassification" uicomponent="CLASSIFICATION_ADMIN">
+                        <command url="javascript:PTC.csm.launchCSMWindow()"/>
+                </action>
+        </objecttype>
+
+    <objecttype name="work" class="wt.workflow.work.WorkItem" resourceBundle="com.ptc.core.ui.navigationRB">
+        <action name="listAssignments" enabledwhensuspended="true" uicomponent="HOME_ASSIGNMENTS">
+            <component windowType="page" name="home.assignments"/>
+        </action>
+
+        <action name="listProjectAssignments" enabledwhensuspended="true" uicomponent="PROJECT_ASSIGNMENTS">
+            <component windowType="page" name="project.assignments"/>
+        </action>
+
+        <action name="listProductAssignments" enabledwhensuspended="true" uicomponent="PROJECT_ASSIGNMENTS">
+            <component windowType="page" name="netmarkets.product.assignments.list"/>
+        </action>
+
+        <action name="listLibraryAssignments" enabledwhensuspended="true" uicomponent="PROJECT_ASSIGNMENTS">
+           <component windowType="page" name="netmarkets.library.assignments.list"/>
+        </action>
+    </objecttype>
+
+    <objecttype name="meeting" class="wt.meeting.Meeting" resourceBundle="com.ptc.core.ui.navigationRB">
+        <action name="list" enabledwhensuspended="true" uicomponent="PROJECT_MEETINGS">
+            <command class="com.ptc.netmarkets.meeting.NmMeetingCommands" method="list" windowType="page"/>
+        </action>
+
+        <action name="list_mine" enabledwhensuspended="true" uicomponent="HOME_MEETINGS">
+            <command windowType="page"/>
+        </action>
+    </objecttype>
+
+    <objecttype name="report" class="com.ptc.netmarkets.report.NmReportTemplate" resourceBundle="com.ptc.core.ui.navigationRB">
+        <action name="listUpdates" enabledwhensuspended="true">
+            <component windowType="page" name="recent.updates.table"/>
+        </action>
+    </objecttype>
+
+    <objecttype name="workspaces" class="" resourceBundle="com.ptc.core.ui.navigationRB">
+        <action name="MyWorkspace" enabledwhensuspended="true">
+            <command windowType="page"/>
+        </action>
+    </objecttype>
+
+    <objecttype name="navigation" resourceBundle="com.ptc.core.ui.navigationRB">
+      <action name="miniNavWidgets">
+          <command onClick="PTC.miniNavigator.showWidgetPane(event, target)"/>
+      </action>
+      <action name="miniNavThumbPane">
+          <command onClick="PTC.miniNavigator.showNavPane(event, target)"/>
+      </action>
+   </objecttype>
+</listofactions>

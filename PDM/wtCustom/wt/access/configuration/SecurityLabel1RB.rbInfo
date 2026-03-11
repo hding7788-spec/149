@@ -1,0 +1,37 @@
+﻿ResourceInfo.class=wt.tools.resource.EnumResourceInfo
+ResourceInfo.customizable=true
+ResourceInfo.deprecated=false
+
+
+# Entry Format (values equal to default value are not included)
+# <key>.value=
+# <key>.category=
+# <key>.comment=
+# <key>.argComment<n>=
+# <key>.constant=
+# <key>.customizable=
+# <key>.deprecated=
+# <key>.abbreviatedDisplay=
+# <key>.fullDisplay=
+# <key>.shortDescription=
+# <key>.longDescription=
+# <key>.order=
+# <key>.defaultValue=
+# <key>.selectable=
+
+# Entry Contents
+
+NULL.value=GONGKAI
+NULL.shortDescription=GONGKAI
+
+NEIBU.value=NEIBU
+NEIBU.shortDescription=NEIBU
+
+MIMI.value=MIMI
+MIMI.shortDescription=MIMI
+
+JIMI.value=JIMI
+JIMI.shortDescription=JIMI
+
+MIJI.value=密级
+MIJI.shortDescription=密级

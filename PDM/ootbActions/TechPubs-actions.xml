@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+   <objecttype name="techPubs" class="wt.fc.Persistable" resourceBundle="com.ptc.arbortext.windchill.techpubs.ui.techPubsActionsRB">
+      
+      <!-- create Arbortext Document Template -->
+      <action name="createArbortextDocTemplate">
+         <command  class="com.ptc.arbortext.windchill.techpubs.template.CreateArbortextDocTemplateFormProcessor"
+            method="execute" url="netmarkets/jsp/techPubs/template/createTemplate.jsp"
+            windowType="popup"/>
+      </action>
+      
+      <!-- delete Arbortext Document Template -->
+      <action name="deleteArbortextDocTemplate" ajax="row" uicomponent="DELETE" ajaxActionClass="netmarkets/jsp/object/delete.jsp?refresh=true">
+         <command class="com.ptc.netmarkets.model.NmObjectCommands" method="delete" onClick="JCAConfirm(event,'com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE')"/>
+         <includeFilter name="hideFromNonAgreementMgrs"/>
+         <includeFilter name="disableDeleteManagedCollection"/>
+      </action>
+      
+      <!-- create Arbortext Document Template (New Version)  -->
+      <action name="createDynamicDocumentTemplate">
+         <command  class="com.ptc.arbortext.windchill.techpubs.doc.forms.CreateDynamicDocumentTemplateFormProcessor"
+            method="execute" url="netmarkets/jsp/techPubs/caddocument/createDynamicDocumentTemplate.jsp?useHierachicalTypeListInPicker=true&amp;skipRequiredFieldValidation=true"
+            windowType="popup"/>
+      </action>
+      
+      <action name="createDynamicDocumentTemplateSetAttributesStep" id="createDynamicDocumentTemplateSetAttributesStep" preloadWizardPage="false"  required="true" afterJS="validateDuplicateName" afterVK="setAttributesWizStep">
+         <command windowType="wizard_step" url="servlet/TypeBasedIncludeServlet?contextAction=createDynamicDocumentTemplateSetAttributesStep"/>
+     </action>
+      
+     <action name="createArbortextDocTemplateWizStep" preloadWizardPage="false" required="true" afterJS="validateTemplate">
+        <command url="netmarkets/jsp/techPubs/template/createArbortextDocTemplateStep.jsp" 
+                          windowType="wizard_step"/>
+     </action>
+     
+     <!-- create Arbortext Document from a template -->
+     <action name="createArbortextDoc">
+        <command class="com.ptc.arbortext.windchill.techpubs.doc.CreateArbortextDocFormProcessor" method="execute" windowType="popup"
+               url="netmarkets/jsp/techPubs/doc/createArbortextDoc.jsp"></command>
+     </action>
+     <action name="defineArbortextDocStep">
+        <command url="netmarkets/jsp/techPubs/doc/defineArbortextDocWizStep.jsp" windowType="wizard_step"/>
+     </action>
+	 
+	<action name="createTextualInformationElement">
+		<command method="execute" windowType="popup"
+			class="com.ptc.arbortext.windchill.techpubs.doc.forms.CreateDynamicDocumentFormProcessor"
+			url="netmarkets/jsp/techPubs/doc/createDynamicDocument?createEPMDocumentType=GRAPHICS&amp;dialogTypeId=text&amp;invokedFromContext=techPubs&amp;url=null"/>
+	</action>
+
+	<action name="createGraphicInformationElement">
+		<command method="execute" windowType="popup"
+			class="com.ptc.arbortext.windchill.techpubs.doc.forms.CreateDynamicDocumentFormProcessor"
+			url="netmarkets/jsp/techPubs/doc/createDynamicDocument?createEPMDocumentType=GRAPHICS&amp;dialogTypeId=graphic&amp;invokedFromContext=techPubs&amp;url=null"/>
+	</action>
+	
+	<action name="createPartListInformationElement" checkaccess="true" uicomponent="CREATE_PARTS_LIST">
+		<command method="execute" windowType="popup"
+			class="com.ptc.arbortext.windchill.partlist.forms.CreatePartListInASPSFormProcessor"
+			url="netmarkets/jsp/techPubs/doc/createDynamicDocument?createEPMDocumentType=GRAPHICS&amp;dialogTypeId=partslist&amp;invokedFromContext=techPubs&amp;url=null"/>
+	</action>
+	
+	 <action name="info_elt_step" id="info_elt_step" preloadWizardPage="false" required="false">
+            <component name="infoEltStep.step"/>
+     </action>
+
+     <!-- New Rep Wizard Actions -->
+     <action name="publishRepresentation" resourceBundle="com.ptc.arbortext.windchill.techpubs.newrep.NewRepResource">
+        <command class="com.ptc.arbortext.windchill.techpubs.newrep.forms.NewRepFormProcessor"
+                 method="execute"
+                 windowType="popup" 
+                 url="netmarkets/jsp/techPubs/newrep/newRepWizard.jsp"/>
+     </action>
+     
+     <action name="newRepDefinitionStep" resourceBundle="com.ptc.arbortext.windchill.techpubs.newrep.NewRepResource" afterVK="newRepDefinitionStepValidator" required="false">
+        <command windowType="wizard_step" url="netmarkets/jsp/techPubs/newrep/newRepDefinitionStep.jsp"/>
+     </action>
+     
+     <action name="newRepConfigurationStep" resourceBundle="com.ptc.arbortext.windchill.techpubs.newrep.NewRepResource" afterVK="newRepConfigurationStepValidator" required="false">
+        <command windowType="wizard_step" url="netmarkets/jsp/techPubs/newrep/newRepConfigurationStep.jsp"/>
+     </action>
+     
+     <action name="submitPublishJob" id="submitPublish" resourceBundle="com.ptc.arbortext.windchill.techpubs.newrep.NewRepResource">
+        <command class="" method="" windowType="page" url="javascript:onSubmit()" />
+     </action>
+     
+     <!-- View Representations action -->
+     <action name="viewRepresentations">
+       <command url="/app/#ptc1/tcomp/infoPage?tabAction=representationsTab_arbortextDoc&amp;tabType=object"
+                windowType="page"
+       />
+     </action>
+    
+     <!-- Action to display Parts Lists tables on Related Objects tab --> 
+     <action name="docRelatedPartsLists"/>
+
+     <action name="insertButton" id="DD_wizard_Add" resourceBundle="com.ptc.arbortext.windchill.techpubs.ui.techPubsActionsRB">
+        <command class="" method="" windowType="page" url="javascript:onCreateDDApply()" />
+     </action>
+
+   </objecttype>
+   
+</listofactions>

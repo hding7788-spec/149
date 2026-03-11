@@ -1,0 +1,288 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+
+<!-- define the actions on the UI components -->
+<actionmodels>
+ <model name="lwctype table actions">
+  <action name="deleteType" type="lwcType" />
+ </model>
+
+ <model name="lwctype row actions">
+  <action name="typeInfo" type="lwcType" />
+  <action name="deleteType" type="lwcType" />
+  <action name="editType" type="lwcType" />
+ </model>
+
+ <model name="lwcattribute table actions">
+  <action name="createAttribute" type="lwcType" shortcut="true" />
+  <action name="deleteAttribute" type="lwcType" shortcut="true" />
+ </model>
+
+ <model name="lwcvisibility table actions">
+  <action name="createAttribute" type="lwcType" />
+  <action name="deleteAttribute" type="lwcType" />
+ </model>
+
+ <model name="lwcavailableentries table actions">
+  <action name="createEntry" type="lwcType" />
+  <action name="deleteEntry" type="lwcType" />
+ </model>
+
+ <model name="lwcremovedentries table actions">
+  <action name="deleteEntry" type="lwcType" />
+ </model>
+
+ <model name="LightboxButtonsNoApply">
+  <action name="okButton" type="object" />
+  <action name="cancelLightboxButton" type="lwcType" />
+ </model>
+
+ <model name="LightboxButtons">
+  <action name="okButton" type="object" />
+  <action name="LwcApplyButton" type="lwcType" />
+  <action name="cancelLightboxButton" type="lwcType" />
+ </model>
+
+ <model name="LightboxMultiStepButtons">
+  <action name="prevButton" type="object" />
+  <action name="nextButton" type="object" />
+  <action name="okButton" type="object" />
+  <action name="LwcApplyButton" type="lwcType" />
+  <action name="cancelLightboxButton" type="lwcType" />
+ </model>
+
+ <model name="lwcattribute row actions">
+  <action name="attributeInfo" type="lwcType" />
+  <action name="deleteAttribute" type="lwcType" />
+  <action name="editAttribute" type="lwcType" />
+ </model>
+
+ <!-- items in the administration navigation accordion panel -->
+ <!-- add these saved these items to 'admin navigation' below when we have time to implement them:
+    <action name="globalAttMgmnt" type="navigation"/>
+    <action name="msrmntSysMgmnt" type="navigation"/>
+    <action name="qomMgmnt" type="navigation"/>
+ -->
+
+ <model name="admin navigation">
+  <action name="typeMgmnt" type="navigation" />
+  <action name="globalEnumMgmnt" type="navigation" />
+  <action name="reusableAttMgmnt" type="navigation" />
+  <action name="msrmntSysMgmnt" type="navigation"/>
+  <action name="qomMgmnt" type="navigation"/>
+ </model>
+
+ <!-- the reason "toolbar" is in the name is so that icons will appear for all the actions -->
+ <model name="lwctype_navNode_contextMenu_toolbar">
+  <action name="typeInfo" type="lwcType" />
+  <action name="createType" type="lwcType" />
+  <action name="notSubTypeable" type="lwcType" />
+  <action name="editTypeTree" type="lwcType" />
+  <action name="deleteType" type="lwcType" />
+  <action name="viewPrimaryAssociationConstraint" type="lwcType" />
+ </model>
+
+ <model name="lwcenum_navNode_contextMenu">
+  <action name="enumerationInfo" type="lwcType" />
+  <action name="organizerInfo" type="lwcType" />
+  <action name="createOrganizer" type="lwcType" />
+  <action name="createEnumeration" type="lwcType" />
+  <action name="createSubEnumeration" type="lwcType" />
+  <action name="editEnumerationTree" type="lwcType" />
+  <action name="editOrganizerTree" type="lwcType" />
+  <action name="deleteEnumeration" type="lwcType" />
+  <action name="deleteOrganizer" type="lwcType" />
+ </model>
+
+ <model name="lwcatt_navNode_contextMenu">
+  <action name="reusableOrganizerInfo" type="lwcType" />
+  <action name="reusableAttributeInfo" type="lwcType" />
+  <action name="createReusableOrganizer" type="lwcType" />
+  <action name="createReusableAttribute" type="lwcType" />
+  <action name="editReusableAttributeTree" type="lwcType" />
+  <action name="editReusableOrganizerTree" type="lwcType" />
+  <action name="deleteReusableAttribute" type="lwcType" />
+  <action name="deleteReusableOrganizer" type="lwcType" />
+  <action name="cutReusableItem" type="lwcType" />
+  <action name="pasteReusableItem" type="lwcType" />
+ </model>
+ 
+ <model name="lwcms_navNode_contextMenu">
+  <action name="measurementSystemInfo" type="lwcType" />
+  <action name="editMeasurementSystemTree" type="lwcType" />
+  <action name="deleteMeasurementSystem" type="lwcType" />
+ </model>
+
+ <model name="lwcqom_navNode_contextMenu">
+  <action name="quantityOfMeasureInfo" type="lwcType" />
+  <action name="editQuantityOfMeasureTree" type="lwcType" />
+  <action name="deleteQuantityOfMeasure" type="lwcType" />
+ </model>
+
+ <model name="lwcqom_nav_contextMenu">
+  <action name="createQuantityOfMeasure" type="lwcType" />
+ </model>
+
+ <model name="lwcms_nav_contextMenu">
+  <action name="createMeasurementSystem" type="lwcType" />
+ </model>
+
+ <model name="lwctype_attTableRow_contextMenu" menufor="com.ptc.core.lwc.server.LWCAttributeDefinition">
+  <action name="attributeInfo" type="lwcType" />
+  <action name="deleteAttribute" type="lwcType" />
+ </model>
+
+ <!-- The top tab set in the type info page. -->
+ <model name="lwctype_infoPage_tabSet">
+  <action name="lwc.type.attribute.multiedit" type="lwcType" />
+  <action name="typeLayouts" type="lwcType" />
+  <action name="relationshipConstraints" type="lwcType"/>
+  <action name="lwc.type.cascading.attributes" type="lwcType" />
+ </model>
+
+ <!-- The top tab set in the attribute info page. -->
+ <model name="lwcattribute_infoPage_tabSet">
+  <action name="attributeValues" type="lwcType" />
+  <action name="attributeVisibility" type="lwcType" />
+  <action name="attributeLegalTypes" type="lwcType" />
+  <action name="attributeConstraints" type="lwcType" />
+ </model>
+
+ <model name="lwcOrganizer_infoPage_tabSet">
+ </model>
+
+ <!-- The top tab set in the type info page. -->
+ <model name="lwcEnumeration_infoPage_tabSet">
+  <action name="lwc.enumiration.entries" type="lwcType" />
+ </model>
+
+  <!-- The top tab set in the type info page. -->
+ <model name="lwcqom_infoPage_tabSet">
+  <action name="lwc.quantityofmeasure.displayUnits" type="lwcType" />
+ </model>
+
+ <!-- the reason "toolbar" is in the name is so that icons will appear for all the actions -->
+ <model name="lwctype actions toolbar">
+  <action name="createType" type="lwcType" />
+  <action name="editType" type="lwcType" />
+  <action name="deleteType" type="lwcType" />
+  <action name="viewPrimaryAssociationConstraint" type="lwcType" />
+ </model>
+
+ <model name="lwcOrganizer_actions">
+  <action name="createOrganizer" type="lwcType" />
+  <action name="createEnumeration" type="lwcType" />
+  <action name="editOrganizerInfoPage" type="lwcType" />
+  <action name="deleteOrganizer" type="lwcType" />
+ </model>
+
+ <model name="lwcReusableOrganizer_actions">
+  <action name="createReusableOrganizer" type="lwcType" />
+  <action name="createReusableAttribute" type="lwcType" />
+  <action name="editReusableOrganizerInfoPage" type="lwcType" />
+  <action name="deleteReusableOrganizer" type="lwcType" />
+  <action name="cutReusableItem" type="lwcType" />
+  <action name="pasteReusableItem" type="lwcType" />
+ </model>
+
+ <model name="toolbarModelForReusableAttribute">
+  <action name="createReusableAttribute" type="lwcType" />
+ </model>
+
+ <model name="lwcReusableAttributes_actions">
+  <action name="editReusableAttributeInfoPage" type="lwcType" />
+  <action name="deleteReusableAttribute" type="lwcType" />
+  <action name="cutReusableItem" type="lwcType" />
+ </model>
+
+ <model name="lwcReusableAttributes_infoPage_tabSet">
+  <action name="lwc.reusable.attributes.displayUnits" type="lwcType" />
+ </model>
+ 
+ <model name="lwcMeasurementSystem_actions">
+  <action name="editMeasurementSystem" type="lwcType"/>
+  <action name="deleteMeasurementSystem" type="lwcType" />
+ </model>
+
+ <model name="lwcQuantityOfMeasure_actions">
+  <action name="editQuantityOfMeasure" type="lwcType" />
+  <action name="deleteQuantityOfMeasure" type="lwcType" />
+ </model>
+
+ <model name="lwcEnumeration_actions">
+  <action name="createSubEnumeration" type="lwcType" />
+  <action name="editEnumerationInfoPage" type="lwcType" />
+  <action name="deleteEnumeration" type="lwcType" />
+ </model>
+
+ <model name="lwcattribute actions">
+  <action name="deleteAttribute" type="lwcType" />
+ </model>
+
+ <model name="lwcconstraint table actions">
+  <action name="newConstraint" type="lwcType" shortcut="true" />
+  <action name="removeConstraint" type="lwcType" shortcut="true" />
+ </model>
+
+ <model name="lwcConstraintDisabled table actions">
+  <action name="newConstraintDisabled" type="lwcTypeDisabled" shortcut="true" />
+  <action name="removeConstraint" type="lwcType" shortcut="true" />
+ </model>
+
+ <model name="lwcLegalTypesConstraint table actions">
+  <action name="newLegalTypesConstraint" type="lwcType" shortcut="true" />
+  <action name="removeLegalTypesConstraint" type="lwcType" shortcut="true" />
+ </model>
+
+ <model name="lwcconditions table actions">
+  <action name="addCondition" type="lwcType" shortcut="true" />
+  <action name="deleteCondition" type="lwcType" shortcut="true" />
+ </model>
+
+ <model name="lwcConditionRowActions">
+  <action name="editCondition" type="lwcType" />
+ </model>
+
+ <model name="lwcDefaultValuesActions">
+  <action name="deleteDefaultValue" type="lwcType" shortcut="true" />
+ </model>
+
+ <model name="LwcButtons">
+  <action name="okButton" type="object" />
+  <action name="LwcApplyButton" type="lwcType" />
+  <action name="cancelButton" type="object" />
+ </model>
+
+ <model name="LwcMultiStepButtons">
+  <action name="prevButton" type="object" />
+  <action name="nextButton" type="object" />
+  <action name="okButton" type="object" />
+  <action name="LwcApplyButton" type="lwcType" />
+  <action name="cancelButton" type="object" />
+ </model>
+
+ <model name="cascading_attribute_table_actions">
+  <action name="explode" type="folder" shortcut="true" />
+  <action name="implode" type="folder" shortcut="true" />
+  <action name="createConstraintRule" type="lwcType" shortcut="true" />
+  <action name="attributeSetReport" type="lwcType" shortcut="true" />
+  <action name="separator" type="separator" />
+  <action name="enableInheritedRule" type="lwcType" shortcut="true" />
+  <action name="disableInheritedRule" type="lwcType" shortcut="true" />
+ </model>
+
+ <model name="cascading_attribute_table_row_actions">
+  <action name="createRuleFromExisting" type="lwcType" />
+  <action name="createRuleFromExistingEmpty" type="constraintTreeNode" />
+  <action name="editConstraintRule" type="constraintTreeNode" />
+  <action name="editInheritedConstraintRule" type="constraintTreeNode" />
+  <action name="editCascadingCondition" type="constraintTreeNode" />
+  <action name="deleteConstraintRule" type="constraintTreeNode" />
+  <action name="deleteInheritedConstraintRule" type="constraintTreeNode" />
+ </model>
+ <!-- Table level actions for Relationship Constraints -->
+ <model name="relationshipConstraints_table_actions">
+     <action name="newRelationshipConstraint" type="lwcType" shortcut = "true"/>
+     <action name="removeRelationshipConstraint" type="lwcType" shortcut = "true"/>
+  </model>
+</actionmodels>

@@ -1,0 +1,1450 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+
+<!-- define the actions on the UI components -->
+<actionmodels>
+
+    <model name="ppbPanelContextMenu">
+    </model>
+
+    <model name="ppbTreePanelContextMenu">
+    </model>
+
+    <!--  action model for ppb configuration -->
+    <model name="ppbTreeToolBar">
+        <!-- Editing Group -->
+        <action name="editingGroupGWT" type="mpm">
+            <ribbonInfo buttonType="group" columnCount="2" />
+        </action>
+        <action name="insertExistingGWT" type="ppb">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="addStandardProcedureTreeGWT" type="ppb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="insertOperationsFromCapabilityGWT" type="ppb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="insertOperationsFromTemplateGWT" type="ppb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="ppbRemoveGWT" type="ppb">
+            <ribbonInfo buttonType="button" />
+        </action>
+        <action name="insertGWT" type="ppb">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="insertMultipleOperationsTreeGWT" type="ppb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="insertMultipleOperationsAfterTreeGWT" type="ppb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="insertNewSequenceTreeGWT" type="ppb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="editSplitGWT" type="mpm">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="mpmRenameObjectWizardGWT" type="mpm">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+		<action name="removeOrphanAllocatedPartsGWT" type="ppb">
+			<ribbonInfo buttonType="menuitem" />
+		</action>
+
+	<action name="ppbEditAllocationTypeTableGWT" type="ppb">
+			<ribbonInfo buttonType="menuitem" />
+	</action>
+
+        <action name="saveAsTreeGWT" type="ppb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        
+        <!-- Check In/Out Group -->
+        <action name="checkInOutGroupGWT" type="mpm">
+            <ribbonInfo buttonType="group" columnCount="2" />
+        </action>
+        <action name="mpmCheckoutGWT" type="ppb">
+            <ribbonInfo buttonType="button" />
+        </action>
+        <action name="mpmUndocheckoutGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="mpmCheckinGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="findCheckoutItemsGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        
+        <!-- Viewing Group -->
+        <action name="viewingGroupGWT" type="mpm">
+            <ribbonInfo buttonType="group" columnCount="3" />
+        </action>
+        <action name="configurableTableViewGWT" type="cat">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="configurableTableViewListGWT" type="cat">
+            <ribbonInfo buttonType="check" groupName="table_view" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="saveStructureViewGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="configurableTableViewManagerGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="mpmEndViewsSubmenuGWT" type="mpm">
+            <ribbonInfo buttonType="endmenu" />
+        </action>
+        <action name="showModifiedPartsInPVGWT" type="ppb">
+            <ribbonInfo buttonType="toggle" />
+        </action>
+        <action name="playBackGWT" type="mpm">
+            <ribbonInfo buttonType="toggle" />
+        </action>
+        <action name="displayGWT" type="cat">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="expandAllLevelsFromRootGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="mpmExpandSubmenuGWT" type="mpm">
+            <ribbonInfo buttonType="submenu" />
+        </action>
+        <action name="expandAllSelectedLevelsGWT" type="cat">
+            <ribbonInfo buttonType="submenuitem" />
+        </action>
+        <action name="expandOneLevelGWT" type="cat">
+            <ribbonInfo buttonType="submenuitem" />
+        </action>
+        <action name="expandTwoLevelsGWT" type="cat">
+            <ribbonInfo buttonType="submenuitem" />
+        </action>
+        <action name="expandThreeLevelsGWT" type="cat">
+            <ribbonInfo buttonType="submenuitem" />
+        </action>
+        <action name="expandFourLevelsGWT" type="cat">
+            <ribbonInfo buttonType="submenuitem" />
+        </action>
+        <action name="expandFiveLevelsGWT" type="cat">
+            <ribbonInfo buttonType="submenuitem" />
+        </action>
+        <action name="expandNLevelsGWT" type="cat">
+            <ribbonInfo buttonType="submenuitem" />
+        </action>
+        <action name="mpmEndExpandSubmenuGWT" type="mpm">
+            <ribbonInfo buttonType="endsubmenu" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="refreshGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="isolateAllocatedPartsOptionsGWT" type="ppb">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="isolateAllocatedPartsGWT" type="ppb">
+            <ribbonInfo buttonType="toggle" buttonScale="small" />
+        </action>
+        <action name="showOperationColorCodesGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        
+        <!-- New/Add To Group -->
+        <action name="newAddToGroupGWT" type="ppb">
+            <ribbonInfo buttonType="group" columnCount="3" />
+        </action>
+        <action name="newActionsGWT" type="ppb">
+            <ribbonInfo buttonType="menu" buttonScale="medium" />
+        </action>
+        <action name="setStateGWT" type="ppb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="newPromotionRequestTreeGWT" type="ppb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="newBranchPPBTreeGWT" type="ppb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="addToActionsGWT" type="ppb">
+            <ribbonInfo buttonType="menu" buttonScale="medium" />
+        </action>
+        <action name="addToBaselineGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        
+        <!-- Filter Group -->
+        <action name="filterGroupGWT" type="ec">
+            <ribbonInfo buttonType="group" columnCount="2" />
+        </action>
+        <action name="mainMPMProcessPlanEditFilterAction" type="mpm">
+            <ribbonInfo buttonType="button" buttonScale="medium" />
+        </action>
+        <action name="mainMPMProcessPlanInfoFilterAction" type="mpm">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="mainMPMProcessPlanSaveFilterAction" type="mpm">
+            <ribbonInfo buttonType="custommenu" buttonScale="small" />
+        </action>
+        
+        <!-- Tree picker Group-->
+        <action name="treePickerGroupGWT" type="mpm">
+            <ribbonInfo buttonType="group" columnCount="2" />
+        </action>
+        <action name="openTreePickerGWT" type="mpm">
+            <ribbonInfo buttonType="button" buttonScale="medium" />
+        </action>
+        <action name="openRelatedPartInTreePickerGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="openSelectedInTreePickerRibbonGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        
+        <!--  Related Assembly Filter Group -->
+        <action name="supportingRelatedAssemblyFilterGroupGWT" type="mpm">
+            <ribbonInfo buttonType="group" columnCount="2" />
+        </action>
+        <action name="supportingWTPartInfoFilterAction" type="mpm">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="disablePPBRelatedAssemblyPathFilterGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="supportingWTPartEditFilterAction" type="mpm">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="supportingWTPartSaveFilterAction" type="mpm">
+            <ribbonInfo buttonType="custommenu" buttonScale="small" />
+        </action>
+        
+        <!-- Tools group -->
+        <action name="toolsGroupGWT" type="ppb">
+            <ribbonInfo buttonType="group" columnCount="2" />
+        </action>
+        <action name="openActionsGWT" type="ppb">
+            <ribbonInfo buttonType="menu" buttonScale="medium" />
+        </action>
+        <action name="openInProductViewGWT" type="ppb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="openInGanttGWT" type="ppb">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        
+        <!-- Reports group -->
+        <action name="reportsGroupGWT" type="ppb">
+            <ribbonInfo buttonType="group" columnCount="2" />
+        </action>
+		<action name="reporttActionsGWT" type="ppb">
+			<ribbonInfo buttonType="menu" buttonScale="medium" />
+		</action>
+		<action name="InconsistencySummaryOrphanAllocatedPartsGWT" type="ppb">
+			<ribbonInfo buttonType="menuitem" />
+		</action>
+        <action name="exportActionsGWT" type="cat">
+            <ribbonInfo buttonType="menu" buttonScale="medium" />
+        </action>
+        <action name="exportCsvGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="exportHtmlGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="exportPdfGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="exportTextGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="exportXlsGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="exportXlsxGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="exportXlsReportGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+        <action name="exportXmlGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" />
+        </action>
+
+    </model>
+
+    <model name="ppbTreeContextMenu">
+        <action name="viewInfoGWT" type="mpm"/>
+        <submodel name="mpmExpandContextSubmenuGWT"/>
+        <action name="separator" type="separator" />
+        <action name="reallocatePartGWT" type="ppb"/>
+        <action name="copyGWT" type="ppb"/>
+        <action name="ppbTreePartCopyGWT" type="ppb"/>
+        <action name="pasteToTreeGWT" type="ppb"/>
+        <action name="ppbTreePasteAsOperatedOnGWT" type="ppb"/>
+        <submodel name="ppbPasteSpecialMenu"/>
+        <action name="ppbRemoveGWT" type="ppb" />
+        <action name="separator" type="separator" />
+        <action name="saveAsTreeGWT" type="ppb" />
+        <action name="autoPartAllocationGWT" type="ppb" />
+        <submodel name="ppbEditingMenu"/>
+        <action name="assignItemOptionalityGWT" type="ppb" />
+        <action name="mpmViewAssignedExpressionGWT" type="baseclient" />	       
+        <action name="copyAssignedExpressionGWT" type="expressionAssignable" />  
+        <submodel name="ppbVersionControlMenu"/>
+        <submodel name="ppbOpenInTreeContextSubmenuGWT"/>
+        <submodel name="ppbVisualizationMenu"/>
+        <submodel name="ppbIllustrationMenu"/>
+        <submodel name="ppbWorkInstructionsMenu"/>
+        <action name="InconsistencySummaryOrphanAllocatedPartsGWT" type="ppb"/>
+        <action name="calculateTimeAndCostActionGWT" type="ppb"/> 
+        <action name="setFormulatSetGWT" type="ppb"/>  
+    </model>
+
+    <model name="ppbPasteSpecialMenu" resourceBundle="com.ptc.windchill.mpml.ppb.ppbActionsRB">
+        <action name="pasteAndDuplicateOperationUnderGWT" type="ppb"/>
+        <action name="pasteAndDuplicateOperationAfterGWT" type="ppb"/>
+    </model>
+
+    <model name="ppbEditingMenu" resourceBundle="com.ptc.windchill.mpml.ppb.ppbActionsRB">
+        <action name="insertMultipleOperationsTreeGWT" type="ppb"/>
+        <action name="insertMultipleOperationsAfterTreeGWT" type="ppb" />
+        <action name="insertNewSequenceTreeGWT" type="ppb"/>
+        <action name="addStandardProcedureTreeGWT" type="ppb"/>
+        <action name="insertOperationsFromCapabilityGWT" type="ppb"/>
+        <action name="insertOperationsFromTemplateGWT" type="ppb"/>
+        <action name="separator" type="separator" />
+		 <action name="ppbTreeAllocateOperatedOnGWT" type="ppb" />
+        <action name="allocateResourceGWT" type="ppb" />
+	<action name="ppbEditAllocationTypeTableGWT" type="ppb" />
+        <action name="acknowledgeNewIterationsTreeGWT" type="ppb" />
+		<action name="removeOrphanAllocatedPartsGWT" type="ppb"/>
+        <action name="separator" type="separator" />
+        <action name="mpmRenameObjectWizardGWT" type="mpm"/>
+        <action name="renameOperationsGWT" type="ppb"/>
+        <action name="separator" type="separator" />
+        <action name="enableAlternateSequenceGWT" type="ppb"/>
+        <action name="disableAlternateSequenceGWT" type="ppb"/>
+    </model>
+
+    <model name="ppbVersionControlMenu" resourceBundle="com.ptc.windchill.mpml.ppb.ppbActionsRB">
+        <action name="mpmCheckoutGWT" type="ppb" />
+        <action name="mpmCheckinGWT" type="ppb" />
+        <action name="mpmUndocheckoutGWT" type="ppb" />
+        <action name="separator" type="separator" />
+        <action name="findCheckoutItemsGWT" type="ppb" />
+        <action name="separator" type="separator" />
+        <action name="addToBaselineGWT" type="cat" />
+        <action name="newPromotionRequestGWT" type="ppb" />
+        <action name="separator" type="separator" />
+        <action name="setStateGWT" type="ppb" />
+    </model>
+
+    <model name="ppbOpenInTreeContextSubmenuGWT" resourceBundle="com.ptc.windchill.mpml.ppb.ppbActionsRB">
+        <action name="openInProductViewGWT" type="ppb" />
+        <action name="openSelectedInTreePickerGWT" type="ppb" />
+        <action name="openInGanttGWT" type="ppb" />
+        <action name="launchInMRBGWT" type="ppb"/>
+    </model>
+
+    <model name="ppbVisualizationMenu" resourceBundle="com.ptc.windchill.mpml.ppb.ppbActionsRB">
+        <action name="mpmSelectInVIZTabGWT" type="mpm" />
+        <action name="showInstanceTreeGWT" type="ppb"/>
+        <action name="hideInstanceTreeGWT" type="ppb"/>
+        <action name="isolateSelectedTreeGWT" type="ppb"/>
+    </model>
+    
+    <model name="ppbIllustrationMenu" resourceBundle="com.ptc.windchill.mpml.ppb.ppbActionsRB">
+        <action name="newIllustrationActionGWT" type="ppb" />
+        <action name="updateIllustrationActionGWT" type="ppb" />
+	    <action name="baseOpenInCreoIllustrateGWT" type="baseclient" />
+        <action name="removeIllustrationActionGWT" type="ppb" />
+    </model>
+
+    <model name="ppbWorkInstructionsMenu" resourceBundle="com.ptc.windchill.mpml.ppb.ppbActionsRB">
+        <action name="openWorkInstructionGWT" type="ppb" />
+        <action name="reviewUpdateIllustrationGWT" type="ppb"/>
+    </model>
+
+    <model name="ppbIndicatorActionModel">
+    </model>
+
+    <model name="ppbVizToolBar">
+        <action name="loadDataInPVGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="loadDataWithResourcesInPVGWT" type="ppb">
+            <ribbonInfo buttonType="toggle" />
+        </action>
+        <action name="zoomAllGWT" type="cat">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="zoomSelectedGWT" type="cat">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="zoomToWindowGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="setSpinCenterGWT" type="cat">
+            <ribbonInfo buttonType="toggle" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />  
+        <action name="defaultOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="iso1OrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="iso2OrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="topOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="bottomOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="leftOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="rightOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="frontOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="backOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="mpmVizSaveViewPointGWT" type="mpm">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="toggleAutoSelectionGWT" type="cat">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="toggleAutoSelectionFromStructToVIZGWT" type="cat">
+            <ribbonInfo buttonType="check" />
+        </action>
+        <action name="toggleAutoSelectionFromVIZToStructGWT" type="cat">
+            <ribbonInfo buttonType="check" />
+        </action>
+        <action name="setPPBVizPathFilterGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="disablePPBVizPathFilterGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="selectModeGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="defaultRenderModeGWT" type="baseclient">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="shadedRenderModeGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="shadedWithEdgesRenderModeGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="hiddenLineRemovalGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="wireframeRenderModeGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="meshRenderModeGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="hideInstanceGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="isolateSelectedGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="showAllInstancesGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="hideAllResourcesGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="translateModeGWT" type="baseclient">
+            <ribbonInfo buttonType="toggle" buttonScale="small" />
+        </action>
+        <action name="rotateModeGWT" type="baseclient">
+            <ribbonInfo buttonType="toggle" buttonScale="small" />
+        </action>
+        <action name="restoreAllSplitGWT" type="baseclient">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="restoreAllGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="resetInstanceGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="measurementSplitGWT" type="mpm">
+            <ribbonInfo buttonType="split" buttonScale="small" />
+        </action>
+        <action name="distanceMeasurementGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="diameterMeasurementGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="angleMeasurementGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="summaryMeasurementGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="deleteAllSplitGWT" type="mpm">
+            <ribbonInfo buttonType="split" buttonScale="small" />
+        </action>
+        <action name="deleteAllMeasurementsGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="deleteSelectedMeasurementGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="selectAllocationGWT" type="ppb">
+            <ribbonInfo buttonType="toggle" buttonScale="small" />
+        </action>
+        <action name="removePartFromVizGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="acknowledgeNewIterationsGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="ppbVizCopyGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+    </model>
+
+    <model name="ppbTreePickerOperationHolderVizToolBar">
+        <action name="loadDataInPVGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="zoomAllGWT" type="cat">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="zoomSelectedGWT" type="cat">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="zoomToWindowGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="setSpinCenterGWT" type="cat">
+            <ribbonInfo buttonType="toggle" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="defaultOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="iso1OrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="iso2OrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="topOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="bottomOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="leftOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="rightOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="frontOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="backOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="toggleAutoSelectionGWT" type="cat">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="toggleAutoSelectionFromStructToVIZGWT" type="cat">
+            <ribbonInfo buttonType="check" />
+        </action>
+        <action name="toggleAutoSelectionFromVIZToStructGWT" type="cat">
+            <ribbonInfo buttonType="check" />
+        </action>
+        <action name="selectModeGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="allocatePartGWT" type="ppb">
+            <ribbonInfo buttonType="toggle" buttonScale="small" />
+        </action>
+        <action name="defaultRenderModeGWT" type="baseclient">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="shadedRenderModeGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="shadedWithEdgesRenderModeGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="hiddenLineRemovalGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="wireframeRenderModeGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="meshRenderModeGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="hideInstanceGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="isolateSelectedGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="showAllInstancesGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="translateModeGWT" type="baseclient">
+            <ribbonInfo buttonType="toggle" buttonScale="small" />
+        </action>
+        <action name="rotateModeGWT" type="baseclient">
+            <ribbonInfo buttonType="toggle" buttonScale="small" />
+        </action>
+        <action name="restoreAllSplitGWT" type="baseclient">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="restoreAllGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="resetInstanceGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="measurementSplitGWT" type="mpm">
+            <ribbonInfo buttonType="split" buttonScale="small" />
+        </action>
+        <action name="distanceMeasurementGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="diameterMeasurementGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="angleMeasurementGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="summaryMeasurementGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="deleteAllSplitGWT" type="mpm">
+            <ribbonInfo buttonType="split" buttonScale="small" />
+        </action>
+        <action name="deleteAllMeasurementsGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="deleteSelectedMeasurementGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="selectAllocationGWT" type="ppb">
+            <ribbonInfo buttonType="toggle" buttonScale="small" />
+        </action>
+     </model>
+
+    <model name="ppbTreePickerWTPartVizToolBar">
+        <action name="loadDataInPVGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+         <action name="zoomAllGWT" type="cat">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="zoomSelectedGWT" type="cat">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="zoomToWindowGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="setSpinCenterGWT" type="cat">
+            <ribbonInfo buttonType="toggle" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="defaultOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="iso1OrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="iso2OrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="topOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="bottomOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="leftOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="rightOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="frontOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="backOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="toggleAutoSelectionGWT" type="cat">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="toggleAutoSelectionFromStructToVIZGWT" type="cat">
+            <ribbonInfo buttonType="check" />
+        </action>
+        <action name="toggleAutoSelectionFromVIZToStructGWT" type="cat">
+            <ribbonInfo buttonType="check" />
+        </action>
+        <action name="spatialFilter" type="structurecomponent">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="setBoxSpatialFilter" type="structurecomponent">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="setSphereSpatialFilter" type="structurecomponent">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="setProximitySpatialFilter" type="structurecomponent">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="updateSpatialFilter" type="structurecomponent">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="setPathFilterPPBTreePickerVizActionGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="disablePathFilterVizGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="selectModeGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="selectParentGWT" type="ppb">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="selectParentActionGWT" type="ppb">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="selectFirstLevelAssemblyActionGWT" type="ppb">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="selectForAllocationActionGWT" type="ppb">
+            <ribbonInfo buttonType="check" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="ppbSplitUsageActionGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="allocatePartGWT" type="ppb">
+            <ribbonInfo buttonType="toggle" buttonScale="small" />
+        </action>
+        <action name="defaultRenderModeGWT" type="baseclient">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="shadedRenderModeGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="shadedWithEdgesRenderModeGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="hiddenLineRemovalGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="wireframeRenderModeGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="meshRenderModeGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="hideInstanceGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="isolateSelectedGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="showAllInstancesGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="translateModeGWT" type="baseclient">
+            <ribbonInfo buttonType="toggle" buttonScale="small" />
+        </action>
+        <action name="rotateModeGWT" type="baseclient">
+            <ribbonInfo buttonType="toggle" buttonScale="small" />
+        </action>
+        <action name="restoreAllSplitGWT" type="baseclient">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="restoreAllGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="resetInstanceGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="measurementSplitGWT" type="mpm">
+            <ribbonInfo buttonType="split" buttonScale="small" />
+        </action>
+        <action name="distanceMeasurementGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="diameterMeasurementGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="angleMeasurementGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="summaryMeasurementGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="deleteAllSplitGWT" type="mpm">
+            <ribbonInfo buttonType="split" buttonScale="small" />
+        </action>
+        <action name="deleteAllMeasurementsGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="deleteSelectedMeasurementGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+    </model>
+
+    <model name="ppbTreePickerResourceVizToolBar">
+        <action name="loadDataInPVGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="zoomAllGWT" type="cat">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="zoomSelectedGWT" type="cat">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="zoomToWindowGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="setSpinCenterGWT" type="cat">
+            <ribbonInfo buttonType="toggle" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="defaultOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="iso1OrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="iso2OrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="topOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="bottomOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="leftOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="rightOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="frontOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="backOrientationGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="toggleAutoSelectionGWT" type="cat">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="toggleAutoSelectionFromStructToVIZGWT" type="cat">
+            <ribbonInfo buttonType="check" />
+        </action>
+        <action name="toggleAutoSelectionFromVIZToStructGWT" type="cat">
+            <ribbonInfo buttonType="check" />
+        </action>
+        <action name="setPathFilterPPBTreePickerVizActionGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="disablePathFilterVizGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="selectModeGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="defaultRenderModeGWT" type="baseclient">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="shadedRenderModeGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="shadedWithEdgesRenderModeGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="hiddenLineRemovalGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="wireframeRenderModeGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="meshRenderModeGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="hideInstanceGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="isolateSelectedGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="showAllInstancesGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="translateModeGWT" type="baseclient">
+            <ribbonInfo buttonType="toggle" buttonScale="small" />
+        </action>
+        <action name="rotateModeGWT" type="baseclient">
+            <ribbonInfo buttonType="toggle" buttonScale="small" />
+        </action>
+        <action name="restoreAllSplitGWT" type="baseclient">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="restoreAllGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="resetInstanceGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="measurementSplitGWT" type="mpm">
+            <ribbonInfo buttonType="split" buttonScale="small" />
+        </action>
+        <action name="distanceMeasurementGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="diameterMeasurementGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="angleMeasurementGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="summaryMeasurementGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="deleteAllSplitGWT" type="mpm">
+            <ribbonInfo buttonType="split" buttonScale="small" />
+        </action>
+        <action name="deleteAllMeasurementsGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="deleteSelectedMeasurementGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+    </model>
+
+    <!--  action model for ppb uses tab [start]-->
+    <model name="ppbUsesContextMenu">
+      <action name="ppbRemoveChildGWT" type="ppb"/>
+        <action name="insertMultipleOperationsAfterUsesGWT" type="ppb" />
+        <action name="pasteAndDuplicateOperationAfterUsesGWT" type="ppb"/>
+        <action name="assignOptionalityGWT" type="ppb" />
+		<action name="mpmViewAssignedUsesExpressionGWT" type="baseclient" />	       
+        <action name="copyAssignedUsesExpressionGWT" type="expressionAssignable" /> 
+        <action name="mpmRenameObjectWizardGWT" type="mpm"/>
+		<action name="renameOperationsGWT" type="ppb"/>
+    </model>
+
+    <model name="ppbUsesToolBar">
+        <action name="insertMultipleOperationsUsesGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="insertMultipleOperationsAfterUsesGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="addStandardProcedureUsesGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="insertNewSequenceUsesGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="pasteAndDuplicateOperationUsesGWT" type="ppb">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="pasteAndDuplicateOperationUnderUsesGWT" type="ppb">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="pasteAndDuplicateOperationAfterUsesGWT" type="ppb">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="ppbRemoveChildGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="editAttrValuesGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="renameOperationsGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="assignPartTagsGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="tableExportActionsGWT" type="cat">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="exportCsvGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportHtmlGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportPdfGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportTextGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportXlsGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportXlsxGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportXlsReportGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportXmlGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+    </model>
+    <!--  action model for ppb uses tab [end]-->
+
+    <model name="ppbTreePickerOperationHolderTreeContextMenu">
+       <action name="viewInfoGWT" type="mpm"/>
+       <action name="separator" type="separator" />
+       <action name="copyGWT" type="ppb"/>
+
+       <!--  Commented for SPR 2199823. Will be enabled by SPR 2199822 in X.24 M020
+       <action name="PPBTreePickerPartsCopyGWT" type="ppb"/>
+       -->
+       <action name="ppbTreePickerCutGWT" type="ppb"/>
+       <action name="separator" type="separator" />
+       <submodel name="mpmExpandContextSubmenuGWT"/>
+       <action name="separator" type="separator" />
+       <action name="mpmSelectInVIZTabGWT" type="mpm" />
+       <action name="separator" type="separator" />
+       <action name="hideInstanceTreeGWT" type="ppb"/>
+       <action name="showInstanceTreeGWT" type="ppb"/>
+       <action name="isolateSelectedTreeGWT" type="ppb"/>
+    </model>
+
+    <model name="ppbTreePickerWTPartTreeContextMenu">
+       <action name="viewInfoGWT" type="mpm"/>
+       <action name="separator" type="separator" />
+       <action name="PPBTreePickerPartsCopyGWT" type="ppb"/>
+       <action name="ppbTreePickerCutGWT" type="ppb"/>
+       <action name="separator" type="separator" />
+       <submodel name="mpmExpandContextSubmenuGWT"/>
+       <action name="separator" type="separator" />
+       <action name="mpmSelectInVIZTabGWT" type="mpm" />
+       <action name="separator" type="separator" />
+       <action name="hideInstanceTreeGWT" type="ppb"/>
+       <action name="showInstanceTreeGWT" type="ppb"/>
+       <action name="isolateSelectedTreeGWT" type="ppb"/>
+       <action name="setPathFilterGWT" type="baseclient" />
+    </model>
+
+    <model name="ppbTreePickerWTPartTreeToolBar">
+        <action name="TreePickerToolbarButtonGWT" type="mpm">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator"/>
+        <action name="treePickerWTPartInfoFilterAction" type="mpm">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="setPathFilterGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="disablePathFilterGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="treePickerWTPartEditFilterAction" type="mpm">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="treePickerWTPartSaveFilterAction" type="mpm">
+            <ribbonInfo buttonType="custommenu" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <!-- add ppb tree picker refresh action - See SPR 4831239 gets the message bus. -->
+        <action name="ppbTreePickerRefreshGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="openRelatedPartPanelGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="displayPartAllocationStatusGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="configurableTableViewGWT" type="cat">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="configurableTableViewListGWT" type="cat">
+            <ribbonInfo buttonType="check" groupName="table_view" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="saveStructureViewGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="configurableTableViewManagerGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="mpmEndViewsSubmenuGWT" type="mpm">
+            <ribbonInfo buttonType="endmenu" buttonScale="small" />
+        </action>
+        <action name="treePickerCloseContent" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+    </model>
+
+    <model name="ppbTreePickerPlantTreeContextMenu">
+        <action name="viewInfoGWT" type="mpm"/>
+        <action name="separator" type="separator" />
+        <action name="PPBTreePickerResourcesCopyGWT" type="ppb"/>
+        <action name="separator" type="separator" />
+        <submodel name="mpmExpandContextSubmenuGWT"/>
+        <action name="separator" type="separator" />
+        <action name="mpmSelectInVIZTabGWT" type="mpm" />
+        <action name="separator" type="separator" />
+        <action name="hideInstanceTreeGWT" type="ppb"/>
+        <action name="showInstanceTreeGWT" type="ppb"/>
+        <action name="isolateSelectedTreeGWT" type="ppb"/>
+        <action name="setPathFilterGWT" type="baseclient" />
+    </model>
+
+    <model name="ppbTreePickerPlantTreeToolBar">
+        <action name="TreePickerToolbarButtonGWT" type="mpm">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator"/>
+        <action name="treePickerMPMResourceInfoFilterAction" type="mpm">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="setPathFilterGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="disablePathFilterGWT" type="baseclient">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="treePickerMPMResourceEditFilterAction" type="mpm">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="treePickerMPMResourceSaveFilterAction" type="mpm">
+            <ribbonInfo buttonType="custommenu" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="treePickerRefreshGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="openRelatedPlantInTreePickerGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="configurableTableViewGWT" type="cat">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="configurableTableViewListGWT" type="cat">
+            <ribbonInfo buttonType="check" groupName="table_view" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="saveStructureViewGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="configurableTableViewManagerGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="mpmEndViewsSubmenuGWT" type="mpm">
+            <ribbonInfo buttonType="endmenu" buttonScale="small" />
+        </action>
+        <action name="treePickerCloseContent" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+    </model>
+
+    <model name="ppbTreePickerMfgStdGroupTreeContextMenu">
+        <action name="viewInfoGWT" type="mpm" />
+        <action name="separator" type="separator" />
+        <action name="TreePickerMfgProcessCopyGWT" type="ppb"/>
+        <action name="separator" type="separator" />
+        <submodel name="mpmExpandContextSubmenuGWT"/>
+    </model>
+
+    <model name="ppbTreePickerSearchResultsContextMenu">
+    	<action name="treePickerSelectedIdentifierCopyGWT" type="mpm"/>
+    </model>
+
+    <model name="ppbPAToolBar">
+        <action name="pasteToPATableGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="removePartAllocationTableGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="reallocatePartGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+		 <action name="ppbEditAllocationTypeTableGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="tableExportActionsGWT" type="cat">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="exportCsvGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportHtmlGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportPdfGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportTextGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportXlsGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportXlsxGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportXlsReportGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportXmlGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+    </model>
+
+    <model name="ppbPAContextMenu">
+        <action name="removePartAllocationTableGWT" type="ppb" />
+        <action name="ppbEditAllocationTypeTableGWT" type="ppb" />        
+		<action name="assignOptionalityGWT" type="ppb" />
+    </model>
+
+    <model name="ppbPRToolBar">
+       <action name="pasteToRATableGWT" type="ppb"/>
+       <action name="allocateResourceProcessingResourcesGWT" type="ppb" />
+       <action name="assignPartTagsResourcesGWT" type="ppb" />
+       <action name="ppbRemoveChildGWT" type="ppb"/>
+    </model>
+
+    <model name="ppbPRContextMenu">
+       <action name="assignOptionalityGWT" type="ppb" />
+	   <action name="mpmViewAssignedUsesExpressionGWT" type="baseclient" />	              
+       <action name="copyAssignedUsesExpressionGWT" type="expressionAssignable" /> 
+       <action name="ppbRemoveChildGWT" type="ppb"/>
+    </model>
+
+    <model name="ppbRelatedPartsToolBarActions" resourceBundle="com.ptc.windchill.mpml.ppb.ppbActionsRB">
+        <action name="addRelatedAssemblyToPP" type="ppb" shortcut="true"/>
+        <action name="removeRelatedAssemblyFromPP" type="ppb" shortcut="true"/>
+        <action name="related_copy_references_mpml"   type="ppb" shortcut="true"/>
+        <action name="pastePartsFromClipboard" type="ppb" shortcut="true"/>
+    </model>
+
+    <!--  action model for ppb describes table [start]-->
+    <model name="ppbDescribesContextMenu">
+        <action name="viewInfoGWT" type="cat" />
+        <action name="separator" type="separator" />
+		<action name="removePPBDescDocGWT" type="ppb" />
+        <action name="assignOptionalityGWT" type="ppb" />
+		<action name="mpmViewAssignedUsesExpressionGWT" type="baseclient" />	       
+        <action name="copyAssignedUsesExpressionGWT" type="expressionAssignable" /> 
+    </model>
+
+    <model name="ppbDescribesToolBar">
+        <action name="insertExistingPPBDescDocGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="insertNewPPBDescDocGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="removePPBDescDocGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="tableExportActionsGWT" type="cat">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="exportCsvGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportHtmlGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportPdfGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportTextGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportXlsGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportXlsxGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportXlsReportGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportXmlGWT" type="cat">	
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="assignPartTagsDescribeDocumentsGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+    </model>
+    <!--  action model for ppb describes table [end]-->
+
+    <!--  action model for ppb references table [start]-->
+    <model name="ppbReferencesContextMenu">
+        <action name="viewInfoGWT" type="cat" />
+        <action name="separator" type="separator" />
+        <action name="removePPBRefDocGWT" type="ppb" />
+        <action name="assignOptionalityGWT" type="ppb" />
+		<action name="mpmViewAssignedUsesExpressionGWT" type="baseclient" />	       
+        <action name="copyAssignedUsesExpressionGWT" type="expressionAssignable" /> 		
+    </model>
+
+    <model name="ppbReferencesToolBar">
+        <action name="insertExistingPPBRefDocGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="insertNewPPBRefDocGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="removePPBRefDocGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="tableExportActionsGWT" type="cat">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="exportCsvGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportHtmlGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportPdfGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportTextGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportXlsGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportXlsxGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportXlsReportGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportXmlGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="assignPartTagsReferenceDocumentsGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+    </model>
+    <!--  action model for ppb references table [end]-->
+
+    <!--  action model for ppb epm table [start]-->
+    <model name="ppbEPMContextMenu">
+        <action name="viewInfoGWT" type="cat" />
+        <action name="separator" type="separator" />
+        <action name="removePPBEPMDocGWT" type="ppb" />
+        <action name="assignOptionalityGWT" type="ppb" />
+		<action name="mpmViewAssignedUsesExpressionGWT" type="baseclient" />	       
+        <action name="copyAssignedUsesExpressionGWT" type="expressionAssignable" />         
+    </model>
+
+    <model name="ppbEPMToolBar">
+        <action name="insertExistingPPBEPMDocGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="removePPBEPMDocGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="tableExportActionsGWT" type="cat">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="exportCsvGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportHtmlGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportPdfGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportTextGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportXlsGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportXlsxGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportXlsReportGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="exportXmlGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="assignPartTagsEPMDocumentsGWT" type="ppb">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+    </model>
+    <!--  action model for ppb epm table [end]-->
+
+    <model name="ppbFindCheckedOutItemsToolBar">
+      <action name="checkinAndRemoveGWT" type="ppb" />
+      <action name="undocheckoutAndRemoveGWT" type="ppb" />
+    </model>
+
+    <model name="ppbFindCheckedOutItemsContextMenu">
+      <action name="checkinAndRemoveGWT" type="ppb" />
+      <action name="undocheckoutAndRemoveGWT" type="ppb" />
+   </model>
+
+</actionmodels>

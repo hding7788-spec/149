@@ -1,0 +1,448 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+
+<actionmodels resourceBundle="com.ptc.windchill.enterprise.productfamily.productFamilyManagementUIActionsRB">
+
+   <model name="pfbPanelContextMenu">
+   </model>
+   <model name="pfbTreePanelContextMenu">
+   </model>
+
+   <model name="ConfigurableStructureBaselineTableRMB" resourceBundle="com.ptc.windchill.enterprise.productfamily.productFamilyManagementUIActionsRB">    
+      <action name="viewConfigurableStructureBaselineObjects" type="variantspec" shortcut="true"/> <!-- RMC Action -->
+   </model>
+
+   <model name="more_ProductFamily_actions" menufor="wt.productfamily.ProductFamilyMember">
+       <action name="view" type="object"/>
+       <action name="launchMatrixEditor" type="productfamily"/>
+       <action name="separator" type="separator"/>
+       <action name="edit" type="productfamily"/>
+       <action name="MULTIRENAME" type="pdmObject"/>  <!-- Rename Action for Info page -->
+       <action name="separator" type="separator"/>
+       <action name="SETSTATE" type="pdmObject"/>    <!-- Set State -->
+       <action name="reassignLC" type="lifecycle"/>  <!-- Reassign Life Cycle -->
+       <action name="resetTeam" type="team"/>   <!-- Reset Team -->
+   </model>
+
+	<model name="productFamilyTableToolbar">
+		<action name="createProductFamily" type="productfamily" shortcut="true"/>
+	</model> 
+	
+	<model name="productFamily_third_level_nav">
+		<submodel name="productFamilyGeneral"/>
+		<submodel name="collaboration" resourceBundle="com.ptc.core.ui.navigationRB"/>
+		<action name="ProductFamily_LotBaselines" type="lotbaseline"/>
+	</model>
+
+	<model name="productFamilyInfoPageTabSet">
+		<submodel name="productFamilyInfoDetailsTab"/>
+		<action name="productFamilyStructureGWT" type="productfamily"/>
+		<submodel name="lotbaselinesTab" type="lotbaseline"/>
+	</model>
+	
+	<model name="lotbaselinesTab" resourceBundle="com.ptc.windchill.lotbaseline.data.lotBaselineResource">
+	     	<action name="ProductFamily_LotBaselines" type="lotbaseline"/>
+    	</model>
+    	
+	<model name="productFamilyInfoDetailsTab">
+		<action name="primaryAttributes" type="object"/>
+		<action name="attributes" type="object"/>
+	</model>
+
+	<model name="productFamilyGeneral">
+		<action name="primaryAttributes" type="object"/>
+		<action name="attributes" type="object"/>
+	</model>
+	
+    <!--  pfsb models START -->
+    <model name="pfsbTreeContextMenu">
+      <action name="viewInfoGWT" type="cat"/>
+      <action name="separator" type="separator"/>
+      <action name="launchMatrixEditorGWTRMC" type="productfamily"/>
+      <action name="separator" type="separator"/>
+      <action name="createPARFromVariantSpecRMCGWT" type="productfamily"/>
+      <action name="separator" type="separator"/>
+      <submodel name="pfsbInsertTreeContextSubmenuGWT" />
+      <action name="PFMRemoveGWT" type="productfamily" />
+      <action name="convertToManaged" type="productfamily"/>
+      <submodel name="pfsbEditTreeContextSubmenuGWT"/>
+      <action name="editOptionFilterGWT" type="variantspec"/>
+      <action name="separator" type="separator"/>
+      <action name="createLotBaseline" type="lotbaseline"/>
+      <action name="separator" type="separator"/>
+      <action name="addToLotBaselineGWT" type="lotbaseline"/>
+      <action name="updateProductVariantsGWT" type="lotbaseline"/>
+	  <action name="addLotBaseLineObjectsGWT" type="lotbaseline"/>
+      <action name="editLotBaseLineObjectsGWT" type="lotbaseline"/>
+      <action name="separator" type="separator" />
+      <action name="copyToWindchillGWT" type="cat" />
+      <action name="pfPasteFromClipboardToTreeGWT" type="productfamily" />
+      <submodel name="psbExpandContextSubmenuGWT"/>
+      <action name="separator" type="separator"/>
+      <action name="relatedObjectsGWT" type="productfamily" />
+      <action name="separator" type="separator"/>
+      <action name="track_new_work_PFSB_GWT" type="resourceAssignment"/>
+      <action name="new_activity_PFSB_GWT" type="planActivity"/>
+    </model>
+	
+    <model name="pfsbTreeToolBar">
+      	<!-- Editing Group -->
+      	<action name="editingGroupGWT" type="psb">
+      		<ribbonInfo buttonType="group" columnCount="2" />
+      	</action>
+        <action name="insertExistingProductFamilyObjectsStructureJCA" type="productfamily">
+            <ribbonInfo buttonType="button" buttonScale="small" />        
+        </action>
+        <action name="PFMRemoveGWT" type="productfamily">
+            <ribbonInfo buttonType="button" buttonScale="small"/>
+        </action>	
+      	<action name="insertNewProductFamilyObjectsGWT" type="productfamily">
+      		<ribbonInfo buttonType="button" buttonScale="small" />
+      	</action>
+         <action name="editFamilyMemberSplitGWT" type="productfamily">
+            <ribbonInfo buttonType="split" buttonScale="small"/>
+         </action>  
+         <action name="editFamilyMemberGWT" type="productfamily">
+            <ribbonInfo buttonType="menuitem" buttonScale="small"/>
+         </action>
+         <action name="rename" type="productfamily">
+    	    <ribbonInfo buttonType="menuitem" buttonScale="small"/>
+    	 </action>
+      	
+        <!-- Clipboard Group -->
+        <action name="clipboardGroupGWT" type="psb" >
+            <ribbonInfo buttonType="group" columnCount="2" />
+        </action>
+        <action name="pfPasteFromClipboardToTreeWithLargeIconGWT" type="productfamily">
+            <ribbonInfo buttonType="split" buttonScale="medium" />
+        </action>
+        <action name="pfPasteFromClipboardToTreeGWT" type="productfamily">
+            <ribbonInfo buttonType="menuitem" buttonScale="medium" />
+        </action>
+        <action name="pfPasteSelectToTreeGWT" type="productfamily">
+            <ribbonInfo buttonType="menuitem" buttonScale="medium" />
+        </action>
+        <action name="copyToWindchillWithLargeIconGWT" type="cat" >
+            <ribbonInfo buttonType="button" buttonScale="medium" />
+        </action>
+        
+        
+      	<!-- Viewing Group -->
+      	<!-- Views -->
+      	<action name="viewingGroupGWT" type="psb">
+      		<ribbonInfo buttonType="group" columnCount="2" />
+      	</action>
+        <action name="showDefaultRelatedObjectsGWT" type="productfamily">
+            <ribbonInfo buttonType="split" columnCount="2" />
+        </action>
+      	<action name="configurableTableViewWithLargeIconGWT" type="cat">
+      		<ribbonInfo buttonType="menu" buttonScale="small" />
+      	</action>
+        <action name="hideAllRelatedObjectsGWT" type="productfamily">
+            <ribbonInfo buttonType="button" columnCount="2" />
+        </action>
+      	<action name="configurableTableViewListGWT" type="cat">
+      		<ribbonInfo buttonType="check" groupName="table_view" />
+      	</action>
+      	<action name="separator" type="separator" />
+      	<action name="saveStructureViewGWT" type="cat">
+      		<ribbonInfo buttonType="menuitem" />
+      	</action>
+      	<action name="configurableTableViewManagerGWT" type="cat">
+      		<ribbonInfo buttonType="menuitem" />
+      	</action>
+      	<!-- Display -->
+      	<action name="displayWithLargeIconGWT" type="cat">
+      		<ribbonInfo buttonType="menu" buttonScale="small" />
+      	</action>
+      	<action name="selectAllGWT" type="cat">
+      		<ribbonInfo buttonType="menuitem" />
+      	</action>
+      	<action name="separator" type="separator" />
+      	<action name="expandAllLevelsFromRootGWT" type="cat">
+      		<ribbonInfo buttonType="menuitem" />
+      	</action>
+      	<action name="psbExpandSubmenuGWT" type="psb">
+      		<ribbonInfo buttonType="submenu" />
+      	</action>
+      	<action name="expandOneLevelGWT" type="cat">
+      		<ribbonInfo buttonType="submenuitem" />
+      	</action>
+      	<action name="expandTwoLevelsGWT" type="cat">
+      		<ribbonInfo buttonType="submenuitem" />
+      	</action>
+      	<action name="expandThreeLevelsGWT" type="cat">
+      		<ribbonInfo buttonType="submenuitem" />
+      	</action>
+      	<action name="expandFourLevelsGWT" type="cat">
+      		<ribbonInfo buttonType="submenuitem" />
+      	</action>
+      	<action name="expandFiveLevelsGWT" type="cat">
+      		<ribbonInfo buttonType="submenuitem" />
+      	</action>
+      	<action name="separator" type="separator" />
+      	<action name="expandAllSelectedLevelsGWT" type="cat">
+      		<ribbonInfo buttonType="submenuitem" />
+      	</action>
+      	<action name="expandNLevelsGWT" type="cat">
+      		<ribbonInfo buttonType="submenuitem" />
+      	</action>
+      	<action name="psbEndExpandSubmenuGWT" type="psb">
+      		<ribbonInfo buttonType="endsubmenu" />
+      	</action>
+      	<action name="collapseAllLevelsGWT" type="cat">
+      		<ribbonInfo buttonType="menuitem" />
+      	</action>
+      	<action name="separator" type="separator" />
+      	<action name="refreshGWT" type="cat">
+      		<ribbonInfo buttonType="menuitem" />
+      	</action>
+      	<!-- Configurable Module Group -->
+      	<action name="configurableModuleGroupGWT" type="productfamily">
+      		<ribbonInfo buttonType="group" columnCount="2" />
+      	</action>
+      	<action name="assignConfigurableModuleGWT" type="productfamily">
+      		<ribbonInfo buttonType="button" buttonScale="medium" />
+      	</action>
+        <action name="unassignConfigurableModuleGWT" type="productfamily">
+            <ribbonInfo buttonType="button" buttonScale="medium" />
+        </action>
+      	<!-- Tools Group -->
+      	<action name="toolsGroupGWT" type="psb">
+      		<ribbonInfo buttonType="group" columnCount="2" />
+      	</action>
+      	<action name="launchMatrixEditorGWT" type="productfamily">
+      		<ribbonInfo buttonType="button" buttonScale="medium" />
+      	</action>
+    </model> 
+  
+   <!-- pfsb model END -->
+	
+	
+   <!-- PFB/MatrixBOM model START -->
+   
+    <model name="pfbTreeMiniToolBar">
+      <action name="openProductFamilyGWT" type="productfamily" />
+      <action name="copyToWindchillGWT" type="cat" />
+      <action name="pfPasteFromClipboardToTreeGWT" type="productfamily" />
+      <action name="pfPasteSelectToTreeGWT" type="productfamily" />
+   </model>
+
+   <!-- Toolbar above the Overloaded BOM section of the matrix -->
+   <model name="pfbBomMiniToolBar">
+      <action name="pfbInsertExistingPartStructureGWT" type="overloadedBOM" />
+      <action name="pfbInsertNewPartStructureGWT" type="overloadedBOM" />
+      <action name="pfbInsertMultiNewPartStructureGWT" type="overloadedBOM" />
+      <action name="removeGWT" type="psb" />
+      <action name="separator" type="separator" />
+      <action name="editGWT" type="psb" />
+      <action name="pfbEditMultiObjectsGWT" type="overloadedBOM" />
+      <action name="pfbEditAttrValuesUsageLinksGWT" type="overloadedBOM" />
+      <action name="pfbEditUsageLinkTreeGWT" type="overloadedBOM" />
+      <action name="separator" type="separator" />
+      <action name="checkoutGWT" type="psb" />
+      <action name="partCheckinGWT" type="psb" />
+      <action name="pfbUndoCheckoutGWT" type="overloadedBOM" />
+      <action name="newRevisionGWT" type="cat" />
+      <action name="separator" type="separator" />
+      <action name="copyToWindchillGWT" type="cat" />
+      <action name="pasteFromClipboardToTreeGWT" type="psb" />
+      <action name="pasteSelectToTreeGWT" type="psb" />
+      <action name="separator" type="separator" />
+      <action name="refreshGWT" type="cat" />
+      <action name="separator" type="separator" />
+      <action name="filterPropertiesGWT" type="ec"/>
+      <action name="editFilterGWT" type="ec"/>
+      <action name="savedFiltersGWT" type="ec"/>
+      
+   </model>
+
+   <model name="pfbTreeContextMenu">
+      <action name="pfbViewInfoGWT" type="productfamily" />
+      <action name="separator" type="separator" />
+      <action name="createPARFromVariantSpecRMCGWT" type="productfamily"/>
+      <action name="separator" type="separator" />
+      <action name="createLotBaseline" type="lotbaseline"/>
+      <action name="separator" type="separator"/>
+      <action name="addToLotBaselineGWT" type="lotbaseline"/>
+      <action name="updateProductVariantsGWT" type="lotbaseline"/>
+      <action name="addLotBaseLineObjectsGWT" type="lotbaseline"/>
+      <action name="editLotBaseLineObjectsGWT" type="lotbaseline"/>
+      <action name="separator" type="separator" />
+      <action name="copyToWindchillGWT" type="cat" />
+      <action name="pfPasteFromClipboardToTreeGWT" type="productfamily" />
+      <submodel name="pfbExpandContextSubmenuGWT"/>
+      <action name="collapseAllLevelsGWT" type="cat" />
+      <action name="separator" type="separator" />
+      <action name="relatedObjectsGWT" type="productfamily" />
+      <action name="separator" type="separator" />
+      <action name="track_new_work_PFSB_GWT" type="resourceAssignment"/>
+      <action name="new_activity_PFSB_GWT" type="planActivity"/>
+   
+   </model>
+
+   <!-- Expand by -->
+   <model name="pfbExpandContextSubmenuGWT">
+      <action name="expandOneLevelGWT" type="cat" />
+      <action name="expandTwoLevelsGWT" type="cat" />
+      <action name="expandThreeLevelsGWT" type="cat" />
+      <action name="expandFourLevelsGWT" type="cat" />
+      <action name="expandFiveLevelsGWT" type="cat" />
+      <action name="separator" type="separator" />
+      <action name="expandAllSelectedLevelsGWT" type="cat" />
+      <action name="expandNLevelsGWT" type="cat" />
+   </model>
+
+   <!-- Expand Selected by -->
+   <model name="pfbBOMExpandContextSubmenuGWT">
+      <action name="expandOneLevelGWT" type="cat" />
+      <action name="expandTwoLevelsGWT" type="cat" />
+      <action name="expandThreeLevelsGWT" type="cat" />
+      <action name="expandFourLevelsGWT" type="cat" />
+      <action name="expandFiveLevelsGWT" type="cat" />
+      <action name="separator" type="separator" />
+      <action name="expandAllSelectedLevelsGWT" type="cat" />
+      <action name="expandNLevelsGWT" type="cat" />
+   </model>
+   
+   <model name="pfbIndicatorActionModel">
+   </model>  
+
+   <!-- RMC menu for the Overloaded BOM tree in the matrix -->
+   <model name="pfbBOMTreeContextMenu">
+      <action name="pfbViewInfoGWT" type="productfamily" />
+      <action name="separator" type="separator" />
+      <action name="pfbIncludeConfigurableModulesGWT" type="overloadedBOM" />
+      <action name="pfbIncludeModuleVariantsGWT" type="overloadedBOM" />
+      <action name="pfbBOMexcludeModuleVariantsGWT" type="overloadedBOM" />
+      <action name="pfbExcludeConfigurableModulesGWT" type="overloadedBOM" />
+      <action name="pfbUseOptionFilterGWT" type="overloadedBOM" />
+      <action name="separator" type="separator" />
+      <action name="partCheckinGWT" type="psb" />
+      <action name="checkoutGWT" type="psb" />
+      <action name="pfbUndoCheckoutGWT" type="overloadedBOM" />
+      <action name="newRevisionGWT" type="cat" />
+      <action name="separator" type="separator" />
+      <submodel name="pfbBOMTreeInsertMenu" />
+      <action name="removeGWT" type="psb" />
+      <submodel name="pfbBOMTreeEditMenu" />
+      <action name="pfbAssignItemOptionalityGWT" type="overloadedBOM" />
+      <action name="pfbAssignUsesOptionalityGWT" type="overloadedBOM" />
+      <action name="separator" type="separator" />
+      <action name="copyToWindchillGWT" type="cat" />
+      <action name="pasteFromClipboardToTreeGWT" type="psb" />
+      <action name="separator" type="separator" />
+      <action name="selectAllGWT" type="cat" />
+      <action name="pfbExpandAllLevelsGWT" type="overloadedBOM" />
+      <submodel name="pfbBOMExpandContextSubmenuGWT"/>
+      <action name="collapseAllLevelsGWT" type="cat" />
+      <action name="separator" type="separator" />
+      <action name="track_new_work_GWT" type="resourceAssignment"/>
+      <action name="new_activity_GWT" type="planActivity"/>
+      <action name="replacementsGWT" type="psb" /> 
+      <action name="pfbRemovePartsFromBaselineGWT" type="overloadedBOM" />
+      <submodel name="pfbReplaceRelatedPartsTreeContextSubmenuGWT"/>
+      <action name="pfbRemovePartsFromBaselineSingleLotGWT" type="overloadedBOM"/>
+   </model>
+
+   <model name="pfbBOMTreeInsertMenu" resourceBundle="com.ptc.windchill.enterprise.productfamily.productFamilyManagementUIActionsRB">
+      <action name="pfbInsertExistingPartStructureGWT" type="overloadedBOM" />
+      <action name="pfbInsertNewPartStructureGWT" type="overloadedBOM" />
+      <action name="pfbInsertMultiNewPartStructureGWT" type="overloadedBOM" />
+   </model>
+
+   <model name="pfbBOMTreeEditMenu" resourceBundle="com.ptc.windchill.enterprise.productfamily.productFamilyManagementUIActionsRB">
+      <action name="pfbEditGWT" type="overloadedBOM" />
+      <action name="pfbEditMultiObjectsGWT" type="overloadedBOM" />
+      <action name="pfbEditAttrValuesUsageLinksGWT" type="overloadedBOM" />
+      <action name="pfbEditUsageLinkTreeGWT" type="overloadedBOM" />
+      <action name="editCommonAttrsGWT" type="psb" />
+      <action name="separator" type="separator" />
+      <action name="renameGWT" type="psb" />
+      <action name="cadxRenameGWT" type="cadx" />
+      <action name="moveGWT" type="cat" />
+   </model>
+   
+   <model name="pfbBOMIndicatorActionModel">
+   </model>
+
+    <model name="pfbBOMUsesTableToolBar">
+        <action name="pfbInsertExistingPartUsesGWT" type="overloadedBOM" />
+        <action name="pfbInsertNewPartUsesGWT" type="overloadedBOM" />
+        <action name="pfbInsertMultiNewPartUsesGWT" type="overloadedBOM" />
+        <action name="removeChildPartGWT" type="psb" />
+        <action name="separator" type="separator" />
+        <action name="pfbEditUsageLinkGWT" type="overloadedBOM" />
+        <action name="editAttrValuesUsageLinksGWT" type="psb" />
+        <!--<action name="assignOptionalityGWT" type="psb" /> -->
+        <action name="separator" type="separator"></action>
+        <action name="copyToWindchillGWT" type="cat" />
+        <action name="pasteFromClipboardToTableGWT" type="psb" />
+        <action name="pasteSelectToTableGWT" type="psb" />
+        <action name="tableExportActionsGWT" type="cat" />
+        <action name="exportCsvGWT" type="cat" />
+        <action name="exportHtmlGWT" type="cat" />
+        <action name="exportPdfGWT" type="cat" />
+        <action name="exportTextGWT" type="cat" />
+        <action name="exportXlsGWT" type="cat" />
+        <action name="exportXlsxGWT" type="cat" />
+        <action name="exportXlsReportGWT" type="cat" />
+        <action name="exportXmlGWT" type="cat" />
+    </model>
+
+    <model name="pfbBOMUsesTableContextMenu">
+        <action name="removeChildPartGWT" type="psb" />
+        <action name="pfbEditUsageLinkGWT" type="overloadedBOM" />
+        <action name="editAttrValuesUsageLinksGWT" type="psb" />
+        <action name="assignOptionalityGWT" type="psb" />
+        <action name="viewAssignedUsesExpressionGWT" type="expressionAssignable" />
+        <action name="copyAssignedUsesExpressionGWT" type="expressionAssignable" />              <!-- Copy Independent Expression -->
+        <action name="renameGWT" type="psb" />
+        <action name="cadxRenameGWT" type="cadx" />
+        <action name="separator" type="separator" />
+        <action name="copyToWindchillGWT" type="cat" />
+        <action name="pasteFromClipboardToTableGWT" type="psb" />
+    </model>
+    
+    <model name="pfbNoStepsEditMultiWizardButtons">
+        <action name="saveButton" type="object"/>
+        <action name="pfbCheckinButton" type="overloadedBOM"/>
+        <action name="editCancelButton" type="object"/>
+    </model>
+   
+   <!-- PFB/MatrixBOM model END -->
+   <!-- Insert submenu for PFSB tree context menu -->
+      <model name="pfsbInsertTreeContextSubmenuGWT">
+         <action name="insertNewProductFamilyObjectsGWT" type="productfamily"/>
+         <action name="insertExistingProductFamilyObjectsStructureJCA" type="productfamily" />
+      </model>
+    <!-- Edit submenu for PFSB tree context menu -->
+      <model name="pfsbEditTreeContextSubmenuGWT">
+		<action name="editFamilyMemberGWT" type="productfamily"/>
+		<action name="editLotBaselineGWT" type="lotbaseline"/>
+		<action name="separator" type="separator"/>
+		<action name="rename" type="productfamily" />
+		<action name="lotBaselineMoveGWT" type="lotbaseline"/>
+      </model>
+
+	
+   <model name="pfsb_variantspecchoices_toolbar">
+      <action name="editOptionFilter" type="variantspec" shortcut="true"/>
+   </model>
+   
+   <model name="pfb_variantspecchoices_toolbar">
+      <action name="editOptionFilter" type="variantspec" shortcut="true"/>
+   </model>
+   
+   <model name="EditOptionFilterButtons">
+      <action name="editOptionFilterSaveBtn"     type="variantspec"/>
+      <action name="editOptionFilterCancelBtn"   type="variantspec"/>
+   </model>
+   
+   <model name="pfbReplaceRelatedPartsTreeContextSubmenuGWT" resourceBundle="com.ptc.windchill.enterprise.productfamily.productFamilyManagementUIActionsRB">
+      <action name="pfbReplaceWithAlternateSubstitute" type="overloadedBOM" />
+      <action name="pfbReplaceWithExistingPart" type="overloadedBOM" />
+      <action name="pfbReplaceWithAddingNewPart" type="overloadedBOM" />
+   </model>
+   
+</actionmodels>

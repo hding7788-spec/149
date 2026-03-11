@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Configuration SYSTEM "xconf.dtd">
+<Configuration targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties">
+	
+	<Service name="com.ptc.core.components.descriptor.DataUtility">  
+		<Option serviceClass="com.glaway.mpm.pbom.datautilities.PBOMResourceInfoDataUtility"
+		    requestor="java.lang.Object"
+			  selector="hasBooleanValue"
+		    cardinality="singleton"/>
+	</Service>
+	
+	<Service name="com.ptc.core.components.descriptor.DataUtility">  
+		<Option serviceClass="com.glaway.mpm.pbom.datautilities.ShowUserName"
+		    requestor="java.lang.Object"
+			  selector="ShowUserName"
+		    cardinality="singleton"/>
+	</Service>
+	
+	
+</Configuration>
+

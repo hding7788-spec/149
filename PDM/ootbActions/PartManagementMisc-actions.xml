@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+
+   <objecttype name="part" class="wt.part.WTPart" resourceBundle="com.ptc.windchill.enterprise.part.partResource">
+      
+      <action name="AXL" uicomponent="THIRD_LEVEL_AXL"/>
+      
+      <action name="relatedParts"/>
+      <action name="associatedChanges"/>
+      <action name="tobedecided"/>
+
+      <action name="showLifeCycleHistory" enabledwhensuspended="true">
+         <command class="" method="showLifeCycleHistory" windowType="page"/>
+      </action>
+
+   </objecttype>
+
+</listofactions>

@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<listofactions>
+  <objecttype name="car" resourceBundle="com.ptc.windchill.uwgm.cadx.caddoc.car.carActionsRB">
+    <action name="carStructure" resourceBundle="com.ptc.windchill.uwgm.cadx.caddoc.car.carActionsRB">
+      <command url="netmarkets/jsp/car/car.jsp" />
+    </action>
+    <action name="exitContextBuilder">
+      <command class="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.CARExitContextBuilderAction" />
+    </action>
+	<action name="saveDefinition">
+      <command class="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.CARSaveDefinitionAction" />
+    </action>
+    <action name="addAttributeRule">
+      <command class="com.ptc.cat.ui.client.action.NoAction" />
+    </action>
+    <action name="reorderRules">
+      <command class="com.ptc.cat.ui.client.action.NoAction" />
+    </action>
+    <action name="designContextGroup">
+      <command class="com.ptc.cat.ui.client.action.NoAction" />
+    </action>
+    <action name="includeRep">
+      <command class="com.ptc.cat.ui.client.action.NoAction" />
+      <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter" />
+      <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.IsNotRootOnlyFilter" />
+      <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.CAREditDefinitionRepActionFilter" />
+    </action>
+    <action name="masterRep">
+      <command class="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.CAREditDefinitionRepAction" />
+      <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter" />
+      <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.IsNotRootOnlyFilter" />      
+      <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.CAREditDefinitionRepActionFilter" />      
+    </action>
+    <action name="masterRepCatiaV5">
+      <command class="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.CAREditDefinitionRepAction" />
+      <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter" />
+      <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.IsNotRootOnlyFilter" />      
+      <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.CAREditDefinitionRepActionFilter" />      
+    </action>
+    <action name="masterRepWindchill">
+      <command class="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.CAREditDefinitionRepAction" />
+      <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter" />
+      <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.IsNotRootNodeFilter" />      
+      <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.CAREditDefinitionRepActionFilter" />      
+    </action>
+    <action name="geometryRep">
+      <command class="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.CAREditDefinitionRepAction" />
+      <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter" />
+      <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.IsNotRootOnlyFilter" />
+      <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.CAREditDefinitionRepActionFilter" />
+      <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.GeometryRepFilter" />
+    </action>
+    <action name="assemblyOnlyRep">
+      <command class="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.CAREditDefinitionRepAction" />
+      <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter" />
+      <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.IsNotRootOnlyFilter" />
+      <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.CAREditDefinitionRepActionFilter" />
+      <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.AssemblyOnlyFilter" />
+    </action>
+    <action name="graphicsRep">
+      <command class="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.CAREditDefinitionRepAction" />
+      <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter" />
+      <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.IsNotRootOnlyFilter" />
+      <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.CAREditDefinitionRepActionFilter" />      
+    </action>
+    <action name="graphicsRepCatiaV5">
+      <command class="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.CAREditDefinitionRepAction" />
+      <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter" />
+      <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.IsNotRootOnlyFilter" />
+      <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.CAREditDefinitionRepActionFilter" />      
+    </action>
+    <action name="graphicsRepWindchill">
+      <command class="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.CAREditDefinitionRepAction" />
+      <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter" />
+      <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.IsNotRootNodeFilter" />
+      <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.CAREditDefinitionRepActionFilter" />      
+    </action>
+    <action name="clearRep">
+      <command class="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.CAREditDefinitionRepAction" />
+      <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter" />
+      <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.ClearRepFilter" />
+      <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.IsNotRootOnlyFilter" />
+      <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.CAREditDefinitionRepActionFilter" />      
+    </action>
+    <action name="excludeRep">
+      <command class="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.CAREditDefinitionRepAction" />
+      <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter" />
+      <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.IsNotRootOnlyFilter" />
+      <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.ExcludeRepFilter" />
+      <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.CAREditDefinitionRepActionFilter" />      
+    </action>
+    <action name="setProximityFilter">
+      <command class="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.CARSetProximityFilterAction" />
+      <includeFilter name="showHideSpatialFilter"/>
+	  <includeFilter name="hideForObjectInProject"/>
+      <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter" />
+      <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.IsNotDesignContextORDesignAssemblyFilter" />
+    </action>
+    <action name="setProximityRule">
+      <command class="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.CARSetProximityRuleAction"/>
+      <includeFilter name="showHideSpatialFilter"/>
+	    <includeFilter name="hideForObjectInProject"/>
+      <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter" />
+      <includeFilter name="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.IsNotDesignContextORDesignAssemblyFilter" />
+    </action>
+    <action name="editFilter">
+      <command class="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.CAREditECAction" />
+    </action>
+    <action name="manageAttributeRulesViaRulesTabGWT">
+      <command class="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.CARManageAttributeRulesAction" method="com.ptc.windchill.uwgm.cadx.caddoc.car.CAR"/>
+    </action>
+    <action name="attributeRulesGroupGWT">
+      <command class="com.ptc.cat.ui.client.action.NoAction" />
+    </action>
+    <action name="manageAttributeRulesViaToolbarGWT">
+      <command class="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.CARManageAttributeRulesAction" method="com.ptc.windchill.uwgm.cadx.caddoc.car.CAR"/>
+    </action>
+    <action name="showExcludedNodes">
+      <command class="com.ptc.windchill.enterprise.object.alternaterep.client.action.ToggleExcludedNodesAction" />
+     </action>  	
+    <action name="viewInfoGWT">
+      <command class="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.CARViewInfoAction" />
+    </action>
+    <action name="refreshGWT">
+         <command class="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.CARRefreshAction"/>
+      </action>
+      
+      <action name="deleteRuleGWT">
+         <command class="com.ptc.windchill.uwgm.cadx.caddoc.car.client.action.CARDeleteRuleAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.object.alternaterep.client.filters.CBDeleteRuleFilter"/>
+      </action>  
+  </objecttype>        
+</listofactions>

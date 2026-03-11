@@ -1,0 +1,1503 @@
+<?xml version="1.0"?>
+<listofactions>
+
+    <objecttype name="common" class="wt.fc.Persistable" resourceBundle="com.ptc.windchill.option.optionResource" ajax="page">
+        <action name="undoCheckoutOcm" ajax="page">
+            <includeFilter name="hideForNewObjectInWorkspace"/>
+            <includeFilter name="hideForCheckedoutObjectInWorkspace"/>
+            <includeFilter name="sandboxSharingValidationSimple"/>
+            <includeFilter name="disableSBHiddenFilter"/>
+            <includeFilter name="hideFromNonAgreementMgrs"/>
+            <includeFilter name="hideForUncheckedoutObject"/>
+            <command class="com.ptc.windchill.option.form.UndoCheckoutOptionChoiceFormProcessor" method="execute" onClick="JCAConfirm('com.ptc.netmarkets.util.utilResource.CONFIRM_UNDO_CHECKOUT')"/>
+        </action>
+    </objecttype>
+
+    <objecttype name="filterTemplate" class="com.ptc.windchill.option.model.OptionSet" resourceBundle="com.ptc.windchill.option.optionResource" ajax="page">
+        <action name="removeMergedItems" resourceBundle="com.ptc.windchill.option.optionResource" uicomponent="REMOVE_MERGED_ITEMS">
+            <command class="com.ptc.windchill.option.form.RemoveMergedOptionSetItemsFormProcessor" method="execute"/>
+        </action>
+
+        <action name="previewECOptions" resourceBundle="com.ptc.windchill.option.optionResource" ajax="page">
+            <command class="" method="execute" windowType="popup"/>
+            <includeFilter name="PreviewActionFilter"/>
+        </action>
+
+        <action name="previewECOptions_step">
+            <command class="" method="" windowType="wizards_step"/>
+        </action>
+
+        <action name="manageChoices" resourceBundle="com.ptc.windchill.option.optionResource" ajax="page" uicomponent="MANAGE_CHOICES">
+            <command class="com.ptc.windchill.option.form.ChoiceComponentFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="OptionSetContextFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+        </action>
+
+        <action name="manageChoices_step">
+            <command class="" method="" windowType="wizards_step"/>
+        </action>
+
+        <action name="deleteOptionSet" multiselect="true" selectRequired="true" ajax="row">
+            <command class="com.ptc.windchill.option.server.OptionsClientHelper" method="deleteOptionSet" onClick="deleteConfirm(event)"/>
+            <includeFilter name="disableForWorkingCopyWorkInProgress"/>
+        </action>
+
+        <action name="deleteOptionSets" multiselect="true" selectRequired="true" ajax="row">
+            <command class="com.ptc.windchill.option.server.OptionsClientHelper" method="deleteOptionSet" onClick="deleteConfirm(event, table)"/>
+            <includeFilter name="optionAdministratorFilter"/>
+        </action>
+
+        <action name="createOptionSet" uicomponent="CREATE_OPTION_SET">
+            <command class="com.ptc.windchill.option.form.CreateOptionSetFormProcessor" method="execute" windowType="popup"/>
+        </action>
+
+        <action name="details_step">
+            <component name="optionSet.attributes" windowType="wizards_step"/>
+        </action>
+
+        <action name="editOptionSet" ajax="page" uicomponent="CREATE_OPTION_SET">
+            <command class="com.ptc.windchill.option.form.EditWorkableOptionsObjectFormProcessor" method="execute" windowType="popup"/>
+        </action>
+
+        <action name="editOptionSet_step">
+            <component name="optionSet.attributes" windowType="wizards_step"/>
+        </action>
+
+        <action name="reviseOptionSet" checkaccess="true">
+            <description>Revise an OptionSet object</description>
+            <command class="com.ptc.windchill.option.server.OptionsClientHelper" method="reviseOptionSet"/>
+            <includeFilter name="hideForCheckedoutObject"/>
+        </action>
+
+        <action name="reviseOptionSet_step">
+            <description>Show progress indicator during the revision of an OptionSet object</description>
+            <command windowType="wizard_step"/>
+        </action>
+
+        <action name="unregisterOptionSet" selectRequired="true" uicomponent="ASSIGN_OPTION_SET">
+            <command class="com.ptc.windchill.option.server.OptionsClientHelper" method="unregisterOptionSet"/>
+            <includeFilter name="OptionSetRegisterActionsFilter"/>
+            <includeFilter name="inheritedContextFilter"/>
+            <includeFilter name="assignOptionSetFilter"/>
+        </action>
+
+        <action name="registerOptionSet" uicomponent="ASSIGN_OPTION_SET">
+            <includeFilter name="assignOptionSetFilter"/>
+            <includeFilter name="OptionSetRegisterActionsFilter"/>
+            <includeFilter name="ataProductFilterDisabler"/>
+            <command class="com.ptc.windchill.option.server.OptionsClientHelper" method="registerOptionSet" windowType="popup"/>
+        </action>
+
+        <action name="registerOptionSet_step">
+            <command class="" method="" windowType="wizards_step"/>
+        </action>
+
+        <action name="overrideOptionSet">
+            <includeFilter name="OptionSetRegisterActionsFilter"/>
+            <includeFilter name="assignOptionSetFilter"/>
+            <command class="com.ptc.windchill.option.server.OptionsClientHelper" method="overrideOptionSet" windowType="popup"/>
+        </action>
+
+        <action name="overrideOptionSet_step">
+            <command class="" method="" windowType="wizards_step"/>
+        </action>
+
+        <action name="undooverrideOptionSet" ajax="page">
+            <includeFilter name="OptionSetRegisterActionsFilter"/>
+            <command class="com.ptc.windchill.option.server.OptionsClientHelper" method="undooverrideOptionSet"/>
+        </action>
+
+        <action name="editOptionRules">
+            <command url="netmarkets/jsp/filterTemplate/editOptionRules.jsp?expression_type=Basic&amp;assignedTo=Uses&amp;isGWTAction=true"
+                    class="com.ptc.windchill.option.form.EditOptionRulesFormProcessor" method="execute" windowType="popup"/>
+        </action>
+
+        <action name="editOptionRules_step">
+            <command class="" method="" windowType="wizards_step"/>
+        </action>
+
+        <action name="editOccurrencesOptionRules">
+            <command url="netmarkets/jsp/filterTemplate/editOccurrencesOptionRules.jsp?expression_type=Basic&amp;assignedTo=Occurrences&amp;isGWTAction=true"
+                    class="com.ptc.windchill.option.form.EditOptionRulesFormProcessor" method="execute" windowType="popup"/>
+        </action>
+
+        <action name="editOccurrencesOptionRules_step">
+            <command class="" method="" windowType="wizards_step"/>
+        </action>
+
+        <action name="editItemOptionRules" multiselect="true" uicomponent="ASSIGN_EXPRESSION">
+            <command class="com.ptc.windchill.option.form.EditItemOptionRulesFormProcessor" url="netmarkets/jsp/filterTemplate/editItemOptionRules.jsp?expression_type=Basic&amp;assignedTo=Item" method="execute" windowType="popup" onClick="onClickValidation(event,&apos;editItemOptionRules&apos;)"/>
+            <includeFilter name="disableConfigurablePartsFilter"/>
+            <includeFilter name="OptionsSandBoxSharedFilter"/>
+            <includeFilter name="hideEditItemOptionRulesActionFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+        </action>
+      	<action name="editItemOptionRulesPreStep" multiselect="true" uicomponent="ASSIGN_EXPRESSION">
+            <command windowType="popup"/>
+        </action>
+        <action name="editItemOptionRulesGWT" multiselect="true">
+            <command class="com.ptc.windchill.option.form.EditItemOptionRulesGWTFormProcessor"
+                    url="netmarkets/jsp/filterTemplate/editItemOptionRulesGWT.jsp?expression_type=Basic&amp;assignedTo=Item&amp;isGWTAction=true"
+                    method="execute" windowType="popup" onClick="onClickValidation(event,&apos;editItemOptionRules&apos;)"/>
+            <includeFilter name="disableConfigurablePartsFilter"/>
+            <includeFilter name="OptionsSandBoxSharedFilter"/>
+            <includeFilter name="hideEditItemOptionRulesActionFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+        </action>
+
+        <action name="editItemOptionRules_step">
+            <command class="" method="" windowType="wizards_step"/>
+        </action>
+
+        <action name="editItemOptionRulesGWT_step">
+            <command class="" method="" windowType="wizards_step"/>
+        </action>
+
+        <action name="editItemOptionRulesWizStep" preloadWizardPage="false">
+            <command url="netmarkets/jsp/filterTemplate/editItemOptionRules_step.jsp" class="com.ptc.windchill.option.form.EditItemOptionRulesFormProcessorDelegate" method="" windowType="wizards_step"/>
+            <includeFilter name="disableConfigurablePartsFilter"/>
+            <includeFilter name="OptionsSandBoxSharedFilter"/>
+            <includeFilter name="hideEditItemOptionRulesActionFilter"/>
+        </action>
+
+        <action name="choices" resourceBundle="com.ptc.windchill.option.optionResource"/>
+
+        <action name="list" resourceBundle="com.ptc.windchill.option.optionResource">
+            <component name="optionset.mvc.listOptionSets" windowType="page"/>
+            <includeFilter name="disableConfigurablePartsFilter"/>
+            <includeFilter name="assignOptionSetFilter"/>
+        </action>
+
+        <action name="listAssignedOptionSet" resourceBundle="com.ptc.windchill.option.optionResource">
+            <component name="optionset.mvc.listAssignedOptionSet" windowType="page"/>
+            <includeFilter name="hasOptionSetDelegateFilter"/>
+            <includeFilter name="disableConfigurablePartsFilter"/>
+            <includeFilter name="OptionsSandBoxSharedFilter"/>
+        </action>
+
+        <action name="setChoiceEffectivity" multiselect="true" selectRequired="true" resourceBundle="com.ptc.windchill.option.optionResource">
+            <command class="com.ptc.windchill.option.form.SetChoiceEffectivityFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="OptionSetContextFilter"/>
+            <includeFilter name="ChoiceEffectivityActionFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+        </action>
+
+        <action name="setChoiceEffectivity_step" required="true" afterJS="validateEffectivityDates">
+            <component name="optionSet.mvc.setChoiceEffectivity" windowType="wizard_step"/>
+        </action>
+
+        <action name="renameOptionSetWizard">
+            <command class="com.ptc.windchill.enterprise.object.forms.RenameObjectFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="hideForCheckedoutObject"/>
+        </action>
+
+        <action name="renameOptionSetWizardStep">
+            <component name="optionSet.mvc.renameOptionSet" windowType="wizard_step"/>
+        </action>
+
+        <action name="saveasOptionSet">
+            <command class="com.ptc.windchill.option.form.SaveAsOptionSetFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="hideForCheckedoutObject"/>
+            <includeFilter name="SaveAsOptionSetActionFilter"/>
+        </action>
+
+        <action name="saveasOptionSet_step">
+            <component name="optionSet.mvc.saveasOptionSet" windowType="wizards_step"/>
+        </action>
+
+        <action name="addMappingsMembership" resourceBundle="com.ptc.windchill.option.optionResource" ajax="page">
+            <command class="com.ptc.windchill.option.form.AddRemoveCandidateChoiceRuleFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="explicitChoiceRuleMembershipActionFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+        </action>
+
+        <action name="addMappingsMembership_step">
+            <component name="optionmanager.mvc.manageMappingsMembershipTable" windowType="wizard_step"/>
+        </action>
+
+        <action name="addConstraintMembership" resourceBundle="com.ptc.windchill.option.optionResource" ajax="page">
+            <command class="com.ptc.windchill.option.form.AddRemoveCandidateChoiceRuleFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="explicitChoiceRuleMembershipActionFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+        </action>
+
+        <action name="addConstraintMembership_step">
+            <component name="optionmanager.mvc.ManageExplicitConstraintsTable" windowType="wizard_step"/>
+        </action>
+
+        <action name="addEnablesMembership" resourceBundle="com.ptc.windchill.option.optionResource" ajax="page">
+            <command class="com.ptc.windchill.option.form.AddRemoveCandidateChoiceRuleFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="explicitChoiceRuleMembershipActionFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+        </action>
+
+        <action name="addEnablesMembership_step">
+            <component name="optionmanager.mvc.manageEnablesMembershipTable" windowType="wizard_step"/>
+        </action>
+
+        <action name="removeMappingsMembership" resourceBundle="com.ptc.windchill.option.optionResource" multiselect="true" selectRequired="true" ajax="page">
+            <command class="com.ptc.windchill.option.form.RemoveChoiceRuleFormProcessor" method="execute" onClick="deleteConfirm(event,null,&apos;com.ptc.windchill.option.optionResource.CONFIRM_REMOVE_CHOICEMAPPING_NFT&apos;)"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="explicitChoiceRuleMembershipActionFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+        </action>
+
+        <action name="removeConstraintsMembership" resourceBundle="com.ptc.windchill.option.optionResource" multiselect="true" selectRequired="true" ajax="page">
+            <command class="com.ptc.windchill.option.form.RemoveChoiceRuleFormProcessor" method="execute" onClick="deleteConfirm(event,null,&apos;com.ptc.windchill.option.optionResource.CONFIRM_REMOVE_CHOICECONSTRAINT_NFT&apos;)"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="explicitChoiceRuleMembershipActionFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+        </action>
+
+        <action name="removeEnablesMembership" resourceBundle="com.ptc.windchill.option.optionResource" multiselect="true" selectRequired="true" ajax="page">
+            <command class="com.ptc.windchill.option.form.RemoveChoiceRuleFormProcessor" method="execute" onClick="deleteConfirm(event,null,&apos;com.ptc.windchill.option.optionResource.CONFIRM_REMOVE_CHOICEENABLE_NFT&apos;)"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="explicitChoiceRuleMembershipActionFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+        </action>
+
+        <action name="moveToChildContainer" resourceBundle="com.ptc.windchill.option.optionResource" ajax="page" multiselect="true" selectRequired="true">
+            <command class="com.ptc.windchill.option.form.OptionSetMoveFormProcessor" method="execute" windowType="popup"/>
+        </action>
+
+        <action name="moveToChildContainer_step">
+            <command class="" method="" windowType="wizard_step"/>
+        </action>
+
+        <!-- TO fix SPR 2044204-01 -->
+        <action name="finishButton" id="wizard_btn_finish" resourceBundle="com.ptc.windchill.option.optionResource">
+            <command class="" method="" windowType="page" url="javascript:onSubmit()"/>
+        </action>
+
+    </objecttype>
+
+    <objecttype name="choice" class="com.ptc.windchill.option.model.Choice" resourceBundle="com.ptc.windchill.option.optionResource">
+        <action name="listOptionSets" resourceBundle="com.ptc.windchill.option.optionResource">
+            <component name="choice.mvc.listOptionSetsFromChoice" windowType="page"/>
+        </action>
+
+        <action name="createChoice" resourceBundle="com.ptc.windchill.option.optionResource" uicomponent="CREATE_CHOICE">
+            <command class="com.ptc.windchill.option.form.CreateChoiceFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="OptionPoolContextFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="NumericChoiceFilter"/>
+        </action>
+
+        <action name="createChoice_step" required="true" afterVK="choiceAttributesValidation">
+            <component name="option.mvc.createChoiceStep" windowType="wizard_step"/>
+        </action>
+
+        <action name="deleteChoice" ajax="row">
+            <command class="com.ptc.windchill.option.form.DeleteChoiceFormProcessor" method="execute" onClick="deleteConfirm(event)"/>
+            <includeFilter name="hideForCheckedoutObject"/>
+            <includeFilter name="OptionPoolContextFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="NumericChoiceFilter"/>
+            <includeFilter name="disableForWorkingCopyWorkInProgress"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+        </action>
+
+        <action name="deleteChoiceToolbar" resourceBundle="com.ptc.windchill.option.optionResource" multiselect="true" selectRequired="true" ajax="row">
+            <command class="com.ptc.windchill.option.form.DeleteChoiceFormProcessor" method="execute" onClick="deleteConfirm(event, table)"/>
+            <includeFilter name="OptionPoolContextFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="NumericChoiceFilter"/>
+            <includeFilter name="disableForWorkingCopyWorkInProgress"/>
+        </action>
+
+        <action name="renameChoiceWizard">
+            <command class="com.ptc.windchill.option.form.RenameATOObjectFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="OptionPoolContextFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="hideForCheckedoutObject"/>
+        </action>
+
+        <action name="renameChoiceWizardStep">
+            <component name="choice.mvc.renameChoice" windowType="wizard_step"/>
+        </action>
+
+        <action name="addChoiceRowsToTable" ajax="row">
+            <command class="com.ptc.core.components.forms.WizardCommands" method="addMultipleObjects"/>
+        </action>
+        <!--  added for choice support -->
+        
+        <action name="removeChoiceRowsFromTable" renderType="GENERAL" selectRequired="true">
+            <command windowType="no_content" onClick="removeRows(event)"/>
+        </action>
+
+        <action name="editChoice" resourceBundle="com.ptc.windchill.option.optionResource" uicomponent="CREATE_CHOICE">
+            <command class="com.ptc.windchill.option.form.EditChoiceFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="OptionPoolContextFilter"/>
+            <includeFilter name="NumericChoiceFilter"/>
+            <includeFilter name="HideForNonCurrentUserCheckedoutFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+        </action>
+
+        <action name="showDuplicateChoices">
+            <command class="" method="execute" windowType="popup"/>
+            <includeFilter name="ContextHasChoicesFilter"/>
+        </action>
+
+        <action name="showDuplicateChoices_step">
+            <component name="choice.mvc.showDuplicates" windowType="wizard_step"/>
+        </action>
+
+        <action name="whereAssigned" resourceBundle="com.ptc.windchill.option.optionResource" installType="PDM" uicomponent="THIRD_LEVEL_WHERE_ASSIGNED">
+            <component name="choice.mvc.whereAssigned" windowType="page"/>
+        </action>
+
+        <action name="ChoiceRulesForChoice" resourceBundle="com.ptc.windchill.option.optionResource">
+            <component name="choice.mvc.choicerules" windowType="page"/>
+        </action>
+
+        <action name="listAliasesFromChoice" resourceBundle="com.ptc.windchill.option.optionResource">
+            <component name="choice.mvc.listAliasFromChoice" windowType="page"/>
+        </action>
+    </objecttype>
+
+    <objecttype name="choiceRule" class="com.ptc.windchill.option.model.ChoiceRule" resourceBundle="com.ptc.windchill.option.optionResource">
+
+        <action name="undoCheckoutRule" ajax="page">
+            <includeFilter name="hideForNewObjectInWorkspace"/>
+            <includeFilter name="hideForCheckedoutObjectInWorkspace"/>
+            <includeFilter name="sandboxSharingValidationSimple"/>
+            <includeFilter name="disableSBHiddenFilter"/>
+            <includeFilter name="hideFromNonAgreementMgrs"/>
+            <includeFilter name="hideForUncheckedoutObject"/>
+            <command class="com.ptc.windchill.option.form.UndoCheckoutRuleFormProcessor" method="execute" onClick="JCAConfirm('com.ptc.netmarkets.util.utilResource.CONFIRM_UNDO_CHECKOUT')"/>
+        </action>
+
+        <action name="atoEditCancelButton" id="ato_edit_wizard_cancel" resourceBundle="com.ptc.windchill.option.optionResource">
+            <command class="com.ptc.windchill.option.form.UndoCheckoutRuleFormProcessor" method="execute" onClick="editCancelPrepare()" url="?close=true"/>
+        </action>
+
+        <action name="globalRules" resourceBundle="com.ptc.windchill.option.optionResource">
+            <component name="ocm.mvc.globalChoiceRule" windowType="page"/>
+            <includeFilter name="choiceRuleTabFilter"/>
+        </action>
+
+        <action name="localRules" resourceBundle="com.ptc.windchill.option.optionResource">
+            <component name="ocm.mvc.localChoiceRule" windowType="page"/>
+            <includeFilter name="choiceRuleTabFilter"/>
+            <includeFilter name="OptionSetContextFilter"/>
+        </action>
+
+        <!-- row level action -->
+        <action name="deleteConditionalRule" resourceBundle="com.ptc.windchill.option.optionResource">
+            <command class="com.ptc.windchill.option.form.DeleteChoiceRuleFormProcessor" method="execute" onClick="deleteConfirm(event)"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="EditDeleteChoiceRuleActionFilter"/>
+            <includeFilter name="PlatformStructuresUserFilter"/>
+            <includeFilter name="hideForCheckedoutObject"/>
+            <includeFilter name="GlobalRuleContextFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+        </action>
+
+        <!-- toolbar action -->
+        <action name="deleteGlobalConditionalRule" resourceBundle="com.ptc.windchill.option.optionResource" multiselect="true" selectRequired="true" ajax="row">
+            <command class="com.ptc.windchill.option.form.DeleteChoiceRuleFormProcessor" method="execute" onClick="deleteConfirm(event, table)"/>
+            <includeFilter name="OptionPoolContextFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+        </action>
+
+        <!-- info page action -->
+        <action name="deleteLocalChoiceRule" resourceBundle="com.ptc.windchill.option.optionResource">
+            <description>Delete a Local Choice Rule</description>
+            <command class="com.ptc.windchill.option.form.DeleteLocalChoiceRuleFormProcessor" method="execute" onClick="deleteConfirm(event)"/>
+            <includeFilter name="IndependentOptionSetContextFilter"/>
+            <includeFilter name="PlatformStructuresUserFilter"/>
+            <includeFilter name="HideForOptionSetContextFilter"/>
+        </action>
+
+        <action name="reviseChoiceRule" resourceBundle="com.ptc.windchill.option.optionResource">
+            <description>Revise a Choice Rule</description>
+            <command class="com.ptc.windchill.option.server.OptionsClientHelper" method="reviseChoiceRule"/>
+            <includeFilter name="OptionPoolContextFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="ReviseObjectActionFilter"/>
+            <includeFilter name="PlatformStructuresUserFilter"/>
+            <includeFilter name="hideForCheckedoutObject"/>
+        </action>
+
+        <action name="reviseLocalChoiceRule" resourceBundle="com.ptc.windchill.option.optionResource">
+            <description>Revise a Local Choice Rule</description>
+            <command class="com.ptc.windchill.option.server.OptionsClientHelper" method="reviseChoiceRule"/>
+            <includeFilter name="IndependentOptionSetContextFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="ReviseObjectActionFilter"/>
+        </action>
+
+        <action name="removeLocalChoiceRule" resourceBundle="com.ptc.windchill.option.optionResource">
+            <description>Remove a Local Choice Rule from an Option Set</description>
+            <command class="com.ptc.windchill.option.form.DeleteChoiceRuleFormProcessor" method="execute" onClick="deleteConfirm(event,null,&apos;com.ptc.windchill.option.optionResource.CONFIRM_REMOVE_CHOICERULES&apos;)"/>
+            <includeFilter name="hideForCheckedoutObject"/>
+       </action>
+
+        <!-- toolbar action -->
+        <action name="removeLocalConditionalRule" resourceBundle="com.ptc.windchill.option.optionResource" multiselect="true" selectRequired="true" ajax="row">
+            <command class="com.ptc.windchill.option.form.DeleteChoiceRuleFormProcessor" method="execute" onClick="deleteConfirm(event,table,&apos;com.ptc.windchill.option.optionResource.CONFIRM_REMOVE_CHOICERULES&apos;)"/>
+            <includeFilter name="OptionSetContextFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+        </action>
+
+        <action name="createConditionalRule" resourceBundle="com.ptc.windchill.option.optionResource" uicomponent="CREATE_CONDITIONAL_RULE">
+            <command class="com.ptc.windchill.option.form.CreateConditionalRuleFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="OptionPoolContextFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="PlatformStructuresUserFilter"/>
+        </action>
+
+        <action name="createLocalConditionalRule" resourceBundle="com.ptc.windchill.option.optionResource" uicomponent="CREATE_CONDITIONAL_RULE">
+            <command url="netmarkets/jsp/choiceRule/createConditionalRule.jsp" class="com.ptc.windchill.option.form.CreateConditionalRuleFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="OptionSetContextFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="PlatformStructuresUserFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+        </action>
+
+        <action name="editConditionalRule" resourceBundle="com.ptc.windchill.option.optionResource" ajax="component" uicomponent="CREATE_CONDITIONAL_RULE">
+            <command class="com.ptc.windchill.option.form.EditConditionalRuleFormProcessor" method="execute" windowType="new" onClick="postSelectValidation(event, &apos;editChoiceRule&apos;)"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="EditDeleteChoiceRuleActionFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+            <includeFilter name="PlatformStructuresUserFilter"/>
+        </action>
+
+        <action name="defineChoiceRuleAttrsStep" required="true">
+            <command class="" method="" windowType="wizards_step"/>
+        </action>
+
+        <action name="createEditConditionalRuleStep" preloadWizardPage="true" required="true">
+            <command class="" method="" windowType="wizards_step"/>
+        </action>
+
+        <action name="listOptionSetsFromChoiceRule" resourceBundle="com.ptc.windchill.option.optionResource">
+            <component name="choicerule.mvc.listOptionSetsFromChoiceRule" windowType="page"/>
+        </action>
+
+        <!-- toolbar action for add explicit membership -->
+        <action name="addChoiceRuleMembership" resourceBundle="com.ptc.windchill.option.optionResource" ajax="page">
+            <command class="com.ptc.windchill.option.form.AddRemoveCandidateChoiceRuleFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="explicitChoiceRuleMembershipActionFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+        </action>
+
+        <action name="addChoiceRuleMembershipStep">
+            <component name="optionmanager.mvc.manageConditionalRuleMembershipTable" windowType="wizard_step"/>
+        </action>
+
+        <action name="addCandidateChoiceRule" resourceBundle="com.ptc.windchill.option.optionResource" multiselect="true" selectRequired="true" ajax="row">
+            <command class="com.ptc.windchill.option.server.OptionsClientHelper" method="addChoiceRule"/>
+            <includeFilter name="OptionSetContextFilter"/>
+            <includeFilter name="manageChoiceRuleMembershipFilter"/>
+        </action>
+
+        <action name="ignoreCandidateChoiceRule" resourceBundle="com.ptc.windchill.option.optionResource" multiselect="true" selectRequired="true" ajax="row">
+            <command class="com.ptc.windchill.option.server.OptionsClientHelper" method="ignoreChoiceRule"/>
+            <includeFilter name="OptionSetContextFilter"/>
+            <includeFilter name="manageChoiceRuleMembershipFilter"/>
+        </action>
+
+        <!-- toolbar action for revert -->
+        <action name="revertExplicitChoiceRule" multiselect="true" selectRequired="true" ajax="page">
+            <command class="com.ptc.windchill.option.server.OptionsClientHelper" method="revertChoiceRule" onClick="postSelectValidation(event, &apos;revertExplicitChoiceRule&apos;)"/>
+            <includeFilter name="OptionSetContextFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="explicitChoiceRuleMembershipActionFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+            <includeFilter name="revertChoiceRuleActionValidationFilter"/>
+        </action>
+
+        <action name="removeConditionalRuleMembership" resourceBundle="com.ptc.windchill.option.optionResource" multiselect="true" selectRequired="true" ajax="page">
+            <command class="com.ptc.windchill.option.form.RemoveChoiceRuleFormProcessor" method="execute" onClick="deleteConfirm(event,null,&apos;com.ptc.windchill.option.optionResource.CONFIRM_REMOVE_CONDITIONALRULE_NFT&apos;)"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="explicitChoiceRuleMembershipActionFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+        </action>
+    </objecttype>
+
+    <objecttype name="choiceMapping" class="com.ptc.windchill.option.model.ChoiceMapping" resourceBundle="com.ptc.windchill.option.optionResource">
+
+        <action name="createChoiceMapping" resourceBundle="com.ptc.windchill.option.optionResource" uicomponent="CREATE_INCLUDE_RULE">
+            <command url="netmarkets/jsp/choiceRule/createIncludeRule.jsp" class="com.ptc.windchill.option.form.CreateIncludeRuleFormProcessor" method="execute" windowType="new"/>
+            <includeFilter name="hideForCheckedoutObject"/>
+            <includeFilter name="CreateMappingActionFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+            <includeFilter name="IndependentOptionSetContextFilter"/>
+        </action>
+
+        <action name="createEditChoiceMapping_step">
+            <component name="choiceMapping.mvc.createEdit" windowType="wizards_step"/>
+        </action>
+
+        <action name="editChoiceMapping" resourceBundle="com.ptc.windchill.option.optionResource" uicomponent="CREATE_INCLUDE_RULE">
+            <command url="netmarkets/jsp/choiceRule/editIncludeRule.jsp" class="com.ptc.windchill.option.form.EditIncludeRuleFormProcessor" method="execute" windowType="new" onClick="postSelectValidation(event, &apos;editChoiceRule&apos;)"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="EditDeleteChoiceRuleActionFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+        </action>
+
+        <action name="deleteChoiceMapping" multiselect="true" selectRequired="true" ajax="row">
+            <command class="com.ptc.windchill.option.form.DeleteChoiceRuleFormProcessor" method="execute" onClick="deleteConfirm(event)"/>
+            <includeFilter name="ChoiceRuleOwnerFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="hideForCheckedoutObject"/>
+            <includeFilter name="GlobalRuleContextFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+        </action>
+
+        <action name="editChoiceMappingInChoiceContext" resourceBundle="com.ptc.windchill.option.optionResource">
+            <command url="netmarkets/jsp/choiceRule/editChoiceMappingInChoiceContext.jsp" class="com.ptc.windchill.option.form.EditIncludeRuleFormProcessor" method="execute" windowType="new" onClick="postSelectValidation(event, &apos;editChoiceRule&apos;)"/>
+            <includeFilter name="hideForCheckedoutObject"/>
+            <includeFilter name="EditMappingActionFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+            <includeFilter name="IndependentOptionSetContextFilter"/>
+        </action>
+
+        <action name="revertChoiceMapping" multiselect="true" selectRequired="true" ajax="page">
+            <command class="com.ptc.windchill.option.server.OptionsClientHelper" method="revertChoiceRule" onClick="postSelectValidation(event, &apos;revertChoiceMapping&apos;)"/>
+            <includeFilter name="OptionSetContextFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="explicitChoiceRuleMembershipActionFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+            <includeFilter name="revertChoiceRuleActionValidationFilter"/>
+        </action>
+
+        <action name="listOptionSetsFromChoiceRule" resourceBundle="com.ptc.windchill.option.optionResource">
+            <component name="choicerule.mvc.listOptionSetsFromChoiceRule" windowType="page"/>
+        </action>
+    </objecttype>
+
+    <objecttype name="choiceEnable" class="com.ptc.windchill.option.model.ChoiceEnable" resourceBundle="com.ptc.windchill.option.optionResource">
+
+        <action name="createChoiceEnable" resourceBundle="com.ptc.windchill.option.optionResource" uicomponent="CREATE_ENABLE_RULE">
+            <command url="netmarkets/jsp/choiceRule/createEnableRule.jsp" class="com.ptc.windchill.option.form.CreateEnableRuleFormProcessor" method="execute" windowType="new"/>
+            <includeFilter name="hideForCheckedoutObject"/>
+            <includeFilter name="CreateEnableActionFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+            <includeFilter name="IndependentOptionSetContextFilter"/>
+        </action>
+
+        <action name="createEditChoiceEnable_step">
+            <component name="choiceEnable.mvc.createEdit" windowType="wizards_step"/>
+        </action>
+
+        <action name="editChoiceEnable" resourceBundle="com.ptc.windchill.option.optionResource" uicomponent="CREATE_ENABLE_RULE">
+            <command url="netmarkets/jsp/choiceRule/editEnableRule.jsp" class="com.ptc.windchill.option.form.EditEnableRuleFormProcessor" method="execute" windowType="new" onClick="postSelectValidation(event, &apos;editChoiceRule&apos;)"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="EditDeleteChoiceRuleActionFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+        </action>
+
+        <action name="deleteChoiceEnable" multiselect="true" selectRequired="true" ajax="row">
+            <command class="com.ptc.windchill.option.form.DeleteChoiceRuleFormProcessor" method="execute" onClick="deleteConfirm(event)"/>
+            <includeFilter name="ChoiceRuleOwnerFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="hideForCheckedoutObject"/>
+            <includeFilter name="GlobalRuleContextFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+        </action>
+
+        <action name="editChoiceEnableInChoiceContext" resourceBundle="com.ptc.windchill.option.optionResource" uicomponent="CREATE_ENABLE_RULE">
+            <command url="netmarkets/jsp/choiceRule/editChoiceEnableInChoiceContext.jsp" class="com.ptc.windchill.option.form.EditEnableRuleFormProcessor" method="execute" windowType="new" onClick="postSelectValidation(event, &apos;editChoiceRule&apos;)"/>
+            <includeFilter name="hideForCheckedoutObject"/>
+            <includeFilter name="EditEnableActionFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+            <includeFilter name="IndependentOptionSetContextFilter"/>
+        </action>
+
+        <action name="revertChoiceEnable" multiselect="true" selectRequired="true" ajax="page">
+            <command class="com.ptc.windchill.option.server.OptionsClientHelper" method="revertChoiceRule" onClick="postSelectValidation(event, &apos;revertChoiceEnable&apos;)"/>
+            <includeFilter name="OptionSetContextFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="explicitChoiceRuleMembershipActionFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+            <includeFilter name="revertChoiceRuleActionValidationFilter"/>
+        </action>
+
+        <action name="listOptionSetsFromChoiceRule" resourceBundle="com.ptc.windchill.option.optionResource">
+            <component name="choicerule.mvc.listOptionSetsFromChoiceRule" windowType="page"/>
+        </action>
+    </objecttype>
+
+    <objecttype name="option" class="com.ptc.windchill.option.model.Option" resourceBundle="com.ptc.windchill.option.optionResource">
+
+        <action name="listChoices" resourceBundle="com.ptc.windchill.option.optionResource">
+            <component name="option.mvc.listChoicestable" windowType="page"/>
+        </action>
+
+        <action name="createOption" resourceBundle="com.ptc.windchill.option.optionResource" uicomponent="CREATE_OPTION">
+            <command class="com.ptc.windchill.option.form.CreateOptionFormProcessor" method="execute" ajax="row" windowType="popup"/>
+            <includeFilter name="OptionPoolContextFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+        </action>
+
+        <action name="createOption_step" required="true" afterJS="validateNames">
+            <component name="option.mvc.createOptionStep" windowType="wizard_step"/>
+        </action>
+
+        <action name="addOptionRowsToTable" ajax="row">
+            <command class="com.ptc.core.components.forms.WizardCommands" method="addMultipleObjects"/>
+        </action>
+        
+        <action name="removeOptionRowsFromTable" renderType="GENERAL" selectRequired="true">
+            <command windowType="no_content" onClick="removeRows(event)"/>
+        </action>
+
+        <action name="editOption" resourceBundle="com.ptc.windchill.option.optionResource" uicomponent="CREATE_OPTION">
+            <command class="com.ptc.windchill.option.form.EditOptionFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="OptionPoolContextFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="NumericChoiceFilter"/>
+            <includeFilter name="HideForNonCurrentUserCheckedoutFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+        </action>
+
+        <action name="setDisplayUnitsStep" resourceBundle="com.ptc.windchill.option.optionResource">
+            <component name="option.mvc.setDisplayUnitsStep" class="com.ptc.windchill.option.form.EditOptionMeasurementSystemFormProcessorDelegate" windowType="wizard_step"/>
+            <includeFilter name="OptionPoolContextFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="DisplayUnitsFilter"/>
+        </action>
+
+        <action name="displayUnitsTable" resourceBundle="com.ptc.windchill.option.optionResource">
+            <component name="option.mvc.MeasurementSystems" windowType="page"/>
+            <includeFilter name="DisplayUnitsFilter"/>
+        </action>
+
+        <action name="renameOptionWizard">
+            <command class="com.ptc.windchill.option.form.RenameATOObjectFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="OptionPoolContextFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="NumericChoiceFilter"/>
+            <includeFilter name="hideForCheckedoutObject"/>
+        </action>
+
+        <action name="renameOptionWizardStep">
+            <component name="option.mvc.renameOption" windowType="wizard_step"/>
+        </action>
+
+        <action name="deleteOption" resourceBundle="com.ptc.windchill.option.optionResource" ajax="row">
+            <command class="com.ptc.windchill.option.form.DeleteOptionFormProcessor" method="execute" onClick="deleteConfirm(event)"/>
+            <includeFilter name="hideForCheckedoutObject"/>
+            <includeFilter name="OptionPoolContextFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="NumericChoiceFilter"/>
+        </action>
+
+        <action name="setOptionGroup" resourceBundle="com.ptc.windchill.option.optionResource" multiselect="true" selectRequired="true" ajax="row">
+            <command url="netmarkets/jsp/option/setOptionGroup.jsp" class="com.ptc.windchill.option.form.SetOptionGroupFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="SetGroupActionFilter"/>
+            <includeFilter name="OptionPoolContextFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="NumericChoiceFilter"/>
+        </action>
+
+        <action name="setOptionGroup_step" required="true">
+            <command class="" method="" windowType="wizards_step"/>
+        </action>
+
+        <action name="referenceByGenericizable" resourceBundle="com.ptc.windchill.option.optionResource" installType="PDM">
+            <component name="option.mvc.referenceByGenericizable" windowType="page"/>
+        </action>
+
+    </objecttype>
+
+    <objecttype name="choiceConstraint" class="com.ptc.windchill.option.model.ChoiceConstraint" resourceBundle="com.ptc.windchill.option.optionResource">
+
+        <action name="createChoiceConstraint" resourceBundle="com.ptc.windchill.option.optionResource" uicomponent="CREATE_EXCLUDE_RULE">
+            <command url="netmarkets/jsp/choiceRule/createExcludeRule.jsp" class="com.ptc.windchill.option.form.CreateExcludeRuleFormProcessor" method="execute" windowType="new"/>
+            <includeFilter name="OptionPoolContextFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+        </action>
+
+        <action name="createLocalChoiceConstraint" resourceBundle="com.ptc.windchill.option.optionResource" uicomponent="CREATE_EXCLUDE_RULE">
+            <command url="netmarkets/jsp/choiceRule/createExcludeRule.jsp" class="com.ptc.windchill.option.form.CreateExcludeRuleFormProcessor" method="execute" windowType="new"/>
+            <includeFilter name="OptionSetContextFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+            <includeFilter name="IndependentOptionSetContextFilter"/>
+        </action>
+
+        <action name="createEditChoiceConstraint_step" required="true" afterJS="validateChoiceSelection">
+            <component name="choiceConstraint.mvc.createEdit" windowType="wizards_step"/>
+        </action>
+
+        <action name="deleteChoiceConstraint" multiselect="true" selectRequired="true" ajax="row">
+            <command class="com.ptc.windchill.option.form.DeleteChoiceRuleFormProcessor" method="execute" onClick="deleteConfirm(event)"/>
+            <includeFilter name="ChoiceRuleOwnerFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="hideForCheckedoutObject"/>
+            <includeFilter name="GlobalRuleContextFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+        </action>
+
+        <action name="editChoiceConstraint" resourceBundle="com.ptc.windchill.option.optionResource" uicomponent="CREATE_EXCLUDE_RULE">
+            <command url="netmarkets/jsp/choiceRule/editExcludeRule.jsp" class="com.ptc.windchill.option.form.EditExcludeRuleFormProcessor" method="execute" windowType="new" onClick="postSelectValidation(event, &apos;editChoiceRule&apos;)"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="EditDeleteChoiceRuleActionFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+        </action>
+
+        <action name="listOptionSetsFromChoiceRule" resourceBundle="com.ptc.windchill.option.optionResource">
+            <component name="choicerule.mvc.listOptionSetsFromChoiceRule" windowType="page"/>
+        </action>
+
+        <action name="revertChoiceConstraint" multiselect="true" selectRequired="true" ajax="page">
+            <command class="com.ptc.windchill.option.server.OptionsClientHelper" method="revertChoiceRule" onClick="postSelectValidation(event, &apos;revertChoiceConstraint&apos;)"/>
+            <includeFilter name="OptionSetContextFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="explicitChoiceRuleMembershipActionFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+            <includeFilter name="revertChoiceRuleActionValidationFilter"/>
+        </action>
+
+    </objecttype>
+
+    <objecttype name="optionmanager" class="java.lang.Object" resourceBundle="com.ptc.windchill.option.optionResource">
+
+        <action name="OcmTreeTable">
+            <component name="optionmanager.mvc.treetable" windowType="page"/>
+        </action>
+
+        <action name="optionsManagerTab" resourceBundle="com.ptc.windchill.option.optionResource" installType="PDM">
+            <command url="netmarkets/jsp/ocm/optionmanager.jsp" windowType="page"/>
+            <includeFilter name="optionsManagerTabFilter"/>
+            <includeFilter name="disableConfigurablePartsFilter"/>
+        </action>
+
+        <action name="choicesTab" resourceBundle="com.ptc.windchill.option.optionResource" installType="PDM">
+            <component name="optionmanager.mvc.choicetable" windowType="page"/>
+            <includeFilter name="choicesTabFilter"/>
+        </action>
+
+        <action name="optionsTab" resourceBundle="com.ptc.windchill.option.optionResource" installType="PDM">
+            <component name="optionmanager.mvc.optiontable" windowType="page"/>
+            <includeFilter name="optionsTabFilter"/>
+        </action>
+
+        <action name="mappingsTab" resourceBundle="com.ptc.windchill.option.optionResource" installType="PDM">
+            <component name="optionmanager.mvc.mappingstable" windowType="page"/>
+            <includeFilter name="choiceRuleTabFilter"/>
+        </action>
+
+        <action name="constraintsTab" resourceBundle="com.ptc.windchill.option.optionResource" installType="PDM">
+            <component name="optionmanager.mvc.constraintstable" windowType="page"/>
+            <includeFilter name="choiceRuleTabFilter"/>
+        </action>
+
+        <action name="enableTab" resourceBundle="com.ptc.windchill.option.optionResource" installType="PDM">
+            <component name="optionmanager.mvc.enabletable" windowType="page"/>
+            <includeFilter name="choiceRuleTabFilter"/>
+        </action>
+
+        <action name="atoRulesTab" resourceBundle="com.ptc.windchill.option.optionResource" installType="PDM">
+            <command url="netmarkets/jsp/ocm/atoRulesTab.jsp" windowType="page"/>
+            <includeFilter name="choiceRuleTabFilter"/>
+            <includeFilter name="PlatformStructuresUserFilter"/>
+        </action>
+
+        <action name="atoExpressionAliasTab" resourceBundle="com.ptc.windchill.option.optionResource" installType="PDM">
+            <component name="optionmanager.mvc.expressionaliastable" windowType="page"/>
+            <includeFilter name="ExpressionAliasTabValidator"/>
+            <includeFilter name="OptionPoolContextFilter"/>
+            <includeFilter name="PlatformStructuresUserFilter"/>
+        </action>
+
+        <action name="choicesWhereUsedTab" resourceBundle="com.ptc.windchill.option.optionResource" installType="PDM">
+            <command url="netmarkets/jsp/ocm/choicesWhereUsedTab.jsp" windowType="page"/>
+            <includeFilter name="choiceWhereUsedTabFilter"/>
+        </action>
+
+        <action name="optionsWhereUsedTab" resourceBundle="com.ptc.windchill.option.optionResource" installType="PDM">
+            <component name="option.mvc.referenceByGenericizable" windowType="page"/>
+            <includeFilter name="optionWhereUsedTabFilter"/>
+        </action>
+
+
+        <action name="deleteOptionItem" resourceBundle="com.ptc.windchill.option.optionResource" multiselect="true" selectRequired="true" ajax="row">
+            <command class="com.ptc.windchill.option.form.DeleteOptionFormProcessor" method="execute" onClick="deleteConfirm(event,table)"/>
+            <includeFilter name="OptionPoolContextFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+        </action>
+
+        <action name="deleteChoiceRule" resourceBundle="com.ptc.windchill.option.optionResource" multiselect="true" selectRequired="true" ajax="row">
+            <command class="com.ptc.windchill.option.form.DeleteChoiceRuleFormProcessor" method="execute" onClick="deleteConfirm(event, table)"/>
+            <includeFilter name="OptionPoolContextFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+        </action>
+
+        <!-- toolbar action on the local rules tables in an option set -->
+        <action name="removeLocalChoiceRuleTB" resourceBundle="com.ptc.windchill.option.optionResource" multiselect="true" selectRequired="true" ajax="row">
+            <command class="com.ptc.windchill.option.form.DeleteChoiceRuleFormProcessor" method="execute" onClick="deleteConfirm(event,table,&apos;com.ptc.windchill.option.optionResource.CONFIRM_REMOVE_CHOICERULES&apos;)"/>
+            <includeFilter name="OptionSetContextFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+        </action>
+
+        <action name="removeChoiceRuleMembership" resourceBundle="com.ptc.windchill.option.optionResource" multiselect="true" selectRequired="true" ajax="page">
+            <command class="com.ptc.windchill.option.form.RemoveChoiceRuleFormProcessor" method="execute" onClick="deleteConfirm(event,table,&apos;com.ptc.windchill.option.optionResource.CONFIRM_REMOVE_CHOICERULES&apos;)"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="explicitChoiceRuleMembershipActionFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+        </action>
+
+    </objecttype>
+
+    <objecttype name="group" class="com.ptc.windchill.option.model.Group" resourceBundle="com.ptc.windchill.option.optionResource">
+
+       <action name="createGroup">
+            <command class="com.ptc.windchill.option.form.CreateGroupFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="OptionPoolContextFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="CreateGroupActionFilter"/>
+       </action>
+
+       <action name="createGroup_step" afterJS="validateNames">
+            <component name="group.mvc.createGroup" windowType="wizard_step"/>
+       </action>
+
+       <action name="addGroupRowsToTable" ajax="row">
+            <command class="com.ptc.windchill.option.server.OptionsClientHelper" method="addGroupRowsToTable"/>
+       </action>
+
+       <action name="editGroup">
+            <command class="com.ptc.windchill.option.form.EditGroupFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="OptionPoolContextFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+       </action>
+
+       <action name="deleteGroup" resourceBundle="com.ptc.windchill.option.optionResource" ajax="row">
+            <command class="com.ptc.windchill.option.server.OptionsClientHelper" method="deleteGroups" onClick="deleteConfirm(event)"/>
+            <includeFilter name="OptionPoolContextFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+       </action>
+
+       <action name="listOptions" resourceBundle="com.ptc.windchill.option.optionResource">
+            <component name="group.mvc.listOptionsTable" windowType="page"/>
+      </action>
+
+    </objecttype>
+
+    <objecttype name="choiceMappable" class="wt.option.ChoiceMappable">
+
+        <action name="choices" resourceBundle="com.ptc.windchill.option.optionResource" installType="PDM">
+            <component name="choicemappable.mvc.choicetable" windowType="page"/>
+            <includeFilter name="disableConfigurablePartsFilter"/>
+            <includeFilter name="OptionsSandBoxSharedFilter"/>
+            <includeFilter name="SupportNonConfigurableItemChoicesFilter"/>
+        </action>
+
+        <action name="choicesOfVariantSpec" resourceBundle="com.ptc.windchill.option.optionResource" installType="PDM">
+            <component name="variantspec.choices" windowType="page"/>
+            <includeFilter name="disableConfigurablePartsFilter"/>
+            <includeFilter name="primaryObjectIsVariantSpecFilter"/>
+            <includeFilter name="ChoiceMappableChoicesFilter"/>
+        </action>
+
+        <action name="choicesOfVariant" resourceBundle="com.ptc.windchill.option.optionResource" installType="PDM">
+            <component name="variant.choices" windowType="page"/>
+            <includeFilter name="disableConfigurablePartsFilter"/>
+            <includeFilter name="primaryObjectIsVariantFilter"/>
+        </action>
+
+    </objecttype>
+
+    <objecttype name="variantspec" class="com.ptc.wpcfg.doc.VariantSpec" resourceBundle="com.ptc.wpcfg.wpcfgActionsRB">
+
+        <action name="saveAsVariantSpec" ajax="page">
+            <command class="com.ptc.windchill.option.variantspec.form.SaveAsVariantSpecFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="sandboxSharingValidationSimple"/>
+            <includeFilter name="contentDownloadFilter"/>
+            <includeFilter name="hideForCheckedoutObject"/>
+            <includeFilter name="managedVariantSpecFilter"/>
+        </action>
+
+        <action name="saveAsVariantSpec_step">
+           <component name="variantSpec.mvc.attributes" windowType="wizards_step" typeBased="true"/>
+        </action>
+
+        <action name="minMaxError">
+           <command class="" method="" windowType="lightbox"/>
+        </action>
+
+        <action name="minMaxError_step">
+           <!-- <command class="" method="" windowType="wizards_step"/> -->
+           <component name="variantspec.solution.mvc.minmaxerror" windowType="wizard_step"/>
+        </action>
+
+        <action name="configure" checkaccess="true" uicomponent="CONFIGURE">
+            <command url="netmarkets/jsp/variantspec/configure.jsp?MODE=CREATE" class="com.ptc.windchill.option.variantspec.form.CreateVariantSpecFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="sandboxSharingValidationSimple"/>
+        </action>
+
+        <action name="defineVariantSpec" preloadWizardPage="false" required="true" postloadJS="ConfigureWizard.enableDisableWizBtns">
+            <command class="" method="" windowType="wizard_step"/>
+        </action>
+
+        <action name="ecStep" afterJS="ConfigureWizard.saveECtoCache">
+            <command class="" method="" windowType="wizard_step"/>
+        </action>
+
+        <action name="specedStep" preloadWizardPage="false" afterJS="ConfigureWizard.navigateSpecPages">
+            <command class="" method="" windowType="wizard_step"/>
+        </action>
+
+        <action name="specPreviewStep" preloadWizardPage="false" postloadJS="ConfigureWizard.disableWizBtns" afterJS="ConfigureWizard.swapSpec">
+            <command class="" method="" windowType="wizard_step"/>
+        </action>
+
+        <action name="defineVariantSpecAttr" preloadWizardPage="false" postloadJS="ConfigureWizard.disablePrevBtn">
+            <command class="" method="" windowType="wizard_step"/>
+        </action>
+
+        <action name="variantsPreviewStep" preloadWizardPage="false" postloadJS="ConfigureWizard.disablePrevBtn">
+            <command class="com.ptc.windchill.option.variantspec.form.VariantSpecPreviewFormDelegate" method="execute" windowType="wizard_step"/>
+            <includeFilter name="VariantsPreviewStepFilter"/>
+        </action>
+
+        <action name="viewSolution">
+            <component name="com.ptc.netmarkets.variantspec.viewsolutiontree" windowType="wizard_step"/>
+            <includeFilter name="contentDownloadFilter"/>
+        </action>
+
+        <action name="viewSolutionWizard">
+            <includeFilter name="variantSpecFilter"/>
+            <includeFilter name="contentDownloadFilter"/>
+            <includeFilter name="emptyVariantSpecFilter"/>
+            <command windowType="popup"/>
+        </action>
+
+        <action name="compareSpec">
+            <includeFilter name="variantSpecFilter"/>
+            <includeFilter name="contentDownloadFilter"/>
+            <command windowType="popup" onClick="VARIANTSPEC.validateSpecCompareAction(event)"/>
+        </action>
+
+        <action name="compareSpecForRelatedVariantSpecs">
+            <command url="netmarkets/jsp/variantspec/compareSpec.jsp" windowType="popup" onClick="VARIANTSPEC.validateSpecCompareAction(event)"/>
+        </action>
+
+        <action name="compareSpec_step" postloadJS="VARIANTSPEC.resetCompareSpecTitle">
+            <component name="com.ptc.netmarkets.variantspec.comparesolutiontree" windowType="wizard_step"/>
+        </action>
+
+        <action name="compareSolution">
+            <includeFilter name="variantSpecFilter"/>
+            <includeFilter name="contentDownloadFilter"/>
+            <includeFilter name="emptyVariantSpecFilter"/>
+            <command windowType="popup"/>
+        </action>
+
+        <action name="bomErrorReport">
+            <component name="com.ptc.netmarkets.variantspec.bomerrortree" windowType="wizard_step"/>
+        </action>
+
+        <action name="bomErrorWizard">
+            <command windowType="popup"/>
+        </action>
+
+        <action name="reconfigure" checkaccess="true" uicomponent="RECONFIGURE">
+            <command class="com.ptc.windchill.option.variantspec.form.EditVariantSpecFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="managedVariantSpecFilter"/>
+            <includeFilter name="editVariantSpecFilter"/>
+            <includeFilter name="contentDownloadFilter"/>
+            <includeFilter name="emptyVariantSpecFilter"/>
+        </action>
+
+        <action name="requestDeliverables" checkaccess="true" uicomponent="REQUEST_DELIVERABLES">
+            <command class="com.ptc.windchill.option.variantspec.form.RequestDeliverablesFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="requestDeliverablesFilter"/>
+            <includeFilter name="contentDownloadFilter"/>
+            <includeFilter name="emptyVariantSpecFilter"/>
+        </action>
+
+        <action name="deliverables">
+            <component name="variantspec.mvc.deliverables"/>
+        </action>
+
+        <action name="addDeliverables" checkaccess="true">
+            <command class="com.ptc.windchill.option.variantspec.NmVariantSpecCommands" method="addDeliverables" windowType="popup"/>
+            <includeFilter name="CreateEditAccessFilter"/>
+        </action>
+
+        <action name="deleteDeliverableRequest" selectRequired="true" checkaccess="true">
+            <command class="com.ptc.windchill.option.variantspec.NmVariantSpecCommands" method="deleteRequestInfos"/>
+            <includeFilter name="CreateEditAccessFilter"/>
+        </action>
+
+        <action name="deleteDeliverableLink" selectRequired="true" checkaccess="true">
+            <command class="com.ptc.windchill.option.variantspec.form.DeleteDeliverablesFormProcessor" method="execute"/>
+            <includeFilter name="CreateEditAccessFilter"/>
+        </action>
+
+        <action name="deliverablesError">
+            <command windowType="popup"/>
+        </action>
+
+        <action name="deliverablesError_step">
+            <command class="" method="" windowType="wizard_step"/>
+        </action>
+
+        <action name="edit">
+            <command class="com.ptc.core.components.forms.EditWorkableFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="editVariantSpecFilter"/>
+        </action>
+
+        <action name="matchingVariants">
+            <component name="com.ptc.netmarkets.variantspec.matchingVariants" windowType="page"/>
+        </action>
+
+    </objecttype>
+
+    <objecttype name="generic" class="wt.generic.Genericizable" resourceBundle="com.ptc.wpcfg.wpcfgActionsRB">
+
+        <action name="variantspecs_all" uicomponent="THIRD_LEVEL_RELATED_VARIANT_SPECS">
+            <component name="generic.mvc.variantspecs"/>
+        </action>
+
+        <action name="variants" uicomponent="THIRD_LEVEL_RELATED_VARIANTS">
+            <component name="generic.mvc.variants"/>
+        </action>
+
+        <action name="viewLogicBase">
+            <command windowType="popup"/>
+            <includeFilter name="sandboxSharingValidationSimple"/>
+        </action>
+
+        <action name="viewLogicBase_step" postloadJS="removeRequiredFooter">
+            <command windowType="wizard_step"/>
+        </action>
+
+        <action name="compareLogic">
+            <command windowType="popup" onClick="LOGIC_COMPARE.validateLogicCompareAction(event)"/>
+        </action>
+
+        <action name="compareLogicReport">
+            <command windowType="popup"/>
+        </action>
+
+        <action name="compareLogicReport_step">
+            <command windowType="wizard_step"/>
+        </action>
+
+        <action name="compareLogicReportDetails">
+            <command windowType="popup"/>
+        </action>
+
+        <action name="compareLogicReportOKButton" renderType="GENERAL" selectRequired="true">
+            <command windowType="no_content" onClick="launchCompareLogic()"/>
+        </action>
+
+        <action name="compareLogicReportDetails_step">
+            <command windowType="wizard_step"/>
+        </action>
+
+        <action name="logicReferences" resourceBundle="com.ptc.windchill.option.generic.genericResource" installType="PDM" uicomponent="THIRD_LEVEL_LOGIC_REFERENCES">
+            <includeFilter name="GenericConfigurableContextFilter"/>
+        </action>
+
+        <action name="addLogicReferences" resourceBundle="com.ptc.windchill.option.generic.genericResource" ajax="page">
+            <command class="com.ptc.windchill.option.generic.form.LogicReferenceAddRelationFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="enableForCheckedoutObject"/>
+        </action>
+
+        <action name="removeLogicReferences" resourceBundle="com.ptc.windchill.option.generic.genericResource" selectRequired="true" multiselect="true" ajax="page">
+            <command class="com.ptc.windchill.option.generic.form.LogicReferenceDeleteRelationFormProcessor" method="execute"/>
+            <includeFilter name="enableForCheckedoutObject"/>
+        </action>
+
+    </objecttype>
+
+    <objecttype name="variant" class="wt.generic.Variant" resourceBundle="com.ptc.wpcfg.wpcfgActionsRB">
+
+        <action name="generics" uicomponent="THIRD_LEVEL_RELATED_GENERICS">
+            <component name="com.ptc.netmarkets.variant.genericsOfVariant"/>
+            <includeFilter name="genericsOfVariantFilter"/>
+        </action>
+
+        <action name="variantspecsofvariant" uicomponent="THIRD_LEVEL_RELATED_VARIANT_SPECS">
+            <component name="variant.mvc.variantspecsofvariant"/>
+        </action>
+
+        <action name="detachVariants" multiselect="true" selectRequired="true">
+            <command class="com.ptc.windchill.option.variant.form.DetachVariantsFormProcessor" method="execute"/>
+        </action>
+
+        <action name="validateVariants" multiselect="true" selectRequired="true">
+            <command class="com.ptc.windchill.option.variant.form.ValidateVariantsFormProcessor" method="execute"/>
+        </action>
+
+        <action name="deleteVariantAssociation" multiselect="true" selectRequired="true">
+            <command class="com.ptc.windchill.option.variant.form.DetachVariantsFormProcessor" method="execute"/>
+        </action>
+
+        <action name="attachVariants">
+            <command class="com.ptc.windchill.option.variant.form.AttachAsVariantFormProcessor" method="execute" windowType="popup"/>
+        </action>
+
+        <action name="findVariants">
+            <command windowType="popup"/>
+            <includeFilter name="sandboxSharingValidationSimple"/>
+        </action>
+
+        <action name="findVariantsWizard">
+            <command windowType="wizard_step"/>
+        </action>
+
+    </objecttype>
+
+    <!-- this is the logicbase type -->
+    <objecttype name="logicbase" class="com.ptc.wpcfg.logic.LogicBase" resourceBundle="com.ptc.wpcfg.wpcfgActionsRB">
+
+        <action name="parameters">
+          <component name="ddlbasic.logicbase.parameters"/>
+        </action>
+
+    </objecttype>
+
+    <objecttype name="configure" class="com.ptc.wpcfg.logic.LogicBase" resourceBundle="com.ptc.windchill.option.variantspec.speced.speceditorResource">
+
+        <action name="configCancelBtn" id="Configure_wizard_cancel">
+            <command class="" method="" windowType="page" url="javascript:ConfigureWizard.exit()"/>
+        </action>
+        <action name="configSaveBtn" id="Configure_wizard_save">
+            <command class="" method="" windowType="page" url="javascript:ConfigureWizard.save()"/>
+        </action>
+        <action name="minMaxCloseBtn" id="MinMaxError_wizard_close">
+            <command class="" method="" windowType="page" url="javascript:PTC.lightbox.deactivate({})"/>
+        </action>
+    </objecttype>
+
+    <objecttype name="choiceComponent" class="com.ptc.windchill.option.choicecomponent.ChoiceInfoBean" resourceBundle="com.ptc.windchill.option.choicecomponent.choiceComponentResource">
+        <action name="clearAll">
+            <command class="" method="" onClick="ATO.components.ChoiceComponent.clearAll(event,table)"/>
+        </action>
+        <action name="closeBtn">
+            <command class="" method="" onClick="wfWindowClose()"/>
+        </action>
+    </objecttype>
+
+    <objecttype name="expressionAssignable" class="wt.option.ExpressionAssignable" resourceBundle="com.ptc.windchill.option.optionResource" ajax="page">
+        <action name="assignItemExpression" resourceBundle="com.ptc.windchill.option.optionResource" ajax="page" uicomponent="ASSIGN_EXPRESSION">
+            <command url="netmarkets/jsp/expressionAssignable/assignItemExpression.jsp?expression_type=Advanced&amp;assignedTo=Item" class="com.ptc.windchill.option.form.AssignItemExpressionFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="disableConfigurablePartsFilter"/>
+            <includeFilter name="PlatformStructuresUserFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+        </action>
+      	<action name="assignItemExpressionPreStep" multiselect="true" uicomponent="ASSIGN_EXPRESSION">
+            <command windowType="popup"/>
+        </action>
+        <action name="assignItemExpressionStep">
+            <command class="" method="" windowType="wizards_step"/>
+        </action>
+
+        <action name="assignUsesExpression" resourceBundle="com.ptc.windchill.option.optionResource" ajax="page">
+            <command url="netmarkets/jsp/expressionAssignable/assignUsesExpression.jsp?expression_type=Advanced&amp;assignedTo=Uses&amp;isGWTAction=true"
+                    class="com.ptc.windchill.option.form.AssignUsesExpressionFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="disableConfigurablePartsFilter"/>
+        </action>
+
+        <action name="assignUsesExpressionStep">
+            <command class="" method="" windowType="wizards_step"/>
+        </action>
+
+        <action name="assignOccurrencesExpression" resourceBundle="com.ptc.windchill.option.optionResource" ajax="page">
+            <command url="netmarkets/jsp/expressionAssignable/assignOccurrencesExpression.jsp?expression_type=Advanced&amp;assignedTo=Occurrences&amp;isGWTAction=true"
+                    class="com.ptc.windchill.option.form.AssignUsesExpressionFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="disableConfigurablePartsFilter"/>
+        </action>
+
+        <action name="assignOccurrencesExpressionStep">
+            <command class="" method="" windowType="wizards_step"/>
+        </action>
+
+        <action name="assignItemExpressionGWT" resourceBundle="com.ptc.windchill.option.optionResource" ajax="page" uicomponent="ASSIGN_EXPRESSION">
+            <command url="netmarkets/jsp/expressionAssignable/assignItemExpressionGWT.jsp?expression_type=Advanced&amp;assignedTo=Item&amp;isGWTAction=true"
+                    class="com.ptc.windchill.option.form.AssignItemExpressionGWTFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="disableConfigurablePartsFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+        </action>
+
+        <action name="assignItemExpressionGWTStep">
+            <command class="" method="" windowType="wizards_step"/>
+        </action>
+
+        <action name="viewAssignedExpression" uicomponent="VIEW_ASSIGNED_EXPRESSION">
+            <command windowType="page"/>
+            <includeFilter name="independentAssignedExpressionFilter"/>
+        </action>
+
+        <action name="viewAssignedExpressionGWT" uicomponent="VIEW_ASSIGNED_EXPRESSION">
+            <command class="com.ptc.windchill.option.psb.client.ViewAssignedExpressionAction" method="execute" windowType="page"/>
+            <includeFilter name="independentAssignedExpressionFilter"/>
+        </action>
+
+        <action name="viewAssignedUsesExpressionGWT" uicomponent="VIEW_ASSIGNED_EXPRESSION">
+            <command class="com.ptc.windchill.option.psb.client.ViewAssignedExpressionAction" method="execute" windowType="page" url="?usage=true"/>
+            <includeFilter name="independentAssignedExpressionFilter"/>
+        </action>
+
+        <action name="viewAssignedOccurrencesExpressionGWT" uicomponent="VIEW_ASSIGNED_EXPRESSION">
+            <command class="com.ptc.windchill.option.psb.client.ViewAssignedExpressionAction" method="execute" windowType="page" url="?occurrence=true"/>
+            <includeFilter name="independentAssignedExpressionFilter"/>
+        </action>
+
+        <action name="copyAssignedExpression" uicomponent="COPY_ASSIGNED_EXPRESSION">
+            <command class="com.ptc.windchill.option.expressions.ExpressionClientHelper" method="copyIAEToClipboard" />
+            <includeFilter name="independentAssignedExpressionFilter"/>
+        </action>
+
+        <action name="copyAssignedExpressionGWT" uicomponent="COPY_ASSIGNED_EXPRESSION">
+            <command class="com.ptc.windchill.option.psb.client.CopyAssignedExpressionAction" />
+            <includeFilter name="independentAssignedExpressionFilter"/>
+        </action>
+
+        <action name="copyAssignedUsesExpressionGWT" uicomponent="COPY_ASSIGNED_EXPRESSION">
+            <command class="com.ptc.windchill.option.psb.client.CopyAssignedExpressionAction" url="?usage=true" />
+            <includeFilter name="independentAssignedExpressionFilter"/>
+        </action>
+
+        <action name="copyAssignedOccurrencesExpressionGWT" uicomponent="COPY_ASSIGNED_EXPRESSION">
+            <command class="com.ptc.windchill.option.psb.client.CopyAssignedExpressionAction" url="?occurrence=true"/>
+            <includeFilter name="independentAssignedExpressionFilter"/>
+        </action>
+
+        <action name="assignAdvancedExpressions" uicomponent="ASSIGN_EXPRESSION">
+            <command url="apps/ato/expression/edit.jsp" windowType="popup"/>
+            <includeFilter name="disableConfigurablePartsFilter"/>
+            <includeFilter name="AssignItemOptionalityFilter"/>
+            <includeFilter name="OptionsSandBoxSharedFilter"/>
+            <includeFilter name="SupportNonConfigurableItemChoicesFilter"/>
+            <includeFilter name="createEditIndependentExpressionFilter"/>
+        </action>
+
+        <action name="assignExpressionCancelButton">
+          <command class="com.ptc.windchill.option.form.CancelAssignExpressionFormProcessor" method="execute" onClick="editCancelPrepare()" url="?close=true"/>
+        </action>
+    </objecttype>
+
+    <objecttype name="optionality" resourceBundle="com.ptc.windchill.option.optionResource">
+        <action name="assignItemOptionality" resourceBundle="com.ptc.windchill.option.optionResource" ajax="page" uicomponent="ASSIGN_EXPRESSION">
+            <command windowType="popup"/>
+            <includeFilter name="disableConfigurablePartsFilter"/>
+            <includeFilter name="AssignOptionalityActionFilter"/>
+            <includeFilter name="AssignItemOptionalityFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+            <includeFilter name="createEditIndependentExpressionFilter"/>
+        </action>
+
+        <action name="assignUsesOptionality" resourceBundle="com.ptc.windchill.option.optionResource" ajax="page">
+            <command windowType="popup"/>
+            <includeFilter name="disableConfigurablePartsFilter"/>
+            <includeFilter name="createEditIndependentExpressionFilter"/>
+        </action>
+
+        <action name="assignOccurrencesOptionality" resourceBundle="com.ptc.windchill.option.optionResource" ajax="page">
+            <command windowType="popup"/>
+            <includeFilter name="disableConfigurablePartsFilter"/>
+            <includeFilter name="createEditIndependentExpressionFilter"/>
+        </action>
+
+        <action name="listAssignedItemOptionality" resourceBundle="com.ptc.windchill.option.optionResource" ajax="page">
+            <component name="optionality.mvc.assignedItemOptionalitytable" windowType="page"/>
+            <includeFilter name="disableConfigurablePartsFilter"/>
+            <includeFilter name="AssignItemOptionalityFilter"/>
+            <includeFilter name="OptionsSandBoxSharedFilter"/>
+            <includeFilter name="SupportNonConfigurableItemChoicesFilter"/>
+        </action>
+
+        <action name="assignItemOptionalityGWT" resourceBundle="com.ptc.windchill.option.optionResource" ajax="page" uicomponent="ASSIGN_EXPRESSION">
+            <command windowType="popup"/>
+            <includeFilter name="disableConfigurablePartsFilter"/>
+            <includeFilter name="AssignItemOptionalityFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+            <includeFilter name="createEditIndependentExpressionFilter"/>
+        </action>
+    </objecttype>
+
+    <objecttype name="expressionable" class="wt.option.Expressionable" resourceBundle="com.ptc.windchill.option.optionResource" ajax="page">
+        <action name="expressions" resourceBundle="com.ptc.windchill.option.optionResource" installType="PDM">
+            <component name="expressionable.mvc.expressiontable" windowType="page"/>
+            <includeFilter name="disableConfigurablePartsFilter"/>
+            <includeFilter name="OptionsSandBoxSharedFilter"/>
+            <includeFilter name="SupportNonConfigurableItemChoicesFilter"/>
+        </action>
+
+        <action name="addRowsToTable" ajax="row">
+            <command class="com.ptc.core.components.forms.WizardCommands" method="addObject"/>
+        </action>
+
+        <action name="removeRowsFromTable" renderType="GENERAL" selectRequired="true">
+            <command onClick="removeRows(event)" windowType="no_content"/>
+        </action>
+
+        <action name="validateExpressionBtn" id="Expression_ValidateBtn">
+            <includeFilter name="validateExpressionBtn"/>
+            <command onClick="ATO.util.getAdvancedExpressionData();
+            PTC.validation.callAJAXValidation('expressionValidator',null,null,false)" windowType="no_content"/>
+        </action>
+
+        <action name="reviseExpression" resourceBundle="com.ptc.windchill.option.optionResource">
+            <description>Revise an Expression</description>
+            <command class="com.ptc.windchill.option.server.OptionsClientHelper" method="reviseExpression"/>
+            <includeFilter name="ReviseObjectActionFilter"/>
+            <includeFilter name="PlatformStructuresUserFilter"/>
+            <includeFilter name="hideForCheckedoutObject"/>
+        </action>
+    </objecttype>
+
+    <objecttype name="ChoiceRule" class="java.lang.Object" resourceBundle="com.ptc.windchill.enterprise.ocmp.ocmpClientResource">
+        <action name="comparisonReport4ChoiceRule">
+            <command windowType="popup"/>
+        </action>
+        <action name="comparisonReport4ChoiceRuleStep">
+            <command windowType="wizard_step" url="netmarkets/jsp/ocmp/ChoiceRule/comparisonReport4ChoiceRuleStep.jsp"/>
+        </action>
+
+        <!-- this is duplicate action defined in Netmarkets-actions.xml, we have validator for this + we need this for SPR 2215612-01 -->
+        <action name="setState" ajax="row" resourceBundle="com.ptc.windchill.option.optionResource">
+            <command url="netmarkets/jsp/lifecycle/setState.jsp" class="com.ptc.netmarkets.lifecycle.NmLifeCycleCommands" method="setState" windowType="popup"/>
+            <includeFilter name="SetStateActionValidator"/>
+            <includeFilter name="hideForNewObjectInWorkspace"/>
+            <includeFilter name="sandboxSharingValidationSimple"/>
+            <includeFilter name="hideFromNonAgreementMgrs"/>
+            <includeFilter name="hideSBHiddenFilter"/>
+            <includeFilter name="manAuthorized"/>
+        </action>
+    </objecttype>
+
+    <objecttype name="expressionAlias" class="com.ptc.windchill.option.model.ExpressionAlias" resourceBundle="com.ptc.windchill.option.optionResource">
+        <action name="createExpressionAlias" resourceBundle="com.ptc.windchill.option.optionResource" uicomponent="CREATE_ALIAS">
+            <command url="netmarkets/jsp/expressionAlias/createExpressionAlias.jsp?expression_type=Advanced" class="com.ptc.windchill.option.form.CreateExpressionAliasFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="OptionPoolContextFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="PlatformStructuresUserFilter"/>
+        </action>
+
+        <action name="editExpressionAlias" resourceBundle="com.ptc.windchill.option.optionResource" ajax="component" uicomponent="CREATE_ALIAS">
+            <command url="netmarkets/jsp/expressionAlias/editExpressionAlias.jsp?expression_type=Advanced" class="com.ptc.windchill.option.form.EditExpressionAliasFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="EditDeleteChoiceRuleActionFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+            <includeFilter name="PlatformStructuresUserFilter"/>
+        </action>
+
+        <action name="deleteExpressionAlias" resourceBundle="com.ptc.windchill.option.optionResource">
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+            <includeFilter name="PlatformStructuresUserFilter"/>
+            <includeFilter name="hideForCheckedoutObject"/>
+            <command class="com.ptc.windchill.option.form.DeleteExpressionAliasFormProcessor" method="execute" onClick="deleteConfirm(event)"/>
+        </action>
+
+        <action name="defineExpressionAliasAttrsStep" required="true">
+            <command class="" method="" windowType="wizards_step"/>
+        </action>
+
+        <action name="createEditExpressionAliasStep" required="true">
+            <command class="" method="" windowType="wizards_step"/>
+        </action>
+
+        <action name="deleteExpressionAliasToolbar" selectRequired="true" multiselect="true" resourceBundle="com.ptc.windchill.option.optionResource">
+            <includeFilter name="optionAdministratorFilter"/>
+            <command class="com.ptc.windchill.option.form.DeleteExpressionAliasFormProcessor" method="execute" onClick="deleteConfirm(event, table)"/>
+        </action>
+
+        <action name="reviseExpressionAlias" resourceBundle="com.ptc.windchill.option.optionResource">
+            <description>Revise an ExpressionAlias object</description>
+            <command class="com.ptc.windchill.option.server.OptionsClientHelper" method="reviseExpressionAlias"/>
+            <includeFilter name="OptionPoolContextFilter"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="ReviseObjectActionFilter"/>
+            <includeFilter name="PlatformStructuresUserFilter"/>
+            <includeFilter name="hideForCheckedoutObject"/>
+        </action>
+
+        <action name="renameExpressionAlias" resourceBundle="com.ptc.windchill.option.optionResource">
+            <description>Rename an ExpressionAlias object</description>
+            <command class="com.ptc.windchill.option.form.RenameATOObjectFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="optionAdministratorFilter"/>
+            <includeFilter name="hideForCheckedoutObject"/>
+        </action>
+
+        <action name="renameExpressionAliasWizardStep">
+            <component name="expressionAlias.mvc.renameExpressionAlias" windowType="wizard_step"/>
+        </action>
+
+        <action name="whereAssigned" resourceBundle="com.ptc.windchill.option.optionResource" installType="PDM">
+            <component name="expressionAlias.mvc.whereAssigned" windowType="page"/>
+        </action>
+
+        <action name="expressionAliasWhereUsedTab" resourceBundle="com.ptc.windchill.option.optionResource" installType="PDM">
+            <command url="netmarkets/jsp/ocm/expressionAliasWhereUsedTab.jsp" windowType="page"/>
+        </action>
+
+        <action name="expressionAliasInChoiceRules" resourceBundle="com.ptc.windchill.option.optionResource">
+            <component name="expressionAlias.mvc.choicerules" windowType="page"/>
+        </action>
+
+        <action name="listAliases" resourceBundle="com.ptc.windchill.option.optionResource">
+            <component name="expressionAlias.mvc.listAliasInAlias" windowType="page"/>
+        </action>
+    </objecttype>
+
+    <objecttype name="independentExpression" class="wt.option.Expressionable" resourceBundle="com.ptc.windchill.option.optionResource" ajax="page">
+        <action name="editExpression">
+            <command  windowType="popup"/>
+            <includeFilter name="createEditIndependentExpressionFilter"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+        </action>
+
+        <action name="editBasicExpression">
+            <command class="com.ptc.windchill.option.form.EditIndependentExpressionFormProcessor" method="execute" windowType="popup"
+                    url="netmarkets/jsp/independentExpression/editBasicExpression.jsp?expression_type=Basic"/>
+        </action>
+
+        <action name="deleteExpression">
+            <command class="com.ptc.windchill.enterprise.object.commands.DeleteObjectCommands" method="delete" onClick="deleteConfirm(event)"/>
+            <includeFilter name="NonLatestIterationObjectActionFilter"/>
+            <includeFilter name="hideForCheckedoutObject"/>
+        </action>
+
+        <action name="editBasicExpressionStep">
+            <command class="" method="" windowType="wizards_step"/>
+        </action>
+
+        <action name="editAdvancedExpression">
+            <command class="com.ptc.windchill.option.form.EditIndependentExpressionFormProcessor" method="execute" windowType="popup"
+                    url="netmarkets/jsp/independentExpression/editAdvancedExpression.jsp?expression_type=Advanced"/>
+        </action>
+
+        <action name="editAdvancedExpressionStep">
+            <command class="" method="" windowType="wizards_step"/>
+        </action>
+    </objecttype>
+
+    <objecttype name="part" class="wt.part.WTPart">
+        <action name="mergeOptionsSets" resourceBundle="com.ptc.windchill.option.optionResource" uicomponent="MERGE_OPTION_SETS">
+            <command class="com.ptc.windchill.option.form.MergeOptionSetsFormProcessor" method="execute"
+                     windowType="lightbox" />
+            <moreurlinfo>height=500,width=800</moreurlinfo>
+        </action>
+
+        <action name="mergeOptionsSetsStep" id="mergeOptionsSetsStep" required="false" preloadWizardPage="true">
+            <command windowType="wizard_step" />
+        </action>
+    </objecttype>
+
+</listofactions>

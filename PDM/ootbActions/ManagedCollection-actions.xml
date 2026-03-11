@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM "http://www.ptc.com/Windchill/config/actions/actions.dtd">
+
+<listofactions>
+   <objecttype name="managedcollection" class="wt.facade.persistedcollection.ManagedCollection" resourceBundle="com.ptc.core.managedcollection.ManagedCollectionActionsRB">
+      <action name="create">
+         <description>Create a Managed Collection</description>
+         <command class="com.ptc.core.managedcollection.forms.CreateManagedCollectionFormProcessor" method="execute" windowType="popup"/>
+      </action>   
+      <!-- TODO: This could be a generic step that is shared between ManagedCollections and WorkPackages -->
+      <action name="addToCollectionStep" preloadWizardPage="true" required="false" beforeJS="addToPackageBeforeJS" afterJS="addToPackageAfterJS">
+         <description>Add Content wizard step to add content to a PersistedCollectionHolder</description>
+         <command windowType="wizard_step" class="com.ptc.core.managedcollection.forms.AddToCollectionFormDelegate"/>
+      </action>
+      <action name="relatedManagedCollection" uicomponent="THIRD_LEVEL_RELATED_MANAGEDCOLLECTIONS">
+              <component name ="managedCollection.list" windowType="page"/>
+			  <includeFilter name="hideForChangeTemplates"/>
+      </action>
+      <action name="edit_managedcollection" checkaccess="true" ajax="row">
+             <command class="com.ptc.core.components.forms.DefaultEditFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="mc_content" enabledwhensuspended="true">
+         <component name="managedcollection.mvc.mc_contents" windowType="page"/>
+      </action>
+      <action name="refreshManagedCollection" ajax="page">
+         <!-- Refresh a managedCollection -->
+          <command class="com.ptc.core.managedcollection.CollectionCollectorUtility" method="refresh" onClick="postSelectValidation(event, &apos;refreshManagedCollection&apos;)"/>
+      </action>
+       <action name="addToManagedCollection"  multiselect="false" ajax="page">
+	     <command class="com.ptc.core.managedcollection.forms.AddToManagedCollectionFormProcessor" method="execute" windowType="popup"/> 
+	</action>
+	<action name="addToManagedCollectionMultiple" multiselect="true" selectRequired="true">
+	     <command class="com.ptc.core.managedcollection.forms.AddToManagedCollectionFormProcessor" method="execute" windowType="popup"/> 
+	 </action>
+
+	<action name="addToManagedCollectionSingle" multiselect="false" selectRequired="true" >
+	     <!-- Add to Managed Collection from a row level -->
+	     <command class="com.ptc.core.managedcollection.forms.AddToManagedCollectionFormProcessor" method="execute" windowType="popup"/>
+	     <includeFilter name="ghostEpmDoc"/>		 
+	     <includeFilter name="hideForChangeTemplates"/>
+	     <includeFilter name="disableForWorkingCopyWorkInProgress"/> 	     
+	     <includeFilter name="manAuthorized" />
+	  </action>
+
+   </objecttype>
+</listofactions>

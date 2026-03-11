@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+
+<!-- define the actions on the UI components -->
+<actionmodels>
+
+    <model name="createNotesModel">
+       <action name="createNoteInNoteTable"    type="note"	shortcut="true"/>
+       <action name="addNewNoteFromTemplate"   type="note"	shortcut="true"/>
+       <action name="addNotesToolBarAction"    type="note"	shortcut="true"/>
+    </model>
+
+    <model name="note templates toolbar actions">
+        <action name="list_hide_template" type="object" shortcut="true"/>
+        <action name="list_show_template" type="object" shortcut="true"/>
+        <action name="separator"          type="separator"/>
+        <action name="createTemplate"     type="note" shortcut="true"/>
+    </model>
+
+</actionmodels>

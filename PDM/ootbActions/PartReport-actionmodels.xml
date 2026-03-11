@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+
+<actionmodels>
+
+   <model name="part_report_toolbar_actions">
+      <description>Toolbar action drop-down menu for the part reports </description>
+      <submodel name="exportlisttofile_submenu" />      
+   </model>
+
+   <model name="part_report_toolbar_actions_with_export_BOM_to_cad_tool">
+      <description>Toolbar action drop-down menu for the part reports with action export BOM to CEDM </description>
+      <submodel name="exportlisttofile_submenu" />    
+	  <action name="separator" type="separator"/>
+      <action name="exportBOMToCEDM" type="object"/>
+   </model>
+   
+</actionmodels>

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+   <objecttype name="datamonitor" class="com.ptc.windchill.enterprise.datamonitor.DataMonitor" resourceBundle="com.ptc.windchill.enterprise.datamonitor.dataMonitorResource">
+		<action name="createDataMonitor" ajax="page" >
+			<command class="com.ptc.windchill.enterprise.datamonitor.processors.DataMonitorFormProcessor" 
+			         method="execute" windowType="popup" 
+			         url="netmarkets/jsp/datamonitor/createDataMonitorWizard.jsp"/>
+		</action>
+		
+		<action name="createDataMonitorTableLevel" ajax="row" multiselect="false" selectRequired="true" >
+			<command class="com.ptc.windchill.enterprise.datamonitor.processors.DataMonitorFormProcessor" 
+			         method="execute" windowType="popup" 
+			         url="netmarkets/jsp/datamonitor/createDataMonitorWizard.jsp" onClick="validateCreateDatamonitorSelection(event)"/>
+		</action>
+		
+		<action name="editDataMonitor" ajax="true" resourceBundle="com.ptc.windchill.enterprise.datamonitor.dataMonitorResource">
+		   <command class="com.ptc.windchill.enterprise.datamonitor.processors.EditDataMonitorFormProcessor" method="execute" windowType="popup"/>
+		</action>
+		
+		<action name="deleteDataMonitor" ajax="true" resourceBundle="com.ptc.windchill.enterprise.datamonitor.dataMonitorResource">
+    	  <command class="com.ptc.windchill.enterprise.datamonitor.DataMonitorCommands" method="deleteDataMonitor" onClick="JCAConfirm(event,'com.ptc.windchill.enterprise.datamonitor.dataMonitorResource.CONFIRM_DELETE')"/>
+		</action>
+		
+		<action name="executeNowDataMonitor" ajax="true" resourceBundle="com.ptc.windchill.enterprise.datamonitor.dataMonitorResource">
+		   <command class="com.ptc.windchill.enterprise.datamonitor.DataMonitorCommands" method="executeNowDataMonitor" />
+		</action>		
+   </objecttype>
+   
+   <objecttype name="savedReportHolder" class="com.ptc.windchill.enterprise.datamonitor.SavedReportHolder" resourceBundle="com.ptc.windchill.enterprise.datamonitor.dataMonitorResource">
+   <action name="viewExecutedReports">
+			<component name="datamonitor.infopage.executedreports.object.list" windowType="page"/>
+   </action>
+		
+   </objecttype>
+   
+</listofactions>

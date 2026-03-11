@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+<listofactions>
+
+   <objecttype name="preference" class="" resourceBundle="com.ptc.windchill.enterprise.preference.preferenceClientResource">
+      <action name="list" enabledwhensuspended="true">
+         <component name="preference.tree" windowType="page"/>
+      </action>
+      <action name="list_step" enabledwhensuspended="true">
+         <component name="preference.tree" windowType="page"/>
+      </action>
+      <action name="edit_preference" enabledwhensuspended="true" ajax="row">
+         <command url="netmarkets/jsp/preference/edit_preference.jsp" class="com.ptc.windchill.enterprise.preference.forms.SetPreferenceValueFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="preference_set_step" enabledwhensuspended="true">
+         <command class="" method="" windowType="wizards_step"/>
+      </action>
+      <action name="delete_child_instances" enabledwhensuspended="true">
+         <command class="com.ptc.windchill.enterprise.preference.PreferenceClientCommands" method="deleteChildInstances" onClick="validateDelete(event)"/>
+      </action>
+   </objecttype>
+
+
+</listofactions>

@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+<!-- define the actions on the UI components -->
+<actionmodels>
+   <model name="search_table_actions_toolbar"> <!--This action model is used for persistable wt.fc.Persistable object type -->
+    <action name="openInMatrixEditor" type="productfamily"/> <!--Matrix editor for selected objects-->
+    <action name="viewSchematic" type="partslink" shortcut="true" />
+    <action name="list_copy" type="object" shortcut="true" /> <!-- Copy -->
+    <action name="CONTAINERMOVE" type="pdmObject" /> <!-- Move -->
+    <action name="separator" type="separator"/>   <!-- Seperator -->
+
+    <action name="multiObjectCheckIn" type="wip" /><!--multiObjectCheckIn-->
+    <action name="multiObjectCheckOut" type="wip" /><!--multiObjectCheckOut-->
+    <action name="WFMULTICHECKOUT" type="folder" /><!--checkout to workspace-->
+    <action name="multiObjectUndoCheckout" type="wip" /><!-- multiObjectUndoCheckout -->
+    <action name="editMultiObjects" type="object" shortcut="true"/><!-- Edit Multi Object -->
+    <action name="separator" type="separator"/>   <!-- Seperator -->
+
+    <submodel name="new_submenu"/>
+    <action name="separator" type="separator"/>   <!-- Seperator -->
+
+    <action name="WFSAVEASFROMSEARCH" type="pdmObject" /> <!-- Save As -->
+    <action name="MULTIRENAMEFROMSEARCH" type="pdmObject"/> <!-- Rename -->
+    <action name="cadmultiexport" type="object" /> <!-- Export CAD documents -->
+    <action name="list_delete" type="search" shortcut="true" /> <!-- Delete -->
+    <action name="send_owner_notification_wizard" type="network" /> <!-- Email Object Owners-->
+    <action name="downloadDocumentsToCompressedFile" type="document" />     <!-- Download Document To Compressed File-->
+    <action name="batchPrint"                     type="wvs"/>     <!-- Send file to new Batch Print UI-->
+      <action name="SETSTATE_FROMFOLDERS" type="pdmObject" /> <!-- Set State -->
+    <action name="separator" type="separator"/>   <!-- Seperator -->
+
+    <action name="WFADDTOWORKSPACE" type="folder"  shortcut="true"/><!-- Add to Workspace -->
+    <submodel name="add_to_submenu"/> <!-- Add To actions -->
+    <action name="separator" type="separator"/>   <!-- Seperator -->
+
+    <submodel name="compare_submenu"/>
+    <submodel name="process_submenu"/>
+    <submodel name="folderbrowser_toolbar_exportlisttofile_submenu"/> <!-- Export -->
+    <action name="separator" type="separator"/>   <!-- Seperator -->
+
+    <action name="route" type="workflow" /><!-- Route -->
+    <action name="userInitiatedReplication" type="replication" /> <!-- User Initiated Replication -->
+    <action name="separator" type="separator"/>   <!-- Seperator -->
+    
+    <action name="multireassign" type="work" />
+    <action name="multiaccept" type="work" />
+    <action name="multiunaccept" type="work" />
+    <action name="separator" type="separator"/>   <!-- Seperator -->
+    
+    <action name="MULTIEDITSECURITYLABELS"       type="object"/>    <!-- Edit Security Labels -->
+    <action name="createSubscription" type="subscription" /><!-- Subscribe -->
+   </model>
+
+   <model name="new_submenu" resourceBundle="com.ptc.windchill.enterprise.search.client.searchClientResource">
+    <description>Actions in submenu New</description>
+    <action name="create" type="changeNotice"/>
+    <action name="create" type="changeRequest"/>
+    <action name="create" type="problemReport"/>
+    <action name="create" type="variance"/>
+    <action name="create" type="promotionRequest" /> <!-- New Promotion request -->
+    <action name="createUDI" type="udi"/> <!-- New UDI Submission -->
+   </model>
+
+   <model name="add_to_submenu" resourceBundle="com.ptc.windchill.enterprise.search.client.searchClientResource">
+    <description>Actions in submenu Add to</description>
+    <action name="addToBaseline" type="baseline" /><!-- Add To Baseline -->
+    <action name="add_to_hotlist" type="bookmark" /><!-- Add To Hot Links -->
+    <action name="addToManagedCollectionMultiple" type="managedcollection" /> <!-- Add To manage collection -->
+    <action name="addToPackageMultiple" type="wpcollection" /><!-- Add To Package -->
+    <action name="SBAddToPrj" type="sandbox" shortcut="true" /> <!-- Add to Project -->
+   </model>
+
+   <model name="compare_submenu" resourceBundle="com.ptc.windchill.enterprise.search.client.searchClientResource">
+    <description>Actions in submenu Compare</description>
+    <action name="wtObjCompareMultiple" type="ocmp" /><!-- Information Compare -->
+    <action name="multiSelectLaunchStructureCompare" type="structureCompare" /><!-- BOM Structure Compare -->
+   </model>
+
+   <model name="process_submenu" resourceBundle="com.ptc.windchill.enterprise.search.client.searchClientResource">
+    <description>Actions in of submenu Process</description>
+    <action name="reassignLC" type="lifecycle" /> <!--  Reassign Lifecycle -->
+    <action name="resetTeam" type="team" />  <!--  Reset Team -->
+   </model>
+         
+   <model name="clfPicker_toolbar">
+    <description>Actions on classification node picker JCA tree</description>
+    <action name="expandAllClfNode" type="csm" shortcut="true"/> 
+    <action name="collapseAllClfNode" type="csm" shortcut="true"/>  
+   </model>
+   
+<!-- *************************************** Persistable actions ends here******************************* -->
+        <model name="cutomizeQuery_toolbar">
+            <action name="deleteQuery" type="SavedQuery" shortcut="true"/>
+            <action name="showQuery" type="SavedQuery" shortcut="true"/>
+            <action name="hideQuery" type="SavedQuery" shortcut="true"/>
+            <action name="savedQueryExport" type="SavedQuery" shortcut="true"/>
+            <action name="savedQueryImport" type="SavedQuery" shortcut="true"/>
+        </model>
+        <model name="cutomizeQuery_row_toolbar">
+            <action name="showRowQuery" type="SavedQuery" shortcut="true"/>
+            <action name="hideRowQuery" type="SavedQuery" shortcut="true"/>
+        </model>
+        <model name="cutomizeQuery_admin_toolbar">
+            <action name="deleteQuery" type="SavedQuery" shortcut="true"/>
+            <action name="showQuery" type="SavedQuery" shortcut="true"/>
+            <action name="hideQuery" type="SavedQuery" shortcut="true"/>
+            <action name="savedQueryExport" type="SavedQuery" shortcut="true"/>
+            <action name="savedQueryImport" type="SavedQuery" shortcut="true"/>
+            <action name="adminDelete" type="search"/>
+
+        </model>
+
+        <model name="savedQuery group access">
+            <action name="callSavedSearchGroupPicker" type="search" shortcut="true"/>
+            <action name="removeSavedSearchGroups" type="search" shortcut="true"/>
+        </model>
+        <model name="savedQuery_admin_delete_toolbar">
+            <action name="finalDelete" type="SavedQuery" shortcut="true"/>
+        </model>
+
+    <model name="classification picker toolbar">
+         <action name="explode" type="folder" shortcut="true"/>
+         <action name="implode" type="folder" shortcut="true"/>
+    </model>
+
+    <!-- Dummy entry for referring in Role Based UI profile page for Classification Search link -->
+    <model name="search page action">
+        <action name="classificationSearch" type="search" shortcut="true"/>
+    </model>
+    <model name="searchPickeWizardButtonClose">
+        <action name="searchCloseButton" type="search" shortcut="true"/>
+    </model>
+
+        <model name="lightBoxWizardButtonClose">
+        <action name="savedSearchLightBoxCloseButton" type="search"/>
+    </model>
+
+    <model name="search navigation"  id="searchActions"  resourceBundle="com.ptc.core.ui.navigationRB">
+            <description>Sub tabs under the search main tab</description>
+            <action name="historySaved" type="navigation"/>
+            <action name="advanced" type="navigation"/>
+            <action name="classificationExplorer" type="navigation"/>
+    </model>
+</actionmodels>

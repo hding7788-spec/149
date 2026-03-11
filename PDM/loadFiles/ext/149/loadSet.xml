@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE loadFileList SYSTEM "/wt/load/windchillLoad.dtd">
+<loadFileList>
+
+<!-- load 149 workflow -->
+<loadFile filename="ext/149/workflow/SJECN_WF.xml" title="Workflow Template" containerPath="/"></loadFile>
+<loadFile filename="ext/149/workflow/PARTREVIEW_WF.xml" title="Workflow Template" containerPath="/"></loadFile>
+<loadFile filename="ext/149/workflow/GYECN_WF.xml" title="Workflow Template" containerPath="/"></loadFile>
+<loadFile filename="ext/149/workflow/SWGYREVIEW_WF.xml" title="Workflow Template" containerPath="/"></loadFile>
+<loadFile filename="ext/149/workflow/DOCREVIEW_WF.xml" title="Workflow Template" containerPath="/"></loadFile>
+<loadFile filename="ext/149/workflow/QABGDOCREVIEW_WF.xml" title="Workflow Template" containerPath="/"></loadFile>
+
+<!--load 149 lifecycle-->
+<loadFile filename="ext/149/lifecycle/149_CHANGE_ECN_LC.xml" title="Lifecycle Template" containerPath="/"></loadFile>
+<loadFile filename="ext/149/lifecycle/149_Doc_LC.xml" title="Lifecycle Template" containerPath="/"></loadFile>
+<loadFile filename="ext/149/lifecycle/149_Envelope_LC.xml" title="Lifecycle Template" containerPath="/"></loadFile>
+<loadFile filename="ext/149/lifecycle/149_EPM_LC.xml" title="Lifecycle Template" containerPath="/"></loadFile>
+<loadFile filename="ext/149/lifecycle/149_MPMOPERATION_LC.xml" title="Lifecycle Template" containerPath="/"></loadFile>
+<loadFile filename="ext/149/lifecycle/149_Part_LC.xml" title="Lifecycle Template" containerPath="/"></loadFile>
+<loadFile filename="ext/149/lifecycle/149_PROCESS_ECN_LC.xml" title="Lifecycle Template" containerPath="/"></loadFile>
+<loadFile filename="ext/149/lifecycle/149_PROCESSPLAN_LC.xml" title="Lifecycle Template" containerPath="/"></loadFile>
+<loadFile filename="ext/149/lifecycle/149_QADoc_LC.xml" title="Lifecycle Template" containerPath="/"></loadFile>
+<loadFile filename="ext/149/lifecycle/149_Technotice_LC.xml" title="Lifecycle Template" containerPath="/"></loadFile>
+
+<!--load 149 OIR-->
+<loadFile filename="ext/149/OIR/PLREVIEW_OIR.xml" title="Init Rule for ProcessEnvelope" containerPath="/"></loadFile>
+<loadFile filename="ext/149/OIR/SJECN_OIR.xml" title="Init Rule for ECN" containerPath="/"></loadFile>
+<loadFile filename="ext/149/OIR/GYECN_OIR.xml" title="Init Rule for MPMProcessplan ECN" containerPath="/"></loadFile>
+<loadFile filename="ext/149/OIR/TECHNOTICE_OIR.xml" title="Init Rule for Technotice Document" containerPath="/"></loadFile>
+<loadFile filename="ext/149/OIR/ruledoc.xml" title="Init Rule for Technotice Document" containerPath="/"></loadFile>
+<loadFile filename="ext/149/OIR/ruleQA.xml" title="Init Rule for QA doc" containerPath="/"></loadFile>
+<loadFile filename="ext/149/OIR/ruleepm.xml" title="Init Rule for Technotice Document" containerPath="/"></loadFile>
+<loadFile filename="ext/149/OIR/rulepart.xml" title="Init Rule for QA doc" containerPath="/"></loadFile>
+<loadFile filename="ext/149/OIR/TECHNOTICE_OIR.xml" title="Init Rule for Technotice Document" containerPath="/"></loadFile>
+
+<!--load 149 task form template-->
+<loadFile filename="ext/149/taskFormTemplate/TaskFormTemplates.xml" title="Task Form for Workflow Setup Participator" containerPath="/"></loadFile>
+
+</loadFileList>

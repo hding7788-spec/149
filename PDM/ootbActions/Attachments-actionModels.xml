@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+<!-- define the actions on the UI components -->
+<actionmodels>
+    <model name="attachments wizard table toolbar actions">
+        <action name="remove" type="object" shortcut="true"/>
+        <action name="separator" type="separator" shortcut="true"/>
+        <action name="addFileAttachment" type="attachments" shortcut="true"/>
+        <action name="addUrlAttachment" type="attachments" shortcut="true"/>
+        <action name="addEsaAttachment" type="attachments" shortcut="true"/>
+        <action name="AddSCMAttachments" type="scmi" shortcut="true"/>        
+    </model>
+
+    <model name="attachments readonly table toolbar actions">
+        <action name="download_selected_attachments" type="attachments" shortcut="true"/>
+        <action name="separator" type="separator" shortcut="true"/>
+        <action name="edit_attachments" type="attachments" shortcut="true"/>
+        <action name="editModifyContentOnly" type="changeable" shortcut="true"/>
+        <action name="editAttachmentsOnly" type="qms" shortcut="true"/>
+    </model>
+    <model name="attachment row actions for application data" menufor="wt.content.ApplicationData">
+        <action name="download_item_attachment" type="attachments"/>
+    </model>
+
+    <model name="attachment row actions for url data" menufor="wt.content.URLData">
+        <action name="redirect_url_attachment" type="attachments"/>
+    </model>
+
+    <model name="attachment row actions for external data" menufor="wt.content.ExternalStoredData">
+    </model>
+    
+    <model name="AckConfrimWizardButtons">
+       <action name="acceptButton"      type="attachments"/>
+       <action name="declineButton"  	type="attachments"/>
+   </model>
+</actionmodels>

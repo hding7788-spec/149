@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SOP工艺文件签审流程">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/sop/SOP工艺文件签审流程.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

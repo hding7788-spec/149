@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+
+   <objecttype name="part" class="wt.part.WTPart" resourceBundle="com.ptc.windchill.enterprise.classification.classificationResource">
+
+      <action name="editPartClassificationAttrs" ajax="row">
+          <command class="com.ptc.core.components.forms.EditWorkableFormProcessor" method="execute" windowType="popup" url="/netmarkets/jsp/part/edit.jsp?launch=ClassifyAttrs"/>
+          <includeFilter name="sandboxSharingValidationSimple"/>
+          <includeFilter name="hideForNewObjectInWorkspace" />
+          <includeFilter name="hideForCheckedoutObjectInWorkspace" />
+      </action>
+
+      <action name="checkoutAndEditPartClassificationAttrs" ajax="row">
+          <command class="com.ptc.core.components.forms.EditWorkableFormProcessor" method="execute" windowType="popup" url="/netmarkets/jsp/part/edit.jsp?launch=ClassifyAttrs"/>
+          <includeFilter name="sandboxSharingValidationSimple"/>
+          <includeFilter name="disableForNewObjectInWorkspace"/>
+      </action>
+
+   </objecttype>
+
+</listofactions>

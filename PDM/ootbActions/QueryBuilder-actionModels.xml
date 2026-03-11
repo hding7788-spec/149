@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+<actionmodels>
+    <!-- action models for Query Builder wt.query.template.ReportTemplate -->
+    <model name="report template actions">
+        <action name="createReportTemplate" type="queryBuilder" shortcut="true"/>
+        <action name="deleteReportTemplate" type="queryBuilder" shortcut="true" />  		
+        <action name="importReportTemplate" type="queryBuilder" shortcut="true"/>
+        <action name="exportReportTemplates" type="queryBuilder" shortcut="true"/>
+        <action name="uploadReportTemplateFromQML" type="queryBuilder" shortcut="true"/>
+        <action name="refreshComponent"  type="object" shortcut="true"/>
+        <action name="upgradeDashboard" type="queryBuilder" shortcut="true"/>
+        <action name="legacyQueryBuilder" type="queryBuilder" shortcut="true"/>
+    </model>    
+       
+    <model name="report template row actions" menufor="wt.query.template.ReportTemplate">
+        <action name="view" type="object"/>
+        <action name="viewReportTemplate" type="queryBuilder"/>
+        <action name="editReportTemplate" type="queryBuilder" />
+        <action name="deleteReportTemplate" type="queryBuilder" />
+        <action name="exportReportTemplate" type="queryBuilder" />
+        <action name="saveReportTemplateAsQML" type="queryBuilder" />
+    </model>
+       
+    <!-- To follow UI standards, the action service is designed to only show the icons in the actions menu if those 
+         icons also appear in some toolbar anywhere in the system. If you need to workaround this for some action 
+         that does not belong in any toolbar, create a dummy model with your -->
+    <model name="toolbarModelNotUsedAnywhere">
+        <action name="viewReportTemplate" type="queryBuilder"/>
+        <action name="editReportTemplate" type="queryBuilder"/>
+        <action name="saveReportTemplateAsQML" type="queryBuilder"/>
+    </model> 
+</actionmodels>

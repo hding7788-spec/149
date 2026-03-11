@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+
+   <objecttype name="product" class="wt.pdmlink.PDMLinkProduct" resourceBundle="com.ptc.windchill.enterprise.product.ProductClientResource">
+
+      <action name="endItems">
+          <component name="endItems.table" /> 
+      </action>
+
+      <action name="createProductWizard" ajax="row">
+         <command class="com.ptc.windchill.enterprise.product.forms.CreateProductFormProcessor" method="execute" windowType="popup"/>
+      </action>
+
+      <action name="editProductWizard" ajax="row">
+          <command class="com.ptc.windchill.enterprise.container.forms.EditContainerFormProcessor" method="execute" windowType="popup"/>
+      </action>
+
+      <action name="editProductAttribute" ajax="page">
+          <command class="com.ptc.windchill.enterprise.container.forms.EditContainerFormProcessor" method="execute"   
+		           url="/netmarkets/jsp/product/editProductWizard.jsp"  windowType="popup"/>
+      </action>
+
+	  <action name="productVisualizationAndAttributes" resourceBundle="com.ptc.windchill.enterprise.product.ProductClientResource">
+		 <component name="visualizationAndAttributes" typeBased="true" windowType="page"/>
+		 <includeFilter name="visualizationAndAttributes"/>
+	  </action>
+   </objecttype>
+
+   <objecttype name="library" class="wt.inf.library.WTLibrary" resourceBundle="com.ptc.windchill.enterprise.library.LibraryClientResource">
+      <action name="createLibraryWizard" ajax="row">
+          <command class="com.ptc.windchill.enterprise.library.forms.CreateLibraryFormProcessor" method="execute" windowType="popup"/>
+      </action>
+
+      <action name="createLibraryAttributesWizStep">
+        <command method="execute" windowType="wizard_step"/>
+      </action>
+
+      <action name="editLibraryWizard" ajax="row">
+          <command class="com.ptc.windchill.enterprise.container.forms.EditContainerFormProcessor" method="execute" windowType="popup"/>
+      </action>
+
+   </objecttype>
+
+</listofactions>

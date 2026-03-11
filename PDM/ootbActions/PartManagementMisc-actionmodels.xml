@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+
+<actionmodels>
+
+<!-- Part Master information page Actions list -->
+   <model name="partmaster details page actions" menufor="wt.part.WTPartMaster">
+      <action name="launchPSE"                        type="explorer" />      <!-- Open in Product Structure Explorer -->
+      <action name="launchABE"                        type="explorer" />      <!-- Open in Manufacturing Product Structure Explorer -->
+      <action name="launchSBE"                        type="explorer" />      <!-- Open in Service Product Structure Explorer -->
+      <action name="separator"                        type="separator"/>      <!-- ===================================== -->
+      <action name="editPartCommonAttrsWizard"        type="part"/>           <!-- Edit Common Attributes -->
+      <action name="renameObjectWizard"               type="object"/>         <!-- Rename -->
+   </model>
+
+<!-- Part Master information page 3rd level nav menu -->
+   <model name="third_level_nav_partmaster">
+      <submodel name="generalPartMaster"/>                            <!-- General -->
+      <submodel name="historyPartMaster"/>                            <!-- History -->
+   </model>
+
+   <model name="generalPartMaster" resourceBundle="com.ptc.core.ui.navigationRB">
+	  <action name="primaryAttributes" type="object"/>
+	  <action name="separator" type="separator"/>
+	  <action name="whereUsed" type="object"/>
+   </model>
+
+   <model name="historyPartMaster" resourceBundle="com.ptc.core.ui.navigationRB">
+	  <action name="timelineHistory" type="history"/>
+	  <action name="separator"       type="separator"/>
+	  <action name="revisionHistory" type="history"/>
+	  <action name="renameHistory"   type="object"/>
+   </model>
+
+<!-- Part Master Information page General Attributes table -->
+   <model name="partMasterAttributesTableToolBar" >
+      <action name="editPartCommonAttrsWizard"  type="part"/>  <!-- Edit Common Attributes -->
+   </model>
+
+<!-- "Raname" Wizard -->
+   <model name="renameObjectWizardButtons">
+      <action name="okButton"      type="object"/>    <!-- OK -->
+      <action name="cancelButton"  type="object"/>    <!-- Cancel -->
+   </model>
+
+<!-- Instance Wizard -->
+   <model name="PartWizardButtons">
+      <action name="okButton"      type="object"/>    <!-- OK -->
+      <action name="cancelButton"  type="object"/>    <!-- Cancel -->
+   </model>
+
+   <model name="partMasterInfoPageTabSet" resource="com.ptc.core.ui.navigationRB">
+        <submodel name="partMasterInfoDetailsTab"/>
+		<submodel name="partMasterInfoWhereUsedTab"/>
+        <submodel name="partMasterInfoHistoryTab"/>
+   </model>
+
+    <model name="partMasterInfoDetailsTab" resourceBundle="com.ptc.core.ui.navigationRB">
+		<action name="primaryAttributes"      type="object"/>
+    </model>
+	
+	<model name="partMasterInfoWhereUsedTab" resourceBundle="com.ptc.core.ui.navigationRB">
+		<action name="whereUsed" type="object"/>
+    </model>
+
+    <model name="partMasterInfoHistoryTab" resourceBundle="com.ptc.core.ui.navigationRB">
+		<action name="revisionHistory" type="history"/>
+        <action name="renameHistory"   type="object"/>
+    </model>
+
+</actionmodels>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Configuration SYSTEM "xconf.dtd">
+<Configuration targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties">
+	<Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="com.glaway.mpm.mpmresource.validator.StartGZWorkflowValidator" requestor="null" selector="StartGZWorkflowValidator" cardinality="duplicate"/>
+	</Service>
+	<Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="com.glaway.mpm.mpmresource.validator.CreateMPMResourceValidator" requestor="null" selector="CreateMPMResourceValidator" cardinality="duplicate"/>
+	</Service>
+	<Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="com.glaway.mpm.mpmresource.validator.MPMRelationshipValidator" requestor="null" selector="MPMRelationshipValidator" cardinality="duplicate"/>
+	</Service>
+	<Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="com.glaway.mpm.mpmresource.validator.CreateGZCardValidator" requestor="null" selector="CreateGZCardValidator" cardinality="duplicate"/>
+	</Service>
+	<Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="com.glaway.mpm.mpmresource.validator.EditParameterValidator" requestor="null" selector="EditParameterValidator" cardinality="duplicate"/>
+	</Service>
+</Configuration>

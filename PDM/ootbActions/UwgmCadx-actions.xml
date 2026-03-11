@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+
+   <objecttype name="epmdocument" class="wt.epm.EPMDocument">
+      
+      <action name="PRODUCTVIEW_WF" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="page" class="java.lang.Object" method="PRODUCTVIEW_WF"/>
+      </action>
+      
+      <action name="LISTREPS_WF" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="page" class="java.lang.Object" method="LISTREPS_WF"/>
+      </action>
+      
+      <action name="OPENINARBORTEXT" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="page" class="java.lang.Object" method="OPENINARBORTEXT"/>
+      </action>
+    <action name="EDIT_CAR" resourceBundle="com.ptc.windchill.uwgm.cadx.caddoc.msr.msrActionsRB">
+        <command windowType="no_content" onClick="onEditCarMenuClick()"/>
+        <includeFilter name="validateEditCARAction"/>
+    </action>
+
+    <action name="REFRESH_MEMBERS" resourceBundle="com.ptc.windchill.uwgm.cadx.caddoc.msr.msrActionsRB">
+        <command windowType="page" url="javascript:refreshMembers();"/>
+        <includeFilter name="validateRefreshMembersAction"/>
+    </action>
+    
+    <action name="ADDPLACEHOLDER" enabledwhensuspended="true" renderType="PDM">
+        <command windowType="page" class="java.lang.Object" method="ADDPLACEHOLDER"/>
+    </action>
+
+    <action name="newImageDesignContext" resourceBundle="com.ptc.windchill.uwgm.cadx.caddoc.msr.msrActionsRB">
+        <command class="com.ptc.windchill.uwgm.cadx.newcaddoc.forms.CreateCADDocumentFormProcessor" windowType="popup" 
+                url="/netmarkets/jsp/workspaces/newcaddoc/newCADDocument.jsp?isNewImageAction=true&amp;hideRevisionPicker=true&amp;hideAssociatePart=true&amp;hideWorkspacePicker=false&amp;hideCategory=true"/>
+        <supportedTypes value="wt.epm.EPMDocument" applyToDescendants="true"/>
+    </action>
+
+    <action name="updateImageDesignContext" resourceBundle="com.ptc.windchill.uwgm.cadx.caddoc.msr.msrActionsRB">
+        <command class="com.ptc.windchill.uwgm.cadx.update.forms.UpdateImageDesignContextFormProcessor" method="execute"/>
+        <supportedTypes value="wt.epm.EPMDocument" applyToDescendants="true"/>
+    </action>
+
+   </objecttype>
+
+    <objecttype name="caddocument" class="wt.epm.EPMDocument" resourceBundle="com.ptc.windchill.uwgm.cadx.newcaddoc.newcaddocResource">
+        <action name="newCADDocument" ajax="page">
+            <command class="com.ptc.windchill.uwgm.cadx.newcaddoc.forms.CreateCADDocumentFormProcessor" method="execute" url="netmarkets/jsp/workspaces/newcaddoc/newCADDocument.jsp" windowType="popup"/>
+        </action>
+        <action name="newECADDocument" ajax="page">
+            <command class="com.ptc.windchill.uwgm.cadx.newcaddoc.forms.CreateCADDocumentFormProcessor" method="execute" url="netmarkets/jsp/workspaces/newcaddoc/newCADDocument.jsp" windowType="popup"/>
+        </action>
+        <!-- defineItemAttributesWizStep is main single step wizard for new CAD Doc page. 
+             It is based on defineItemAttributesWizStep from core actions.xml . Defined here
+             so that custom hooks for other attributes such as postloadJS, afterJs can be done for caddocument -->        
+        <action name="defineItemAttributesWizStep" afterVK="setAttributesWizStep" id="defineItemAttributesWizStep" preloadWizardPage="false" required="true" postloadJS="newCADDocumentInitialize" resourceBundle="com.ptc.core.ui.componentRB">
+           <component name="defineItemAttributesWizStep" typeBased="true" windowType="wizard_step"/>
+        </action>
+        <action name="setRelatedPart" hidden="true" preloadWizardPage="false">
+            <command url="netmarkets/jsp/workspaces/newcaddoc/setRelatedPart.jsp" windowType="wizard_step"/>
+        </action>
+    </objecttype>
+    
+    <objecttype name="newGDD" class="wt.epm.EPMDocument" resourceBundle="com.ptc.windchill.uwgm.cadx.createimage.createImageResource">
+        <action name="create" ajax="page">
+            <command class="com.ptc.windchill.uwgm.cadx.newDynamicDocument.forms.CreateDynamicDocumentFormProcessor" method="execute" url="netmarkets/jsp/gdd/newGDDWizard.jsp?createEPMDocumentType=GRAPHICS" windowType="popup" onClick="validateCreateLocation(event)"/>
+        </action>
+        <action name="createFromCS" ajax="page">
+            <command class="com.ptc.windchill.uwgm.cadx.newDynamicDocument.forms.CreateDynamicDocumentFormProcessor" method="execute" url="netmarkets/jsp/gdd/newGDDWizard.jsp?createEPMDocumentType=GRAPHICS" windowType="popup" onClick="validateCreateLocation(event)"/>
+        </action>
+        <action name="createDATA" ajax="page">
+            <command class="com.ptc.windchill.uwgm.cadx.newDynamicDocument.forms.CreateDynamicDocumentFormProcessor" method="execute" url="netmarkets/jsp/gdd/newGDDWizard.jsp?createEPMDocumentType=DATA" windowType="popup" onClick="validateCreateLocation(event)"/>
+        </action>
+    </objecttype>
+   
+   <objecttype name="object" class="java.lang.Object">
+         <action name="cadmultiexport" resourceBundle="com.ptc.windchill.uwgm.cadx.export.exportResource">
+             <command onClick="PTC.cadexport.launchExportWindow(event, target, table)" />
+         </action>
+
+         <action name="CDPPContentTableSubTemplate_WF">
+             <command url="netmarkets/jsp/components/templateProcessorContentNoIframe.jsp?action=CDPPContentTableSubTemplate_WF" windowType="page"/>
+         </action>
+
+         <action name="CDPPAttributesTableSubTemplate_WF">
+             <command url="netmarkets/jsp/components/templateProcessorContent.jsp?action=CDPPAttributesTableSubTemplate_WF" windowType="page"/>
+         </action>
+         <action name="cadMoreAttributeTable">
+             <component windowType="page"/>
+         </action>
+         
+            <action name="cadVisualizationAndAttributes" resourceBundle="com.ptc.core.ui.navigationRB">
+               <component name="cadVisualizationAndAttributes" typeBased="true" windowType="page"/>
+               <includeFilter name="visualizationAndAttributes"/>
+            </action>         
+
+         <action name="CDPPAttachment">
+             <command url="netmarkets/jsp/components/templateProcessorContentNoIframe.jsp?action=CDPPAttachment" windowType="page"/>
+         </action>
+         
+         <action name="WHEREUSEDREPORT">
+            <command url="netmarkets/jsp/components/templateProcessorContent.jsp?action=WHEREUSEDREPORT" windowType="page"/>
+         </action>
+         
+          <action name="RELATIONSHIPREPORT">
+            <command url="netmarkets/jsp/components/templateProcessorContent.jsp?action=RELATIONSHIPREPORT" windowType="page"/>
+         </action>
+
+        <action name="CDPPReference" resourceBundle="com.ptc.windchill.uwgm.cadx.caddoc.caddocResource">
+            <command url="netmarkets/jsp/components/templateProcessorContentNoIframe.jsp?action=CDPPReference" windowType="page"/>
+         </action>
+
+         <action name="CDPPReferenceDD">
+            <command url="netmarkets/jsp/components/templateProcessorContentNoIframe.jsp?action=CDPPReference" windowType="page"/>
+         </action>
+         
+         <action name="CDPPFamilyTableSubTemplate_WF">
+            <command url="netmarkets/jsp/components/templateProcessorContent.jsp?action=CDPPFamilyTableSubTemplate_WF" windowType="page"/>
+         </action>
+         <action name="FAMILYTABLEREPORT">
+            <command url="netmarkets/jsp/components/templateProcessorContent.jsp?action=FAMILYTABLEREPORT" windowType="page"/>
+         </action>
+
+         
+         <action name="CDPPRelatedPartsSubTemplate_WF" resourceBundle="com.ptc.windchill.uwgm.cadx.caddoc.caddocResource">
+            <command url="netmarkets/jsp/components/templateProcessorContentNoIframe.jsp?action=CDPPRelatedPartsSubTemplate_WF" windowType="page"/>
+         </action>            
+         <action name="partsForEPMDocMiniNavigatorTable">
+             <component name="partsForEPMDocMiniNavigator" windowType="page"/>
+             <supportedTypes>
+                <type value="wt.epm.EPMDocument"/>
+             </supportedTypes>
+         </action>
+        <action name="epmDocsForEPMDocMiniNavigatorTable">
+            <component name="epmDocsForEPMDocMiniNavigator"/>
+            <supportedTypes>
+               <type value="wt.epm.EPMDocument"/>
+            </supportedTypes>
+         </action>
+   </objecttype>
+
+   <objecttype name="cadx" resourceBundle="com.ptc.windchill.uwgm.cadx.cadxActionsRB">
+      <action name="cadxRenameGWT">
+           <command class="com.ptc.windchill.uwgm.cadx.client.action.RenameObjectAction" method="execute" url="/servlet/WindchillAuthGW/wt.enterprise.URLProcessor/URLTemplateAction" windowType="popup"/>
+           <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForEmptyMatrixCellFilter"/>
+           <includeFilter name="sandboxSharingValidationSimple"/>
+           <includeFilter name="hideFromNonAgreementMgrs"/>
+           <includeFilter name="hideSBHiddenFilter"/>
+           <nonSupportedTypes>
+               <type value="wt.doc.WTDocument"/>
+               <type value="wt.epm.EPMDocument"/>
+           </nonSupportedTypes>
+           <supportedTypes>
+               <type value="wt.part.WTPart"/>
+           </supportedTypes>
+      </action>
+   </objecttype>
+
+</listofactions>

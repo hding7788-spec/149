@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+
+   <objecttype name="navigation" class="" resourceBundle="com.ptc.windchill.enterprise.search.client.searchClientResource">
+        <action name="historySaved" renderType="GENERAL" uicomponent="GLOBAL_SEARCH">
+            <command class="netmarkets" method="servlet/Navigation" url="netmarkets/jsp/search/historySavedSearchDisplay.jsp" windowType="page"/>
+            <includeFilter name="SYFLValidator"/>
+        </action>
+      <action name="advanced" renderType="GENERAL" uicomponent="GLOBAL_SEARCH">
+            <command class="netmarkets" method="servlet/Navigation" url="wtcore/jsp/com/ptc/windchill/search/Search.jsp"  windowType="page"/>
+        </action>
+        <action name="classificationExplorer" renderType="GENERAL" uicomponent="classificationSearch">
+            <command class="netmarkets" url="netmarkets/jsp/search/classificationExplorer.jsp" windowType="page"/>
+            <includeFilter name="clfExplorer"/>
+            <includeFilter name="SYFLValidator"/>
+        </action>
+   </objecttype>
+
+   </listofactions>

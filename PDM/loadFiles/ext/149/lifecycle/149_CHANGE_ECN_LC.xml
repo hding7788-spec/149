@@ -1,0 +1,1382 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE NmLoader SYSTEM "standardX20.dtd">
+<NmLoader>
+  <csvLifeCycleTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createLifeCycleTemplate">
+    <csvname>149_CHANGE_ECN_LC</csvname>
+    <csvdescription>null</csvdescription>
+    <csvsupportedClass>wt.fc.WTObject</csvsupportedClass>
+    <csvfolderLocation>/System</csvfolderLocation>
+    <csvenabled>true</csvenabled>
+    <csvrouting>false</csvrouting>
+    <csvbasic>false</csvbasic>
+  </csvLifeCycleTemplateBegin>
+  <csvPhaseTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateBegin">
+    <csvname>正在工作</csvname>
+    <csvphaseState>INWORK</csvphaseState>
+    <csvphaseWorkflow>ECN流程</csvphaseWorkflow>
+    <csvgateWorkflow></csvgateWorkflow>
+    <csvseriesSelector></csvseriesSelector>
+  </csvPhaseTemplateBegin>
+  <csvRoleHolder handler="wt.project.LoadProject.createRoleHolder">
+    <csvroleToAssign>REVIEWER</csvroleToAssign>
+    <csvassignedPrincipal></csvassignedPrincipal>
+  </csvRoleHolder>
+  <csvPhaseTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateEnd"></csvPhaseTemplateEnd>
+  <csvPhaseTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateBegin">
+    <csvname>修改中</csvname>
+    <csvphaseState>REWORK</csvphaseState>
+    <csvphaseWorkflow></csvphaseWorkflow>
+    <csvgateWorkflow></csvgateWorkflow>
+    <csvseriesSelector></csvseriesSelector>
+  </csvPhaseTemplateBegin>
+  <csvRoleHolder handler="wt.project.LoadProject.createRoleHolder">
+    <csvroleToAssign>REVIEWER</csvroleToAssign>
+    <csvassignedPrincipal></csvassignedPrincipal>
+  </csvRoleHolder>
+  <csvPhaseTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateEnd"></csvPhaseTemplateEnd>
+  <csvPhaseTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateBegin">
+    <csvname>校对</csvname>
+    <csvphaseState>PROOFREAD</csvphaseState>
+    <csvphaseWorkflow></csvphaseWorkflow>
+    <csvgateWorkflow></csvgateWorkflow>
+    <csvseriesSelector></csvseriesSelector>
+  </csvPhaseTemplateBegin>
+  <csvRoleHolder handler="wt.project.LoadProject.createRoleHolder">
+    <csvroleToAssign>REVIEWER</csvroleToAssign>
+    <csvassignedPrincipal></csvassignedPrincipal>
+  </csvRoleHolder>
+  <csvPhaseTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateEnd"></csvPhaseTemplateEnd>
+  <csvPhaseTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateBegin">
+    <csvname>审核</csvname>
+    <csvphaseState>REVIEW</csvphaseState>
+    <csvphaseWorkflow></csvphaseWorkflow>
+    <csvgateWorkflow></csvgateWorkflow>
+    <csvseriesSelector></csvseriesSelector>
+  </csvPhaseTemplateBegin>
+  <csvRoleHolder handler="wt.project.LoadProject.createRoleHolder">
+    <csvroleToAssign>REVIEWER</csvroleToAssign>
+    <csvassignedPrincipal></csvassignedPrincipal>
+  </csvRoleHolder>
+  <csvPhaseTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateEnd"></csvPhaseTemplateEnd>
+  <csvPhaseTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateBegin">
+    <csvname>内部会签</csvname>
+    <csvphaseState>INTERNALCOUNTERSIGN</csvphaseState>
+    <csvphaseWorkflow></csvphaseWorkflow>
+    <csvgateWorkflow></csvgateWorkflow>
+    <csvseriesSelector></csvseriesSelector>
+  </csvPhaseTemplateBegin>
+  <csvRoleHolder handler="wt.project.LoadProject.createRoleHolder">
+    <csvroleToAssign>REVIEWER</csvroleToAssign>
+    <csvassignedPrincipal></csvassignedPrincipal>
+  </csvRoleHolder>
+  <csvPhaseTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateEnd"></csvPhaseTemplateEnd>
+  <csvPhaseTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateBegin">
+    <csvname>外部会签</csvname>
+    <csvphaseState>EXTERNALCOUNTERSIGN</csvphaseState>
+    <csvphaseWorkflow></csvphaseWorkflow>
+    <csvgateWorkflow></csvgateWorkflow>
+    <csvseriesSelector></csvseriesSelector>
+  </csvPhaseTemplateBegin>
+  <csvRoleHolder handler="wt.project.LoadProject.createRoleHolder">
+    <csvroleToAssign>REVIEWER</csvroleToAssign>
+    <csvassignedPrincipal></csvassignedPrincipal>
+  </csvRoleHolder>
+  <csvPhaseTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateEnd"></csvPhaseTemplateEnd>
+  <csvPhaseTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateBegin">
+    <csvname>工艺会签</csvname>
+    <csvphaseState>PROCESSCOUNTERSIGN</csvphaseState>
+    <csvphaseWorkflow></csvphaseWorkflow>
+    <csvgateWorkflow></csvgateWorkflow>
+    <csvseriesSelector></csvseriesSelector>
+  </csvPhaseTemplateBegin>
+  <csvRoleHolder handler="wt.project.LoadProject.createRoleHolder">
+    <csvroleToAssign>REVIEWER</csvroleToAssign>
+    <csvassignedPrincipal></csvassignedPrincipal>
+  </csvRoleHolder>
+  <csvPhaseTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateEnd"></csvPhaseTemplateEnd>
+  <csvPhaseTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateBegin">
+    <csvname>标审</csvname>
+    <csvphaseState>STANDARDIZATIONEXAM</csvphaseState>
+    <csvphaseWorkflow></csvphaseWorkflow>
+    <csvgateWorkflow></csvgateWorkflow>
+    <csvseriesSelector></csvseriesSelector>
+  </csvPhaseTemplateBegin>
+  <csvRoleHolder handler="wt.project.LoadProject.createRoleHolder">
+    <csvroleToAssign>REVIEWER</csvroleToAssign>
+    <csvassignedPrincipal></csvassignedPrincipal>
+  </csvRoleHolder>
+  <csvPhaseTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateEnd"></csvPhaseTemplateEnd>
+  <csvPhaseTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateBegin">
+    <csvname>批准</csvname>
+    <csvphaseState>APPROVING</csvphaseState>
+    <csvphaseWorkflow></csvphaseWorkflow>
+    <csvgateWorkflow></csvgateWorkflow>
+    <csvseriesSelector></csvseriesSelector>
+  </csvPhaseTemplateBegin>
+  <csvRoleHolder handler="wt.project.LoadProject.createRoleHolder">
+    <csvroleToAssign>REVIEWER</csvroleToAssign>
+    <csvassignedPrincipal></csvassignedPrincipal>
+  </csvRoleHolder>
+  <csvPhaseTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateEnd"></csvPhaseTemplateEnd>
+  <csvPhaseTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateBegin">
+    <csvname>已批准</csvname>
+    <csvphaseState>APPROVED</csvphaseState>
+    <csvphaseWorkflow></csvphaseWorkflow>
+    <csvgateWorkflow></csvgateWorkflow>
+    <csvseriesSelector></csvseriesSelector>
+  </csvPhaseTemplateBegin>
+  <csvRoleHolder handler="wt.project.LoadProject.createRoleHolder">
+    <csvroleToAssign>REVIEWER</csvroleToAssign>
+    <csvassignedPrincipal></csvassignedPrincipal>
+  </csvRoleHolder>
+  <csvPhaseTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateEnd"></csvPhaseTemplateEnd>
+  <csvPhaseTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateBegin">
+    <csvname>已作废</csvname>
+    <csvphaseState>OBSOLESCENCE</csvphaseState>
+    <csvphaseWorkflow></csvphaseWorkflow>
+    <csvgateWorkflow></csvgateWorkflow>
+    <csvseriesSelector></csvseriesSelector>
+  </csvPhaseTemplateBegin>
+  <csvRoleHolder handler="wt.project.LoadProject.createRoleHolder">
+    <csvroleToAssign>REVIEWER</csvroleToAssign>
+    <csvassignedPrincipal></csvassignedPrincipal>
+  </csvRoleHolder>
+  <csvPhaseTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateEnd"></csvPhaseTemplateEnd>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>REVISE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>NEXT</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROOFREAD</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROOFREAD</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REVIEW</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REVIEW</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>EXTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>EXTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROCESSCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROCESSCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>STANDARDIZATIONEXAM</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>STANDARDIZATIONEXAM</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVING</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVING</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>OBSOLESCENCE</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>OBSOLESCENCE</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>REVISE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROOFREAD</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROOFREAD</csvsuccessorPhaseState>
+    <csvphaseTransition>NEXT</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROOFREAD</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REVIEW</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REVIEW</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>EXTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>EXTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROCESSCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROCESSCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>STANDARDIZATIONEXAM</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>STANDARDIZATIONEXAM</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVING</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVING</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>OBSOLESCENCE</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>OBSOLESCENCE</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROOFREAD</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROOFREAD</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>REVISE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROOFREAD</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROOFREAD</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROOFREAD</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROOFREAD</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROOFREAD</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REVIEW</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROOFREAD</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REVIEW</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROOFREAD</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REVIEW</csvsuccessorPhaseState>
+    <csvphaseTransition>NEXT</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROOFREAD</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROOFREAD</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROOFREAD</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>EXTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROOFREAD</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>EXTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROOFREAD</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROCESSCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROOFREAD</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROCESSCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROOFREAD</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>STANDARDIZATIONEXAM</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROOFREAD</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>STANDARDIZATIONEXAM</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROOFREAD</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVING</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROOFREAD</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVING</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROOFREAD</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROOFREAD</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROOFREAD</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>OBSOLESCENCE</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROOFREAD</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>OBSOLESCENCE</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>REVISE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROOFREAD</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REVIEW</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>NEXT</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>EXTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>EXTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROCESSCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROCESSCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>STANDARDIZATIONEXAM</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>STANDARDIZATIONEXAM</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVING</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVING</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>OBSOLESCENCE</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>OBSOLESCENCE</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>REVISE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROOFREAD</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REVIEW</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>EXTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>EXTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>EXTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>NEXT</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROCESSCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROCESSCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>STANDARDIZATIONEXAM</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>STANDARDIZATIONEXAM</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVING</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVING</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>OBSOLESCENCE</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>OBSOLESCENCE</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>EXTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>EXTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>REVISE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>EXTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>EXTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>EXTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROOFREAD</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>EXTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REVIEW</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>EXTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>EXTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>EXTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>EXTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>EXTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>EXTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROCESSCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>EXTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROCESSCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>EXTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROCESSCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>NEXT</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>EXTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>STANDARDIZATIONEXAM</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>EXTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>STANDARDIZATIONEXAM</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>EXTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVING</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>EXTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVING</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>EXTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>EXTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>EXTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>OBSOLESCENCE</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>EXTERNALCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>OBSOLESCENCE</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROCESSCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROCESSCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>REVISE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROCESSCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROCESSCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROCESSCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROOFREAD</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROCESSCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REVIEW</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROCESSCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROCESSCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>EXTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROCESSCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROCESSCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROCESSCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>STANDARDIZATIONEXAM</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROCESSCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>STANDARDIZATIONEXAM</csvsuccessorPhaseState>
+    <csvphaseTransition>NEXT</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROCESSCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>STANDARDIZATIONEXAM</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROCESSCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVING</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROCESSCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVING</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROCESSCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROCESSCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROCESSCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>OBSOLESCENCE</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>PROCESSCOUNTERSIGN</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>OBSOLESCENCE</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>STANDARDIZATIONEXAM</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>STANDARDIZATIONEXAM</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>REVISE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>STANDARDIZATIONEXAM</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>STANDARDIZATIONEXAM</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>STANDARDIZATIONEXAM</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROOFREAD</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>STANDARDIZATIONEXAM</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REVIEW</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>STANDARDIZATIONEXAM</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>STANDARDIZATIONEXAM</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>EXTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>STANDARDIZATIONEXAM</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROCESSCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>STANDARDIZATIONEXAM</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>STANDARDIZATIONEXAM</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>STANDARDIZATIONEXAM</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVING</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>STANDARDIZATIONEXAM</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVING</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>STANDARDIZATIONEXAM</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVING</csvsuccessorPhaseState>
+    <csvphaseTransition>NEXT</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>STANDARDIZATIONEXAM</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>STANDARDIZATIONEXAM</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>STANDARDIZATIONEXAM</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>OBSOLESCENCE</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>STANDARDIZATIONEXAM</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>OBSOLESCENCE</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVING</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVING</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>REVISE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVING</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVING</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVING</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROOFREAD</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVING</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REVIEW</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVING</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVING</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>EXTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVING</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROCESSCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVING</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>STANDARDIZATIONEXAM</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVING</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVING</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVING</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVING</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVING</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>NEXT</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVING</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>OBSOLESCENCE</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVING</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>OBSOLESCENCE</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>REVISE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROOFREAD</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REVIEW</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>EXTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROCESSCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>STANDARDIZATIONEXAM</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVING</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>OBSOLESCENCE</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>OBSOLESCENCE</csvsuccessorPhaseState>
+    <csvphaseTransition>NEXT</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>OBSOLESCENCE</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>OBSOLESCENCE</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>REVISE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>OBSOLESCENCE</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>OBSOLESCENCE</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>OBSOLESCENCE</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROOFREAD</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>OBSOLESCENCE</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REVIEW</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>OBSOLESCENCE</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>OBSOLESCENCE</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>EXTERNALCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>OBSOLESCENCE</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>PROCESSCOUNTERSIGN</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>OBSOLESCENCE</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>STANDARDIZATIONEXAM</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>OBSOLESCENCE</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVING</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>OBSOLESCENCE</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_CHANGE_ECN_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>OBSOLESCENCE</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>OBSOLESCENCE</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvLifeCycleTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createLifeCycleTemplateEnd"></csvLifeCycleTemplateEnd>
+</NmLoader>

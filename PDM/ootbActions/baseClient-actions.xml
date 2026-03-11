@@ -1,0 +1,282 @@
+<?xml version="1.0"?>
+<listofactions>
+    <objecttype name="baseclient" resourceBundle="com.ptc.windchill.baseclient.client.baseClientActionsRB">
+        <action name="treePickerRefreshGWT">
+            <command class="com.ptc.windchill.baseclient.client.treepicker.action.TreePickerRefreshAction" />
+        </action>
+        
+        <action name="treePickerCloseContent">
+            <command class="com.ptc.windchill.baseclient.client.treepicker.action.TreePickerCloseContentAction" />
+        </action>
+        
+        <action name="baseWTPartEditFilterAction">
+            <command class="com.ptc.windchill.baseclient.client.filter.action.BaseWTPartEditFilterAction" />
+        </action>
+        
+      <action name="baseWTPartInfoFilterAction">
+         <command class="com.ptc.windchill.baseclient.client.filter.action.BaseWTPartInfoFilterAction" />
+      </action>
+
+      <action name="baseWTPartSaveFilterAction">
+         <command class="com.ptc.windchill.baseclient.client.filter.action.BaseWTPartSaveFilterAction" />
+      </action>
+      
+      <action name="selectModeGWT">
+            <command class="com.ptc.windchill.baseclient.client.action.SelectModeAction"/>
+      </action>
+      
+      <action name="hideInstanceGWT">
+         <command class="com.ptc.windchill.baseclient.client.action.HideInstanceAction"/>
+      </action>
+      
+      <action name="isolateSelectedGWT">
+            <command class="com.ptc.windchill.baseclient.client.action.IsolateSelectedAction"/>
+      </action>
+      
+      <action name="showAllInstancesGWT">
+        	<command class="com.ptc.windchill.baseclient.client.action.ShowAllAction"/>
+       </action>
+       
+       <action name="translateModeGWT">
+            <command class="com.ptc.windchill.baseclient.client.action.TranslateModeAction"/>
+       </action>
+       
+       <action name="rotateModeGWT">
+            <command class="com.ptc.windchill.baseclient.client.action.RotateModeAction"/>
+        </action>
+        
+        <action name="restoreAllSplitGWT">
+        	 <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+
+        <action name="restoreAllGWT">
+            <command class="com.ptc.windchill.baseclient.client.action.RestoreAllAction"/>
+        </action>
+
+        <action name="resetInstanceGWT">
+            <command class="com.ptc.windchill.baseclient.client.action.ResetInstanceLocationAction"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.action.IsPVInstanceSelected"/>
+        </action>
+      
+       <action name="defaultOrientationGWT">
+         <command class="com.ptc.cat.ui.client.action.NoAction"/>
+       </action>
+ 
+       <action name="iso1OrientationGWT">
+            <command class="com.ptc.windchill.baseclient.client.action.SetISO1OrientationAction"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsISO1OrientationExistsFilter"/>
+       </action> 
+
+       <action name="iso2OrientationGWT">
+            <command class="com.ptc.windchill.baseclient.client.action.SetISO2OrientationAction"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsISO2OrientationExistsFilter"/>
+       </action> 
+           
+       <action name="topOrientationGWT">
+            <command class="com.ptc.windchill.baseclient.client.action.SetTopOrientationAction"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsTopOrientationExistsFilter"/>
+       </action> 
+       
+       <action name="bottomOrientationGWT">
+            <command class="com.ptc.windchill.baseclient.client.action.SetBottomOrientationAction"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsBottomOrientationExistsFilter"/>
+       </action> 
+       
+       <action name="leftOrientationGWT">
+            <command class="com.ptc.windchill.baseclient.client.action.SetLeftOrientationAction"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsLeftOrientationExistsFilter"/>
+       </action>   
+
+       <action name="rightOrientationGWT">
+            <command class="com.ptc.windchill.baseclient.client.action.SetRightOrientationAction"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsRightOrientationExistsFilter"/>
+       </action> 
+       
+       <action name="frontOrientationGWT">
+            <command class="com.ptc.windchill.baseclient.client.action.SetFrontOrientationAction"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsFrontOrientationExistsFilter"/>
+       </action>       
+       
+       <action name="backOrientationGWT">
+            <command class="com.ptc.windchill.baseclient.client.action.SetBackOrientationAction"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsBackOrientationExistsFilter"/>
+       </action>
+       
+       <action name="setPathFilterGWT">
+           <command class="com.ptc.windchill.baseclient.client.action.SetPathFilterAction"/>
+           <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter" />
+       </action>
+       
+        <action name="openInMAPSBGWT" uicomponent="MAPSB">
+            <command class="com.ptc.windchill.baseclient.client.action.OpenPartInMAPSBAction" url="/ptc1/mapsb/mapsb?" windowType="popup" />
+            <includeFilter name="isNotInProject"/>
+            <includeFilter name="hideForNewObjectInWorkspace" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+                <type value="wt.part.WTPartUsageLink"/>
+                <type value="wt.part.PartUsesOccurrence"/>
+                <type value="wt.part.RTPartPathOccurrence"/>
+            </supportedTypes>
+        </action>
+        <action name="openInProductViewGWT">
+            <command class="com.ptc.cat.ui.client.action.OpenInCreoViewAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter" />
+            <includeFilter name="isNotInProject" />
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsRepresentableOrViewableFilter" />
+            <nonSupportedTypes>
+                <type value="WCTYPE|wt.epm.EPMDocument|org.rnd.DynamicDocument|org.rnd.Note" />
+            </nonSupportedTypes>
+        </action>
+        
+        <action name="defaultRenderModeGWT">
+            <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+        
+		<action name="shadedRenderModeGWT">
+            <command class="com.ptc.windchill.baseclient.client.action.ShadedRenderModeAction"/>
+        </action>
+        
+       <action name="setVizPathFilterGWT">
+            <command class="com.ptc.windchill.baseclient.client.action.SetVizPathFilterAction"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.action.IsPVInstanceSelected" />
+       </action>
+       
+       <action name="shadedWithEdgesRenderModeGWT">
+            <command class="com.ptc.windchill.baseclient.client.action.ShadedWithEdgesRenderModeAction"/>
+       </action>
+       
+       <action name="hiddenLineRemovalGWT">
+            <command class="com.ptc.windchill.baseclient.client.action.HiddenLineRemovalAction"/>
+       </action>
+        
+       <action name="wireframeRenderModeGWT">
+           <command class="com.ptc.windchill.baseclient.client.action.WireframeRenderModeAction"/>
+       </action>
+       
+       <action name="meshRenderModeGWT">
+            <command class="com.ptc.windchill.baseclient.client.action.MeshRenderModeAction"/>
+       </action>
+       
+       <action name="clearAllPathFilterGWT">
+           <command class="com.ptc.windchill.baseclient.client.action.ClearAllPathFilterAction"/>    
+       </action>
+       
+       <action name="selectAllPathFiltersGWT">
+           <command class="com.ptc.windchill.baseclient.client.action.SetAllPathFilterAction"/>    
+       </action>
+ 
+       <action name="resetAllPathFiltersGWT">
+           <command class="com.ptc.windchill.baseclient.client.action.ResetAllPathFilterAction"/> 
+           <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsResetPathFilter"/>   
+       </action>
+
+	    <action name="setStateActionGWT">
+          <command class="com.ptc.windchill.baseclient.client.action.SetStateAction"/>
+		  <includeFilter name="com.ptc.cat.ui.client.internal.action.DisableForAdminLockedFilter"/>
+          <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+          <includeFilter name="com.ptc.cat.ui.client.internal.action.DisableForPartToCadBuildAdminLockedFilter"/>
+          <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+        </action>
+
+		<action name="newPromotionRequestActionGWT" selectRequired="true" uicomponent="PROMOTE" >
+          <command class="com.ptc.cat.ui.client.action.NewPromotionRequestAction"/>
+          <includeFilter name="com.ptc.cat.ui.client.internal.action.SupplierPartTypeFilter"/>
+          <includeFilter name="restrictGuestMembers"/>
+          <includeFilter name="hideForObjectInProject"/>
+          <includeFilter name="com.ptc.cat.ui.client.internal.action.MultiIsNotUnspecifiedIterationFilter"/>
+        </action>
+       
+        <action name="disablePathFilterGWT">
+           <command class="com.ptc.windchill.baseclient.client.action.DisablePathFilterAction"/>    
+        </action>
+        <action name="disablePathFilterVizGWT">
+           <command class="com.ptc.windchill.baseclient.client.action.BaseDisablePathFilterVizAction"/>    
+        </action>
+        <action name="zoomToWindowGWT">
+           <command class="com.ptc.windchill.baseclient.client.action.ZoomToWindowAction"/>
+        </action>
+        
+        <action name="distanceMeasurementGWT">
+           <command class="com.ptc.windchill.baseclient.client.action.DistanceMeasurementAction"/>
+        </action>
+        
+        <action name="diameterMeasurementGWT">
+           <command class="com.ptc.windchill.baseclient.client.action.DiameterMeasurementAction"/>
+        </action>
+        
+        <action name="angleMeasurementGWT">
+           <command class="com.ptc.windchill.baseclient.client.action.AngleMeasurementAction"/>
+        </action>
+        
+        <action name="summaryMeasurementGWT">
+           <command class="com.ptc.windchill.baseclient.client.action.SummaryMeasurementAction"/>
+        </action>
+        
+        <action name="deleteAllMeasurementsGWT">
+           <command class="com.ptc.windchill.baseclient.client.action.DeleteAllMeasurementsAction"/>
+        </action>
+        
+        <action name="deleteSelectedMeasurementGWT">
+           <command class="com.ptc.windchill.baseclient.client.action.DeleteSelectedMeasurementAction"/>
+           <includeFilter name="com.ptc.windchill.baseclient.client.action.IsPVMeasurementSelected"/>
+      </action>
+	  
+	   <action name="removeAUMGWT">
+           <command class="com.ptc.windchill.baseclient.client.action.AUMRemoveAction"/>
+           <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+           <supportedTypes>
+                <type value="wt.aum.AlternateUnitOfMeasure"/>
+                <type value="wt.aum.AlternateUnitLink"/>            
+      		</supportedTypes>
+      </action>
+	  
+	  	<action name="insertNewAUMGWT">
+           <command class="com.ptc.windchill.baseclient.client.action.AddNewAUMAction"/> 
+        <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.AddNewAUMActionFilter"/>		
+           <supportedTypes>
+                 <type value="wt.part.WTPart"/>              
+                <type value="com.ptc.windchill.mpml.resource.MPMResource"/>		
+				 <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationHolder"/> 
+				<type value="wt.aum.AlternateUnitOfMeasure"/> 					 
+      		</supportedTypes>
+
+		<nonSupportedTypes>
+             <type value="com.ptc.windchill.enterprise.data.EnterpriseData"/>
+             <type value="wt.epm.EPMDocument"/>
+        </nonSupportedTypes>  			
+      </action>
+
+	 	    <action name="mpmViewAssignedExpressionGWT">
+            <command class="com.ptc.windchill.baseclient.client.action.BaseViewAssignedExpressionAction" method="execute" windowType="page"/>
+			<includeFilter name="com.ptc.windchill.enterprise.associativity.part.apsb.client.filter.APSBBomAssignExpressionVisibilityFilter" />
+            <includeFilter name="independentAssignedExpressionFilter"/>
+       </action>
+	  
+	   <action name="mpmViewAssignedUsesExpressionGWT">
+            <command class="com.ptc.windchill.baseclient.client.action.BaseViewAssignedExpressionAction" method="execute" windowType="page" url="?usage=true"/>											 			
+            <includeFilter name="independentAssignedExpressionFilter"/>
+        </action>
+
+        <action name="mpmViewAssignedOccurrencesExpressionGWT">
+            <command class="com.ptc.windchill.baseclient.client.action.BaseViewAssignedExpressionAction" method="execute" windowType="page" url="?occurrence=true"/>										 
+			<includeFilter name="com.ptc.windchill.enterprise.associativity.part.apsb.client.filter.APSBOccurrenceAssignExpressionVisibilityFilter" />                       
+            <includeFilter name="independentAssignedExpressionFilter"/>
+        </action>
+        
+        <action name="baseOpenInCreoIllustrateGWT">
+           <command class="com.ptc.windchill.baseclient.client.action.OpenInCreoIllustrateAction"/>
+           <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+           <includeFilter name="DisableActionForNonUwgmBrowser"/> 
+            <includeFilter name="com.ptc.windchill.mpml.ppb.client.internal.filter.ManageIllustrationPreferenceFilter"/>
+           <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>                        
+            </supportedTypes>
+        </action> 
+	  
+        <action name="transformRotateModeGWT">
+            <command class="com.ptc.windchill.baseclient.client.action.TransformRotateModeAction"/>
+        </action>
+        
+   </objecttype>
+</listofactions>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="GBK"?>
+<mpmpplantypes>
+    <pplantype name="工艺路线表" number="GYLXB" formId="ReportForm4">
+               <ibaattribute name="index" display="序号"  dataFrom="" isEditable="false"/>
+		<ibaattribute name="pindex" display="代号"  dataFrom="" isEditable="true"/>
+		<ibaattribute name="name" display="名称"  dataFrom="" isEditable="true"/>
+		<ibaattribute name="mcpsl" display="每产品数量"  dataFrom="" isEditable="true"/>
+		<ibaattribute name="bjsl" display="备件数量"  dataFrom="" isEditable="true"/>
+		<ibaattribute name="syjsl" display="试验件数量"  dataFrom="" isEditable="true"/>
+		<ibaattribute name="zzbm" display="主制部门"  dataFrom="" isEditable="true"/>
+		<ibaattribute name="gybm" display="工艺部门及经过部门"  dataFrom="" isEditable="true"/>
+		<ibaattribute name="beizhu" display="备注"  dataFrom="" isEditable="true"/>
+	</pplantype>
+	<pplantype name="工艺装备明细表" number="MXz" formId="ReportForm17Frock">
+                <ibaattribute name="index" display="序号"  dataFrom="" isEditable="false"/>
+                <ibaattribute name="toolNum" display="编号"  dataFrom="element" isEditable="true"/>
+		<ibaattribute name="toolName" display="名称"  dataFrom="element" isEditable="true"/>
+                <ibaattribute name="csize" display="规格"  dataFrom="element" isEditable="true"/>
+               <ibaattribute name="toolSpec" display="类别"  dataFrom="element" isEditable="true"/>
+                 <ibaattribute name="sysl" display="数量"  dataFrom="" isEditable="true"/>
+                <ibaattribute name="jddj" display="精度等级"  dataFrom="" isEditable="true"/>
+		<ibaattribute name="partNumber" display="部件代号"  dataFrom="part" isEditable="true"/>
+		<ibaattribute name="partName" display="部件名称"  dataFrom="part" isEditable="true"/>
+		<ibaattribute name="workShop" display="使用车间"  dataFrom="procedure" isEditable="true"/>
+		<ibaattribute name="beizhu" display="备注"  dataFrom="" isEditable="true"/>
+	</pplantype>
+
+	<pplantype name="仪器仪表明细表" number="MXy" formId="ReportForm17SDashboard">
+               <ibaattribute name="index" display="序号"  dataFrom="" isEditable="false"/>
+                <ibaattribute name="toolNum" display="编号"  dataFrom="element" isEditable="true"/>
+		<ibaattribute name="toolName" display="名称"  dataFrom="element" isEditable="true"/>
+                <ibaattribute name="csize" display="规格"  dataFrom="element" isEditable="true"/>
+               <ibaattribute name="toolSpec" display="类别"  dataFrom="element" isEditable="true"/>
+                 <ibaattribute name="sysl" display="数量"  dataFrom="" isEditable="true"/>
+                <ibaattribute name="jddj" display="精度等级"  dataFrom="" isEditable="true"/>
+		<ibaattribute name="partNumber" display="部件代号"  dataFrom="part" isEditable="true"/>
+		<ibaattribute name="partName" display="部件名称"  dataFrom="part" isEditable="true"/>
+		<ibaattribute name="workShop" display="使用车间"  dataFrom="procedure" isEditable="true"/>
+		<ibaattribute name="beizhu" display="备注"  dataFrom="" isEditable="true"/>
+	</pplantype>
+
+	<pplantype name="非标仪器仪表、设备明细表" number="MXf" formId="ReportForm17UnSDashboard">
+		 <ibaattribute name="index" display="序号"  dataFrom="" isEditable="false"/>
+                <ibaattribute name="toolNum" display="编号"  dataFrom="element" isEditable="true"/>
+		<ibaattribute name="toolName" display="名称"  dataFrom="element" isEditable="true"/>
+                <ibaattribute name="csize" display="规格"  dataFrom="element" isEditable="true"/>
+               <ibaattribute name="toolSpec" display="类别"  dataFrom="element" isEditable="true"/>
+                 <ibaattribute name="sysl" display="数量"  dataFrom="" isEditable="true"/>
+                <ibaattribute name="jddj" display="精度等级"  dataFrom="" isEditable="true"/>
+		<ibaattribute name="partNumber" display="部件代号"  dataFrom="part" isEditable="true"/>
+		<ibaattribute name="partName" display="部件名称"  dataFrom="part" isEditable="true"/>
+		<ibaattribute name="workShop" display="使用车间"  dataFrom="procedure" isEditable="true"/>
+		<ibaattribute name="beizhu" display="备注"  dataFrom="" isEditable="true"/>
+	</pplantype>
+
+	<pplantype name="标准刀量具明细表" number="MXd" formId="ReportForm17Measure">
+		 <ibaattribute name="index" display="序号"  dataFrom="" isEditable="false"/>
+                <ibaattribute name="toolNum" display="编号"  dataFrom="element" isEditable="true"/>
+		<ibaattribute name="toolName" display="名称"  dataFrom="element" isEditable="true"/>
+                <ibaattribute name="csize" display="规格"  dataFrom="element" isEditable="true"/>
+               <ibaattribute name="toolSpec" display="类别"  dataFrom="element" isEditable="true"/>
+                 <ibaattribute name="sysl" display="数量"  dataFrom="" isEditable="true"/>
+                <ibaattribute name="jddj" display="精度等级"  dataFrom="" isEditable="true"/>
+		<ibaattribute name="partNumber" display="部件代号"  dataFrom="part" isEditable="true"/>
+		<ibaattribute name="partName" display="部件名称"  dataFrom="part" isEditable="true"/>
+		<ibaattribute name="workShop" display="使用车间"  dataFrom="procedure" isEditable="true"/>
+		<ibaattribute name="beizhu" display="备注"  dataFrom="" isEditable="true"/>
+	</pplantype>
+
+	<pplantype name="外协件明细表" number="MXw" formId="ReportForm22">
+                <ibaattribute name="index" display="序号"  dataFrom="" isEditable="false"/>
+		<ibaattribute name="partNumber" display="零部件代号"  dataFrom="part" isEditable="true"/>
+		<ibaattribute name="partName" display="零部件名称"  dataFrom="part" isEditable="true"/>
+		<ibaattribute name="cailiao" display="材料"  dataFrom="" isEditable="true"/>
+                 <ibaattribute name="useCount" display="数量"  dataFrom="technics" isEditable="true"/>
+		<ibaattribute name="jsxybh" display="技术协议（或合同）编号"  dataFrom="technics" isEditable="true"/>
+		<ibaattribute name="czdw" display="承制单位"  dataFrom="technics" isEditable="true"/>
+		<ibaattribute name="gyzb" display="工艺装备"  dataFrom="technics" isEditable="true"/>
+		<ibaattribute name="beizhu" display="备注"  dataFrom="" isEditable="true"/>
+
+	</pplantype>
+     <pplantype name="关键工序明细表" number="gjgxmxb" formId="ReportForm26">
+                <ibaattribute name="index" display="序号"  dataFrom="" isEditable="false"/>
+		<ibaattribute name="number" display="产品代号或工艺文件编号"  dataFrom="part" isEditable="true"/>
+		<ibaattribute name="name" display="名称"  dataFrom="part" isEditable="true"/>
+		<ibaattribute name="gxNumber" display="工序号"  dataFrom="" isEditable="true"/>
+        <ibaattribute name="gxName" display="工序名称"  dataFrom="" isEditable="true"/>
+        <ibaattribute name="kznr" display="控制内容"  dataFrom="technics" isEditable="false"/>
+		<ibaattribute name="zzdw" display="部门"  dataFrom="technics" isEditable="true"/>
+		<ibaattribute name="beizhu" display="备注"  dataFrom="" isEditable="true"/>
+		<ibaattribute name="technicsNumber" display="工艺文件编号"  dataFrom="" isEditable="false"/>
+		<ibaattribute name="kznrFlag" display="控制内容标记"  dataFrom="" isEditable="false"/>
+
+	</pplantype>
+     <pplantype name="材料消耗工艺定额明细表" number="clxhgydemxb" formId="ReportForm23">
+                <ibaattribute name="index" display="序号"  dataFrom="" isEditable="false"/>
+		<ibaattribute name="number" display="零件代号"  dataFrom="part" isEditable="true"/>
+		<ibaattribute name="name" display="零件名称"  dataFrom="part" isEditable="true"/>
+		<ibaattribute name="mtcpsl" display="每套产品数量"  dataFrom="" isEditable="true"/>
+                <ibaattribute name="yclmc" display="原材料名称"  dataFrom="" isEditable="true"/>
+                <ibaattribute name="yclph" display="原材料牌号"  dataFrom="technics" isEditable="true"/>
+		<ibaattribute name="yclgg" display="原材料规格"  dataFrom="technics" isEditable="true"/>
+                <ibaattribute name="ycljstj" display="原材料技术条件"  dataFrom="technics" isEditable="true"/>
+		<ibaattribute name="plxlcc" display="坏料下料尺寸"  dataFrom="technics" isEditable="true"/>
+                <ibaattribute name="plkzjs" display="坏料可制件数"  dataFrom="technics" isEditable="true"/>
+                <ibaattribute name="jldw" display="计量单位"  dataFrom="technics" isEditable="true"/>
+		<ibaattribute name="mgljmz" display="每个零件毛重"  dataFrom="technics" isEditable="true"/>
+		 <ibaattribute name="mgljgyde" display="每个零件工艺定额"  dataFrom="technics" isEditable="true"/>
+		 <ibaattribute name="mtcpgymz" display="每套产品工艺毛重"  dataFrom="technics" isEditable="true"/>
+ 		<ibaattribute name="mtcpgyde" display="每套产品工艺定额"  dataFrom="technics" isEditable="true"/>
+ 		<ibaattribute name="sjsl" display="试件数量"  dataFrom="technics" isEditable="true"/>
+ 		<ibaattribute name="sjmpcc" display="试件毛坯尺寸"  dataFrom="technics" isEditable="true"/>
+ 		<ibaattribute name="gyztrcl" display="供应状态/热处理"  dataFrom="technics" isEditable="true"/>
+                 <ibaattribute name="beizhu" display="备注"  dataFrom="" isEditable="true"/>
+
+	</pplantype>
+     <pplantype name="辅助材料定额表" number="fzcldeb" formId="ReportForm30">
+                <ibaattribute name="index" display="序号"  dataFrom="" isEditable="false"/>
+		<ibaattribute name="number" display="零件代号"  dataFrom="part" isEditable="true"/>
+		<ibaattribute name="name" display="零件名称"  dataFrom="part" isEditable="true"/>
+                <ibaattribute name="clmc" display="材料名称"  dataFrom="" isEditable="true"/>
+                <ibaattribute name="clph" display="材料牌号"  dataFrom="technics" isEditable="true"/>
+		<ibaattribute name="clgg" display="材料规格"  dataFrom="technics" isEditable="true"/>
+                <ibaattribute name="jstj" display="技术条件"  dataFrom="technics" isEditable="true"/>
+		<ibaattribute name="pzgg" display="品种规格"  dataFrom="technics" isEditable="true"/>
+                <ibaattribute name="jldw" display="计量单位"  dataFrom="technics" isEditable="true"/>
+ 		<ibaattribute name="sl" display="数量"  dataFrom="technics" isEditable="true"/>
+ 		<ibaattribute name="sycj" display="使用车间"  dataFrom="technics" isEditable="true"/>
+                 <ibaattribute name="beizhu" display="备注"  dataFrom="" isEditable="true"/>
+
+	</pplantype>
+    <pplantype name="辅助材料定额汇总表" number="fzcldehzb" formId="ReportForm25">
+                <ibaattribute name="index" display="序号"  dataFrom="" isEditable="false"/>
+
+                <ibaattribute name="clmc" display="材料名称"  dataFrom="" isEditable="true"/>
+                <ibaattribute name="clph" display="材料牌号"  dataFrom="technics" isEditable="true"/>
+		<ibaattribute name="clgg" display="材料规格"  dataFrom="technics" isEditable="true"/>
+                <ibaattribute name="clbzh" display="材料标准号"  dataFrom="technics" isEditable="true"/>
+                <ibaattribute name="jldw" display="计量单位"  dataFrom="technics" isEditable="true"/>
+ 		<ibaattribute name="hj" display="合计"  dataFrom="technics" isEditable="true"/>
+                 <ibaattribute name="beizhu" display="备注"  dataFrom="" isEditable="true"/>
+
+	</pplantype>
+    <pplantype name="工艺文件目录" number="GYWJML" formId="ReportForm3">
+                <ibaattribute name="index" display="序号"  dataFrom="" isEditable="false"/>
+
+                <ibaattribute name="gywjbh" display="工艺文件编号"  dataFrom="" isEditable="false"/>
+                <ibaattribute name="gywjmc" display="工艺文件名称"  dataFrom="technics" isEditable="false"/>
+		<ibaattribute name="daihao" display="零、部、组（整）件代号"  dataFrom="technics" isEditable="false"/>
+                <ibaattribute name="mingcheng" display="零、部、组（整）件名称"  dataFrom="technics" isEditable="false"/>
+                <ibaattribute name="yeshu" display="页数"  dataFrom="technics" isEditable="true"/>
+ 		<ibaattribute name="zrbm" display="责任部门"  dataFrom="technics" isEditable="false"/>
+                 <ibaattribute name="beizhu" display="备注"  dataFrom="" isEditable="true"/>
+                 <ibaattribute name="state" display="状态"  dataFrom="technics" isEditable="false"/>
+                 <ibaattribute name="fileNumber" display="文档编号"  dataFrom="" isEditable="false"/>
+                 <ibaattribute name="version" display="版本"  dataFrom="" isEditable="false"/>
+
+	</pplantype>
+	 <pplantype name="外购件（元器件、标准件）消耗工艺定额汇总表" number="XHGYDEHZB" formId="ReportForm16">
+     <ibaattribute name="index" display="序号"  dataFrom="" isEditable="false"/>
+     <ibaattribute name="mingcheng" display="名称"  dataFrom="" isEditable="true"/>
+     <ibaattribute name="leibie" display="类别"  dataFrom="technics" isEditable="true"/>
+     <ibaattribute name="paihao" display="牌号"  dataFrom="technics" isEditable="true"/>
+	 <ibaattribute name="guige" display="规格"  dataFrom="technics" isEditable="true"/>
+	 <ibaattribute name="sccj" display="生产厂家"  dataFrom="technics" isEditable="true"/>
+	 <ibaattribute name="jstj" display="技术条件"  dataFrom="technics" isEditable="true"/>
+	 <ibaattribute name="cailiao" display="材料"  dataFrom="technics" isEditable="true"/>
+	 <ibaattribute name="jxxn" display="机械性能等级(强度或硬度)"  dataFrom="technics" isEditable="true"/>
+	 <ibaattribute name="bmcl" display="表面处理"  dataFrom="technics" isEditable="true"/>
+	 <ibaattribute name="jldw" display="计量单位"  dataFrom="technics" isEditable="true"/>
+	 <ibaattribute name="mcpgyde" display="每()产品工艺定额"  dataFrom="technics" isEditable="true"/>
+	 <ibaattribute name="beizhu" display="备注"  dataFrom="technics" isEditable="true"/>
+
+	</pplantype>
+
+</mpmpplantypes>

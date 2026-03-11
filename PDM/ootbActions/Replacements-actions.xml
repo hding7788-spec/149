@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+   <objecttype name="part" class="wt.part.WTPart" resourceBundle="com.ptc.windchill.enterprise.part.partResource">
+
+      <action name="alternates" uicomponent="THIRD_LEVEL_RELATED_ALTERNATES">
+        <component name="relatedObjects.alternates"/>
+      </action>
+      <action name="alternatesMiniNavigatorTable" uicomponent="THIRD_LEVEL_RELATED_ALTERNATES">
+        <component name="alternatesMiniNavigator" windowType="page"/>
+        <supportedTypes>
+           <type value="wt.part.WTPart"/>
+        </supportedTypes>
+      </action>
+      <action name="alternateFor" uicomponent="THIRD_LEVEL_RELATED_ALTERNATES">
+       <component name="relatedObjects.alternatesFor"/>
+       </action>
+      <action name="substitutes" uicomponent="THIRD_LEVEL_RELATED_SUBSTITUTES">
+      <component name = "relatedObjects.substitutes" />
+      </action>
+      <action name="substitutesFor" uicomponent="THIRD_LEVEL_RELATED_SUBSTITUTES">
+	  <component name = "relatedObjects.substitutesFor" />
+      </action>
+
+      <action name="setTwoway" checkaccess="true" ajax="true">
+        <command class="com.ptc.windchill.enterprise.part.commands.AlternatesSubstitutesCommand" method="setTwoway" windowType="popup"/>
+        <access name="update"/>
+      </action>
+
+      <action name="replacements" checkaccess="true" ajax="true">
+         <includeFilter name="psbSessionValidation" />
+         <command class="com.ptc.windchill.enterprise.part.forms.AlternatesSubstitutesFormProcessor" method="execute" windowType="popup"/>
+         <moreurlinfo>resizable=yes,height=600, width=500</moreurlinfo>
+        <access name="update"/>
+      </action>
+
+      <action name="replacements_step" checkaccess="true" ajax="true">
+		<component name="relatedObjects.ManageReplacementStepComponent"/> 
+		<command windowType="wizard_step"/>
+		<access name="update"/>
+      </action>
+      
+      <!--  New Action for replacewithAlternateSubstitute  starts -->
+      
+      <action name="replaceWithAlternateSubstitute" checkaccess="true" ajax="true">
+		<command class="com.ptc.windchill.enterprise.part.forms.ReplaceWithAlternateSubstituteFormProcessor" method="execute" windowType="popup"/>
+         <moreurlinfo>resizable=yes,height=600, width=800</moreurlinfo>
+		<access name="update"/>
+       </action>      
+       <action name="replaceWithAlternateSubstitute_step" checkaccess="true" ajax="true">
+		<component name="relatedObjects.replaceWithAlternateSubstituteStep"/> 
+		<access name="update"/>
+       </action>
+       <action name="replaceWithAltSubOkButton" id="replaceWithAltSubOkButton">
+         <command class="" method="" windowType="page" url="javascript:onReplacementsOkButton()"/>
+       </action>;
+       
+      <!--  New Action for replacewithAlternateSubstitute  ends -->
+      
+      <action name="replacementsOkButton">
+         <command class="" method="" windowType="page" url="javascript:onReplacementsOk()"/>
+      </action>;
+      <action name="replacementsCancelButton">
+         <command class="" method="" windowType="page" url="javascript:onReplacementsCancel()"/>
+      </action>
+
+      <action name="addAlternateLinks" ajax="row" uicomponent="ADD_ALTERNATE">
+         <command windowType="popup"/>
+      </action>
+
+      <action name="removeAlternateLinks" renderType="GENERAL" selectRequired="true" uicomponent="REMOVE_REPLACEMENT">
+        <command windowType="no_content" onClick="removeRows(event)"/>
+     </action>
+
+      <action name="addSubstituteLinks" ajax="row" uicomponent="ADD_SUBSTITUTE">
+         <command windowType="popup"/>
+      </action>
+
+      <action name="removeSubstituteLinks" renderType="GENERAL" selectRequired="true" uicomponent="REMOVE_REPLACEMENT">
+        <command windowType="no_content" onClick="removeRows(event)"/>
+     </action>
+
+      <action name="addAlternateLinksThirdNav" ajax="component">
+         <command class="com.ptc.windchill.enterprise.part.commands.AlternatesSubstitutesCommand" method="addAlternatePart" windowType="popup"/>
+         <includeFilter name="disableForAdminLocked"/>
+      </action>
+
+      <action name="remove_alternates_substitutes" multiselect="true" ajax="row" ajaxActionClass="netmarkets/jsp/object/delete.jsp" selectRequired="true">
+          <command class="com.ptc.netmarkets.model.NmObjectCommands" method="list_delete"/>
+          <includeFilter name="disableForAdminLocked"/>
+      </action>
+
+      <action name="toggleTwoway" ajax="row">
+<!--          <command class="com.ptc.windchill.enterprise.part.commands.AlternatesSubstitutesCommand" method="toggleTwoway"/> -->
+      </action>
+
+   </objecttype>
+
+<objecttype name="alternatePart" class="wt.part.WTPartAlternateLink" resourceBundle="com.ptc.windchill.enterprise.part.replacementResource">
+	<action name="addAlternatePart" required="true" >
+         <command class="com.ptc.windchill.enterprise.part.forms.AddAlternateFormProcessor" method="execute" windowType="popup"/>
+         <!--<command class="com.ptc.windchill.enterprise.part.commands.AlternatesSubstitutesCommand" method="addAlternatePart" windowType="popup"/>-->
+         <includeFilter name="disableForAdminLocked"/>
+	</action>
+
+    <action name="alternatePartPickerStep" required="true" id="alternatePartPickerStep">
+		 <component name = "addAlternate.searchTable" />
+        	<access name="update"/>
+         <command windowType="wizard_step"/>
+    </action>
+
+	<action name="pickerSearch" ajax="component">
+          <component name = "addAlternate.searchTable" onClick="searchButtonClick()" />
+    </action>
+
+    <action name="pickerClear" ajax="page" >
+      	<component name = "addAlternate.searchTable" onClick="searchClearButtonClick()" />
+    </action>
+
+   	<action name="setAlternateAttributeWizStep" id="setAlternateAttributeWizStep">
+         <command windowType="wizard_step"/>
+    </action>
+	<action name="nextButton" id="replacement_next_button">
+     		<command class="" method="" windowType="page" url="javascript:goNext()"/>
+    </action>
+    
+     <action name ="editReplacement" multiselect="true" selectRequired="true" ajax="page">
+		    <command class="com.ptc.windchill.enterprise.part.forms.EditAlternateFormProcessor" method="execute" windowType="popup" />
+		    <includeFilter name="disableForAdminLocked"/>
+	 </action>
+	 
+	 <action name="editReplacement_step" id="editReplacement_step">
+		 <command windowType="wizard_step"/> 
+        	<access name="update"/>         
+    </action> 
+	    
+</objecttype>
+
+
+</listofactions>

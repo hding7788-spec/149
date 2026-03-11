@@ -1,0 +1,118 @@
+package com.glaway.mpm.qmIntf.template;
+
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import com.glaway.mpm.util.CommonUtil;
+import com.glaway.mpm.util.SwingUtil;
+
+public class TpNodeModifyPanel extends JPanel {
+	private static final long serialVersionUID = 1L;
+	private JLabel label;
+	private JTextField template;
+	private JPanel mainPanel;
+	private JButton sureButton;
+	private JButton cancelButton;
+	protected static String returnValue;
+	private String modifyString;
+	private JDialog dialog;
+
+	public TpNodeModifyPanel(String modifyString, JDialog dialog) {
+		this.dialog = dialog;
+		this.modifyString = modifyString;
+		init();
+	}
+
+	private void init() {
+		initLookAndFeel();
+		initDimension();
+		initComponents();
+		initLayout();
+		initActions();
+		loadInitDatas();
+	}
+
+	private void initLookAndFeel() {
+
+	}
+
+	private void initDimension() {
+
+	}
+
+	private void initComponents() {
+		mainPanel = new JPanel();
+
+		label = new JLabel("请输入模板名称：");
+		template = new JTextField();
+		template.setText(modifyString);
+		sureButton = new JButton();
+		cancelButton = new JButton();
+	}
+
+	private void initLayout() {
+		label.setPreferredSize(new Dimension(110, 25));
+		template.setPreferredSize(new Dimension(120, 25));
+
+		sureButton.setPreferredSize(new Dimension(70, 25));
+		cancelButton.setPreferredSize(new Dimension(70, 25));
+
+		GridBagConstraints c = new GridBagConstraints();
+		c.fill = GridBagConstraints.NONE;
+		c.anchor = GridBagConstraints.NORTHWEST;
+		c.insets = new Insets(10, 5, 5, 5);
+		c.gridx = 1;
+		c.gridy = 1;
+		mainPanel.setLayout(new GridBagLayout());
+		mainPanel.add(label, c);
+		c.gridx = 2;
+		mainPanel.add(template, c);
+		c.insets = new Insets(30, 15, 5, 5);
+		c.gridx = 1;
+		c.gridy = 2;
+		mainPanel.add(sureButton, c);
+		c.gridx = 2;
+		mainPanel.add(cancelButton, c);
+		this.add(mainPanel);
+	}
+
+	private void initActions() {
+		sureButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				returnValue = CommonUtil.trim(template.getText());
+				if (returnValue.equals("")) {
+					SwingUtil.showMessageDialog("请输入工艺模板名称", "提示", 2);
+					returnValue = null;
+				} else {
+					dialog.dispose();
+				}
+			}
+		});
+		cancelButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dialog.dispose();
+				returnValue = null;
+			}
+		});
+	}
+
+	private void loadInitDatas() {
+		sureButton.setText("确定");
+		cancelButton.setText("取消");
+	}
+
+}

@@ -1,0 +1,1208 @@
+<?xml version="1.0" encoding="GBK"?>
+<mpmpplantypes>
+	<pplantype name="Process_SOP" display="SOP标准操作规程" id="sop">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="SOP封面" formName="SOP格式1" formId="SopForm1" selectable="true"/>
+			<outputItem name="操作流程" formName="SOP格式2" formId="SopForm2" selectable="true"/>
+			<outputItem name="文件说明" formName="SOP格式3" formId="SopForm3" selectable="true"/>
+			<outputItem name="操作卡片" formName="SOP格式4" formId="SopForm4" selectable="true"/>
+		</outputForm>
+	</pplantype>
+
+	<pplantype name="Process_MP" display="机加工艺" id="11">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+			<outputItem name="配套明细表" formName="格式20" formId="Form20" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="工艺过程卡" formName="格式5" formId="Form5" selectable="true"/>
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="表格化" id="2">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+			<outputItem name="配套明细表" formName="格式34" formId="Form34" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="false"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="工艺过程卡" formName="格式37" formId="Form37" selectable="true"/>
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="外协" id="3">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="外协件明细表" formName="格式22" formId="Form22" selectable="true"/>
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+		</outputForm>
+	</pplantype>
+
+	<pplantype name="Process_DAOGUAN" display="导管工艺" id="07">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+
+			<outputItem name="配套明细表" formName="格式20" formId="Form20" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="工艺过程卡" formName="格式5" formId="Form5" selectable="true"/>
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="表格化" id="2">
+		</outputForm>
+
+		<outputForm name="外协" id="3">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="外协件明细表" formName="格式22" formId="Form22" selectable="true"/>
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+		</outputForm>
+	</pplantype>
+
+	<pplantype name="Process_BANJIN" display="钣金工艺" id="01">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+
+			<outputItem name="配套明细表" formName="格式20" formId="Form20" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="工艺过程卡" formName="格式5" formId="Form5" selectable="true"/>
+
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="表格化" id="2">
+		</outputForm>
+
+		<outputForm name="外协" id="3">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="外协件明细表" formName="格式22" formId="Form22" selectable="true"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+		</outputForm>
+	</pplantype>
+
+	<pplantype name="Process_TANHUANG" display="弹簧工艺" id="20">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+
+			<outputItem name="配套明细表" formName="格式20" formId="Form20" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="工艺过程卡" formName="格式5" formId="Form5" selectable="true"/>
+
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="表格化" id="2">
+		</outputForm>
+
+		<outputForm name="外协" id="3">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="外协件明细表" formName="格式22" formId="Form22" selectable="true"/>
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+		</outputForm>
+	</pplantype>
+
+	<pplantype name="Process_FJSJJG" display="非金属机加工工艺" id="08">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+			<outputItem name="配套明细表" formName="格式20" formId="Form20" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="工艺过程卡" formName="格式5" formId="Form5" selectable="true"/>
+
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="表格化" id="2">
+		</outputForm>
+
+		<outputForm name="外协" id="3">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="外协件明细表" formName="格式22" formId="Form22" selectable="true"/>
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+		</outputForm>
+	</pplantype>
+
+	<pplantype name="Process_SHUKONG" display="数控工艺" id="17">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+			<outputItem name="配套明细表" formName="格式20" formId="Form20" selectable="true"/>
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="数控工艺卡片" formName="格式31" formId="Form31" selectable="true"/>
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="表格化" id="2">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+			<outputItem name="配套明细表" formName="格式20" formId="Form20" selectable="true"/>
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="数控工艺卡片" formName="格式38" formId="Form38" selectable="true"/>
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="外协" id="3">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="外协件明细表" formName="格式22" formId="Form22" selectable="true"/>
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+		</outputForm>
+	</pplantype>
+
+	<pplantype name="Process_DIANZHUANG" display="电装工艺" id="05">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+
+			<outputItem name="配套明细表" formName="格式20" formId="Form20" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="电装工艺卡片" formName="格式8a" formId="Form8a" selectable="true"/>
+
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>f
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="表格化" id="2">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+
+			<outputItem name="配套明细表" formName="格式34" formId="Form34" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="装配工艺卡片" formName="格式35" formId="Form35" selectable="true"/>
+
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="外协" id="3">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="外协件明细表" formName="格式22" formId="Form22" selectable="true"/>
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+		</outputForm>
+	</pplantype>
+
+	<pplantype name="Process_DUANZAO" display="锻造工艺" id="06">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+			<outputItem name="配套明细表" formName="格式20" formId="Form20" selectable="true"/>
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="锻造工艺卡片" formName="格式14" formId="Form14" selectable="true"/>
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="表格化" id="2">
+		</outputForm>
+
+		<outputForm name="外协" id="3">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="外协件明细表" formName="格式22" formId="Form22" selectable="true"/>
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+		</outputForm>
+	</pplantype>
+
+	<pplantype name="Process_RCL" display="热处理工艺" id="16">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+			<outputItem name="配套明细表" formName="格式20" formId="Form20" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="热处理工艺卡片" formName="格式13" formId="Form13" selectable="true"/>
+
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="表格化" id="2">
+		</outputForm>
+
+		<outputForm name="外协" id="3">
+		</outputForm>
+	</pplantype>
+
+	<pplantype name="Process_BMCLL" display="表面处理工艺" id="02">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+			<outputItem name="配套明细表" formName="格式20" formId="Form20" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="表面处理工艺过程卡片" formName="格式11" formId="Form11" selectable="true"/>
+
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="表格化" id="2">
+		</outputForm>
+
+		<outputForm name="外协" id="3">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="外协件明细表" formName="格式22" formId="Form22" selectable="true"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+		</outputForm>
+	</pplantype>
+
+	<pplantype name="Process_AP" display="装配工艺" id="23">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+
+			<outputItem name="配套明细表" formName="格式20" formId="Form20" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀量具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="装配工艺卡" formName="格式8" formId="Form8" selectable="true"/>
+
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="表格化" id="2">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+
+			<outputItem name="配套明细表" formName="格式34" formId="Form34" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀量具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="装配工艺卡" formName="格式35" formId="Form35" selectable="true"/>
+
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="外协" id="3">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="外协件明细表" formName="格式22" formId="Form22" selectable="true"/>
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+		</outputForm>
+	</pplantype>
+
+	<pplantype name="Process_JIAOJIE" display="胶接工艺" id="12">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+
+			<outputItem name="配套明细表" formName="格式20" formId="Form20" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="工艺过程卡" formName="格式5" formId="Form5" selectable="true"/>
+
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="表格化" id="2">
+		</outputForm>
+
+		<outputForm name="外协" id="3">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="外协件明细表" formName="格式22" formId="Form22" selectable="true"/>
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+		</outputForm>
+	</pplantype>
+
+	<pplantype name="Process_MAOJIE" display="铆接工艺" id="15">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+
+			<outputItem name="配套明细表" formName="格式20" formId="Form20" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="装配工艺卡" formName="格式8" formId="Form8" selectable="true"/>
+
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="表格化" id="2">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+
+			<outputItem name="配套明细表" formName="格式20" formId="Form20" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="装配工艺卡" formName="格式35" formId="Form35" selectable="true"/>
+
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="外协" id="3">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="外协件明细表" formName="格式22" formId="Form22" selectable="true"/>
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+		</outputForm>
+	</pplantype>
+
+	<pplantype name="Process_SHIYAN" display="试验工艺" id="18">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+
+			<outputItem name="配套明细表" formName="格式20" formId="Form20" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="装配工艺卡" formName="格式8" formId="Form8" selectable="true"/>
+
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="表格化" id="2">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+
+			<outputItem name="配套明细表" formName="格式34" formId="Form34" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="装配工艺卡" formName="格式35" formId="Form35" selectable="true"/>
+
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="外协" id="3">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="外协件明细表" formName="格式22" formId="Form22" selectable="true"/>
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+		</outputForm>
+	</pplantype>
+
+	<pplantype name="Process_YOUQI" display="油漆工艺" id="22">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+
+			<outputItem name="配套明细表" formName="格式20" formId="Form20" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="油漆通用工艺卡片" formName="格式9" formId="Form9" selectable="true"/>
+
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="表格化" id="2">
+		</outputForm>
+
+		<outputForm name="外协" id="3">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="外协件明细表" formName="格式22" formId="Form22" selectable="true"/>
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+		</outputForm>
+	</pplantype>
+
+	<pplantype name="Process_FHCL" display="复合材料工艺" id="09">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+
+			<outputItem name="配套明细表" formName="格式20" formId="Form20" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="工艺过程卡" formName="格式5" formId="Form5" selectable="true"/>
+
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="表格化" id="2">
+		</outputForm>
+
+		<outputForm name="外协" id="3">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="外协件明细表" formName="格式22" formId="Form22" selectable="true"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+		</outputForm>
+	</pplantype>
+
+	<pplantype name="Process_HANJIE" display="焊接工艺" id="18">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+
+			<outputItem name="配套明细表" formName="格式20" formId="Form20" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="装配工艺卡" formName="格式8" formId="Form8" selectable="true"/>
+
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="表格化" id="2">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+
+			<outputItem name="配套明细表" formName="格式34" formId="Form34" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="装配工艺卡" formName="格式35" formId="Form35" selectable="true"/>
+
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="外协" id="3">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="外协件明细表" formName="格式22" formId="Form22" selectable="true"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+		</outputForm>
+	</pplantype>
+
+	<pplantype name="Process_TIAOSHI" display="调试工艺" id="19">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+
+			<outputItem name="配套明细表" formName="格式20" formId="Form20" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="电装工艺卡片" formName="格式8a" formId="Form8a" selectable="true"/>
+
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="表格化" id="2">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+
+			<outputItem name="配套明细表" formName="格式34" formId="Form34" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="装配工艺卡" formName="格式35" formId="Form35" selectable="true"/>
+
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="外协" id="3">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="外协件明细表" formName="格式22" formId="Form22" selectable="true"/>
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+		</outputForm>
+	</pplantype>
+
+	<pplantype name="Process_LENGZUO" display="冷作工艺" id="14">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+
+			<outputItem name="配套明细表" formName="格式20" formId="Form20" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="工艺过程卡" formName="格式5" formId="Form5" selectable="true"/>
+
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="表格化" id="2">
+		</outputForm>
+
+		<outputForm name="外协" id="3">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="外协件明细表" formName="格式22" formId="Form22" selectable="true"/>
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+		</outputForm>
+	</pplantype>
+
+	<pplantype name="Process_JIAOFU" display="交付工艺" id="13">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+
+			<outputItem name="配套明细表" formName="格式20" formId="Form20" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="装配工艺卡" formName="格式8" formId="Form8" selectable="true"/>
+
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="表格化" id="2">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+
+			<outputItem name="配套明细表" formName="格式34" formId="Form34" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="装配工艺卡" formName="格式35" formId="Form35" selectable="true"/>
+
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="外协" id="3">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="外协件明细表" formName="格式22" formId="Form22" selectable="true"/>
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+		</outputForm>
+	</pplantype>
+
+	<pplantype name="Process_WEIXIU" display="维修工艺" id="24">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+
+			<outputItem name="配套明细表" formName="格式20" formId="Form20" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="装配工艺卡" formName="格式8" formId="Form8" selectable="true"/>
+
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="表格化" id="2">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+
+			<outputItem name="配套明细表" formName="格式34" formId="Form34" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="装配工艺卡" formName="格式35" formId="Form35" selectable="true"/>
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="外协" id="3">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="外协件明细表" formName="格式22" formId="Form22" selectable="true"/>
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+		</outputForm>
+	</pplantype>
+
+	<pplantype name="Process_GONGZHUANG" display="工装工艺" id="25">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="配套明细表" formName="格式20" formId="Form20" selectable="true"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺过程卡" formName="格式37" formId="Form37" selectable="true"/>
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="表格化" id="2">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="配套明细表" formName="格式20" formId="Form20" selectable="true"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺过程卡" formName="格式37" formId="Form37" selectable="true"/>
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="外协" id="3">
+		</outputForm>
+	</pplantype>
+
+	<pplantype name="Process_CS" display="测试工艺" id="04">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+
+			<outputItem name="配套明细表" formName="格式20" formId="Form20" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀量具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="装配工艺卡" formName="格式8" formId="Form8" selectable="true"/>
+
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="表格化" id="2">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+
+			<outputItem name="配套明细表" formName="格式34" formId="Form34" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀量具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="装配工艺卡" formName="格式35" formId="Form35" selectable="true"/>
+
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="外协" id="3">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="外协件明细表" formName="格式22" formId="Form22" selectable="true"/>
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+		</outputForm>
+	</pplantype>
+
+	<pplantype name="Process_DIANXING" display="典型工艺" id="00">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+
+			<outputItem name="配套明细表" formName="格式20" formId="Form20" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀量具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="装配工艺卡" formName="格式8" formId="Form8" selectable="true"/>
+
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="表格化" id="2">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+
+			<outputItem name="配套明细表" formName="格式34" formId="Form34" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀量具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="装配工艺卡" formName="格式35" formId="Form35" selectable="true"/>
+
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="外协" id="3">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="外协件明细表" formName="格式22" formId="Form22" selectable="true"/>
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+		</outputForm>
+	</pplantype>
+	<!-- add by Mchen  -->
+	<pplantype name="Process_ZENGCAI" display="增材工艺" id="27">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+			<outputItem name="配套明细表" formName="格式20" formId="Form20" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="工艺过程卡" formName="格式5" formId="Form5" selectable="true"/>
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+	</pplantype>
+		<!-- add by Mchen -->
+		<pplantype name="Process_MP_ENGLISH" display="机加工艺(英文)" id="11">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="工艺文件封面" formName="格式39" formId="Form39" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式40" formId="Form40" selectable="true"/>
+			<outputItem name="配套明细表" formName="格式41" formId="Form41" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式42" formId="Form42" selectable="true"/>
+			<outputItem name="工装、设备、刀量具明细表" formName="格式49" formId="Form49" selectable="true"/>
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式46" formId="Form46a" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式43" formId="Form43" selectable="false"/>
+			<outputItem name="工艺过程卡" formName="格式44" formId="Form44" selectable="true"/>
+			<outputItem name="工艺附表" formName="格式46" formId="Form46" selectable="false"/>
+		</outputForm>
+	 </pplantype>
+	 <pplantype name="Process_AP_ENGLISH" display="装配工艺(英文)" id="23">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="工艺文件封面" formName="格式39" formId="Form39" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式40" formId="Form40" selectable="true"/>
+			<outputItem name="配套明细表" formName="格式41" formId="Form41" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式42" formId="Form42" selectable="true"/>
+			<outputItem name="工装、设备、刀量具明细表" formName="格式49" formId="Form49" selectable="true"/>
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式46" formId="Form46a" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式43" formId="Form43" selectable="false"/>
+			<outputItem name="装配工艺卡" formName="格式48" formId="Form48" selectable="true"/>
+			<outputItem name="工艺附表" formName="格式46" formId="Form46" selectable="false"/>
+		</outputForm>
+	 </pplantype>
+	  <pplantype name="Process_BANJIN_ENGLISH" display="钣金工艺(英文)" id="01">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="工艺文件封面" formName="格式39" formId="Form39" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式40" formId="Form40" selectable="true"/>
+			<outputItem name="配套明细表" formName="格式41" formId="Form41" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式42" formId="Form42" selectable="true"/>
+			<outputItem name="工装、设备、刀量具明细表" formName="格式49" formId="Form49" selectable="true"/>
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式46" formId="Form46a" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式43" formId="Form43" selectable="false"/>
+			<outputItem name="工艺过程卡" formName="格式44" formId="Form44" selectable="true"/>
+			<outputItem name="工艺附表" formName="格式46" formId="Form46" selectable="false"/>
+		</outputForm>
+	 </pplantype>
+
+	  <pplantype name="Process_HANJIE_ENGLISH" display="焊接工艺(英文)" id="10">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="工艺文件封面" formName="格式39" formId="Form39" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式40" formId="Form40" selectable="true"/>
+			<outputItem name="配套明细表" formName="格式41" formId="Form41" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式42" formId="Form42" selectable="true"/>
+			<outputItem name="工装、设备、刀量具明细表" formName="格式49" formId="Form49" selectable="true"/>
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式46" formId="Form46a" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式43" formId="Form43" selectable="false"/>
+			<outputItem name="装配工艺卡" formName="格式48" formId="Form48" selectable="true"/>
+			<outputItem name="工艺附表" formName="格式46" formId="Form46" selectable="false"/>
+		</outputForm>
+	 </pplantype>
+
+	 <pplantype name="Process_SHUKONG_ENGLISH" display="数控工艺(英文)" id="17">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="工艺文件封面" formName="格式39" formId="Form39" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式40" formId="Form40" selectable="true"/>
+			<outputItem name="配套明细表" formName="格式41" formId="Form41" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式42" formId="Form42" selectable="true"/>
+			<outputItem name="工装、设备、刀量具明细表" formName="格式49" formId="Form49" selectable="true"/>
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式46" formId="Form46a" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式43" formId="Form43" selectable="false"/>
+			<outputItem name="工艺过程卡" formName="格式45" formId="Form45" selectable="true"/>
+			<outputItem name="工艺附表" formName="格式46" formId="Form46" selectable="false"/>
+		</outputForm>
+	 </pplantype>
+   <!-- end by Mchen -->
+
+	<pplantype name="Process_HUANJINGSHIYAN" display="环境试验工艺" id="32">
+		<outputForm name="非表格化" id="1">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+
+			<outputItem name="配套明细表" formName="格式20" formId="Form20" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="装配工艺卡" formName="格式8" formId="Form8" selectable="true"/>
+
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="表格化" id="2">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="工艺文件目录" formName="格式3" formId="Form3" selectable="true"/>
+
+			<outputItem name="配套明细表" formName="格式34" formId="Form34" selectable="true"/>
+			<outputItem name="辅助材料定额表" formName="格式30" formId="Form30" selectable="true"/>
+			<outputItem name="工艺装备明细表" formName="格式17" formId="Form17Frock" selectable="false"/>
+			<outputItem name="刀具明细表" formName="格式17" formId="Form17Tool" selectable="false"/>
+			<outputItem name="量具明细表" formName="格式17" formId="Form17Measure" selectable="false"/>
+			<outputItem name="标准仪器仪表明细表" formName="格式17" formId="Form17SDashboard" selectable="false"/>
+			<outputItem name="非标准仪器仪表明细表" formName="格式17" formId="Form17UnSDashboard" selectable="false"/>
+
+			<outputItem name="工序列表" formName="格式50" formId="Form50" selectable="true"/>
+			<outputItem name="工艺流程框图" formName="格式7" formId="Form7" selectable="false"/>
+			<outputItem name="工艺说明" formName="格式51" formId="Form51" selectable="false"/>
+			<outputItem name="工艺状态表" formName="格式21" formId="Form21" selectable="false"/>
+			<outputItem name="装配工艺卡" formName="格式35" formId="Form35" selectable="true"/>
+
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+			<outputItem name="质量记录表" formName="格式7" formId="Form7QualityRecord" selectable="false"/>
+			<outputItem name="关键工序质量控制卡" formName="格式27" formId="Form27" selectable="false"/>
+		</outputForm>
+
+		<outputForm name="外协" id="3">
+			<outputItem name="工艺文件封面" formName="格式1" formId="Form1" selectable="true"/>
+			<outputItem name="外协件明细表" formName="格式22" formId="Form22" selectable="true"/>
+			<outputItem name="工艺附图" formName="格式7" formId="Form7GYFT" selectable="false"/>
+			<outputItem name="工艺附表" formName="格式7" formId="Form7GYFB" selectable="false"/>
+		</outputForm>
+	</pplantype>
+</mpmpplantypes>

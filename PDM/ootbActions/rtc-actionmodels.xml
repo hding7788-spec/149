@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+<actionmodels>
+   <model name="third_level_nav_typedIteratedResource">
+      <submodel name="typedIteratedResource_general"/>
+   </model>   
+   
+   <model name="typedIteratedResource_general" resourceBundle="com.ptc.windchill.enterprise.traceability.traceabilityResource">
+      <description>"General" 3rd level nav menu for TypedIteratedResource</description>
+      <action name="primaryAttributes" type="object"/>
+   </model>
+  
+   <!-- tabs for typediteratedresourceInfo Page -->
+   <model name="typedIteratedResourceInfoPageTabSet">
+      <submodel name="typedIteratedResourceDetails"/>
+   </model>
+   
+   <model name="typedIteratedResourceDetails" resourceBundle="com.ptc.windchill.enterprise.traceability.traceabilityResource">
+      <action name="primaryAttributes"     type="object"/>
+   </model>
+   
+   <model name="traceability_toolbar_actions">
+      <action name="addTraceability" type="traceable" shortcut="true"/>
+      <action name="removeTraceabilityToolbar" type="traceable" shortcut="true"/>
+      <action name="clearSuspectFlagToobar" type="traceable" shortcut="true"/>
+   </model>
+  
+   <model name="traceability_RMB_actions">
+      <action name="removeTraceabilityRMB" type="traceable"/>
+      <action name="markSuspectFlag" type="traceable"/>
+      <action name="clearSuspectFlag" type="traceable"/>      
+   </model>
+   
+   <!-- this action model is a dummy toolbar action model that is just for the Mark As Suspect RMB action icon to show up -->
+   <model name="toolbarModelNotUsedAnywhere">
+      <action name="markSuspectFlag" type="traceable"/>
+   </model>
+   
+</actionmodels>

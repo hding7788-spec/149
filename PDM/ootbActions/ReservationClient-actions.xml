@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+
+<listofactions>
+
+    <objecttype name="reservation" resourceBundle="com.ptc.windchill.enterprise.reservation.reservationClientActionsRB">
+        <action name="undoReservation" ajax="row">
+            <description>Undo all reservations on an object</description>
+            <command class="com.ptc.windchill.enterprise.reservation.forms.processors.UndoReservationFormProcessor" method="execute" onClick="onClickValidation(event,'undoReservation')"/> 
+        </action>
+    </objecttype>
+
+</listofactions>

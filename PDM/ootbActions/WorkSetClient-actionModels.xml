@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+<!-- define the actions on the UI components -->
+<actionmodels>
+
+   <model name="third_level_nav_workset">
+      <description>Third level nav on the work set info page</description>
+      <submodel name="general"/>                            <!-- General -->
+      <submodel name="relatedItems"/>                       <!-- Related Objects -->
+      <submodel name="changes"/>                            <!-- Changes -->
+      <submodel name="history"/>                            <!-- History -->
+      <submodel name="collaboration"/>                      <!-- Collaboration -->
+   </model>
+
+  <model name="workSetInfoPageTabSet">
+      <submodel name="workSetDetailsTab"/>
+      <submodel name="workSetRelatedObjectsTab"/>
+      <submodel name="workSetProcessTab"/>
+      <submodel name="workSetHistoryTab"/>
+      <submodel name="changesTab"/>
+  </model>
+  
+  <model name="workSetDetailsTab" resourceBundle="com.ptc.windchill.enterprise.workSet.workSetActionsRB">        
+      <action name="primaryAttributes"     type="object"/>
+      <action name="attributes"     type="object"/>
+      <action name="relatedWorkSetComponents" type="workSet"/>
+  </model>  
+
+  <model name="workSetRelatedObjectsTab" resourceBundle="com.ptc.windchill.enterprise.workSet.workSetActionsRB">              
+      <action name="relatedWorkSetDocuments" type="workSet"/>
+  </model>
+  
+  <model name="workSetProcessTab" resourceBundle="com.ptc.windchill.enterprise.workSet.workSetActionsRB">        
+  	<action name="listTeamCC" type="team"/>
+	<action name="processHistory" type="workflow"/>
+  </model>
+  
+  <model name="workSetHistoryTab" resourceBundle="com.ptc.windchill.enterprise.workSet.workSetActionsRB">        
+  	<action name="timelineHistory" type="history"/>
+  </model>    
+
+  <model name="relatedComponentsToolBar">
+      <description>Toolbar actions on the related components table for work sets</description>
+      <action name="related_delete_component" type="workSet" shortcut="true"/> <!-- Remove Components -->
+      <action name="related_add_component" type="workSet" shortcut="true"/>    <!-- Add components -->
+   </model>
+
+   <model name="workset row actions" menufor="wt.change2.workset.WTWorkSet">
+      <description>Row actions for work set</description>
+      <action name="view" type="object"/>
+      <action name="checkin" type="wip"/>                    <!-- Check In -->
+      <action name="checkout" type="wip"/>                   <!-- Check Out -->
+      <action name="edit"    type="workSet"/>                <!-- Edit -->
+      <action name="checkoutAndEdit" type="workSet"/>        <!-- Check Out and Edit -->
+      <action name="undocheckout" type="object"/>            <!-- Undo Checkout -->
+      <action name="setState" type="lifecycle"/>             <!-- Set State -->
+      <action name="REVISEITEMS"  type="pdmObject"/>         <!-- New Revision -->
+      <action name="deleteWorkSet" type="workSet"/>           <!-- Delete Object -->
+      <action name="bookmarkIt"          type="bookmark"/>   <!-- Add to My Notebook -->
+   </model>
+
+   <model name="relatedWorkSetsToolBar">
+      <description>Toolbar actions on the related work set table</description>
+      <action name="createWorkSetWizard" type="workSet" shortcut="true"/> <!-- create related work set -->
+   </model>
+
+   <model name="relatedWorkSetDocumentsToolBar">
+     <description>Toolbar actions on the related documents table for work sets</description>
+     <action name="related_remove_document"    type="workSet" shortcut="true"/>
+     <action name="list_copy"                  type="object" shortcut="true"/>
+     <action name="related_paste_document"     type="workSet" shortcut="true"/>
+     <action name="workSet_create_doc_wizard" type="workSet" shortcut="true"/>
+     <action name="related_add_document"    type="workSet" shortcut="true"/>
+   </model>
+
+ </actionmodels>

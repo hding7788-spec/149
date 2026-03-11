@@ -1,0 +1,571 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<!-- WVS Actions -->
+<listofactions>
+<!--
+     The 'object' type actions used to be under wcEnterprise. Because they are owned by the WVS team,
+     they are being moved to the WVS module. To be consistent with other WVS actions we could have
+     re-typed them to 'wvs' but that would have required us to modify several actionmodels.xml files.
+
+     The resources for the action are found in ProjectLink/NetMarkets/src_web/action.properties
+  -->
+   <objecttype name="object" class="wt.fc.Persistable">
+      <action name="publishedContent"/>
+   </objecttype>
+
+   <objecttype name="wvs" class="" resourceBundle="com.ptc.windchill.enterprise.wvs.WVSactionsResource">
+
+<!-- Actions unique to the Clipboard -->
+
+      <action name="open_in_productview" resourceBundle="com.ptc.windchill.enterprise.wvs.WVSactionsResource" multiselect="true" ajax="row">
+          <command  class="com.ptc.windchill.enterprise.wvs.clipboard.forms.ProductViewCollectionFormProcessor" method="execute"
+                    onClick="onClickValidation(event,&apos;open_in_productview&apos;)"/>
+      </action>
+      <action name="open_in_productviewlite" multiselect="true" ajax="row">
+          <command  class="com.ptc.windchill.enterprise.wvs.clipboard.forms.ProductViewCollectionFormProcessor" method="execute"
+                    onClick="onClickValidation(event,&apos;open_in_productviewlite&apos;)"/>
+      </action>
+      <action name="print_in_productview" multiselect="true" ajax="row">
+          <command  class="com.ptc.windchill.enterprise.wvs.clipboard.forms.ProductViewCollectionFormProcessor" method="execute"
+                    onClick="onClickValidation(event,&apos;print_in_productview&apos;)"/>
+      </action>
+      <action name="print_in_productviewlite" multiselect="true" ajax="row">
+          <command  class="com.ptc.windchill.enterprise.wvs.clipboard.forms.ProductViewCollectionFormProcessor" method="execute"
+                    onClick="onClickValidation(event,&apos;print_in_productviewlite&apos;)"/>
+      </action>
+
+<!-- Actions to support the Filter Combo Box for dynamic structures -->
+      
+      <action name="variantSpecifications" resourceBundle="com.ptc.windchill.enterprise.wvs.common.commonResource" ajax="component" >
+         <command windowType="popup" url="netmarkets/jsp/wvs/variantSpecifications/variantSpecifications.jsp" class="com.ptc.windchill.enterprise.wvs.common.forms.VariantSpecificationsFormProcessor" method="execute"/>
+         <moreurlinfo>height=600,width=1000</moreurlinfo>
+      </action>
+      
+      <action name="variantSpecifications_step" resourceBundle="com.ptc.windchill.enterprise.wvs.common.commonResource">
+         <component name="enterprise.wvs.variantSpecificationsStep" windowType="wizard_step" />
+      </action>
+
+<!-- Actions unique to Batch Print -->
+
+      <action name="batchPrint" resourceBundle="com.ptc.windchill.enterprise.wvs.batchPrint.batchPrintResource" selectRequired="true" multiselect="true" ajax="component" >
+         <command windowType="popup" url="netmarkets/jsp/wvs/batchPrint/batchPrint.jsp" class="com.ptc.windchill.enterprise.wvs.batchPrint.forms.BatchPrintObjectProcessor" method="execute" onClick="onClickValidation(event,&apos;batchPrint&apos;)"/>
+      </action>
+
+      <!-- The following is the same action as batchPrint - but used on the Global Toolbar which is needed -->
+      <!-- because the validator needs to respond differently when launch from this location -->
+      <action name="batchPrintGlobal" resourceBundle="com.ptc.windchill.enterprise.wvs.batchPrint.batchPrintResource" ajax="component" >
+         <command windowType="popup" url="netmarkets/jsp/wvs/batchPrint/batchPrint.jsp" class="com.ptc.windchill.enterprise.wvs.batchPrint.forms.BatchPrintObjectProcessor" method="execute" onClick="onClickValidation(event,&apos;batchPrintGlobal&apos;)"/>
+      </action>
+
+      <action name="batchPrint_step" id="batchPrint_step" resourceBundle="com.ptc.windchill.enterprise.wvs.batchPrint.batchPrintResource">
+         <component name="enterprise.wvs.batchPrintStep" windowType="wizard_step" />
+      </action>
+
+      <action name="includePrintableItems" resourceBundle="com.ptc.windchill.enterprise.wvs.batchPrint.batchPrintResource" ajax="component">
+            <command onClick="PTC.wvs.BatchPrintUtils.includeExcludePrintableItems(event,true)"/>
+      </action>
+
+      <action name="excludePrintableItems" resourceBundle="com.ptc.windchill.enterprise.wvs.batchPrint.batchPrintResource" ajax="component">
+            <command onClick="PTC.wvs.BatchPrintUtils.includeExcludePrintableItems(event,false)"/>
+      </action>
+
+      <action name="removeItems" resourceBundle="com.ptc.windchill.enterprise.wvs.batchPrint.batchPrintResource" selectRequired="true" multiselect="true" ajax="component">
+            <command class="com.ptc.windchill.enterprise.wvs.batchPrint.commands.BatchPrintCommands" method="removePrintableItems"/>
+      </action>
+
+      <action name="editPrintOptions" resourceBundle="com.ptc.windchill.enterprise.wvs.batchPrint.batchPrintResource" selectRequired="true" multiselect="true" ajax="component">
+            <command onClick="PTC.wvs.BatchPrintUtils.editPrintOptions(event)"/>
+      </action>
+
+      <action name="collectPrintableItems" renderType="GENERAL" resourceBundle="com.ptc.windchill.enterprise.wvs.batchPrint.batchPrintResource">
+            <command onClick="PTC.wvs.BatchPrintUtils.openCollector(event)" windowType="no_content"/>
+      </action>
+
+      <action name="pastePrintableItems" resourceBundle="com.ptc.windchill.enterprise.wvs.batchPrint.batchPrintResource" ajax="component">
+            <command class="com.ptc.windchill.enterprise.wvs.batchPrint.commands.BatchPrintCommands" method="pastePrintableItems"/>
+      </action>
+
+      <action name="pasteSelectPrintableItems" resourceBundle="com.ptc.windchill.enterprise.wvs.batchPrint.batchPrintResource" ajax="component">
+            <command class="com.ptc.windchill.enterprise.wvs.batchPrint.forms.PasteSelectBatchPrintProcessor" method="execute" windowType="popup" url="netmarkets/jsp/wvs/batchPrint/pasteSelectBatchPrint.jsp"/>
+      </action>
+
+      <action name="addPrintableItems" resourceBundle="com.ptc.windchill.enterprise.wvs.batchPrint.batchPrintResource" ajax="component">
+          <description>Add business objects containing printable items using the Search Picker</description>
+          <command class="com.ptc.windchill.enterprise.wvs.batchPrint.commands.SearchPrintablePickerCommand" method="execute" windowType="popup" url="netmarkets/jsp/wvs/batchPrint/addPrintableItems.jsp"/>
+      </action>
+
+      <action name="batchPrintSubmitCloseButton" id="PJL_wizard_ok" resourceBundle="com.ptc.windchill.enterprise.wvs.batchPrint.batchPrintResource">
+          <command class="" method="" windowType="page" url="PTC.wvs.BatchPrintUtils.cleanUp();javascript:onSubmit()"/>
+      </action>
+
+      <action name="batchPrintSubmitButton" id="PJL_wizard_apply" resourceBundle="com.ptc.windchill.enterprise.wvs.batchPrint.batchPrintResource">
+          <command class="" method="" windowType="page" url="javascript:onApply()"/>
+      </action>
+
+      <action name="batchPrintCancelButton" id="PJL_wizard_cancel" resourceBundle="com.ptc.windchill.enterprise.wvs.batchPrint.batchPrintResource">
+          <command class="" method="" windowType="page" url="PTC.wvs.BatchPrintUtils.cleanUp();javascript:wfWindowClose()"/>
+      </action>
+
+<!-- General actions that can be used throughout Windchill -->
+
+      <action name="openProductView">
+          <includeFilter name="disableCalculationDataFilter"/>
+          <includeFilter name="hideIfInterferenceFilter" />
+          <command onClick="evalJspResult(event, &apos;netmarkets/jsp/wvs/openProductView.jsp&apos;)"/>
+          <nonSupportedTypes>
+            <type value="WCTYPE|wt.epm.EPMDocument|org.rnd.DynamicDocument|org.rnd.Note" />
+         </nonSupportedTypes>
+      </action>
+
+      <action name="openProductViewConfigSpec">
+         <includeFilter name="psbSessionValidation"/>
+         <command onClick="evalJspResult(event, &apos;netmarkets/jsp/wvs/openProductViewConfigSpec.jsp&apos;)"/>
+      </action>
+
+      <action name="openProductViewClipboardRow">
+         <includeFilter name="hideIfInterferenceFilter" />
+         <command onClick="evalJspResult(event, &apos;netmarkets/jsp/wvs/openProductViewClipboardRow.jsp&apos;)"/>
+      </action>
+
+      <action name="printProductViewClipboardRow">
+          <includeFilter name="hideIfInterferenceFilter" />
+         <command onClick="evalJspResult(event, &apos;netmarkets/jsp/wvs/openProductViewClipboardRow.jsp?print=1&apos;)"/>
+      </action>
+
+      <action name="viewThumbnailRow">
+         <command onClick="evalJspResult(event, &apos;netmarkets/jsp/wvs/viewThumbnailRow.jsp&apos;)"/>
+      </action>
+
+      <action name="publishMonitor">
+         <command windowType="popup" url="wtcore/jsp/wvs/edrpubmain.jsp"/>
+      </action>
+
+      <action name="queueMonitorMain">
+         <command windowType="popup"/>
+      </action>
+
+      <action name="visualCollaboration">
+         <command windowType="popup" url="wtcore/jsp/wvs/collaboration.jsp"/>
+      </action>
+
+<!--
+     This is action is only applicable to the following:
+        * The 'structure' row object of repsAndMarkups/markups TreeTable
+        * WTProductConfiguration and WTProductInstance objects.
+  -->
+
+      <action name="openProductViewStructure">
+         <command onClick="evalJspResult(event, &apos;netmarkets/jsp/wvs/openProductViewRepsAndMarkups.jsp&apos;)"/>
+      </action>
+
+<!-- The repsAndMarkups and markups are identical actions except for labels -->
+
+      <action name="repsAndMarkups">
+         <component name="enterprise.wvs.repsAndMarkupsTable"/>
+      </action>
+      <action name="markups">
+         <component name="enterprise.wvs.repsAndMarkupsTable"/>
+      </action>
+
+<!-- Actions unique to the repsAndMarkups/markups TreeTable -->
+
+      <action name="openProductViewRepsAndMarkups" multiselect="false">
+         <command onClick="evalJspResult(event, &apos;netmarkets/jsp/wvs/openProductViewRepsAndMarkups.jsp&apos;)"/>
+      </action>
+
+      <action name="printProductViewRepsAndMarkups">
+         <command onClick="evalJspResult(event, &apos;netmarkets/jsp/wvs/printProductViewRepsAndMarkups.jsp&apos;)"/>
+      </action>
+
+      <action name="setDefaultRep">
+         <command class="com.ptc.windchill.enterprise.wvs.repsAndMarkups.forms.SetDefaultRepFormProcessor" method="execute"/>
+      </action>
+
+      <action name="republishRep">
+         <command windowType="popup" onClick="onClickValidation(event,&apos;republishRep&apos;)"/>
+      </action>
+
+      <action name="postPublishRep">
+         <command windowType="popup" url="netmarkets/jsp/wvs/doPostPublish.jsp?timeout=300" onClick="onClickValidation(event,&apos;postPublishRep&apos;)"/>
+      </action>
+
+      <action name="saveStructure" ajax="row" resourceBundle="com.ptc.windchill.enterprise.wvs.saveWVSObject.saveWVSObjectResource">
+         <command windowType="popup" url="netmarkets/jsp/wvs/saveWVSObject/saveWVSObject.jsp" class="com.ptc.windchill.enterprise.wvs.saveWVSObject.forms.SaveWVSObjectProcessor" method="execute" onClick="onClickValidation(event,&apos;saveStructure&apos;)"/>
+      </action>
+
+      <action name="saveRepresentation" resourceBundle="com.ptc.windchill.enterprise.wvs.saveWVSObject.saveWVSObjectResource">
+         <command windowType="popup" url="netmarkets/jsp/wvs/saveWVSObject/saveWVSObject.jsp" class="com.ptc.windchill.enterprise.wvs.saveWVSObject.forms.SaveWVSObjectProcessor" method="execute" onClick="onClickValidation(event,&apos;saveRepresentation&apos;)"/>
+      </action>
+
+      <action name="saveMarkup" resourceBundle="com.ptc.windchill.enterprise.wvs.saveWVSObject.saveWVSObjectResource">
+         <command windowType="popup" url="netmarkets/jsp/wvs/saveWVSObject/saveWVSObject.jsp" class="com.ptc.windchill.enterprise.wvs.saveWVSObject.forms.SaveWVSObjectProcessor" method="execute" onClick="onClickValidation(event,&apos;saveMarkup&apos;)"/>
+      </action>
+
+      <action name="saveWVSObject_saveAs_step" id="saveWVSObject_saveAs_step" resourceBundle="com.ptc.windchill.enterprise.wvs.saveWVSObject.saveWVSObjectResource">
+         <command windowType="wizard_step" url="netmarkets/jsp/wvs/saveWVSObject/saveWVSObject_saveAs_step.jsp"/>
+      </action>
+
+      <action name="lockMarkup" ajax="row">
+         <command class="com.ptc.windchill.enterprise.wvs.repsAndMarkups.forms.LockMarkupProcessor" method="execute" />
+      </action>
+
+      <action name="unlockMarkup" ajax="row">
+         <command class="com.ptc.windchill.enterprise.wvs.repsAndMarkups.forms.UnLockMarkupProcessor" method="execute" onClick="onClickValidation(event,&apos;unlockMarkup&apos;)"/>
+      </action>
+
+      <action name="enableForwardMarkup" ajax="row">
+         <command class="com.ptc.windchill.enterprise.wvs.repsAndMarkups.forms.EnableForwardMarkupProcessor" method="execute" onClick="onClickValidation(event,&apos;enableForwardMarkup&apos;)"/>
+      </action>
+
+      <action name="disableForwardMarkup" ajax="row">
+         <command class="com.ptc.windchill.enterprise.wvs.repsAndMarkups.forms.DisableForwardMarkupProcessor" method="execute" onClick="onClickValidation(event,&apos;disableForwardMarkup&apos;)"/>
+      </action>
+
+      <action name="copyRepsAndMarkups" ajax="row">
+         <command windowType="no_content"/>
+      </action>
+
+      <action name="pasteRepsAndMarkupsRow" ajax="row">
+         <command class="com.ptc.windchill.enterprise.wvs.repsAndMarkups.commands.RepsAndMarkupsCommands" method="pasteRepsAndMarkupsRow" onClick="onClickValidation(event,&apos;pasteRepsAndMarkupsRow&apos;)"/>
+      </action>
+
+      <action name="pasteSelectRepsAndMarkupsRow" uicomponent="PASTE" ajax="row">
+         <command class="com.ptc.windchill.enterprise.wvs.repsAndMarkups.forms.PasteSelectRepsAndMarkupsRowProcessor" method="execute" windowType="new" url="netmarkets/jsp/wvs/pasteSelectRepsAndMarkups.jsp"/>
+      </action>
+
+<!-- Actions for single RMC on the RepsandMarkups table -->
+      <action name="deleteNonDefaultRepresentation" multiselect="false" selectRequired="false" ajax="component">
+         <command class="com.ptc.windchill.enterprise.wvs.repsAndMarkups.commands.RepsAndMarkupsCommands" method="deleteRepsAndMarkups" onClick="onClickValidation(event,&apos;deleteNonDefaultRepresentation&apos;)"/>
+      </action>
+
+      <action name="deleteDefaultRepresentation" multiselect="false" selectRequired="false" ajax="component">
+         <command class="com.ptc.windchill.enterprise.wvs.repsAndMarkups.commands.RepsAndMarkupsCommands" method="deleteRepsAndMarkups" onClick="onClickValidation(event,&apos;deleteDefaultRepresentation&apos;)"/>
+      </action>
+
+      <action name="deleteMarkup" multiselect="false" selectRequired="false" ajax="component">
+        <command class="com.ptc.windchill.enterprise.wvs.repsAndMarkups.commands.RepsAndMarkupsCommands" method="deleteRepsAndMarkups" onClick="onClickValidation(event,&apos;deleteMarkup&apos;)"/>
+      </action>
+
+      <action name="deleteMarkupFolder" multiselect="false" selectRequired="false" ajax="component">
+        <command class="com.ptc.windchill.enterprise.wvs.repsAndMarkups.commands.RepsAndMarkupsCommands" method="deleteRepsAndMarkups" onClick="onClickValidation(event,&apos;deleteMarkupFolder&apos;)"/>
+      </action>
+
+      <action name="copySelectedRepsAndMarkups" multiselect="true" selectRequired="true">
+         <command class="com.ptc.windchill.enterprise.wvs.repsAndMarkups.commands.RepsAndMarkupsCommands" method="copySelectedRepsAndMarkups" windowType="no_content"/>
+      </action>
+
+      <action name="deleteSelectedRepsAndMarkups" multiselect="true" selectRequired="true" ajax="component">
+         <command class="com.ptc.windchill.enterprise.wvs.repsAndMarkups.commands.RepsAndMarkupsCommands" method="deleteSelectedRepsAndMarkups" onClick="onClickValidation(event,&apos;deleteSelectedRepsAndMarkups&apos;)"/>
+      </action>
+
+      <action name="pasteRepsAndMarkups" ajax="component">
+         <command class="com.ptc.windchill.enterprise.wvs.repsAndMarkups.forms.PasteRepsAndMarkupsProcessor" method="execute" onClick="onClickValidation(event,&apos;pasteRepsAndMarkups&apos;)"/>
+      </action>
+
+      <action name="pasteSelectRepsAndMarkups" ajax="component">
+         <command class="com.ptc.windchill.enterprise.wvs.repsAndMarkups.forms.PasteSelectRepsAndMarkupsProcessor" method="execute" windowType="new" onClick="onClickValidation(event,&apos;pasteSelectRepsAndMarkups&apos;)"/>
+      </action>
+
+      <action name="newRep">
+         <command windowType="popup" url="wtcore/jsp/wvs/newrep.jsp" onClick="onClickValidation(event,&apos;newRep&apos;)"/>
+      </action>
+
+<!-- Actions unique to the Queue Monitor Job List Toolbar -->
+
+      <action name="deleteSelectedJobs" resourceBundle="com.ptc.windchill.enterprise.wvs.wvsQueueMonitor.queueMonitorResource" multiselect="true" selectRequired="true" ajax="row">
+         <command class="com.ptc.windchill.enterprise.wvs.wvsQueueMonitor.forms.DeleteSelectedJobsProcessor" method="execute"/>
+      </action>
+
+      <action name="resubmitSelectedJobs" resourceBundle="com.ptc.windchill.enterprise.wvs.wvsQueueMonitor.queueMonitorResource" multiselect="true" selectRequired="true" ajax="row">
+         <command class="com.ptc.windchill.enterprise.wvs.wvsQueueMonitor.forms.ResubmitJobsProcessor" method="execute"/>
+      </action>
+
+      <action name="publishStatistics" resourceBundle="com.ptc.windchill.enterprise.wvs.wvsQueueMonitor.queueMonitorResource">
+         <command windowType="new" url="wtcore/jsp/wvs/edrpubstatisticsmain.jsp"/>
+      </action>
+
+      <action name="publishThumbnail" resourceBundle="com.ptc.windchill.enterprise.wvs.wvsQueueMonitor.queueMonitorResource">
+         <command windowType="new" url="wtcore/jsp/wvs/vetomain.jsp"/>
+      </action>
+
+      <action name="refreshJobList" resourceBundle="com.ptc.windchill.enterprise.wvs.wvsQueueMonitor.queueMonitorResource">
+         <command onClick="PTC.wvs.QueueMonitorUtils.refreshJobListClickHandler(target, table)"/>
+      </action>
+
+      <action name="autoRefreshJobList" resourceBundle="com.ptc.windchill.enterprise.wvs.wvsQueueMonitor.queueMonitorResource" id="autoRefresh_button">
+        <command  onClick="PTC.wvs.QueueMonitorUtils.autoRefreshJobListClickHandler(target, table)"/>
+      </action>
+
+<!-- Actions unique to the Queue Monitor Job List Right Mouse Click Row Menu -->
+
+      <action name="deleteJob" resourceBundle="com.ptc.windchill.enterprise.wvs.wvsQueueMonitor.queueMonitorResource" ajax="row">
+         <command class="com.ptc.windchill.enterprise.wvs.wvsQueueMonitor.forms.DeleteSelectedJobsProcessor" method="execute"/>
+      </action>
+
+      <action name="resubmitJob" resourceBundle="com.ptc.windchill.enterprise.wvs.wvsQueueMonitor.queueMonitorResource" ajax="row">
+         <command class="com.ptc.windchill.enterprise.wvs.wvsQueueMonitor.forms.ResubmitJobsProcessor" method="execute"/>
+      </action>
+
+      <action name="prohibitPublish" resourceBundle="com.ptc.windchill.enterprise.wvs.wvsQueueMonitor.queueMonitorResource" multiselect="true" selectRequired="true" ajax="row">
+         <command class="com.ptc.windchill.enterprise.wvs.wvsQueueMonitor.forms.ProhibitPublishProcessor" method="execute"/>
+      </action>
+
+      <action name="prohibitPublishRow" resourceBundle="com.ptc.windchill.enterprise.wvs.wvsQueueMonitor.queueMonitorResource" multiselect="true" selectRequired="true" ajax="row">
+         <command class="com.ptc.windchill.enterprise.wvs.wvsQueueMonitor.forms.ProhibitPublishProcessor" method="execute"/>
+      </action>
+
+      <action name="refreshDetails" resourceBundle="com.ptc.windchill.enterprise.wvs.wvsQueueMonitor.queueMonitorResource" id="refreshDetailsButton">
+         <command onClick="PTC.wvs.QueueMonitorUtils.refreshDetailsClickHandler()"/>
+      </action>
+      <action name="autoRefreshDetails" resourceBundle="com.ptc.windchill.enterprise.wvs.wvsQueueMonitor.queueMonitorResource" id="autoRefreshDetailsButton">
+         <command onClick="PTC.wvs.QueueMonitorUtils.autoRefreshDetailsClickHandler(target)"/>
+      </action>
+      <action name="saveJobLog" resourceBundle="com.ptc.windchill.enterprise.wvs.wvsQueueMonitor.queueMonitorResource" id="saveJobLogButton">
+         <command onClick="PTC.wvs.QueueMonitorUtils.saveJobLogClickHandler()"/>
+       </action>
+
+
+<!-- Actions unique to WVS Components -->
+
+      <action name="savePublishJobLog">
+         <command url="netmarkets/jsp/wvs/savePublishJobLog.jsp"/>
+      </action>
+
+      <!-- An action that builds a menu of content files of a Representation; clicking on menu item.
+           sends that file to the Browser. The menu is built using an x-type MVC Controller. -->
+      <action name="listRepFiles">
+      </action>
+
+<!-- New JCA createRep wizard actions -->
+      <action name="decideEpmOrFile" resourceBundle="com.ptc.windchill.enterprise.wvs.newrep.NewRepResource">
+         <command windowType="popup" url="netmarkets/jsp/wvs/newRep/decideEpmOrFile.jsp"
+               class="com.ptc.windchill.enterprise.wvs.newrep.forms.NewRepFormProcessor" method="execute" onClick="onClickValidation(event,&apos;decideEpmOrFile&apos;)"/>
+      </action>
+
+      <action name="createFromEpmWizard"
+            resourceBundle="com.ptc.windchill.enterprise.wvs.newrep.NewRepResource">
+         <command windowType="popup" url="netmarkets/jsp/wvs/newRep/createFromEpmWizard.jsp" />
+      </action>
+
+      <action name="createFromFileWizard"
+            resourceBundle="com.ptc.windchill.enterprise.wvs.newrep.NewRepResource">
+         <command windowType="popup"
+               url="netmarkets/jsp/wvs/newRep/createFromFileWizard.jsp" />
+      </action>
+
+      <action name="getNewRepInfoStep"
+            resourceBundle="com.ptc.windchill.enterprise.wvs.newrep.NewRepResource"
+            afterVK="getNewRepInfoStepValidator" required="true">
+         <command windowType="wizard_step" url="netmarkets/jsp/wvs/newRep/getNewRepInfoStep.jsp" />
+      </action>
+
+      <action name="getFileStep"
+            resourceBundle="com.ptc.windchill.enterprise.wvs.newrep.NewRepResource" afterVK="getFileStepValidator"
+            required="true">
+         <command windowType="wizard_step" url="netmarkets/jsp/wvs/newRep/getFileStep.jsp"
+               class="com.ptc.windchill.enterprise.wvs.newrep.forms.CreateFromFileFormDelegate"/>
+      </action>
+
+      <action name="submitPublishJob"
+              id="PJL_wizard_ok"
+              resourceBundle="com.ptc.windchill.enterprise.wvs.newrep.NewRepResource">
+         <command class="" method="" windowType="page" url="javascript:onSubmit()"/>
+      </action>
+
+      <action name="finishButton"
+              id="finishButton"
+              resourceBundle="com.ptc.windchill.enterprise.wvs.newrep.NewRepResource">
+         <command class="" method="" windowType="page" url="javascript:onSubmit()"/>
+      </action>
+
+      <action name="getEPMConfigStep" resourceBundle="com.ptc.windchill.enterprise.wvs.newrep.NewRepResource"
+            required="true" postloadJS="epmConfigStepShowHide">
+         <command windowType="wizard_step" url="netmarkets/jsp/wvs/newRep/getEPMConfigStep.jsp"
+               class="com.ptc.windchill.enterprise.wvs.newrep.forms.CreateFromEpmFormDelegate" />
+      </action>
+
+      <action name="getStructTypeStep" resourceBundle="com.ptc.windchill.enterprise.wvs.newrep.NewRepResource"
+            required="true">
+         <command windowType="wizard_step" url="netmarkets/jsp/wvs/newRep/getStructTypeStep" />
+      </action>
+
+      <action name="confirmStep" resourceBundle="com.ptc.windchill.enterprise.wvs.newrep.NewRepResource"
+            required="true" preloadWizardPage="false">
+         <command windowType="wizard_step" url="netmarkets/jsp/wvs/newRep/confirmStep" />
+      </action>
+
+      <!-- Actions for Clash Reports (and Clashes) on the publish scheduler UI -->
+      <action name="batchClashDefinitionSearch" ajax="component">
+        <command class="" method="" windowType="popup" url="wtcore/jsp/wvs/batchClashDefinitionSearch.jsp"/>
+      </action>
+
+   </objecttype>
+
+<!-- Actions for Clash Definitions -->
+
+   <objecttype name="clashDefinition" class="wt.doc.WTDocument" resourceBundle="com.ptc.windchill.enterprise.wvs.batchClash.batchClashResource">
+
+      <action name="defineClashJobWizard" ajax="component">
+         <command windowType="popup"
+                  url="netmarkets/jsp/wvs/batchClash/defineClashJobWizard.jsp?show_primary_content=false"
+                  class="com.ptc.windchill.enterprise.wvs.batchClash.forms.DefineClashJobFormProcessor"
+                  method="execute"
+                  onClick="onClickValidation(event,&apos;defineClashJobWizard&apos;)"/>
+      </action>
+
+      <action name="checkoutAndEditClashJobDefinition" ajax="component">
+         <includeFilter name="sandboxSharingValidationSimple" />
+         <includeFilter name="disableSBHiddenFilter" />
+         <command windowType="popup"
+                  url="netmarkets/jsp/wvs/batchClash/editClashJobWizard.jsp?startStep=clashDefinition.batchClash_step&amp;show_primary_content=false"
+                  class="com.ptc.windchill.enterprise.wvs.batchClash.forms.CheckoutAndEditClashJobFormProcessor"
+                  method="execute"
+                  onClick="onClickValidation(event,&apos;checkout&apos;)"/>
+      </action>
+
+      <action name="checkin" ajax="component">
+         <command class="com.ptc.windchill.enterprise.wvs.batchClash.forms.ClashDefinitionCheckinObjectFormProcessor" method="execute"
+                  url="netmarkets/jsp/wvs/batchClash/checkinClashDefinition.jsp?fileRadio=keep_existing_primary_file" windowType="popup"/>
+         <includeFilter name="hideIfNotClashJobDefinition" />
+      </action>
+
+      <action name="editClashJobDefinition" ajax="component">
+         <includeFilter name="sandboxSharingValidationSimple" />
+         <includeFilter name="disableSBHiddenFilter" />
+         <command windowType="popup"
+                  url="netmarkets/jsp/wvs/batchClash/editClashJobWizard.jsp?startStep=clashDefinition.batchClash_step&amp;show_primary_content=false"
+                  class="com.ptc.windchill.enterprise.wvs.batchClash.forms.EditClashJobFormProcessor"
+                  method="execute"
+                  onClick="onClickValidation(event,&apos;viewClashJobDefinition&apos;)"/>
+      </action>
+
+      <action name="viewClashJobDefinition" ajax="component">
+         <command windowType="popup"
+                  url="netmarkets/jsp/wvs/batchClash/viewClashJobWizard.jsp"
+                  onClick="onClickValidation(event,&apos;viewClashJobDefinition&apos;)"/>
+      </action>
+
+      <action name="submitClashJobDefinition" ajax="component">
+         <includeFilter name="sandboxSharingValidationSimple" />
+         <includeFilter name="disableSBHiddenFilter" />
+         <command windowType="popup"
+                  url="netmarkets/jsp/wvs/batchClash/submitClashJobWizard.jsp?startStep=clashDefinition.submitClashJobStep"
+                  class="com.ptc.windchill.enterprise.wvs.batchClash.forms.SubmitClashJobFormProcessor"
+                  method="execute"
+                  onClick="onClickValidation(event,&apos;viewClashJobDefinition&apos;)"/>
+      </action>
+
+      <action name="batchClash_step" ajax="component" beforeJS="PTC.wvs.BatchClashUtils.beforeJS" afterJS="PTC.wvs.BatchClashUtils.validateClashDataStep">
+         <component name="enterprise.wvs.batchClash.batchClash_step" windowType="wizard_step"/>
+      </action>
+
+      <action name="submitClashJobStep" ajax="component" >
+         <component name="enterprise.wvs.batchClash.submitClashJobStep" windowType="wizard_step"/>
+      </action>
+
+      <action name="batchClashNextButton" id="PJL_wizard_next">
+         <command class="" method="" windowType="page" url="PTC.wvs.BatchClashUtils.goNext();javascript:goNext()"/>
+      </action>
+
+      <action name="batchClashPrevButton" id="PJL_wizard_previous">
+         <command class="" method="" windowType="page" url="PTC.wvs.BatchClashUtils.goBack();javascript:goBack()"/>
+      </action>
+
+      <action name="batchClashSearch" ajax="component">
+          <command class="com.ptc.windchill.enterprise.wvs.batchClash.commands.BatchClashSearchPickerCommand" method="execute" windowType="popup" url="netmarkets/jsp/wvs/batchClash/batchClashSearch.jsp"/>
+      </action>
+
+   </objecttype>
+
+<!-- Actions for Clash Reports (and Clashes) -->
+   <objecttype name="clashReport" resourceBundle="com.ptc.windchill.enterprise.wvs.clash.report.ClashReportResource">
+
+      <action name="editLifecycleManagedMarkups" ajax="row">
+         <command windowType="popup"
+                  url="netmarkets/jsp/wvs/clash/report/editLifecycleManagedMarkups.jsp"
+                  class="com.ptc.windchill.enterprise.wvs.clash.report.forms.EditLifeCycleManagedMarkupsFormProcessor"
+                  method="execute"
+                  onClick="onClickValidation(event,&apos;editLifecycleManagedMarkups&apos;)"/>
+      </action>
+
+      <action name="multiEditLifecycleManagedMarkups" ajax="row" multiselect="true" selectRequired="true">
+         <command windowType="popup"
+                  url="netmarkets/jsp/wvs/clash/report/editLifecycleManagedMarkups.jsp"
+                  class="com.ptc.windchill.enterprise.wvs.clash.report.forms.EditLifeCycleManagedMarkupsFormProcessor"
+                  method="execute"/>
+      </action>
+
+      <action name="refreshClashes">
+         <command onClick="PTC.wvs.ClashReportUtils.reloadRelatedInterferencesTable()"/>
+      </action>
+
+      <action name="openInCreoViewMultiSelect" multiselect="true" ajax="row" selectRequired="true">
+         <command  class="com.ptc.windchill.enterprise.wvs.clash.report.forms.OpenInCreoViewInterferencesFormProcessor" method="execute"
+                   onClick="onClickValidation(event,&apos;openInCreoView&apos;)"/>
+      </action>
+      
+      <action name="openInCreoViewSingleSelect" multiselect="false">
+         <command onClick="evalJspResult(event, &apos;netmarkets/jsp/wvs/openProductViewRepsAndMarkups.jsp&apos;)"/>
+      </action>
+   </objecttype>
+
+   <objecttype name="clashReport" class="wt.viewmarkup.LifeCycleManagedWtMarkUp" resourceBundle="com.ptc.windchill.enterprise.wvs.clash.report.ClashReportResource">
+
+      <action name="relatedClashes">
+         <component name="enterprise.wvs.clash.report.relatedClashes"/>
+      </action>
+
+      <action name="relatedClashReports">
+         <component name="enterprise.wvs.clash.report.relatedClashReports"/>
+      </action>
+
+      <action name="assignedClashesNav" enabledwhensuspended="true">
+         <component windowType="page" name="enterprise.wvs.clash.report.assignedClashesTable"/>
+      </action>
+
+      <action name="viewClashReport">
+         <command windowType="popup"
+                  url="netmarkets/jsp/wvs/clash/report/viewClashReport.jsp"/>
+      </action>
+
+      <action name="viewClashReportStep">
+         <component windowType="wizard_step"
+                    name="enterprise.wvs.clash.report.viewClashReportStep"/>
+      </action>
+
+      <action name="compareClashReports" multiselect="true" selectRequired="true">
+         <command windowType="popup"
+                  url="netmarkets/jsp/wvs/clash/report/compareClashReports.jsp"/>
+      </action>
+
+      <action name="compareClashReportsStep">
+         <component windowType="wizard_step"
+                    name="enterprise.wvs.clash.report.compareClashReportsStep"/>
+      </action>
+
+      <action name="editLifecycleManagedMarkupsStep" ajax="component">
+         <component name="enterprise.wvs.clash.report.editLifecycleManagedMarkupsStep" windowType="wizard_step"/>
+      </action>
+
+      <action name="deleteClashReport" uicomponent="DELETE" ajax="row" ajaxActionClass="netmarkets/jsp/object/delete.jsp?refresh=true">
+         <command class="com.ptc.netmarkets.model.NmObjectCommands"
+                  method="delete"
+                  onClick="onClickValidation(event,&apos;deleteClashReport&apos;)"/>
+      </action>
+
+      <action name="deleteSelectedClashReports" ajax="component" multiselect="true" selectRequired="true">
+         <command class="com.ptc.netmarkets.model.NmObjectCommands"
+                  method="list_delete"
+                  onClick="onClickValidation(event,&apos;deleteSelectedClashReports&apos;)"/>
+      </action>
+
+      <action name="clashAssigneePicker" ajax="true">
+         <command windowType="popup"
+                  url="netmarkets/jsp/wvs/clash/report/clashAssigneePicker.jsp"
+                  class="com.ptc.windchill.enterprise.wvs.clash.report.forms.ClashActions"
+                  method="assigneePicked"/>
+         <access name="update"/>
+      </action>
+
+   </objecttype>
+</listofactions>

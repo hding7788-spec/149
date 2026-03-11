@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+
+    <objecttype name="replication" class="com.ptc.windchill.enterprise.replication.commands.NmReplicationRulesCommands" resourceBundle="com.ptc.windchill.enterprise.replication.replicationResource">
+       <action name="userInitiatedReplication" multiselect="true">
+         <command class="com.ptc.netmarkets.replication.NmReplicationCommands" method="userInitiatedReplication" windowType="popup"/>
+         <moreurlinfo>height=500,width=560</moreurlinfo>
+      </action>
+      <action name="userInitiatedReplication_step" >
+          <command windowType="wizard_step"/>
+      </action>
+        <action name="deleteReplicationJob">
+            <command class="com.ptc.windchill.enterprise.replication.commands.NmReplicationRulesCommands" method="deleteReplicationJob"
+            onClick="selectRequiredAndConfirmation(event,&apos;com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE&apos;)"/>
+        </action>
+
+        <action name="deleteReplicationJobForRow">
+            <command class="com.ptc.windchill.enterprise.replication.commands.NmReplicationRulesCommands" method="deleteReplicationJobForRow"
+            onClick="JCAConfirm(event,&apos;com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE&apos;)"/>
+        </action>
+
+        <action name="deleteReplicationScheduleForRow" ajax="row">
+            <command class="com.ptc.windchill.enterprise.replication.commands.NmReplicationRulesCommands" method="deleteReplicationScheduleForRow"
+            onClick="JCAConfirm(event,&apos;com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE&apos;)"/>
+        </action>
+
+        <action name="editReplicationSchedule">
+            <command class="" method="" url="netmarkets/jsp/replication/editScheduleWizard.jsp" windowType="popup"/>
+        </action>
+
+        <action name="enableReplicationSchedule">
+            <command class="com.ptc.windchill.enterprise.replication.commands.NmReplicationRulesCommands" method="enableDisableSchedule" />
+        </action>
+
+        <action name="disableReplicationSchedule">
+            <command class="com.ptc.windchill.enterprise.replication.commands.NmReplicationRulesCommands" method="enableDisableSchedule" />
+        </action>
+
+        <action name="deleteReplicationSchedule" selectRequired="true" ajax="row">
+            <command class="com.ptc.windchill.enterprise.replication.commands.NmReplicationRulesCommands" method="deleteReplicationSchedule"
+            onClick="selectRequiredAndConfirmation(event,&apos;com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE&apos;)"/>
+        </action>
+
+        <action name="replicationScheduleAdmin_Step_MVC">
+            <component name="replication.schedule" windowType="wizard_Step"/>
+        </action>
+
+        <action name="replicationJobAdmin_step_MVC">
+            <component name="replication.job" windowType="wizard_Step"/>
+        </action>
+
+        <action name="replicationJobToggle" required="true">
+            <command class="" method="" url="netmarkets/jsp/replication/replicationJobAdminWizard.jsp" windowType="page"/>
+        </action>
+
+        <action name="manageReplicationRules" required="true">
+            <command class="" method="" url="netmarkets/jsp/replication/manageRulesWizard.jsp" windowType="page"/>
+        </action>
+
+        <action name="newReplicationSchedule" required="true">
+            <command class="" method="" url="netmarkets/jsp/replication/newScheduleWizard.jsp" windowType="popup"/>
+        </action>
+
+        <action name="replicationScheduleToggle" required="true">
+            <command class="" method="" url="netmarkets/jsp/replication/replicationScheduleAdminWizard.jsp" windowType="page"/>
+        </action>
+
+        <action name="createReplicationRule">
+            <command class="com.ptc.windchill.enterprise.replication.commands.NmReplicationRulesCommands" method="createRule" url="netmarkets/jsp/replication/createReplicationRule.jsp" windowType="popup"/>
+            <moreurlinfo>height=730,width=1000</moreurlinfo>
+        </action>
+
+        <action name="replicationRuleDetails" required="true">
+            <command class="" method="" url="netmarkets/jsp/replication/replicationRuleDetails.jsp" windowType="wizard_step"/>
+        </action>
+
+        <action name="replicationRuleContextCriteria" required="true" afterJS="validataOnNext" postloadJS="loadContext">
+            <command class="" method="" url="netmarkets/jsp/replication/replicationRuleContextCriteria.jsp" windowType="wizard_step"/>
+        </action>
+
+        <action name="replicationRuleSelectionCriteria_MVC" required="true">
+            <component name="replication.queryBuilder" windowType="wizard_step"/>
+        </action>
+
+        <action name="renameRuleWizard" required="true">
+            <command class="com.ptc.windchill.enterprise.dataops.commands.NmDataOpsRulesCommands" method="renameRule" url="netmarkets/jsp/replication/renameRuleWizard.jsp" windowType="popup"/>
+        </action>
+
+        <action name="mergeRulesWizard">
+            <command class="com.ptc.windchill.enterprise.replication.commands.NmReplicationRulesCommands" method="mergeRules" url="netmarkets/jsp/replication/mergeRulesWizard.jsp" onClick="mergeClick(event)" windowType="popup"/>
+        </action>
+
+        <action name="manageRules_Step_MVC">
+            <component name="replication.manageRules" windowType="wizard_Step"/>
+        </action>
+
+        <action name="importRuleWizard">
+            <command class="com.ptc.windchill.enterprise.dataops.forms.ImportRuleFormProcessor" method="execute" url="" windowType="popup"/>
+        </action>
+
+        <action name="copyRuleWizard">
+            <command class="com.ptc.windchill.enterprise.replication.commands.NmReplicationRulesCommands" method="copyRule" windowType="popup"/>
+        </action>
+
+        <action name="exportRule">
+                <command class="" method="" url="netmarkets/jsp/dataops/exportRule.jsp" windowType="popup"/>
+        </action>
+
+        <action name="mergeReplicationRules_Step_MVC">
+            <component name="replication.mergeRules" windowType="wizard_step"/>
+        </action>
+
+        <action name="copyRuleStep">
+            <command class="" method="" url="netmarkets/jsp/dataops/copyRuleStep.jsp" windowType="wizard_step"/>
+        </action>
+
+        <action name="objectExclude">
+           <command class="com.ptc.windchill.enterprise.replication.commands.NmReplicationRulesCommands" method="objectExclude"/>
+        </action>
+
+        <action name="objectInclude">
+           <command class="com.ptc.windchill.enterprise.replication.commands.NmReplicationRulesCommands" method="objectInclude"/>
+        </action>
+
+        <action name="folderSelector">
+           <command class="com.ptc.windchill.enterprise.replication.commands.NmReplicationRulesCommands" method="folderSelector"/>
+        </action>
+
+        <action name="domainSelector">
+           <command class="com.ptc.windchill.enterprise.replication.commands.NmReplicationRulesCommands" method="domainSelector"/>
+        </action>
+
+        <action name="newScheduleWizard">
+            <command class="com.ptc.windchill.enterprise.replication.commands.NmReplicationRulesCommands" method="createNewSchedule" url="netmarkets/jsp/replication/newScheduleWizard.jsp" windowType="popup"/>
+        </action>
+
+        <action name="newSchedule_Step1" required="true" >
+            <description>Details</description>
+            <command class="" method="" url="netmarkets/jsp/dataops/nameAndDescInputWith200Limit.jsp" windowType="wizard_step"/>
+        </action>
+
+        <action name="newSchedule_Step2" required="true">
+            <description>Gathering Rules</description>
+            <command class="" method="" url="netmarkets/jsp/replication/newSchedule_step2.jsp" windowType="wizard_step"/>
+        </action>
+
+        <action name="newSchedule_Step3" required="true" >
+            <description>Scheduling Options</description>
+            <command class="" method="" url="netmarkets/jsp/replication/newSchedule_step3.jsp" windowType="wizard_step"/>
+        </action>
+
+
+        <action name="addSelectCriteria">
+                <description>Button for adding criteria</description>
+                <command class="com.ptc.windchill.enterprise.replication.commands.NmReplicationRulesCommands" method="addSearchCriteria" onClick="PTC.wizard.saveTableData.writeAllTableRows()"/>
+        </action>
+
+        <action name="deleteCriteria" ajax="page">
+            <description>Delete Criteria from search criteria table on step 3 of New Replication Rule Wizard</description>
+                <command class="com.ptc.windchill.enterprise.replication.commands.NmReplicationRulesCommands" onClick="removeRow(event)" method="deleteSearchCriteria"/>
+        </action>
+
+        <action name="editScheduleWizard">
+            <command class="com.ptc.windchill.enterprise.replication.commands.NmReplicationRulesCommands" method="editNewSchedule" url="netmarkets/jsp/replication/editScheduleWizard.jsp" windowType="popup"/>
+        </action>
+
+        <action name="editSchedule_Step1" required="true" >
+            <command class="" method="" url="netmarkets/jsp/replication/editSchedule_Step1.jsp" windowType="wizard_step"/>
+        </action>
+
+        <action name="editSchedule_Step2" required="true">
+            <command class="" method="" url="netmarkets/jsp/replication/editSchedule_Step2.jsp" windowType="wizard_step"/>
+        </action>
+
+        <action name="editRuleWizard">
+            <command class="com.ptc.windchill.enterprise.replication.commands.NmReplicationRulesCommands" method="editRule" url="netmarkets/jsp/replication/editRuleWizard.jsp" windowType="popup"/>
+            <moreurlinfo>height=730,width=1000</moreurlinfo>
+        </action>
+
+        <action name="editRule_Step1" required="true" afterJS="validataOnNext" postloadJS="resizeTwoPaneComponent">
+            <command class="" method="" url="netmarkets/jsp/replication/editRule_Step1.jsp" windowType="wizard_step"/>
+        </action>
+
+        <action name="editRule_Step2" required="true">
+            <command class="" method="" url="netmarkets/jsp/replication/editRule_Step2.jsp" windowType="wizard_step"/>
+        </action>
+
+        <action name="repairRule">
+            <command class="com.ptc.windchill.enterprise.dataops.commands.NmDataOpsRulesCommands" method="repairCollectionQuery"/>
+        </action>
+
+		<action name="replCriteriaInfoContext" resourceBundle="com.ptc.windchill.enterprise.replication.replicationResource">
+          <component name="repl.criteriaInfo.context" typeBased="false" windowType="page"/>
+       </action>
+
+       <action name="replCriteriaInfoAttribute" resourceBundle="com.ptc.windchill.enterprise.replication.replicationResource">
+          <component name="repl.criteriaInfo.attribute" typeBased="false" windowType="page"/>
+       </action>
+
+       <action name="replCriteriaInfoTargetVault" resourceBundle="com.ptc.windchill.enterprise.replication.replicationResource">
+          <component name="repl.criteriaInfo.targetVault" typeBased="false" windowType="page"/>
+       </action>
+
+       <action name="replicationJobAttrPanel" resourceBundle="com.ptc.windchill.enterprise.replication.replicationResource">
+          <component name="replication.job.attrPanel" typeBased="false" windowType="page"/>
+       </action>
+
+       <action name="replicationScheduleAttrPanel" resourceBundle="com.ptc.windchill.enterprise.replication.replicationResource">
+          <component name="replication.schedule.attrPanel" typeBased="false" windowType="page"/>
+       </action>
+
+       <action name="replScheduleInfo" resourceBundle="com.ptc.windchill.enterprise.replication.replicationResource">
+          <component name="repl.ScheduleInfo" typeBased="false" windowType="page"/>
+       </action>
+    </objecttype>
+</listofactions>

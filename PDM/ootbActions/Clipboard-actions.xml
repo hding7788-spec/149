@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+<listofactions>
+      
+	<objecttype name="netmarkets">
+              <action name="clipboard" enabledwhensuspended="true" renderType="GENERAL" resourceBundle="com.ptc.core.ui.navigationRB">
+                    <command class="" method="" windowType="popup" url="netmarkets/jsp/object/clipboard.jsp"/>
+      	      </action>
+        </objecttype>
+
+	<objecttype name="object" class="wt.fc.Persistable">
+	      <action name="clipboard">
+	             <command windowType="popup" url="netmarkets/jsp/object/clipboard.jsp"/>
+      	      </action>
+	      <action name="add_from_picker" ajax="page">
+	             <command class="com.ptc.netmarkets.model.NmObjectCommands" method="copy" windowType="popup" url="netmarkets/jsp/object/clipboard_item_picker.jsp"/>
+      	      </action>
+      
+	      <action name="paste_select_clipboard_step" afterJS="setNextStepDirty">
+	             <command windowType="wizard_step"/>
+	      </action>
+	
+	      <action name="removeFromClipboard" ajax="page">
+	             <command class="com.ptc.netmarkets.model.NmObjectCommands" method="removeFromClipboard" onClick="onClickValidation( event, 'removeFromClipboard')"/>
+	      </action>
+	
+	      <action name="clearClipboard" ajax="page">
+	             <command class="com.ptc.netmarkets.model.NmObjectCommands" method="clearClipboard" onClick="onClickValidation( event, &apos;clearClipboard&apos; )"/>
+	      </action>
+	
+	      <action name="fbpaste" mutliselect="true" uicomponent="PASTE" ajax="component">
+	         <command class="com.ptc.windchill.enterprise.object.PasteWizardFormProcessor" method="execute" windowType="popup" onClick="validateCreateLocation(event)"/>
+	         <includeFilter name="projectM4D"/>
+	      </action>
+	      
+	      <action name="paste_picktype" preloadWizardPage="false">
+	         <command class="" method="" windowType="wizard_step"/>
+      	      </action>
+      </objecttype>
+
+</listofactions>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+<!-- define the actions on the UI components -->
+<actionmodels>
+
+
+   <model name="preference_manager_actions">
+      <action name="separator"       type="separator" shortcut="true"/>
+      <action name="explode"         type="folder" shortcut="true"/>
+      <action name="implode"         type="folder" shortcut="true"/>
+      <action name="separator"       type="separator" shortcut="true"/>
+   </model>
+
+	<model name="preference_manager_row_actions_toolbar">
+      <action name="edit_preference"				type="preference" shortcut="true"/>
+      <action name="delete_child_instances"         type="preference" shortcut="true"/>
+   </model>
+
+ </actionmodels>

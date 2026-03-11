@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+<!-- define the actions on the UI components -->
+<actionmodels resourceBundle="com.ptc.windchill.enterprise.replication.replicationResource">
+
+    <model name="manage rules actions">
+        <action name="deleteRule" type="dataops" shortcut="true"/>
+        <action name="createReplicationRule" type="replication" shortcut="true"/>           
+        <action name="mergeRulesWizard" type="replication" shortcut="true"/>    
+        <action name="importRuleWizard" type="replication" shortcut="true"/>    
+   </model> 
+   
+   <model name="manage rules row actions">
+        <action name="renameRuleWizard" type="replication" shortcut="true"/>
+        <action name="editRuleWizard" type="replication" shortcut="true"/>          
+        <action name="copyRuleWizard" type="replication" shortcut="true"/>  
+        <action name="exportRule" type="dataops" shortcut="true"/>
+        <action name="repairRule" type="replication" shortcut="true"/>         
+   </model>
+   
+   <model name="replication schedule admin table actions">
+        <action name="deleteReplicationSchedule" type="replication" shortcut="true"/>
+        <action name="refresh" type="dataops" shortcut="true"/>
+        <action name="newReplicationSchedule" type="replication" shortcut="true"/>          
+        <action name="manageReplicationRules" type="replication" shortcut="true"/>  
+        <action name="replicationJobToggle" type="replication" shortcut="true"/>    
+   </model> 
+   
+   <model name="replication schedule editable enable actions">
+        <action name="deleteReplicationScheduleForRow" type="replication" shortcut="true"/>
+        <action name="editReplicationSchedule" type="replication" shortcut="true"/>         
+        <action name="enableReplicationSchedule" type="replication" shortcut="true"/>  
+   </model>
+   
+   <model name="replication schedule editable disable actions">
+        <action name="deleteReplicationScheduleForRow" type="replication" shortcut="true"/>
+        <action name="editReplicationSchedule" type="replication" shortcut="true"/>         
+        <action name="disableReplicationSchedule" type="replication" shortcut="true"/>     
+   </model>
+   
+   <model name="replication schedule editable actions">
+        <action name="deleteReplicationScheduleForRow" type="replication" shortcut="true"/>
+        <action name="editReplicationSchedule" type="replication" shortcut="true"/>         
+   </model>
+   
+   <model name="replication schedule row actions">
+        <action name="deleteReplicationScheduleForRow" type="replication" shortcut="true"/>
+        <action name="editReplicationSchedule" type="replication" shortcut="true"/>         
+        <action name="disableReplicationSchedule" type="replication" shortcut="true"/>     
+   </model>
+   
+   <model name="replication schedule enable actions">
+        <action name="deleteReplicationScheduleForRow" type="replication" shortcut="true"/> 
+        <action name="enableReplicationSchedule" type="replication" shortcut="true"/>  
+   </model>
+   
+   <model name="replication schedule disable actions">
+        <action name="deleteReplicationScheduleForRow" type="replication" shortcut="true"/>     
+        <action name="disableReplicationSchedule" type="replication" shortcut="true"/>     
+   </model>
+   
+   <model name="replication job actions">
+        <action name="deleteReplicationJob" type="replication" shortcut="true"/>
+        <action name="refresh" type="dataops" shortcut="true"/>
+        <action name="newReplicationSchedule" type="replication" shortcut="true"/>          
+        <action name="manageReplicationRules" type="replication" shortcut="true"/>  
+        <action name="replicationScheduleToggle" type="replication" shortcut="true"/>   
+   </model> 
+   
+   <model name="replication job row actions">
+        <action name="deleteReplicationJobForRow" type="replication" shortcut="true"/>  
+   </model>
+
+   <model name="context criteria actions">
+        <action name="objectExclude" type="replication" shortcut="true"/>   
+        <action name="objectInclude" type="replication" shortcut="true"/>   
+        <action name="domainSelector" type="replication" shortcut="true"/>  
+        <action name="folderSelector" type="replication" shortcut="true"/>  
+   </model> 
+   
+   <model name="replication criteria attributes toolbar">
+        <action name="deleteCriteria" type="replication" shortcut="true"/>
+   </model>
+
+   <model name="replication job info">
+   </model>
+   
+   <model name="replication schedule info">
+       <action name="editReplicationSchedule" type="replication" shortcut="true"/>
+       <action name="enableReplicationSchedule" type="replication" shortcut="true"/>
+       <action name="disableReplicationSchedule" type="replication" shortcut="true"/>
+   </model>
+   
+   <model name="replicationRuleTabSet" resource="com.ptc.windchill.enterprise.replication.replicationResource">
+        <submodel name="replicationRuleInfoTables" shortcut="true"/>
+   </model>
+   
+   <model name="replicationRuleInfoTables" resource="com.ptc.windchill.enterprise.replication.replicationResource">
+        <action name="dataopsQueryAttrPanel" type="dataops" shortcut="true"/> 
+        <action name="replCriteriaInfoContext" type="replication" shortcut="true"/>
+        <action name="replCriteriaInfoAttribute" type="replication" shortcut="true"/>
+        <action name="replCriteriaInfoTargetVault" type="replication" shortcut="true"/>
+   </model>
+   
+   <model name="replicationJobInfoTables" resource="com.ptc.windchill.enterprise.replication.replicationResource">
+        <action name="replicationJobAttrPanel" type="replication" shortcut="true"/> 
+   </model>
+   
+   <model name="replicationScheduleTabSet" resource="com.ptc.windchill.enterprise.replication.replicationResource">
+        <submodel name="replicationScheduleInfoTables" shortcut="true"/>
+   </model>
+   
+   <model name="replicationScheduleInfoTables" resource="com.ptc.windchill.enterprise.replication.replicationResource">
+        <action name="replicationScheduleAttrPanel" type="replication" shortcut="true"/>
+        <action name="replScheduleInfo" type="replication" shortcut="true"/> 
+   </model>
+
+</actionmodels>

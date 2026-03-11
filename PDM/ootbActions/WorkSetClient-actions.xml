@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+<listofactions>
+<objecttype name="workSet" class="wt.change2.workset.WTWorkSet" resourceBundle="com.ptc.windchill.enterprise.workSet.workSetActionsRB">
+      <action name="createWorkSetWizard" ajax="row">
+         <description>Create work set</description>
+         <command class="com.ptc.windchill.enterprise.workSet.forms.CreateWorkSetFormProcessor" method="execute" windowType="popup"/>
+          <includeFilter name="showNewActionPreValidation"/>
+      </action>
+      <action name="relatedWorkSetComponents">
+         <description>Related work set components</description>
+      </action>
+      <action name="related_add_component" ajax="component">
+         <description>Add components</description>
+         <command class="com.ptc.windchill.enterprise.workSet.forms.WorkSetAddComponentFormProcessor" method="execute" onClick="onClickValidation(event,&apos;related_add_component&apos;)" windowType="popup"/>
+      </action>
+      <action name="related_delete_component" multiselect="true" ajax="page" selectRequired="true">
+         <description>Remove component</description>
+         <command class="com.ptc.windchill.enterprise.workSet.forms.WorkSetDeleteComponentFormProcessor" onClick="onClickValidation(event,&apos;related_delete_component&apos;)" method="execute"/>
+      </action>
+      <action name="relatedWorkSets">
+         <description>Related work sets</description>
+         <component name="workSet.relatedWorkSets"/>
+      </action>
+
+      <action name="edit" ajax="row">
+         <description>Edit work set</description>
+         <command class="com.ptc.core.components.forms.EditWorkableFormProcessor" method="execute" windowType="popup"/>
+         <includeFilter name="disableForTerminalIterationFilter"/>
+      </action>
+
+      <action name="checkoutAndEdit" ajax="row">
+         <description>Checkout and edit work sets</description>
+         <command class="com.ptc.core.components.forms.EditWorkableFormProcessor" method="execute" windowType="popup" url="/netmarkets/jsp/workSet/edit.jsp"/>
+         <includeFilter name="disableForTerminalIterationFilter"/>
+      </action>
+
+      <action name="deleteWorkSet" ajax="row" uicomponent="DELETE">
+         <description>Delete work set</description>
+         <command class="com.ptc.windchill.enterprise.object.commands.DeleteObjectCommands" method="delete" onClick="JCAConfirm(event,'com.ptc.core.ui.confirmationMessagesRB.DELETE')"/>
+      </action>
+
+      <action name="relatedWorkSetDocuments" uicomponent="THIRD_LEVEL_RELATED_DOCUMENTS">
+         <description>Related documents</description>
+      </action>
+
+      <action name="related_add_document" ajax="component">
+         <description>Add document</description>
+         <command class="com.ptc.windchill.enterprise.workSet.forms.AddRelatedDocumentsFormProcessor" onClick="onClickValidation(event,&apos;related_add_document&apos;)" method="execute" windowType="popup"/>
+      </action>
+
+      <action name="related_paste_document" ajax="component">
+         <description>Paste documents</description>
+         <command class="com.ptc.windchill.enterprise.workSet.commands.PasteRelatedDocumentsCommand" onClick="onClickValidation(event,&apos;related_paste_document&apos;)" method="execute"/>
+      </action>
+
+
+      <action name="related_remove_document" ajax="component" multiselect="true" selectRequired="true">
+         <description>Remove document</description>
+         <command class="com.ptc.windchill.enterprise.workSet.forms.RemoveRelatedDocumentsFormProcessor" onClick="onClickValidation(event,&apos;related_remove_document&apos;)"  method="execute"/>
+      </action>
+
+      <action name="workSet_create_doc_wizard" ajax="component">
+         <description>Create document wizard</description>
+         <command class="com.ptc.windchill.enterprise.workSet.forms.WorkSetCreateDocumentFormProcessor" method="execute" onClick="onClickValidation(event,&apos;workSet_create_doc_wizard&apos;)" windowType="popup" url="/netmarkets/jsp/document/create.jsp?invokedfrom=workSet"/>
+      </action>
+   </objecttype>
+
+</listofactions>

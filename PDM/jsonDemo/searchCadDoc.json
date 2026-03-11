@@ -1,0 +1,39 @@
+{
+  "rtnMsg": "获取成功",
+  "rtnCode": "S",
+  "data": [
+    {
+      "oid": "OR:wt.epm.EPMDocument:5046912",
+      "number": "JIGUI.ASM",
+      "cadName": "jigui.asm",
+      "name": "机柜",
+      "version": "a.2",
+      "state": "已批准",
+      "pvzUrl": "http://pdm.149.sast.casc/jigui.asm.pvz",
+      "downloadUrl": "http://pdm.149.sast.casc/jigui.drw",
+      "printDownloadUrl": "http://pdm.149.sast.casc/Sign_jigui.drw.pdf"
+    },
+    {
+      "oid": "OR:wt.epm.EPMDocument:5046913",
+      "number": "JIGUI2.ASM",
+      "cadName": "jigui2.asm",
+      "name": "机柜2",
+      "version": "a.2",
+      "state": "已批准",
+      "pvzUrl": "http://pdm.149.sast.casc/jigui2.asm.pvz",
+      "downloadUrl": "http://pdm.149.sast.casc/jigui2.drw",
+      "printDownloadUrl": "http://pdm.149.sast.casc/Sign_jigui2.drw.pdf"
+    },
+    {
+      "oid": "OR:wt.epm.EPMDocument:5046914",
+      "number": "JIGUI3.ASM",
+      "cadName": "jigui3.asm",
+      "name": "机柜3",
+      "version": "a.2",
+      "state": "已批准",
+      "pvzUrl": "http://pdm.149.sast.casc/jigui3.asm.pvz",
+      "downloadUrl": "http://pdm.149.sast.casc/jigui3.drw",
+      "printDownloadUrl": "http://pdm.149.sast.casc/Sign_jigui3.drw.pdf"
+    }
+  ]
+}

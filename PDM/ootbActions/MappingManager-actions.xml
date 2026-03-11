@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+<listofactions>
+    <objecttype name="fedInfraUI" resourceBundle="com.ptc.windchill.fedInfra.mapping.mappingManagerResource">
+        
+        <action name="defineMapping" ajax="component" multiselect="false" selectRequired="true">
+            <command class="com.ptc.windchill.fedInfra.mapping.forms.DefineMappingTableFormProcessor" method="execute" windowType="popup" onClick="PTC.fedInfraUI.defineMappingSelection(event)"/>
+        </action> 
+        
+        <action name="editSourceInfo" checkaccess="true" ajax="row" multiselect="false" selectRequired="true">
+            <description>Edit CollaborationSourceInfo</description>
+            <command class="com.ptc.windchill.fedInfra.mapping.forms.EditCollaborationSourceInfoFormProcessor" method="execute" windowType="popup" onClick="PTC.fedInfraUI.defineMappingSelection(event)"/>
+        </action>
+        
+        <action name="setAttributesWizStep" id="setAttributesWizStep" preloadWizardPage="false" required="true">
+            <component name="fedInfraUI.editSourceInfo.defineItemStep" windowType="wizard_step"/>
+        </action>
+        
+        <action name="deleteSourceInfo" selectRequired="true">
+            <command class="com.ptc.netmarkets.fedInfra.mapping.NmCollaborationSourceInfoCommands" method="deleteSourceInfo" onClick="postSelectValidation(event, &apos;deleteSourceInfo&apos;)"/>
+        </action> 
+        
+        <action name="downloadconflictresolutions" multiselect="false" selectRequired="true">
+            <command class="com.ptc.netmarkets.fedInfra.mapping.CsvExport" method="csvExport" windowType="popup" onClick="PTC.fedInfraUI.defineMappingSelection(event)" url="netmarkets/jsp/object/exportTable.jsp?fileType=csv"/>
+        </action>
+        
+        <action name="contextStep">        
+            <component name="mapping.table" windowType="wizard_step" urlParams="mappingType=FederationContextMapping"/>
+        </action>
+        
+        <action name="owningOrgStep">
+            <component name="mapping.table" windowType="wizard_step" urlParams="mappingType=FederationOwningOrgMapping"/>
+        </action> 
+        
+        <action name="viewStep">
+            <component name="mapping.table" windowType="wizard_step" urlParams="mappingType=FederationViewMapping"/>
+        </action>
+        
+        <action name="folderStep">
+            <component name="mapping.table" windowType="wizard_step" urlParams="mappingType=FederationFolderMapping"/>
+        </action>   
+        
+        <action name="lifeCycleStep">
+            <component name="lcMapping.table" windowType="wizard_step" urlParams="mappingType=FederationLifecycleMapping"/>
+        </action>
+        
+        <action name="securityLabelMappingStep">
+            <component name="slMapping.table" windowType="wizard_step" urlParams="mappingType=FederationSecurityLabelMapping"/>
+        </action>
+        
+        <action name="securityLabelPicker">
+             <command class="" method="" windowType="popup"/>
+        </action>
+        
+        <action name="securityLabelPickerStep">
+             <command class="" method="" windowType="popup"/>
+        </action>
+              
+        <action name="addMultipleMappings" ajax="row">
+            <command windowType="no_content" onClick="PTC.fedInfraUI.addMapping(5)"/>
+        </action>
+
+        <action name="addMapping" ajax="row">
+            <command windowType="no_content" onClick="PTC.fedInfraUI.addMapping(1)"/>
+        </action> 
+        
+        <action name="removeMappings" renderType="GENERAL" selectRequired="true">
+            <command windowType="no_content" onClick="PTC.fedInfraUI.trackAndRemoveMappings(event)"/>
+        </action>
+  
+    
+    </objecttype>
+</listofactions>

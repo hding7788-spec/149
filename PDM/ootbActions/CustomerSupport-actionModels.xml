@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+	<!-- define the actions on the UI components -->
+<actionmodels resourceBundle="com.ptc.customersupport.customerSupportResource">
+
+  <!-- Site Information definitions -->
+	<!-- Tree examples related entries -->
+	<model name="CustomerSupport_toolbar_actions">
+	    <action name="gatherSaveWizard" type="object" shortcut="true"/>
+		<action name="explode" type="folder" shortcut="true"/>
+		<action name="implode" type="folder" shortcut="true"/>
+		<action name="createCategoryWizard" type="object" shortcut="true"/>
+		<action name="deleteCategoryAction" type="object" shortcut="true"/>
+	</model>
+	
+	<model name="CustomerSupport_Column_Actions">
+		<action name="gatherSaveWizardActionMenu" type="object"/>
+		<action name="editCategoryWizard" type="object"/>
+		<action name="deleteCategoryActionMenu" type="object"/>
+	</model>
+	
+    <model name="createCategoryWizardButtons">
+    	<action name="prevButton" type="object"/>
+		<action name="nextButton" type="object"/>
+        <action name="okButton" type="object"/>
+        <action name="cancelButton" type="object"/>
+    </model>
+	
+</actionmodels>

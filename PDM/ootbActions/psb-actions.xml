@@ -1,0 +1,1568 @@
+<listofactions>
+        <objecttype name="psb" resourceBundle="com.ptc.windchill.enterprise.part.psb.psbActionsRB">
+
+                <action name="relatedObjectsWithLargeIconGWT">
+                        <command class="com.ptc.cat.gxt.client.action.RelatedObjectsAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="com.ptc.windchill.enterprise.part.psb.client.filters.ShowHideRelatedInfoFilter"/>
+                </action>
+
+                <action name="relatedObjectsGWT">
+                        <command class="com.ptc.cat.gxt.client.action.RelatedObjectsAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="com.ptc.windchill.enterprise.part.psb.client.filters.ShowHideRelatedInfoFilter"/>
+                </action>
+                
+                <action name="hideAllRelatedObjectsGWT"  ajax="row">
+                        <command class="com.ptc.cat.gxt.client.action.HideAllRelatedObjectsAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="com.ptc.windchill.enterprise.part.psb.client.filters.ShowHideRelatedInfoFilter"/>
+                </action>
+                
+                <action name="showDefaultRelatedObjectsGWT"  ajax="row">
+                        <command class="com.ptc.cat.gxt.client.action.ShowDefaultRelatedObjectsAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="com.ptc.windchill.enterprise.part.psb.client.filters.ShowHideRelatedInfoFilter"/>
+                </action>
+                
+                <action name="addRelatedRefDocGWT">
+                        <command class="com.ptc.cat.gxt.client.action.AddRefDocAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OriginalCopyFilter"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <includeFilter name="disableForAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="addRelatedDesDocGWT">
+                        <command class="com.ptc.cat.gxt.client.action.AddDesDocAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OriginalCopyFilter"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <includeFilter name="disableForAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="addAMLGWT" ajax="row" uicomponent="CREATE_EDIT_DELETE_SUPPLIER">
+                        <command class="com.ptc.windchill.enterprise.part.psb.client.action.suma.AddAMLAction" method="execute" url="/ptc1/suma/axlentry/add_aml?portlet=poppedup&amp;invokedfrom=psb" windowType="popup"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="com.ptc.windchill.enterprise.part.psb.client.filters.suma.AddAMLFilter"/>
+                        <includeFilter name="disableForAdminLocked"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="addAVLGWT" ajax="row" uicomponent="CREATE_EDIT_DELETE_SUPPLIER">
+                        <command class="com.ptc.windchill.enterprise.part.psb.client.action.suma.AddAVLAction" method="execute" url="/ptc1/suma/axlentry/add_avl?portlet=poppedup&amp;invokedfrom=psb" windowType="popup"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="com.ptc.windchill.enterprise.part.psb.client.filters.suma.AddAVLFilter"/>
+                        <includeFilter name="disableForAdminLocked"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="insertNewPartStructureSplitGWT" uicomponent="CREATE_PART" ajax="row">
+                        <command class="com.ptc.cat.ui.client.action.InsertNewPartAction" method="execute" url="/ptc1/part/createPartWizard?revisionMode=create&amp;invokedfrom=folder&amp;showNewCADDocStep=true&amp;hideAssociatePart=true" windowType="popup"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OriginalCopyFilter"/>
+                        <includeFilter name="disableForAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="insertNewPartStructureGWT" uicomponent="CREATE_PART" ajax="row">
+                        <command class="com.ptc.cat.ui.client.action.InsertNewPartAction" method="execute" url="/ptc1/part/createPartWizard?revisionMode=create&amp;invokedfrom=folder&amp;showNewCADDocStep=true&amp;hideAssociatePart=true" windowType="popup"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OriginalCopyFilter"/>
+                        <includeFilter name="disableForAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="insertNewPartUsesGWT" uicomponent="CREATE_PART" ajax="row">
+                        <command class="com.ptc.cat.ui.client.action.InsertNewPartAction" method="execute" url="/ptc1/part/createPartWizard?revisionMode=create&amp;invokedfrom=folder&amp;showNewCADDocStep=true&amp;&amp;hideAssociatePart=true" windowType="popup"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentOriginalCopyFilter"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <includeFilter name="disableForTableContextAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildTableContextAdminLocked"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartMaster"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="insertMultiNewPartStructureGWT" uicomponent="CREATE_PART" ajax="row">
+                        <command class="com.ptc.cat.ui.client.action.InsertNewPartsAction" method="execute" url="/ptc1/part/createPartWizard?wizardType=multiPart&amp;invokedfrom=folder" windowType="popup"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OriginalCopyFilter"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <includeFilter name="disableForAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="insertMultiNewPartUsesGWT" uicomponent="CREATE_PART" ajax="row">
+                        <command class="com.ptc.cat.ui.client.action.InsertNewPartsAction" method="execute" url="/ptc1/part/createPartWizard?wizardType=multiPart&amp;invokedfrom=folder" windowType="popup"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentOriginalCopyFilter"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <includeFilter name="disableForTableContextAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildTableContextAdminLocked"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartMaster"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="insertExistingPartStructureGWT">
+            <command class="com.ptc.cat.gxt.client.action.AdvancedAddAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OriginalCopyFilter"/>
+                        <includeFilter name="disableForAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <includeFilter name="insertExistingPartImplementationChooser"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="insertExistingPartUsesGWT">
+            <command class="com.ptc.cat.gxt.client.action.AdvancedAddAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentOriginalCopyFilter"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <includeFilter name="disableForTableContextAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildTableContextAdminLocked"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartMaster"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="insertExistingPartStructureJCA">
+                        <command class="com.ptc.windchill.enterprise.part.psb.client.action.InsertExistingPartsJCAAction" method="execute" url="/ptc1/part/addExistingPartWizard?wizardType=multiPart&amp;invokedfrom=folder" windowType="popup"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OriginalCopyFilter"/>
+                        <includeFilter name="disableForAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <includeFilter name="insertExistingPartImplementationChooser"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="insertExistingPartUsesJCA">
+                        <command class="com.ptc.windchill.enterprise.part.psb.client.action.InsertExistingPartsJCAAction" method="execute" url="/ptc1/part/addExistingPartWizard?wizardType=multiPart&amp;invokedfrom=folder" windowType="popup"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentOriginalCopyFilter"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <includeFilter name="disableForTableContextAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildTableContextAdminLocked"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartMaster"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="createOccurrencesGWT">
+                        <command class="com.ptc.windchill.enterprise.part.psb.client.action.PSBCreateOccurrencesAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsRootNodeFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.HasChildrenFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.CheckinFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentOriginalCopyFilter"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <includeFilter name="hideForObjectInProject"/>
+                        <includeFilter name="disableForAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="removeGWT">
+                        <command class="com.ptc.windchill.enterprise.part.psb.client.action.PSBRemoveAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotRootStructureModelFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotSummaryRowFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentOriginalCopyFilter"/>
+                        <includeFilter name="com.ptc.windchill.enterprise.part.psb.client.action.ReplacementPartTypeFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForMatrixCellFilter"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <includeFilter name="disableForParentInTreeAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildParentInTreeAdminLocked"/>
+                        <includeFilter name="disableForNewParentObjectInWorkspace"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartMaster"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.doc.WTDocument"/>
+                                <type value="wt.doc.WTDocumentMaster"/>
+                                <type value="wt.part.WTPartDescribeLink"/>
+                                <type value="wt.part.WTPartReferenceLink"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="removeChildPartGWT">
+                        <command class="com.ptc.windchill.enterprise.part.psb.client.action.PSBRemoveAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotRootStructureModelFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentOriginalCopyFilter"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <includeFilter name="disableForTableContextAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildTableContextAdminLocked"/>
+                        <includeFilter name="disableForNewParentObjectInWorkspace"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartMaster"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.doc.WTDocument"/>
+                                <type value="wt.doc.WTDocumentMaster"/>
+                                <type value="wt.part.WTPartDescribeLink"/>
+                                <type value="wt.part.WTPartReferenceLink"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="renameGWT">
+                        <command class="com.ptc.cat.gxt.client.action.RenameObjectAction" method="execute" url="/ptc1/object/renameObjectWizard" windowType="popup"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForEmptyMatrixCellFilter"/>
+                        <includeFilter name="hideForMultiSelection"/>
+                        <includeFilter name="sandboxSharingValidationSimple"/>
+                        <includeFilter name="hideFromNonAgreementMgrs"/>
+                        <includeFilter name="hideSBHiddenFilter"/>
+                        <nonSupportedTypes>
+                        	<type value="wt.part.WTPart"/>
+                        </nonSupportedTypes>
+                </action>
+
+                <action name="checkoutWithLargeIconGWT">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <action name="checkoutGWT">
+                        <command class="com.ptc.cat.ui.client.internal.action.CheckoutAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.DisableForBlankStructureModelsInSelectionFilter"/>
+                        <includeFilter name="com.ptc.windchill.enterprise.part.psb.client.filters.UnsupportedActionsForReferenceAndDescribeLink"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForEmptyMatrixCellFilter"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <includeFilter name="disableForAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+                        <nonSupportedTypes>
+                                <type value="wt.epm.EPMDocument"/>
+                        </nonSupportedTypes>
+                </action>
+
+                <action name="checkinWithLargeIconGWT">
+                        <command class="com.ptc.cat.ui.client.internal.action.CheckinAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.CheckoutConsiderSiteAdminFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.DisableForBlankStructureModelsInSelectionFilter"/>
+                        <nonSupportedTypes>
+                                <type value="wt.epm.EPMDocument"/>
+                        </nonSupportedTypes>
+
+                </action>
+
+                <!--
+                        TODO: Deprecated - Use the checkinWithLargeIconGWT instead.
+                -->
+                <action name="checkin">
+                        <command class="com.ptc.cat.ui.client.internal.action.CheckinAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.CheckoutFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <nonSupportedTypes>
+                                <type value="wt.epm.EPMDocument"/>
+                        </nonSupportedTypes>
+                </action>
+
+                <action name="checkinSplitGWT">
+                        <command class="com.ptc.cat.ui.client.internal.action.CheckinAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.CheckoutConsiderSiteAdminFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.DisableForBlankStructureModelsInSelectionFilter"/>
+                        <nonSupportedTypes>
+                                <type value="wt.epm.EPMDocument"/>
+                        </nonSupportedTypes>
+                </action>
+
+                <action name="checkinGWT">
+                        <command class="com.ptc.cat.ui.client.internal.action.CheckinAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.DisableForBlankStructureModelsInSelectionFilter"/>
+                        <nonSupportedTypes>
+                                <type value="wt.epm.EPMDocument"/>
+                        </nonSupportedTypes>
+                </action>
+
+                <action name="checkinAndRemoveGWT">
+                        <command class="com.ptc.cat.ui.client.internal.action.CheckInDifferentContextsAndRemoveRowAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <nonSupportedTypes>
+                                <type value="wt.epm.EPMDocument"/>
+                        </nonSupportedTypes>
+                </action>
+
+                <!--  Part Check in actions start -->
+                <!--  Creating new Check in actions to be used for parts in PSB with a check box for publish to CAD
+                          This functionality is only for parts and since existing check in actions are being reused in
+                          downstream applications, we need to create new actions for parts. -->
+                <action name="partCheckinSplitGWT">
+                        <command class="com.ptc.windchill.enterprise.part.psb.client.action.PSBCheckinAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.CheckoutConsiderSiteAdminFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.DisableForBlankStructureModelsInSelectionFilter"/>
+                        <includeFilter name="disableForCheckedoutObjectInWorkspace"/>
+                        <nonSupportedTypes>
+                                <type value="wt.epm.EPMDocument"/>
+                        </nonSupportedTypes>
+                </action>
+
+                <action name="partCheckinGWT">
+                        <command class="com.ptc.windchill.enterprise.part.psb.client.action.PSBCheckinAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.DisableForBlankStructureModelsInSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForEmptyMatrixCellFilter"/>
+                        <includeFilter name="disableForCheckedoutObjectInWorkspace"/>
+                        <nonSupportedTypes>
+                                <type value="wt.epm.EPMDocument"/>
+                        </nonSupportedTypes>
+                </action>
+
+
+                <action name="partCheckinAndRemoveGWT">
+                        <command class="com.ptc.windchill.enterprise.part.psb.client.action.PSBCheckInDifferentContextsAndRemoveRowAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="disableForCheckedoutObjectInWorkspace"/>
+                        <nonSupportedTypes>
+                                <type value="wt.epm.EPMDocument"/>
+                        </nonSupportedTypes>
+                </action>
+                <!-- Part Check in actions end -->
+
+                <action name="undocheckoutGWT">
+                        <command class="com.ptc.cat.ui.client.internal.action.UndoCheckoutAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.DisableForBlankStructureModelsInSelectionFilter"/>
+                        <includeFilter name="disableForCheckedoutObjectInWorkspace"/>
+                        <nonSupportedTypes>
+                                <type value="wt.epm.EPMDocument"/>
+                        </nonSupportedTypes>
+                </action>
+
+                <action name="undocheckoutAndRemoveGWT">
+                        <command class="com.ptc.cat.ui.client.internal.action.UndoCheckoutInDifferentContextsAndRemoveRowAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="disableForCheckedoutObjectInWorkspace"/>
+                        <nonSupportedTypes>
+                                <type value="wt.epm.EPMDocument"/>
+                        </nonSupportedTypes>
+                </action>
+
+                <action name="editUsageLinkTreeGWT">
+                        <command class="com.ptc.cat.gxt.client.action.EditUsagesAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.SupplierPartTypeFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentOriginalCopyFilter"/>
+                        <includeFilter name="disableForParentInTreeAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildParentInTreeAdminLocked"/>
+                        <includeFilter name="disableForNewParentObjectInWorkspace"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="editUsageLinkGWT">
+                        <command class="com.ptc.cat.gxt.client.action.EditUsagesAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentOriginalCopyFilter"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <includeFilter name="disableForTableContextAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildTableContextAdminLocked"/>
+                        <includeFilter name="disableForNewParentObjectInWorkspace"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartMaster"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="editAttrValuesUsageLinksGWT">
+                        <command class="com.ptc.windchill.enterprise.part.psb.client.action.PSBEditAttributeValuesAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentOriginalCopyFilter"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <includeFilter name="disableForTableContextAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildTableContextAdminLocked"/>
+                        <includeFilter name="disableForNewParentObjectInWorkspace"/>
+                </action>
+
+                <action name="editCommonAttrsGWT" ajax="row">
+                        <command class="com.ptc.cat.ui.client.action.EditCommonAtributesAction" method="execute" url="/ptc1/part/editPartCommonAttrsWizard" windowType="popup"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.CheckinFilter"/>
+                        <includeFilter name="disableForNewParentObjectInWorkspace"/>
+                        <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForEmptyMatrixCellFilter"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPartMaster"/>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="replacementsGWT" ajax="true">
+                        <command class="com.ptc.cat.ui.client.action.ManageReplacementAction" method="execute" url="/ptc1/part/replacements" windowType="popup"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+                        <includeFilter name="hideForObjectInProject"/>
+                        <includeFilter name="disableForParentInTreeAdminLocked"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <includeFilter name="disableReplaceActionForPJLUserFilter"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+            <!-- New actions added under the model Replace with add existing and add new part :start-->
+                 <action name="replaceWithExistingPart" ajax="true">
+                      <command class="com.ptc.windchill.enterprise.part.psb.client.action.AdvancedReplacementAddPartAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+                        <includeFilter name="hideForObjectInProject"/>
+                        <includeFilter name="disableForParentInTreeAdminLocked"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                        <nonSupportedTypes>
+                                <type value="com.ptc.windchill.suma.part.SupplierPart"/> 
+                        </nonSupportedTypes>
+                </action>
+
+                <action name="replaceWithAddingNewPart" ajax="true">
+                        <command class="com.ptc.windchill.enterprise.part.psb.client.action.ReplacementAddNewPartAction" method="execute" url="/ptc1/part/createPartWizard?revisionMode=create&amp;invokedfrom=folder&amp;showNewCADDocStep=true&amp;hideAssociatePart=true" windowType="popup"/>
+                         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+                        <includeFilter name="hideForObjectInProject"/>
+                        <includeFilter name="disableForParentInTreeAdminLocked"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                        <nonSupportedTypes>
+                                <type value="com.ptc.windchill.suma.part.SupplierPart"/> 
+                        </nonSupportedTypes>
+                </action>
+               <!-- New actions added under the model Replace with add existing and add new part :end-->
+
+               <!-- New action added under the model Replace with Replace with Alternate/Substitute:start-->
+                <action name="replaceWithAlternateSubstitute" ajax="true">
+                      <command class="com.ptc.windchill.enterprise.part.psb.client.action.ReplaceWithAlternateSubstituteAction" method="execute" url="/ptc1/part/replaceWithAlternateSubstitute" windowType="popup"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+                        <includeFilter name="hideForObjectInProject"/>
+                        <includeFilter name="disableForParentInTreeAdminLocked"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                        <nonSupportedTypes>
+                                <type value="com.ptc.windchill.suma.part.SupplierPart"/> 
+                        </nonSupportedTypes>
+                </action>
+                <!-- New action added under the model Replace with Replace with Alternate/Substitute:end-->
+
+               <action name="productStructureGWT" resourceBundle="com.ptc.windchill.enterprise.part.psb.psbActionsRB">
+                        <command url="netmarkets/jsp/psb/psb.jsp"/>
+                        <includeFilter name="standaloneVariantSpecFilter"/>
+                        <includeFilter name="organizedVariantSpecFilter"/>
+                </action>
+
+                <action name="displayOccurrencesGWT">
+                        <command class="com.ptc.cat.gxt.client.action.DisplayOccurrencesAction"/>
+                </action>
+
+                <action name="removeOccurrenceGWT">
+                        <command class="com.ptc.windchill.enterprise.part.psb.client.action.PSBRemoveOccurrenceAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentOriginalCopyFilter"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <includeFilter name="disableForTableContextAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildTableContextAdminLocked"/>
+                        <includeFilter name="disableForNewParentObjectInWorkspace"/>
+                </action>
+
+                <action name="launchStructureCompareGWT" ajax="row">
+                        <command class="com.ptc.windchill.enterprise.part.psb.client.action.StructureCompareAction" method="execute" url="/ptc1/structureCompare/launchStructureCompare" windowType="popup"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="hideForObjectInProject"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="newPARGWT" ajax="row">
+                        <command class="com.ptc.windchill.enterprise.part.psb.client.action.CreatePARAction" method="execute" url="/ptc1/par/createPARWizard?portlet=poppedup" windowType="popup"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.SupplierPartTypeFilter"/>
+                        <includeFilter name="hideForObjectInProject"/>
+                        <includeFilter name="restrictGuestMembers"/>
+                        <includeFilter name="disableForAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                </action>
+                
+                <action name="createPARFromVariantSpecGWT" ajax="row">
+                        <command class="com.ptc.windchill.enterprise.part.psb.client.action.CreatePARFromVariantSpecAction" method="execute" url="/ptc1/par/createPARWizard?portlet=poppedup" windowType="popup"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.SupplierPartTypeFilter"/>
+                        <includeFilter name="hideForObjectInProject"/>
+                        <includeFilter name="disableForAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <includeFilter name="createPARFromVariantSpec"/> <!-- used for VariantSpec Structure tab -->
+                        <includeFilter name="hideForVariantSpecUsesSupplierPart"/>
+                        <includeFilter name="configMgmtHiddenFeature"/> <!-- hide until feature is ready for release -->
+                </action>
+
+                <action name="assignOptionalityGWT" uicomponent="ASSIGN_EXPRESSION">
+                        <command class="com.ptc.cat.ui.client.action.EditOptionRulesAction" method="execute" url="/ptc1/optionality/assignUsesOptionality" windowType="popup"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.HasGenericParentFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotProjectContainer"/>
+                        <includeFilter name="createEditExpressionFilter"/>
+                        <includeFilter name="createEditIndependentExpressionFilter"/>
+                </action>
+
+                <action name="assignOccurrencesOptionalityGWT" uicomponent="ASSIGN_EXPRESSION">
+                        <command class="com.ptc.windchill.enterprise.structurecomponent.client.action.EditOccurrencesOptionRulesAction" method="execute" url="/ptc1/optionality/assignOccurrencesOptionality" windowType="popup"/>
+                        <includeFilter name="createEditIndependentExpressionFilter"/>
+                        <includeFilter name="createEditExpressionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.HasGenericParentFilter"/>
+                </action>
+
+                <action name="assignItemOptionalityGWT" uicomponent="ASSIGN_EXPRESSION">
+                        <command class="com.ptc.cat.ui.client.action.EditItemOptionRulesAction" method="execute" url="/ptc1/optionality/assignItemOptionalityGWT" windowType="popup"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotProjectContainer"/>
+                        <includeFilter name="AssignItemOptionalityFilter"/>
+                        <includeFilter name="createEditIndependentExpressionFilter"/>
+                        <nonSupportedTypes>
+                            <type value="wt.epm.EPMDocument"/>
+                        </nonSupportedTypes>
+                </action>
+
+                <action name="editSplitGWT" ajax="component">
+                        <command class="com.ptc.cat.ui.client.action.EditAction" method="execute" url="/ptc1/part/edit" windowType="popup"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="editGWT" ajax="component">
+                        <command class="com.ptc.cat.ui.client.action.EditAction" method="execute" url="/ptc1/part/edit" windowType="popup"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <includeFilter name="disableForAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+                        <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter" />
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="saveAsGWT" uicomponent="SAVE_AS" ajax="component">
+                        <command class="com.ptc.cat.ui.client.action.SaveAsAction" method="execute" url="/servlet/WindchillAuthGW/wt.enterprise.URLProcessor/URLTemplateAction" windowType="popup"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <includeFilter name="isNotInstantiable"/>
+                        <includeFilter name="com.ptc.windchill.enterprise.part.psb.client.filters.UnsupportedActionsForReplacmentPartFilter"/>
+                </action>
+
+                <action name="newPartConfigGWT" ajax="component">
+                        <command class="com.ptc.cat.ui.client.action.NewPartConfigurationAction" method="execute" url="/ptc1/configuration/createConfiguration" windowType="popup"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.CheckinFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.SupplierPartTypeFilter"/>
+                        <includeFilter name="disableForAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+                </action>
+
+                <action name="newRepresentationTreeGWT">
+                        <command class="com.ptc.cat.ui.client.action.NewRepresentationAction" url="/netmarkets/jsp/wvs/newRep/decideEpmOrFile.jsp"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.SupplierPartTypeFilter"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="newRepresentationGWT">
+                        <command class="com.ptc.cat.ui.client.action.NewRepresentationAction" url="/netmarkets/jsp/wvs/newRep/decideEpmOrFile.jsp"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="newPromotionRequestGWT" selectRequired="true" uicomponent="PROMOTE">
+                    <command class="com.ptc.cat.ui.client.action.NewPromotionRequestAction"/>
+                    <includeFilter name="restrictGuestMembers"/>
+                    <includeFilter name="hideForObjectInProject"/>
+                    <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                  <!-- comment: It should work as on the folder page, thats why filter was disabled -->	
+                  <!--   <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreCheckinFilter"/>  -->
+                    <includeFilter name="com.ptc.cat.ui.client.internal.action.MultiIsNotUnspecifiedIterationFilter"/>
+                    <includeFilter name="disableForNewObjectInWorkspace"/>
+                    <includeFilter name="com.ptc.windchill.enterprise.part.psb.client.filters.UnsupportedActionsForReplacmentPartFilter"/>
+                    <includeFilter name="com.ptc.cat.ui.client.internal.action.DisableForBlankStructureModelsInSelectionFilter"/>
+                </action>
+
+                <action name="newPromotionRequestTreeGWT" selectRequired="true" uicomponent="PROMOTE">
+                    <command class="com.ptc.cat.ui.client.action.NewPromotionRequestAction"/>
+                    <includeFilter name="com.ptc.cat.ui.client.internal.action.SupplierPartTypeFilter"/>
+                    <includeFilter name="restrictGuestMembers"/>
+                    <includeFilter name="hideForObjectInProject"/>
+                    <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                   <!--  <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreCheckinFilter"/> -->
+                    <includeFilter name="com.ptc.cat.ui.client.internal.action.MultiIsNotUnspecifiedIterationFilter"/>
+                    <includeFilter name="disableForNewObjectInWorkspace"/>
+                </action>
+
+                <action name="compareActionsGWT">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <action name="openActionsGWT">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <action name="openInProductViewGWT">
+                <command class="com.ptc.cat.ui.client.action.OpenInCreoViewAction"/>
+                <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                <includeFilter name="isNotInProject"/>
+                <nonSupportedTypes>
+                      <type value="WCTYPE|wt.epm.EPMDocument|org.rnd.DynamicDocument|org.rnd.Note"/>
+                </nonSupportedTypes>
+                </action>
+
+                <!-- TODO: Deprecated. Use openInProductViewGWT instead -->
+                <action name="openInProductView">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <action name="openInVIZTabGWT">
+                        <command class="com.ptc.cat.ui.client.action.OpenInVIZTabAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                </action>
+
+                <action name="openInPSEGWT" uicomponent="PSE">
+                        <command class="com.ptc.cat.gxt.client.action.OpenProductStructureExplorerAction" url="/ptc1/explorer/launchExplorer?appId=ptc.pdm.ProductStructureExplorer"/>
+                        <includeFilter name="isNotInProject"/>
+                        <includeFilter name="hideForNewObjectInWorkspace" />
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="openInMPSEGWT" uicomponent="MPML_PSE">
+                        <command class="com.ptc.cat.gxt.client.action.OpenProductStructureExplorerAction" url="/ptc1/explorer/launchExplorer?appId=ptc.cust.ProductStructureExplorer"/>
+                        <includeFilter name="isNotInProject"/>
+                        <includeFilter name="hideForNewObjectInWorkspace" />
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+                <action name="openInSAPSBGWT">
+                        <command class="com.ptc.cat.gxt.client.action.OpenPartInSAPSBAction" url="/ptc1/sapsb/sapsb?" windowType="popup" />
+                        <includeFilter name="isNotInProject"/>
+                        <includeFilter name="hideForNewObjectInWorkspace" />
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="newActionsGWT">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <action name="newProblemReportGWT" uicomponent="CREATE_PROBLEMREPORT">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <action name="newChangeRequestGWT" uicomponent="CREATE_CHANGEREQUEST">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <action name="newVarianceGWT" uicomponent="CREATE_VARIANCE">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <action name="addToActionsGWT">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <action name="psbReportsGWT">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                        <includeFilter name="com.ptc.windchill.enterprise.part.psb.client.filters.UnsupportedActionsForReplacmentPartFilter"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartMaster"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="psbReportMultiLevelCompListGWT">
+                        <command class="com.ptc.cat.ui.client.action.MultiLevelComponentsListAction" />
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                </action>
+
+                <action name="psbReportSingleLevelConsolBOMGWT">
+                        <command class="com.ptc.cat.ui.client.action.SingleLevelConsolidatedBOMAction" />
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                </action>
+
+                <action name="psbReportSingleLevelBOMGWT">
+                        <command class="com.ptc.cat.ui.client.action.SingleLevelBOMAction" />
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                </action>
+
+                <action name="psbReportSingleLevelBOMWithNotesGWT">
+                        <command class="com.ptc.cat.ui.client.action.SingleLevelBOMWithNotesAction" />
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                </action>
+
+                <action name="psbReportMultiLevelBOMGWT">
+                        <command class="com.ptc.cat.ui.client.action.MultiLevelBOMAction" />
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                </action>
+
+                <action name="psbReportMultiLevelBOMWithReplacementsGWT">
+                        <command class="com.ptc.cat.ui.client.action.MultiLevelBOMWithReplacementsAction" />
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                </action>
+
+                <action name="psbReportMultiLevelBOMWithAMLAVLGWT">
+                        <command class="com.ptc.cat.ui.client.action.MultiLevelBOMWithAMLAVLAction" />
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                </action>
+
+                <action name="psbReportMultiLevelBOMWithAMLGWT">
+                        <command class="com.ptc.cat.ui.client.action.MultiLevelBOMWithAMLAction" />
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                </action>
+
+                <action name="singleSourceOEMPartsGWT">
+                        <command class="com.ptc.cat.ui.client.action.SingleSourceOEMPartsAction" />
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                </action>
+
+                <action name="uniqueManufacturerPartsGWT">
+                        <command class="com.ptc.cat.ui.client.action.UniqueManuacturerPartsAction" />
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                </action>
+
+                <action name="editingGroupGWT">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <action name="checkInOutGroupGWT">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <action name="clipboardGroupGWT">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <action name="viewingGroupGWT">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <action name="toolsGroupGWT">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <action name="newAddToGroupGWT">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <action name="psbReportsGroupGWT">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <action name="manageNotes" ajax="row">
+                  <command class="com.ptc.cat.ui.client.action.ManageNotesAction" method="execute" url="ptc1/tcomp/infoPage?tlnType=note&amp;tlnAction=relatedNotes" windowType="page"/>
+                  <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                  <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                  <includeFilter name="com.ptc.windchill.enterprise.part.psb.client.filters.UnsupportedActionsForReplacmentPartFilter"/>
+                  <supportedTypes>
+			<type value="wt.part.WTPart" />
+			<type value="wt.part.WTPartUsageLink" />
+			<type value="wt.part.PartUsesOccurrence" />
+			<type value="wt.part.RTPartPathOccurrence" />
+		  </supportedTypes>
+                </action>
+
+                <action name="displayDeletedBuildReferencesGWT">
+                        <command class="com.ptc.windchill.enterprise.part.psb.client.action.DisplayDeletedBuildReferencesAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="removeDeletedBuildReferencesGWT">
+                        <command class="com.ptc.windchill.enterprise.part.psb.client.action.RemoveDeletedBuildReferencesAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.DisableForTableContextAdminLockedFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.disableForPartToCadBuildTableContextAdminLockedFilter"/>
+                </action>
+
+                <action name="setProximityExpansionCriteriaGWT">
+                        <command class="com.ptc.windchill.enterprise.structurecomponent.client.action.SetProximityExpansionCriteriaAction"/>
+                        <includeFilter name="hideForObjectInProject"/>
+                        <includeFilter name="showHideSpatialFilter"/>
+                        <includeFilter name="com.ptc.windchill.enterprise.part.psb.client.filters.SetProximityECPSBFilter"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+        <action name="psbExpandSubmenuGWT">
+           <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+
+        <action name="psbEndExpandSubmenuGWT">
+           <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+
+                <action name="sourcingContextGWT">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                        <includeFilter name="com.ptc.windchill.enterprise.part.psb.client.filters.SumaInstallationFilter"/>
+                </action>
+
+                <action name="sourcingContextListGWT">
+                        <command class="com.ptc.windchill.enterprise.part.psb.client.action.SourcingContextListAction"/>
+                </action>
+
+                <action name="findSourcingContextGWT" ajax="component">
+                        <command class="com.ptc.windchill.enterprise.part.psb.client.action.FindSourcingContextAction" method="" url="ptc1/suma/axlentry/add_axl_context" windowType="popup"/>
+                </action>
+
+                <action name="showOnlyRelatedOccurrencesGWT">
+                        <command class="com.ptc.windchill.enterprise.part.psb.client.action.ShowRelatedOccurrencesAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                </action>
+
+                <action name="findCheckoutItemsGWT">
+                        <command class="com.ptc.windchill.enterprise.part.psb.client.action.PSBFindCheckedOutItemsAction"/>
+			<includeFilter name="disableForCheckedoutObjectInWorkspace"/>
+                </action>
+
+                <action name="compareInfoGWT" ajax="row">
+                        <command class="com.ptc.cat.ui.client.action.CompareInformationAction" method="execute" url="/ptc1/ocmp/common/tailoringDialog?" windowType="popup"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                </action>
+
+                <action name="pasteFromClipboardToTreeGWT" uicomponent="PASTE">
+                        <command class="com.ptc.cat.gxt.client.action.PasteAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OriginalCopyFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForMatrixCellFilter"/>
+                        <includeFilter name="disableForAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="pasteFromClipboardToTableGWT" uicomponent="PASTE">
+                        <command class="com.ptc.cat.gxt.client.action.PasteAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentOriginalCopyFilter"/>
+                        <includeFilter name="disableForTableContextAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildTableContextAdminLocked"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartMaster"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+                
+                <action name="pasteFromClipboardToTableDescribedByDocGWT" uicomponent="PASTE">
+                        <command class="com.ptc.windchill.enterprise.part.psb.client.action.PSBPasteDescribedByDocAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentOriginalCopyFilter"/>
+                        <includeFilter name="disableForTableContextAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildTableContextAdminLocked"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartMaster"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+                
+                <action name="pasteFromClipboardToTableReferenceDocGWT" uicomponent="PASTE">
+                        <command class="com.ptc.windchill.enterprise.part.psb.client.action.PSBPasteReferenceDocumentsAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentOriginalCopyFilter"/>
+                        <includeFilter name="disableForTableContextAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildTableContextAdminLocked"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartMaster"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="pasteFromClipboardToTreeWithLargeIconGWT" uicomponent="PASTE">
+                        <command class="com.ptc.cat.gxt.client.action.PasteAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OriginalCopyFilter"/>
+                        <includeFilter name="disableForAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="pasteSelectToTreeGWT" uicomponent="PASTE" ajax="row">
+                        <command class="com.ptc.cat.ui.client.action.PasteSelectPartsAction" method="execute" url="/ptc1/part/ti_paste_select_part?wizardType=multiPart&amp;invokedfrom=folder" windowType="popup"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OriginalCopyFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.HideForMatrixCellFilter"/>
+                        <includeFilter name="disableForAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="pasteSelectToTableGWT" uicomponent="PASTE" ajax="row">
+                        <command class="com.ptc.cat.ui.client.action.PasteSelectPartsAction" method="execute" url="/ptc1/part/ti_paste_select_part?wizardType=multiPart&amp;invokedfrom=folder" windowType="popup"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentOriginalCopyFilter"/>
+                        <includeFilter name="disableForTableContextAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildTableContextAdminLocked"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartMaster"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+                
+                <action name="pasteSelectDescribeDocToTable" uicomponent="PASTE" ajax="row">
+                        <command class="com.ptc.windchill.enterprise.part.psb.client.action.PSBPasteSelectDescribedByDocAction" method="execute" url="/ptc1/part/related_paste_select_described" windowType="popup"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentOriginalCopyFilter"/>
+                        <includeFilter name="disableForTableContextAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildTableContextAdminLocked"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartMaster"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+                
+                <action name="pasteSelectReferenceDocToTable" uicomponent="PASTE" ajax="row">
+                        <command class="com.ptc.windchill.enterprise.part.psb.client.action.PSBPasteSelectReferenceDocAction" method="execute" url="/ptc1/part/related_paste_select_references" windowType="popup"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentOriginalCopyFilter"/>
+                        <includeFilter name="disableForTableContextAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildTableContextAdminLocked"/>
+                        <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartMaster"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="selectInTreeGWT">
+                        <command class="com.ptc.cat.gxt.client.action.SelectInStructureTreeAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                </action>
+
+                <action name="selectInTableGWT">
+                        <command class="com.ptc.cat.gxt.client.action.SelectInUsesTabAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="updateDistributionTargetGWT" ajax="component">
+                        <command class="com.ptc.cat.ui.client.action.UpdateDistributionTargetAction" method="adjustTargetAssignments" url="ptc1/tgt/updateTargetAssocations" windowType="new"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="disableForAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <!-- TODO: Deprecated. Use addToActionsGWT instead -->
+                <action name="addToActions">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <!-- TODO: Deprecated. Use insertExistingPartStructureGWT instead -->
+                <action name="addusage">
+                        <command class="com.ptc.cat.gxt.client.action.AddAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                </action>
+
+                <!-- TODO: Deprecated. Use checkinGWT instead -->
+                <action name="checkin1">
+                        <command class="com.ptc.cat.ui.client.internal.action.CheckinAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.CheckoutFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                </action>
+
+                <!-- TODO: Deprecated. Use checkInOutGroupGWT instead -->
+                <action name="checkInOutGroup">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <!-- TODO: Deprecated. Use checkoutGWT instead -->
+                <action name="checkout">
+                        <command class="com.ptc.cat.ui.client.internal.action.CheckoutAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.CheckinFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                </action>
+
+                <!-- TODO: Deprecated. Use clipboardGroupGWT instead -->
+                <action name="clipboardGroup">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <!-- TODO: Deprecated. Use compareActionsGWT instead -->
+                <action name="compareActions">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <!-- TODO: Deprecated. Use editCommonAttrsGWT instead -->
+                <action name="editCommonAtts">
+                        <command class="com.ptc.cat.ui.client.action.EditCommonAtributesAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.CheckinFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                </action>
+
+                <!-- TODO: Deprecated. Use editingGroupGWT instead -->
+                <action name="editingGroup">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <!-- TODO: Deprecated. Use editSplitGWT instead -->
+                <action name="edit-split" ajax="component">
+                        <command class="com.ptc.cat.ui.client.action.EditAction" method="execute" url="/ptc1/part/edit" windowType="popup"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+                </action>
+
+                <!-- TODO: Deprecated. Use editUsageLinkGWT instead -->
+                <action name="editusage">
+                        <command class="com.ptc.cat.gxt.client.action.EditUsagesAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+                </action>
+
+                <!-- TODO: Deprecated. Use newActionsGWT instead -->
+                <action name="newActions">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <!-- TODO: Deprecated. Use newAddToGroupGWT instead -->
+                <action name="newAddToGroup">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <!-- TODO: Deprecated. Use newChangeRequestGWT instead -->
+                <action name="newChangeRequest" uicomponent="CREATE_CHANGEREQUEST">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <!-- TODO: Deprecated. Use newPartConfigGWT instead -->
+                <action name="newPartConfig" ajax="component">
+                        <command class="com.ptc.cat.ui.client.action.NewPartConfigurationAction" method="execute" url="/ptc1/configuration/createConfiguration" windowType="popup"/>
+                </action>
+
+                <!-- TODO: Deprecated. Use newProblemReportGWT instead -->
+                <action name="newProblemReport" uicomponent="CREATE_PROBLEMREPORT">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <!-- TODO: Deprecated. Use newPromotionRequestGWT instead -->
+                <action name="newPromotionRequest">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <!-- TODO: Deprecated. Use newVarianceGWT instead -->
+                <action name="newVariance" uicomponent="CREATE_VARIANCE">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <!-- TODO: Deprecated. Use openActionsGWT instead -->
+                <action name="openActions">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <!-- TODO: Deprecated. Use renameGWT instead -->
+                <action name="rename">
+                        <command class="com.ptc.cat.gxt.client.action.RenameAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                </action>
+
+                <!-- TODO: Deprecated. Use psbReportsGWT instead -->
+                <action name="reports">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <!-- TODO: Deprecated. Use psbReportsGroupGWT instead -->
+                <action name="reportsGroup">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <!-- TODO: Deprecated. Use saveAsGWT instead -->
+                <action name="saveAs" uicomponent="SAVE_AS" ajax="component">
+                        <command class="com.ptc.cat.ui.client.action.SaveAsAction" method="execute" url="/servlet/WindchillAuthGW/wt.enterprise.URLProcessor/URLTemplateAction" windowType="popup"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                </action>
+
+                <!-- TODO: Deprecated. Use toolsGroupGWT instead -->
+                <action name="toolsGroup">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <!-- TODO: Deprecated. Use undocheckoutGWT instead -->
+                <action name="undocheckout">
+                        <command class="com.ptc.cat.ui.client.internal.action.UndoCheckoutAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.CheckoutFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                </action>
+
+                <!-- TODO: Deprecated. Use viewingGroupGWT instead -->
+                <action name="viewingGroup">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                                <!--
+                        TODO: Deprecated - Use the action defined in the EC VOB instead.
+                -->
+                <action name="filterProperties">
+                        <command class="com.ptc.expansionui.eccomponent.client.ui.actions.MiniInfoECAction"/>
+                </action>
+
+                <!--
+                        TODO: Deprecated - Use the action defined in the EC VOB instead.
+                -->
+                <action name="editFilter">
+                        <command class="com.ptc.expansionui.eccomponent.client.ui.actions.EditECAction" method="com.ptc.windchill.enterprise.part.psb.PSB"/>
+                </action>
+
+                <!--
+                        TODO: Deprecated - Use the action defined in the EC VOB instead.
+                -->
+                <action name="savedFilters">
+                        <command class="com.ptc.expansionui.eccomponent.client.ui.actions.SavedFiltersAction"/>
+                </action>
+
+                <!--
+                        TODO: Deprecated - Use the action defined in the EC VOB instead.
+                -->
+                <action name="filterGroup">
+                        <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <action name="editOccurrenceGWT">
+                        <command class="com.ptc.windchill.enterprise.part.psb.client.action.EditOccurrenceAction"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.HaveParentFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.ParentOriginalCopyFilter"/>
+                                <includeFilter name="disableForNewObjectInWorkspace"/>
+                        <includeFilter name="disableForTableContextAdminLocked"/>
+                        <includeFilter name="disableForPartToCadBuildTableContextAdminLocked"/>
+                        <includeFilter name="disableForNewParentObjectInWorkspace"/>
+        </action>
+
+        <action name="replacePartGWT">
+                        <command class="com.ptc.windchill.enterprise.part.psb.client.action.ReplaceAction"/>
+                        <includeFilter name="hideForObjectInProject"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+                        <includeFilter name="disableForParentInTreeAdminLocked"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.ReplaceActionPartToCadBuildAdminLockFilter"/>
+                        <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPartMaster"/>
+                                <type value="wt.part.WTPartAlternateLink"/>
+                                <type value="wt.part.WTPartSubstituteLink"/>
+                        </supportedTypes>
+                </action>
+
+                <action name="filterProperties">
+                         <command class="com.ptc.expansionui.eccomponent.client.ui.actions.MiniInfoECAction"/>
+                         <includeFilter name="isNotInProject"/>
+                </action>
+                <action name="editFilter">
+                         <command class="com.ptc.expansionui.eccomponent.client.ui.actions.EditECAction"/>
+                         <includeFilter name="isNotInProject"/>
+                </action>
+                      <action name="savedFilters">
+                         <command class="com.ptc.expansionui.eccomponent.client.ui.actions.SavedFiltersAction"/>
+                         <includeFilter name="isNotInProject"/>
+                </action>
+                <action name="filterGroup">
+                         <command class="com.ptc.cat.ui.client.action.NoAction"/>
+                </action>
+
+                <action name="filterProperties">
+                         <command class="com.ptc.expansionui.eccomponent.client.ui.actions.MiniInfoECAction"/>
+                         <includeFilter name="isNotInProject"/>
+                </action>
+                <action name="editFilter">
+                         <command class="com.ptc.expansionui.eccomponent.client.ui.actions.EditECAction"/>
+                         <includeFilter name="isNotInProject"/>
+                </action>
+                <action name="savedFilters">
+                         <command class="com.ptc.expansionui.eccomponent.client.ui.actions.SavedFiltersAction"/>
+                         <includeFilter name="isNotInProject"/>
+                </action>
+                <action name="filterGroup">
+                         <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+
+        <action name="partToCadBuildGWT" ajax="component">
+                         <command class="com.ptc.windchill.enterprise.part.psb.client.action.PartToCadBuildAction" method="execute"/>
+                </action>
+
+        <action name="customActionGWT" ajax="component">
+            <command class="com.ptc.cat.ui.client.action.LaunchURLAction" method="execute" url="/ptc1/psb/customAction" windowType="popup"/>
+                        <supportedTypes>
+                                <type value="wt.part.WTPart"/>
+                                <type value="wt.part.WTPartUsageLink"/>
+                                <type value="wt.part.PartUsesOccurrence"/>
+                                <type value="wt.part.RTPartPathOccurrence"/>
+                        </supportedTypes>
+        </action>
+        
+        <action name="customURLActionGWT" ajax="component">
+            <command class="com.ptc.cat.ui.client.action.LaunchCustomURLAction" method="execute" url="/ptc1/psb/customURLAction" windowType="popup"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+                <type value="wt.part.WTPartUsageLink"/>
+                <type value="wt.part.PartUsesOccurrence"/>
+                <type value="wt.part.RTPartPathOccurrence"/>
+            </supportedTypes>
+        </action>
+        
+        <action name="pvStructureViewInfoGWT">
+            <command class="com.ptc.windchill.enterprise.part.psb.client.action.PVStructureViewInfoAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+        </action>
+        
+        <action name="psbAddDescribedByDoc" ajax="row">
+            <command class="com.ptc.windchill.enterprise.part.psb.client.action.PSBAddDescribedByDocAction" method="execute" url="/ptc1/part/related_add_described?revisionMode=create&amp;invokedfrom=folder&amp;hideAssociatePart=true" windowType="popup"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OriginalCopyFilter"/>
+            <includeFilter name="disableForNewObjectInWorkspace"/>
+            <includeFilter name="disableForAdminLocked"/>
+            <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+                <type value="wt.part.WTPartMaster"/>
+                <type value="wt.part.WTPartUsageLink"/>
+                <type value="wt.part.PartUsesOccurrence"/>
+                <type value="wt.part.RTPartPathOccurrence"/>
+            </supportedTypes>
+        </action>
+        
+        <action name="psbCreateDescribedByDoc" uicomponent="CREATE_DOC" ajax="row">
+            <command class="com.ptc.windchill.enterprise.part.psb.client.action.PSBCreateDescribedByDocAction" method="execute" url="/ptc1/document/related_doc_create_wizard_part_described?noRefDoc=true" windowType="popup"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OriginalCopyFilter"/>
+            <includeFilter name="disableForNewObjectInWorkspace"/>
+            <includeFilter name="disableForAdminLocked"/>
+            <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+                <type value="wt.part.WTPartMaster"/>
+                <type value="wt.part.WTPartUsageLink"/>
+                <type value="wt.part.PartUsesOccurrence"/>
+                <type value="wt.part.RTPartPathOccurrence"/>
+            </supportedTypes>
+        </action>
+        
+        <action name="psbRemoveDocGWT" ajax="row">
+            <command class="com.ptc.cat.gxt.client.action.RemoveAction" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OriginalCopyFilter"/>
+            <includeFilter name="disableForNewObjectInWorkspace"/>
+            <includeFilter name="disableForAdminLocked"/>
+            <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+                <type value="wt.part.WTPartMaster"/>
+                <type value="wt.part.WTPartUsageLink"/>
+                <type value="wt.doc.WTDocument"/>
+                <type value="wt.doc.WTDocumentMaster"/>
+                <type value="wt.part.WTPartDescribeLink"/>
+                <type value="wt.part.WTPartReferenceLink"/>
+                <type value="wt.part.PartUsesOccurrence"/>
+                <type value="wt.part.RTPartPathOccurrence"/>
+            </supportedTypes>
+        </action>
+        
+        <action name="psbCreateReferenceDoc" uicomponent="CREATE_DOC" ajax="row">
+            <command class="com.ptc.windchill.enterprise.part.psb.client.action.PSBCreateReferenceDocAction" method="execute" url="/ptc1/document/related_doc_create_wizard_part_references" windowType="popup" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OriginalCopyFilter"/>
+            <includeFilter name="disableForNewObjectInWorkspace"/>
+            <includeFilter name="disableForAdminLocked"/>
+            <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+                <type value="wt.part.WTPartMaster"/>
+                <type value="wt.part.WTPartUsageLink"/>
+                <type value="wt.part.PartUsesOccurrence"/>
+                <type value="wt.part.RTPartPathOccurrence"/>
+            </supportedTypes>
+        </action>
+        
+        <action name="psbAddReferenceDoc" ajax="row">
+            <command class="com.ptc.windchill.enterprise.part.psb.client.action.PSBAddReferenceDocAction" method="execute" url="/ptc1/part/related_add_references" windowType="popup"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OriginalCopyFilter"/>
+            <includeFilter name="disableForNewObjectInWorkspace"/>
+            <includeFilter name="disableForAdminLocked"/>
+            <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+                <type value="wt.part.WTPartMaster"/>
+                <type value="wt.part.WTPartUsageLink"/>
+                <type value="wt.part.PartUsesOccurrence"/>
+                <type value="wt.part.RTPartPathOccurrence"/>
+            </supportedTypes>
+        </action>
+        
+    </objecttype>
+
+    <objecttype name="part" class="wt.part.WTPart" resourceBundle="com.ptc.windchill.enterprise.part.partResource">
+
+        <action name="ti_paste_select_part" multiselect="true" uicomponent="PASTE" ajax="row">
+            <command method="execute" windowType="popup"/>
+        </action>
+      
+    </objecttype>
+
+    <objecttype name="variantspec" class="com.ptc.wpcfg.doc.VariantSpec" resourceBundle="com.ptc.windchill.enterprise.part.psb.psbActionsRB">
+        <action name="editOptionFilterPSBGWT" ajax="row" uicomponent="FILTER_CONFIGURABLE_STRUCTURES">
+            <command class="com.ptc.windchill.enterprise.part.psb.client.action.EditOptionFilterAction"/>
+            <includeFilter name="organizedVariantSpecFilter"/>
+        </action>
+        <action name="editFilterWithLargeIconGWT">
+            <command class="com.ptc.windchill.enterprise.part.psb.client.action.VariantSpecEditECAction"/>
+        </action>
+        <action name="savedFiltersGWT">
+            <command class="com.ptc.windchill.enterprise.part.psb.client.action.VSpecSavedFiltersAction"/>
+        </action>
+    </objecttype>
+
+</listofactions>

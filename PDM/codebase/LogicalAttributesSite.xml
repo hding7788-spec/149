@@ -1,0 +1,11 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE LogicalAttributes SYSTEM "/com/ptc/core/meta/common/impl/LogicalAttributes.dtd" >
+<!-- Site specific logical attributes. -->
+<LogicalAttributes>
+	<Class name="wt.access.SecurityLabeled">
+		<Property> 
+			<LogicalForm>MIJI</LogicalForm>
+			<ExternalForm>SCA|MIJI</ExternalForm>
+		</Property>
+	</Class>
+</LogicalAttributes> 

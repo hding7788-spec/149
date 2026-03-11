@@ -1,0 +1,8 @@
+CREATE INDEX ChangePackagedAffectLink$COM0 ON ChangePackagedAffectLink(branchIdA3B5)
+ TABLESPACE INDX
+ STORAGE ( INITIAL 20k NEXT 20k PCTINCREASE 0 )
+/
+CREATE INDEX ChangePackagedAffectLink$COM1 ON ChangePackagedAffectLink(idA3A5)
+ TABLESPACE INDX
+ STORAGE ( INITIAL 20k NEXT 20k PCTINCREASE 0 )
+/

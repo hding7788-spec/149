@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+
+<listofactions>
+    <objecttype name="object" class="wt.fc.Persistable">
+        <action name="openInMobileApp" resourceBundle="com.ptc.windchill.mobile.MobileAppResource">
+            <command onClick="PTC.mobile.redirectToMobileApp()"/>
+        </action>
+    </objecttype>
+
+</listofactions>

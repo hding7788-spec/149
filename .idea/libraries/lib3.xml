@@ -1,0 +1,22 @@
+<component name="libraryTable">
+  <library name="lib3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/QMEditor1.6/lib/html2image-0.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/QMEditor1.6/lib/QRCode.jar!/" />
+      <root url="jar://$PROJECT_DIR$/QMEditor1.6/lib/httpclient-4.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/QMEditor1.6/lib/jcalendar-1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/QMEditor1.6/lib/tomcat-coyote.jar!/" />
+      <root url="jar://$PROJECT_DIR$/QMEditor1.6/lib/jxl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/QMEditor1.6/lib/soap.jar!/" />
+      <root url="jar://$PROJECT_DIR$/QMEditor1.6/lib/httpcore-4.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/QMEditor1.6/lib/itextpdf-5.4.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/QMEditor1.6/lib/xmlworker-5.4.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/QMEditor1.6/lib/pdfbox-2.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/QMEditor1.6/lib/swt64.jar!/" />
+      <root url="jar://$PROJECT_DIR$/QMEditor1.6/lib/itext-asian-5.4.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/QMEditor1.6/lib/xmlbeans-2.3.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

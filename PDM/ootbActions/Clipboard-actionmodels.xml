@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+
+<actionmodels>
+
+	<model name="clipboard_toolbar">
+	  	<action name="removeFromClipboard" type="object"/>
+		<action name="print_in_productview" type="wvs"/>
+  		<action name="print_in_productviewlite" type="wvs" shortcut="true"/>
+  		<action name="open_in_productview" type="wvs"/>
+  		<action name="open_in_productviewlite" type="wvs" shortcut="true"/>
+  		<action name="batchPrint" type="wvs" shortcut="true"/>
+  		<action name="separator" type="separator" shortcut="true"/>
+  		<action name="add_from_picker" type="object" shortcut="true"/>
+  		<action name="clearClipboard" type="object" shortcut="true"/>
+  		<action name="spreadsheetExport" type="ixb" />
+	</model>
+
+	<model name="clipboard_row_actions">
+      		<action name="openProductViewClipboardRow"  type="wvs"/>
+		<action name="printProductViewClipboardRow" type="wvs"/>
+		<action name="listRepFiles"                 type="wvs"/>
+	</model>
+</actionmodels>

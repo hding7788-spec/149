@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="lib2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ServiceWeb1.03/lib/pbom.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ServiceWeb1.03/lib/OracleThinDrivers.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ServiceWeb1.03/lib/Oracle11gThinDrivers.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ServiceWeb1.03/lib/newCapp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ServiceWeb1.03/lib/dwg2pdf.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,51 @@
+<%@page language="java" session="false" access="http|soap" contentType="text/xml"%>
+<%@taglib uri="http://www.ptc.com/infoengine/taglib/core" prefix="ie"%>
+<%@page import="java.io.*"%>
+<%@page import="java.util.*"%>
+<%@page import="ext.casc.integrate.process.ProcessService"%>
+<%@page import=" java.lang.Exception"%>
+<!--com.infoengine.soap.rpc.def
+
+@param string number Argument number 1.
+@param string versionType Argument number 2.
+@param string version Argument number 3.
+@param string from Argument number 4.
+-->
+<%
+String number = (String)getParam("number");
+String versionType = (String)getParam("versionType");
+String version = (String)getParam("version");
+number = number.toUpperCase();
+		String from = (String)getParam("from");
+/*
+String number = "";
+String versionType = "";
+String version = "";
+*/
+
+String result = "";
+
+ProcessService process = new ProcessService();
+try{
+		if(from!=null &&!"".equals(from)){
+		     result =process.getProcessFileDirectory(number, versionType, version,from);
+
+        }else{
+		   result =process.getProcessFileDirectory(number, versionType, version);
+       }
+}
+catch (Exception e) {
+	result = e.getLocalizedMessage();
+}
+System.out.println("----result----"+result);
+%>
+
+<ie:webject name="Create-Group" type="GRP">
+	<ie:param name="ELEMENT" data="<%=result%>"/>
+	<ie:param name="CLASS" data="Status"/>
+	<ie:param name="GROUP_OUT" data="${@FORM[]group_out[]}"  default="output"/>
+</ie:webject>
+
+
+
+

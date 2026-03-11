@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+
+    <objecttype name="dsb" class="" resourceBundle="com.ptc.windchill.enterprise.dsb.dsbActionsRB">
+
+        <action name="nextDifference">
+            <command class="com.ptc.windchill.enterprise.dsb.client.action.NextDifferenceAction" />
+            <includeFilter name="com.ptc.windchill.enterprise.dsb.client.action.DifferenceActionFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.dsb.client.action.DSBRecursiveStructureModeFilter" />
+        </action>
+
+        <action name="prevDifference">
+            <command class="com.ptc.windchill.enterprise.dsb.client.action.PrevDifferenceAction" />
+            <includeFilter name="com.ptc.windchill.enterprise.dsb.client.action.DifferenceActionFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.dsb.client.action.DSBRecursiveStructureModeFilter" />
+        </action>
+
+        <action name="resetDualStructureCompare">
+            <command class="com.ptc.windchill.enterprise.dsb.client.action.ResetDualStructureCompareAction" />
+            <includeFilter name="com.ptc.windchill.enterprise.dsb.client.action.StreamlineModeActionFilter" />
+        </action>
+
+        <action name="viewInfo">
+            <command class="com.ptc.windchill.enterprise.dsb.client.action.ViewInfoAction" />
+            <includeFilter name="com.ptc.windchill.enterprise.dsb.client.action.ViewInformationActionFilter" />
+        </action>
+
+        <action name="copytowindchill">
+            <command class="com.ptc.cat.gxt.client.action.CopyAction" />
+            <includeFilter name="com.ptc.windchill.enterprise.dsb.client.action.CopyActionFilter" />
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+        </action>
+
+        <action name="savedFiltersDSB">
+            <command class="com.ptc.expansionui.eccomponent.client.ui.actions.SavedFiltersAction" />
+            <includeFilter name="com.ptc.windchill.enterprise.dsb.client.action.StreamlineModeActionFilter" />
+        </action>
+
+        <action name="displayOnlyDifferences">
+            <command class="com.ptc.windchill.enterprise.dsb.client.action.DisplayOnlyDifferencesAction" />
+            <includeFilter name="com.ptc.windchill.enterprise.dsb.client.action.DSBRecursiveStructureModeFilter" />
+        </action>
+
+        <action name="collapseAllLevelsDSB">
+            <command class="com.ptc.windchill.enterprise.dsb.client.action.DSBCollapseAllLevelsAction"/>
+            <includeFilter name="com.ptc.windchill.enterprise.dsb.client.action.DSBHasChildrenFilter"/>
+        </action>
+
+		<action name="dsbExportActionGWT">
+           <command class="com.ptc.cat.ui.client.action.NoAction"/>
+        </action>
+
+        <action name="dsbExportHtmlGWT">
+           <command class="com.ptc.windchill.enterprise.dsb.client.action.export.DSBExportHTMLAction"/>
+        </action>
+
+		<action name="dsbExportCsvGWT">
+           <command class="com.ptc.windchill.enterprise.dsb.client.action.export.DSBExportCSVAction"/>
+        </action>
+
+		<action name="dsbExportPdfGWT">
+           <command class="com.ptc.windchill.enterprise.dsb.client.action.export.DSBExportPDFAction"/>
+        </action>
+
+		<action name="dsbExportTextGWT">
+           <command class="com.ptc.windchill.enterprise.dsb.client.action.export.DSBExportTextAction"/>
+        </action>
+
+		<action name="dsbExportXlsGWT">
+           <command class="com.ptc.windchill.enterprise.dsb.client.action.export.DSBExportXLSAction"/>
+        </action>
+
+		<action name="dsbExportXlsxGWT">
+           <command class="com.ptc.windchill.enterprise.dsb.client.action.export.DSBExportXLSXAction"/>
+        </action>
+
+    </objecttype>
+
+</listofactions>

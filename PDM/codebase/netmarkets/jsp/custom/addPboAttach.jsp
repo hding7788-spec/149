@@ -1,0 +1,24 @@
+<%@ taglib prefix="util" uri="http://www.ptc.com/windchill/taglib/components" %>
+<%@ include file="/netmarkets/jsp/components/beginWizard.jspf"%>
+<%@ include file="/netmarkets/jsp/components/includeWizBean.jspf"%>
+<%@ page errorPage="/netmarkets/jsp/util/error.jsp"
+%><%@ page import="ext.casc.ui.actionsRB,java.util.ResourceBundle"
+%>
+<jsp:useBean id="localeBean2" class="com.ptc.netmarkets.util.beans.NmLocaleBean" scope="request"/>
+
+<%!
+  private static final String PART_RESOURCE = "ext.casc.ui.actionsRB";
+%>
+<%
+  ResourceBundle rb = ResourceBundle.getBundle(PART_RESOURCE, localeBean2.getLocale());
+  String pageTitle = rb.getString(actionsRB.CUSTOM_ADDPBOATTACH_0);
+  request.setAttribute("pageTitle", pageTitle );
+%>
+
+<c:set var="pageTitle" value="${pageTitle}"/>
+
+<util:wizard buttonList="NoStepsWizardButtons" title="${pageTitle}" >
+ <util:wizardStep action="addPboAttach_step" type="custom"/>
+</util:wizard>
+
+<%@ include file="/netmarkets/jsp/util/end.jspf"%>

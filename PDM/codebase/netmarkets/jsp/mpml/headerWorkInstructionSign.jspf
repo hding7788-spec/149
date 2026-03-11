@@ -1,0 +1,92 @@
+<%@page import="com.ptc.windchill.mpml.processplan.MPMProcessPlan"%>
+<%@page import="com.ptc.netmarkets.workinstructions.WorkInstructionsUtilities"%>
+<%@page import="ext.casc.util.IBAUtility,ext.ptc.ViewWIHelper,java.util.Map,ext.casc.constants.Constants"%>
+
+<% 
+	   String poid =  ieObj.getAttributeValue("PROCESS_PLAN", 0, "obid");
+	   String oidPlan= WorkInstructionsUtilities.getOid(poid);
+
+	   String sheji = "设计";
+	   sheji = new String(sheji.getBytes("iso-8859-1"),"GBK");
+	   String jiaodui = "校对";
+	   jiaodui = new String(jiaodui.getBytes("iso-8859-1"),"GBK");
+
+	   //out.println("plan:"+plan);
+	   String shenhe = "审核";
+	   shenhe  = new String(shenhe.getBytes("iso-8859-1"),"GBK");
+	   String biaojian = "标检";
+	   biaojian  = new String(biaojian.getBytes("iso-8859-1"),"GBK");
+	   String pizhun = "批准";
+	   pizhun  = new String(pizhun.getBytes("iso-8859-1"),"GBK");
+	   String neibuhuiqian = "内部会签";
+	   neibuhuiqian  = new String(neibuhuiqian.getBytes("iso-8859-1"),"GBK");
+	   String waibuhuiqian = "外部会签";
+	   waibuhuiqian  = new String(waibuhuiqian.getBytes("iso-8859-1"),"GBK");
+	   
+	   String shejiValue = "";
+	   String jiaoduiValue = "";
+	   String shenheValue = "";
+	   String neibuhuiqianValue ="";
+	   String waibuhuiqianValue = "";
+	   String biaojianValue = "";
+	   String pizhunValue = "";
+	   
+	   MPMProcessPlan pplan = (MPMProcessPlan)WorkInstructionsUtilities.getObject(oidPlan);
+	   String creatorName = pplan.getCreatorName();
+	   Map<String, String> map = ViewWIHelper.getSignInfo(pplan);
+	   if(map !=null && map.size()>0){
+	       shejiValue = map.get(Constants.TASK_BIANZHI);
+	       if(shejiValue==null){
+	           shejiValue="";
+		   }
+	       jiaoduiValue = map.get(Constants.TASK_JIAODUI);
+	       if(jiaoduiValue==null){
+	           jiaoduiValue="";
+		   }
+	       shenheValue = map.get(Constants.TASK_SHENHE);
+	       if(shenheValue==null){
+	           shenheValue="";
+		   }
+	       neibuhuiqianValue = map.get(Constants.TASK_NEIBUHUIQIAN);
+	       if(neibuhuiqianValue==null){
+	           neibuhuiqianValue="";
+		   }
+	       waibuhuiqianValue = map.get(Constants.TASK_WAIBUHUIQIAN);
+	       if(waibuhuiqianValue==null){
+	           waibuhuiqianValue="";
+		   }
+	       biaojianValue = map.get(Constants.TASK_BIAOSHEN);
+	       if(biaojianValue==null){
+	           biaojianValue="";
+		   }
+	       pizhunValue = map.get(Constants.TASK_PIZHUN);
+	       if(pizhunValue==null){
+	           pizhunValue="";
+		   }
+	   }
+       
+
+ %> 
+
+<TABLE  width="100%" cellspacing=0 cellpadding = 2 border=1>  
+      
+       <TR>
+	      <TD class="tdPPTableHeader"><%=sheji%></TD>
+	      <TD class="tdPPTableHeader" ><%=jiaodui%></TD>
+	      <TD class="tdPPTableHeader"><%=shenhe%></TD>
+	      <TD class="tdPPTableHeader" ><%=neibuhuiqian%></TD>
+	      <TD class="tdPPTableHeader" ><%=waibuhuiqian%></TD>
+	      <TD class="tdPPTableHeader" ><%=biaojian%></TD>
+	      <TD class="tdPPTableHeader" ><%=pizhun%></TD>
+      </TR>
+
+      <TR>
+	      <TD class="tdPPTableNormal" ><%=shejiValue%></TD>
+	      <TD class="tdPPTableNormal" ><%=jiaoduiValue%></TD>
+	      <TD class="tdPPTableNormal" ><%=shenheValue%></TD>
+	      <TD class="tdPPTableNormal" ><%=neibuhuiqianValue%></TD>
+	      <TD class="tdPPTableNormal" ><%=waibuhuiqianValue%></TD>
+	      <TD class="tdPPTableNormal" ><%=biaojianValue%></TD>
+	      <TD class="tdPPTableNormal" ><%=pizhunValue%></TD>
+      </TR>
+</TABLE>

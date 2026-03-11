@@ -1,0 +1,214 @@
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+
+<actionmodels>
+
+<!-- Product information page Actions list -->
+   <model name="PRODUCT_DETAILS_PAGE_ACTIONS" menufor="wt.pdmlink.PDMLinkProduct">
+     <action name="view" type="object"/>							<!-- View Information -->
+      <action name="separator" type="separator"/> 
+      <action name="openProductView" type="wvs"/>					<!-- Open in ProductView -->
+      <action name="separator" type="separator"/> 
+      <action name="editProductWizard" type="product"/>				<!-- Edit -->
+      <action name="separator" type="separator"/>      
+      <submodel name="folderbrowser_toolbar_new_submenu"/>
+	  <action name="separator" type="separator"/>
+      <action name="createImportJob" type="ixb"/>					<!-- Import from Spreadsheet -->
+      <action name="separator" type="separator"/> 
+      <action name="save_product_as_template" type="product"/>		<!-- Save as Product Template -->
+      <action name="export_product_as_template" type="product"/>    <!-- Export as Template -->
+	  <action name="separator" type="separator"/> 
+      <action name="addToFavorites" type="object"/>					<!-- Add to Favorites -->
+      <action name="removeFromFavorites" type="object"/>	<!-- Remove from Favorites -->
+      <action name="separator" type="separator"/>
+      <action name="createProductPlan" type="product"/>
+      <action name="create_plan" type="plan"/>
+      <submodel name="wsl_submenu"/>
+      <action name="ManageSecurity" type="accessPermission"/>
+      <action name="createSubscription" type="subscription"/>		<!-- Subscribe -->
+   </model>
+
+<!-- Library information page Actions list -->
+   <model name="LIBRARY_DETAILS_PAGE_ACTIONS" menufor="wt.inf.library.WTLibrary">
+      <action name="view" type="object"/>							<!-- View Information -->
+      <action name="separator" type="separator"/>      
+      <action name="editLibraryWizard" type="library"/>				<!-- Edit  -->
+      <action name="separator" type="separator"/>
+	  <submodel name="folderbrowser_toolbar_new_submenu"/> 
+	  <action name="separator" type="separator"/>
+      <action name="createImportJob" type="ixb"/>					<!-- Import from Spreadsheet  -->
+      <action name="separator" type="separator"/>      
+      <action name="save_library_as_template" type="library"/>      <!-- Save as Library Template  -->
+      <action name="export_library_as_template" type="library"/>    <!-- Export as Template  -->
+      <action name="separator" type="separator"/>      
+      <action name="addToFavorites" type="object"/>					<!-- Add to Favorites -->
+      <action name="removeFromFavorites" type="object"/>	<!-- Remove from Favorites -->
+      <submodel name="wsl_submenu"/>      
+      <action name="ManageSecurity" type="accessPermission"/>
+      <action name="createSubscription" type="subscription"/>		<!-- Subscribe -->
+   </model>
+
+   <model name="generalProductMenu" resourceBundle="com.ptc.windchill.enterprise.product.ProductClientResource">
+		<description>
+            "General" 3rd level nav menu of Product
+        </description>
+
+        <action name="productVisualizationAndAttributes" type="product"/>
+        <action name="primaryAttributes" type="object"/>
+        <action name="attributes" type="object"/>
+        <action name="separator" type="separator"/>
+  		<action name="endItems" type="product"/>
+		<action name="separator" type="separator"/>
+		<action name="listAssignedOptionSet" type="filterTemplate"/>
+		<action name="list" type="filterTemplate"/>
+		<action name="separator" type="separator"/>
+		<action name="reference" type="notebook"/>
+		<action name="productFamilies" type="productfamily"/>
+   </model>
+
+   <model name="relatedObjectsProductMenu" resourceBundle="com.ptc.windchill.enterprise.product.ProductClientResource">
+		<description>
+            "Related Objects" 3rd level nav menu of Product
+        </description>
+
+        <action name="relatedClashes" type="clashReport"/>
+        <action name="relatedClashReports" type="clashReport"/>
+        <action name="view_plans" type="project"/>
+   </model>
+
+    <model name="collaborationProductMenu" resourceBundle="com.ptc.windchill.enterprise.product.ProductClientResource">
+		<description>
+            "Collaboration" 3rd level nav menu of Product
+        </description>
+
+        <action name="discuss" type="forum"/>
+        <action name="objectSubscriptions" type="subscription"/>
+   </model>
+
+	<model name="generalLibraryMenu" resourceBundle="com.ptc.windchill.enterprise.library.LibraryClientResource">
+		<description>
+            "General" 3rd level nav menu of Library
+        </description>
+
+        <action name="primaryAttributes" type="object"/>
+        <action name="attributes" type="object"/>
+        <action name="separator" type="separator"/>  		
+		<action name="listAssignedOptionSet" type="filterTemplate"/>
+		<action name="list" type="filterTemplate"/>
+		<action name="separator" type="separator"/>
+		<action name="reference" type="notebook"/>
+		<action name="separator" type="separator" />
+        <action name="listPubStructures" type="arbortext" />
+        <action name="listISRootStructures" type="asps"/>
+		<action name="productFamilies" type="productfamily"/>
+   </model>
+
+    <model name="relatedObjectsLibraryMenu" resourceBundle="com.ptc.windchill.enterprise.library.LibraryClientResource">
+		<description>
+            "Related Objects" 3rd level nav menu of Library
+        </description>
+
+		<action name="relatedClashes" type="clashReport"/>
+        <action name="relatedClashReports" type="clashReport"/>
+
+   </model>
+
+    <model name="collaborationLibraryMenu" resourceBundle="com.ptc.windchill.enterprise.library.LibraryClientResource">
+		<description>
+            "Collaboration" 3rd level nav menu of Library
+        </description>
+
+        <action name="discuss" type="forum"/>
+        <action name="objectSubscriptions" type="subscription"/>
+   </model>
+
+<!-- Product information page 3rd level nav menu bar -->
+   <model name="THIRD_LEVEL_NAV_PRODUCT">
+      <submodel name="generalProductMenu"/>                            <!-- General -->
+      <submodel name="relatedObjectsProductMenu"/>                     <!-- Related Objects -->
+      <submodel name="collaborationProductMenu"/>                      <!-- Collaboration -->
+   </model>
+
+<!-- Library information page 3rd level nav menu bar -->
+   <model name="THIRD_LEVEL_NAV_LIBRARY">
+      <submodel name="generalLibraryMenu"/>                            <!-- General -->
+      <submodel name="relatedObjectsLibraryMenu"/>                            <!-- Related Objects -->
+      <submodel name="collaborationLibraryMenu"/>                      <!-- Collaboration -->
+   </model>
+
+<!-- Product Information page End Items table -->
+   <model name="end items table actions"><action name="makePrimaryEndItem" type="part"/>  <!-- Set As Primary End Item -->
+      <action name="removePrimaryEndItem" type="part"/>  <!-- Unset Primary End Item -->
+   </model>
+
+<!-- Product Information page General Attributes table -->
+   <model name="productAttributesTableToolBar"><action name="editProductAttribute" type="product"/>  <!-- Edit Product -->
+   </model>
+
+<!-- Library Information page General Attributes table -->
+   <model name="libraryAttributesTableToolBar">
+      <action name="editLibraryWizard" type="library"/>  <!-- Edit Library -->
+   </model>
+
+<!-- Product List table actions -->
+   <model name="product list">
+      <action name="createProductWizard" type="product" shortcut="true"/>   <!-- New Product -->
+      <action name="addToFavorites" type="object" shortcut="true"/>         <!-- Add to Favorites -->
+   </model>
+
+   <model name="product list favorites">
+      <action name="createProductWizard" type="product" shortcut="true"/>   <!-- New Product -->
+      <action name="removeFromFavorites" type="object" shortcut="true"/>    <!-- Remove from Favorites -->
+   </model>
+
+<!-- Library List table actions -->
+   <model name="library list">
+      <action name="createLibraryWizard" type="library" shortcut="true"/>   <!-- New Library -->
+      <action name="addToFavorites" type="object" shortcut="true"/>         <!-- Add to Favorites -->
+   </model>
+
+   <model name="library list favorites">
+      <action name="createLibraryWizard" type="library" shortcut="true"/>   <!-- New Library -->
+      <action name="removeFromFavorites" type="object" shortcut="true"/>    <!-- Remove from Favorites -->
+   </model>
+
+   <model name="productInfoPageTabSet">	
+	 <description>
+            Tab Set for Product Info Page
+     </description>
+     <submodel name="productInfoDetailsTab"/>
+     <submodel name="productFamiliesTab"/>
+     <action name="optionsManagerTab" type="optionmanager"/>
+   </model>
+
+    <model name="productInfoDetailsTab" resourceBundle="com.ptc.core.ui.navigationRB">
+		<description>
+            Tables which will be shown in Product Info Page Details Tab.
+		 </description>
+        <action name="productVisualizationAndAttributes" type="product"/> 
+		<action name="attributes" type="object"/>
+		<action name="endItems" type="product"/>
+    </model> 
+    
+   <model name="libraryInfoPageTabSet">	
+     <description>
+            Tab Set for Library Info Page
+	 </description>
+     <submodel name="libraryInfoDetailsTab"/>
+     <submodel name="productFamiliesTab"/>
+     <action name="optionsManagerTab" type="optionmanager"/>
+   </model>
+
+    <model name="libraryInfoDetailsTab" resourceBundle="com.ptc.core.ui.navigationRB">
+		<description>
+            Tables which will be shown in Library Info Page Details Tab.
+		 </description>
+		<action name="primaryAttributes" type="object"/>
+		<action name="attributes" type="object"/>
+		<action name="listPubStructures" type="arbortext" />
+        <action name="listISRootStructures" type="asps"/>
+    </model>
+	
+	<model name="productFamiliesTab" resourceBundle="com.ptc.windchill.enterprise.productfamily.productFamilyManagementUIActionsRB">
+		<action name="productFamilies" type="productfamily"/> 
+    </model> 
+</actionmodels>

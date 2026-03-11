@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+
+   <objecttype name="structureCompare" class="" resourceBundle= "com.ptc.windchill.enterprise.part.structureCompare.structureCompareActionsRB">
+   	  <action name="launchStructureCompare">
+		<command windowType="popup"/>
+		<includeFilter name="hideForObjectInProject"/>
+		<includeFilter name="hideForNonPartObjects"/>
+	  </action>
+
+   	  <action name="multiSelectLaunchStructureCompare" multiselect="true" selectRequired="true" checkaccess="true">
+		<command windowType="popup" onClick="onClickValidation(event,&apos;multiSelectLaunchStructureCompare&apos;)"/>
+		<includeFilter name="hideForObjectInProject"/>
+	  </action>
+
+	  <action name="multiSelectLaunchStructureCompare_step" >
+		<command class="null" method="null"/>
+	  </action>
+
+	  <action name="toggleAutoSelectionSC">
+	    <command class="com.ptc.cat.ui.client.action.NoAction"/>
+		<includeFilter name="com.ptc.cat.ui.client.internal.action.HideInChromeActionFilter"/>
+	  </action>
+	  
+	   <action name="scEditFilterGWT">
+        <command class="com.ptc.windchill.enterprise.part.structureCompare.client.action.SCEditECAction"/>
+         <includeFilter name="hideForObjectInProject"/>
+         <includeFilter name="com.ptc.windchill.enterprise.dsb.client.action.StreamlineModeActionFilter" />
+      </action>
+   </objecttype>
+
+</listofactions>

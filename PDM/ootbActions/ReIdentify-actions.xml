@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+
+   <objecttype name="object" class="wt.fc.Persistable" resourceBundle="com.ptc.windchill.enterprise.object.objectResource">
+      <action name="renameObjectWizard" ajax="row">
+        <command class="com.ptc.windchill.enterprise.object.forms.RenameObjectFormProcessor" method="execute" windowType="popup"/>
+         <includeFilter name="sandboxSharingValidationSimple"/>
+         <includeFilter name="hideFromNonAgreementMgrs"/> 
+         <includeFilter name="hideSBHiddenFilter"/>
+         <includeFilter name="hideForNewObjectInWorkspace"/>
+      </action>
+
+      <action name="renameObjectWizardStep">
+         <command windowType="wizard_step"/>
+      </action>
+  </objecttype>
+
+</listofactions>

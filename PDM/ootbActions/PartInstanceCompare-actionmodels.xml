@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+
+<actionmodels>
+   <model name="picTreeToolBarLeft">
+	  <action name="resetDualStructureCompare" type="dsb"/>
+      <action name="separator" type="separator" />
+      <action name="prevDifference" type="dsb"/>
+      <action name="nextDifference" type="dsb"/>
+      <action name="separator" type="separator" />
+      <action name="displayOnlyDifferences" type="dsb"/>
+	  <action name="collapseAllLevelsDSB" type="dsb"/>
+      <action name="separator" type="separator" />
+	  <action name="dsbExportActionGWT" type="dsb" />
+	  <action name="dsbExportHtmlGWT" type="dsb" />
+	  <action name="dsbExportCsvGWT" type="dsb" />
+	  <action name="dsbExportPdfGWT" type="dsb" />
+	  <action name="dsbExportTextGWT" type="dsb" />
+	  <action name="dsbExportXlsGWT" type="dsb" />
+	  <action name="dsbExportXlsxGWT" type="dsb" />
+      <action name="ciFilterPropertiesGWT" type="cisb"/>
+      <action name="picEditFilterGWT" type="partInstanceCompare"/>
+    </model>
+
+	<model name="picTreeToolBarRight">
+      <action name="ciFilterPropertiesGWT" type="cisb"/>
+      <action name="picEditFilterGWT" type="partInstanceCompare"/>
+    </model>
+
+	<model name="picTreeContextMenu">
+      <action name="viewInfo" type="dsb"/>
+      <action name="copytowindchill" type="dsb"/>
+      <action name="expandAllLevelsDSB" type="dsb" />
+      <action name="collapseAllLevelsDSB" type="dsb"/>
+    </model>
+</actionmodels>

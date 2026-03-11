@@ -1,0 +1,86 @@
+package com.glaway.mpm.qmIntf.equipment;
+
+import java.awt.dnd.DnDConstants;
+import java.awt.dnd.DragGestureEvent;
+import java.awt.dnd.DragGestureListener;
+import java.awt.dnd.DragGestureRecognizer;
+import java.awt.dnd.DragSource;
+import java.awt.dnd.DragSourceDragEvent;
+import java.awt.dnd.DragSourceDropEvent;
+import java.awt.dnd.DragSourceEvent;
+import java.awt.dnd.DragSourceListener;
+
+import javax.swing.JTree;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreePath;
+
+public class TreeDragSource implements DragSourceListener, DragGestureListener {
+
+	DragSource source;
+
+	DragGestureRecognizer recognizer;
+
+	TransferableTreeNode transferable;
+
+	DefaultMutableTreeNode oldNode;
+
+	JTree sourceTree;
+
+	public TreeDragSource(JTree tree, int actions) {
+		sourceTree = tree;
+		source = new DragSource();
+		recognizer = source.createDefaultDragGestureRecognizer(sourceTree,
+				actions, this);
+	}
+
+	public void dragGestureRecognized(DragGestureEvent dge) {
+		TreePath path = sourceTree.getSelectionPath();
+		// System.out.println("path==" + path);
+		if ((path == null) || (path.getPathCount() <= 1)) {
+			return;
+		}
+		oldNode = (DefaultMutableTreeNode) path.getLastPathComponent();
+		// System.out.println("oldNode= " + ((EpTreeNode) oldNode).getName());
+		transferable = new TransferableTreeNode(path);
+		source.startDrag(dge, DragSource.DefaultMoveDrop, transferable, this);
+
+	}
+
+	/*
+	 * Drag Event Handlers
+	 */
+	public void dragEnter(DragSourceDragEvent dsde) {
+	}
+
+	public void dragExit(DragSourceEvent dse) {
+	}
+
+	public void dragOver(DragSourceDragEvent dsde) {
+	}
+
+	public void dropActionChanged(DragSourceDragEvent dsde) {
+		// System.out.println("Action: " + dsde.getDropAction());
+		// System.out.println("Target Action: " + dsde.getTargetActions());
+		// System.out.println("User Action: " + dsde.getUserAction());
+	}
+
+	public void dragDropEnd(DragSourceDropEvent dsde) {
+		/*
+		 * to support move or copy, we have to check which occurred:
+		 */
+		// System.out.println("Drop Action: " + dsde.getDropAction());
+		
+		if (dsde.getDropSuccess()
+				&& (dsde.getDropAction() == DnDConstants.ACTION_MOVE)) {
+			((DefaultTreeModel) sourceTree.getModel())
+					.removeNodeFromParent(oldNode);
+		}
+
+		/*
+		 * to support move only... if (dsde.getDropSuccess()) {
+		 * ((DefaultTreeModel
+		 * )sourceTree.getModel()).removeNodeFromParent(oldNode); }
+		 */
+	}
+}

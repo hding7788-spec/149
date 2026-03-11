@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+
+   <objecttype name="msoi" class="" resourceBundle="com.ptc.windchill.enterprise.nativeapp.msoi.server.serverResource">
+           
+      <action name="moveObjects">
+      	<command class="com.ptc.windchill.enterprise.nativeapp.msoi.server.DTICommands" method="moveObjects" />
+      </action>
+      
+      <action name="copyObjects">
+      	<command class="com.ptc.windchill.enterprise.nativeapp.msoi.server.DTICommands" method="copyObjects" />
+      </action>
+      <action name="getDocStatus">
+         <command class="com.ptc.windchill.enterprise.nativeapp.msoi.server.DTICommands" method="getDocStatus" />
+      </action>
+      <action name="getWindchillData">
+         <command class="com.ptc.windchill.enterprise.nativeapp.msoi.server.DTICommands" method="getWindchillData" />
+      </action>
+      <action name="renameDocument">
+         <command class="com.ptc.windchill.enterprise.nativeapp.msoi.server.DTICommands" method="renameDocument" />
+      </action>
+      <action name="createDocFromExplorer">
+               <command class="com.ptc.windchill.enterprise.nativeapp.msoi.server.DTICommands" method="createDocFromExplorer" />
+      </action>
+      <action name="dtiDownload">
+         <command class="com.ptc.windchill.enterprise.nativeapp.msoi.server.DTICommands" method="dtiDownload" />
+      </action>
+      <action name="search" dtiShowAttach="true">
+         <command url="netmarkets/jsp/msoi/search.jsp?height=700&amp;width=800" windowType="popup" />
+      </action>
+      <action name="dtiAttachPrimary">  
+          <command class="com.ptc.windchill.enterprise.nativeapp.msoi.server.DTICommands" method="dtiAttachPrimary"/> 
+      </action>
+      <action name="dtiGetUploadHandle">  
+          <command class="com.ptc.windchill.enterprise.nativeapp.msoi.server.DTICommands" method="dtiGetUploadHandle"/> 
+      </action>
+      <action name="dti_get_attributes">  
+          <command class="com.ptc.windchill.enterprise.nativeapp.msoi.server.DTICommands" method="dtiGetObjectAttributes"/> 
+      </action>
+      <action name="dti_get_menu_state">  
+          <command class="com.ptc.windchill.enterprise.nativeapp.msoi.server.DTICommands" method="dtiGetObjectMenuState"/> 
+      </action>
+      <action name="getObjectRMBActions">  
+          <command class="com.ptc.windchill.enterprise.nativeapp.msoi.server.DTICommands" method="dtiGetObjectRMBActions"/> 
+      </action>
+      <action name="dtiGetTableViews">  
+          <command class="com.ptc.windchill.enterprise.nativeapp.msoi.server.DTICommands" method="dtiGetTableViews"/> 
+      </action>      
+      <action name="dtiSetTableView">  
+          <command class="com.ptc.windchill.enterprise.nativeapp.msoi.server.DTICommands" method="dtiSetTableView"/> 
+      </action>
+      <action name="dtiSetDownloadPreference">  
+          <command class="com.ptc.windchill.enterprise.nativeapp.msoi.server.DTICommands" method="dtiSetDownloadPreference"/> 
+      </action>
+      <action name="getWindchillSearchData">
+         <command class="com.ptc.windchill.enterprise.nativeapp.msoi.server.DTICommands" method="getWindchillSearchData" />
+      </action>
+      <action name="getDocVersionData">
+         <command class="com.ptc.windchill.enterprise.nativeapp.msoi.server.DTICommands" method="getDocVersionData" />
+      </action>
+      <action name="getObjectSummary">
+               <command class="com.ptc.windchill.enterprise.nativeapp.msoi.server.DTICommands" method="getObjectSummary" />
+      </action>
+      <action name="dtiGetActiveTableViewDetails">  
+          <command class="com.ptc.windchill.enterprise.nativeapp.msoi.server.DTICommands" method="dtiGetActiveTableViewDetails"/> 
+      </action>      
+      <action name="attachmentDownload">  
+          <command class="com.ptc.windchill.enterprise.nativeapp.msoi.server.DTICommands" method="getDTIDownloadFile"/> 
+      </action>
+   
+        <action name="dtiInfo" ajax="component">
+         <command  class="com.ptc.windchill.enterprise.doc.forms.DTIInfoFormProcessor" method="execute" windowType="popup" />
+         <includeFilter name="projectM4D"/>
+      </action>
+      
+      <action name="dtiInformationPageStep" preloadWizardPage="false" required="true">
+          <command windowType="wizard_step"/>
+          <component name="msoi.dtiInformationPage" typeBased="true"/>
+      </action>
+      
+      <action name="REVISEITEMS" checkaccess="true" enabledwhensuspended="true" renderType="PDM">
+         <command windowType="popup" class="java.lang.Object" method="DtiRevise"/>
+      </action>
+
+<action name="moreInfoButton" id="MSOI_MORE_INFO_BUTTON" resourceBundle="com.ptc.windchill.enterprise.nativeapp.msoi.server.serverResource">
+            <command class="" method="" windowType="page" url="javascript:onSubmit()"/>
+    </action>
+
+
+   </objecttype>
+
+</listofactions>

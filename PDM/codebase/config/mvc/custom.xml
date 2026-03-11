@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Configurations in this file override all other configurations -->
+	<bean class="ext.casc.process.mvc.builder.TempProAssignTaskBuilder" />
+	<bean class="ext.casc.process.mvc.builder.TempGYZZProAssignTaskBuilder" />
+	<bean class="ext.casc.process.mvc.builder.PBOMProAssignTaskBuilder" />
+	<bean class="ext.casc.process.mvc.builder.TechnicsReportAssignTaskBuilder" />
+	<bean class="ext.casc.process.mvc.builder.ProcessAssignReportBuilder" />
+	<bean class="ext.casc.process.mvc.builder.ChangeProAssignTaskBuilder" />
+	<bean class="ext.casc.process.mvc.builder.ChangeGYZZProAssignTaskBuilder" />
+	<bean class="ext.ases.envelope.mvc.builder.ProcessEnvelopeAttributesBuilder" />
+	<bean class="ext.ases.envelope.mvc.builder.ProcessEnvelopeInfoPageBuilder" />
+	<bean class="ext.ases.envelope.mvc.builder.ProcessEnvelopeListBuilder" />
+	<bean class="ext.ases.changepackaged.mvc.builder.ChangePackagedInfoPageBuilder" />
+	<bean class="ext.ases.changepackaged.mvc.builder.ChangePackagedAttributesBuilder" />
+	<bean class="ext.casc.part.mvc.builder.SetPartTypeBuilder" />
+	<bean class="ext.casc.part.mvc.builder.SetProcessPathBuilder" />
+	<bean class="ext.casc.workflow.tree.mvc.builder.ShowListSignatureBuilder" />
+	<bean class="ext.casc.workflow.tree.mvc.builder.SetPrintDistributiontureBuilder" />
+	<bean class="ext.casc.workflow.tree.mvc.builder.SetListSignatureBuilder" />
+	<bean class="ext.casc.workflow.tree.mvc.builder.SetTreeSignatrueBuilder" />
+	<bean class="ext.casc.workflow.tree.mvc.builder.ShowTreeSignatureBuilder" />
+	<bean class="ext.casc.process.mvc.builder.ListProcessAssignmentsBuilder" />
+	<bean class="ext.casc.workflow.tree.mvc.builder.SetSignatureImplementAdviseBuilder" />
+	<bean class="ext.casc.workflow.tree.mvc.builder.ShowSignatureImplementAdviseBuilder" />
+	<bean class="ext.casc.process.mvc.builder.ZhiPaiGongYiYuanBuilder" />
+	<bean class="ext.casc.process.mvc.builder.ProcessTaskInfoBuilder" />
+	<bean class="ext.casc.process.mvc.builder.ProcessTaskItemInfoBuilder" />
+	<bean class="ext.casc.process.mvc.builder.ListPartForProcessTaskItemBuilder" />
+	<bean class="ext.casc.process.mvc.builder.TaskItemRouteAndHistoryBuilder" />
+	<bean class="ext.casc.process.mvc.builder.MyProcessTaskListBuilder" />
+	<bean class="ext.casc.process.mvc.builder.ProcessTaskInfoPagebuilder" />
+	<bean class="ext.casc.process.mvc.builder.PartProAssignTaskbuilder" />
+	<bean class="ext.casc.process.mvc.builder.SearchProcessTaskBuilder" />
+	<bean class="ext.casc.process.mvc.builder.SearchProcessTaskBuilder2" />
+	<bean class="ext.casc.process.mvc.builder.SearchProcessTaskBuilder3" />
+	<bean class="ext.casc.workflow.tree.mvc.builder.SetSignatureZPBuilder" />
+	<bean class="ext.ases.dataSearch.mvc.builder.DataSendRecordBuilder" />
+	<bean class="ext.casc.workflow.tree.mvc.builder.ECNChangeBeforeBuilder" /><!-- ECN流程受影响前的对象表格 -->
+	<bean class="ext.casc.process.mvc.builder.AddProAssignTaskBuilder" />
+	<bean class="ext.casc.process.mvc.builder.SearchPartResultBilder" />
+	<bean class="ext.casc.product.mvc.builder.ProductListBuilder" />
+	<bean class="ext.casc.product.mvc.builder.RoleListBuilder" />
+	<bean class="ext.casc.product.mvc.builder.ProductRoleListBuilder" />
+	<bean class="ext.casc.part.mvc.builder.GYWJPrintTaskBuilder" /><!-- 工艺文件打印申请流程 -->
+	<bean class="com.glaway.mpm.mvc.builders.print.ShowReceiveInfoBuilder" />
+	<bean class="ext.casc.report.mvc.builders.AllWorkFlowBuilder" />
+	<bean class="ext.casc.report.mvc.builders.BOMReportBuilder" />
+	<bean class="ext.casc.doc.mvc.builder.TechnicsTechnologyBuilder" /><!-- 工艺技术文档配置 add by liangbo 20170411 -->
+	<bean class="com.glaway.mpm.mvc.builders.processEditor.ProcessEditorManagerBuilder" /><!-- 工艺编辑器启动配置 add by likaicheng 20180312 -->
+	<bean class="ext.casc.consCheckRecords.ProConfigurationBuilder"/><!-- 结构检验记录/项目配置  add by houzhen 20171018 -->
+	<bean class="ext.casc.consCheckRecords.TableConfigurationBuilder"/><!-- 结构检验记录/项目配置  add by houzhen 20171018 -->
+	<bean class="ext.casc.work.mvc.builders.OverviewAssignmentsBuilder" />
+	<bean class="ext.ases.changerequest.mvc.builder.ChangeRequestInfoPageBuilder" />
+	<bean class="ext.ases.changerequest.mvc.builder.ChangeRequestAttributesBuilder" />
+	<bean class="ext.casc.process.mvc.builder.OtherDesingTaskManageBuilder" />
+	<bean class="ext.casc.process.mvc.builder.OtherChildDesingTaskManageBuilder" />
+	<bean class="com.glaway.mpm.print.builder.EmployeeNumManagerBuilder" /><!--人员工号维护-->
+
+	<!-- 删除作废数据 -->
+	<bean class="ext.casc.purge.mvc.builder.DeleteInvalidEPMWorkspaceDataBuilder" />
+	<bean class="ext.casc.purge.mvc.builder.DeleteInvalidCADDataBuilder" />
+	<bean class="ext.casc.purge.mvc.builder.DeleteInvalidDocumentDataBuilder" />
+	<bean class="ext.casc.purge.mvc.builder.DeleteInvalidPartDataBuilder" />
+
+	<!-- 产品批次管理 -->
+	<bean class="ext.casc.product.mvc.builder.ProductBatchesBuilder" />
+
+	<!-- 预审流程 -->
+	<bean class="ext.casc.workflow.tree.mvc.builder.SetPreviewDataSignatureBuilder" />
+	<bean class="ext.casc.preview.mvc.builder.PreviewAttributesBuilder" />
+	<bean class="ext.casc.preview.mvc.builder.PreviewInfoPageBuilder" />
+	<bean class="ext.casc.preview.mvc.builder.PreviewObjectTableBuilder" />
+
+
+	<!-- 正式发放流程 -->
+	<bean class="ext.casc.workflow.tree.mvc.builder.SetReleaseListSignatureBuilder" />
+	<bean class="ext.casc.workflow.tree.mvc.builder.ShowReleaseListSignatureBuilder" />
+
+    <!-- 任务添加附件 -->
+	<bean class="ext.casc.workflow.tree.mvc.builder.WorkflowPboAttachmentsTableBuilder" />
+
+	<!-- 工艺通知单流程 -->
+	<bean class="ext.casc.workflow.tree.mvc.builder.SetOutSignTableBuilder" />
+	<bean class="ext.casc.workflow.tree.mvc.builder.ViewOutSignTableBuilder" />
+
+	<!-- 工艺任务的附件内容 -->
+	<bean class="ext.casc.process.mvc.builder.ListAttachmentsTableBuilder" />
+
+	<!-- 工艺文件签审流程-->
+	<bean class="ext.casc.workflow.doc.mvc.builder.ShowReviewObjBuilder" />
+	<bean class="ext.casc.workflow.doc.mvc.builder.ShowReadObjBuilder" />
+	<bean class="ext.casc.workflow.doc.mvc.builder.ShowChangeRecoverInfoBuilder" />
+
+    <!-- 设置工时定额-->
+	<bean class="ext.casc.workflow.tree.mvc.builder.SetListGongShiDingEBuilder" />
+
+	<bean class="ext.casc.workflow.tree.mvc.builder.ExtRepsAndMarkupsBuilder" />
+
+	<!-- 部件，文档对象关联的签审包  -->
+	<bean class="ext.casc.workflow.mvc.builder.ChangePackageTable" />
+	<bean class="ext.casc.workflow.mvc.builder.EnvelopPackageTable" />
+
+	<!-- Mes集成访问表格  -->
+	<bean class="ext.casc.integrate.mes.mvc.builders.PbomDesignFilesBuilder" />
+	<!-- 批量下载打印 -->
+	<bean class="ext.casc.process.mvc.builder.SearchDownloadPrintBuilder"/>
+	<!-- 定额信息列表  -->
+	<bean class="ext.casc.dingeInformation.DingeInformationBuilder" />
+	<!-- 工时定额信息列表  add by liangbo  -->
+	<bean class="ext.casc.workflow.tree.mvc.builder.ShowListGongShiDingEBuilder" />
+
+	<!-- 新建工艺总方案 -->
+	<bean class="ext.casc.product.mvc.builder.GongyizongfanganBuilder"/>
+     <!-- 流程签署状态报表 -->
+     <bean class="ext.casc.report.mvc.builders.LCQSZTBuilder"/>
+     <!-- 工艺任务完成情况汇总表 -->
+     <bean class="ext.casc.report.mvc.builders.GYRWBuilder"/>
+     <!-- 非工艺任务完成情况汇总表 -->
+     <bean class="ext.casc.report.mvc.builders.FGYRWBuilder"/>
+     <!-- 工艺文档汇总统计表 -->
+     <bean class="ext.casc.report.mvc.builders.GYWDHZBuilder"/>
+     <bean class="ext.casc.doc.mvc.builder.SearchDocBuilder"/>
+     <bean class="ext.casc.doc.mvc.builder.SearchProcessPlanBuilder"/>
+     <!-- 材料定额计划完成情况汇总报表 -->
+     <bean class="ext.casc.report.mvc.builders.CLDEJHBuilder" />
+      <!-- 工艺文件引用sop情况汇总报表 -->
+     <bean class="ext.casc.sop.report.YinYongSopBuilder" />
+      <!-- 依据文件汇总报表 -->
+     <bean class="ext.casc.sop.report.YiJvWenJianBuilder" />
+
+
+ <!--begin add by zw 20171016-->
+	<!-- <bean class="ext.cirpoint.securitymgr.log.builder.NoticeAuditReportBuilder" />
+    <bean class="ext.cirpoint.securitymgr.log.builder.UrgentAuditReportBuilder" />
+    <bean class="ext.cirpoint.securitymgr.borrow.builder.AddSearchDocBuilder" />
+    <bean class="ext.cirpoint.securitymgr.borrow.builder.CreateBorrowBuilder" />
+    <bean class="ext.cirpoint.securitymgr.borrow.builder.EditBorrowBuilder" />
+    <bean class="ext.cirpoint.securitymgr.borrow.builder.ViewBorrowBuilder" />
+    <bean class="ext.cirpoint.securitymgr.borrow.builder.BorrowReportBuilder" />-->
+    <!--end add by zw 20171016-->
+
+	 <!-- 中心域相关 begin-->
+
+	<bean class="ext.sast.center.mvc.builders.CenterWorkflowInfoTableBuilder"/>
+	<bean class="ext.sast.center.mvc.builders.CenterWorkflowInfoNewTableBuilder"/>
+	<bean class="ext.sast.center.mvc.builders.CollaborativeSiteManagementBuilder"/>
+	<bean class="ext.sast.center.productModel.mvc.builder.ProductInfoTableBuilder"/>
+	<bean class="ext.sast.center.productModel.mvc.builder.SastProductInfoTableBuilder"/>
+	<bean class="ext.sast.center.productModel.mvc.builder.ModelTypeInfoBuilder" />
+	<bean class="ext.sast.center.productModel.mvc.builder.ModelAttributeInfoTableBuilder" />
+	<bean class="ext.sast.center.productModel.mvc.builder.ReceiveScopeModelTypeBuilder" />
+	<bean class="ext.sast.center.productModel.mvc.builder.ReceiveModelTypeListBuilder" />
+	<bean class="ext.sast.center.productModel.mvc.builder.ReceivedModelTypeListBuilder" />
+	<bean class="ext.sast.center.productModel.mvc.builder.ReceivedModelAttributeInfoTableBuilder" />
+	<bean class="ext.sast.center.productModel.mvc.builder.DocSubdivisionTableBuilder" />
+	<bean class="ext.sast.synergy.mvc.builder.SearchSynergyRecordBuilder"/>
+	<!-- 中心域相关 end-->
+	<!--PFMEA-->
+	<bean class="ext.casc.integrate.pfmea.mvc.builder.ChoosePfmeaTemplateTableBuilder"/>
+	
+	<!-- 工艺物资名称 -->
+	<bean class="ext.ases.techMaterial.mvc.builder.TechnicsMaterialInfoPageBuilder" />
+	<bean class="ext.ases.techMaterial.mvc.builder.TechnicsMaterialAttributeBuilder" />
+	<bean class="ext.ases.techMaterial.mvc.builder.TechMaterialDictionaryTableBuilder" />
+	<!-- 工艺物资条目 -->
+	<bean class="ext.ases.techMaterial.mvc.builder.TechnicsMaterialEntriesInfoPageBuilder" />
+	<bean class="ext.ases.techMaterial.mvc.builder.TechnicsMaterialEntriesAttributeBuilder"/>
+	<bean class="ext.ases.techMaterial.mvc.builder.TechMaterialEntriesdLinkTabTableBuilder"/>
+	<bean class="ext.ases.techMaterial.mvc.builder.TechMaterialQoutaTableBuilder"/>
+
+	<bean class="ext.casc.webservice.command.PDMSynchDataCommand"/>
+	<bean class="ext.casc.webservice.command.PDMWithBYDataCommand"/>
+	<bean class="ext.casc.webservice.command.PDMWithBYTemplateCommand"/>
+	<bean class="ext.casc.process.mvc.builder.RefreshBatchesBuilder"/>
+	<bean class="ext.casc.webservice.command.PDMWithMesPhotoCommand"/>
+	<bean class="ext.casc.webservice.command.ExchangeProcessDocCommand"/>
+	<bean class="ext.casc.webservice.command.GetSignInfoCommand"/>
+	<bean class="ext.casc.webservice.command.PDMSearchPartInfoCommand"/>
+	<bean class="ext.casc.webservice.command.PDMSearchZFLinkCommand"/>
+	<bean class="ext.casc.webservice.command.PDMSearchCheckRecordCommand"/>
+	<bean class="ext.casc.webservice.command.GetGongShiCommand"/> <!-- 工时定额 -->
+	<bean class="ext.casc.webservice.command.GetGongShiStateCommand" />
+	<bean class="ext.sast.center.mvc.builders.ChaoMuluMemberTableBuilder"/>
+
+	<bean class="ext.casc.webservice.command.e3.GetDXProcessPlanCommand"/>
+	<bean class="ext.casc.webservice.command.e3.GetGuoJiaBiaoZhunCommand"/>
+	<bean class="ext.casc.webservice.command.e3.GetMPMPlantCommand"/>
+	<bean class="ext.casc.webservice.command.e3.GetMPMWorkCenterCommand"/>
+	<bean class="ext.casc.webservice.command.e3.GetSOPProcessPlanCommand"/>
+	<bean class="ext.casc.webservice.command.e3.GetTYProcessPlanCommand"/>
+	<bean class="ext.casc.webservice.command.e3.GetDashboardCommand"/>
+	<bean class="ext.casc.webservice.command.e3.GetEquipmentCommand"/>
+	<bean class="ext.casc.webservice.command.e3.GetFrockCommand"/>
+	<bean class="ext.casc.webservice.command.e3.GetKnifeCommand"/>
+	<bean class="ext.casc.webservice.command.e3.GetMaterialCommand"/>
+	<bean class="ext.casc.webservice.command.e3.GetMeasureCommand"/>
+	<bean class="ext.casc.webservice.command.e3.GetProceduceNameCommand"/>
+	<bean class="ext.casc.webservice.command.e3.GetUnDashboardCommand"/>
+	<bean class="ext.casc.webservice.command.e3.GetUserCommand"/>
+	<bean class="ext.casc.webservice.command.e3.UpdateE3BomCommand"/>
+	<bean class="ext.casc.webservice.command.e3.UpdateE3ProcessPlanCommand"/>
+	<bean class="ext.casc.webservice.command.e3.GetZykPartCommand"/>
+
+	<bean class="ext.casc.webservice.command.UpdateKongZhiDianCommand"/>
+	<bean class="ext.casc.webservice.command.GetCbKongZhiDianCommand"/>
+	<bean class="ext.casc.doc.mvc.builder.UploadAttachmentBuilder" />
+	<bean class="ext.casc.webservice.command.PushProcessMesureCommand" />
+
+	<bean class="ext.casc.webservice.command.cache.GetFileSignInfoCommand" />
+	<bean class="ext.casc.webservice.command.GetProcessStructureCommand" />
+	<bean class="ext.casc.webservice.command.ExchangeProcessDocCommandZS"/>
+	<bean class="ext.casc.webservice.command.nc.GetNcMaterialCommand"/>
+	<bean class="ext.casc.gongshidinge.mvc.builder.GongshiPackageTable" />
+	<bean class="ext.casc.gongshidinge.mvc.builder.QueryGongShiStateBuilder" />
+	
+	<!-- 重写队列表格 -->
+	<bean id="queueCustom.entry.table" class="ext.casc.queue.builder.CustomQueueEntryTable"/>
+</beans>

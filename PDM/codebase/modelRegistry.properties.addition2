@@ -1,0 +1,29 @@
+ext.ases.changepackaged=ChangePackagedAffectLink
+ext.ases.changepackaged=ChangePackagedResultLink
+ext.ases.changepackaged=ChangePackaged
+ext.ases.envelope=EnvelopeMemberLink
+ext.ases.envelope=EnvelopeTopObjLink
+ext.ases.envelope=ProcessEnvelope
+ext.ases.part=SignActivityLink
+ext.ases.part=SignLink
+ext.ases.part=ASESHuiqianSignature
+ext.ases.technotice=TechNoticeBeforeLink
+ext.ases.technotice=TechNoticeAfterLink
+ext.casc.process=ProcessTaskLink
+ext.casc.process=ProcessTask
+ext.casc.process=ProcessTaskItem
+
+#add by liaojun
+ext.ases.changerequest=ChangeRequestAffectLink
+ext.ases.changerequest=ChangeRequest
+
+#add by longxiuchuan 2014/12/9
+ext.sast.catalog=GLCatalog
+ext.sast.supply=GLSupplyDescLink
+ext.sast.supply=GLSupply
+
+
+#add by hding 2016/01/19
+ext.casc.process=ProcessPlan
+
+ext.casc.analysisActivity.bean=AnalysisToSourceLink

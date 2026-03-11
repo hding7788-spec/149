@@ -1,0 +1,100 @@
+@Title = JCad
+
+menubar = file edit view draw modify format help
+file = open save - exportsvg - exit
+fileLabel=File
+openLabel=Open
+openImage=resources/open.gif
+newLabel=New
+newImage=resources/new.gif
+saveLabel=Save
+saveImage=resources/save.gif
+exportsvgLabel=Export SVG
+exitLabel=Exit
+
+edit = selectentity deleteentity editentity
+editLabel=Edit
+selectentityLabel=Select Entity
+deleteentityLabel=Delete Entity
+editentityLabel=Edit Entity
+
+
+help = about
+helpLabel=Help
+aboutLabel=About
+
+view = redraw - zoomin zoomout zoompage zoomwindow
+viewLabel=View
+zoominLabel=Zoom In
+zoomoutLabel=Zoom Out
+zoompageLabel=Zoom to Page
+zoomwindowLabel=Zoom Window
+
+draw = drawline drawcircle drawarc drawtext
+drawLabel = Draw
+drawlineLabel = Line
+drawcircleLabel = Circle
+drawarcLabel = Arc
+drawtextLabel = Text
+
+modify = moveentity
+modifyLabel = Modify Entity
+moveentityLabel = Move
+
+format = layer linetype block
+formatLabel=Format
+layerLabel=Layer
+linetypeLabel=Linetype
+blockLabel=Block
+cutImage=resources/cut.gif
+copyImage=resources/copy.gif
+pasteImage=resources/paste.gif
+
+# toolbar definition
+#
+# Each of the strings that follow form a key to be
+# used as the basis of the tool definition.  Actions
+# are of course sharable, and in this case are shared
+# with the menu items.
+maintoolbar=new open save - cut copy paste - redraw - zoomin zoomout zoompage
+newTooltip=Create a new file
+openTooltip=Open a file
+saveTooltip=Save to a file
+cutTooltip=Move selection to clipboard
+copyTooltip=Copy selection to clipboard
+pasteTooltip=Paste clipboard to selection
+zoominTooltip=Zoom increase
+zoomoutTooltip=Zoom decrease
+zoompageTooltip=Zoom to Page
+redrawImage=resources/zoomredraw.gif
+zoominImage=resources/zoomincrease.gif
+zoomoutImage=resources/zoomdecrease.gif
+zoompageImage=resources/zoomtopage.gif
+Margin = 10
+#right click menu definition
+rightclick =  cancel zoomin zoomout deleteentity editentity
+cancelLabel = Cancel
+##########################################
+drawtoolbar = drawline drawcircle drawarc drawtext
+drawcircleOption = CIRCLE(3P) CIRCLE(CR)
+#3P:three points
+#CR:Center Radius
+CIRCLE(3P)Label = 3 Points
+CIRCLE(CR)Label = Center,Radius
+CIRCLE(CR)Action = drawcircle
+CIRCLE(3P)Action = drawcircle3p
+drawlineImage=resources/line.jpg
+drawcircleImage=resources/line.jpg
+drawarcOption = ARC(CSE) ARC(CR2A) ARC(3P)
+ARC(CSE)Label = Center,Start Point,End Point
+ARC(CR2A)Label = Center,Radius,Start Angle,Stop Angle
+ARC(3P)Label = Start Point,End Point,Point on Arc
+ARC(CSE)Action = drawarccse
+ARC(CR2A)Action = drawarc3p
+ARC(3P)Action = drawarc3p
+drawarcImage=resources/line.jpg
+drawtextImage=resources/line.jpg
+
+#Messages
+exitMessage=Do you really want to ÍË³ö???
+aboutMessage=JCad,a smart 2D CAD Drafting Program with Pure 100% Java,Please visit us at http://jcad.gnuchina.org

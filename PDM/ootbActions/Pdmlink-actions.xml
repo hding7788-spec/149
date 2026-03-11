@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+   <objecttype name="pasteAsCopy" class="" resourceBundle="com.ptc.windchill.pdmlink.object.operations.pasteAsCopy.pasteAsCopyRB">
+      <action name="pasteAsCopy" enabledwhensuspended="true" ajax="row" uicomponent="PASTE">
+         <command windowType="popup" class="com.ptc.windchill.pdmlink.object.operations.pasteAsCopy.forms.PasteFormProcessor" method="execute" url="netmarkets/jsp/object/pasteAsCopy/cutOrPaste.jsp"/>
+         <includeFilter name="hideFromNonAgreementMgrs"/>
+         <moreurlinfo>height=600,width=1100</moreurlinfo>
+      </action>
+      <action name="pasteWizStep" afterJS="validateDuplicateNameForPasteAndCopy" >
+             <description>Only step for PasteAsCopy UI</description>
+             <command class="" method="" windowType="wizard_step" url="netmarkets/jsp/object/pasteAsCopy/pasteWizStep.jsp"/>
+      </action>
+      <action name="setView" selectRequired="true">
+             <description>action for PasteAsCopy Table</description>
+             <command windowType="popup" url="netmarkets/jsp/object/pasteAsCopy/pdmlPasteViewPicker.jsp" class="" method=""/>
+             <moreurlinfo>resizable=yes,scrollbars=yes,menubar=no,toolbar=no,location=no,status=yes,height=600,width=1000</moreurlinfo>
+      </action>      
+      <action name="setOrg" selectRequired="true">
+             <description>action for PasteAsCopy Table</description>
+             <command windowType="popup" url="netmarkets/jsp/object/pasteAsCopy/pdmlPasteOrgPicker.jsp" class="" method=""/>
+             <moreurlinfo>resizable=yes,scrollbars=yes,menubar=no,toolbar=no,location=no,status=yes,height=600,width=1000</moreurlinfo>
+      </action>
+
+   </objecttype>
+</listofactions>

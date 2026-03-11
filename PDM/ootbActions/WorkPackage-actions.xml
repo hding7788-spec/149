@@ -1,0 +1,318 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM "http://www.ptc.com/Windchill/config/actions/actions.dtd">
+<listofactions>
+   <objecttype name="wp" class="com.ptc.windchill.wp.AbstractWorkPackage" resourceBundle="com.ptc.windchill.wp.WorkPackageActionsRB">
+      <action name="refreshPackage" ajax="page">
+         <!-- Refresh a package -->
+         <command class="com.ptc.netmarkets.wp.NmPackageCommands" method="refresh" onClick="postSelectValidation(event, &apos;refreshPackage&apos;)"/>
+         <includeFilter name="DisableActionForPendingRefreshFilter"/>
+      </action>
+	  <action name="nested_content_view" enabledwhensuspended="true">
+         <!-- View Nested content table -->
+         <component name="package.mvc.package_contents" windowType="page"/>
+      </action>
+      <action name="iterate_package" checkaccess="true" ajax="component">
+         <description>Iterate a package</description>
+         <command class="com.ptc.netmarkets.wp.IterationFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <!-- refresh action is being overriden by ReviseFormProcessor to refresh rows -->
+      <action name="revise_package" checkaccess="true" ajax="component">
+         <!-- Revise a package -->
+         <command class="com.ptc.netmarkets.wp.ReviseFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="revise_step" checkaccess="true">
+         <!-- Package revise options wizard step -->
+         <command windowType="wizard_step"/>
+      </action>
+      <action name="iterate_step" checkaccess="true">
+         <description>Package iterate options wizard step</description>
+         <command windowType="wizard_step"/>
+      </action>
+      <action name="revise_step2" preloadWizardPage="false" checkaccess="true">
+         <!-- Package revise attributes wizard step -->
+         <command windowType="wizard_step"/>
+      </action>
+      <action name="create" uicomponent="NEW_PACKAGE">
+         <!-- Create a package outside of the Packages table -->
+         <command class="com.ptc.netmarkets.wp.CreatePackageFormProcessor" method="execute" windowType="popup" onClick="validateCreatePkgSelection (event)"/>
+      </action>
+      <action name="createToolbar" ajax="row" uicomponent="NEW_PACKAGE">
+         <!-- Create a package from the Packages table -->
+         <command class="com.ptc.netmarkets.wp.CreatePackageFormProcessor" method="execute" windowType="popup" url="/netmarkets/jsp/wp/create.jsp" onClick="validateCreatePkgSelection (event)"/>
+      </action>
+      <action name="setDomainAttributeWizStep" required="true">
+         <!-- Domain attributes wizard step for a package -->
+         <command windowType="wizard_step"/>
+      </action>
+      <action name="defineItemAttributesWizStep" id="defineItemAttributesWizStep" postloadJS="defineItemPostloadJS" afterJS="defineItemAfterJS" preloadWizardPage="false" required="true">
+         <component name="defineItemAttributesWizStep" typeBased="true" windowType="wizard_step"/>
+      </action>
+      <action name="setAttributesWizStep" id="setAttributesWizStep" preloadWizardPage="false" required="true">
+         <!-- Attributes wizard step for a package, no longer used by create action only used by edit_packages.jsp-->
+         <component name="wp.edit.defineItemStep" windowType="wizard_step"/>
+      </action>
+      <action name="edit_package" checkaccess="true" ajax="row">
+         <!-- Edit a package -->
+         <command class="com.ptc.netmarkets.wp.EditPackageFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <!-- TODO: This should be combined with the edit package action after X12. -->
+      <action name="edit" checkaccess="true" ajax="row">
+         <!-- Edit the package attachments. -->
+         <command class="com.ptc.core.components.forms.DefaultEditFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="lock_NoExtensionUIStep" ajax="page">
+         <!-- Lock actions with out the extension ui present -->
+        <command class="com.ptc.netmarkets.wp.forms.LockPackageFormProcessor" method="execute" onClick="postSelectValidation(event, &apos;lock_NoExtensionUIStep&apos;)"/>
+      </action>
+      <action name="lock" ajax="component">
+         <!-- Lock a package -->
+         <command class="com.ptc.netmarkets.wp.forms.LockPackageFormProcessor" method="execute" windowType="popup"/>
+         <includeFilter name="DisableActionForPendingRefreshFilter"/>
+      </action>
+      <action name="lock_step" preloadWizardPage="false" required="true" beforeJS="PTC.WORK_PACKAGE.enableShuttle">
+         <!-- Lock wizard step -->
+         <command windowType="wizard_step"/>
+      </action>
+      <action name="saveAs" checkaccess="true" ajax="component">
+         <!-- Save as new package -->
+         <command class="com.ptc.netmarkets.wp.SaveAsFormProcessor" method="execute" windowType="popup"/>
+         <includeFilter name="DisableActionForPendingRefreshFilter"/>
+      </action>
+       <action name="saveAs_step1" preloadWizardPage="true" required="true">
+         <!-- Save as new package wizard step -->
+         <component name="workPackage.wp.saveas.attributes" windowType="wizard_step"/>
+      </action>
+      <action name="unLock" ajax="component">
+     	<!-- Unlock a package -->
+     	<command class="com.ptc.netmarkets.wp.forms.UnlockPackageFormProcessor" method="execute"/>
+      </action>
+      <action name="list" enabledwhensuspended="true" uicomponent="PACKAGE_LIST">
+         <!-- Packages table -->
+         <component name="workPackage.list" windowType="page"/>
+      </action>
+      <action name="homeList" enabledwhensuspended="true" uicomponent="HOME_PACKAGES">
+         <!-- Packages table from the home tab -->
+         <component name="workPackage.list" windowType="page"/>
+      </action>
+      <action name="wpcontent" enabledwhensuspended="true">
+         <!-- Package content table -->
+         <component name="package.mvc.package_contents" windowType="page"/>
+      </action>
+      <action name="deliveriesOnePackage" enabledwhensuspended="true">
+         <!-- Deliveries table for the Package's info page -->
+          <!--<command windowType="page"/>-->
+          <component name="workPackage.netmarkets.delivery.singlelist" urlParams="singlePackage=true" windowType="page"/>
+      </action>
+      <action name="relatedPackages" uicomponent="THIRD_LEVEL_RELATED_PACKAGES">
+         <!-- Related packages table -->
+         <includeFilter name="ghostEpmDoc"/>
+         <includeFilter name="disableForWorkingCopyWorkInProgress"/>
+		 <includeFilter name="hideForChangeTemplates"/>
+      </action>
+      <action name="remove_successors" multiselect="true" uicomponent="DELETE" selectRequired="true">
+         <!-- Remove successors -->
+         <command class="com.ptc.netmarkets.wp.NmPackageCommands" method="removeSuccessors"/>
+      </action>
+      <action name="add_successors" ajax="component">
+         <!-- Add successors -->
+         <command class="com.ptc.netmarkets.wp.NmPackageCommands" method="addSuccessors" windowType="popup"/>
+      </action>
+      <action name="successorList">
+         <!-- Successors and predecessors tables -->
+         <component name="workPackage.successorList"/>
+      </action>
+      <action name="route" uicomponent="PROJECT_ROUTE">
+         <!-- Route a package -->
+         <command class="com.ptc.netmarkets.workflow.NmWorkflowCommands" method="route" windowType="popup"/>
+         <includeFilter name="DisableActionForPendingRefreshFilter"/>
+      </action>
+      <action name="filterExtensions">
+         <!-- Filter extensions from a package zip file -->
+         <command windowType="popup"/>
+      </action>
+      <action name="filterExtensionsStep" preloadWizardPage="false" required="true" beforeJS="initialize" afterJS="saveExtensions">
+         <!-- Filter extensions wizard step -->
+         <command windowType="wizard_step"/>
+      </action>
+      <action name="list_delete" multiselect="true" uicomponent="DELETE" ajax="page" ajaxActionClass="netmarkets/jsp/object/delete.jsp" selectRequired="true">
+                  <command class="com.ptc.netmarkets.wp.NmPackageCommands" method="list_delete" onClick="PTC.wp.deleteObject(event)"/>
+         <includeFilter name="projectM4D"/>
+         <includeFilter name="hideFromNonAgreementMgrs"/>
+      </action>
+
+      <action name="wp_attachments_step" uicomponent="ATTACHMENTS" ajax="row" postloadJS="preAttachmentsStep" preloadWizardPage="false">
+         <command class="com.ptc.windchill.enterprise.attachments.forms.SecondaryAttachmentsSubFormProcessor" windowType="wizard_step"/>
+      </action>
+      <action name="wp_exp_attachments" uicomponent="ATTACHMENTS" ajax="row" postloadJS="preAttachmentsStep" preloadWizardPage="false">
+         <command class="com.ptc.windchill.enterprise.attachments.forms.SecondaryAttachmentsSubFormProcessor" windowType="wizard_step"/>
+      </action>
+      <action name="wp_edit_attachments">
+         <command class="com.ptc.core.components.forms.DefaultEditFormProcessor" method="execute" windowType="popup"/>
+      </action>
+
+      <action name="wp_addFileAttachment" ajax="row">
+         <command class="com.ptc.windchill.enterprise.attachments.commands.AttachmentCommands" method="addFileAttachment" onClick="wp_browseForFiles(event,&apos;newFiles&apos;,&apos;wp_addFileAttachment&apos;)"/>
+      </action>      
+      
+      <action name="viewFilters">
+         <command windowType="popup" onClick="postSelectValidation(event, 'viewFilters')"/>
+      </action>
+      <action name="editFilters" ajax="component">
+         <command class="com.ptc.netmarkets.wp.forms.EditFiltersFormProcessor" method="execute" windowType="popup"/>
+         <includeFilter name="DisableActionForPendingRefreshFilter"/>
+      </action>
+      <action name="editFiltersStep">
+         <command windowType="wizard_step"/>
+      </action>     
+   </objecttype>
+   <objecttype name="delivery" class="com.ptc.windchill.wp.delivery.DeliveryRecord" resourceBundle="com.ptc.windchill.wp.WorkPackageActionsRB">
+      <action name="create_delivery" ajax="row">
+         <!-- Create a delivery -->
+         <command class="com.ptc.netmarkets.wp.delivery.CreateDeliveryFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="defineDelivery" id="defineDelivery" preloadWizardPage="false" required="true">
+        <component name="delivery.defineItemStep" windowType="wizard_step"/>
+      </action>
+      <action name="setRecipients" id="setRecipients" preloadWizardPage="false" required="true">
+        <component name="delivery.recipients.attributes" windowType="wizard_step"/>
+      </action>
+      <action name="setSender" id="setSender" preloadWizardPage="false" required="true">
+        <component name="delivery.sender.attributes" windowType="wizard_step"/>
+      </action>
+      <action name="setAttributesWizStep" preloadWizardPage="true" required="true" postloadJS="PTC.WORK_PACKAGE.setWizardFields" afterJS="PTC.WORK_PACKAGE.checkFields">
+         <description>Create delivery wizard step</description>
+
+        <command class="" method="" windowType="wizard_step"/>
+      </action>
+      <action name="edit_delivery" ajax="row">
+         <!-- Edit a delivery -->
+         <command class="com.ptc.netmarkets.wp.delivery.EditDeliveryFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="send_delivery" ajax="page" multiselect="true" selectRequired="true">
+         <!-- Send a delivery -->
+         <command class="com.ptc.netmarkets.wp.NmPackageCommands" method="sendDeliveries"/>
+      </action>
+      <action name="receive_delivery" ajax="page" multiselect="true" selectRequired="true">
+         <!-- Receive a delivery -->
+         <command class="com.ptc.netmarkets.wp.NmPackageCommands" method="receiveDeliveries" windowType="popup"/>
+      </action>
+      <action name="receiveDeliveryStep1" preloadWizardPage="false" required="true">
+         <!-- Receive delivery wizard step -->
+         <command class="" method="" windowType="wizard_step"/>
+      </action>
+      <action name="list_deleteDeliveries" multiselect="true" uicomponent="DELETE" ajax="page" selectRequired="true">
+         <!-- Delete deliveries toolbar action -->
+         <command class="com.ptc.netmarkets.wp.delivery.NmDeliveryCommands" method="list_deleteDeliveries" onClick="postSelectValidation(event, &apos;list_deleteDeliveries&apos;)"/>
+      </action>
+      <action name="deleteDelivery" multiselect="true" uicomponent="DELETE" ajax="page" selectRequired="true">
+         <!-- Delete deliveries row action -->
+         <command class="com.ptc.netmarkets.wp.delivery.NmDeliveryCommands" method="deleteDelivery" onClick="postSelectValidation(event, &apos;deleteDelivery&apos;)"/>
+      </action>
+      <action name="zipWithUI">
+         <!-- Launch wizard to create zip with security labels specified for filtering -->
+         <command class="com.ptc.netmarkets.wp.delivery.NmDeliveryCommands" method="createZipWithOptions" windowType="popup"/>
+      </action>
+      <action name="zipWithUIStep">
+         <!-- Wizard step for selecting security labels for filtering on the create zip wizard. -->
+         <command windowType="wizard_step"/>
+      </action>
+      <action name="abort_export" ajax="page">
+         <!-- Cancel zip pacakge -->
+         <command class="com.ptc.netmarkets.wp.delivery.NmDeliveryCommands" method="abortZip" onClick="JCAConfirm(event, 'com.ptc.windchill.wp.delivery.deliveryResource.CONFIRM_ABORT')"/>
+      </action>
+      <action name="deliveryContent" enabledwhensuspended="true">
+         <!-- Delivery content table -->
+          <component name="workPackage.deliveryContent" windowType="page"/>
+         <!-- command windowType=""/-->
+      </action>
+      <action name="deliveryMissingReplicationObject" enabledwhensuspended="true">
+          <component name="workPackage.deliveryContent.MissingReplicationObject" windowType="page"/>
+      </action>
+      
+      <action name="pasteDelivery" checkaccess="true" ajax="component">
+         <description>Paste delivery record as share to project</description>
+         <command class="com.ptc.netmarkets.wp.delivery.forms.processors.PasteDeliveryRecordFormProcessor" method="execute"/>
+      </action>       
+   </objecttype>
+   <objecttype name="wpcollection" class="com.ptc.windchill.wp.AbstractWorkPackage" resourceBundle="com.ptc.windchill.wp.WorkPackageActionsRB">
+      <action name="addToPackageStep" preloadWizardPage="false" required="false" beforeJS="addToPackageBeforeJS" afterJS="addToPackageAfterJS">
+         <!-- Add to package wizard step -->
+         <command windowType="wizard_step"/>
+      </action>
+      <action name="addToPackage" multiselect="false" uicomponent="ADD_TO_PACKAGE" ajax="page">
+         <!-- Add objects to a package -->
+         <command class="com.ptc.windchill.wp.collection.forms.AddToPackageFormProcessor" method="execute" windowType="popup"/>
+         <includeFilter name="DisableActionForPendingRefreshFilter"/>
+      </action>
+      <action name="removeMembers" uicomponent="DELETE" ajax="page" selectRequired="true">
+         <!-- Remove Members from a package -->
+         <command class="com.ptc.windchill.wp.collection.NmPackageCollectionCommands" method="removeMembers"/>
+      </action>
+
+      <action name="removeSeeds" renderType="GENERAL" selectRequired="true">
+         <command onClick="rowHandler.removeRowsFromParentTable(event);verifyRuleConfiguration();" windowType="no_content"/>
+      </action>
+      <action name="pasteSeeds" id="pastSeedAction" multiselect="true" ajax="row">
+         <!-- Paste objects as seeds in the Add to Package wizard -->
+         <command class="com.ptc.windchill.wp.collection.NmPackageCollectionCommands" method="pasteSeeds"/>
+      </action>
+      <action name="addSeeds" ajax="row">
+         <!-- Add objects as seeds in the Add to Package wizard -->
+         <command class="com.ptc.windchill.wp.collection.NmPackageCollectionCommands" method="addSeeds" windowType="new"/>
+      </action>
+
+      <action name="addToPackageMultiple" multiselect="true" selectRequired="true" uicomponent="ADD_TO_PACKAGE">
+         <!-- Add to package from a toolbar -->
+         <command class="com.ptc.windchill.wp.collection.forms.AddToPackageFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="addToPackageSingle" multiselect="false" uicomponent="ADD_TO_PACKAGE">
+         <!-- Add to package row level action -->
+         <command class="com.ptc.windchill.wp.collection.forms.AddToPackageFormProcessor" method="execute" windowType="popup"/>
+         <includeFilter name="psbSessionValidation"/>
+         <includeFilter name="ghostEpmDoc"/>
+         <includeFilter name="disableForWorkingCopyWorkInProgress"/>
+         <includeFilter name="hideForChangeTemplates"/> 
+      </action>
+      <action name="collectItems" renderType="GENERAL" selectRequired="false">
+         <!-- Customize the rule configurations -->
+          <command onClick="wpOpenCollectorPicker(null,'SimpleUIMode', event)" windowType="no_content"/>
+      </action>
+      <action name="previewButton" id="leftButton" renderType="GENERAL" selectRequired="false">
+         <!-- Preview the package collection -->
+          <command onClick="wpOpenCollectorPickerPreview(null,'AdvancedUIMode', event)" windowType="no_content"/>
+      </action>
+
+      <action name="includeMembers" multiselect="true" selectRequired="true" ajax="row">
+         <!-- Include selected objects-->
+         <command class="com.ptc.netmarkets.wp.forms.AdhocFilterFormProcessor" method="execute" windowType="normal" onClick="beginPackageIncludeExcludeAction(event, target, table)"/>
+         <includeFilter name="DisableActionForPendingRefreshFilter"/>
+      </action>
+ 
+      <action name="excludeMembers" multiselect="true" selectRequired="true" ajax="row">
+         <!-- Exclude selected objects-->
+         <command class="com.ptc.netmarkets.wp.forms.AdhocFilterFormProcessor" method="execute" windowType="normal" onClick="beginPackageIncludeExcludeAction(event, target, table)"/>
+         <includeFilter name="DisableActionForPendingRefreshFilter"/>
+      </action>
+      
+   </objecttype>
+   
+   <objecttype name="rep" class="com.ptc.windchill.wp.rep.ReplicationPackage" resourceBundle="com.ptc.windchill.wp.WorkPackageActionsRB">
+     
+      <action name="selectContextStep" ajax="row" preloadWizardPage="false">
+        <component name="replicationPackage.contextCriteria.table" windowType="wizard_step"/>          
+      </action>
+
+      <action name="removeContexts" renderType="GENERAL" selectRequired="true">
+         <command onClick="rowHandler.removeRowsFromParentTable(event);" windowType="no_content"/>
+      </action>
+      
+      <action name="replicationContextPicker">
+         <description>Context picker from Select Contexts step in New Package wizard for ReplicationPackage type</description>
+         <command windowType="popup"/>
+      </action>
+      <action name="addToRepPackage" multiselect="false" uicomponent="ADD_TO_PACKAGE" ajax="page">
+         <!-- Add contexts to a Replication Package -->
+         <command class="com.ptc.netmarkets.wp.rep.forms.ReplicationPackageFormProcessor" method="execute" windowType="popup"/>
+      </action>      
+   </objecttype>   
+</listofactions>

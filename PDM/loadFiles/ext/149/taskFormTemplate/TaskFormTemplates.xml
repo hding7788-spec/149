@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE NmLoader SYSTEM "standardX10.dtd">
+<NmLoader>
+
+	<csvCreateTaskformTemplate handler="com.ptc.netmarkets.workflow.taskformtemplates.LoadTaskformTemplate.createTemplate">
+		<csvFileName>setupUser</csvFileName>
+		<csvFilePath>ext/149/taskFormTemplate/Site5_wt.fc.WTObject_WfTask_setupUser</csvFilePath>
+		<csvTaskType>WfTask</csvTaskType>
+		<csvPboClass>wt.fc.WTObject</csvPboClass>
+		<csvFileFormat>jsp</csvFileFormat>
+		<csvdescription>Custom defined Task with setup Participants JSP Template</csvdescription>
+	</csvCreateTaskformTemplate>
+	
+</NmLoader>
+	

@@ -1,0 +1,7 @@
+1、ResourceBuild wt.access.accessModelRB    Unix :ResourceBuild.sh wt.access.accessModelRB
+2、ResourceBuild wt.access.configuration    Unix :ResourceBuild.sh wt.access.configuration
+3、xconfmanager -s wt.access.configuration.securityLabelsConfigurationFile=$(wt.home)/conf/securityLabelsConfiguration_149.xml -t codebase/wt.properties -p
+4、xconfmanager -s wt.services/svc/default/com.ptc.core.command.server.delegate.io.AbstractAttributeHandler/SECRET/wt.access.SecurityLabeled/0=com.ptc.core.command.server.delegate.io.SecurityLabelAttributeHandler/singleton -t codebase/com/ptc/core/foundation/FoundationAttributeHandler.properties -p
+
+
+

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listofactions>
+   <objecttype name="ec" resourceBundle="com.ptc.expansionui.client.ECCoreMessages">   
+      <action name="filterPropertiesGWT">
+         <command class="com.ptc.expansionui.eccomponent.client.ui.actions.MiniInfoECAction"/>
+         <includeFilter name="hideForObjectInProject"/>
+      </action> 
+      <action name="filterPropertiesWithLargeIconGWT">
+         <command class="com.ptc.expansionui.eccomponent.client.ui.actions.MiniInfoECAction"/>
+         <includeFilter name="hideForObjectInProject"/>
+      </action>
+      <action name="editFilterGWT">
+         <command class="com.ptc.expansionui.eccomponent.client.ui.actions.EditECAction"/>
+         <includeFilter name="hideForObjectInProject"/>
+      </action>      
+      <action name="editFilterWithLargeIconGWT">
+         <command class="com.ptc.expansionui.eccomponent.client.ui.actions.EditECAction"/>
+         <includeFilter name="hideForObjectInProject"/>
+	  </action>      
+      <action name="savedFiltersGWT">
+         <command class="com.ptc.expansionui.eccomponent.client.ui.actions.SavedFiltersAction"/>
+         <includeFilter name="hideForObjectInProject"/>
+	  </action>      
+      <action name="filterGroupGWT">
+         <command class="com.ptc.cat.ui.client.action.NoAction"/>
+         <includeFilter name="hideForObjectInProject"/>
+      </action>
+    </objecttype>
+</listofactions>

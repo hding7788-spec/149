@@ -1,0 +1,463 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+
+<actionmodels>
+
+   <model name="toolbar for participant administration">
+      <description>Participant Administration List table actions</description>
+      <action name="addParticipantToPAList" type="principal" shortcut="true"/>
+      <action name="removeParticipantFromPAList" type="principal" shortcut="true"/>
+      <action name="separator" type="separator"/>
+      <action name="create" type="user" shortcut="true"/>
+      <action name="createFromPA" type="group" shortcut="true"/>
+      <action name="createFromPA" type="organization" shortcut="true"/>
+      <action name="separator" type="separator" shortcut="true"/>
+      <action name="removeParticipantFromCache" type="principal"/>
+      <action name="deleteParticipantFromWindchill" type="principal"/>
+      <action name="deleteParticipant" type="principal"/>
+      <action name="separator" type="separator"/>
+      <action name="find_disconnected" type="principal"/>
+      <action name="purge_cache" type="principal"/>
+      <action name="addTrainingRecords" type="trainingTracking"/>
+   </model>
+
+   <model name="toolbar for participant administration no editable directory services">
+      <description>Participant Administration List table actions when no editable directory service is configured</description>
+      <action name="addParticipantToPAList" type="principal" shortcut="true"/>
+      <action name="removeParticipantFromPAList" type="principal" shortcut="true"/>
+      <action name="separator" type="separator" shortcut="true"/>
+      <action name="removeParticipantFromCache" type="principal" shortcut="true"/>
+      <action name="deleteParticipantFromWindchill" type="principal" shortcut="true"/>
+      <action name="separator" type="separator" shortcut="true"/>
+      <action name="find_disconnected" type="principal" shortcut="true"/>
+      <action name="purge_cache" type="principal" shortcut="true"/>
+   </model>
+
+   <model name="user row actions for participant administration">
+      <description>Participant Administration row actions for user</description>
+      <action name="view" type="object"/>
+      <action name="updateUser" type="user"/>
+      <action name="electronicID" type="user"/>
+      <action name="separator" type="separator"/>
+      <action name="removeParticipantFromCache" type="principal"/>
+      <action name="deleteParticipantFromWindchill" type="principal"/>
+      <action name="deleteParticipant" type="principal"/>
+      <action name="separator" type="separator"/>
+      <action name="saveAsNewUser" type="user"/>
+      <action name="separator" type="separator"/>
+      <action name="reconnectDisconnectedPrincipal" type="principal"/>
+   </model>
+   
+   <model name="user actions" menufor="wt.org.WTUser">
+      <description>Actions model for WTUser from info page, participant admin, team page</description>
+      <action name="updateUser" type="user"/>
+      <action name="electronicID" type="user"/>
+      <action name="separator" type="separator"/>
+      <action name="removeParticipantFromCache" type="principal"/>
+   </model>
+
+   <model name="group actions" menufor="wt.org.WTGroup">
+      <description>
+        Actions model for WTGroups from info page 
+        or as right click menu from various tables: Participant Administration, Team, Organization Groups
+      </description>
+      <action name="view" type="object"/>
+      <action name="updateGroup" type="group"/> <!-- Edit that does NOT display Domain or 3rd step to "Assign to groups" -->
+      <action name="editFromPA" type="group"/> <!-- Edit that displays Domain and 3rd step to "Assign to groups" -->
+      <action name="addUsersToGroup"      type="group"/>
+      <action name="addGroupsToGroup"     type="group"/>
+      <action name="recompute" type="group"/>
+      <action name="separator" type="separator"/>
+      <action name="removeParticipantFromCache" type="principal"/>
+      <action name="deleteParticipantFromWindchill" type="principal"/>
+      <action name="deleteParticipant" type="principal"/>
+      <action name="separator" type="separator"/>
+      <action name="reconnectDisconnectedPrincipal" type="principal"/>
+      <includeFilter name="teamTableActionsFilter" />
+   </model>
+   
+   <model name="org row actions for participant administration">
+      <description>Participant Administration row actions for org</description>
+      <action name="view" type="object"/>
+      <action name="editFromPA" type="organization"/>
+      <action name="separator" type="separator"/>
+      <action name="removeParticipantFromCache" type="principal"/>
+      <action name="deleteParticipantFromWindchill" type="principal"/>
+      <action name="deleteParticipant" type="principal"/>
+      <action name="separator" type="separator"/>
+      <action name="reconnectDisconnectedPrincipal" type="principal"/>
+   </model>
+
+   <model name="org infoPage actions for participant administration">
+      <description>Participant Administration row actions for org</description>
+      <action name="editFromPA" type="organization"/>
+      <action name="separator" type="separator"/>
+      <action name="removeParticipantFromCache" type="principal"/>
+   </model>
+
+   <model name="toolbar for group create add member table">
+      <description>Participant Administration Group Create Member table actions</description>
+      <action name="addMembersToList"            type="group" shortcut="true"/>
+      <action name="remove"                   type="object" shortcut="true"/>
+   </model>
+   
+   <model name="toolbar for user create add profile table">
+      <description>Participant Administration User Create Member table actions</description>
+      <action name="addProfileToList" type="group" shortcut="true"/>
+      <action name="remove" type="object" shortcut="true"/>
+   </model>
+   
+   <model name="toolbar for user create add profile table with add from action">
+      <description>Participant Administration User Create Member table actions</description>
+      <action name="addProfileToList" type="group" shortcut="true"/>
+      <action name="remove" type="object" shortcut="true"/>
+      <action name="addProfilesFromUser" type="group" shortcut="true"/>
+   </model>
+   
+   <model name="toolbar for pa create add group table">
+      <description>Participant Administration Create wizards' Group table actions</description>
+      <action name="addGroupToList"           type="group" shortcut="true"/>
+      <action name="remove"                   type="object" shortcut="true"/>
+   </model>
+   
+   <model name="toolbar for pa create add group table with add from action">
+      <description>Participant Administration Create wizards' Group table actions</description>
+      <action name="addGroupToList"           type="group" shortcut="true"/>
+      <action name="remove"                   type="object" shortcut="true"/>
+      <action name="addGroupsFromUser"        type="group" shortcut="true"/>
+   </model>
+   
+   <model name="groupPADetailsTabSet" resourceBundle="com.ptc.windchill.principal.group.GroupActionsRB">
+       <description>Tab set for group info page</description>
+       <submodel name="PA_WTGroupInfoDetails"/>
+   </model>
+
+   <model name="groupPAThirdLevelNavModel">
+       <description>Third Level Nav is needed to provide actions the user can select to appear on different tabs</description>
+       <action name="primaryAttributes" type="object"/>   
+       <action name="readOnlyPAGroups" type="group"/>
+       <action name="readOnlyPAGroupMembers" type="group"/>
+       <action name="groupTrainingRecords" type="trainingTracking"/>
+   </model>
+   
+   <model name="PA_WTGroupInfoDetails" resourceBundle="com.ptc.windchill.principal.group.GroupActionsRB">
+       <description>The items that will appear on the info tab</description>
+       <action name="primaryAttributes" type="object"/>   
+       <action name="readOnlyPAGroupMembers" type="group"/>
+       <action name="readOnlyPAGroups" type="group"/>
+   </model>    
+
+   <model name="groupDetailsTabSet" resourceBundle="com.ptc.windchill.principal.group.GroupActionsRB">
+       <description>Tab set for group info page when NOT launched from Participant Administration.</description>
+       <submodel name="WTGroupInfoDetails"/>
+   </model>
+
+   <model name="groupThirdLevelNavModel">
+       <description>Third Level Nav is needed to provide actions the user can select to appear on different tabs</description>
+       <action name="attributes" type="object"/>
+       <action name="readOnlyPAGroupMembers" type="group"/>
+   </model>
+   
+   <model name="WTGroupInfoDetails" resourceBundle="com.ptc.windchill.principal.group.GroupActionsRB">
+       <action name="attributes" type="object"/>
+       <action name="readOnlyPAGroupMembers" type="group"/>
+   </model>
+   
+   <model name="profileDetailsTabSet" resourceBundle="com.ptc.windchill.principal.group.GroupActionsRB">
+       <description>Tab set for group info page</description>
+       <submodel name="profileGroupInfoDetails"/>
+   </model>
+
+   <model name="profileThirdLevelNavModel">
+       <description>Third Level Nav is needed to provide actions the user can select to appear on different tabs</description>
+       <action name="primaryAttributes" type="object"/>   
+       <action name="profileActions" type="group"/>
+       <action name="profileAttributes" type="group"/>
+       <action name="profileMembers" type="group"/>
+   </model>
+   
+   <model name="licenseProfileThirdLevelNavModel">
+    <description>Third Level Nav for License Profile info page</description>
+    <action name="primaryAttributes" type="object"/>   
+    <action name="profileActions" type="group"/>
+    <action name="profileMembers" type="group"/>
+   </model>
+
+   <model name="profileGroupInfoDetails" resourceBundle="com.ptc.windchill.principal.group.GroupActionsRB">
+       <description>The items that will appear on the info tab</description>
+       <action name="primaryAttributes" type="object"/>   
+       <action name="profileActions" type="group"/>
+       <action name="profileAttributes" type="group"/>
+       <action name="profileMembers" type="group"/>
+   </model>    
+
+   <model name="orgContainerThirdLevelNavModel">
+       <description>Third Level Nav is needed to provide actions the organization container can select to appear on different tabs</description>
+       <action name="primaryAttributes" type="object"/>
+   </model>
+
+   <model name="orgContainerDetailsTabSet" resourceBundle="com.ptc.windchill.principal.org.OrganizationActionsRB">
+       <description>Tab set for organization container info page</description>
+       <submodel name="orgContainerDetailsTab"/>
+   </model>
+
+   <model name="orgContainerDetailsTab" resourceBundle="com.ptc.windchill.principal.org.OrganizationActionsRB">
+       <action name="primaryAttributes" type="object"/>
+   </model>
+
+   <model name="orgThirdLevelNavModel">
+       <description>Third Level Nav is needed to provide actions the wtorg can select to appear on different tabs</description>
+       <action name="primaryAttributes" type="object"/>
+       <action name="orgTrainingRecords" type="trainingTracking"/>
+   </model>
+
+   <model name="wtorgDetailsTabSet" resourceBundle="com.ptc.windchill.principal.org.OrganizationActionsRB">
+       <description>Tab set for group info page</description>
+       <submodel name="PA_WTOrgInfoDetails"/>
+   </model>
+
+   <model name="PA_WTOrgInfoDetails"  resourceBundle="com.ptc.windchill.principal.org.OrganizationActionsRB">
+       <action name="primaryAttributes" type="object"/>
+   </model>
+
+   <model name="org row actions">
+      <description>Organization List row actions</description>
+      <action name="view" type="object"/>
+      <action name="separator" type="separator"/>
+      <action name="updateOrg" type="org"/>
+      <action name="separator" type="separator"/>
+      <action name="ManageSecurity" type="accessPermission"/>
+      <action name="subscribe" type="org"/>
+      <action name="unsubscribe" type="org"/>
+   </model>
+
+   <model name="toolbar for organizations">
+      <description>Organization List page Toolbar actions</description>
+      <action name="org_create" type="org" shortcut="true"/>
+   </model>
+
+   <model name="org details page actions">
+      <description>Organization info page row actions</description>
+      <action name="updateOrg" type="org"/>
+      <action name="separator" type="separator"/>
+      <action name="ManageSecurity" type="accessPermission"/>
+      <action name="subscribe" type="org"/>
+      <action name="unsubscribe" type="org"/>
+   </model>
+      
+   <model name="org files list">
+      <description>Organization page - may be obsolete</description>
+      <action name="list_cut" type="object"/>
+      <action name="list_copy" type="object"/>
+      <action name="fbpaste" type="object"/>
+      <action name="list_delete" type="object"/>
+      <action name="separator" type="separator"/>
+      <action name="explode" type="folder"/>
+      <action name="implode" type="folder"/>
+      <action name="separator" type="separator"/>
+      <action name="create" type="folder"/>
+      <action name="create" type="document"/>
+      <action name="createMulti" type="document"/>
+      <action name="add_link" type="bookmark"/>
+   </model>
+
+   <model name="org files list table">
+      <description>Organization page - may be obsolete</description>
+      <action name="list_cut" type="object"/>
+      <action name="list_copy" type="object"/>
+      <action name="fbpaste" type="object"/>
+      <action name="list_delete" type="object"/>
+      <action name="separator" type="separator"/>
+      <action name="create" type="folder"/>
+      <action name="create" type="document"/>
+      <action name="createMulti" type="document"/>
+      <action name="add_link" type="bookmark"/>
+   </model>
+
+   <model name="org docs file row actions">
+      <description>list used for documents on the Organization and Site Folders pages - may be obsolete</description>
+      <action name="oldedit" type="document"/>
+      <action name="download" type="document"/>
+      <action name="view" type="object"/>
+      <action name="setState" type="lifecycle"/>
+      <action name="discussTable" type="forum"/>
+      <action name="checkout" type="object"/>
+      <action name="checkin" type="document"/>
+      <action name="undocheckout" type="object"/>
+      <action name="edit" type="document"/>
+      <action name="rename" type="document"/>
+      <action name="delete" type="object"/>
+      <action name="bookmarkIt" type="bookmark"/>
+      <action name="cut" type="object"/>
+      <action name="copy" type="object"/>
+      <action name="reference" type="notebook"/>
+      <action name="openProductView" type="wvs"/>
+      <action name="reassignLC" type="lifecycle"/> <!-- Reassign Lifecycle -->
+   </model>
+
+   <model name="org folder row actions">
+      <description>list used for folders in the organization/site folder browsers - may be obsolete</description>
+      <action name="view" type="folder"/>
+      <action name="create" type="document"/>
+      <action name="createMulti" type="document"/>
+      <action name="add_link" type="bookmark"/>
+      <action name="create" type="folder"/>
+      <action name="rename" type="folder"/>
+      <action name="cut" type="object"/>
+      <action name="copy" type="object"/>
+      <action name="fbpaste" type="object"/>
+      <action name="folder_searchIn" type="folder"/>
+   </model>
+
+   <model name="org docs details actions">
+      <description>list used for Organization and Site document details pages - may be obsolete</description>
+      <action name="oldedit" type="document"/>
+      <action name="download" type="document"/>
+      <action name="setState" type="lifecycle"/>
+      <action name="checkout" type="object"/>
+      <action name="checkin" type="document"/>
+      <action name="undocheckout" type="object"/>
+      <action name="edit" type="document"/>
+      <action name="rename" type="document"/>
+      <action name="delete" type="object"/>
+      <action name="bookmarkIt" type="bookmark"/>
+      <action name="cut" type="object"/>
+      <action name="copy" type="object"/>
+      <action name="openProductView" type="wvs"/>
+      <action name="reassignLC" type="lifecycle"/> <!-- Reassign Lifecycle -->
+   </model>
+   
+   <model name="creators row actions">
+      <description>Row level actions for the org list creators page</description>
+      <action name="view"               type="object"/>
+      <action name="removeFromCreators" type="org"/>
+   </model>
+
+   <model name="toolbar for creators">
+      <description>Toolbar actions for the org list creators page</description>
+      <action name="addToCreators" type="org" shortcut="true"/>
+      <action name="removeFromCreators" type="org" shortcut="true"/>
+   </model>
+
+   <model name="org creators row actions">
+      <description>row actions for the org list creators page</description>
+      <action name="view"               type="object"/>
+      <action name="removeFromCreators"   type="org"/>
+   </model>
+
+   <model name="toolbar for org roles">
+      <description>Toolbar actions for the org roles page</description>
+      <action name="addRolesToOrg" type="org" shortcut="true"/>
+      <action name="list_showRoleToOrg" type="org" shortcut="true"/>
+      <action name="list_hideRoleFromOrg" type="org" shortcut="true"/>
+      <action name="removeRoleFromOrg" type="org" shortcut="true"/>
+   </model>
+
+   <model name="org roles row actions">
+      <description>Row actions for the org roles page</description>
+      <action name="hideRoleFromOrg" type="org"/>
+      <action name="showRoleToOrg" type="org"/>
+      <action name="removeRoleFromOrg" type="org"/>
+   </model>
+
+   <model name="org templates toolbar actions">
+      <description>Toolbar actions for the org templates page</description>
+      <action name="list_hide_template" type="object" shortcut="true"/>
+      <action name="list_show_template" type="object" shortcut="true"/>
+      <action name="separator" type="separator"/>
+      <action name="createOrgTemplate" type="org" shortcut="true"/>
+   </model>
+
+   <model name="org context toolbar actions">
+      <description>This toolbar is a placeholder to enable icons for these actions</description>
+      <action name="updateOrg" type="org" shortcut="true"/>
+   </model>
+
+   <model name="admin toolbar">
+      <description>Toolbar actions for the org and site administrators table</description>
+      <action name="addToAdmin" type="user" shortcut="true"/>
+      <action name="removeFromAdmin" type="user" shortcut="true"/>
+   </model>
+
+   <model name="org admin row action">
+      <description>Row actions for the org and site administrators table</description>
+      <action name="view"                 type="object"/>
+      <action name="removeFromAdmin"      type="user"/>
+   </model>
+
+   <model name="org team toolbar actions">
+      <description>Toolbar actions for the org teams table for shared teams.</description>
+      <action name="createTeam"                  type="sharedTeam" shortcut="true"/>
+      <action name="emailTeamOwners"             type="sharedTeam" shortcut="true"/>
+      <action name="importSharedTeam"            type="sharedTeam" shortcut="true"/>
+      <action name="exportSharedTeam"            type="sharedTeam" shortcut="true"/>
+      <action name="deleteTeam"                  type="sharedTeam" shortcut="true"/>
+      <action name="pasteTeam"                   type="team" shortcut="true"/>
+   </model>
+
+   <model name="org group list actions">
+      <description>This is used for the toolbar actions for the org group table</description>
+      <action name="explode"              type="folder" shortcut="true"/>
+      <action name="implode"              type="folder" shortcut="true"/>
+      <action name="copyToGroup"         type="group" shortcut="true"/>
+      <action name="pasteToGroup"         type="group" shortcut="true"/>
+      <action name="deleteGroups"          type="group" shortcut="true"/>
+      <action name="separator"            type="separator"/>
+      <action name="separator"            type="separator"/>
+      <action name="create"               type="group" shortcut="true"/>
+   </model>
+
+   <model name="userInfoPageTabSet" resourceBundle="com.ptc.windchill.principal.user.userActionsRB">
+      <description>Defines tabs for user info page</description>
+      <submodel name="PA_WTUserInfoDetails"/>
+   </model>
+   
+   <model name="userThirdLevelNavModel">
+       <description>Third Level Nav is needed to provide actions the user can select to appear on different tabs</description>
+       <action name="visualizationAndAttributes" type="object"/>   
+       <action name="primaryAttributes" type="object"/>   
+       <action name="readOnlyPAGroups" type="group"/>
+       <action name="readOnlyProfileMember"   type="user"/>
+       <action name="attributeVisibilityReport" type="user"/>
+       <action name="userTrainingRecords" type="trainingTracking"/>
+   </model>
+   
+   <model name="PA_WTUserInfoDetails" resourceBundle="com.ptc.windchill.principal.user.userActionsRB">
+       <description>The items that will appear on the info tab</description>
+       <action name="visualizationAndAttributes" type="object"/>   
+       <action name="primaryAttributes" type="object"/>   
+       <action name="readOnlyPAGroups" type="group"/>
+       <action name="readOnlyProfileMember"   type="user"/>
+       <action name="attributeVisibilityReport" type="user"/>
+   </model>   
+   
+   <model name="userProfileInfoPageTabSet" resourceBundle="com.ptc.windchill.principal.user.userActionsRB">
+      <description>Defines tabs for user info page</description>
+      <submodel name="UserProfileInfoDetails"/>
+   </model>
+   
+   <model name="userProfileThirdLevelNavModel">
+       <description>Third Level Nav is needed to provide actions the user can select to appear on different tabs</description>
+       <action name="visualizationAndAttributes" type="object"/>   
+   </model>
+   
+   <model name="UserProfileInfoDetails" resourceBundle="com.ptc.windchill.principal.user.userActionsRB">
+       <description>The items that will appear on the info tab</description>
+       <action name="visualizationAndAttributes" type="object"/>   
+   </model>   
+   
+   <model name="principalMultiCreateButtons">
+       <action name="prevButton" type="object"/>
+       <action name="nextButton" type="object"/>
+       <action name="okButton" type="object"/>
+       <action name="principalApplyButton" type="principal"/>
+       <action name="cancelButton" type="object"/>
+   </model>
+   
+   <model name="principalCreateButtons">
+       <action name="okButton" type="object"/>
+       <action name="principalApplyButton" type="principal"/>
+       <action name="cancelButton" type="object"/>
+   </model>
+
+</actionmodels>

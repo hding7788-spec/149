@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.ptc.com/schema/mvc"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+http://www.ptc.com/schema/mvc http://www.ptc.com/schema/mvc/mvc-10.0.xsd">
+
+	<!-- Configurations in this file override all other configurations -->
+	<bean class="com.glaway.mpm.mvc.builders.pbom.PartTypeBuilder" />
+
+	<bean class="com.glaway.mpm.mvc.builders.pbom.PartLineBuilder" />
+
+	<bean class="com.glaway.mpm.pbom.mvc.builder.PbomPackageDataBuilder" />
+
+	<bean class="com.glaway.mpm.mvc.builders.mpmresource.CreateMPMResourceBuilder" />
+	<bean class="com.glaway.mpm.mvc.builders.mpmresource.EditMPMResourceBuilder" />
+
+	<bean class="com.glaway.mpm.mvc.builders.mpmresource.ZZDWToGWLinkBuilder" />
+	<bean class="com.glaway.mpm.mvc.builders.mpmresource.ZZDWToGXMCLinkBuilder" />
+	<bean class="com.glaway.mpm.mvc.builders.mpmresource.ZZDWToSBLinkBuilder" />
+	<bean class="com.glaway.mpm.mvc.builders.mpmresource.ZZDWToGJLinkBuilder" />
+	<bean class="com.glaway.mpm.mvc.builders.mpmresource.ZZDWToGZhongBuilder" />
+
+	<bean class="com.glaway.mpm.mvc.builders.mpmresource.SBToSBLinkBuilder" />
+	<bean class="com.glaway.mpm.mvc.builders.mpmresource.GXMCToGZhongLinkBuilder" />
+
+	<bean class="com.glaway.mpm.mvc.builders.mpmresource.GZhongToGYCYYLinkBuilder" />
+
+	<bean class="com.glaway.mpm.mvc.builders.mpmresource.AddMPMResourceLinkBuilder " />
+
+	<bean class="com.glaway.mpm.mvc.builders.pbom.TechnicSignedBrowsePBOMBuilder " />
+
+	<bean class="com.glaway.mpm.mvc.builders.processplan.ProcessPlanReviewBuilder" />
+	<bean class="com.glaway.mpm.mvc.builders.processplan.ShowProcessPlanReviewBuilder" />
+
+	<bean class="com.glaway.mpm.mvc.builders.processplan.ShowChangeDataBuilder" />
+
+	<bean class="com.glaway.mpm.pbom.mvc.builder.PBOMTechnicsReportBuilder" />
+	<!--SOP资源管理-->
+	<bean class="ext.casc.sop.mvc.builders.CreateSOPZYBuilder" />
+	<bean class="ext.casc.sop.mvc.builders.SopTaskItemRouteAndHistoryBuilder" />
+	<bean class="ext.casc.sop.mvc.builders.RelatedSopAndTechnicsBuilder" />
+
+<!--	add by yfn 2023-11-22-->
+	<bean class="ext.casc.processPlan.mvc.builder.BatchCreateMPMProcessPlanBuilder" />
+	<bean class="ext.casc.processPlan.mvc.builder.ProcessTemplateBuilder" />
+	<bean class="ext.casc.processPlan.mvc.builder.BatchSetParamsBuilder" />
+
+	<context:component-scan base-package="ext.casc.webservice.command.gy"/>
+	<mvc:builder-scan base-package="ext.casc.common.mvc.builder"/>
+
+
+</beans>

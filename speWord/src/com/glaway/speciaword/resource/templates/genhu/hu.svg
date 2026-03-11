@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<#assign line_width =30 />
+<#assign textX =0 />
+<#if text_width < 30>
+ 	<#assign line_width = 30 />
+	<#assign textX = (30-text_width)/2 />
+ <#else>
+ 	<#assign line_width = text_width />
+ </#if>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="${line_width}" height="30px" viewBox="0 0 ${line_width} 30" enable-background="new 0 0 ${line_width} 30" xml:space="preserve">
+<g>
+	<defs>
+		<ellipse id="SVGID_1_" cx="${line_width/2}" cy="10.563" rx="${line_width/2 + 5}" ry="7.563"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	<ellipse clip-path="url(#SVGID_2_)" fill="none" stroke="#000000" stroke-miterlimit="10" cx="${line_width/2}" cy="14.783" rx="${line_width/2}" ry="10.845"/>
+</g>
+<text transform="matrix(0.9188 0 0 1 ${textX} 21.1328)" font-family="'宋体'" font-size="16">${text}</text>
+</svg>

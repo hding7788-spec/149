@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+<!-- define the actions on the UI components -->
+<actionmodels>
+
+   <model name="change.annotations.table.edit">
+      <description>Toolbar actions for the annotation table for change objects in create or edit wizards</description>
+      <action name="list_copy" type="object" shortcut="true"/>
+      <action name="pasteAnnotations" type="annotation" shortcut="true"/>
+      <action name="annotationPasteSelect" type="annotation" shortcut="true"/>
+      <action name="remove"           type="object" shortcut="true"/>
+      <action name="separator" type="separator"/>
+      <action name="annotationPicker" type="annotation" shortcut="true"/>
+   </model>
+
+   <model name="change.annotations.table.view">
+      <description>Toolbar actions for the annotation table for change objects info pages</description>
+      <action name="list_copy" type="object" shortcut="true"/>
+      <action name="separator" type="separator"/>
+      <action name="openProductView"  type="wvs" shortcut="true"/>
+      <action name="refreshComponent" type="object" shortcut="true"/>
+      <action name="separator" type="separator"/>
+   </model>
+   
+   <model name="change annotations row actions">
+      <description>Row actions for the annotation table for change objects </description>
+      <action name="launchPSE" type="explorer"/>
+      <action name="openProductView" type="wvs"/>
+   </model>
+   
+   <model name="wiz change annotations row actions">
+      <description>Row actions for the annotation table for change objects on wizard</description>
+      <action name="remove" type="annotation"/>
+   </model>
+
+   <model name="part annotations row actions">
+      <description>Row actions for the annotation table for parts </description>
+      <action name="launchPSE" type="explorer"/>
+   </model>
+
+   <model name="change.infopage.annotations.table.view">
+      <description>Toolbar actions for the annotation table for parts</description>
+      <action name="list_copy" type="object" shortcut="true"/>
+   </model>
+
+ </actionmodels>

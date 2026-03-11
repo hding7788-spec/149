@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Sample publishing rules for SIS workers.
+      Change the domain name in entity below for your site -->
+<!DOCTYPE rules [
+<!ENTITY domain    "org.rnd.">
+]>
+
+<rules xmlns="http://www.ptc.com"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.ptc.com PublishRulesSchema.xsd">
+
+<condition name="default_document_type">
+    <instance-of type="&domain;DefaultEPMDocument" />
+</condition>
+
+<condition name="dynamic_document_type">
+    <instance-of type="wt.epm.EPMDocument|&domain;DynamicDocument" />
+</condition>
+
+<condition name="structure_type">
+    <structure type="typed_based_object" />
+</condition>
+
+<condition name="object_structure_type">
+    <structure type="typed_based_object_structure" />
+</condition>
+
+
+    
+
+<!-- ***************  RULES for Creo Illustrate Objects ****************** -->
+
+    <authoring-application name="GALAXY">
+
+        <param-set name="Create Creo Illustrate PVZ DynamicDocument">
+            <post-publish name="delegate">com.ptc.wvs.server.publish.EPMPostPublishDelegate</post-publish>
+            <post-publish name="name">{EPM_NAME}.PVZ</post-publish>
+            <post-publish name="cad-type">PUB_GRAPHIC</post-publish>
+            <post-publish name="published-content-link">true</post-publish>
+            <post-publish name="type">wt.epm.EPMDocument|&domain;DynamicDocument</post-publish>
+        </param-set>
+
+        <param-set name="Create Creo Illustrate Images MPMLink document">
+            <post-publish name="delegate">com.ptc.windchill.mpml.representable.MPMLinkC3DIPostPublishDelegate</post-publish>
+            <post-publish name="name">DOC_{EPM_NAME}-(Illustration Images)</post-publish>
+            <post-publish name="published-content-link">create</post-publish>
+        </param-set>
+
+        <if condition="dynamic_document_type">
+            <publish on="checkin">
+                <param-set-ref name="Create Creo Illustrate PVZ DynamicDocument"/>
+                <param-set-ref name="Create Creo Illustrate Images MPMLink document"/>
+            </publish>
+                
+            <publish on="create-representation" param-set="Create Creo Illustrate PVZ DynamicDocument"/>
+            <publish on="schedule" param-set="Create Creo Illustrate PVZ DynamicDocument"/>
+            <publish on="manual-post" param-set="Create Creo Illustrate PVZ DynamicDocument"/>
+        </if>
+    
+    </authoring-application>
+
+
+<!-- ***************  RULES for MPMLink Objects ****************** -->
+
+    <authoring-application name="MPMLINK">
+        
+        <param-set name="MPMLINK GDD">
+            <post-publish name="delegate">com.ptc.windchill.mpml.representable.MPMLinkGDDPostPublishDelegate</post-publish>
+            <post-publish name="type">&domain;DynamicDocument</post-publish>
+            <post-publish name="name">GDD_{EPM_NAME}-{EPM_NUMBER}</post-publish>
+            <post-publish name="published-content-link">create</post-publish>
+        </param-set>
+      
+        
+        <if condition="object_structure_type">
+            <publish on="checkin" param-set="MPMLINK GDD"/>
+            <publish on="create-representation" param-set="MPMLINK GDD"/>
+            <publish on="schedule" param-set="MPMLINK GDD"/>
+            <publish on="manual-post" param-set="MPMLINK GDD"/>
+        </if>
+
+    </authoring-application>
+
+</rules>

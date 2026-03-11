@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM "http://www.ptc.com/Windchill/config/actions/actionmodels.dtd">
+
+<actionmodels>
+    <!-- The empty action will produce the "No Actions to Display" message for row-level actions of a new custom view. -->
+    <model name="percolui collection seed list" />
+</actionmodels>

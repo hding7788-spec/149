@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SecurityLabelsConfiguration
+  SYSTEM "securityLabelsConfiguration.dtd">
+<SecurityLabelsConfiguration enabled="true">		     
+
+    <SecurityLabel name="MIJI" enabled="true">
+        <SecurityLabelResourceKey>WCTYPE|wt.access.SecurityLabeled~SCA|MIJI</SecurityLabelResourceKey>
+        <SecurityLabelValueResourceClass>wt.access.configuration.SecurityLabel1</SecurityLabelValueResourceClass>
+		<SecurityLabelValue name="NEIBU" enabled="true">
+            <UnrestrictedPrincipal>
+                <ufid>cn=内部组,ou=people,cn=AdministrativeLdap,cn=Windchill_11.0,o=ptc|Ldap.149.sast.casc|Ldap.149.sast.casc</ufid>
+            </UnrestrictedPrincipal>            
+        </SecurityLabelValue>
+        <SecurityLabelValue name="MIMI" enabled="true">
+            <UnrestrictedPrincipal>
+                <ufid>cn=秘密组,ou=people,cn=AdministrativeLdap,cn=Windchill_11.0,o=ptc|Ldap.149.sast.casc|Ldap.149.sast.casc</ufid>
+            </UnrestrictedPrincipal>            
+        </SecurityLabelValue>
+
+        <SecurityLabelValue name="JIMI" enabled="true">
+            <UnrestrictedPrincipal>
+                <ufid>cn=机密组,ou=people,cn=AdministrativeLdap,cn=Windchill_11.0,o=ptc|Ldap.149.sast.casc|Ldap.149.sast.casc</ufid>
+            </UnrestrictedPrincipal>            
+        </SecurityLabelValue>        
+        <SecurityLabelParameter>MIJI</SecurityLabelParameter>
+    </SecurityLabel>
+
+  
+
+</SecurityLabelsConfiguration>

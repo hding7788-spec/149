@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+
+   <objecttype name="view" class="wt.vc.views.View">
+
+      <action name="list" enabledwhensuspended="true">
+         <command class="" method="list" windowType="popup"/>
+      </action>
+
+      <action name="createView" checkaccess="true" ajax="true">
+        <command class="com.ptc.windchill.enterprise.view.commands.ViewCommand" method="createInstance" windowType="popup"/>
+        <access name="update"/>
+      </action>
+
+      <action name="createView_step" afterVK="createViewVKey">
+           <command class="" method="" windowType="wizard_step"/>
+      </action>
+      <action name="createView_step">
+           <command class="" method="" windowType="wizard_step"/>
+      </action>
+
+      <action name="deleteView">
+        <command class="com.ptc.windchill.enterprise.view.commands.ViewCommand" method="deleteViewInstance"/>
+      </action>
+
+      <action name="deleteViews">
+        <command class="com.ptc.windchill.enterprise.view.commands.ViewCommand" method="deleteViewInstances"/>
+      </action>
+
+      <action name="renameView" checkaccess="true" ajax="true">
+        <command class="com.ptc.windchill.enterprise.view.commands.ViewCommand" method="renameViewInstance" windowType="popup"/>
+        <access name="update"/>
+      </action>
+
+      <action name="renameView_step">
+        <command class="null" method="null"/>
+        <access name="update"/>
+      </action>
+
+      <action name="insertView" checkaccess="true" ajax="true">
+        <command class="com.ptc.windchill.enterprise.view.commands.ViewCommand" method="insertViewInstance" windowType="popup"/>
+        <access name="update"/>
+      </action>
+
+      <action name="insertView_step">
+        <command class="null" method="null"/>
+        <access name="update"/>
+      </action>
+
+      <action name="moveView" checkaccess="true" ajax="true">
+        <command class="com.ptc.windchill.enterprise.view.commands.ViewCommand" method="moveViewInstance" windowType="popup"/>
+        <access name="update"/>
+      </action>
+
+      <action name="moveView_step">
+        <command class="null" method="null"/>
+        <access name="update"/>
+      </action>
+   </objecttype>
+
+</listofactions>

@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>三维工艺发布页面</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+		<script type="text/javascript" src="jquery-1.7.2.min.js">&#160;</script>
+		<script type="text/javascript" src="jquery-1.7.2.min.js">&#160;</script>
+		<script type="text/javascript" src="pv/pvUtils.js">&#160;</script>
+		<script type="text/javascript" src="pv/pvlaunch.js">&#160;</script>
+		<script type="text/javascript" src="releasetools.js">&#160;</script>
+		<script type="text/javascript" src="release_pv.js">&#160;</script>
+		<script type="text/javascript" src="pv/procedure_api.js">&#160;</script>
+		<script type="text/javascript" src="pv/generic_prc.js">&#160;</script>
+<style type="text/css">
+<!--
+html{
+	overflow:hidden;
+	}
+
+body {
+	margin:0;
+	padding:0;
+	overflow-y:hidden;
+	}
+
+-->
+</style>
+<script type="text/javascript">
+	$(function(){
+		changeFreamHeight();
+		$(window).resize(function() {
+			changeFreamHeight();
+		});
+	});
+
+	function changeFreamHeight(){
+		//ifream高度自适应
+		//chrome浏览器兼容 需要去掉5哥像素
+		var winHeight = $(window).height() - 5 + "px";
+		$("#outerDiv").css({height:winHeight});
+		var fream = $("iframe");
+		fream.each(function(){
+			this.style.height = winHeight;
+		});
+	}
+</script>
+
+</head>
+<body>
+	<div style="width:1024px;margin:0 auto;overflow-y:hidden;" id="outerDiv">
+        <iframe id="ifLeft" name="freamNav" src="nav.html" width="250px" height="1200px" style="float:left;border:0;margin-right:5px;padding:0;overflow:hidden;" frameborder="no"></iframe>
+        <iframe id="ifRight" name="frameDivId" src="content.html" width="769px" height="1200px" style="float:right;border:0;margin:0;padding:0;" frameborder="no"></iframe>
+	</div>
+</body>
+</html>

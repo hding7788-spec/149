@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+
+<actionmodels>
+
+    <model name="massUpdate.roleA.table">
+        <action name="collectRoleAObjects" type="massUpdate"/>
+    </model>
+
+    <model name="MassUpdateWizardButtons">
+       <action name="previewButton" type="massUpdate"/>
+       <action name="massUpdateBackButton" type="massUpdate"/>
+       <action name="prevButton"    type="object"/>
+       <action name="nextButton"    type="object"/>
+       <action name="okButton"      type="object"/>
+       <action name="cancelButton"  type="object"/>
+    </model>
+</actionmodels>

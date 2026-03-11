@@ -1,0 +1,123 @@
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.Set"%>
+<%@page import="com.infoengine.modeler.data.ForEach"%>
+<%@page import="com.ptc.netmarkets.workinstructions.WorkInstructionsUtilities"%>
+<%@page import="ext.casc.util.IBAUtility,ext.ptc.ViewWIHelper,java.util.List,java.util.Map"%>
+<%@page import="com.ptc.windchill.mpml.processplan.operation.MPMOperation"%>
+
+<style>  
+.CMtdPPTableHeader{background-color: #FED293; font-weight: bold; font-size: 8pt; text-align:left; vertical-align: left}
+.CMtdPPTableNormal{background-color: #FFFFFF; font-weight: normal; font-size: 8pt; text-align:left; vertical-align: left}
+.CMtdPPTableNormal2{background-color: #F0F0F0; font-weight: normal; font-size: 8pt; text-align:left; vertical-align: left}
+</style>
+
+<TABLE class="tableSeqParent" width="100%" border=0>
+	<%
+	    currentOperationNumber = ieObj.getAttributeValue("CURRENT_OPERATION", 0, "number");
+
+	    String Workshop = "车间";
+	    Workshop = new String(Workshop.getBytes("iso-8859-1"), "GBK");
+	    String Equipment = "设备";
+	    Equipment = new String(Equipment.getBytes("iso-8859-1"), "GBK");
+	    String GYZB = "工艺装备";
+	    GYZB = new String(GYZB.getBytes("iso-8859-1"), "GBK");
+	    String number = "序号";
+	    number = new String(number.getBytes("iso-8859-1"), "GBK");
+	    String name = "工序名称";
+	    name = new String(name.getBytes("iso-8859-1"), "GBK");
+	    String gongju = "工具";
+	    gongju = new String(gongju.getBytes("iso-8859-1"), "GBK");
+	    String chengxuhao = "程序号";
+	    chengxuhao = new String(chengxuhao.getBytes("iso-8859-1"), "GBK");
+	    String neirong = "内容";
+	    neirong = new String(neirong.getBytes("iso-8859-1"), "GBK");
+	    String yiqiyibiao = "仪器仪表";
+	    yiqiyibiao = new String(yiqiyibiao.getBytes("iso-8859-1"), "GBK");
+	    String peitaojian = "配套件";
+	    peitaojian = new String(peitaojian.getBytes("iso-8859-1"), "GBK");
+	    String fuliao = "辅料";
+	    fuliao = new String(fuliao.getBytes("iso-8859-1"), "GBK");
+	%>
+	<!--First Row-->
+	<TR>
+		<!--Columns containing Number, Name, Version, and Type TITLES-->
+		<TD class="CMtdPPTableHeader"><%=number%></TD>
+		<TD class="CMtdPPTableHeader"><%=name%></TD>
+		<TD class="CMtdPPTableHeader"><%=neirong%></TD>
+		<TD class="CMtdPPTableHeader"><%=Workshop%></TD>
+		<!--Version-->
+		<!--Type-->
+		<TD class="CMtdPPTableHeader"><%=GYZB%></TD>
+		<%
+		    String opObid = ieObj.getAttributeValue("CURRENT_OPERATION", 0, "obid");
+		    String oidOP = WorkInstructionsUtilities.getOid(opObid);
+
+		    MPMOperation opera = (MPMOperation) WorkInstructionsUtilities.getObject(oidOP);
+
+		    String neirongValue = "";
+		    if(opera.getLongDescriptionRichText()!=null){
+		        neirongValue = opera.getLongDescriptionRichText().getRichText();
+		    }
+		    String label = ViewWIHelper.getMPMOperationLabel(opera);
+
+		    IBAUtility ibautil = new IBAUtility(opera);
+		    String WorkshopValue = ibautil.getIBAValue("Workshop");
+		    if (WorkshopValue == null) {
+		        WorkshopValue = "";
+		    }
+		    String EquipmentValue = ibautil.getIBAValue("Equipment");
+		    if (EquipmentValue == null) {
+		        EquipmentValue = "";
+		    }
+		    String GYZBValue = ibautil.getIBAValue("GYZB");
+		    if (GYZBValue == null) {
+		        GYZBValue = "";
+		    }
+		    String gongjuValue = ibautil.getIBAValue("Tools");
+		    if (gongjuValue == null) {
+		        gongjuValue = "";
+		    }
+		    String chengxuhaoValue = ibautil.getIBAValue("ProgramNo");
+		    if (chengxuhaoValue == null) {
+		        chengxuhaoValue = "";
+		    }
+		    
+		    String yiqiyibiaoValue = "";
+		    String fuliaoValue = "";
+
+		    String imageLinkOP = WorkInstructionsUtilities.getPendingStatusIconString(oidOP);
+		    if (!imageLinkOP.equals("")) {
+		%>
+		<TD class="CMtdPPTableHeader"></TD>
+		<%
+		    }
+		%>
+	</TR>
+	<TR>
+		<!--Second Row containing Number, Name, Version, and Type VALUES-->
+		<TD class="CMtdPPTableNormal"><%=label%></TD>
+		<TD class="CMtdPPTableNormal"><ie:getValue name="name"
+				groupIn="CURRENT_OPERATION" />
+		</TD>
+		<TD class="CMtdPPTableNormal" width="400"
+			style="width: 400; word-wrap: break-word; word-break: break-all;"><%=neirongValue%></TD>
+		<TD class="CMtdPPTableNormal"><%=WorkshopValue%></TD>
+		<TD class="CMtdPPTableNormal"><%=GYZBValue%></TD>
+		<%
+		    if (!imageLinkOP.equals("")) {
+		%>
+		<TD class="CMtdPPTableNormal"><IMG alt="<%=pendingChangeToolTip%>" SRC="<%=imageLinkOP%>" /> <%
+     }
+ %>
+		</TD>
+		<%
+		    if (showPrintOption) {
+		%>
+		<TD CMtdPPTableNormal><%@ include file="sequenceHeaderWorkInstruction.jspf"%></TD>
+		<%
+		    }
+		%>
+	</TR>
+</TABLE>
+
+

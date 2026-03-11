@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="PrintFTP">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ServiceWeb1.03/printConfig/jar包/PrintFTP.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+<!-- define the actions on the UI components -->
+<actionmodels>
+   <model name="ManageSecurityButtons">
+      <action name="okButton" type="object"/>
+      <action name="SecurityApplyButton" type="accessPermission"/>
+      <action name="cancelButton" type="object"/>
+   </model>
+
+   <model name="multiObjManageSecurityButtons">
+      <action name="okButton" type="object"/>
+      <action name="cancelButton" type="object"/>
+   </model>
+   
+   <model name="access control common component actions">
+      <action name="AccessControlCC" type="object"/>
+   </model>
+   
+   <model name="access control component toolbar actions" >
+      <action name="findParticipant" type="object" shortcut="true"/>
+      <action name="removeParticipant" type="object" shortcut="true"/>
+   </model>
+   
+   <model name="security labels toolbar actions">
+      <action name="collectItems" type="object" shortcut="true"/>
+   </model>
+   
+   <model name="object_manage_security_noncollectable_submenu" resourceBundle="com.ptc.core.security.securityResource">
+         <action name="ManageSecurity"                 type="accessPermission"/>
+         <action name="securityLabelsSingleObjJCA"     type="securityLabels"/>
+         <action name="EDITSECURITYLABELSNONCOLLECTED"     type="object"/>
+   </model>
+   
+   <model name="object_manage_security_jca_submenu" resourceBundle="com.ptc.core.security.securityResource">
+      <action name="ManageSecurity"                 type="accessPermission"/>
+      <action name="securityLabelsSingleObjJCA"              type="securityLabels"/>
+   </model>
+   
+   <model name="object_manage_security_submenu" resourceBundle="com.ptc.core.security.securityResource">
+      <action name="ManageSecurity"     type="accessPermission"/>
+      <action name="EDITSECURITYLABELS" type="object"/>
+   </model>
+        
+   <model name="table_action_manage_security_noParent_submenu" resourceBundle="com.ptc.core.security.securityResource">
+      <action name="noParentFolderedMultiObjManageSecurity"   type="accessPermission"/>
+      <action name="MULTIEDITSECURITYLABELS"   type="object"/>
+   </model>
+   
+   <model name="table_action_manage_security_submenu" resourceBundle="com.ptc.core.security.securityResource">
+      <action name="multiObjManageSecurity"   type="accessPermission"/>
+      <action name="MULTIEDITSECURITYLABELS"   type="object"/>
+   </model>
+   
+   <model name="object_manage_security_no_SL_submenu" resourceBundle="com.ptc.core.security.securityResource">
+      <action name="ManageSecurity"               type="accessPermission"/>
+   </model>
+   
+   <model name="table_action_manage_security_no_Access_submenu" resourceBundle="com.ptc.core.security.securityResource">
+      <action name="MULTIEDITSECURITYLABELS"       type="object"/>
+   </model>
+   
+   <model name="table_action_manage_security_no_SL_submenu" resourceBundle="com.ptc.core.security.securityResource">
+      <action name="multiObjManageSecurity"   type="accessPermission"/>
+   </model>
+</actionmodels>

@@ -1,0 +1,419 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+
+<!-- define the actions on the UI components -->
+<actionmodels>
+
+    <!-- Uses Table : Toolbar definition for Workspace -->
+    <model name="msrRelatedCADDocsToolBar">
+       <action name="saveAsGWT"                         type="msr"/>
+       <action name="updateGWT"                         type="msr"/>
+       <action name="separator"                         type="separator" />
+       <action name="msrCheckoutGWT"                       type="msr"/>
+       <action name="msrCheckinGWT"                        type="msr"/>
+       <action name="undocheckoutGWT"                   type="msr"/>
+       <action name="editAttrsGWT"                      type="msr"/>
+       <action name="tableExportActionsGWT" type="cat"/>
+       <action name="exportCsvGWT" type="cat"/>
+       <action name="exportHtmlGWT" type="cat"/>
+       <action name="exportPdfGWT" type="cat" />
+       <action name="exportTextGWT" type="cat"/>
+       <action name="exportXlsGWT" type="cat"/>
+       <action name="exportXlsxGWT" type="cat"/>
+       <action name="exportXlsReportGWT" type="cat"/>
+       <action name="exportXmlGWT" type="cat"/>
+    </model>
+
+    <!-- Uses Table : Toolbar definition for CommonSpace -->
+    <model name="msrRelatedCADDocsToolBarCS">
+       <action name="saveAsGWT"                         type="msr"/>
+       <action name="addToWorkspaceGWT"                 type="msr"/>
+       <action name="separator"                         type="separator" />
+       <action name="tableExportActionsGWT" type="cat"/>
+       <action name="exportCsvGWT" type="cat"/>
+       <action name="exportHtmlGWT" type="cat"/>
+       <action name="exportPdfGWT" type="cat" />
+       <action name="exportTextGWT" type="cat"/>
+       <action name="exportXlsGWT" type="cat"/>
+       <action name="exportXlsxGWT" type="cat"/>
+       <action name="exportXlsReportGWT" type="cat"/>
+       <action name="exportXmlGWT" type="cat"/>
+    </model>
+
+    <!-- Toolbar definition for CommonSpace -->
+    <model name="msrRelatedCADDocsTreeToolBarCS">
+
+       <action name="viewingGroupGWT"                   type="psb"/>
+       <action name="showDefaultRelatedObjectsGWT" type="msr" />
+       <action name="configurableTableViewGWT"          type="cat"/>
+       <action name="configurableTableViewListGWT"      type="cat"/>
+       <action name="separator"                         type="separator"/>
+       <action name="saveStructureViewGWT"              type="cat" />
+       <action name="configurableTableViewManagerGWT"   type="cat"/>
+       <action name="hideAllRelatedObjectsGWT" type="msr" />
+       <action name="displayGWT"                        type="cat"/>
+       <action name="mergeOrShowUsesGWT"                type="msr"/>
+       <action name="separator"                         type="separator"/>
+       <action name="expandAllLevelsGWT"                type="cat"/>
+       <action name="collapseAllLevelsGWT"              type="cat" />
+       <action name="separator"                         type="separator"/>
+       <action name="viewLayout2Panel"                  type="cat"/>
+       <action name="viewLayout3Panel"                  type="cat"/>
+       <action name="separator"                         type="separator"/>
+       <action name="refreshGWT"                        type="msr"/>
+
+       <action name="newAddToGroupGWT"                  type="psb"/>
+       <action name="addToActionsGWT"                   type="psb"/>
+       <action name="addToWorkspaceGWT"                 type="msr"/>
+       <action name="addToBaselineGWT"                  type="cat"/>
+       <action name="newActionsGWT"                     type="psb" />
+       <action name="saveAsGWT"                         type="msr"/>
+       <action name="newPromotionRequestGWT"            type="cat"/>
+       <action name="newImageDesignContextGWT"          type="msr"/>
+
+       <action name="filterGroupGWT"                    type="msr"/>
+       <action name="editFilterWithLargeIconGWT"        type="msr"/>
+       <action name="filterPropertiesGWT"               type="msr"/>
+       <action name="savedFiltersGWT"                   type="msr"/>
+
+       <action name="toolsGroupGWT"                     type="psb"/>
+       <action name="launchCompareToPartGWT"            type="dsv"/>
+       <action name="openActionsGWT"                    type="psb"/>
+       <action name="openInProductViewGWT"              type="psb"/>
+
+       <action name="psbReportsGroupGWT"                type="psb"/>
+       <action name="msrReportsGWT"                     type="msr"/>
+       <action name="msrSingleLevelReportGWT"           type="msr"/>
+       <action name="msrMultiLevelReportGWT"            type="msr"/>
+   
+       <action name="exportActionsGWT" type="cat"/>
+       <action name="exportCsvGWT" type="cat"/>
+       <action name="exportHtmlGWT" type="cat"/>
+       <action name="exportPdfGWT" type="cat" />
+       <action name="exportTextGWT" type="cat"/>
+       <action name="exportXlsGWT" type="cat"/>
+       <action name="exportXlsxGWT" type="cat"/>
+       <action name="exportXlsReportGWT" type="cat"/>
+       <action name="exportXmlGWT" type="cat"/>
+
+    </model>
+
+    <!-- Toolbar definition for WorkSpace (including CAR) -->
+    <model name="msrRelatedCADDocsTreeToolBarWSIncludingCAR">
+       <action name="editingGroupGWT"                   type="psb"/>
+       <action name="msrEditSplitGWT"                   type="msr"/>
+       <action name="editAttrsGWT"                      type="msr"/>
+       <!-- SPR 2042562
+       <action name="editUsageLinkGWT"                  type="psb"/>
+       -->
+
+       <action name="checkInOutGroupGWT"                type="psb"/>
+       <action name="msrCheckoutGWT"                       type="msr"/>
+       <action name="msrCheckinGWT"                        type="msr"/>
+       <action name="undocheckoutGWT"                   type="msr"/>
+
+       <action name="viewingGroupGWT"                   type="psb"/>
+       <action name="showDefaultRelatedObjectsGWT" type="msr" />
+       <action name="configurableTableViewGWT"          type="cat"/>
+       <action name="configurableTableViewListGWT"      type="cat"/>
+       <action name="separator"                         type="separator"/>
+       <action name="saveStructureViewGWT"              type="cat" />
+       <action name="configurableTableViewManagerGWT"   type="cat"/>
+       <action name="hideAllRelatedObjectsGWT" type="msr" />
+       <action name="displayGWT"                        type="cat"/>
+       <action name="mergeOrShowUsesGWT"                type="msr"/>
+       <action name="separator"                         type="separator"/>
+       <action name="expandAllLevelsGWT"                type="cat"/>
+       <action name="collapseAllLevelsGWT"              type="cat" />
+       <action name="separator"                         type="separator"/>
+       <action name="viewLayout2Panel"                  type="cat"/>
+       <action name="viewLayout3Panel"                  type="cat"/>
+       <action name="separator"                         type="separator"/>
+       <action name="refreshGWT"                        type="msr"/>
+
+       <action name="newAddToGroupGWT"                  type="psb"/>
+       <action name="saveAsGWT"                         type="msr"/>
+       <action name="newCARGWT"                         type="msr"/>
+
+       <action name="toolsGroupGWT"                     type="psb"/>
+       <action name="launchCompareToPartGWT"            type="dsv"/>
+       <action name="updateGWT"                         type="msr"/>
+
+       <action name="psbReportsGroupGWT"                type="psb"/>
+       <action name="msrReportsGWT"                     type="msr"/>
+       <action name="msrSingleLevelReportGWT"           type="msr"/>
+       <action name="msrMultiLevelReportGWT"            type="msr"/>
+   
+       <action name="exportActionsGWT" type="cat"/>
+       <action name="exportCsvGWT" type="cat"/>
+       <action name="exportHtmlGWT" type="cat"/>
+       <action name="exportPdfGWT" type="cat" />
+       <action name="exportTextGWT" type="cat"/>
+       <action name="exportXlsGWT" type="cat"/>
+       <action name="exportXlsxGWT" type="cat"/>
+       <action name="exportXlsReportGWT" type="cat"/>
+       <action name="exportXmlGWT" type="cat"/>
+
+    </model>
+
+    <!-- Toolbar definition for WorkSpace (including Edit CAR) -->
+    <model name="msrRelatedCADDocsTreeToolBarWSIncludingEditCAR">
+       <action name="editingGroupGWT"                   type="psb"/>
+       <action name="editSplitCARGWT"                   type="msr"/>
+       <action name="editAttrsGWT"                      type="msr"/>
+       <!-- SPR 2042562
+       <action name="editUsageLinkGWT"                  type="psb"/>
+       -->
+       <action name="editCARGWT"                        type="msr"/>
+       <action name="refreshMembersGWT"                 type="msr"/>
+
+       <action name="checkInOutGroupGWT"                type="psb"/>
+       <action name="msrCheckoutGWT"                       type="msr"/>
+       <action name="msrCheckinGWT"                        type="msr"/>
+       <action name="undocheckoutGWT"                   type="msr"/>
+
+       <action name="viewingGroupGWT"                   type="psb"/>
+       <action name="showDefaultRelatedObjectsGWT" type="msr" />
+       <action name="configurableTableViewGWT"          type="cat"/>
+       <action name="configurableTableViewListGWT"      type="cat"/>
+       <action name="separator"                         type="separator"/>
+       <action name="saveStructureViewGWT"              type="cat" />
+       <action name="configurableTableViewManagerGWT"   type="cat"/>
+       <action name="hideAllRelatedObjectsGWT" type="msr" />
+       <action name="displayGWT"                        type="cat"/>
+       <action name="mergeOrShowUsesGWT"                type="msr"/>
+       <action name="separator"                         type="separator"/>
+       <action name="expandAllLevelsGWT"                type="cat"/>
+       <action name="collapseAllLevelsGWT"              type="cat" />
+       <action name="separator"                         type="separator"/>
+       <action name="viewLayout2Panel"                  type="cat"/>
+       <action name="viewLayout3Panel"                  type="cat"/>
+       <action name="separator"                         type="separator"/>
+       <action name="refreshGWT"                        type="msr"/>
+
+       <action name="newAddToGroupGWT"                  type="psb"/>
+       <action name="saveAsGWT"                         type="msr"/>
+
+       <action name="toolsGroupGWT"                     type="psb"/>
+       <action name="launchCompareToPartGWT"            type="dsv"/>
+       <action name="updateGWT"                         type="msr"/>
+       <action name="updateImageDesignContextGWT"       type="msr"/>
+
+       <action name="psbReportsGroupGWT"                type="psb"/>
+       <action name="msrReportsGWT"                     type="msr"/>
+       <action name="msrSingleLevelReportGWT"           type="msr"/>
+       <action name="msrMultiLevelReportGWT"            type="msr"/>
+   
+       <action name="exportActionsGWT" type="cat"/>
+       <action name="exportCsvGWT" type="cat"/>
+       <action name="exportHtmlGWT" type="cat"/>
+       <action name="exportPdfGWT" type="cat" />
+       <action name="exportTextGWT" type="cat"/>
+       <action name="exportXlsGWT" type="cat"/>
+       <action name="exportXlsxGWT" type="cat"/>
+       <action name="exportXlsReportGWT" type="cat"/>
+       <action name="exportXmlGWT" type="cat"/> 
+
+    </model>
+
+    <!-- Toolbar definition for WorkSpace (excluding CAR) -->
+    <model name="msrRelatedCADDocsTreeToolBarWSExcludingCAR">
+       <action name="editingGroupGWT"                   type="psb"/>
+       <action name="msrEditSplitGWT"                   type="msr"/>
+       <action name="editAttrsGWT"                      type="msr"/>
+       <!-- SPR 2042562
+       <action name="editUsageLinkGWT"                  type="psb"/>
+       -->
+
+       <action name="checkInOutGroupGWT"                type="psb"/>
+       <action name="msrCheckoutGWT"                       type="msr"/>
+       <action name="msrCheckinGWT"                        type="msr"/>
+       <action name="undocheckoutGWT"                   type="msr"/>
+
+       <action name="viewingGroupGWT"                   type="psb"/>
+       <action name="showDefaultRelatedObjectsGWT" type="msr" />
+       <action name="configurableTableViewGWT"          type="cat"/>
+       <action name="configurableTableViewListGWT"      type="cat"/>
+       <action name="separator"                         type="separator"/>
+       <action name="saveStructureViewGWT"              type="cat" />
+       <action name="configurableTableViewManagerGWT"   type="cat"/>
+       <action name="hideAllRelatedObjectsGWT" type="msr" />
+       <action name="displayGWT"                        type="cat"/>
+       <action name="mergeOrShowUsesGWT"                type="msr"/>
+       <action name="separator"                         type="separator"/>
+       <action name="expandAllLevelsGWT"                type="cat"/>
+       <action name="collapseAllLevelsGWT"              type="cat" />
+       <action name="separator"                         type="separator"/>
+       <action name="viewLayout2Panel"                  type="cat"/>
+       <action name="viewLayout3Panel"                  type="cat"/>
+       <action name="separator"                         type="separator"/>
+       <action name="refreshGWT"                        type="msr"/>
+
+       <action name="newAddToGroupGWT"                  type="psb"/>
+       <action name="saveAsGWT"                         type="msr"/>
+
+       <action name="toolsGroupGWT"                     type="psb"/>
+       <action name="launchCompareToPartGWT"            type="dsv"/>
+       <action name="updateGWT"                         type="msr"/>
+
+       <action name="psbReportsGroupGWT"                type="psb"/>
+       <action name="msrReportsGWT"                     type="msr"/>
+       <action name="msrSingleLevelReportGWT"           type="msr"/>
+       <action name="msrMultiLevelReportGWT"            type="msr"/>
+   
+       <action name="exportActionsGWT" type="cat"/>
+       <action name="exportCsvGWT" type="cat"/>
+       <action name="exportHtmlGWT" type="cat"/>
+       <action name="exportPdfGWT" type="cat" />
+       <action name="exportTextGWT" type="cat"/>
+       <action name="exportXlsGWT" type="cat"/>
+       <action name="exportXlsxGWT" type="cat"/>
+       <action name="exportXlsReportGWT" type="cat"/>
+       <action name="exportXmlGWT" type="cat"/>
+
+    </model>
+
+    <model name="msrRelatedCADDocsContextMenu">
+       <action name="viewCaddocInfoGWT"                 type="msr"/>
+
+       <action name="separator"                         type="separator"/>
+
+       <action name="updateGWT"                         type="msr"/>
+    </model>
+
+    <model name="msrRelatedCADDocsTreeContextMenuCS">
+       <action name="viewCaddocInfoGWT"                 type="msr"/>
+
+       <action name="separator"                         type="separator"/>
+
+       <action name="separator"                         type="separator"/>
+
+       <action name="relatedObjectsGWT"  type="msr"/>
+       <action name="expandAllLevelsGWT"                type="cat"/>
+       <action name="collapseAllLevelsGWT"              type="cat" />
+
+       <action name="separator"                         type="separator"/>
+
+       <action name="addToWorkspaceGWT"                 type="msr"/>
+       <action name="addToBaselineGWT"                  type="cat"/>
+       <action name="saveAsGWT"                         type="msr"/>
+       <action name="newPromotionRequestGWT"            type="cat"/>
+       <action name="updateDistributionTargetGWT"       type="msr" />
+
+       <action name="separator"                         type="separator"/>
+
+       <action name="launchCompareToPartGWT"            type="dsv"/>
+ 
+       <action name="separator"                         type="separator"/>
+ 
+       <submodel name="psbOpenInRelatedPartsTreeContextSubmenuGWT"/>
+    </model>
+
+    <model name="msrRelatedCADDocsTreeContextMenuWSIncludingCAR">
+       <action name="viewCaddocInfoGWT"                 type="msr"/>
+
+       <action name="separator"                         type="separator"/>
+
+       <submodel name="msrEditRelatedCADDocsTreeContextSubmenuGWT"/>
+
+       <action name="separator"                         type="separator"/>
+
+       <action name="msrCheckoutGWT"                       type="msr"/>
+       <action name="msrCheckinGWT"                        type="msr"/>
+       <action name="undocheckoutGWT"                   type="msr"/>
+
+       <action name="separator"                         type="separator"/>
+
+       <action name="relatedObjectsGWT"  type="msr"/>
+       <action name="expandAllLevelsGWT"                type="cat"/>
+       <action name="collapseAllLevelsGWT"              type="cat" />
+
+       <action name="separator"                         type="separator"/>
+
+       <action name="saveAsGWT"                         type="msr"/>
+
+       <action name="separator"                         type="separator"/>
+
+       <action name="launchCompareToPartGWT"            type="dsv"/>
+       <action name="updateGWT"                         type="msr"/>
+       <action name="separator"                         type="separator"/>
+       <submodel name="msrOpenInRelatedCADDocsTreeContextSubmenuGWT"/>
+    </model>
+
+    <model name="msrRelatedCADDocsTreeContextMenuWSExcludingCAR">
+       <action name="viewCaddocInfoGWT"                 type="msr"/>
+
+       <action name="separator"                         type="separator"/>
+
+       <submodel name="msrEditRelatedCADDocsTreeContextSubmenuGWT"/>
+
+       <action name="separator"                         type="separator"/>
+
+       <action name="msrCheckoutGWT"                       type="msr"/>
+       <action name="msrCheckinGWT"                        type="msr"/>
+       <action name="undocheckoutGWT"                   type="msr"/>
+
+       <action name="separator"                         type="separator"/>
+
+       <action name="relatedObjectsGWT"  type="msr"/>
+       <action name="expandAllLevelsGWT"                type="cat"/>
+       <action name="collapseAllLevelsGWT"              type="cat" />
+
+       <action name="separator"                         type="separator"/>
+
+       <action name="saveAsGWT"                         type="msr"/>
+
+       <action name="separator"                         type="separator"/>
+
+       <action name="launchCompareToPartGWT"            type="dsv"/>
+       <action name="updateGWT"                         type="msr"/>
+       <action name="separator"                         type="separator"/>
+       <submodel name="msrOpenInRelatedCADDocsTreeContextSubmenuGWT"/>
+    </model>
+
+    <model name="msrOpenInRelatedCADDocsTreeContextSubmenuGWT" resourceBundle="com.ptc.windchill.uwgm.cadx.caddoc.msr.msrActionsRB">
+	<action name="openInCreoGWT"                         type="msr"/>
+	<action name="openInCatiaGWT"                         type="msr"/>
+	<action name="openInCreoViewGWT"                         type="msr"/>
+    </model>
+    
+    <model name="msrEditRelatedCADDocsTreeContextSubmenuGWT" resourceBundle="com.ptc.windchill.uwgm.cadx.caddoc.msr.msrActionsRB">
+       <action name="editAttrsGWT"                      type="msr"/>
+       <!-- SPR 2042562
+       <action name="editUsageLinkGWT"                  type="psb"/>
+       -->
+    </model>
+
+    <model name="msrVizToolBar">
+         <action name="zoomAllGWT" type="cat" />
+        <action name="zoomSelectedGWT" type="cat" />
+        <action name="setSpinCenterGWT" type="cat" />
+        <action name="toggleAutoSelectionGWT" type="cat" />
+        <action name="toggleAutoSelectionFromStructToVIZGWT" type="cat" />
+        <action name="toggleAutoSelectionFromVIZToStructGWT" type="cat" />
+    </model>
+
+    <model name="msrReportsToolbar">
+        <action name="msrReportsActionsGWT" type="msr"/>
+        <action name="msrReportsExportListGWT" type="msr"/>
+        <action name="reportsExportCsvGWT" type="msr" />
+        <action name="reportsExportHtmlGWT" type="msr" />
+        <action name="reportsExportPdfGWT" type="msr" />
+        <action name="reportsExportTextGWT" type="msr" />
+        <action name="reportsExportXlsGWT" type="msr" />
+        <action name="reportsExportXlsxGWT" type="msr" />
+        <action name="reportsExportXlsReportGWT" type="msr" />
+        <action name="reportsExportXmlGWT" type="msr" />
+    </model>
+
+     <!-- This action model is simillar to psbTreePanelContextMenu and carTreePanelContextMenu. These three models should be in synch ideally.-->
+    <model name="msrTreePanelContextMenu">
+        <action name="selectAllGWT" type="cat" />
+        <action name="separator" type="separator" />
+        <action name="viewLayout2Panel" type="cat"/>
+        <action name="viewLayout3Panel" type="cat"/>
+        <action name="separator" type="separator" />
+        <action name="refreshGWT" type="msr" />
+    </model>
+
+</actionmodels>

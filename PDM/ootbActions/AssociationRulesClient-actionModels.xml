@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+<!-- define the actions on the UI components -->
+<actionmodels
+    resourceBundle="com.ptc.windchill.enterprise.associationRules.associationRulesClientActionsRB">
+    
+    <model name="associationRules_table">
+        <description>Toolbar actions for the association rule table.</description>
+        <action name="create" type="associationRules" shortcut="true"/>
+        <action name="list_delete" type="object" shortcut="true"/>
+        <action name="exportAssociationRules" type="associationRules" shortcut="true"/>
+        <action name="importAssociationRules" type="associationRules" shortcut="true"/>
+    </model>    
+    
+    <model name="associationRules_table row action">
+        <description>Row actions for the association rule table.</description>
+        <action name="edit" type="associationRules"/>
+        <action name="undocheckout" type="object"/> 
+        <action name="delete_object" type="associationRules"/>
+        <action name="exportAssociationRules" type="associationRules"/>
+    </model>
+    
+
+</actionmodels>

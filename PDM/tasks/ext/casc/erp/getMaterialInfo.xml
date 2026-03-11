@@ -1,0 +1,31 @@
+<%@page language="java" session="false" access="http|soap" ontentType="text/xml"%>
+<%@taglib uri="http://www.ptc.com/infoengine/taglib/core" prefix="ie"%>
+<%@page import="java.io.*"%>
+<%@page import="java.util.*"%>
+<%@page import="ext.casc.integrate.material.MaterialService"%>
+<%@page import=" java.lang.Exception"%>
+
+<%
+String number =  (String)getParam("number");
+
+String result = "";
+
+MaterialService serivce = new MaterialService();
+try{
+   result =serivce.getMaterialByNumber(number);
+}
+catch (Exception e) {
+   result = e.getLocalizedMessage();
+}
+System.out.println("----result----"+result);
+%>
+
+<ie:webject name="Create-Group" type="GRP">
+   <ie:param name="ELEMENT" data="<%=result%>"/>
+   <ie:param name="CLASS" data="Status"/>
+   <ie:param name="GROUP_OUT" data="${@FORM[]group_out[]}"  default="output"/>
+</ie:webject>
+
+
+
+

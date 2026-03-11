@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+<listofactions>
+    <objecttype name="rd" class="com.ptc.windchill.rd.ReceivedDelivery" resourceBundle="com.ptc.windchill.rd.receivedDeliveryResource">
+        <action name="import_received_delivery" ajax="component" multiselect="true" selectRequired="true">
+            <description>Import a Package</description>
+            <command class="com.ptc.windchill.rd.forms.ImportReceivedDeliveryFormProcessor" method="execute" windowType="popup" /> 
+        </action>
+        <action name="import_received_delivery_list" ajax="component" multiselect="true" selectRequired="true">
+            <description>Import a Package</description>
+            <command class="com.ptc.windchill.rd.forms.ImportReceivedDeliveryFormProcessor" method="execute" windowType="popup" onClick="PTC.receivedDelivery.validateSelection(event,'IMPORT')" url="/netmarkets/jsp/rd/import_received_delivery.jsp"/>             
+        </action>
+        <action name="uploadDeliveryFilesWizard" ajax="component">
+            <description>Launch the wizard for uploading delivery files</description>
+            <command class="com.ptc.windchill.rd.forms.UploadDeliveryFilesTableFormProcessor" method="execute" windowType="popup" onClick="PTC.receivedDelivery.validateUploadActionSelection(event)"/>
+        </action>
+        <action name="edit" checkaccess="true" ajax="row" multiselect="false" selectRequired="true">
+            <description>Edit Received Delivery</description>
+            <command class="com.ptc.windchill.rd.forms.EditReceivedDeliveryFormProcessor" method="execute" windowType="popup"/>
+        </action>
+        <action name="setAttributesWizStep" id="setAttributesWizStep" preloadWizardPage="false" required="true">
+            <component name="rd.edit.defineItemStep" windowType="wizard_step"/>
+        </action>
+        <action name="preview_mapping">
+            <description>Preview Received Delivery Import of Received Delivery Files</description>
+            <command class="" windowType="popup" />           
+        </action>
+       <action name="setPreviewMappingAttributesStep" preloadWizardPage="false" required="true">
+             <component name="receivedDelivery.definePreviewMapping.attributes" windowType="wizard_step" />
+        </action>    
+        <action name="setViewLogAttributesWizStep" preloadWizardPage="false" required="true">
+             <component name="receivedDelivery.viewImportLog.attributes" windowType="wizard_step" />
+        </action>
+        <action name="setImportAttributesStep" preloadWizardPage="false" required="true">
+             <component name="receivedDelivery.import.attributes" windowType="wizard_step" />
+        </action>
+        <action name="preview_mapping_list" ajax="component" selectRequired="true" >
+            <description>Preview Received Delivery Import of Received Delivery Files</description>
+            <command class="" windowType="popup" onClick="PTC.receivedDelivery.validateSelection(event,'PREVIEW')"/>                        
+        </action>
+        <action name="uploadDeliveryFilesTable" uicomponent="ATTACHMENTS" ajax="row" postloadJS="preAttachmentsStep" preloadWizardPage="false">
+            <description>Upload received delivery files</description>
+            <command class="com.ptc.windchill.enterprise.attachments.forms.SecondaryAttachmentsSubFormProcessor" windowType="wizard_step"/>
+            <includeFilter name="hideFromDTI" />
+            <includeFilter name="EDACompareFilter" />
+        </action>      
+        <action name="rdChunkInfo" >
+            <component name="receivedDeliveryChunkInfo.table" windowType="page"/>
+        </action>
+        <action name="viewImportLog" ajax="component" selectRequired="false" multiselect="true">
+            <command class="" windowType="popup" onClick="PTC.receivedDelivery.validateSelection(event,'VIEWIMPORTLOG')"/>
+        </action>
+        <action name="delete_received_delivery" resourceBundle="com.ptc.windchill.rd.receivedDeliveryResource">
+            <command class="com.ptc.netmarkets.rd.NmReceivedDeliveryCommands" method="deleteReceivedDelivery" onClick="postSelectValidation(event, &apos;delete_received_delivery&apos;)"/>
+        </action>
+		<action name="reprepare_received_delivery" resourceBundle="com.ptc.windchill.rd.receivedDeliveryResource">
+            <command class="com.ptc.netmarkets.rd.NmReceivedDeliveryCommands" method="rePrepareReceivedDelivery"/>
+        </action>
+		<action name="reprepare_received_delivery_list" resourceBundle="com.ptc.windchill.rd.receivedDeliveryResource">
+            <command class="com.ptc.netmarkets.rd.NmReceivedDeliveryCommands" method="rePrepareReceivedDelivery" onClick="PTC.receivedDelivery.validateSelection(event,'REPREPAREFILES')"/>
+        </action>
+        <action name="delete_received_delivery_list" resourceBundle="com.ptc.windchill.rd.receivedDeliveryResource" uicomponent="DELETE" ajax="row" ajaxActionClass="netmarkets/jsp/object/delete.jsp" multiselect="true" selectRequired="true">
+            <command class="com.ptc.netmarkets.rd.NmReceivedDeliveryCommands" method="deleteReceivedDeliveryList" onClick="postSelectValidation(event, &apos;delete_received_delivery_list&apos;)"/>
+        </action>   
+        <action name="okButton">
+            <description>OK button for Preview Received Delivery Import wizard</description>
+            <command class="" method="" windowType="page" onClick="PTC.receivedDelivery.onOKClickCloseDefineMapping()"/>
+        </action>    
+        <action name="importButton" afterJS="window.close()">        	  
+        	 <command class="" method="" windowType="page" url="javascript:onSubmit()"/>
+            <description>Import button for Import Received Delivery wizard</description>                       
+        </action>
+        <action name="rdAdditionalContent" resourceBundle="com.ptc.windchill.rd.receivedDeliveryResource">
+            <component name="receivedDeliveryAdditionalContents.table" windowType="page"/>
+        </action>       
+    </objecttype>
+</listofactions>
+      

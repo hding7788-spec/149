@@ -1,0 +1,32 @@
+{
+  "data": [
+    {
+      "dataUrl": {
+        "fileName": "产品明细表格式7-2012(A4).dwg",
+        "downloadUrl": "http://pdm.149.sast.casc/%E4%BA%A7%E5%93%81%E6%98%8E%E7%BB%86%E8%A1%A8%E6%A0%BC%E5%BC%8F7-2012%28A4%29.dwg"
+      },
+      "number": "T-0000-01.PRT.DWG",
+      "printDataUrl": {
+        "fileName": "SIGN_产品明细表格式7-2012(A4).pdf",
+        "downloadUrl": "http://pdm.149.sast.casc/Windchill/servlet/WindchillGW/wt.fv.master.StandardMasterService/doDirectDownload/SIGN_%E4%BA%A7%E5%93%81%E6%98%8E%E7%BB%86%E8%A1%A8%E6%A0%BC%E5%BC%8F7-2012%28A4%29.pdf?folderId=166107&ft=FF&userid=11&adId=5056949&fileName=00000000251a8d&refsize=56446&mime=application/pdf&mk=wt.fv.master.StandardMasterService&ofn=SIGN_%E4%BA%A7%E5%93%81%E6%98%8E%E7%BB%86%E8%A1%A8%E6%A0%BC%E5%BC%8F7-2012%28A4%29.pdf&c=1&riid=-1&sT=1750072867&sign=5ARE4Ch2Cjf087pabsWNIA%3D%3D&site=http%3A%2F%2Fpdm.149.sast.casc%2FWindchill%2Fservlet%2FWindchillGW&AUTH_CODE=HmacMD5&isProxy=true"
+      },
+      "name": "产品明细表格式7-2012(A4)",
+      "oid": "OR:wt.doc.WTDocument:5056939",
+      "version": "space.2"
+    },
+    {
+      "dataUrl": {
+        "fileName": "t-0000-01.drw",
+        "downloadUrl": "http://pdm.149.sast.casc/t-0000-01.drw"
+      },
+      "number": "T-0000-01.DRW",
+      "cadName": "t-0000-01.drw",
+      "printDataUrl": {},
+      "name": "t-0000-01.drw",
+      "oid": "OR:wt.epm.EPMDocument:132670",
+      "version": "space.1"
+    }
+  ],
+  "rtnMsg": "",
+  "rtnCode": "S"
+}

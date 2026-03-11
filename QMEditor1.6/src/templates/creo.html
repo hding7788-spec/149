@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>工艺管理</title>
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.part_nav {
+	border-width: 0px;
+	height: "100%";
+	background-color: #808080;
+	list-style: none;
+	margin-top: -2px;
+	margin-left: -40px
+}
+
+.part_nav li {
+	float: left;
+	text-align: center;
+	background-color: lightblue;
+	cursor: pointer;
+	margin-right: 0px;
+	font-size: 18px;
+	line-height: 25px;
+	border: black 1px solid;
+	height: 30px;
+	padding: 0 10px;
+}
+
+.part_nav .select {
+	background-color: cyan;
+	cursor: default;
+}
+
+.note {
+	background: lightgreen;
+	height: 50px;
+}
+</style>
+<SCRIPT type="text/javascript" SRC="pvlaunch.js"></SCRIPT>
+<SCRIPT type="text/javascript" SRC="pvUtils.js"></SCRIPT>
+<script type="text/javascript">
+	var creoPath = ${creoPath};
+
+	var myPvApi;
+	var orientations;
+	var viewStates;
+	var annotations;
+	
+	/* Callback event */
+    function pvAnnotationEvent(type, annoName, saved) {
+        if (saved == true)
+            CheckState();
+    }
+	
+	/* Refreshes the annotation sets list */
+    function CheckState() {
+        if (_isIE) {
+            var numElements = document.getElementById("annoSelection").children.length;
+            for (i = 0; i < numElements; ++i)
+                document.getElementById("annoSelection").remove(0);
+        } else {
+            var numElements = document.getElementById("annoSelection").childNodes.length;
+            for (i = 0; i < numElements; ++i)
+                document.getElementById("annoSelection").remove(0);
+        }
+    }
+	
+	function viewSelected(){
+		var my_array = document.getElementById("viewSelected").value.split(" ");
+		
+	    var name = my_array[0];
+	    var type = my_array[1];
+	    myPvApi.SetViewState(name, type);
+	}
+	
+	function myLoad() {
+		myPvApi.SetBackgroundColor("0x2C90FF:0xAEAEB2");
+		var annoNum = myPvApi.GetNumOfAnnotations();
+		
+		var oOption = document.createElement("OPTION");
+        oOption.text = "-----";
+        oOption.value = -1;
+        document.getElementById("viewSelected").add(oOption);
+
+        viewStates = myPvApi.ListViewStates();
+        listAnnotations();
+        
+        window.location = "command://loadfinished";
+	}
+
+	function myAddViewState(name, type) {
+		var oOption = document.createElement("OPTION");
+        oOption.text = name;
+        oOption.value = name + " " + type;
+        document.getElementById("viewSelected").add(oOption);
+	}
+	
+    function startAnimation() {
+        var annoNum = document.getElementById("annoSelection").value;
+        var annoName = myPvApi.GetAnnotationName(annoNum);
+        if(annoNum != -1)
+            myPvApi.StartAnimation(true);
+    }
+
+    function stopAnimation() {
+        var annoNum = document.getElementById("annoSelection").value;
+        var annoName = myPvApi.GetAnnotationName(annoNum);
+        if (annoNum != -1)
+            myPvApi.StopAnimation();
+    }
+
+    /* Refreshes the annotation sets list */
+    function listAnnotations() {
+        var numAnno = myPvApi.GetNumOfAnnotations();
+        if (_isIE) {
+            var oOption = document.createElement("OPTION");
+            oOption.text = "-----";
+            oOption.value = -1;
+            document.getElementById("annoSelection").add(oOption);
+
+            for (i = 0; i < numAnno; i++) {
+                var oOption = document.createElement("OPTION");
+                oOption.text = myPvApi.GetAnnotationName(i);
+                oOption.value = i;
+                document.getElementById("annoSelection").add(oOption);
+            }
+        } else {
+            document.getElementById("annoSelection").options[0] = new Option('-----', -1);
+            for (i = 0; i < numAnno; i++) {
+                var annoName = myPvApi.GetAnnotationName(i);
+                document.getElementById("annoSelection").options[i + 1] = new Option(annoName, i);
+            }
+        }
+    }
+	
+    /* Loads selected annotation set */
+    function annoSelected() {
+        var annoNum = document.getElementById("annoSelection").value;
+        
+        var annoName = myPvApi.GetAnnotationName(annoNum);
+        
+        if (annoNum != -1) {
+        	document.getElementById("startAnimation").disabled = false;
+        	document.getElementById("stopAnimation").disabled = false;
+            myPvApi.LoadAnnotation(annoName);
+        } else {
+        	document.getElementById("startAnimation").disabled = true;
+        	document.getElementById("stopAnimation").disabled = true;
+        }
+    }
+	
+	function aa() {
+		document.getElementById('creo_holder').style.height = document.documentElement.clientHeight - 35 + "px";
+	}
+
+	window.attachEvent('onresize', aa);
+	
+	function captureThumbnail() {
+        myPvApi.CaptureScreen("jpg",200,200);
+	}
+	
+	function saveThumbnail(status,filename) {
+		document.getElementById("thumbnailImage").value = filename;
+        window.location = "command://captureThumbnail";
+	}
+</script>
+</head>
+<body onload="javascript:aa();" style="margin: 0px; padding: 0px;">
+	<form name="form1">
+		<input type="hidden" name="thumbnailImage" id="thumbnailImage"/>
+	</form>
+	<table width="100%" height="100%" cellpadding="0" cellspacing="0">
+		<tr>
+			<td style="height: 30px">
+				视图： <select id="viewSelected" onchange="javascript:viewSelected();" name="viewstate"></select>
+			</td>
+			<td>
+				注释集： <select id="annoSelection" onchange="javascript:annoSelected();" name="annotation"></select>
+			</td>
+			<td>
+				<input type="button" id="startAnimation" value="开始动画" onclick="javascript:startAnimation();" disabled="disabled"/>
+			</td>
+			<td>
+				<input type="button" id="stopAnimation" value="停止动画" onclick="javascript:stopAnimation();" disabled="disabled"/>
+			</td>
+		</tr>
+		<tr id="picHolder">
+			<td id="creo_holder" style="border-top: 0px" colspan="4">
+				<script type="text/javascript">
+				try {
+					myPvApi = ProductView("", creoPath);
+					myPvApi.OnLoadComplete = myLoad;
+					myPvApi.OnAddViewState = myAddViewState;
+                    myPvApi.OnAnnotationEvent = pvAnnotationEvent;
+                    myPvApi.OnSaveScreenShot = saveThumbnail;
+				} catch (e) {
+					alert(e);
+				}
+				</script>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

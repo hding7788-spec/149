@@ -1,0 +1,48 @@
+<listofactions>
+	<objecttype name="sysnav" resourceBundle="com.ptc.windchill.enterprise.sysnavgate.sysNavGateRB">
+
+		<action name="sysnavTab">
+    			<command url="netmarkets/jsp/sysnav/sysnav.jsp"/>
+    			<supportedTypes> 
+	    			<type value="wt.doc.WTDocument"/>
+	    			<type value="com.ptc.swlink.WTSoftwareIssue"/>
+					<type value="com.ptc.windchill.enterprise.requirement.Requirement"/>
+					<type value="com.ptc.windchill.enterprise.requirement.Specification"/>
+	    			<type value="wt.part.WTPart"/>
+	    			<type value="wt.part.WTPartMaster"/>
+	    			<type value="wt.change2.WTChangeIssue"/>
+	    			<type value="wt.change2.WTChangeRequest2"/>
+	    			<type value="wt.change2.WTVariance"/>
+	    			<type value="wt.change2.WTChangeOrder2"/>
+					<type value="wt.epm.EPMDocument"/>
+					<type value="wt.change2.WTChangeActivity2"/>
+					<type value="com.ptc.windchill.mpml.processplan.MPMProcessPlan"/>
+					<type value="com.ptc.windchill.mpml.processplan.MPMProcessPlanMaster"/>
+					<type value="com.ptc.windchill.mpml.processplan.operation.MPMOperation"/>
+					<type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationMaster"/>
+					<type value="com.ptc.windchill.mpml.processplan.sequence.MPMSequence"/>
+					<type value="com.ptc.windchill.mpml.processplan.sequence.MPMSequenceMaster"/>
+					<type value= "com.ptc.windchill.mpml.mfgprocess.MPMMfgProcess"/>
+					<type value="com.ptc.windchill.mpml.mfgprocess.MPMMfgProcessMaster"/>
+					<type value="com.ptc.windchill.mpml.resource.MPMSkill"/>
+					<type value="com.ptc.windchill.mpml.resource.MPMTooling"/>
+					<type value="com.ptc.windchill.mpml.resource.MPMWorkCenter"/>
+					<type value="com.ptc.windchill.mpml.resource.MPMProcessMaterial"/>
+					<type value="wt.maturity.PromotionNotice"/>
+    			</supportedTypes>
+                <includeFilter name="hideIt" />
+    	</action>
+		
+		<action name="sysnavTabShortcut">
+				<command url="/app/#ptc1/tcomp/infoPage?tabAction=sysnavTab&amp;tabType=sysnav" windowType="page"/>
+                <includeFilter name="hideIt" />
+    	</action>
+		
+		<action name="sysnavTabOpenInShortcut">
+				<command url="/app/#ptc1/tcomp/infoPage?tabAction=sysnavTab&amp;tabType=sysnav" windowType="page"/>
+                <includeFilter name="hideIt" />
+    	</action>
+				      
+	</objecttype>
+	
+</listofactions>

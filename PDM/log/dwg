@@ -1,0 +1,10 @@
+2019-09-19 16:07:40,524 INFO  [main] wt.method.client.timing - INVOKE: start ext.Test2.test [1hge136;k0qex2w7;19520;z244iu;1]
+2019-09-19 16:07:41,019 INFO  [main] wt.method.client.timing - INVOKE: end ext.Test2.test [1hge136;k0qex2w7;19520;z244iu;1], 495.7997 ms
+2019-09-19 16:12:06,463 INFO  [main] wt.method.client.timing - INVOKE: start ext.Test2.test [1hge136;k0qf2s3c;9512;imvvjg;1]
+2019-09-19 16:12:06,822 INFO  [main] wt.method.client.timing - INVOKE: end ext.Test2.test [1hge136;k0qf2s3c;9512;imvvjg;1], 359.5058 ms
+2019-09-19 16:12:22,800 INFO  [main] wt.method.client.timing - INVOKE: start ext.Test2.test [1hge136;k0qf34p7;20436;fv49xb;1]
+2019-09-19 16:12:22,959 INFO  [main] wt.method.client.timing - INVOKE: end ext.Test2.test [1hge136;k0qf34p7;20436;fv49xb;1], 159.6281 ms
+2019-09-19 16:13:37,669 INFO  [main] wt.method.client.timing - INVOKE: start ext.Test2.test [1hge136;k0qf4qgx;12160;imvvjg;1]
+2019-09-19 16:13:48,162 INFO  [main] wt.method.client.timing - INVOKE: end ext.Test2.test [1hge136;k0qf4qgx;12160;imvvjg;1], 10492.7334 ms
+2019-09-19 16:14:37,959 INFO  [main] wt.method.client.timing - INVOKE: start ext.Test2.test [1hge136;k0qf60zm;21972;imvvjg;1]
+2019-09-19 16:14:39,281 INFO  [main] wt.method.client.timing - INVOKE: end ext.Test2.test [1hge136;k0qf60zm;21972;imvvjg;1], 1323.0246 ms

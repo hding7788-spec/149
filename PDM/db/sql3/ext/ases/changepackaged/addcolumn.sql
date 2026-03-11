@@ -1,0 +1,16 @@
+alter table ChangePackaged add requestpriority VARCHAR2(600);
+alter table ChangePackaged add changeleixing VARCHAR2(600);
+alter table ChangePackaged add changereason VARCHAR2(600);
+alter table ChangePackaged add edittime VARCHAR2(600);
+alter table ChangePackaged add requesttime VARCHAR2(600);
+alter table ChangePackaged add avidmtype  VARCHAR2(600);
+alter table ChangePackaged add template VARCHAR2(600);
+alter table ChangePackaged add cost VARCHAR2(600);
+alter table ChangePackaged add secret VARCHAR2(600);
+alter table ChangePackaged add pindex VARCHAR2(600);
+alter table ChangePackaged add filenumber VARCHAR2(600);
+alter table ChangePackaged add guancanghao VARCHAR2(600);
+alter table ChangePackaged add responsor VARCHAR2(600);
+alter table ChangePackaged add remark VARCHAR2(600);
+alter table ChangePackaged add startphasename VARCHAR2(600);
+alter table ChangePackaged add targetphasename VARCHAR2(600);

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+<!-- define the actions on wt.doc.WTDocument -->
+<actionmodels>
+   <model name="report results table actions">
+      <submodel name="folderbrowser_toolbar_exportlisttofile_submenu"/> <!-- Export -->
+      <action name="createChart" type="reportResult" shortcut="true"/>
+   </model>
+</actionmodels>

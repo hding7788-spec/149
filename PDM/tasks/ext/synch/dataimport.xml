@@ -1,0 +1,93 @@
+<?xml version="1.0" standalone="yes"?>
+<%@page language="java" session="false" access="http|soap" contentType="text/xml"%>
+<%@taglib uri="http://www.ptc.com/infoengine/taglib/core" prefix="ie"%>
+<%@page import="wt.adapter.BasicWebjectDelegate"%>
+<%@page import="java.util.*"%>
+<%@page import="ext.casc.ixb.DataReceiveAndImport"%>
+<%@page import="java.net.MalformedURLException"%>
+<%@page import="java.net.URL"%>
+<!--com.infoengine.soap.rpc.def
+Called to Process Deliveried Data.
+@param string site
+@param string filename
+@version 1.0
+-->
+<%
+	String url_Str = (String)getParam("URL");
+	String wfProcessOid = (String)getParam("wfProcessOid");
+	String activityTemplateID = (String)getParam("activityTemplateID");
+	String activityName = (String)getParam("activityName");
+	String activityOid = (String)getParam("activityOid");
+	String reviewType = (String)getParam("reviewType");
+	String workflowType = (String)getParam("workflowType");
+	String sendFrom = (String)getParam("sendFrom");
+	String 	orderIID = (String)getParam("orderIID");
+	String 	previewUser = (String)getParam("previewUser");
+	String 	pbonumber = (String)getParam("pbonumber");
+    String 	pboname = (String)getParam("pboname");
+    String 	dataImportStateID = (String)getParam("ReceiveStateID");
+	String result="";
+
+	 if(reviewType.equals("approvedCompleted")){
+            try{
+				ext.casc.workflow.CmWorkflowHelper.completeActivityBy805(activityOid);
+            }catch(wt.util.WTException e){
+             result = e.getMessage();
+                e.printStackTrace();
+            }
+
+        }else  if(reviewType.equals("previewFeedback")){
+            try{
+				String implementStr = (String)getParam("implementStr");
+				ext.casc.workflow.CmWorkflowHelper.implementFeedback(activityOid,implementStr);
+            }catch(wt.util.WTException e){
+             result = e.getMessage();
+                e.printStackTrace();
+            }catch(wt.util.WTPropertyVetoException e){
+				result = e.getMessage();
+                e.printStackTrace();
+            }
+
+        }else  if(reviewType.equals("processFeedback")){
+            try{
+				String processReviewStr = (String)getParam("processReviewStr");
+				ext.casc.workflow.CmWorkflowHelper.processNoticeFeedback(processReviewStr);
+            }catch(wt.util.WTException e){
+             result = e.getMessage();
+                e.printStackTrace();
+            }catch(wt.util.WTPropertyVetoException e){
+				result = e.getMessage();
+                e.printStackTrace();
+            }
+
+        }else  if(reviewType.equals("processDelete")){
+            try{
+				ext.casc.workflow.CmWorkflowHelper.deletePeOrCp(pbonumber,workflowType);
+            }catch(Exception e){
+             result = e.getMessage();
+                e.printStackTrace();
+            }
+
+        }else{
+
+		try {
+			DataReceiveAndImport dr = new DataReceiveAndImport(new URL(url_Str),wfProcessOid, activityTemplateID,activityName,activityOid, reviewType,workflowType,sendFrom,orderIID,previewUser,pbonumber,pboname,dataImportStateID);
+			result = dr.transData();
+			//result = dr.dataImportProcess();
+			//dr.run();
+			dr.dataImportWorker();
+		} catch (Exception e) {
+
+			// TODO Auto-generated catch block
+		   result = e.getMessage();
+			e.printStackTrace();
+
+		}
+	}
+%>
+
+<ie:webject name="Create-Group" type="GRP">
+    <ie:param name="GROUP_OUT" data="${@FORM[]group_out[0]}" default="output"/>
+    <ie:param name="CLASS" data="ProcessResult"/>
+  <ie:param name="GROUP_IN" data="<%=result%>"/>
+</ie:webject>

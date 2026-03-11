@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+<!-- define the actions on the UI components -->
+<actionmodels>
+ 	<model name="set effectivity table actions">
+	 	<action name="set_updateEffectivity" type="effectivity" shortcut="true"/>
+ 		<action name="addEffectivity" type="effectivity" shortcut="true"/>
+	 	<action name="removeEffStatements" type="effectivity" shortcut="true"/>
+	 	<action name="setContext" type="effectivity" shortcut="true"/>
+ 	</model>
+ 
+ 	<model name="set effectivity row actions">
+ 		<action name="propagateEffectivity" type="effectivity" />
+ 		<action name="viewByVersion" type="effectivity" />
+ 	</model>
+   
+ 
+    <model name="effectivityWizardButtons">
+      <action name="okButton"      type="object"/>
+      <action name="cancelButton"  type="object"/>
+   </model>
+   
+    <model name="effectivity table actions for parts and MPMLink Info page">
+      <action name="addEffectivityForPartsAndMPMLinkInfoPage" type="effectivity" shortcut="true" />
+      <action name="separator"                     type="separator"/>
+      <action name="removeEffectivity" type="effectivity" shortcut="true" />
+    </model> 
+	
+    <model name="ViewEffWizardCloseButton">
+        <action name="closeButton" type="object" />
+    </model>
+
+	<model name="SetEffectivityRangeButtonsList">
+		<action name="okButton" type="effectivity"/>
+		<action name="closeButton" type="effectivity"/>
+	</model>
+	    
+</actionmodels>

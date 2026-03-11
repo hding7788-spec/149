@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+	<objecttype name="indexing" class="java.lang.Object" resourceBundle="wt.index.client.resource.indexingClientResource">
+		<action name="indexStatusUITable">
+			<component name="index.status.multiview" windowType="page"/>
+		</action>
+		
+        <action name="startBIT" id="startBIT">
+            <command onClick="PTC.indexing.startBIT()"/>
+        </action>
+        
+        <action name="stopBIT">
+            <command onClick="PTC.indexing.stopBIT()"/>
+        </action>        
+        
+        <action name="resetFailed">
+            <command onClick="PTC.indexing.resetFailed()"/>
+        </action>
+
+        <action name="resetNoPolicy">
+            <command onClick="PTC.indexing.resetNoPolicy()"/>
+        </action>
+        
+        <action name="resetProcessing">
+            <command onClick="PTC.indexing.resetProcessing()"/>
+        </action>
+        
+        <action name="resetIndexStatus">
+            <command onClick="PTC.indexing.resetIndexStatus()"/>
+        </action>        
+        
+    </objecttype>
+    
+    <objecttype name="object" class="java.lang.Object" resourceBundle="wt.index.client.resource.indexingClientResource">
+        <action name="Index_Single_Type" ajax="page" >
+            <command class="wt.index.client.IndexSpecificType" method="initiateTypeSpecificIndexing"/>
+            <includeFilter name="Index_Single_Type" />
+        </action>
+    </objecttype>
+    
+</listofactions>

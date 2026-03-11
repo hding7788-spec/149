@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+<listofactions>
+   <objecttype name="promotionRequest" class="wt.maturity.PromotionNotice" resourceBundle="com.ptc.windchill.enterprise.maturity.promotionRequestActionsRB">
+      <action name="promotionItemsTable">
+         <component name="promotionRequest.promotionItems.table"/>
+         <description>Promotion items table</description>
+      </action>
+      <action name="preferenceTable">
+         <description>Preference table</description>
+      </action>
+      <action name="delete" ajax="row" uicomponent="DELETE">
+         <description>Delete promotion request</description>
+         <command class="com.ptc.windchill.enterprise.object.commands.DeleteObjectCommands" method="delete" onClick="JCAConfirm(event,&apos;com.ptc.core.ui.confirmationMessagesRB.DELETE&apos;)"/>
+         <includeFilter name="hideFromNonDeleteUser"/>
+      </action>
+      <action name="edit" ajax="row" uicomponent="PROMOTE">
+         <description>Edit promotion request</description>
+         <command class="com.ptc.windchill.enterprise.maturity.forms.processors.EditPromotionRequestFormProcessor" method="execute" windowType="popup"/>       
+      </action>
+      <action name="createPromotionPreference">
+        <description>Create promotion preference</description>
+        <command class="com.ptc.windchill.enterprise.maturity.forms.processors.PromotionPreferenceFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="promotionPreferenceStep">
+       <description>Promotion preference create step</description>
+        <command windowType="wizard_step"/>
+      </action>
+      <action name="create" selectRequired="true" ajax="component" uicomponent="PROMOTE">
+       <description>Promote create wizard</description>
+        <command class="com.ptc.windchill.enterprise.maturity.forms.processors.CreatePromotionRequestFormProcessor" method="execute" windowType="popup"/>
+         <includeFilter name="OptionSetLocalRuleContextFilter"/>
+         <includeFilter name="restrictGuestMembers"/>        
+      <includeFilter name="manAuthorized"/></action>
+      <action name="promotionObjectsTableStep" preloadWizardPage="false" required="true" afterJS="PTC.promotion.validatePromotionTable" beforeJS="PTC.promotion.disableDefaultCollectionAttribute">
+        <description>Promote wizard promotion objects step</description>
+        <command class="com.ptc.windchill.enterprise.maturity.forms.delegates.PromotionObjectsFormDelegate" windowType="wizard_step"/>
+      </action>
+      <action name="promoteObjects" id="promoteObjects" renderType="GENERAL" selectRequired="true" shortcut="true">
+        <description>Promote wizard promote objects table action</description>
+        <command onClick="PTC.promotion.promoteObjects(event)" windowType="no_content"/>
+      </action>
+      <action name="collectBaselineItems" renderType="GENERAL" selectRequired="true" ajax="row">
+        <description>Collect items to be added to the promotion request</description>
+        <command onClick="openCollectorPicker('Promote', event)" windowType="no_content"/>
+      </action>
+      <action name="addPromotables" ajax="row">
+        <description>Add promotables using an item picker</description>
+        <command class="com.ptc.windchill.enterprise.maturity.forms.processors.PromotablePickerFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="paste" ajax="row" uicomponent="PASTE">
+         <description>Paste promotables</description>
+         <command class="com.ptc.windchill.enterprise.maturity.commands.PromotionPasteCommands" method="paste"/>
+      </action>
+      <action name="pasteSelect" uicomponent="PASTE" ajax="row">
+         <description>Paste selected promotables</description>
+         <command class="com.ptc.windchill.enterprise.maturity.commands.PromotionPasteCommands" method="pasteSelect" windowType="new" url="netmarkets/jsp/object/pasteSelect.jsp"/>
+      </action>
+      <action name="remove" renderType="GENERAL" selectRequired="true">
+        <description>Removes objects in the promotion request object list table</description>
+        <command windowType="no_content" onClick="PTC.promotion.removeRows(event)"/>
+      </action>
+      <action name="workflowParticipantsStep" required="false" preloadWizardPage="false">
+        <description>Promote wizard promotion objects step</description>
+        <command class="com.ptc.windchill.enterprise.maturity.forms.delegates.PromotionParticipantsFormDelegate" windowType="wizard_step"/>
+      </action>
+      <action name="reviewApproveTask_PromotionObjectsTable">
+            <description>Action used on the Review/Approve Promotion Request workflow task to get the configurable workflow version of the Promotion Objects table.</description>
+            <component name="workflowTask.pbo" urlParams="pboCompId=promotionRequest.promotionItems.table"/>
+            <includeFilter name="configurableTypeBaseFilter"/>
+      </action>
+      <action name="edit_promotionObjectsTableStep" preloadWizardPage="false" required="false" afterJS="PTC.promotion.validatePromotionTable" beforeJS="PTC.promotion.disableDefaultCollectionAttribute">
+        <description>Promote wizard promotion objects step for Edit Wizard</description>
+        <command url="netmarkets/jsp/promotionRequest/promotionObjectsTableStep.jsp" class="com.ptc.windchill.enterprise.maturity.forms.delegates.EditPromotionObjectsFormDelegate" windowType="wizard_step"/>
+      </action>
+   </objecttype>
+</listofactions>

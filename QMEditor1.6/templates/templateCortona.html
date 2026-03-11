@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>工艺管理</title>
+<link rel="stylesheet" type="text/css" href="../resource/res_GENERIC_PRC/generic_prc.css">
+<link rel="stylesheet" type="text/css" href="../resource/template.css">
+<script language="javascript" src="../resource/res_GENERIC_PRC/generic_prc.js"></script>
+<script language="javascript" src="../resource/res_GENERIC_PRC/procedure_api.js"></script>
+<script type="text/javascript" SRC="../resource/pvlaunch.js"></script>
+<script type="text/javascript" SRC="../resource/pvUtils.js"></script>
+<script type="text/javascript" src="./treegrid.js"></script>
+<script type="text/javascript">
+	var propSceneName = "${wrlName }";
+	var myPvApi;
+
+	function changeModel(ctl, fileName, type) {
+		var arrLi = document.getElementsByTagName("a");
+		for ( var i = 0; i < arrLi.length; i++) {
+			arrLi[i].style.backgroundColor = "";
+			arrLi[i].style.color = "blue";
+		}
+		//ctl.style.backgroundColor = "cyan";
+		ctl.style.color = "red";
+		var container = document.getElementById("picHolder");
+		var objs = container.childNodes;
+		for ( var j = 0; j < objs.length; j++) {
+			if (objs[j].nodeName == 'TD')
+				objs[j].style.display = "none";
+		}
+		if (type == 'cor') {
+			setDisplay("cortonaTD", "");
+		} else if (type == "pview") {
+			setDisplay("creo_holder", "");
+			myLoad();
+			myPvApi.LoadModel(fileName, "");
+		} else if (type == "image") {
+			setDisplay("image", "");
+			setHTML("image", "<img src='"+fileName+"'style='height: 500px;width:100%;' />");
+		}
+	}
+	
+    function showUL(ulid){
+        var ul = document.getElementById('part_model'+ulid);
+        if(ul != "undefine"){
+            var ulList = document.getElementsByTagName('span');
+            for(var i=0;i<ulList.length;i++){
+                ulList[i].style.display="none";
+            }
+            ul.style.display = "";
+            if(ul.firstChild != null)
+            	ul.firstChild.click();
+            else{
+            	setDisplay("image", "");
+        		setHTML("image", "");
+            }
+        }
+    }
+
+	function myLoad() {
+		myPvApi.SetBackgroundColor("0x202020:0x000000");
+	}
+
+	function playaction(id) {
+		if(!api){
+			return;
+		}
+		if (api.control_script.Fields.Item('vcr_play').Value != 0) {
+			api.control_script.Fields.Item('vcr_play').Value = 0;
+		}
+		api.control_script.Fields.Item('vcr_play').Value = -1;
+		api.vcr_set_position(id);
+	}
+
+	function img_zoom(e, o) {
+		var zoom = parseInt(o.style.zoom, 10) || 100;
+		zoom += event.wheelDelta / 12;
+		if (zoom > 0)
+			o.style.zoom = zoom + '%';
+		return false;
+	}
+</script>
+
+</head>
+<body class="claro" scroll="no" onload="on_load();" onunload="on_unload();" onmouseover="this.style.cursor='default'">
+	<table width="100%" class="tb_all" cellpadding="0" cellspacing="0">
+		<tr height="60px">
+			<td width="5%"><img src="../resource/glaway.PNG" /></td>
+			<td width="95%" align="center">
+				<font size="6px" > 装配工艺流程<font id="bt"></font> </font>
+				<table width="100%" cellpadding="0" cellspacing="0" style="word-break: break-all;">
+					<tr height="25px">
+						<td style="background-color: lightblue;" width="10%">产品名称及代号</td>
+						<td width="10%">${tech.productName}<br/>${tech.productNumber}</td>
+						<td style="background-color: lightblue;" width="10%">整件图号</td>
+						<td width="10%">${tech.parentPartNumber}</td>
+						<td style="background-color: lightblue;" width="10%">编制人</td>
+						<td width="10%">${tech.creator}</td>
+						<td style="background-color: lightblue;" width="10%">备份说明</td>
+						<td width="10%">${tech.backupNote}</td>
+						<td style="background-color: lightblue;" rowspan="2" width="10%">最大备份数量</td>
+						<td width="10%" rowspan="2">${tech.maxBackupCount}</td>
+					</tr>
+					<tr height="25px">
+						<td style="background-color: lightblue;">部件名称</td>
+						<td>${tech.partName}</td>
+						<td style="background-color: lightblue;">部件图号</td>
+						<td>${tech.partNumber}</td>
+						<td style="background-color: lightblue;">编制时间</td>
+						<td>${tech.createTime}</td>
+						<td style="background-color: lightblue;">备份比例</td>
+						<td>${tech.backupRate}</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<tr>
+			<!-- left -->
+			<td id="left" width="5%">
+				<div style="text-align: center;height: 50px;"><font style="font-weight: bolder;">工艺路线图</font></div>
+				<div id="tables" style="height: 650px; overflow-y: scroll;">
+					<!-- 左边table列表 -->
+				</div>
+			</td>
+
+			<td width="95%">
+				<table>
+					<tr>
+						<!-- middle -->
+						<td width="1000px" align="center">
+							<table width="100%" cellpadding="0" cellspacing="0" style="word-break: break-all;">
+								<tr><td colspan="6" align="left"><font style="font-weight: bolder "><font id="gxbh"></font>工序内容</font></td></tr>
+								<tr style="background-color: lightblue;">
+									<td rowspan="2"  width="20%">工序号</td>
+									<td rowspan="2"  width="20%">工序名称</td>
+									<td rowspan="2"  width="20%">制造单位</td>
+									<td colspan="2"  width="20%">工种</td>
+									<td rowspan="2"  width="20%">工位</td>
+								</tr>
+								<tr style="background-color: lightblue;" height="20px"><td >操作</td><td >检验</td></tr>
+								<tr><td id="gxh"></td><td id="gxm"></td><td id="zzdw"></td><td id="cz"></td><td id="jy"></td><td id="gw"></td></tr>
+								<tr><td style="background-color: lightblue;" >工序简述</td><td colspan="5" id="gxjs" align="left"></td></tr>
+								<tr><td style="background-color: lightblue;" >工艺附件</td><td colspan="5" align="left">${fujian}</td></tr>
+								<tr>
+									<td style="background-color: lightblue;" >工序简图</td>
+									<td colspan="5" align="left">
+										${modelList}
+									</td>
+								</tr>
+
+								<tr id="picHolder">
+									<td id="image" height="500px" width="100%" style="display: none;" colspan="6"></td>
+									<td id="creo_holder" width="100%" height="500px" style="overflow: hidden; border-top: 0px; display: none" colspan="6">
+									<script type="text/javascript">
+										try {
+											myPvApi = ProductView("", "${wrlName }");
+											myPvApi.OnLoadComplete = myLoad;
+										} catch (e) {
+											alert(e);
+										}
+										
+									</script>
+									</td>
+
+									<td id="cortonaTD" style="overflow: hidden;" colspan="6">
+										<table id="cortonaFrame" width="100%" height="500px" border="0" cellspacing="0" cellpadding="0" style="position: relative; top: 30px;">
+											<tr>
+												<td id="cortona_holder" style="height: 500px; position: relative; top: -33px;"><div id="cortonaControl"></div></td>
+											</tr>
+											<tr>
+												<td height="10px" align="left" valign="middle" nowrap="true" style="position: relative; top: -30px;"><input id="btn_play"
+													type="button" title="Play" value="Play" disabled="true" class="btn_control" onClick="if(isPageLoaded)play();"> <input
+													id="btn_pause" type="button" title="Pause" value="Pause" disabled="true" class="btn_control" onClick="if(isPageLoaded)pause();">
+													<input id="btn_stop" type="button" title="Stop" value="Stop" disabled="true" class="btn_control" onClick="if(isPageLoaded)stop();"></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+
+
+								<tr id="control_bar" style="display: none" colspan="6">
+									<td>
+										<div id="message_container"></div>
+										<div id="menu_container"></div>
+										<table id="aggregateElement">
+										</table>
+									</td>
+									<td height="10" align="right" class="captions"><input type="hidden" id="autostopbox" title="Autostop" name="autostopbox" disabled="true"
+										value="" onClick="if(isPageLoaded)_set_stop_by_step();"> <input type="hidden" title="Messages" class="FontSz" name="warningbox"
+										id="warningbox" disabled="true" value=""> <span id="freezeVPSpan"> <input type="hidden" class="checkbox_control"
+											name="vpfreeze" id="vpfreeze" disabled checked="false" value="" onClick="if(isPageLoaded)setFreezeVP(this.checked);"> <input
+											type="hidden" name="speed_ratio_selector" id="speed1" title="" value="0.5" disabled="true"
+											onClick="if(isPageLoaded)api.set_speed_ratio(0.5);"> <input type="hidden" name="speed_ratio_selector" id="speed2" title=""
+											onClick="if(isPageLoaded)api.set_speed_ratio(1);" disabled="true" value="1" checked="true"> <input type="hidden"
+											name="speed_ratio_selector" title="" onClick="if(isPageLoaded)api.set_speed_ratio(2);" id="speed3" disabled="true" value="2"> <input
+											id="btn_help" title="Help" type="hidden" value="?" class="btn_control" onClick="showHelp();"> 
+											<!--[if IE]><script for="cortonaControl" event="OnSceneLoaded(success)" language="javascript">on_cortona_scene_loaded(success);</script>
+											<script for="cortonaControl" event="MouseDown(Button, Shift, X, Y)" language="javascript">on_cortona_mouse_down(Button, Shift, X, Y);</script>
+											<script for="cortonaControl" event="MouseUp(Button, Shift, X, Y)" language="javascript">on_cortona_mouse_up(Button, Shift, X, Y);</script>
+											<script for="cortonaControl" event="MouseMove(Button, Shift, X, Y)" language="javascript">on_cortona_mouse_move(Button, Shift, X, Y);</script>
+											<script for="cortonaControl" event="OnKeyDown(key, shift)" language="javascript">on_cortona_key_down(key, shift);</script>
+											<script for="cortonaControl" event="OnMouseOut()" language="javascript">on_cortona_mouse_out();</script><![endif]-->
+									</span></td>
+								</tr>
+
+								<tr>
+									<td width="100%" colspan="6">
+										<table cellspacing="0" style="position: relative; bottom: 0px; word-break: break-all; width: 100%;">
+											<tr style="background-color: lightblue;" height="20px"><td >签审信息</td><td >人员</td><td >日期</td><td >备注</td></tr>
+											<tr height="20px"><td>拟制</td><td>${tech.user1 }</td><td>${tech.date1 }</td><td>${tech.comment1 }</td></tr>
+											<tr height="20px"><td>审核</td><td>${tech.user2 }</td><td>${tech.date2 }</td><td>${tech.comment2 }</td></tr>
+											<tr height="20px"><td>批准</td><td>${tech.user3 }</td><td>${tech.date3 }</td><td>${tech.comment3 }</td></tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+
+
+						<!-- right -->
+						<td id="right" width="1000px">
+							<div style="overflow-y: scroll; height: 650px; width: 100%;">
+								
+								<div id="six" style="margin-bottom: 5px;"></div>
+								
+								<div style="margin-bottom: 60px;">
+									<font style="font-weight: bolder ">工步内容</font>
+									<div id="one"></div>
+								</div>
+
+								<div style="margin-bottom: 60px;">
+									<font style="font-weight: bolder ">参装件</font>
+									<div id="seven" ></div>
+								</div>
+								
+								<div style="margin-bottom: 60px;">
+									<font style="font-weight: bolder ">设备信息</font>
+									<div id="two"></div>
+								</div>
+
+								<div style="margin-bottom: 60px;">
+									<font style="font-weight: bolder ">工装及工具信息</font>
+									<div id="three" ></div>
+								</div>
+								
+								<div style="margin-bottom: 60px;">
+									<font style="font-weight: bolder ">工艺材料信息</font>
+									<div id="four" ></div>
+								</div>
+								
+								<div id="five" style="text-align: center;"></div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+	generateL();
+	</script>
+</body>
+</html>

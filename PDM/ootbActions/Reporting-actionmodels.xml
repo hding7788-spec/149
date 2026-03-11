@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+<!-- define the actions on wt.doc.WTDocument -->
+<actionmodels>
+   <model name="report row actions toolbar">
+      <action name="view"              type="object" />
+      <action name="execute"           type="report" />
+      <action name="updateReport"      type="report" />
+      <action name="deleteReport"      type="report" />
+      <action name="exportReport"      type="report" />
+   </model>
+
+   <model name="report table actions">
+       <action name="deleteReports"    type="report" shortcut="true" />
+       <action name="separator"        type="separator"/>
+       <action name="createReport"     type="report" shortcut="true" />
+       <action name="exportMultipleReport"     type="report" shortcut="true" />
+       <action name="importReport"     type="report" shortcut="true"  />
+   </model>
+
+   <model name="updateReportButtons">
+      <action name="okButton"    type="object" />
+      <action name="cancelButton"   type="object" />
+   </model>
+   
+   <model name="updateSavedReportButtons">
+      <action name="okButton"    type="object" />
+      <action name="cancelButton"   type="object" />
+   </model>
+
+   <model name="report info toolbar" menufor="com.ptc.windchill.enterprise.report.Report">
+      <action name="execute"        type="report" />
+      <action name="updateReport"   type="report" />
+      <action name="deleteReportFromInfo"   type="report" />
+      <action name="exportReport"      type="report" />
+   </model>
+
+   <model name="reportinfopageTabSet">
+      <submodel name="reportInfo_detailstab"/>
+   </model>
+
+   <model name="reportInfo_detailstab" resourceBundle="com.ptc.windchill.enterprise.report.dcaRB">
+      <action name="primaryAttributes" type="object"/>
+      <action name="attributes" type="object"/>
+   </model>
+
+   <model name="reportInfo_detailstab_nav" >
+       <action name="primaryAttributes" type="object"/>
+     <action name="attributes" type="object"/>
+  </model>
+
+	<!-- ************************************************************************************* -->
+	<!-- Saved Report (Report Criteria) action models -->
+	<!-- ************************************************************************************* -->
+	<model name="saved report table actions">
+       <action name="deleteSavedReports"    type="reportCriteria" shortcut="true" />
+       <action name="separator"        		type="separator"/>       
+       <action name="refreshSavedReport" 	type="reportCriteria" shortcut="true"/>
+	   <action name="createDataMonitorTableLevel"      type="datamonitor" shortcut="true"/> 
+   	</model>
+	
+   <model name="saved report row toolbar actions">
+      <action name="updateSavedReport"      type="reportCriteria" />
+      <action name="deleteSavedReport"      type="reportCriteria" />
+      <action name="createDataMonitor"      type="datamonitor" />
+   </model>
+
+</actionmodels>

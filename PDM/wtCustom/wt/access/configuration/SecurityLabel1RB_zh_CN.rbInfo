@@ -1,0 +1,37 @@
+﻿ResourceInfo.class=wt.tools.resource.EnumResourceInfo
+ResourceInfo.customizable=true
+ResourceInfo.deprecated=false
+
+
+# Entry Format (values equal to default value are not included)
+# <key>.value=
+# <key>.category=
+# <key>.comment=
+# <key>.argComment<n>=
+# <key>.constant=
+# <key>.customizable=
+# <key>.deprecated=
+# <key>.abbreviatedDisplay=
+# <key>.fullDisplay=
+# <key>.shortDescription=
+# <key>.longDescription=
+# <key>.order=
+# <key>.defaultValue=
+# <key>.selectable=
+
+# Entry Contents
+
+NULL.value=公开
+NULL.shortDescription=公开
+
+NEIBU.value=内部
+NEIBU.shortDescription=内部
+
+MIMI.value=秘密★10年
+MIMI.shortDescription=秘密★10年
+
+JIMI.value=机密★20年
+JIMI.shortDescription=机密★20年
+
+MIJI.value=密级
+MIJI.shortDescription=密级

@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+
+<listofactions>
+
+	<objecttype name="lotbaseline" class="wt.lotbaseline.LotBaseline" resourceBundle="com.ptc.windchill.lotbaseline.data.lotBaselineResource">
+
+		<!-- Variant Baseline table in part info page - START -->
+		<action name="relatedLotBaselineProductVariant">
+			<component name="productVariants.table"/>
+		</action>
+
+		<action name="createLotBaselineJCA" resourceBundle="com.ptc.windchill.lotbaseline.data.lotBaselineResource">
+                        <command class="com.ptc.windchill.lotbaseline.lbm.server.form.CreateLotBaselineFormProcessor" method="execute" windowType="popup" url="/netmarkets/jsp/lotbaseline/create.jsp"/>
+                </action>
+
+		<action name="createLotBaseline" resourceBundle="com.ptc.windchill.lotbaseline.data.lotBaselineResource">
+                        <command class="com.ptc.windchill.lotbaseline.lbm.client.action.CreateLotBaselineJCAAction" method="execute" windowType="popup" url="/netmarkets/jsp/lotbaseline/create.jsp"/>
+			<includeFilter name="organizedVariantSpecFilter"/>
+			<supportedTypes>
+				<type value="com.ptc.wpcfg.doc.VariantSpec"/>
+			</supportedTypes>
+		</action>
+
+		<action name="create_step" ajax="true" resourceBundle="">
+			<command class="" method="" windowType="wizard_step"/>
+		</action>
+
+		<action name="create_step2" ajax="true" resourceBundle="">
+			<component name="lotBaseline.productVarients" windowType="wizard_step"/>
+		</action>
+
+      		<action name="editLotBaseline" ajax="row" resourceBundle="com.ptc.windchill.lotbaseline.data.lotBaselineResource">
+		    <command class="com.ptc.windchill.lotbaseline.data.form.EditLotBaselineFormProcessor" method="execute" windowType="popup" url="/netmarkets/jsp/lotbaseline/edit.jsp"/>
+		</action>	    
+				    
+		<action name="editLotBaselineGWT" resourceBundle="com.ptc.windchill.lotbaseline.data.lotBaselineResource">
+			<command class="com.ptc.windchill.lotbaseline.lbm.client.action.EditLotBaselineJCAAction" method="execute" url="/netmarkets/jsp/lotbaseline/edit.jsp" windowType="popup"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+			<supportedTypes>
+				<type value="wt.lotbaseline.LotBaseline"/>
+			</supportedTypes>
+		</action>
+
+		<action name="related_product_variant_add_lotbaseline">
+			<command class="com.ptc.windchill.lotbaseline.data.form.LCProductVariantAddedFormProcessor" method="execute" onClick="onClickValidation(event,&apos;related_product_variant_add_lotbaseline&apos;)" windowType="popup"/>
+		</action>
+
+		<action name="lc_related_delete_described">
+			<command class="com.ptc.windchill.lotbaseline.data.form.ProductVariantDeleteRelationFormProcessor" method="execute" onClick="onClickValidation(event,&apos;lc_related_delete_described&apos;)"/>
+		</action>
+
+		<action name="removeVariants" ajax="true" resourceBundle="">
+			<command windowType="no_content" onClick="removeRows(event)"/>
+		</action>
+
+		<action name="removeLotBaselines" ajax="true" resourceBundle="">
+			<command windowType="no_content" onClick="removeRows(event)"/>
+		</action>
+
+		<action name="productVariantsTable"><!-- Action definition  product variants table on Variant Baseline info page-->
+			<component name="productVariants.table"/>
+		</action>
+
+		<action name="removeProductVariants" multiselect="true" ajax="page"><!-- Action definition remove variant spec on product variants table -->
+		   	<command class="com.ptc.windchill.lotbaseline.data.form.RemoveProductVariantsFormProcessor" method="execute" onClick="onClickValidation(event,&apos;removeProductVariants&apos;)"/>
+		</action>
+
+	  	<action name="addProductVariants" > <!-- Action definition  add variant spec on product variants table -->
+		 	<command class="com.ptc.windchill.lotbaseline.NmLotBaselineCommands" method="addRowToTable" url="netmarkets/jsp/lotbaseline/addMembers.jsp" windowType="popup"/>
+      	</action>
+      	
+      	<action name="searchAddVariantsToUpdateTable" > 
+		 	<command class="com.ptc.windchill.lotbaseline.NmLotBaselineCommands" method="searchAddVariantsToUpdateTable" url="netmarkets/jsp/lotbaseline/addMembers.jsp" windowType="popup"/>
+      	</action>
+      	
+	  	<action name="addProductVariantToLot" > <!-- Action definition  add variant spec on product variants table -->
+		 	<command class="com.ptc.windchill.lotbaseline.NmLotBaselineCommands" method="addProductVariantToLot" url="netmarkets/jsp/lotbaseline/addMembers.jsp" windowType="popup"/>
+      	</action>
+		<action name="ProductFamily_LotBaselines"><!-- Action definition  product variants table on Lot Configuration info page-->
+		     <component name="ProductFamily_LotBaselines.table" />
+            <supportedTypes>
+                <type value="wt.productfamily.ProductFamily"/>
+            </supportedTypes>
+		</action>
+
+		<action name="replaceVariantRevision" ajax="component">
+        	<command class="com.ptc.windchill.lotbaseline.NmLotBaselineCommands" method="replaceMember" windowType="popup"/>
+      	</action>
+
+      	<action name="replacableProductVariantsTable"><!-- Action definition  product variants table on Variant Baseline info page-->
+			<component name="replacableProductVariants.table"/>
+		</action>
+
+        <action name="replaceBaselineObjectRevision" ajax="component">
+            <command class="com.ptc.windchill.lotbaseline.NmLotBaselineCommands" method="replaceMember" windowType="popup"/>
+        </action>
+
+        <action name="replaceBaselineObjectRevisionTable"><!-- Action definition  Baseline Object table on Lot Baseline info page-->
+            <component name="replaceBaselineObjectRevision.table"/>
+        </action>
+
+		<action name="updateProductVariants" resourceBundle="com.ptc.windchill.lotbaseline.data.lotBaselineResource" multiselect="false">
+			<command class="com.ptc.windchill.lotbaseline.NmLotBaselineCommands" method="updateProductVariantToLot" windowType="popup"/>
+			<supportedTypes>
+                <type value="wt.lotbaseline.LotBaseline"/>
+			</supportedTypes>
+		</action>
+		<action name="updateProductVariantsGWT" resourceBundle="com.ptc.windchill.lotbaseline.data.lotBaselineResource" multiselect="false" >
+			<command class="com.ptc.windchill.lotbaseline.lbm.client.action.UpdateProductVariantsJCAAction" method="execute" url="netmarkets/jsp/lotbaseline/updateProductVariants.jsp" windowType="popup"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+			<supportedTypes>
+                <type value="wt.lotbaseline.LotBaseline"/>
+			</supportedTypes>
+		</action>
+
+		<action name="updateProductVariants_step" ajax="true" resourceBundle="">
+			<command class="" method="" windowType="wizard_step"/>
+		</action>
+		
+		<action name="addToLotBaselineGWT" resourceBundle="com.ptc.windchill.lotbaseline.data.lotBaselineResource" multiselect="true" >
+			<command class="com.ptc.windchill.lotbaseline.lbm.client.action.AddToLotBaselineJCAAction" method="execute" url="netmarkets/jsp/lotbaseline/addToLotBaseline.jsp" windowType="popup"/>
+			<includeFilter name="organizedVariantSpecFilter"/>
+			<supportedTypes>
+				<type value="com.ptc.wpcfg.doc.VariantSpec"/>
+			</supportedTypes>
+		</action>
+		
+		<action name="addToLotBaseline_step" ajax="true" resourceBundle="">
+			<command class="" method="" windowType="wizard_step"/>
+		</action>
+
+		<action name="lotBaselineMoveGWT">
+			<command class="com.ptc.cat.ui.client.action.MoveAction" method="execute" url="/servlet/WindchillAuthGW/wt.enterprise.URLProcessor/URLTemplateAction" windowType="popup"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+			<includeFilter name="sandboxSharingValidationSimple" />
+			<includeFilter name="hideFromNonAgreementMgrs"/>
+			<supportedTypes>
+				<type value="com.ptc.wpcfg.doc.VariantSpec"/>
+				<type value="wt.lotbaseline.LotBaseline"/>
+			</supportedTypes>
+		</action>
+		<action name="lotBaselineObjectsTable"><!-- Action definition  Baseline objects table on Variant Baseline info page-->
+			 <component name="baselineObjects.table"/> 
+		</action>
+		
+		<action name="removeLotBaseLineObjects" multiselect="true" ajax="page"><!-- Action definition remove LotBaseline Object on Baseline Objects  table -->
+		   	<command class="com.ptc.windchill.lotbaseline.data.form.RemoveBaselineObjectsFormProcessor" method="execute" onClick="onClickValidation(event,&apos;removeProductVariants&apos;)"/>
+		</action>
+		
+	  	<action name="editLotBaseLineObjects" multiselect="true" selectRequired="false" ajax="component"> 
+		 	<command class="com.ptc.windchill.lotbaseline.data.form.EditFloatingBaselineMemberFormProcessor" method="execute" windowType="popup" />
+		</action>
+		<action name="editLotBaseLineObjectsGWT" resourceBundle="com.ptc.windchill.lotbaseline.data.lotBaselineResource">
+			<command class="com.ptc.windchill.lotbaseline.lbm.client.action.EditLotBaselineObjectsJCAAction" method="execute" url="/netmarkets/jsp/lotbaseline/editLotBaseLineObjects.jsp" windowType="popup"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+			<supportedTypes>
+				<type value="wt.lotbaseline.LotBaseline"/>
+			</supportedTypes>
+		</action>
+
+		<action name="editLotBaseLineObjects_step" ajax="true" id="editLotBaseLineObjects_step">
+			<command windowType="wizard_step"/>
+		</action>
+
+	  	<action name="addLotBaseLineObjects" multiselect="true" selectRequired="false" ajax="component"> 
+		 	<command class="com.ptc.windchill.lotbaseline.data.form.CreateFloatingBaselineMemberFormProcessor" method="execute" windowType="popup" />
+		</action>
+         <action name="addLotBaseLineObjectsVariantTableAction" multiselect="true" selectRequired="false" ajax="component">
+            <command class="com.ptc.windchill.lotbaseline.data.form.CreateFloatingBaselineMemberFormProcessorVariantTable" method="execute" url="/netmarkets/jsp/lotbaseline/addLotBaseLineObjects.jsp"  windowType="popup" />
+        </action>
+
+		<action name="addLotBaseLineObjects_step" ajax="true" id="addLotBaseLineObjects_step">
+			<command windowType="wizard_step"/>
+		</action>
+		<action name="addLotBaseLineObjectsGWT" resourceBundle="com.ptc.windchill.lotbaseline.data.lotBaselineResource">
+			<command class="com.ptc.windchill.lotbaseline.lbm.client.action.AddLotBaselineObjectsJCAAction" method="execute" url="/netmarkets/jsp/lotbaseline/addLotBaseLineObjects.jsp" windowType="popup"/>
+			<includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+			<supportedTypes>
+				<type value="wt.lotbaseline.LotBaseline"/>
+			</supportedTypes>
+		</action>
+
+		<!-- Paste action that appears on the toolbar of the Baseline Objects table for a variant baseline -->
+                <action name="pasteVariantBaselineObjects" ajax="row">
+                    <command class="com.ptc.windchill.lotbaseline.data.form.PasteVariantBaselineObjectsFormProcessor" method="execute"/>
+                    <includeFilter name="hideForLockedVariantBaseline"/>
+                    <includeFilter name="disableForUserWithNoModifyVariantBLPermission"/>
+                    <includeFilter name="disableForAdminLockedVariantBaseline"/>
+                </action>
+
+		<action name="addPartToLotBaseline" ajax="component"> <!-- Action definition  add part in edit lotbaseline-->
+			<command class="com.ptc.windchill.lotbaseline.NmLotBaselineCommands" method="addlotBaselineObjectRowToTable" windowType="popup"/>			 
+        </action>
+		
+		<action name="pickerSearch" ajax="component">
+          <component name = "addLotBaselineableObjects.searchTable" onClick="searchButtonClick()" />
+    	</action>
+
+    	<action name="pickerClear" ajax="page" >
+	      	<component name = "addLotBaselineableObjects.searchTable" onClick="searchClearButtonClick()" />
+	    </action>
+		
+		<action name="removePartFromLotBaseline" multiselect="true"  renderType="GENERAL" selectRequired="true" ajax="page">
+		   <command windowType="no_content" onClick="removeRows(event)"/>
+		</action>
+				
+        <action name="relatedLotBaselines">
+           <component name="relatedLotBaselines.table"/>
+        </action>
+ <!-- Edit Properties Actions -->
+    <action name="editProperties" selectRequired="true">
+        <command class="" method=""
+            url="/netmarkets/jsp/lotbaseline/editProperties.jsp"
+            onClick="getTableId(event)" windowType="popup" />
+    </action>
+    <action name="editPropertiesWizard" id="editPropertiesWizard"
+        hidden="true" required="true" preloadWizardPage="false">
+        <command class="" method="" windowType="popup" />
+    </action>
+    <action name="OkButton">
+        <command class="" method="" onClick="applyAndClose()" />
+    </action>
+    <action name="ApplyButton">
+        <command class="" method="" onClick="applyValue()" />
+    </action>
+    <action name="CancelButton">
+        <command class="" method="" onClick="resetValues()" />
+    </action>
+    <action name="SetDefaultButton" id="lotbaseline_edit_SetDefaultButton">
+        <command class="" method="" onClick="setDefault()" />
+    </action>
+        <!-- Variant Baseline table in part info page - END -->
+    <action name="lotSetState" ajax="component">
+            <command class="com.ptc.netmarkets.lifecycle.NmLifeCycleCommands" method="setState" url="netmarkets/jsp/lifecycle/setState.jsp" windowType="popup"/>
+                <includeFilter name="hideForNewObjectInWorkspace"/>
+                <includeFilter name="sandboxSharingValidationSimple"/>
+                <includeFilter name="hideFromNonAgreementMgrs"/>
+                <includeFilter name="hideSBHiddenFilter"/>
+    </action>
+	</objecttype>
+ 
+</listofactions>

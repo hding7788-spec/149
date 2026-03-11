@@ -1,0 +1,42 @@
+<%@page language="java" session="false" access="http|soap" contentType="text/xml"%>
+<%@taglib uri="http://www.ptc.com/infoengine/taglib/core" prefix="ie"%>
+<%@page import="java.io.*"%>
+<%@page import="java.util.*"%>
+<%@page import="ext.casc.integrate.pfmea.PfmeaProcessService"%>
+<%@page import=" java.lang.Exception"%>
+
+
+<!--com.infoengine.soap.rpc.def
+
+@param string bomid Argument bomid 1.
+@param string reportFile Argument reportFile 1.
+@param string filename Argument filename 1.
+@param string username Argument username 1.
+@param string isrepeat Argument isrepeat 1.
+-->
+<%
+String bomid = (String)getParam("bomid");
+String reportFile = (String)getParam("reportFile");
+String filename = (String)getParam("filename");
+String username = (String)getParam("username");
+String isrepeat = (String)getParam("isrepeat");
+
+String result = "";
+
+PfmeaProcessService process = new PfmeaProcessService();
+try{
+   result = process.createQualityReport(bomid,reportFile,filename,username,isrepeat);
+}catch (Exception e) {
+   result = e.getLocalizedMessage();
+}
+System.out.println("----result----"+result);
+result = "result="+result;
+%>
+
+<ie:webject name="Create-Group" type="GRP">
+<ie:param name="ELEMENT" data="<%=result %>"/>
+<ie:param name="CLASS" data="Status"/>
+<ie:param name="GROUP_OUT" data="${@FORM[]group_out[]}" default="output" />
+</ie:webject>
+
+

@@ -1,0 +1,32 @@
+{
+  "data": [
+    {
+      "dataUrl": {
+        "fileName": "产品明细表格式7-2012(A4).dwg",
+        "downloadUrl": "http://pdm.149.sast.casc/%E4%BA%A7%E5%93%81%E6%98%8E%E7%BB%86%E8%A1%A8%E6%A0%BC%E5%BC%8F7-2012%28A4%29.dwg"
+      },
+      "printDataUrl": {
+        "fileName": "SIGN_产品明细表格式7-2012(A4).pdf",
+        "downloadUrl": "http://pdm.149.sast.casc/SIGN_%E4%BA%A7%E5%93%81%E6%98%8E%E7%BB%86%E8%A1%A8%E6%A0%BC%E5%BC%8F7-2012%28A4%29.pdf"
+      },
+      "oid": "OR:wt.doc.WTDocument:5056939"
+    },
+    {
+      "dataUrl": {
+        "fileName": "t-0000-01.drw",
+        "downloadUrl": "http://pdm.149.sast.casc/t-0000-01.drw"
+      },
+      "printDataUrl": {},
+      "oid": "OR:wt.epm.EPMDocument:132670"
+    },
+    {
+      "dataUrl": {
+        "fileName": "T-0000-00.ASM.pvz",
+        "downloadUrl": "http://pdm.149.sast.casc/T-0000-00.ASM.pvz"
+      },
+      "oid": "OR:wt.epm.EPMDocument:132669"
+    }
+  ],
+  "rtnMsg": "获取成功",
+  "rtnCode": "S"
+}

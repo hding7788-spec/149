@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+<listofactions>
+
+   <objecttype name="domainPicker" class="wt.admin.AdministrativeDomain" resourceBundle="com.ptc.core.domainAdmin">   
+     <action name="domainTree" id="domainTree" preloadWizardPage="false" required="true" afterJS="PTC.domainAdmin.sendDomain">
+        <command windowType="wizard_step"/>
+     </action>
+     
+   </objecttype>
+   
+</listofactions>

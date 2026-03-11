@@ -1,0 +1,43 @@
+<component name="libraryTable">
+  <library name="WorkflowExportImport">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/工艺更改单签审流程.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/三级工艺文件签审流程.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/工艺通知单签审流程_org.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/文档签审流程.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/三级工艺文件更改流程.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/文件遗失申请流程.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/通用工艺签审流程.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/149签审包技术会签流程.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/文件延迟申请流程.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/纸质文件封存流程.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/工艺通知单签审流程.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/材料定额流程.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/外协技术协议签审流程.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/工艺方案签审流程.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/其他类文档签审流程.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/五级报表类工艺文件签审流程.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/打印文件回收流程.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/149变更申请包工艺会签流程.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/设计数据工艺预审.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/质量报告签审流程.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/五级工艺文件签审流程.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/文件启封流程.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/149正式发放包流程.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/技术协议签审流程.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/149变更签审包技术会签流程.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/打印申请分发流程.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/工艺方案报告签审流程.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/三级报表类工艺文件签审流程.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/149变更签审包工艺会签流程.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/149签审包工艺会签流程.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/标准工序入库流程.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/打印申请补打流程.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/材料定额流程(测试机10.0).zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/149变更申请包技术会签流程.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PDM/loadFiles/WorkflowExportImport/加盖印章管理流程.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

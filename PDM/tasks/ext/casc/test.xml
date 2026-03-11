@@ -1,0 +1,25 @@
+<?xml version="1.0" standalone="yes"?>
+<%@taglib uri="http://www.ptc.com/infoengine/taglib/core" prefix="ie"%>
+<%@page import="wt.adapter.BasicWebjectDelegate"%>
+
+<%@page import="java.util.*"%>
+<%
+
+String number = (String)getParam("number");
+ArrayList viewList = new ArrayList();
+viewList.add("number=1111|name=222|state=YIPIZHUN");
+viewList.add("number=111|name=222|state=YIPIZHUN");
+viewList.add("number=113|name=222|state=YIPIZHUN");
+viewList.add("number=113|name=222|state=YIPIZHUN");
+%>
+<ie:webject name="Create-Group" type="GRP">
+    <!ie:param name="GROUP_OUT" data="output"/>
+    <ie:param name="GROUP_OUT" data="${@FORM[]group_out[0]}" default="output"/>
+    <ie:param name="DELIMITER" data="|"/>
+<%
+    for ( int i=0; i<viewList.size(); i++ ) {
+      	String elem = (String)viewList.get(i);
+      %><ie:param name="ELEMENT" data="<%=elem%>"/><%
+    }
+%>
+</ie:webject>

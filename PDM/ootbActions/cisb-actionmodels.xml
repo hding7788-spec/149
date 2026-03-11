@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+
+<!-- define the actions on the UI components -->
+<actionmodels>
+
+   <!--  action model for part configuration -->
+   <model name="cisbConfigurationRelatedPartsTreeToolBar">
+      <action name="clipboardGroupGWT" type="psb"/>
+      <action name="copyToWindchillWithLargeIconGWT" type="cat"/>
+
+      <action name="viewingGroupGWT" type="psb"/>
+      <action name="showDefaultRelatedObjectsGWT" type="psb" />
+      <action name="configurableTableViewGWT" type="cat"/>
+      <action name="configurableTableViewListGWT" type="cat"/>
+      <action name="separator" type="separator"/>
+      <action name="saveStructureViewGWT" type="cat" />
+      <action name="configurableTableViewManagerGWT" type="cat"/>
+      <action name="separator" type="cat"/>
+      <action name="sourcingContextGWT" type="psb"/>
+      <action name="sourcingContextListGWT" type="psb"/>
+      <action name="separator" type="cat"/>
+      <action name="findSourcingContextGWT" type="psb"/>
+      <action name="hideAllRelatedObjectsGWT" type="psb" />
+      <action name="displayGWT" type="cat"/>
+      <action name="cisbDisplayOccurrencesGWT" type="cisb"/>
+      <action name="separator" type="cat"/>
+      <action name="selectAllGWT" type="cat"/>
+  <!--     <action name="separator" type="separator" />
+      <action name="expandAllLevelsGWT" type="cat" /> -->
+      <action name="separator" type="separator"/>
+      <action name="ciRefreshGWT" type="cisb"/>
+      
+      <action name="addToGroupGWT" type="cisb"/>
+      <action name="addToActionsGWT" type="psb"/>
+      <action name="addToPackageGWT" type="cat"/>
+      <action name="SBAddToPrj" type="cat"/>
+      
+	  <action name="filterGroupGWT" type="ec"/>
+      <action name="ciRepopulateWithLargeIconGWT" type="cisb"/>
+      
+	  
+      
+      <action name="toolsGroupGWT" type="psb"/>
+      <action name="launchPartConfigurationCompareGWT" type="cisb"/>
+      <action name="psbReportsGroupGWT" type="psb"/>
+      <!--     <action name="psbReportsGWT" type="psb" />
+      <action name="psbReportMultiLevelCompListGWT" type="psb" /> -->
+      <action name="exportActionsGWT" type="cat"/>
+      <action name="exportCsvGWT" type="cat"/>
+      <action name="exportHtmlGWT" type="cat"/>
+      <action name="exportPdfGWT" type="cat" />
+      <action name="exportTextGWT" type="cat"/>
+      <action name="exportXlsGWT" type="cat"/>
+      <action name="exportXlsxGWT" type="cat"/>
+      <action name="exportXlsReportGWT" type="cat"/>
+      <action name="exportXmlGWT" type="cat"/>
+   </model>
+
+   <model name="cisbConfigurationRelatedPartsTreeContextMenu">
+      <action name="ciViewInfoActionGWT" type="cisb"/>
+      <action name="separator" type="separator"/>
+      <action name="assignPartVersionGWT" type="cisb"/>
+      <action name="overridePartVersionGWT" type="cisb"/>
+      <action name="separator" type="separator"/>
+      <action name="copyToWindchillGWT" type="cat"/>
+      <action name="separator" type="separator"/>
+      <action name="relatedObjectsGWT" type="psb"/>
+      <submodel name="cisbAddToRelatedPartsTreeContextSubmenuGWT"/>   
+   </model>
+
+   <model name="cisbConfigurationIndicatorActionModel">
+
+   </model>
+   
+   <!--  action model for part instance -->
+   <model name="cisbInstanceRelatedPartsTreeToolBar">
+      <action name="clipboardGroupGWT" type="psb"/>
+      <action name="copyToWindchillWithLargeIconGWT" type="cat"/>
+
+      <action name="viewingGroupGWT" type="psb"/>
+      <action name="showDefaultRelatedObjectsGWT" type="psb" />
+      <action name="configurableTableViewGWT" type="cat"/>
+      <action name="configurableTableViewListGWT" type="cat"/>
+      <action name="separator" type="separator"/>
+      <action name="saveStructureViewGWT" type="cat" />
+      <action name="configurableTableViewManagerGWT" type="cat"/>
+      <action name="separator" type="cat"/>
+      <action name="sourcingContextGWT" type="psb"/>
+      <action name="sourcingContextListGWT" type="psb"/>
+      <action name="separator" type="cat"/>
+      <action name="findSourcingContextGWT" type="psb"/>
+      <action name="hideAllRelatedObjectsGWT" type="psb" />
+      <action name="displayGWT" type="cat"/>
+      <action name="selectAllGWT" type="cat"/>
+  <!--     <action name="separator" type="separator" />
+      <action name="expandAllLevelsGWT" type="cat" /> -->
+      <action name="separator" type="separator"/>
+      <action name="ciRefreshGWT" type="cisb"/>
+      
+      <action name="addToGroupGWT" type="cisb"/>
+      <action name="addToActionsGWT" type="psb"/>
+      <action name="addToPackageGWT" type="cat"/>
+      <action name="SBAddToPrj" type="cat"/>
+      
+      <action name="filterGroupGWT" type="ec"/>
+      <action name="ciEditFilterWithLargeIconGWT" type="cisb"/>
+      <action name="ciFilterPropertiesWithLargeIconGWT" type="cisb"/>
+            
+      <action name="toolsGroupGWT" type="psb"/>
+      <action name="launchPartInstanceCompareGWT" type="cisb"/>
+      
+      <action name="psbReportsGroupGWT" type="psb"/>
+<!--     <action name="psbReportsGWT" type="psb" />
+      <action name="psbReportMultiLevelCompListGWT" type="psb" /> -->
+      <action name="exportActionsGWT" type="cat"/>
+      <action name="exportCsvGWT" type="cat"/>
+      <action name="exportHtmlGWT" type="cat"/>
+      <action name="exportPdfGWT" type="cat" />
+      <action name="exportTextGWT" type="cat"/>
+      <action name="exportXlsGWT" type="cat"/>
+      <action name="exportXlsxGWT" type="cat"/>
+      <action name="exportXlsReportGWT" type="cat"/>
+      <action name="exportXmlGWT" type="cat"/>
+   </model>
+
+   <model name="cisbInstanceRelatedPartsTreeContextMenu">
+      <action name="ciViewInfoActionGWT" type="cisb"/>
+      <action name="separator" type="separator"/>
+	  <action name="allocateNewPartInstanceGWT" type="cisb"/>
+      <action name="allocateExistingPartInstanceGWT" type="cisb"/>
+      <action name="deallocatePartInstanceGWT" type="cisb"/>
+      <action name="incorporatePartInstanceGWT" type="cisb"/>
+      <action name="replacePartInstanceGWT" type="cisb"/>
+      <action name="undoReplacePartInstanceGWT" type="cisb"/>
+      <action name="separator" type="separator"/>
+      <action name="copyToWindchillGWT" type="cat"/>
+      <action name="separator" type="separator"/>
+      <action name="relatedObjectsGWT" type="psb"/>	
+      <submodel name="cisbAddToRelatedPartsTreeContextSubmenuGWT"/> 
+   </model>
+
+   <model name="cisbAddToRelatedPartsTreeContextSubmenuGWT" resourceBundle="com.ptc.windchill.enterprise.part.configinstance.cisbActionsRB">
+      <action name="addToPackageGWT" type="cat"/>
+      <action name="SBAddToPrj" type="cat"/>
+   </model>
+   
+   <model name="cisbInstanceIndicatorActionModel">
+
+   </model>
+</actionmodels>

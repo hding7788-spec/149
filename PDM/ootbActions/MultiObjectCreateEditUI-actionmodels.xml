@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+
+<actionmodels resourceBundle="com.ptc.windchill.enterprise.part.partResource">
+
+<!-- *************************************************** -->
+<!-- ***  Wizard Actions                             *** -->
+<!-- *************************************************** -->
+
+<!-- "New Multiple Parts" wizard step 2, Parts table actions -->
+   <model name="multi part create table toolbar actions">
+      <action name="addObject" type="part" shortcut="true"/>     <!-- Add Row -->
+      <action name="addMultipleObjects" type="part" shortcut="true"/>     <!-- Add 5 Rows -->
+      <action name="remove" type="part" shortcut="true"/>     <!-- Remove Selected Row -->
+      <action name="editProperties" type="object" shortcut="true"/>   <!-- Edit Properties -->
+
+      <!--  Set Classification Attribute Action in New Multiple Part Wizard -->
+      <action name="setClassificationAttributesForMultiPart"  type="part" shortcut="true"/>
+   </model>
+
+   <!-- Clicking the Apply button on a New Multiple Parts wizard should reset the wizard to the initial step.
+       Clicking the Back button on a New Multiple Parts wizard should skip the 'namenumberValidation'.
+        Overridden the Apply & Back button -->
+
+   <model name="NewMultiPartsWizardButtons">
+      <action name="multiPartprevButton" type="part"/>
+      <action name="nextButton" type="object"/>
+      <action name="okButton" type="object"/>
+      <action name="multiPartApplyButton" type="part"/>
+      <action name="cancelButton" type="object"/>
+   </model>
+
+   <!-- "Edit Multiple Parts", Parts table actions -->
+
+   <model name="edit multi part actions">
+      <action name="editProperties" type="object" shortcut="true"/>      <!-- Edit Properties -->      
+   </model>
+
+   <model name="NoStepsEditMultiWizardButtons">
+         <action name="saveButton" type="object"/>
+         <action name="checkinButton" type="part"/>
+         <action name="editCancelButton" type="part"/>
+   </model>
+
+<!-- Buttons for Set Classification Attribute Wizard in New Multiple Part Wizard  -->
+   <model name="ClassificationattributesMultiPartWizardButtons">
+         <action name="nextButton"  type="object"/>
+         <action name="finishButton"  type="part"/>
+         <action name="cancelButton"  type="part"/>
+   </model>
+
+</actionmodels>

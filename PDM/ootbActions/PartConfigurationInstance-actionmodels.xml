@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+
+<actionmodels resourceBundle="com.ptc.windchill.enterprise.partInstance.partInstanceClientResource">
+
+<!-- Part Configuration information page Actions list -->
+   <model name="part configuration details actions" menufor="wt.part.WTProductConfiguration">
+ <!--     <action name="view" type="object"/>       -->     <!-- View Information -->
+ <!--    <action name="separator" type="separator"/>   -->    <!-- ===================================== -->
+        <action name="openProductViewStructure" type="wvs"/>         <!-- Open in ProductView -->
+        <action name="separator" type="separator"/>       <!-- ===================================== -->
+    	<action name="createInstanceFromPartConfig" type="instance"/>         <!-- New Part Instance -->
+    	<action name="separator" type="separator"/>        <!-- ===================================== -->
+    <action name="saveasConfiguration" type="configuration"/>      <!-- Save As -->
+	<action name="renameConfiguration" type="configuration"/>
+ 	<action name="setState" type="lifecycle"/>  			<!-- Set State -->
+ 	<action name="reassignLC" type="lifecycle"/> 	 		<!-- Reassign Life Cycle -->
+ 	<action name="resetTeam" type="team"/> 				<!-- Reset Team -->
+      	<action name="separator" type="separator"/>      <!-- ===================================== -->
+      	<action name="deletePartConfiguration" type="configuration"/> 	<!-- Delete -->
+  <!--     <action name="repopConfiguration" type="configuration"/>   -->   <!-- Repopulate -->
+ <!--	  <action name="repopConfigurationNEW" type="configuration"/>  -->    <!-- Repopulate -->
+ 	<action name="separator" type="separator"/>  			<!-- ===================================== -->
+    <action name="launchPartConfigurationCompare" type="partConfigCompare"/> <!-- Compare -->
+    <action name="separator" type="separator"/>  			<!-- ===================================== -->
+    <action name="ManageSecurity" type="accessPermission"/>             <!-- Edit Access Control -->
+    <action name="securityLabelsSingleObjJCA" type="securityLabels"/>   <!-- Edit Security Labels -->
+    <action name="EDITSECURITYLABELSNONCOLLECTED" type="object"/>       <!-- Edit Security Labels -->
+   </model>
+
+<!-- Part Instance information page Actions list -->
+   <model name="part instance details actions" menufor="wt.part.WTProductInstance2">
+<!--      <action name="view" type="object"/>    -->    <!-- View Information -->
+ <!--     <action name="separator" type="separator"/>   -->   <!-- ===================================== -->
+        <action name="openProductViewStructure" type="wvs"/>          <!-- Open in ProductView -->
+        <action name="separator" type="separator"/>    <!-- ===================================== -->
+    <action name="editPartInstance" type="instance"/>       <!-- Edit -->
+    <action name="incorporatePartInstance" type="instance"/><!-- Incorporate -->
+	<action name="REVISEITEMS" type="pdmObject"/>  			<!-- Revise -->
+	<action name="separator" type="separator"/>   			<!-- ===================================== -->
+	<submodel name="part instances new actions"/>  			<!-- New -->
+	<action name="separator" type="separator"/>   			<!-- ===================================== -->
+    <action name="saveAsPartInstance" type="instance"/>        <!-- Save As -->
+    <action name="renameInstance" type="instance"/>
+	<action name="setState" type="lifecycle"/>  		 	<!-- Set State -->
+	<action name="reassignLC" type="lifecycle"/>  			<!-- Reassign Life Cycle -->
+	<action name="resetTeam" type="team"/> 				<!-- Reset Team -->
+     	<action name="separator" type="separator"/>  	 		<!-- ===================================== -->
+     	<action name="deletePartInstance" type="instance"/>   		<!-- Delete -->
+<!--      <action name="updatePartInstanceIncorporation" type="instance"/>  -->     <!-- Update Incorporation -->
+ <!--     <action name="separator" type="separator"/>   -->    <!-- ===================================== -->
+<!--      <submodel name="part instances add row actions"/> -->
+	<action name="separator" type="separator"/>  -->
+    <action name="launchPartInstanceCompare" type="partInstanceCompare"/>  <!-- Compare -->
+	<action name="separator" type="separator"/>  -->
+    <action name="ManageSecurity" type="accessPermission"/>             <!-- Edit Access Control -->
+    <action name="securityLabelsSingleObjJCA" type="securityLabels"/>   <!-- Edit Security Labels -->
+    <action name="EDITSECURITYLABELSNONCOLLECTED" type="object"/>       <!-- Edit Security Labels -->
+  </model>
+
+    <model name="part instances new actions">
+        <action name="create" type="changeNotice"/>        <!-- New Change Notice -->
+        <action name="create" type="changeRequest"/>        <!-- New Change Request -->
+        <action name="create" type="problemReport"/>        <!-- New Problem Report -->
+        <action name="create" type="variance"/>        <!-- New Variance -->
+        <action name="create" type="promotionRequest"/>        <!-- Promote -->
+        <action name="separator" type="separator"/>            <!-- ===================================== -->
+        <action name="create" type="changeReview"/>        <!-- New Change Review -->
+    </model>
+
+   <model name="part instances add row actions">
+	<action name="addToPackageSingle" type="wpcollection"/> 	<!-- Add to Package -->
+   </model>
+
+<!-- Part Configurtion information page 3rd level nav menu bar -->
+   <model name="third_level_nav_configuration">
+		<submodel name="general"/>                             <!-- General -->  
+		<submodel name="partConfigurationHistory"/>			   <!-- History -->
+		<submodel name="collaboration"/>                       <!-- Collaboration -->
+   </model>
+
+<!-- Part Instance information page 3rd level nav menu bar -->
+   <model name="third_level_nav_instance">
+  <!--     <action name="productStructure" type="object"/>   -->      <!-- Structure -->
+       <submodel name="general"/>                               <!-- General -->
+       <submodel name="relatedItems"/>                          <!-- Related Objects -->
+       <submodel name="changes"/>                               <!-- Changes -->
+       <submodel name="partInstanceHistory"/>					<!-- History -->
+       <submodel name="collaboration"/>                         <!-- Collaboration -->
+   </model>
+
+    <model name="partInstanceHistory" resourceBundle="com.ptc.windchill.enterprise.partInstance.partInstanceClientResource">
+        <description>
+            "History" 3rd level nav menu
+        </description>
+        <action name="timelineHistory" type="history"/>     <!-- Timeline -->
+        <action name="separator" type="separator"/>         <!-- ======================= --> 
+        <action name="maturityHistory" type="history"/>     <!-- Maturity History -->       
+		<action name="revisionHistory" type="history"/>		<!-- Revision History -->
+        <action name="separator" type="separator"/>         <!-- ======================= -->  
+        <action name="processHistory" type="workflow"/>     <!-- Routing/Process History -->
+        <action name="legacyLCHistory" type="history"/>     <!-- Lifecycle History -->
+        <action name="separator" type="separator"/>         <!-- ======================= -->       
+        <action name="partInstanceRenameHistory" type="instance"/>  <!-- partInstanceRenameHistory History -->        
+    </model>
+
+  <model name="partConfigurationHistory" resourceBundle="com.ptc.windchill.enterprise.configuration.partConfigResource">
+   <description>
+            "History" 3rd level nav menu
+        </description>
+   <action name="timelineHistory" type="history"/>     <!-- Timeline History-->
+        <action name="separator" type="separator"/>         <!-- ======================= -->
+        <action name="maturityHistory" type="history"/>     <!-- Maturity History -->
+        <action name="separator" type="separator"/>         <!-- ======================= -->
+        <action name="processHistory" type="workflow"/>     <!-- Routing/Process History -->
+        <action name="legacyLCHistory" type="history"/>     <!-- Lifecycle History -->
+        <action name="separator" type="separator"/>         <!-- ======================= -->
+        <action name="partRenameHistory" type="configuration"/>  <!-- Rename History -->
+   </model>
+
+<model name="configInfoPageTabSet" resource="com.ptc.core.ui.navigationRB">
+     <submodel name="configInfoDefaultDetails"/>
+     <action name="configInstanceStructureGWT" type="cisb"/>
+     <submodel name="partInstancesTab"/>
+</model>
+
+<model name="partInstancesTab" resourceBundle="com.ptc.windchill.enterprise.partInstance.partInstanceClientResource">
+     <action name="partInstancesFromConfigDetail" type="instance"/>
+</model>
+
+
+<model name="partInstanceInfoPageTabSet"  resourceBundle="com.ptc.windchill.enterprise.partInstance.partInstanceClientResource">
+	   <submodel name="partInstanceInfoDefaultDetails"/>
+	   <action   name="configInstanceStructureGWT" type="cisb"/>
+	   <submodel name="partInstanceInfoRelatedItemsTab"/>
+	   <submodel name="changesTab"/>
+	   <submodel name="partInstanceInfoHistoryTab"/>
+	   <submodel name="allocationsTab"/>
+</model>
+
+<model name="partInstanceInfoRelatedItemsTab" resourceBundle="com.ptc.windchill.enterprise.partInstance.partInstanceClientResource">
+   <action name="relatedPartInstanceDocuments" type="instance"/>  <!-- Described By Documents -->
+   <action name="relatedPartsReferences" type="part"/> <!-- References Documents -->
+   <action name="missingObjectsTable" type="persistedCollectable" />
+</model>
+
+<model name="partInstanceInfoDefaultDetails"  resourceBundle="com.ptc.windchill.enterprise.partInstance.partInstanceClientResource">
+	     <action name="visualizationAndAttributes"  type="object"/>
+		 <action name="attributes" type="object"/>
+</model>
+<model name="partInstanceInfoHistoryTab" resourceBundle="com.ptc.windchill.enterprise.partInstance.partInstanceClientResource">
+		<action name="revisionHistory" type="history"/>
+   	    <action name="timelineHistory" type="history"/>
+    </model>
+<model name="allocationsTab" resourceBundle="com.ptc.windchill.enterprise.partInstance.partInstanceClientResource">
+		<action name="allocations" type="instance"/>
+</model>
+
+   <model name="configInfoDefaultDetails" resourceBundle="com.ptc.core.ui.navigationRB">
+     <action name="visualizationAndAttributes"  type="object"/> 
+     <action name="attributes"                  type="object"/> 
+    <!--  <action name="whereUsed"                   type="object"/> -->
+      <!-- place holder until defaults are provided -->
+   </model>
+   <model name="defaultTOC">
+        <action name="visualizationAndAttributes"  type="object"/>
+        <action name="attributes"                  type="object"/>
+   </model>
+</actionmodels>

@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+<!-- define the actions on the UI components -->
+<actionmodels>
+
+   
+   <model name="third_level_nav_changeDirective" defaultActionName="impactedItemAndActions" defaultActionType="changeDirective" >
+      <description>Third level nav for change directive with default action impacted item and actions</description>
+      <submodel name="general"/>
+      <submodel name="relatedDirItems"/>
+      <submodel name="history"/>
+      <submodel name="collaboration"/>
+   </model>
+
+   <model name="third_level_nav_changeAction" defaultActionName="modificationStack" defaultActionType="changeAction" >
+      <description>Third level nav for change action with default action modification stack</description>
+      <submodel name="general"/>
+	  <submodel name="changes"/>
+      <submodel name="actioncollaboration"/>
+   </model>
+
+    <!-- Change Action Collaboration -->
+    <model name="actioncollaboration" resourceBundle="com.ptc.windchill.enterprise.changeDirective.changeDirectiveClientResource">
+       <description>Third level nav for collaboration on change action info page</description>
+       <action name="discuss"                           type="forum"/>
+    </model>
+
+   <model name="changeAction row actions" menufor="wt.change2.ChangeAction">
+      <description>Change action row actions</description>
+      <action name="view" type="object"/>
+      <action name="fulfillChangeActions" type="effectivity"/>
+      <action name="undoFulfillChangeActionInfoPage" type="effectivity"/>
+      <action name="modifyStatus"         type="changeAction"/>
+   </model>
+
+   <model name="changeDirective row actions" menufor="wt.change2.WTChangeDirective">
+      <description>Change directive row actions</description>
+      <action name="view"                       type="object"/>
+      <action name="editChangeDirective"        type="changeDirective"/>
+      <action name="separator"                  type="separator"/>
+      <action name="renameDirectiveWizard"      type="changeDirective"/>
+      <action name="deleteChangeDirective"      type="changeDirective"/>
+      <action name="separator"                  type="separator"/>
+      <action name="reassignLC"                 type="lifecycle"/> <!-- Reassign Life Cycle -->
+      <action name="resetTeam"                  type="team"/>
+      <action name="setState"                   type="lifecycle"/>
+      <action name="separator"                  type="separator"/>
+      <action name="bookmarkIt"                 type="bookmark"/>     <!-- add to notebook -->
+      <action name="ManageSecurity"             type="accessPermission"/>
+      <action name="securityLabelsSingleObjJCA" type="securityLabels"/>
+      <action name="createSubscription"         type="subscription"/>
+   </model>
+
+   <model name="changedirective.impactedItems.table.view">
+      <description>Toolbar action for configuration item table on the change directive info page</description>
+      <action name="removeImpactedItems" type="changeDirective" shortcut="true"/>
+      <action name="addImpactedItems_Inline" type="changeDirective" shortcut="true"/>
+   </model>
+
+   <model name="changedirective.impactedItems.table.create_edit">
+         <description>Toolbar action for configuration item flat table on the change directive wizards</description>
+         <action name="remove"           type="object" shortcut="true"/>
+         <action name="addImpactedItems_Wizard" type="changeDirective" shortcut="true"/>
+   </model>
+
+   <model name="impactingDirectives toolbar actions">
+     <description>Toolbar action for change directive table on the configuration item info page</description>
+     <action name="removeDirectives"         type="changeDirective" shortcut="true"/>
+     <action name="addDirectives"            type="changeDirective" shortcut="true"/>
+     <action name="GenerateChangeActions"    type="effectivity" shortcut="true"/>
+   </model>
+
+   <model name="impactedItemAndChangeAction.row.actions" >
+      <description>Toolbar action for configuration item tree table on the change directive wizards</description>
+      <action name="GenerateChangeActions"           type="effectivity"/>
+      <action name="fulfillChangeActions"            type="effectivity"/>
+      <action name="undoFulfillChangeActionInfoPage" type="effectivity"/>
+   </model>
+
+  
+ </actionmodels>

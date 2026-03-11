@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+<listofactions>
+
+    <objecttype name="associationRules" class="wt.associationRules.AssociationRule" resourceBundle="com.ptc.windchill.enterprise.associationRules.associationRulesClientActionsRB">
+
+        <action name="create" ajax="row">
+            <command class="com.ptc.windchill.enterprise.associationRules.forms.CreateAssociationRuleFormProcessor" method="execute" windowType="popup"/>
+        </action> 
+
+        <action name="edit" ajax="row">
+            <command class="com.ptc.windchill.enterprise.associationRules.forms.EditAssociationRuleFormProcessor" method="execute" windowType="popup"/>
+            <includeFilter name="disableForTerminalIterationFilter"/>
+        </action>      
+        
+        <action name="associationRulesAttributeStep" id="associationRulesAttributeStep" preloadWizardPage="true" required="true">
+
+            <description>Association Rules Attribute Step</description>
+            <component name="associationRules.attributeStep" class="com.ptc.windchill.enterprise.associationRules.forms.RuleAttributeFormProcessorDelegate" windowType="wizard_step"/>
+
+        </action>
+
+        <action name="delete_object" ajax="row" uicomponent="DELETE">
+            <command class="com.ptc.windchill.enterprise.object.commands.DeleteObjectCommands" method="delete" onClick="JCAConfirm(event,'com.ptc.core.ui.confirmationMessagesRB.DELETE')"/>
+            <includeFilter name="orgAdminSiteFilter"/>
+            <includeFilter name="disableForWorkingCopyWorkInProgress"/>
+        </action>
+        
+        <action name="exportAssociationRules" selectRequired="true" multiselect="true">
+            <command class="com.ptc.windchill.enterprise.associationRules.forms.ExportAssociationRuleProcessor" method="exportObjects"/>
+        </action> 
+        
+        <action name="importAssociationRules">
+            <command class="com.ptc.windchill.enterprise.associationRules.forms.ImportAssociationRuleFormProcessor" method="execute" windowType="popup"/>
+        </action>
+        
+        <action name="importStep">
+            <component name="associationRules.importStep" windowType="wizard_step"/>
+        </action>
+    </objecttype>
+</listofactions>

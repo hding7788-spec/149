@@ -1,0 +1,31 @@
+<TABLE width="100%" height="25%" border=0>
+    <TR>
+        <!--Inspection Interval title-->
+        <TD class="tdFooterHeader" width="5%"><fmt:message key="mpml.footerWorkInstruction.inspection"/></TD>
+        <!--Creation Date title-->
+        <TD class="tdFooterHeader" width="7%"><fmt:message key="mpml.footerWorkInstruction.created"/></TD>
+        <!--Updated by title-->
+        <TD class="tdFooterHeader" width="12%"><fmt:message key="mpml.footerWorkInstruction.updatedBy"/></TD>
+        <!--Update date Title-->
+        <TD class="tdFooterHeader" width="12%"><fmt:message key="mpml.footerWorkInstruction.update"/></TD>
+    </TR>
+    <TR>
+         <!--Inspection Interval Value -->
+        <TD class="tdFooterNormal" width="5%"><ie:getValue name="inspectionInterval" groupIn="CURRENT_OPERATION"/></TD>        
+        <!--Creation date Value-->
+        <TD class="tdFooterNormal" width="12%"><ie:getValue name="thePersistInfo.createStamp" groupIn="CURRENT_OPERATION"/></TD>
+        <!--Updated By Value-->
+        <% 
+	        // Get the OBID of the current operation 
+	        String operationObid = ieObj.getAttributeValue( "CURRENT_OPERATION" , 0, "obid"); 
+	        String userName = "";
+	        if( operationModifierUserNameMap != null ) userName = operationModifierUserNameMap.get(operationObid); 
+	        if (userName == null) userName = "";%> 
+        <TD class="tdFooterNormal" width="7%"><%=userName%></TD>
+        
+        
+        
+        <!--Update date Value-->
+        <TD class="tdFooterNormal" width="12%"><ie:getValue name="thePersistInfo.updateStamp" groupIn="CURRENT_OPERATION"/></TD>
+    </TR>
+</TABLE>

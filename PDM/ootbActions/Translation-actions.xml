@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+    <objecttype name="translation" class="wt.fc.Persistable" resourceBundle="com.ptc.arbortext.windchill.translation.TranslationResource">
+        <action name="relatedTranslations" uicomponent="THIRD_LEVEL_RELATED_TRANSLATIONS">
+            <component name = "relatedObjects.RelatedTranslationDocuments" />
+        </action>
+        <action name="baseLanguage" uicomponent="THIRD_LEVEL_BASE_LANGUAGE">
+            <component name = "relatedObjects.BaseLanguageDocuments" />
+        </action>
+    </objecttype>
+</listofactions>

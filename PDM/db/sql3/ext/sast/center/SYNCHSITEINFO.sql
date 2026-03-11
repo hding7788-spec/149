@@ -1,0 +1,10 @@
+create table SYNCHSITEINFO(
+iid VARCHAR2(255),
+id VARCHAR2(255),
+name VARCHAR2(255),
+ip VARCHAR2(255),
+port VARCHAR2(255),
+version VARCHAR2(255),
+academy_id VARCHAR2(255),
+academy_name VARCHAR2(255)
+)

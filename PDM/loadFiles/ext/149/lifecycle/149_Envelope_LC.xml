@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE NmLoader SYSTEM "standardX20.dtd">
+<NmLoader>
+  <csvLifeCycleTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createLifeCycleTemplate">
+    <csvname>149_Envelope_LC</csvname>
+    <csvdescription>null</csvdescription>
+    <csvsupportedClass>wt.fc.WTObject</csvsupportedClass>
+    <csvfolderLocation>/System</csvfolderLocation>
+    <csvenabled>true</csvenabled>
+    <csvrouting>false</csvrouting>
+    <csvbasic>false</csvbasic>
+  </csvLifeCycleTemplateBegin>
+  <csvPhaseTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateBegin">
+    <csvname>正在工作</csvname>
+    <csvphaseState>INWORK</csvphaseState>
+    <csvphaseWorkflow>零部件签审流程</csvphaseWorkflow>
+    <csvgateWorkflow></csvgateWorkflow>
+    <csvseriesSelector></csvseriesSelector>
+  </csvPhaseTemplateBegin>
+  <csvRoleHolder handler="wt.project.LoadProject.createRoleHolder">
+    <csvroleToAssign>REVIEWER</csvroleToAssign>
+    <csvassignedPrincipal></csvassignedPrincipal>
+  </csvRoleHolder>
+  <csvPhaseTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateEnd"></csvPhaseTemplateEnd>
+  <csvPhaseTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateBegin">
+    <csvname>修改中</csvname>
+    <csvphaseState>REWORK</csvphaseState>
+    <csvphaseWorkflow></csvphaseWorkflow>
+    <csvgateWorkflow></csvgateWorkflow>
+    <csvseriesSelector></csvseriesSelector>
+  </csvPhaseTemplateBegin>
+  <csvRoleHolder handler="wt.project.LoadProject.createRoleHolder">
+    <csvroleToAssign>REVIEWER</csvroleToAssign>
+    <csvassignedPrincipal></csvassignedPrincipal>
+  </csvRoleHolder>
+  <csvPhaseTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateEnd"></csvPhaseTemplateEnd>
+  <csvPhaseTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateBegin">
+    <csvname>正在审阅</csvname>
+    <csvphaseState>UNDERREVIEW</csvphaseState>
+    <csvphaseWorkflow></csvphaseWorkflow>
+    <csvgateWorkflow></csvgateWorkflow>
+    <csvseriesSelector></csvseriesSelector>
+  </csvPhaseTemplateBegin>
+  <csvRoleHolder handler="wt.project.LoadProject.createRoleHolder">
+    <csvroleToAssign>REVIEWER</csvroleToAssign>
+    <csvassignedPrincipal></csvassignedPrincipal>
+  </csvRoleHolder>
+  <csvPhaseTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateEnd"></csvPhaseTemplateEnd>
+  <csvPhaseTemplateBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateBegin">
+    <csvname>已批准</csvname>
+    <csvphaseState>APPROVED</csvphaseState>
+    <csvphaseWorkflow></csvphaseWorkflow>
+    <csvgateWorkflow></csvgateWorkflow>
+    <csvseriesSelector></csvseriesSelector>
+  </csvPhaseTemplateBegin>
+  <csvRoleHolder handler="wt.project.LoadProject.createRoleHolder">
+    <csvroleToAssign>REVIEWER</csvroleToAssign>
+    <csvassignedPrincipal></csvassignedPrincipal>
+  </csvRoleHolder>
+  <csvPhaseTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createPhaseTemplateEnd"></csvPhaseTemplateEnd>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>REVISE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>NEXT</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>UNDERREVIEW</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>UNDERREVIEW</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>INWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>REVISE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>UNDERREVIEW</csvsuccessorPhaseState>
+    <csvphaseTransition>NEXT</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>UNDERREVIEW</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>UNDERREVIEW</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>REWORK</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>UNDERREVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>UNDERREVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>UNDERREVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>REVISE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>UNDERREVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>UNDERREVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>UNDERREVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>UNDERREVIEW</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>UNDERREVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>UNDERREVIEW</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>UNDERREVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>UNDERREVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>UNDERREVIEW</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>NEXT</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>REVISE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>INWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>REWORK</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>UNDERREVIEW</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>UNDERREVIEW</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>SET_STATE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvPhaseSuccessionBegin handler="wt.lifecycle.LoadLifeCycle.createPhaseSuccessionBegin">
+    <csvlifeCycleName>149_Envelope_LC</csvlifeCycleName>
+    <csvpredecessorPhaseState>APPROVED</csvpredecessorPhaseState>
+    <csvsuccessorPhaseState>APPROVED</csvsuccessorPhaseState>
+    <csvphaseTransition>PROMOTE</csvphaseTransition>
+  </csvPhaseSuccessionBegin>
+  <csvLifeCycleTemplateEnd handler="wt.lifecycle.LoadLifeCycle.createLifeCycleTemplateEnd"></csvLifeCycleTemplateEnd>
+</NmLoader>

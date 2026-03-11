@@ -1,0 +1,84 @@
+@import url("./dojo/dojo/resources/dojo.css");
+@import url("./dojo/dijit/themes/claro/claro.css");
+@import url("./dojo/dojox/grid/resources/Grid.css");
+@import url("./dojo/dojox/grid/resources/claroGrid.css");
+
+.dojoxGrid table{
+	
+}
+.dojoxGrid th,tr{
+	font-size:12pt;
+}
+.tb_all td {
+	border: black 0.5px solid;
+}
+.tb_info {
+	FONT-SIZE: 18px;
+}
+.tb_info .title_l {
+	BACKGROUND: lightblue;
+	width: 180px;
+	BORDER: black 1px solid;
+	height: 30px
+}
+.tb_info .title {
+	BACKGROUND: lightblue;
+	width: 120px;
+	BORDER: black 1px solid;
+	height: 30px
+}
+.tb_info .label {
+	width: 120px;
+	BORDER: black 1px solid;
+	height: 30px
+}
+.tb_part_info {
+	FONT-SIZE: 18px;
+}
+.tb_part_info th {
+	FONT-SIZE: 24px;
+	BACKGROUND: lightblue;
+	text-align: center;
+	width: 180px;
+	BORDER: black 1px solid
+}
+.tb_part_info TD {
+	FONT-SIZE: 18px;
+	height: 24px;
+}
+
+.part_nav {
+	border-width: 0px;
+	height:"100%";
+	background-color: #808080;
+	
+	list-style: none;
+	margin-top: -2px;
+	margin-left: -40px
+}
+.part_nav li {
+	float: left;
+	text-align: center;
+	background-color: lightblue;
+	cursor: pointer;
+	margin-right:0px;
+	font-size:18px;line-height: 25px;
+	border: black 1px solid;
+	height:30px;
+	padding: 0 10px;
+}
+.part_nav .select {
+	background-color: cyan;
+	cursor: default;
+}
+
+.tb_searchbar .td_head {
+	BORDER-TOP: white 1px solid;
+	BORDER-LEFT: white 1px solid;
+	TEXT-ALIGN: left;
+}
+.tb_searchbar .td_title TD {
+	BORDER-TOP: white 1px solid;
+	BACKGROUND: black;
+	BORDER-LEFT: white 1px solid;
+}

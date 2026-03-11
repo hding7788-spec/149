@@ -1,0 +1,298 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+
+<!-- define the actions on the UI components -->
+<actionmodels>
+
+    <model name="mpmExpandContextSubmenuGWT" resourceBundle="com.ptc.windchill.mpml.mpmActionsRB">
+        <action name="expandAllSelectedLevelsGWT" type="cat" />
+        <action name="expandOneLevelGWT" type="cat" />
+        <action name="expandTwoLevelsGWT" type="cat" />
+        <action name="expandThreeLevelsGWT" type="cat" />
+        <action name="expandFourLevelsGWT" type="cat" />
+        <action name="expandFiveLevelsGWT" type="cat" />
+        <action name="expandNLevelsGWT" type="cat" />
+    </model>
+
+    <model name="mpmTreePickerMPMResourceTreeToolBar">
+        <action name="TreePickerToolbarButtonGWT" type="mpm">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="treePickerMPMResourceEditFilterAction" type="mpm">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="treePickerMPMResourceInfoFilterAction" type="mpm">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="treePickerMPMResourceSaveFilterAction" type="mpm">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="treePickerRefreshGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="configurableTableViewGWT" type="cat">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="configurableTableViewListGWT" type="cat">
+            <ribbonInfo buttonType="check" groupName="table_view" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="saveStructureViewGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="configurableTableViewManagerGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="mpmEndViewsSubmenuGWT" type="mpm">
+            <ribbonInfo buttonType="endmenu" buttonScale="small" />
+        </action>
+        <action name="treePickerCloseContent" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+    </model>
+
+    <model name="mpmTreePickerWTPartTreeToolBar">
+        <action name="TreePickerToolbarButtonGWT" type="mpm">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="treePickerWTPartEditFilterAction" type="mpm">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="treePickerWTPartInfoFilterAction" type="mpm">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="treePickerWTPartSaveFilterAction" type="mpm">
+            <ribbonInfo buttonType="custommenu" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="treePickerRefreshGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="configurableTableViewGWT" type="cat">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="configurableTableViewListGWT" type="cat">
+            <ribbonInfo buttonType="check" groupName="table_view" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="saveStructureViewGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="configurableTableViewManagerGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="mpmEndViewsSubmenuGWT" type="mpm">
+            <ribbonInfo buttonType="endmenu" buttonScale="small" />
+        </action>
+        <action name="treePickerCloseContent" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+    </model>
+
+    <model name="mpmTreePickerMPMOperationHolderTreeToolBar">
+        <action name="TreePickerToolbarButtonGWT" type="mpm">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="treePickerMPMProcessPlanEditFilterAction" type="mpm">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="treePickerMPMProcessPlanInfoFilterAction" type="mpm">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="treePickerMPMProcessPlanSaveFilterAction" type="mpm">
+            <ribbonInfo buttonType="custommenu" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="treePickerRefreshGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="configurableTableViewGWT" type="cat">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="configurableTableViewListGWT" type="cat">
+            <ribbonInfo buttonType="check" groupName="table_view" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="saveStructureViewGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="configurableTableViewManagerGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="mpmEndViewsSubmenuGWT" type="mpm">
+            <ribbonInfo buttonType="endmenu" buttonScale="small" />
+        </action>
+        <action name="treePickerCloseContent" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+    </model>
+
+    <model name="mpmTreePickerMfgStdGroupTreeToolBar">
+        <action name="TreePickerToolbarButtonGWT" type="mpm">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator"/>
+        <action name="treePickerMPMMfgStandardGroupedEditFilterAction" type="mpm">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="treePickerMPMMfgStandardGroupedInfoFilterAction" type="mpm">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="treePickerMPMMfgStandardGroupedSaveFilterAction" type="mpm">
+            <ribbonInfo buttonType="custommenu" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="treePickerRefreshGWT" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="configurableTableViewGWT" type="cat">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="configurableTableViewListGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="saveStructureViewGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="configurableTableViewManagerGWT" type="cat">
+            <ribbonInfo buttonType="menuitem" buttonScale="small" />
+        </action>
+        <action name="mpmEndViewsSubmenuGWT" type="mpm">
+            <ribbonInfo buttonType="endmenu" buttonScale="small" />
+        </action>
+        <action name="treePickerCloseContent" type="baseclient">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+    </model>
+
+    <model name="treePickerObjectListContextMenu">
+        <action name="treePickerSelectedIdentifierCopyGWT" type="mpm" />
+    </model>
+
+    <model name="mpmTreePickerSearchResultsContextMenu">
+        <action name="treePickerSelectedIdentifierCopyGWT" type="mpm" />
+    </model>
+
+    <model name="treePickerOperationHolderTreeContextMenu">
+        <action name="viewInfoGWT" type="mpm" />
+        <action name="separator" type="separator" />
+        <submodel name="mpmExpandContextSubmenuGWT" />
+    </model>
+
+    <model name="treePickerPlantTreeContextMenu">
+        <action name="viewInfoGWT" type="mpm"/>
+        <action name="separator" type="separator" />
+        <submodel name="mpmExpandContextSubmenuGWT"/>
+    </model>
+
+    <model name="treePickerWTPartTreeContextMenu">
+       <action name="viewInfoGWT" type="mpm"/>
+       <action name="separator" type="separator" />
+       <submodel name="mpmExpandContextSubmenuGWT"/>
+    </model>
+
+    <model name="treePickerOperationHolderVizToolBar">
+        <action name="zoomAllGWT" type="cat">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="zoomSelectedGWT" type="cat">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="setSpinCenterGWT" type="cat">
+            <ribbonInfo buttonType="toggle" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="toggleAutoSelectionGWT" type="cat">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="toggleAutoSelectionFromStructToVIZGWT" type="cat">
+            <ribbonInfo buttonType="check" buttonScale="small" />
+        </action>
+        <action name="toggleAutoSelectionFromVIZToStructGWT" type="cat">
+            <ribbonInfo buttonType="check" buttonScale="small" />
+        </action>
+    </model>
+
+    <model name="treePickerResourceVizToolBar">
+        <action name="zoomAllGWT" type="cat">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="zoomSelectedGWT" type="cat">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="setSpinCenterGWT" type="cat">
+            <ribbonInfo buttonType="toggle" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="toggleAutoSelectionGWT" type="cat">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="toggleAutoSelectionFromStructToVIZGWT" type="cat">
+            <ribbonInfo buttonType="check" buttonScale="small" />
+        </action>
+        <action name="toggleAutoSelectionFromVIZToStructGWT" type="cat">
+            <ribbonInfo buttonType="check" buttonScale="small" />
+        </action>
+    </model>
+    
+    <model name="treePickerWTPartVizToolBar">
+        <action name="zoomAllGWT" type="cat">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="zoomSelectedGWT" type="cat">
+            <ribbonInfo buttonType="button" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="setSpinCenterGWT" type="cat">
+            <ribbonInfo buttonType="toggle" buttonScale="small" />
+        </action>
+        <action name="separator" type="separator" />
+        <action name="toggleAutoSelectionGWT" type="cat">
+            <ribbonInfo buttonType="menu" buttonScale="small" />
+        </action>
+        <action name="toggleAutoSelectionFromStructToVIZGWT" type="cat">
+            <ribbonInfo buttonType="check" buttonScale="small" />
+        </action>
+        <action name="toggleAutoSelectionFromVIZToStructGWT" type="cat">
+            <ribbonInfo buttonType="check" buttonScale="small" />
+        </action>
+    </model>
+
+    <model name="plantFilterToolBar">
+        <action name="resetPlantsGWT" type="mpm"/>
+        <action name="clearAllPlantsGWT" type="mpm"/>
+        <action name="selectAllPlantsGWT" type="mpm"/>
+    </model>
+
+    <model name="partTagToolBar">
+        <action name="resetPartTagsGWT" type="mpm"/>
+        <action name="clearAllPartTagsGWT" type="mpm"/>
+        <action name="selectAllPartTagsGWT" type="mpm"/>
+    </model>
+
+    <model name="partTagContextMenu">
+        <action name="resetPartTagsGWT" type="mpm"/>
+        <action name="clearAllPartTagsGWT" type="mpm"/>
+        <action name="selectAllPartTagsGWT" type="mpm"/>
+    </model>
+
+    <!-- Common Edit context sub menu. -->
+    <model name="mpmEditContextSubmenuGWT" resourceBundle="com.ptc.windchill.mpml.mpmActionsRB">
+        <action name="mpmRenameObjectWizardGWT" type="mpm"/>  <!-- action entry to take of non WTPart objects -->
+        <action name="cadxRenameGWT" type="cadx"/>
+    </model>
+	
+	   <model name="aumToolbarMenu">
+    <action name="mpmInsertNewAUMGWT" type="mpm" />
+     <action name="removeAUMGWT" type="baseclient" />		 
+   </model>
+
+</actionmodels>

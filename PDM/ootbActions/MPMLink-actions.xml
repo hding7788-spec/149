@@ -1,0 +1,400 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+
+<listofactions>
+    
+    <objecttype name="mpml" class="com.ptc.windchill.mpml.processplan.operation.MPMOperationMaster">
+        <action name="actionWhereUsedMpmOperationMaster" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <component name="mpml.whereUsedMPMOperationMaster"/>
+        </action>
+    </objecttype>
+    
+    <objecttype name="mpml" class="com.ptc.windchill.mpml.processplan.sequence.MPMSequenceMaster">
+        <action name="actionWhereUsedMpmSequenceMaster" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <component name="mpml.whereUsedMPMSequenceMaster"/>
+        </action>
+    </objecttype>
+    
+    <objecttype name="mpml" class="com.ptc.windchill.mpml.mfgprocess.MPMMfgProcessMaster">
+        <action name="actionWhereUsedMpmMfgProcessMaster" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <component name="mpml.whereUsedMfgProcessMaster"/>
+        </action>
+    </objecttype>
+    
+    <objecttype name="mpml" class="java.lang.Object">
+        <action name="tmpEffectivity"/>
+    </objecttype>
+    
+    <objecttype name="mpml" class="com.ptc.windchill.mpml.MPMDocumentManageable">
+        <action name="actionRelatedDocumentsMpmdocumentmanageable" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <component name="mpml.relatedDocumentsMpmdocumentmanageable" windowType="page"/>
+        </action>
+        <action name="actionReferencedDocumentsMpmdocumentmanageable" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <component name="mpml.referencedDocumentsMpmdocumentmanageable" windowType="page"/>
+        </action>
+    </objecttype>
+    
+    <objecttype name="mpml" class="com.ptc.windchill.mpml.MPMDocumentManageable">
+        <action name="actionRelatedCADDocumentsMpmdocumentmanageable" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <component name="mpml.relatedCADDocumentsMpmdocumentmanageable"/>
+        </action>
+    </objecttype>
+    
+    <objecttype name="mpml" class="com.ptc.windchill.mpml.resource.MPMWorkCenter">
+        <action name="processPlansUse" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <component name="mpml.processPlansUse"/>
+        </action>
+    </objecttype>
+    
+    <!-- Resource-specific actions -->
+    <objecttype name="mpml" class="com.ptc.windchill.mpml.resource.MPMResource">
+        <action name="resourceStructureGWT" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <command url="netmarkets/jsp/mrb/mrb.jsp" windowType="page"/>
+        </action>
+        <action name="createMPMResource" resourceBundle="com.ptc.windchill.mpml.client.clientResource" ajax="row" uicomponent="NEW_RESOURCE">
+            <command class="com.ptc.windchill.mpml.forms.CreateResourceAndCADDocFormProcessor" method="execute" url="/netmarkets/jsp/mpml/resource/createMPMResource.jsp?revisionMode=create&amp;showNewCADDocStep=true&amp;hideAssociatePart=true" onClick="validateCreateLocation(event)" windowType="popup"/>
+            <includeFilter name="showNewActionPreValidation"/>
+            <moreurlinfo>height=625,width=650</moreurlinfo>
+        </action> 
+
+
+     <!-- defineItemAttributesWizStepForCADDoc is main single step wizard for new CAD Doc. 
+          It is based on defineItemAttributesWizStep from core actions.xml . Defined here
+          so that custom hooks for other attributes such as postloadJS, afterJs can be done for 
+          new Resource+CADDoc use case.                                                              -->        
+     <action name="defineItemAttributesWizStepForCADDoc" hidden="true" afterVK="setAttributesWizStep" preloadWizardPage="false" required="true" postloadJS="newCADDocumentInitialize" resourceBundle="com.ptc.core.ui.componentRB">
+         <component name="defineItemAttributesWizStep" typeBased="true" windowType="wizard_step"/>
+     </action>
+
+    </objecttype>
+    
+    <objecttype name="mpml" class="com.ptc.windchill.mpml.processplan.MPMProcessPlan">
+        <action name="createMpmprocessplan" resourceBundle="com.ptc.windchill.mpml.client.clientResource" ajax="row"  uicomponent="NEW_PROCESS_PLAN">
+            <command class="com.ptc.core.components.forms.CreateObjectFormProcessor" method="execute" url="/netmarkets/jsp/mpml/processplan/createMpmprocessplan.jsp" onClick="validateCreateLocation(event)" windowType="popup"/>
+            <includeFilter name="showNewActionPreValidation"/>
+            <moreurlinfo>height=625,width=650</moreurlinfo>
+        </action> 
+        <action name="action.explorer.mpmprocessplan" resourceBundle="com.ptc.windchill.mpml.client.clientResource"/>
+        <action name="actionStructureMpmprocessplan" resourceBundle="com.ptc.windchill.mpml.client.clientResource"/>
+        <action name="processPlanStructureGWT" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+                <command url="netmarkets/jsp/ppb/ppb.jsp" windowType="page"/>
+        </action>
+        <action name="openProcessPlanWorkbench" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+                <command url="netmarkets/jsp/ppb/processplanworkbench.jsp" windowType="popup"/>
+        </action>
+
+        <!-- cc tab -->
+        <action name="relatedCC" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <component name="mpml.ccInfo" windowType="page"/>
+        </action>
+        <action name="processPlanRelatedCC" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <component name="mpml.ccInfoForProcessPlan" windowType="page"/>
+        </action>
+        <action name="operationRelatedCC" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <component name="mpml.ccInfoForOperation" windowType="page"/>
+        </action>        
+        <action name="actionRelatedPartsMpmprocessplan" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <component name="mpml.relatedPartsMpmprocessplan" windowType="page"/>
+        </action>
+        <action name="actionRelatedPlantsMpmprocessplan" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <component name="mpml.relatedPlantsMpmprocessplan" windowType="page"/>
+        </action>
+        <action name="removeRelatedPlantsFromPP" resourceBundle="com.ptc.windchill.mpml.client.clientResource"
+        										 multiselect="true" ajax="component" selectRequired="true">
+			<command class="com.ptc.windchill.mpml.forms.RemoveRelatedPlantsFormProcessor" method="execute" 
+											onClick="PTC.mpml.selectRequiredAndConfirmation(event,target,table)"/>
+        </action>        
+        <action name="relatedPartsStep" resourceBundle="com.ptc.windchill.mpml.client.clientResource" required="true" preloadWizardPage="false">
+            <command class="" method="" windowType="wizard_step"/>
+        </action>
+        <action name="ecStep" afterJS="ecStepAfterjs" beforeJS="make2ndstepDirty" required="true">
+            <command class="" method="" windowType="wizard_step"/>
+        </action>
+        <action name="relatedConfigContextStep" resourceBundle="com.ptc.windchill.mpml.client.clientResource" required="true" preloadWizardPage="false">
+            <component name="mpml.relatedConfigContext" windowType="page"/>
+        </action>
+    </objecttype>
+    
+    <objecttype name="mpml" class="com.ptc.windchill.mpml.processplan.sequence.MPMSequence">
+        <action name="actionStructureMpmsequence" resourceBundle="com.ptc.windchill.mpml.client.clientResource"/>
+        <action name="actionWhereUsedMpmsequence" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <component name="mpmLink.whereUsedMPMSequence"/>
+        </action>
+        <action name="processPlanStructureGWT" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <command url="netmarkets/jsp/ppb/ppb.jsp" windowType="page"/>
+        </action>
+        <action name="openProcessPlanWorkbench" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <command url="netmarkets/jsp/ppb/processplanworkbench.jsp" windowType="popup"/>
+        </action>
+    </objecttype>
+    
+    <objecttype name="mpml" class="com.ptc.windchill.mpml.processplan.operation.MPMOperation">
+        <action name="actionStructureMpmoperation" resourceBundle="com.ptc.windchill.mpml.client.clientResource"/>
+        <action name="actionAllocatedResourcesMpmoperation" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <component name="mpml.allocatedResourcesMpmoperation" windowType="page"/>
+        </action>
+        <action name="actionAllocatedPartsMpmoperation" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <component name="mpmLink.actionAllocatedParts2" windowType="page"/>
+        </action>
+        <action name="actionWhereUsedMpmoperation" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <component name="mpmLink.whereUsedMPMOperation"/>
+        </action>
+        <action name="processPlanStructureGWT" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <command url="netmarkets/jsp/ppb/ppb.jsp" windowType="page"/>
+        </action>
+        <action name="openProcessPlanWorkbench" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <command url="netmarkets/jsp/ppb/processplanworkbench.jsp" windowType="popup"/>
+        </action>
+        <action name="removePartAllocationsFromPP" resourceBundle="com.ptc.windchill.mpml.client.clientResource"
+        										 multiselect="true" ajax="component" selectRequired="true">
+			<command class="com.ptc.windchill.mpml.forms.RemovePartAllocationsFormProcessor" method="execute" 
+											onClick="PTC.mpml.selectRequiredAndConfirmation(event,target,table)"/>
+        </action>        
+    </objecttype>
+    
+    <objecttype name="mpml" class="com.ptc.windchill.mpml.mfgprocess.MPMMfgProcess">
+        <action name="action.explorer.mpmmfgprocess" resourceBundle="com.ptc.windchill.mpml.client.clientResource"/>
+        <action name="actionStructureMpmmfgprocess" resourceBundle="com.ptc.windchill.mpml.client.clientResource"/>
+        <action name="actionProcessPlansUseMpmmfgprocess" resourceBundle="com.ptc.windchill.mpml.client.clientResource"/>
+        <action name="actionWhereUsedMpmmfgstandardgrouped" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <component name="mpml.whereUsedMpmMfgStandardGrouped"/>
+        </action>
+        <action name="actionRelatedOperationsMpmmfgprocess" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <component name="mpml.relatedOperationsMpmmfgprocess"/>
+        </action>
+    </objecttype>
+
+    <objecttype name="mpml" class="com.ptc.windchill.mpml.mfgprocess.MPMMfgStandardGroup">
+        <action name="actionStructureMpmmfgstdgroup" resourceBundle="com.ptc.windchill.mpml.client.clientResource"/>
+    </objecttype>
+
+    <objecttype name="mpml" class="com.ptc.windchill.mpml.resource.MPMResource">
+        <action name="actionStructureMpmresource" resourceBundle="com.ptc.windchill.mpml.client.clientResource"/>
+        <action name="mpmlResourceWhereUsed" resourceBundle="com.ptc.windchill.mpml.client.clientResource" uicomponent="THIRD_LEVEL_WHERE_USED">
+            <component name="mpml.whereUsed.view.multi"/>
+        </action>
+    </objecttype>
+
+    <objecttype name="mpml" class="com.ptc.windchill.mpml.resource.MPMPlant">
+        <action name="actionStructureMpmplant" resourceBundle="com.ptc.windchill.mpml.client.clientResource"/>
+    </objecttype>
+
+    <objecttype name="mpml" class="com.ptc.windchill.mpml.pmi.MPMStandardCC">
+        <action name="createMPMStandardCC" resourceBundle="com.ptc.windchill.mpml.client.clientResource" ajax="row">
+            <command class="com.ptc.windchill.mpml.forms.CreateMPMStandardCCFormProcessor" method="execute" url="/netmarkets/jsp/mpml/pmi/createMPMStandardCC.jsp" onClick="validateCreateLocation(event)" windowType="popup"/>
+            <includeFilter name="showNewActionPreValidation"/>
+            <moreurlinfo>height=625,width=650</moreurlinfo>
+        </action>
+        <action name="relatedStandardCCRelatedPart" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <component name="relatedStandardCC.RelatedPart" windowType="page"/>
+        </action>
+        <action name="relatedStandardCCReferenceDocument" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <component name="relatedStandardCC.ReferenceDocument" windowType="page"/>
+        </action>
+        <action name="mpmscc_related_add_references" resourceBundle="com.ptc.windchill.mpml.client.clientResource" multiselect="true" ajax="component">
+            <command class="com.ptc.windchill.mpml.forms.MPMStandardCCInsertRelationDocRefFormProcessor" method="execute" onClick="onClickValidation(event,&apos;mpmscc_related_add_references&apos;)" windowType="popup"/>
+            <includeFilter name="disableForAdminLocked"/>
+        </action>
+        <action name="mpmscc_related_delete_references" resourceBundle="com.ptc.windchill.mpml.client.clientResource" multiselect="true" ajax="component">
+            <command class="com.ptc.windchill.mpml.forms.MPMStandardCCDeleteRelationDocRefFormProcessor" method="execute" onClick="onClickValidation(event,&apos;mpmscc_related_delete_references&apos;)"/>
+            <includeFilter name="disableForAdminLocked"/>
+        </action>
+        <action name="mpmscc_related_copy_references" resourceBundle="com.ptc.windchill.mpml.client.clientResource" multiselect="true">
+            <command class="com.ptc.netmarkets.model.NmObjectCommands" method="list_copy" windowType="no_content"/>
+        </action>
+        <action name="mpmscc_related_paste_references" resourceBundle="com.ptc.windchill.mpml.client.clientResource" ajax="component">
+            <command class="com.ptc.windchill.mpml.forms.MPMStandardCCPasteRelationDocRefFormProcessor" method="execute"/>
+        </action>
+        <action name="checkoutAndEdit" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <command class="com.ptc.core.components.forms.EditWorkableFormProcessor" method="execute" 
+            url="netmarkets/jsp/mpml/editStandardCC.jsp" windowType="popup"/>
+        </action>
+        <action name="editStandardCCWizStep" id="editStandardCCWizStep" preloadWizardPage="false" required="false">
+            <command windowType="wizard_step"/>
+        </action> 
+        <action name="editCommonSCCAttributes" ajax="row" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <command class="com.ptc.windchill.enterprise.object.forms.RenameObjectFormProcessor" method="execute" windowType="popup" url="/netmarkets/jsp/mpml/editCommonSCCAttributes.jsp"/>
+        </action>
+        <action name="editCommonSCCAttributesWizStep" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <command class="" action="" windowType="wizard_step"/>
+        </action>
+
+        <action name="relatedStandardCCStandardProcedure" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <component name="relatedStandardCC.StandardProcedure" windowType="page"/>
+        </action>
+        <action name="mpmscc_related_add_standard_procedure" resourceBundle="com.ptc.windchill.mpml.client.clientResource" multiselect="true" ajax="component">
+            <command class="com.ptc.windchill.mpml.forms.MPMStandardCCInsertRelationProcessPlanFormProcessor" method="execute" onClick="onClickValidation(event,&apos;mpmscc_related_add_references&apos;)" windowType="popup"/>
+            <includeFilter name="disableForAdminLocked"/>
+        </action>
+        <action name="mpmscc_related_delete_standard_procedure" resourceBundle="com.ptc.windchill.mpml.client.clientResource" multiselect="true" ajax="component">
+            <command class="com.ptc.windchill.mpml.forms.MPMStandardCCDeleteRelationProcessPlanFormProcessor" method="execute"/>
+            <includeFilter name="disableForAdminLocked"/>
+        </action>
+        <action name="mpmscc_related_copy_standard_procedure" resourceBundle="com.ptc.windchill.mpml.client.clientResource" multiselect="true">
+            <command class="com.ptc.netmarkets.model.NmObjectCommands" method="list_copy" windowType="no_content"/>
+        </action>
+        <action name="mpmscc_related_paste_standard_procedure" resourceBundle="com.ptc.windchill.mpml.client.clientResource" ajax="component">
+            <command class="com.ptc.windchill.mpml.forms.MPMStandardCCPasteRelationProcessPlanFormProcessor" method="execute"/>
+        </action>
+
+        <action name="relatedStandardCCProcessingResource" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <component name="relatedStandardCC.ProcessingResource" windowType="page"/>
+        </action>
+        <action name="mpmscc_related_add_processing_resource" resourceBundle="com.ptc.windchill.mpml.client.clientResource" multiselect="true" ajax="component">
+            <command class="com.ptc.windchill.mpml.forms.MPMStandardCCInsertRelationProcessingResourceFormProcessor" method="execute" onClick="onClickValidation(event,&apos;mpmscc_related_add_processing_resource&apos;)" windowType="popup"/>
+            <includeFilter name="disableForAdminLocked"/>
+        </action>
+        <action name="mpmscc_related_delete_processing_resource" resourceBundle="com.ptc.windchill.mpml.client.clientResource" multiselect="true" ajax="component">
+            <command class="com.ptc.windchill.mpml.forms.MPMStandardCCDeleteRelationProcessingResourceFormProcessor" method="execute"/>
+            <includeFilter name="disableForAdminLocked"/>
+        </action>
+        <action name="mpmscc_related_copy_processing_resource" resourceBundle="com.ptc.windchill.mpml.client.clientResource" multiselect="true">
+            <command class="com.ptc.netmarkets.model.NmObjectCommands" method="list_copy" windowType="no_content"/>
+        </action>
+        <action name="mpmscc_related_paste_processing_resource" resourceBundle="com.ptc.windchill.mpml.client.clientResource" ajax="component">
+            <command class="com.ptc.windchill.mpml.forms.MPMStandardCCPasteRelationProcessingResourceFormProcessor" method="execute"/>
+        </action>
+    </objecttype>
+
+    <objecttype name="explorer">
+        <action name="launchEmptyABE" uicomponent="MPML_PSE" resourceBundle="com.ptc.windchill.explorer.productstructure.server.productStructureResource">
+            <command url="netmarkets/jsp/explorer/launchExplorer.jsp?appId=ptc.cust.ProductStructureExplorer&amp;launchEmpty=true" windowType="popup"/>
+        </action>
+        <action name="launchEmptyMRE" uicomponent="MPML_EXPLORER" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <command url="netmarkets/jsp/explorer/launchExplorer.jsp?appId=ptc.cust.ResourceExplorer&amp;launchEmpty=true" windowType="popup"/>
+        </action>
+        <action name="launchEmptyMSE" uicomponent="MPML_EXPLORER" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <command url="netmarkets/jsp/explorer/launchExplorer.jsp?appId=ptc.cust.StandardExplorer&amp;launchEmpty=true" windowType="popup"/>
+        </action>
+        <action name="launchEmptyPPE" uicomponent="MPML_EXPLORER" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <command url="netmarkets/jsp/explorer/launchExplorer.jsp?appId=ptc.cust.ProcessPlanExplorer&amp;launchEmpty=true" windowType="popup"/>
+        </action>
+        <action name="launchABE" uicomponent="MPML_PSE" resourceBundle="com.ptc.windchill.explorer.productstructure.server.productStructureResource">
+            <command url="netmarkets/jsp/explorer/launchExplorer.jsp?appId=ptc.cust.ProductStructureExplorer" windowType="popup"/>
+            <includeFilter name="psbSessionValidation"/>
+            <includeFilter name="sandboxSharingValidationSimple"/>
+            <includeFilter name="hideForNewObjectInWorkspace"/>
+        </action>
+        <action name="launchMRE" uicomponent="MPML_EXPLORER" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <command url="netmarkets/jsp/explorer/launchExplorer.jsp?appId=ptc.cust.ResourceExplorer" windowType="popup"/>
+        </action>
+        <action name="launchMSE" uicomponent="MPML_EXPLORER" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <command url="netmarkets/jsp/explorer/launchExplorer.jsp?appId=ptc.cust.StandardExplorer" windowType="popup"/>
+        </action>
+        <action name="launchPPE" uicomponent="MPML_EXPLORER" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <command url="netmarkets/jsp/explorer/launchExplorer.jsp?appId=ptc.cust.ProcessPlanExplorer" windowType="popup"/>
+        </action>
+        <action name="launchWI_PP" uicomponent="MPML_EXPLORER" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <command url="netmarkets/jsp/mpml/LaunchWIforProcessplan.jsp?container=ProcessPlan" windowType="popup"/>
+        </action>
+        <action name="launchWI_OP" uicomponent="MPML_EXPLORER" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <command url="netmarkets/jsp/mpml/LaunchWIforOperation.jsp?container=Operation" windowType="popup"/>
+        </action>
+    </objecttype>
+    
+    <objecttype name="mpml">
+        <action name="launchInMRB" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <command url="netmarkets/jsp/mpml/launchInMRB.jsp" windowType="lightbox"/>
+            <moreurlinfo>height=300,width=400</moreurlinfo>
+        </action>
+        
+        <action name="launchInMRBStep" preloadWizardPage="false" required="true">
+            <command windowType="wizard_step"/>
+        </action>
+    </objecttype>
+    
+    <objecttype name="object" class="java.lang.Object">
+        <action name="DISPLAYRELATEDMANUFACTURINGITEMS" uicomponent="MPML_EXPLORER" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <command url="servlet/WindchillAuthGW/wt.enterprise.URLProcessor/URLTemplateAction?action=DISPLAYRELATEDMANUFACTURINGITEMS" windowType="popup"/>
+        </action>
+    </objecttype>
+    
+    <objecttype name="object" class="java.lang.Object">
+        <action name="MPMLINKMASSCHANGE" uicomponent="MPML_EXPLORER" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <command url="servlet/WindchillAuthGW/wt.enterprise.URLProcessor/URLTemplateAction?action=MPMLINKMASSCHANGE" windowType="popup"/>
+        </action>
+    </objecttype>
+    
+    <objecttype name="massChange" class="wt.change2.Changeable2" resourceBundle="com.ptc.windchill.mpml.masschange.massChangeMPMLinkActionsRB">
+        <action name="replaceResourceUsage">
+           <description>The replace resource criteria panel in the launch mass change action.</description>
+           <command class="com.ptc.windchill.mpml.masschange.filters.MPMReplaceResourceFilterDelegate"/>
+        </action>
+    </objecttype>
+    
+    <objecttype name="mpmlReports" class="java.lang.Object" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="reportOKButton" id="PJL_wizard_ok">
+            <command class="" method="" windowType="page" url="javascript:submitMPMLReport();"/>
+        </action>
+        
+        <action name="mpml-opp-reports-input-page" selectRequired="false">
+            <command class="" method="" windowType="popup"/>
+        </action>
+        
+        <action name="mpmlOPPReportStep">
+            <command url="netmarkets/jsp/mpmlreporting/inputpages/mpmlOPPReportStep.jsp" windowType="wizard_step"/>
+        </action>
+        
+        <action name="mpml-app-reports-input-page" selectRequired="false">
+            <command class="" method="" windowType="popup"/>
+        </action>
+        
+        <action name="mpmlAPPReportStep">
+            <command url="netmarkets/jsp/mpmlreporting/inputpages/mpmlAPPReportStep.jsp" windowType="wizard_step"/>
+        </action>
+        
+        <action name="mpml-pwrpp-reports-input-page" selectRequired="false">
+            <command class="" method="" windowType="popup"/>
+        </action>
+        
+        <action name="mpmlPWRPPReportStep">
+            <command url="netmarkets/jsp/mpmlreporting/inputpages/mpmlPWRPPReportStep.jsp" windowType="wizard_step"/>
+        </action>
+    </objecttype>
+    
+    <objecttype name="object">
+        <action name="processPlansMiniNavigatorTable" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <component name="processPlansMiniNavigator" windowType="page"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart"/>
+            </supportedTypes>
+        </action>
+    </objecttype>
+    
+    <objecttype name="mpml" class="wt.vc.views.ViewManageable">
+        <action name="newBranch" ajax="page" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <command class="com.ptc.windchill.mpml.forms.NewBranchFormProcessor" method="execute" windowType="popup" url="/netmarkets/jsp/mpml/new_branch/newBranch?templateMode=EDIT"/>
+            <includeFilter name="sandboxSharingValidationSimple"/>
+            <supportedTypes>
+                <type value="com.ptc.windchill.mpml.processplan.operation.MPMOperationHolder" />
+            </supportedTypes>
+        </action>
+        
+        <action name="newBranch_step" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+            <command url="/netmarkets/jsp/mpml/new_branch/newBranch_step.jsp" windowType="wizard_step"/>
+        </action>
+    </objecttype>
+
+    <objecttype name="document" class="wt.doc.WTDocument" resourceBundle="com.ptc.windchill.mpml.client.clientResource">
+        <action name="mpmscc_related_doc_create_wizard_references" ajax="component">
+            <command class="com.ptc.windchill.mpml.forms.MPMStandardCCCreateRelationDocRefFormProcessor" method="execute" 
+                     onClick="onClickValidation(event,&apos;mpmscc_related_doc_create_wizard_references&apos;)" windowType="popup"/>
+        </action>
+    </objecttype>
+    <objecttype name="mpml" class="com.ptc.windchill.mpml.processplan.MPMProcessPlan">
+        <action name="mpmscc_related_create_standard_procedure" resourceBundle="com.ptc.windchill.mpml.client.clientResource" ajax="row"  uicomponent="NEW_PROCESS_PLAN">
+            <command class="com.ptc.windchill.mpml.forms.MPMStandardCCCreateRelationProcessingResourceFormProcessor" method="execute" url="/netmarkets/jsp/mpml/processplan/createMpmprocessplan.jsp" onClick="validateCreateLocation(event)" windowType="popup"/>
+            <includeFilter name="showNewActionPreValidation"/>
+            <moreurlinfo>height=625,width=650</moreurlinfo>
+        </action>
+    </objecttype>
+
+    <!-- Resource-specific actions -->
+    <objecttype name="mpml" class="com.ptc.windchill.mpml.resource.MPMResource">
+        <action name="mpmscc_related_create_processing_resource" resourceBundle="com.ptc.windchill.mpml.client.clientResource" ajax="row" uicomponent="NEW_RESOURCE">
+            <command class="com.ptc.windchill.mpml.forms.CreateResourceAndCADDocFormProcessor" method="execute" url="/netmarkets/jsp/mpml/resource/createMPMResource.jsp?revisionMode=create&amp;showNewCADDocStep=true&amp;hideAssociatePart=true" onClick="validateCreateLocation(event)" windowType="popup"/>
+            <includeFilter name="showNewActionPreValidation"/>
+            <moreurlinfo>height=625,width=650</moreurlinfo>
+        </action>
+    </objecttype>
+</listofactions>

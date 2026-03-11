@@ -1,0 +1,61 @@
+<%@page language="java" session="false" access="http|soap" contentType="text/xml"%>
+<%@taglib uri="http://www.ptc.com/infoengine/taglib/core" prefix="ie"%>
+<%@page import="java.io.*"%>
+<%@page import="java.util.*"%>
+<%@page import="ext.casc.integrate.product.ProductInfoService"%>
+<%@page import=" java.lang.Exception"%>
+
+<!--com.infoengine.soap.rpc.def
+@param string number
+@param string versionType
+@param string version
+@param string productName
+@param string bomType
+@param string guid
+-->
+
+ 
+<%
+
+String number =  (String)getParam("number");
+
+String versionType = (String)getParam("versionType");
+String version = (String)getParam("version");
+//int  ismark =Integer.valueOf( getParam("ismark").toString());
+String productName = (String)getParam("productName");
+String bomType = (String)getParam("bomType");
+String guid = (String)getParam("guid");
+int ismark = 0;
+/*
+String versionType = "BATCH";
+String version = "";
+String productName = "";
+int ismark = 0;
+String bomType ="Manufacturing";
+String guid = "";
+*/
+
+
+String result = "";
+
+ProductInfoService productInfo = new ProductInfoService();
+try{
+         result =productInfo.getBomProductInfo(number,  versionType,version, productName,  ismark,  bomType, guid);
+}
+catch (Exception e) {
+            // TODO Auto-generated catch block
+           result = e.getLocalizedMessage();
+}
+System.out.println("----result----"+result);
+%>
+
+      <ie:webject name="Create-Group" type="GRP">
+            <ie:param name="ELEMENT" data="<%=result%>"/>
+           <ie:param name="CLASS" data="Status"/>
+           <ie:param name="GROUP_OUT" data="${@FORM[]group_out[]}"  default="output"/>
+        </ie:webject> 
+    
+
+ 
+     
+     

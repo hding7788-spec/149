@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+
+<listofactions>
+	<objecttype name="AdaptersAdmin" class="java.lang.Object" resourceBundle="com.ptc.swlink.adaptersAdminUI.AdaptersAdminRB">
+
+	<action name="adapterCreate" required="true">
+		<command class="com.ptc.swlink.adaptersAdminUI.createWizard.CreateAdapterFormProcessor"
+				url="netmarkets/jsp/swlink/adaptersAdminUI/createAdapter.jsp" windowType="popup"/>
+	</action>
+
+	<action name="adapterImport" required="true">
+		<command url="netmarkets/jsp/swlink/adaptersAdminUI/adapterActionsTest.jsp?actionToPerForm=Adapter Import" windowType="popup"/>
+	</action>
+
+	<action name="adapterDelete" ajax="page" uicomponent="DELETE" >
+		<command onClick="var cb = function() { refreshCurrentElementID( tableUtils.getFormattedTableId( 'com.ptc.swlink.adaptersAdminUI.AdapterAssociation' ) ); };
+						return PTC.AdaptersAdmin.AdapterAdminUtils.removeAllSelected( 'com.ptc.swlink.adaptersAdminUI.AdapterDefinition', 'com.ptc.swlink.adaptersAdminUI.AdaptersAdminRB.DELETE_ADAPTERS', '', false, cb );"/>
+	</action>
+
+	<action name="adapterRowDelete" ajax="row">
+	</action>
+
+	<!-- This action used for deleting rows from table which contains persistable objects -->
+	<action name="deleteAssociation" ajax="component" uicomponent="DELETE">
+		<command onClick="return PTC.AdaptersAdmin.AdapterAdminUtils.removeAllSelected( 'com.ptc.swlink.adaptersAdminUI.AdapterAssociation', 'com.ptc.swlink.adaptersAdminUI.AdaptersAdminRB.DELETE_ADAPTER_LINKS', '', false );"/>
+	</action>
+
+	<!-- This action used for deleting a row from table which contains persistable objects -->
+	<action name="deleteRowAssociation" ajax="row">
+	</action>
+
+	<!-- This action used for deleting rows from working table (which contains persistable and non-persistable objects) -->
+	<action name="removeAssociation" id="removeAssociation" renderType="GENERAL" selectRequired="true">
+		<command onClick="return PTC.AdaptersAdmin.AdapterAdminUtils.removeAllSelected( 'com.ptc.swlink.adaptersAdminUI.AdapterAssociation', 'com.ptc.swlink.adaptersAdminUI.AdaptersAdminRB.DELETE_ADAPTER_LINKS', '', true );"/>
+	</action>
+
+	<!-- This action used for deleting a row from working table (which contains persistable and non-persistable objects) -->
+	<action name="removeRowAssociation" ajax="row">
+	</action>
+
+	<action name="adapterEdit" required="true">
+		<command class="com.ptc.swlink.adaptersAdminUI.createWizard.EditAdapterFormProcessor"
+				url="netmarkets/jsp/swlink/adaptersAdminUI/editAdapter.jsp" windowType="popup"/>
+	</action>
+
+	<action name="adapterAssociateContext">
+		<command url="netmarkets/jsp/swlink/adaptersAdminUI/adapterAssociateContext.jsp" windowType="popup"/>
+	</action>
+
+	<action name="adapterAssociationObjects">
+		<command class="com.ptc.swlink.adaptersAdminUI.associateTable.AdapterAssociationObjectFormProcessor"
+				url="netmarkets/jsp/swlink/adaptersAdminUI/adapterAssociationObjects.jsp?specificAdapterInfoMode=true"
+				windowType="popup"/>
+	</action>
+
+	<action name="adapterAssociationObjectsStep" afterJS="validateAssociationTable">
+		<command url="netmarkets/jsp/swlink/adaptersAdminUI/adapterAssociationObjectsStep.jsp" windowType="wizard_step"/>
+	</action>
+
+	<action name="attributesMappingStep" afterJS="validateMappingFile">
+		<command url="netmarkets/jsp/swlink/adaptersAdminUI/attributesMappingStep.jsp" windowType="wizard_step"/>
+	</action>
+
+	<action name="attributesMappingMain">
+		<command class="com.ptc.swlink.adaptersAdminUI.associateTable.AdapterAssociationObjectFormProcessor"
+				url="netmarkets/jsp/swlink/adaptersAdminUI/adapterAssociationObjects.jsp?specificAdapterInfoMode=true"
+				windowType="popup"/>
+	</action>
+
+	<action name="adapterView" required="true">
+		<command url="/app/#ptc1/tcomp/infoPage?typeIdForTypeLookup=com.ptc.swlink.scm.ScmAdapter" windowType="popup"/>
+	</action>
+
+	<action name="adapterStatus" required="true">
+		<command url="netmarkets/jsp/swlink/adaptersAdminUI/adapterStatus.jsp" windowType="popup"/>
+	</action>
+	 
+	<action name="adapterExport" required="true">
+		<command url="netmarkets/jsp/swlink/adaptersAdminUI/adapterActionsTest.jsp?actionToPerForm=Adapter Export" windowType="popup"/>
+	</action>
+
+	<action name="configureViews" required="true">
+		<command class="com.ptc.swlink.adaptersAdminUI.configureViews.ConfigureViewFormProcessor"
+			url="netmarkets/jsp/swlink/adaptersAdminUI/configureView.jsp" windowType="new"/>
+	</action>
+
+	<action name="setAttributes" required="true" afterJS="validateDuplicateName" resourceBundle="com.ptc.swlink.adaptersAdminUI.AdaptersAdminRB">
+		<command windowType="wizard_step" required="true"/>
+		<component name="adminUI.adaptersAdmin.attributePanel" urlParams="typeIdForTypeLookup=com.ptc.swlink.adaptersAdminUI.createWizard.AdapterAttributePanelBuilder"/>
+	</action>
+
+	<action name="adapterStatusStep" required="true">
+		<command url="netmarkets/jsp/swlink/adaptersAdminUI/adapterStatusStep.jsp" windowType="wizard_step" required="true"/>
+	</action>
+
+	<action name="adapterAssociationInfoAction" required="true">
+		<command url="netmarkets/jsp/swlink/adaptersAdminUI/infoPageAssociationsTab.jsp?specificAdapterInfoMode=true&amp;action=infoPage" windowType="page"/>
+	</action>
+
+	<action name="configureViewsStep">
+		<command url="netmarkets/jsp/swlink/adaptersAdminUI/configureViewStep.jsp" windowType="wizard_step"/>
+	</action>
+
+	<!-- Config Spec actions -->
+	<action name="manageConfigSpecStep">
+		<command url="netmarkets/jsp/swlink/adaptersAdminUI/configSpecsStep.jsp" windowType="wizard_step"/>
+	</action>
+
+	<action name="removeConfigSpecs"  ajax="component" renderType="GENERAL_WITH_CONTEXT">
+		<description>Delete selected ConfigSpecs from ConfigSpecs table</description>
+		<command onClick="return PTC.AdaptersAdmin.AdapterAdminUtils.removeAllSelected( 'com.ptc.swlink.adaptersAdminUI.ConfigSpecs.table', 'com.ptc.swlink.adaptersAdminUI.AdaptersAdminRB.CS_DELETE_CONFIG_SPECS', '', false );"/>
+	</action>
+
+	<action name="removeRowConfigSpec" ajax="component" renderType="GENERAL_WITH_CONTEXT">
+		<description>Delete the ConfigSpec within the row</description>
+	</action>
+
+	<action name = "addConfigSpec" ajax="component" renderType="GENERAL_WITH_CONTEXT">
+		<description>Create a new Configuration Specification</description>
+		<command windowType="popup" url="netmarkets/jsp/swlink/adaptersAdminUI/createConfigSpec.jsp?actionMode=create"/>
+	</action>
+
+	<action name="editConfigSpec"  ajax="component" renderType="GENERAL_WITH_CONTEXT">
+		<description>Edit the ConfigSpec within the row</description>
+		<command windowType="popup" url="netmarkets/jsp/swlink/adaptersAdminUI/editConfigSpec.jsp?actionMode=edit"/>
+	</action>
+
+	<action name="createConfigSpecStep" afterJS="createUpdateConfigSpec">
+		<description>Create ConfigSpec Wizard Step</description>
+		<command url="netmarkets/jsp/swlink/adaptersAdminUI/createConfigSpecStep.jsp" windowType = "wizard_step"/>
+	</action>
+
+	<action name="addConfigSpecLabels" ajax="component" renderType="GENERAL_WITH_CONTEXT">
+		<description>Button to add Label to ConfigSpec Labels list</description>
+		<command onClick="addConfigSpecLabel();"/>
+	</action>
+
+	<action name="removeConfigSpecLabels" id="removeConfigSpecLabels" ajax="component" renderType="GENERAL_WITH_CONTEXT">
+		<description>Delete selected ConfigSpec Lables from ConfigSpec Labels table</description>
+		<command onClick="removeConfigSpecLabel();"/>
+	</action>
+
+	<action name="removeRowConfigSpecLabel" ajax="component" renderType="GENERAL_WITH_CONTEXT">
+		<description>Delete the ConfigSpec within the row</description>
+	</action>
+
+	<action name="jumpUp" ajax="component" renderType="GENERAL_WITH_CONTEXT">
+		<description>Jump to the top of the table</description>
+	</action>
+
+	<action name="oneUp" ajax="component" renderType="GENERAL_WITH_CONTEXT">
+		<description>Move one row up</description>
+	</action>
+
+	<action name="oneDown" ajax="component" renderType="GENERAL_WITH_CONTEXT">
+		<description>Move one row down</description>
+	</action>
+
+	<action name="jumpDown" ajax="component" renderType="GENERAL_WITH_CONTEXT">
+		<description>Jump to the bottom of the table</description>
+	</action>
+
+	<action name="createLCMapping" required="true">
+		<command class="com.ptc.swlink.adaptersAdminUI.lcMapping.IntegrityLCMappingFormProcessor"
+				url="netmarkets/jsp/swlink/adaptersAdminUI/integrityLCMapping.jsp" windowType="popup"/>
+	</action>
+
+	<action name="editLCMapping" required="true">
+		<command class="com.ptc.swlink.adaptersAdminUI.lcMapping.IntegrityLCMappingFormProcessor"
+				url="netmarkets/jsp/swlink/adaptersAdminUI/integrityLCMapping.jsp" windowType="popup"/>
+	</action>
+
+	<action name="viewLCMapping" required="true">
+		<command class="com.ptc.swlink.adaptersAdminUI.lcMapping.IntegrityLCMappingFormProcessor"
+				url="netmarkets/jsp/swlink/adaptersAdminUI/integrityLCMapping.jsp" windowType="popup"/>
+	</action>
+
+	<action name="createLCMappingStep" required="true">
+		<command url="netmarkets/jsp/swlink/adaptersAdminUI/integrityLCMappingStep.jsp" windowType="wizard_step"/>
+	</action>
+
+	<action name="deleteLCMapping" uicomponent="DELETE" beforeJS="deleteLCMappingValidator">
+		<command onClick="var cb = function() { PTC.jca.table.Utils.reload( 'com.ptc.swlink.adaptersAdminUI.IntegrityLCMapping.mainTable', true ); };
+						return PTC.AdaptersAdmin.AdapterAdminUtils.removeAllSelected( 'com.ptc.swlink.adaptersAdminUI.IntegrityLCMapping.mainTable', 'com.ptc.swlink.adaptersAdminUI.AdaptersAdminRB.RM_LC_MAPPING_DELETE_MULTIPLE', '', false, cb );"/>
+	</action>
+
+	<action name="deleteLCMappingRow" ajax="row">
+	</action>
+
+	</objecttype>
+
+</listofactions>

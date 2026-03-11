@@ -1,0 +1,5 @@
+exec WTPK.dropIndex('TechnicsMaterial$COMPOSITE1')
+exec WTPK.dropIndex('TechnicsMaterial$COMPOSITE2')
+exec WTPK.dropIndex('TechnicsMaterial$COMPOSITE6')
+exec WTPK.dropIndex('TechnicsMaterial$COMPOSITE13')
+exec WTPK.dropIndex('TechnicsMaterial$COMPOSITE20')

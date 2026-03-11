@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+]>
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="${text_width + 5}" height="30px" viewBox="0 0 ${text_width + 5} 30" enable-background="new 0 0 ${text_width + 5} 30"
+	 xml:space="preserve">
+	 
+<#assign postTran = 0 />
+	  
+<text transform="matrix(1 0 0 1 0 17.4614)" font-family="'宋体'" font-size="16">${preText}</text>
+<text transform="matrix(1 0 0 1 ${pre_width} 17.4614)" font-family="'宋体'" font-size="16">${tcText}</text>
+<#if isShow == "true">
+	<text transform="matrix(1 0 0 1 ${basicText_width + 1.5521} 10.3125)" font-family="'宋体'" font-size="12">${upText}</text>
+	<text transform="matrix(1 0 0 1 ${basicText_width + 1.5521} 20.5103)" font-family="'宋体'" font-size="12">${downText}</text>
+	<#assign postTran = pre_width + postText_width + 12.4834 />
+<#else>
+	<#assign postTran = pre_width + postText_width + 18.4834 />
+</#if>
+<text transform="matrix(1 0 0 1 ${postText_width + 1} 17.4614)" font-family="'宋体'" font-size="16">${postText}</text>
+</svg>

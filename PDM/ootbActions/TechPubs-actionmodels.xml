@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+<!-- define the actions on the UI components -->
+<actionmodels>
+ <model name="arb doc templates toolbar actions">
+   <action name="list_hide_template" type="object" shortcut="true"/>
+   <action name="list_show_template" type="object" shortcut="true"/>
+   <action name="separator"          type="separator"/>
+   <action name="createArbortextDocTemplate" type="techPubs" shortcut="true"/>
+   <action name="createDynamicDocumentTemplate" type="techPubs" shortcut="true"/>
+   <action name="deleteTemplate" type="rules" shortcut="true"/>
+ </model>
+ <model name="arb doc template row actions">
+   <action name="view" type="object"/>
+   <action name="show_template" type="object"/>
+   <action name="hide_template" type="object"/>
+   <action name="OPENINARBORTEXT" type="epmdocument"/>
+   <action name="deleteArbortextDocTemplate" type="techPubs"/>
+   <action name="deleteTemplate" type="rules"/>
+ </model>
+
+ <model name="arbortextDocInfoPageTabSet" resourceBundle="com.ptc.arbortext.windchill.techpubs.ui.techPubsActionsRB">
+   <submodel name="detailsTab_arbortextDoc" />
+   <action name="modelStructureGWT" type="msr"/>
+   <submodel name="representationsTab_arbortextDoc"/>
+   <submodel name="relatedObjectsTab_arbortextDoc"/>
+   <submodel name="changesTab"/>
+   <submodel name="historyTab_arbortextDoc"/>
+ </model>
+   
+ <model name="detailsTab_arbortextDoc" resourceBundle="com.ptc.arbortext.windchill.techpubs.ui.techPubsActionsRB">
+   <action name="cadVisualizationAndAttributes" type="object"/>
+   <action name="WHEREUSEDREPORT" type="object"/>
+ </model>
+   
+ <model name="representationsTab_arbortextDoc" resourceBundle="com.ptc.arbortext.windchill.techpubs.ui.techPubsActionsRB">
+   <action name="repsAndMarkups" type="wvs"/>
+   <action name="publishedContent" type="object"/>
+ </model>
+ 
+ <model name="relatedObjectsTab_arbortextDoc" resourceBundle="com.ptc.arbortext.windchill.techpubs.ui.techPubsActionsRB">
+   <action name="docRelatedPartsLists" type="techPubs"/>
+   <action name="impactAnalysis" type="rules"/>
+ </model>
+
+ <model name="historyTab_arbortextDoc" resourceBundle="com.ptc.arbortext.windchill.techpubs.ui.techPubsActionsRB">
+   <action name="versionHistory" type="history"/>
+   <action name="timelineHistory" type="history"/>    
+ </model>
+
+ <model name="arbortextGraphicInfoPageTabSet" resourceBundle="com.ptc.arbortext.windchill.techpubs.ui.techPubsActionsRB">
+   <submodel name="detailsTab_arbortextGraphic" />
+   <submodel name="contentTab_arbortextGraphic"/>
+   <submodel name="relatedObjectsTab_arbortextGraphic"/>
+   <submodel name="changesTab"/>
+   <submodel name="historyTab_arbortextGraphic"/>
+ </model>
+
+ <model name="detailsTab_arbortextGraphic" resourceBundle="com.ptc.arbortext.windchill.techpubs.ui.techPubsActionsRB">
+   <action name="cadVisualizationAndAttributes" type="object"/>
+   <action name="WHEREUSEDREPORT" type="object"/>
+ </model>
+
+ <model name="contentTab_arbortextGraphic" resourceBundle="com.ptc.arbortext.windchill.techpubs.ui.techPubsActionsRB">
+   <action name="CDPPContentTableSubTemplate_WF" type="object"/>
+   <action name="publishedContent" type="object"/>
+ </model>
+ 
+ <model name="relatedObjectsTab_arbortextGraphic" resourceBundle="com.ptc.arbortext.windchill.techpubs.ui.techPubsActionsRB">
+   <action name="docRelatedPartsLists" type="techPubs"/>
+   <action name="impactAnalysis" type="rules"/>
+ </model>
+
+ <model name="historyTab_arbortextGraphic" resourceBundle="com.ptc.arbortext.windchill.techpubs.ui.techPubsActionsRB">
+   <action name="versionHistory" type="history"/>
+   <action name="timelineHistory" type="history"/>    
+ </model>
+ 
+ <model name="arbortextIsoDrawInfoPageTabSet" resourceBundle="com.ptc.arbortext.windchill.techpubs.ui.techPubsActionsRB">
+   <submodel name="detailsTab_arbortextIsoDraw" />
+   <submodel name="relatedObjectsTab_arbortextIsoDraw"/>
+   <submodel name="changesTab"/>
+   <submodel name="historyTab_arbortextIsoDraw"/>
+ </model>
+
+ <model name="detailsTab_arbortextIsoDraw" resourceBundle="com.ptc.arbortext.windchill.techpubs.ui.techPubsActionsRB">
+   <action name="cadVisualizationAndAttributes" type="object"/>
+   <action name="WHEREUSEDREPORT" type="object"/>
+ </model>
+
+ <model name="relatedObjectsTab_arbortextIsoDraw" resourceBundle="com.ptc.arbortext.windchill.techpubs.ui.techPubsActionsRB">
+   <action name="repsAndMarkups" type="wvs"/>
+   <action name="CDPPReference" type="object"/>
+   <action name="docRelatedPartsLists" type="techPubs"/>
+   <action name="impactAnalysis" type="rules"/>
+ </model>
+
+ <model name="historyTab_arbortextIsoDraw" resourceBundle="com.ptc.arbortext.windchill.techpubs.ui.techPubsActionsRB">
+   <action name="versionHistory" type="history"/>
+   <action name="timelineHistory" type="history"/>    
+ </model>
+
+ <model name="arbortextXmlNewRepWizardButtons">
+   <action name="prevButton" type="object"/>
+   <action name="nextButton" type="object"/>
+   <action name="submitPublishJob" type="techPubs"/>
+   <action name="cancelButton" type="object"/>
+ </model>
+ 
+<model name="createDDDWizardButtons">
+	<action name="prevButton"    type="object"/>
+	<action name="nextButton"    type="object"/>
+	<action name="insertButton"  	 type="techPubs"/>
+	<action name="okButton"      type="object"/>
+	<action name="cancelButton"  type="object"/>
+</model>
+
+</actionmodels>

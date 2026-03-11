@@ -1,0 +1,42 @@
+<%@page language="java" session="false" access="http|soap" contentType="text/xml"%>
+<%@taglib uri="http://www.ptc.com/infoengine/taglib/core" prefix="ie"%>
+<%@page import="java.io.*"%>
+<%@page import="java.util.*"%>
+<%@page import="ext.casc.integrate.mes.*"%>
+<%@page import=" java.lang.Exception"%>
+
+<!--com.infoengine.soap.rpc.def
+
+@param string number Argument number 1.
+@param string version Argument number 2.
+-->
+<%
+String number = (String)getParam("number");
+String version = (String)getParam("version");
+
+
+ArrayList viewList =new ArrayList();
+
+MesProcessNoticeService process = new MesProcessNoticeService();
+try{
+	viewList =process.getProcessNotice(number, version);
+}
+catch (Exception e) {
+	//result = e.getLocalizedMessage();
+}
+
+
+%>
+
+<ie:webject name="Create-Group" type="GRP">
+    <!ie:param name="GROUP_OUT" data="output"/>
+    <ie:param name="GROUP_OUT" data="${@FORM[]group_out[0]}" default="output"/>
+    <ie:param name="DELIMITER" data="|"/>
+<%
+    for ( int i=0; i<viewList.size(); i++ ) {
+      	String elem = (String)viewList.get(i);
+      %><ie:param name="ELEMENT" data="<%=elem%>"/><%
+    }
+%>
+</ie:webject>
+

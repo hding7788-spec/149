@@ -1,0 +1,78 @@
+package com.glaway.mpm.pbombuilder.tree.item;
+
+import java.awt.Window;
+import java.awt.event.ActionEvent;
+
+import javax.swing.JOptionPane;
+import javax.swing.tree.TreePath;
+
+import com.glaway.mpm.pbombuilder.action.CmCommonPackageAction;
+import com.glaway.mpm.pbombuilder.data.CmMenuItem;
+import com.glaway.mpm.pbombuilder.tree.CmTree;
+import com.glaway.mpm.pbombuilder.tree.CmTreeNode;
+import com.glaway.mpm.pbombuilder.tree.dialog.SetPbomAttributeDialog;
+import com.glaway.mpm.pbombuilder.tree.dialog.SetPbomKeyComponentDialog;
+import com.glaway.mpm.pbombuilder.util.CmCommonNodeUtil;
+import com.glaway.mpm.pbombuilder.util.CmCommonStringUtil;
+
+/**
+ * 编辑PBOM属性
+ *  <br>Created on 2012-10-29
+ * @author chenyunlong
+ *
+ */
+public class CmEditPBOMKeyComponentMenuItem extends CmMenuItem{
+	private static final long serialVersionUID = 1L;
+	private CmTree tree;
+	private CmTreeNode currNode;
+	private Window owner;
+	private String type;
+	String title = null;
+	public CmEditPBOMKeyComponentMenuItem(CmTree tree, CmTreeNode currNode,Window owner,String type) {
+		 this.tree = tree;
+		 this.type = type;
+	     this.currNode = currNode;
+	     this.owner = owner;
+	     title="定义关重件标识";
+	     setText(title);
+	     setIconStr("mbom_edit.png");
+	     setEnabled(displayValidate(this.currNode));
+	}
+
+	private boolean displayValidate(CmTreeNode node) {
+		CmTreeNode rootPart = (CmTreeNode)tree.getRoot().children().nextElement();
+		CmTreeNode selectedPart = tree.getSelectedNode();
+		TreePath[] paths =  CmCommonNodeUtil.removeSelectNodeFromPackage(tree.getSelectionPaths());
+		if(paths.length>1){
+			return false;
+		} else if (null==node.getParent()
+				|| (null==node.getParent()&& node.children().hasMoreElements() && CmCommonStringUtil.isHasFilingOfObj((CmTreeNode)node.children().nextElement()))) {
+			return false;
+		} else if (rootPart.getPart().getContainerId() != selectedPart.getPart().getContainerId()) {//借用件不能修改
+			return false;
+		}
+		else {
+			return !CmCommonStringUtil.isHasFilingOfObj(node);
+		}
+	}
+
+	@Override
+	protected void actionPerformed(ActionEvent evt) {
+
+		TreePath[] paths = CmCommonNodeUtil.removeSelectNodeFromPackage(tree.getSelectionPaths());
+		if(paths.length==1){
+			 CmTreeNode node = (CmTreeNode) paths[0].getLastPathComponent();
+//			 CmCommonPackageAction common = new CmCommonPackageAction();
+//			 StringBuffer errorBuf = common.checkThePackageNode(this.tree.getRoot(), node,"编辑PBOM属性");
+//			 if(errorBuf.toString().length()>0){
+//				 JOptionPane.showMessageDialog(tree.getRootPane(),errorBuf);
+//			 }else{
+				 SetPbomKeyComponentDialog dialog=SetPbomKeyComponentDialog.getInstance(node,tree,type);
+				 dialog.showDialog(node,tree);
+				 dialog.dialog.setTitle(title);
+//			 }
+
+		}
+		tree.updateUI();
+	}
+}

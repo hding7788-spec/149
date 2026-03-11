@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+
+   <objecttype name="partConfigCompare" class="" resourceBundle= "com.ptc.windchill.enterprise.configuration.partConfigCompare.partConfigurationCompareActionsRB">
+
+      <action name="launchPartConfigurationCompare">
+		<command windowType="popup"/>
+		<includeFilter name="hideForObjectInProject"/>
+	  </action>
+
+   </objecttype>
+
+</listofactions>

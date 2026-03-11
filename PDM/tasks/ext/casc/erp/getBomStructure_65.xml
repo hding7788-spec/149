@@ -1,0 +1,59 @@
+
+<%@page language="java" session="false" access="http|soap" contentType="text/xml"%>
+
+<%@taglib uri="http://www.ptc.com/infoengine/taglib/core" prefix="ie"%>
+<%@page import="java.io.*"%>
+<%@page import="java.util.*"%>
+<%@page import="ext.casc.integrate.bom.ProductBomService"%>
+<%@page import=" java.lang.Exception"%>
+
+
+
+<%
+
+String number =  (String)getParam("number");
+
+String versionType = (String)getParam("versionType");
+String version = (String)getParam("version");
+int expansionLevel =Integer.valueOf( getParam("expansionLevel").toString());
+String relatedType = (String)getParam("relatedType");
+String bomType = (String)getParam("bomType");
+String fileTypeB = (String)getParam("fileTypeB");
+String fileTypeC = (String)getParam("fileTypeC");
+String guid = (String)getParam("guid");
+String type = (String)getParam("type");
+
+/*
+String versionType = "BATCH";
+String version = "";
+int expansionLevel = 0;
+String relatedType = "ALL";
+String bomType ="Manufacturing";
+String fileTypeB = "FORMAL";
+String fileTypeC = "PRIMARY";
+String guid = "";
+*/
+
+
+String result = "";
+
+ProductBomService  bomService = new ProductBomService();
+try{
+         result =bomService.getBomStructure(number,  versionType,version,  expansionLevel, relatedType, bomType, fileTypeB,fileTypeC,guid,type,true);
+}
+catch (Exception e) {
+            // TODO Auto-generated catch block
+           result = e.getLocalizedMessage();
+}
+
+%>
+
+      <ie:webject name="Create-Group" type="GRP">
+            <ie:param name="ELEMENT" data="<%=result%>"/>
+           <ie:param name="CLASS" data="Status"/>
+           <ie:param name="GROUP_OUT" data="${@FORM[]group_out[]}"  default="output"/>
+        </ie:webject>
+
+
+
+

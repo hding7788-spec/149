@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+
+<!-- define the actions on the UI components -->
+<actionmodels>
+
+   <model name="psbPickerRelatedPartsTreeToolBar">
+		<action name="expandalllevels" type="cat" />
+		<action name="refresh" type="cat" />
+   </model>
+
+
+   <model name="psbPickerRelatedPartsTreeContextMenu">
+     	<action name="expandalllevels" type="cat" />
+		<action name="refresh" type="cat" />
+   </model>
+
+   
+</actionmodels>

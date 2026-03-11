@@ -1,0 +1,28 @@
+<%@taglib uri="http://www.ptc.com/infoengine/taglib/core" prefix="ie"%>
+<%@page import="ext.casic.integration.portal.PortalService"%>
+<%@page language="java" access="http|soap"%>
+
+<!--com.infoengine.soap.rpc.def JMS Example task.
+
+@param java.lang.String personCode
+@param java.lang.String sessionID
+@param java.lang.String ticket
+@param java.lang.String extendParams
+@return string ${output[0]SOAPRETURN[0]}
+-->
+
+<%
+    String personCode = (String) getParam("personCode");
+    String sessionID = (String) getParam("sessionID");
+    String ticket = (String) getParam("ticket");
+    String extendParams = (String) getParam("extendParams");
+    String result = PortalService.getWorkItems(personCode, sessionID, ticket, extendParams);
+    Group output = new Group("output");
+    Element element = new Element();
+    element.addAtt(new Att("SOAPRETURN", result));
+    output.addElement(element);
+    addGroup(output);
+%>
+<ie:webject name="Return-Groups" type="GRP">
+    <ie:param name="GROUP_IN" data="output"/>
+</ie:webject>

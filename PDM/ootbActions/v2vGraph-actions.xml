@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE listofactions SYSTEM "actions.dtd">
+<listofactions>
+   <objecttype name="versiongraph" class="wt.fc.Persistable" resourceBundle="com.ptc.enterprise.explorer.v2vgraph.v2vgraphActionsRB">
+        <action name="versionGraph" uicomponent="THIRD_LEVEL_VERSIONGRAPH" resourceBundle="com.ptc.enterprise.explorer.v2vgraph.v2vgraphActionsRB">
+            <command url="/apps/v2vgraph/v2vgraph.jsp"/>
+        </action>
+    </objecttype>
+</listofactions>

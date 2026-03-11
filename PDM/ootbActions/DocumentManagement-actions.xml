@@ -1,0 +1,310 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+   <objecttype name="object" class="wt.fc.Persistable" resourceBundle="com.ptc.windchill.enterprise.doc.documentResource">
+      <action name="documentStructure" resourceBundle="com.ptc.core.ui.navigationRB">
+          <command url="netmarkets/jsp/object/documentStructure.jsp?action=DocumentStructure"/>
+      </action>
+
+    </objecttype>
+
+    <objecttype name="dsb" class="wt.fc.Persistable" resourceBundle="com.ptc.windchill.enterprise.doc.documentResource">
+      <action name="checkout" ajax="component">
+          <includeFilter name="sandboxSharingValidationSimple" />
+          <includeFilter name="disableSBHiddenFilter" />
+          <command class="com.ptc.windchill.enterprise.doc.forms.StructureCheckoutObjectFormProcessor" method="execute" onClick="onClickValidation(event,'checkout')"/>
+      </action>
+      <action name="checkin" ajax="component">
+          <includeFilter name="sandboxSharingValidationSimple" />
+          <command class="com.ptc.windchill.enterprise.doc.forms.StructureCheckinObjectFormProcessor" method="execute" windowType="popup" url="/netmarkets/jsp/wip/checkin.jsp"/>
+      </action>
+
+      <action name="edit" ajax="component">
+          <includeFilter name="sandboxSharingValidationSimple" />
+          <includeFilter name="disableSBHiddenFilter" />
+          <command class="com.ptc.windchill.enterprise.doc.forms.StructureEditObjectFormProcessor" method="execute" windowType="popup" url="/netmarkets/jsp/document/edit.jsp"/>
+      </action>
+
+      <action name="checkout_and_download">
+          <includeFilter name="sandboxSharingValidationSimple" />
+          <command url="netmarkets/jsp/dsb/checkout_and_download.jsp" windowType="popup" onClick="onClickValidation(event,'checkout')"/>
+      </action>
+
+   </objecttype>
+
+   <objecttype name="document" class="wt.doc.WTDocument" resourceBundle="com.ptc.windchill.enterprise.doc.documentResource">
+      <action name="download_latest_iteration">
+            <command url="servlet/AttachmentsDownloadDirectionServlet/primary" windowType="page" />
+      </action>
+      <action name="createMulti" uicomponent="CREATE_DOC" >
+           <command class="com.ptc.windchill.enterprise.doc.forms.CreateMultiDocFormProcessor" method="execute"
+              windowType="popup" onClick="validateCreateLocation(event)"/>
+           <includeFilter name="projectM4D" />
+           <includeFilter name="showNewActionPreValidation" />
+      </action>
+      <action name="addDocument" ajax="row">
+           <command class="com.ptc.core.components.forms.WizardCommands" method="addObject" />
+      </action>
+      
+      <action name="PasteInDSB" ajax="row">
+           <command class="com.ptc.windchill.enterprise.doc.forms.StructurePasteObjectProcessor" method="execute" />
+      </action>
+      
+      
+      <action name="setAttributesWizStepForCreateMulti" ajax="row" id="setAttributesWizStepForCreateMulti" preloadWizardPage="false"  required="true" postloadJS="preUniqueAttsStep">
+         <command windowType="wizard_step" url="servlet/TypeBasedIncludeServlet?contextAction=setAttributesWizStepForCreateMulti"/>
+      </action>
+      
+      
+      
+       <action name="setTypeAndAttributesWizStepForCreateMulti" id="setTypeAndAttributesWizStepForCreateMulti" preloadWizardPage="false" required="true" postloadJS="preUniqueAttsStep" >
+         <command windowType="wizard_step"/>
+      </action>
+   
+   <!--  EDIT MULTI DOCUMENTS ACTIONS -->
+
+     <action name="editAttributesMultiDocWizStep" id="editAttributesWizStep" required="true" preloadWizardPage="false">
+         <command windowType="wizard_step" />
+      </action>
+
+     <action name="editAttValue" ajax="row">
+           <command class="com.ptc.core.components.forms.WizardCommands" method="editAttValue"/>
+    </action>
+   <!--  EDIT MULTI DOCUMENTS ACTIONS END-->
+
+      <action name="setCommonAttributesWizStepForCreateMulti" ajax="row" id="setCommonAttributesWizStepForCreateMulti" preloadWizardPage="false"  required="true" afterJS="validateDuplicateName" afterVK="setAttributesWizStep">
+         <command windowType="wizard_step" url="servlet/TypeBasedIncludeServlet?contextAction=setCommonAttributesWizStepForCreateMulti"/>
+      </action>            
+      
+      <action name="create_shared_doc">
+        <command class="com.ptc.windchill.enterprise.doc.forms.CreateSharedDocFormProcessor" method="execute" url="?showContextStep=true" windowType="popup" onClick="validateCreateLocation(event)"/>
+      </action>
+      <action name="create" uicomponent="CREATE_DOC" dtiUpload="true" ajax="row">
+         <command class="com.ptc.windchill.enterprise.doc.forms.CreateDocFormProcessor" method="execute" windowType="popup" onClick="validateCreateLocation(event)"/>
+         <includeFilter name="projectM4D" />
+         <includeFilter name="showNewActionPreValidation" />
+      </action>
+      <action name="createDocumentSetAttributesWizStep" id="createDocumentSetAttributesWizStep" afterVK="setAttributesWizStep" preloadWizardPage="false" required="true" afterJS="validateDuplicateName">
+         <command windowType="wizard_step" url="servlet/TypeBasedIncludeServlet?contextAction=createDocumentSetAttributesWizStep"/>
+      </action>
+      
+      <action name="createDocumentSetTypeAndAttributesWizStep" id="createDocumentSetTypeAndAttributesWizStep" afterVK="setAttributesWizStep" preloadWizardPage="false" required="true" afterJS="validateDuplicateName">
+         <command windowType="wizard_step" url="servlet/TypeBasedIncludeServlet?contextAction=createDocumentSetTypeAndAttributesWizStep"/>
+      </action>
+      
+      <action name="createFromTemplateWizard" dtiDownload="true" uicomponent="CREATE_DOC">
+         <command class="com.ptc.windchill.enterprise.doc.forms.CreateDocFormProcessor" method="execute" windowType="popup" onClick="validateCreateLocation(event)"/>
+         <includeFilter name="projectM4D" />
+         <includeFilter name="showNewActionPreValidation" />
+      </action>
+
+      <action name="defineItemsTemplateWizStep" id="defineItemsTemplateWizStep" preloadWizardPage="false"  required="true" afterJS="validateTemplate" afterVK="defineItem">
+         <command windowType="wizard_step" url="servlet/TypeBasedIncludeServlet?contextAction=defineItemsTemplateWizStep"/>
+      </action>
+
+      <action name="createFromTemplateSetAttributesWizStep" id="createFromTemplateSetAttributesWizStep" preloadWizardPage="false"  required="true" afterJS="validateDuplicateName" afterVK="setAttributesWizStep">
+         <command windowType="wizard_step" url="servlet/TypeBasedIncludeServlet?contextAction=createFromTemplateSetAttributesWizStep"/>
+      </action>
+
+      <action name="createDocTemplate" dtiUpload="true" ajax="row">
+        <command class="com.ptc.windchill.enterprise.doc.forms.CreateDocTemplateFormProcessor" method="execute" windowType="popup"/>
+        <includeFilter name="projectM4D" />
+        <includeFilter name="showNewActionPreValidation" />
+      </action>
+
+      <action name="createDocTemplateSetAttributesStep" id="createDocTemplateSetAttributesWizStep" preloadWizardPage="false"  required="true" afterJS="validateDuplicateName" afterVK="setAttributesWizStep">
+        <command windowType="wizard_step" url="servlet/TypeBasedIncludeServlet?contextAction=createDocTemplateSetAttributesStep"/>
+      </action>
+
+      <action name="edit" dtiUpload="true" ajax="row">
+         <includeFilter name="sandboxSharingValidationSimple" />
+         <includeFilter name="hideSBHiddenFilter"/>
+         <includeFilter name="hideForClashJobDefinition"/>
+         <command class="com.ptc.core.components.forms.EditWorkableFormProcessor" method="execute" windowType="popup"/>
+      </action>
+
+      <action name="checkoutAndEdit" dtiUpload="true" ajax="row">
+         <includeFilter name="sandboxSharingValidationSimple" />
+         <includeFilter name="hideSBHiddenFilter"/>
+         <includeFilter name="hideForClashJobDefinition"/>
+         <includeFilter name="hideForAdminLocked"/>
+         <includeFilter name="scheduledDeliverablesActionSimpleFilter"/>
+         <command class="com.ptc.core.components.forms.EditWorkableFormProcessor" method="execute" url="netmarkets/jsp/document/edit.jsp" windowType="popup" onClick="onClickValidation(event,'checkout')"/>
+      </action>
+
+      <action name="editDocAttributesWizStep" afterVK="setAttributesWizStep" id="editDocAttributesWizStep" preloadWizardPage="true"  required="true">
+         <command windowType="wizard_step"/>
+      </action>
+
+      <action name="doc_insert_from_folder" uicomponent="doc_insert_from_folder" ajax="row" resourceBundle="com.ptc.windchill.enterprise.revisionControlled.insertWizardResource">
+         <command class="com.ptc.windchill.enterprise.doc.forms.InsertDocFormProcessor" method="execute" windowType="popup"/>
+      </action>
+
+      <action name="insertDocWizardStep" id="insertDocWizardStep" preloadWizardPage="false"  required="true"  resourceBundle="com.ptc.windchill.enterprise.revisionControlled.insertWizardResource">
+          <command windowType="wizard_step"/>
+      </action>
+
+      <action name="softattribute_step" preloadWizardPage="false">
+         <command class="" method="" windowType="wizard_step" />
+      </action>
+
+      <action name="enable" enabledwhensuspended="true">
+         <command class="com.ptc.windchill.enterprise.doc.forms.EnableDocTemplateFormProcessor" method="execute"/>
+      </action>
+      <action name="disable" enabledwhensuspended="true">
+         <command class="com.ptc.windchill.enterprise.doc.forms.DisableDocTemplateFormProcessor" method="execute"/>
+      </action>
+      <action name="renameDocumentWizard">
+        <includeFilter name="sandboxSharingValidationSimple" />
+        <includeFilter name="hideSBHiddenFilter"/>
+        <command class="com.ptc.windchill.enterprise.object.forms.RenameObjectFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="renameDocumentWizardStep" afterJS="validateDuplicateName">
+         <command url="/netmarkets/jsp/object/renameObjectWizardStep.jsp" class="" method="" windowType="wizard_step"/>
+      </action>
+      <action name="checkin" ajax="row">
+         <includeFilter name="sandboxSharingValidationSimple" />
+         <includeFilter name="disableSBHiddenFilter" />
+         <includeFilter name="hideForClashJobDefinition"/>
+         <command class="com.ptc.windchill.enterprise.wip.CheckinItemFormProcessor" method="execute" windowType="popup"/>
+      </action>
+
+      <action name="search">
+         <command windowType="popup" url="netmarkets/jsp/search/callSearchPicker.jsp?objectType=wt.doc.WTDocument" />
+      </action>
+
+      <action name="relatedDocumentsDocuments" uicomponent="THIRD_LEVEL_RELATED_DOCUMENTS"></action>
+      <action name="relatedDocumentsReferencedBy" uicomponent="THIRD_LEVEL_RELATED_DOCUMENTS"></action>
+      <action name="documentsForDocMiniNavigatorTable" uicomponent="THIRD_LEVEL_RELATED_DOCUMENTS">
+        <component name="documentsForDocMiniNavigator" windowType="page"/>
+      </action>
+      <action name="relatedDocumentsParts" uicomponent="THIRD_LEVEL_RELATED_PARTS">
+         <component name="docs.relatedDocumentsParts" windowType="page"/>
+      </action>
+      <action name="partsForDocMiniNavigatorTable" uicomponent="THIRD_LEVEL_RELATED_PARTS">
+        <component name="partsForDocMiniNavigator" windowType="page"/>
+      </action>       
+      <action name="relatedDocumentPartInstances" uicomponent="THIRD_LEVEL_RELATED_PART_INSTANCES"></action>
+
+      <action name="related_delete_references_doc" multiselect="true"  ajax="component">
+         <command class="com.ptc.windchill.enterprise.doc.forms.DocDocRefDeleteRelationFormProcessor" method="execute" onClick="onClickValidation(event,'related_delete_references_doc')"/>
+      </action>
+      <action name="related_copy_references_doc" multiselect="true">
+         <command class="com.ptc.netmarkets.model.NmObjectCommands" method="list_copy" windowType="no_content"/>
+      </action>
+      <action name="related_paste_references_doc" ajax="component" >
+         <command class="com.ptc.windchill.enterprise.doc.forms.DocDocRefPasteRelationFormProcessor" method="execute" onClick="onClickValidation(event,'related_paste_references_doc')"/>
+      </action>
+      <action name="related_paste_select_references_doc" multiselect="true" uicomponent="PASTE" ajax="component" >
+         <command class ="com.ptc.windchill.enterprise.doc.forms.DocDocRefPasteRelationFormProcessor" method="execute" onClick="onClickValidation(event,'related_paste_select_references_doc')" windowType="popup"/>
+      </action>
+      <action name="related_doc_createDocumentWizard" ajax="component" >
+         <command class="com.ptc.windchill.enterprise.doc.forms.DocDocRefCreateRelationFormProcessor" method="execute" onClick="onClickValidation(event,'related_doc_createDocumentWizard')" windowType="popup"/>
+         <includeFilter name="HideForPackages" />
+      </action>
+      <action name="related_add_references_doc" multiselect="true" ajax="component">
+          <command class="com.ptc.windchill.enterprise.doc.forms.DocDocRefAddRelationFormProcessor" method="execute" onClick="onClickValidation(event,'related_add_references_doc')" windowType="popup"/>
+      </action>
+      <action name="related_addEditCommentWizard" ajax="row" >
+         <command class="com.ptc.windchill.enterprise.doc.forms.DocDocAddEditCommentFormProcessor" method="execute" onClick="onClickValidation(event,'related_addEditCommentWizard')" windowType="popup" />
+      </action>
+      <action name="related_addEditCommentWizardStep" >
+         <command windowType="wizard_step" />
+      </action>
+      <action name="add_children_wizard" multiselect="true"/>
+
+      <action name="DOCSTRCTADDCHILDREN" checkaccess="true" renderType="PDM">
+          <command windowType="page" class="java.lang.Object" method="DOCSTRCTADDCHILDREN"/>
+      </action>
+      <action name="DOCSTRCTREORDERCHILDREN" checkaccess="true" renderType="PDM">
+          <command windowType="page" class="java.lang.Object" method="DOCSTRCTREORDERCHILDREN"/>
+      </action>
+      <action name="DOCSTRCTREMOVECHILDREN" checkaccess="true" renderType="PDM">
+          <command windowType="page" class="java.lang.Object" method="DOCSTRCTREMOVECHILDREN"/>
+      </action>
+
+      <!--  EDIT MULTI DOCUMENTS ACTIONS -->
+
+     <action name="editAttributesMultiDocWizStep" id="editAttributesWizStep" required="true" preloadWizardPage="false">
+         <command windowType="wizard_step" />
+      </action>
+
+   <!--  EDIT MULTI DOCUMENTS ACTIONS END-->
+
+    <action name="downloadDocumentsToCompressedFile" uicomponent="EXPORT_FILE_STRUCTURE">
+         <command class="com.ptc.netmarkets.model.NmObjectCommands" method="downloadFolderContentFiles" windowType="popup" />
+         <includeFilter name="projectM4D"/>
+    </action>
+    
+    <!--This action is without UIValidation. For validation, use downloadDocumentsToCompressedFile -->
+    <action name="downloadDocsToCompressedFile" uicomponent="EXPORT_FILE_STRUCTURE">
+         <command class="com.ptc.netmarkets.model.NmObjectCommands" method="downloadFolderContentFiles" windowType="popup" url="/netmarkets/jsp/document/downloadDocumentsToCompressedFile.jsp" />
+         <includeFilter name="projectM4D"/>
+    </action>
+    
+    <action name="downloadDocumentsToCompressedFileStep" preloadWizardPage="false" required="true">
+          <command windowType="wizard_step"/>
+    </action>
+
+      <action name="uploadDocumentsFromCompressedFile" ajax="component" uicomponent="IMPORT_FILE_STRUCTURE">
+         <command class="com.ptc.windchill.enterprise.doc.forms.CreateUploadDocFormProcessor" method="execute" windowType="popup" />
+         <includeFilter name="projectM4D"/>
+      </action>
+      <action name="uploadDocumentsFromCompressedFileStep" preloadWizardPage="false" required="true">
+          <command windowType="wizard_step"/>
+          <component name="document.uploadStep"/>
+      </action>
+      <!--  send Email-->
+      <action name="emailPage">
+      		<command class="com.ptc.windchill.enterprise.doc.commands.SendEmailCommand" method="email" windowType="popup"/>
+      </action>
+      
+	  <action name="emailPage_step" enabledwhensuspended="true">
+          <command class="com.ptc.windchill.enterprise.doc.commands.SendEmailCommand" method="email" windowType="wizard_step"/>
+      </action>
+     
+   </objecttype>
+
+
+   <objecttype name="part" class="wt.part.WTPart" resourceBundle="com.ptc.windchill.enterprise.part.partResource">
+
+      <action name="related_delete_references_part" multiselect="true"  ajax="component">
+         <command class="com.ptc.windchill.enterprise.part.forms.DocPartRefDeleteRelationFormProcessor" method="execute" onClick="onClickValidation(event,'related_delete_references_part')" />
+      </action>
+      <action name="related_delete_described_part" multiselect="true" ajax="component" >
+         <command class="com.ptc.windchill.enterprise.part.forms.DocPartDescDeleteRelationFormProcessor" method="execute" onClick="onClickValidation(event,'related_delete_described_part')" />
+      </action>
+      <action name="related_copy_references_part" multiselect="true">
+         <command class="com.ptc.netmarkets.model.NmObjectCommands" method="list_copy" windowType="no_content"/>
+      </action>
+      <action name="related_paste_references_part" ajax="component" >
+         <command class="com.ptc.windchill.enterprise.part.forms.DocPartRefPasteRelationFormProcessor" method="execute" onClick="onClickValidation(event,'related_paste_references_part')"/>
+      </action>
+      <action name="related_paste_described_part" ajax="component" >
+         <command class="com.ptc.windchill.enterprise.part.forms.DocPartDescPasteRelationFormProcessor" method="execute" onClick="onClickValidation(event,'related_paste_described_part')"/>
+      </action>
+      <action name="related_paste_select_references_part" multiselect="true" uicomponent="PASTE" ajax="component" >
+         <command class ="com.ptc.windchill.enterprise.part.forms.DocPartRefPasteRelationFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="related_paste_select_described_part" multiselect="true" uicomponent="PASTE" ajax="component" >
+         <command class ="com.ptc.windchill.enterprise.part.forms.DocPartDescPasteRelationFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="related_part_create_wizard_doc_references" ajax="component" >
+          <command class="com.ptc.windchill.enterprise.part.forms.DocPartRefCreateRelationFormProcessor" method="execute" url="/netmarkets/jsp/part/related_part_create_wizard_doc_references.jsp?showNewCADDocStep=true&amp;hideAssociatePart=true" windowType="popup"/>
+          <includeFilter name="showNewActionPreValidation" /> 
+      </action>
+      <action name="related_part_create_wizard_doc_described" ajax="component" >
+          <command class="com.ptc.windchill.enterprise.part.forms.DocPartDescCreateRelationFormProcessor" method="execute" url="/netmarkets/jsp/part/related_part_create_wizard_doc_described.jsp?showNewCADDocStep=true&amp;hideAssociatePart=true" windowType="popup"/>
+           <includeFilter name="showNewActionPreValidation" /> 
+          <includeFilter name="HideForPackages" />
+      </action>
+      <action name="related_add_references_docpart" multiselect="true" ajax="component" >
+          <command class="com.ptc.windchill.enterprise.part.forms.DocPartRefAddRelationFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="related_add_described_docpart" multiselect="true" ajax="component" >
+          <command class="com.ptc.windchill.enterprise.part.forms.DocPartDescAddRelationFormProcessor" method="execute" windowType="popup"/>
+      </action>
+
+   </objecttype>
+
+</listofactions>

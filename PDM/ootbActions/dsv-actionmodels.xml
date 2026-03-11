@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+
+<!-- define the actions on the UI components -->
+<actionmodels>
+
+  <model name="dsvP2CApplicationLevelToolBar">
+  </model>
+
+  <model name="dsvC2PApplicationLevelToolBar">
+  </model>
+
+  <model name="dsvc2pCadTreeToolBar">
+    <action name="resetCompare"                 type="dsv"/>
+    <action name="prevDifference"               type="dsb" />
+    <action name="nextDifference"               type="dsb" />
+    <action name="separator"                    type="separator"/>
+    <action name="buildPart"                    type="dsv"/>
+    <action name="buildPartAndDesc"             type="dsv"/>
+    <action name="separator"                    type="separator"/>
+    <action name="resolvePart"                  type="dsv"/>
+    <action name="exitResolvePartUI"            type="dsv"/>
+  </model>
+
+  <model name="dsvc2pCadTreeContextMenu">
+    <action name="viewInfo"                     type="dsv"/>
+    <action name="launchCompareToPartGWT"       type="dsv"/>
+    <action name="separator"                    type="separator"/>
+    <action name="buildPart"                    type="dsv"/>
+    <action name="buildPartAndDesc"             type="dsv"/>
+  </model>
+
+  <model name="dsvc2pPartTreeToolBar">
+    <action name="checkoutGWT"                  type="psb"/>
+    <action name="checkinGWT"                   type="psb"/>
+    <action name="undocheckoutGWT"              type="dsv"/>
+  </model>
+
+  <model name="dsvc2pPartTreeContextMenu">
+    <action name="viewInfo"                     type="dsv"/>
+    <action name="launchCompareToCADGWT"        type="dsv"/>
+    <action name="separator"                    type="separator"/>
+    <action name="checkoutGWT"                  type="psb"/>
+    <action name="checkinGWT"                   type="psb"/>
+    <action name="undocheckoutGWT"              type="dsv"/>
+    <action name="editusageGWT"                 type="psb"/>
+    <action name="separator"                    type="separator"/>
+    <action name="buildPart"                    type="dsv"/>
+    <action name="buildPartAndDesc"             type="dsv"/>
+  </model>
+
+  <model name="dsvc2pCadUsesToolBar">
+  </model>
+
+  <model name="dsvc2pPartUsesToolBar">
+    <action name="insertExistingPartUsesGWT"    type="psb"/>
+    <action name="checkoutGWT"                  type="psb"/>
+    <action name="checkinGWT"                   type="psb"/>
+    <action name="undocheckoutGWT"              type="dsv"/>
+  </model>
+
+  <model name="dsvc2pCadUsesContextMenu">
+    <action name="viewInfo"                     type="dsv"/>
+  </model>
+
+  <model name="dsvc2pPartUsesContextMenu">
+    <action name="viewInfo"                     type="dsv"/>
+    <action name="checkoutGWT"                  type="psb"/>
+    <action name="checkinGWT"                   type="psb"/>
+    <action name="undocheckoutGWT"              type="dsv"/>
+    <action name="editusageGWT"                 type="psb"/>
+  </model>
+
+
+  <model name="dsvp2cPartTreeToolBar">
+    <action name="resetCompare"                 type="dsv"/>
+    <action name="prevDifference"               type="dsb" />
+    <action name="nextDifference"               type="dsb" />
+    <action name="separator"                    type="separator"/>
+    <action name="publishToCADGWT"              type="cat"/>
+    <action name="buildCad"                     type="dsv"/>
+    <action name="buildCadAndDesc"              type="dsv"/>
+  </model>
+
+  <model name="dsvp2cPartTreeContextMenu">
+    <action name="viewInfo"                     type="dsv"/>
+    <action name="launchCompareToCADGWT"        type="dsv"/>
+    <action name="separator"                    type="separator"/>
+    <action name="publishToCADGWT"              type="cat"/>
+    <action name="buildCad"                     type="dsv"/>
+    <action name="buildCadAndDesc"              type="dsv"/>
+  </model>
+
+  <model name="dsvp2cCadTreeToolBar">
+  </model>
+
+  <model name="dsvp2cCadTreeContextMenu">
+    <action name="viewInfo"                     type="dsv"/>
+    <action name="launchCompareToPartGWT"       type="dsv"/>
+    <action name="separator"                    type="separator"/>
+    <action name="buildCad"                     type="dsv"/>
+    <action name="buildCadAndDesc"              type="dsv"/>
+  </model>
+
+  <model name="dsvp2cPartUsesToolBar">
+    <action name="publishToCADGWT"              type="cat"/>
+  </model>
+
+  <model name="dsvp2cCadUsesToolBar">
+  </model>
+
+  <model name="dsvp2cPartUsesContextMenu">
+    <action name="viewInfo"                     type="dsv"/>
+    <action name="publishToCADGWT"              type="cat"/>
+  </model>
+
+  <model name="dsvp2cCadUsesContextMenu">
+    <action name="viewInfo"                     type="dsv"/>
+  </model>
+
+
+
+  <model name="dsvRelpartsToolBar">
+  </model>
+
+  <model name="dsvRelpartsContextMenu">
+    <action name="saveStructureViewGWT" type="cat" />
+    <action name="configurableTableViewManagerGWT" type="cat"/>
+  </model>
+
+  <model name="dsvReldocsToolBar">
+  </model>
+
+  <model name="dsvReldocsContextMenu">
+    <action name="saveStructureViewGWT" type="cat" />
+    <action name="configurableTableViewManagerGWT" type="cat"/>
+  </model>
+
+</actionmodels>

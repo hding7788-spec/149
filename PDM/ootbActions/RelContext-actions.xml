@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+
+   <!-- define the actions for ContextLink -->
+   <objecttype name="contextlink" class="com.ptc.core.relcontext.server.ContextLink">
+      <action name="create_context_step" ajax="true" resourceBundle="com.ptc.core.relcontext.server.RelContextActionsRB">
+          <command class="" method="" windowType="wizard_step"/>
+          <access name="update"/>
+      </action>
+      <action name="create_context_wizard" checkaccess="true" multiselect="false" uicomponent="CREATE_CONTEXTLINK" ajax="true" resourceBundle="com.ptc.core.relcontext.server.RelContextActionsRB">
+          <command class="com.ptc.core.relcontext.client.CreateContextLinkFormProcessor" method="execute" windowType="popup"/>
+          <access name="update"/>
+      </action>
+      <action name="update_context_step" checkaccess="true" uicomponent="UPDATE_CONTEXTLINK" ajax="true" resourceBundle="com.ptc.core.relcontext.server.RelContextActionsRB">
+          <command class="" method="" windowType="wizard_step"/>
+          <access name="update"/>
+      </action>
+      <action name="update_context_wizard" checkaccess="true" multiselect="false" uicomponent="UPDATE_CONTEXTLINK" ajax="true" resourceBundle="com.ptc.core.relcontext.server.RelContextActionsRB">
+          <command class="com.ptc.core.relcontext.client.UpdateContextLinkFormProcessor" method="execute" windowType="popup"/>
+          <access name="update"/>
+      </action>
+      <action name="send_relcontext_notification_step" checkaccess="true" uicomponent="SEND_NOTIFICATION_CONTEXTLINK" ajax="true" resourceBundle="com.ptc.core.relcontext.server.RelContextActionsRB">
+          <command class="" method="" windowType="wizard_step"/>
+      </action>
+      <action name="send_relcontext_notification_wizard" checkaccess="true" uicomponent="SEND_NOTIFICATION_CONTEXTLINK" ajax="true" resourceBundle="com.ptc.core.relcontext.server.RelContextActionsRB">
+          <command class="com.ptc.core.relcontext.client.SendRelContextNotificationFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="delete" uicomponent="DELETE" ajax="row" ajaxActionClass="netmarkets/jsp/object/delete.jsp?refresh=true" resourceBundle="com.ptc.core.relcontext.server.RelContextActionsRB">
+         <command class="com.ptc.netmarkets.model.NmObjectCommands" method="delete" onClick="JCAConfirm(event,'com.ptc.netmarkets.util.utilResource.CONFIRM_REMOVE')"/>
+      </action>
+      <action name="list_delete" multiselect="true" uicomponent="DELETE" ajax="row" ajaxActionClass="netmarkets/jsp/object/delete.jsp" selectRequired="true" resourceBundle="com.ptc.core.relcontext.server.RelContextActionsRB">
+         <command class="com.ptc.netmarkets.model.NmObjectCommands" method="list_delete" onClick="JCAConfirm(event,'com.ptc.netmarkets.util.utilResource.CONFIRM_REMOVE')"/>
+      </action>
+   </objecttype>
+
+   <!-- define the actions for NetworkLink -->
+   <objecttype name="networklink" class="com.ptc.core.relcontext.server.NetworkLink">
+      <action name="networklink_update_wizard" ajax="true" resourceBundle="com.ptc.core.relcontext.server.RelContextActionsRB">
+          <command class="com.ptc.core.relcontext.client.CreateNetworkLinkFormProcessor" method="execute" windowType="popup"/>
+         <access name="update"/>
+      </action>
+      <action name="networklink_create_wizard" ajax="page" resourceBundle="com.ptc.core.relcontext.server.RelContextActionsRB">
+          <command class="com.ptc.core.relcontext.client.CreateNetworkLinkFormProcessor"
+                    method="execute"
+                    windowType="popup"
+                    onClick="checkValidCreateLocation(event)"/>
+          <access name="update"/>
+          <includeFilter name="projectM4D" />
+      </action>
+      <action name="create_name_step" ajax="true" resourceBundle="com.ptc.core.relcontext.server.RelContextActionsRB">
+          <command class="" method="" windowType="wizard_step"/>
+          <access name="update"/>
+      </action>
+      <action name="update_name_step" ajax="true" resourceBundle="com.ptc.core.relcontext.server.RelContextActionsRB">
+          <command class="" method="" windowType="wizard_step"/>
+          <access name="update"/>
+      </action>
+      <action name="delete" uicomponent="DELETE" ajax="row" ajaxActionClass="netmarkets/jsp/object/delete.jsp?refresh=true" resourceBundle="com.ptc.core.relcontext.server.RelContextActionsRB">
+         <command class="com.ptc.netmarkets.model.NmObjectCommands" method="delete" onClick="JCAConfirm(event,'com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE')"/>
+         <includeFilter name="projectM4D" />
+      </action>
+   </objecttype>
+
+   <!-- define the actions for Network page  -->
+   <objecttype name="network" class="">
+      <action name="network_list_delete" multiselect="true" uicomponent="DELETE" ajax="row" ajaxActionClass="netmarkets/jsp/object/delete.jsp" selectRequired="true" resourceBundle="com.ptc.core.relcontext.server.RelContextActionsRB">
+         <command class="com.ptc.netmarkets.model.NmObjectCommands" method="list_delete" onClick="JCAConfirm(event,'com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE')"/>
+         <includeFilter name="projectM4D" />
+      </action>
+      <action name="send_owner_notification_step" checkaccess="true" uicomponent="RELCONTEXT_SEND_OWNER_NOTIFICATION" ajax="true" resourceBundle="com.ptc.core.relcontext.server.RelContextActionsRB">
+          <command class="" method="" windowType="wizard_step"/>
+      </action>
+      <action name="send_owner_notification_wizard"  selectRequired="true" checkaccess="true" uicomponent="RELCONTEXT_SEND_OWNER_NOTIFICATION" ajax="true" resourceBundle="com.ptc.core.relcontext.server.RelContextActionsRB">
+          <command class="com.ptc.core.relcontext.client.RelContextSendOwnerNotificationFormProcessor" 
+          method="execute" 
+          windowType="popup"/>
+      </action>
+      <action name="network_paste" multiselect="true" enabledwhensuspended="true" resourceBundle="com.ptc.core.relcontext.server.RelContextActionsRB">
+         <command class="com.ptc.core.relcontext.client.RelContextPasteProcessor" 
+            method="execute"
+            onClick="checkValidPasteLocation(event)"/>
+         <includeFilter name="projectM4D" />
+      </action>
+   </objecttype>
+</listofactions>

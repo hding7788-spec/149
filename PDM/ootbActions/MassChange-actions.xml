@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+<listofactions>
+
+   <objecttype name="massChange" class="wt.change2.Changeable2" resourceBundle="com.ptc.windchill.enterprise.massChange.massChangeActionsRB">
+      <action name="launchMassChange" selectRequired="true" ajax="page">
+           <description>Launches the mass change wizard</description>
+           <command class="com.ptc.windchill.enterprise.massChange.forms.MassChangeFormProcessor" method="execute" windowType="new"/>
+           <includeFilter name="adminLockModifyChangeObjectsFilter"/>
+      </action>
+
+      <action name="masschangeStep" id="masschangeStep" afterJS="validateQuantityUnitFindNumber" afterVK="massChangeStepValidation" beforeJS="massChangeRender.loadMassChangeStep">
+           <description>First step in the launch mass change action.</description>
+           <command windowType="wizard_step"/>
+      </action>
+
+      <action name="massChange_previewList" id="massChange_previewList" preloadWizardPage="false" beforeJS="massChangeRender.loadPreviewStep">
+           <description>The preview step in the launch mass change action.</description>
+           <command windowType="wizard_step"/>
+      </action>
+
+      <action name="replacePartUsage" >
+           <description>The replace part criteria panel in the launch mass change action.</description>
+           <command class="com.ptc.windchill.enterprise.massChange.filters.ReplacePartUsageFilterDelegate"/>
+      </action>
+
+      <action name="addPartUsage" >
+           <description>The insert part criteria panel in the launch mass change action.</description>
+           <command class="com.ptc.windchill.enterprise.massChange.filters.AddPartUsageFilterDelegate"/>
+      </action>
+
+      <action name="removePartUsage" >
+           <description>The remove part criteria panel in the launch mass change action.</description>
+           <command class="com.ptc.windchill.enterprise.massChange.filters.RemovePartUsageFilterDelegate"/>
+      </action>
+
+      <action name="changePartUsage" >
+           <description>The edit part criteria panel in the launch mass change action.</description>
+           <command class="com.ptc.windchill.enterprise.massChange.filters.ChangePartUsageFilterDelegate"/>
+      </action>
+
+      <action name="addDocumentUsage" >
+           <description>The insert document criteria panel in the launch mass change action.</description>
+           <command class="com.ptc.windchill.enterprise.massChange.filters.AddDocumentLinkFilterDelegate"/>
+      </action>
+
+      <action name="removeDocumentUsage" >
+           <description>The remove document criteria panel in the launch mass change action.</description>
+           <command class="com.ptc.windchill.enterprise.massChange.filters.RemoveDocumentLinkFilterDelegate"/>
+      </action>
+      
+      <action name="include" selectRequired="true">
+           <description>Include action for Preview table.</description>
+           <command windowType="no_content" onClick="PTC.massChange.strikeThroughRowHandler(false)"/>
+      </action>
+      
+      <action name="exclude" selectRequired="true">
+           <description>Exclude action for Preview table.</description>
+           <command windowType="no_content" onClick="PTC.massChange.strikeThroughRowHandler(true)"/>
+      </action>
+
+   </objecttype>
+
+</listofactions>

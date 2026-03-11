@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<listofactions>
+    <objecttype name="traceable" class="com.ptc.windchill.linkeddata.TypedIteratedResource" 
+        resourceBundle="com.ptc.windchill.enterprise.traceability.traceabilityResource">
+        <action name="traceability">
+            <command windowType="popup"/>
+            <includeFilter name="TraceabilityActionFilter"/>
+            <includeFilter name="HideTraceActionsFilter"/>
+        </action>
+
+        <action name="addTraceability" resourceBundle="com.ptc.windchill.enterprise.traceability.traceabilityResource">
+            <command url="netmarkets/jsp/traceable/traceability.jsp" onClick="appendNcidToForm(event, table)"  windowType="new"/>
+            <includeFilter name="TraceabilityActionFilter"/>
+            <includeFilter name="HideTraceActionsFilter"/>
+        </action>
+
+        <action name="removeTraceabilityToolbar" resourceBundle="com.ptc.windchill.enterprise.traceability.traceabilityResource" multiselect="true" selectRequired="true" ajax="row">
+            <command class="com.ptc.windchill.enterprise.traceability.form.DeleteTraceabilityFormProcessor" method="execute" onClick="RemoveLinkConfirm(event, table)"/>
+            <includeFilter name="RemoveLinkActionFilter"/>
+            <includeFilter name="HideTraceActionsFilter"/>
+        </action>
+               
+        <action name="removeTraceabilityRMB" resourceBundle="com.ptc.windchill.enterprise.traceability.traceabilityResource" ajax="row">
+            <command class="com.ptc.windchill.enterprise.traceability.form.DeleteTraceabilityFormProcessor" method="execute" onClick="RemoveLinkConfirm(event)"/>
+            <includeFilter name="RemoveLinkActionFilter"/>
+            <includeFilter name="HideTraceActionsFilter"/>
+        </action>
+
+        <action name="listTraces" ajax="page"></action>
+
+        <action name="clearSuspectFlagToobar" resourceBundle="com.ptc.windchill.enterprise.traceability.traceabilityResource" ajax="row" multiselect="true" selectRequired="true">
+            <command class="com.ptc.windchill.enterprise.traceability.form.ClearSuspectFlagFormProcessor" onClick="ClearSuspectFlagConfirm(event, table)" method="execute"/>
+            <includeFilter name="HideTraceActionsFilter"/>
+        </action>
+
+        <action name="clearSuspectFlag" resourceBundle="com.ptc.windchill.enterprise.traceability.traceabilityResource" ajax="row">
+            <command class="com.ptc.windchill.enterprise.traceability.form.ClearSuspectFlagFormProcessor" onClick="ClearSuspectFlagConfirm(event)" method="execute"/>
+            <includeFilter name="HideClearSuspectFilter"/>
+            <includeFilter name="HideTraceActionsFilter"/>
+        </action>
+        
+        <action name="markSuspectFlag" resourceBundle="com.ptc.windchill.enterprise.traceability.traceabilityResource" ajax="row">
+            <command class="com.ptc.windchill.enterprise.traceability.form.MarkSuspectFlagFormProcessor" method="execute" />
+            <includeFilter name="HideMarkSuspectFilter"/>
+            <includeFilter name="HideTraceActionsFilter"/>        
+        </action>
+                
+    </objecttype>
+</listofactions>

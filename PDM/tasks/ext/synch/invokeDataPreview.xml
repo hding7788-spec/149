@@ -1,0 +1,56 @@
+<?xml version="1.0" standalone="yes"?>
+<%@page language="java" session="false" access="http|soap" %>
+<%@taglib uri="http://www.ptc.com/infoengine/taglib/core" prefix="ie"%>
+<%@page import="wt.adapter.BasicWebjectDelegate"%>
+<%@page import="java.util.*"%>
+<%@page import="ext.casc.ixb.IBXConstants"%>
+<%@page import="ext.casc.ixb.PreviewDataReceiveAndImport"%>
+<%@page import="java.net.MalformedURLException"%>
+<%@page import="java.net.URL"%>
+<!--com.infoengine.soap.rpc.def
+Called to Process Deliveried Data.
+@param string site
+@param string filename
+@version 1.0
+-->
+<%
+	String url_Str = (String)getParam("URL");
+	String designer = (String)getParam(IBXConstants.DESIGNER);
+	String previewReason = (String)getParam(IBXConstants.PREVIEW_REASON);
+    String productName = (String)getParam(IBXConstants.PRODUCT_NAME);
+    String previewUser = (String)getParam(IBXConstants.PREVIEWUSER);
+	String objectName = (String)getParam(IBXConstants.OBJECT_NAME);
+	String objectNumber = (String)getParam(IBXConstants.OBJECT_NUMBER);
+    String wfActivityOid = (String)getParam(IBXConstants.WFACTIVITY_OID);
+	
+
+	HashMap paramMap = new HashMap();
+	paramMap.put(IBXConstants.DESIGNER, designer);
+	paramMap.put(IBXConstants.PREVIEW_REASON, previewReason);
+	paramMap.put(IBXConstants.PRODUCT_NAME, productName);
+	paramMap.put(IBXConstants.PREVIEWUSER, previewUser);
+	paramMap.put(IBXConstants.OBJECT_NAME, objectName);
+	paramMap.put(IBXConstants.OBJECT_NUMBER, objectNumber);
+	paramMap.put(IBXConstants.WFACTIVITY_OID, wfActivityOid);
+
+
+	String result="this my need";
+	
+		try {
+			PreviewDataReceiveAndImport dr = new PreviewDataReceiveAndImport(new URL(url_Str), paramMap);
+			dr.run();
+		} catch (MalformedURLException e) {
+
+			// TODO Auto-generated catch block
+		   result = e.getMessage();
+			e.printStackTrace();
+
+		}
+
+%>
+
+<ie:webject name="Create-Group" type="GRP">
+    <ie:param name="GROUP_OUT" data="${@FORM[]group_out[0]}" default="output"/>
+    <ie:param name="CLASS" data="ProcessResult"/>
+  <ie:param name="GROUP_IN" data="<%=result%>"/>
+</ie:webject>

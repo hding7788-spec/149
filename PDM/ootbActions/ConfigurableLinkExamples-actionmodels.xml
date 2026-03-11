@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+
+<actionmodels>
+
+   <!-- "Configurable Link Examples" 3rd level nav menu options -->
+   <model name="configLinks" resourceBundle="com.ptc.windchill.enterprise.object.configurableLinkExamplesResource">
+      <description>Custom Config Link 3rd level nav menu</description>
+      <action name="childObjectsTable_customDescribeLink"     type="object"/>   <!-- Describes Child Objects -->
+      <action name="parentObjectsTable_customDescribeLink"    type="object"/>   <!-- Describes Parents Objects -->
+      <action name="childObjectsTable_customReferenceLink"    type="object"/>   <!-- Reference Child Objects -->
+      <action name="parentObjectsTable_customReferenceLink"   type="object"/>   <!-- Reference Parent Objects -->
+      <action name="childObjectsTable_customRevisionLink"     type="object"/>   <!-- Describes Child Objects -->
+      <action name="parentObjectsTable_customRevisionLink"    type="object"/>   <!-- Describes Parents Objects -->
+      <action name="childObjectsTable_customMastersLink"      type="object"/>   <!-- Master Child Objects -->
+      <action name="parentObjectsTable_customMastersLink"     type="object"/>   <!-- Master Parent Objects -->
+   </model>   
+
+</actionmodels>

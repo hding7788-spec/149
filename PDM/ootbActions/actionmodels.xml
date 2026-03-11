@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+<!-- define the actions on the UI components -->
+<actionmodels>
+   <model name="DefaultWizardButtons">
+      <action name="prevButton"    type="object"/>
+      <action name="nextButton"    type="object"/>
+      <action name="okButton"      type="object"/>
+      <action name="applyButton"   type="object"/>
+      <action name="cancelButton"  type="object"/>
+   </model>
+
+   <model name="DefaultWizardButtonsNoApply">
+      <action name="prevButton"    type="object"/>
+      <action name="nextButton"    type="object"/>
+      <action name="okButton"      type="object"/>
+      <action name="cancelButton"  type="object"/>
+   </model>
+   
+   <model name="DefaultClerkButtonsNoApply">
+      <action name="okButton"      type="object"/>
+      <action name="cancelButton"  type="object"/>
+   </model>
+   
+   <model name="DefaultClerkButtonsApply">
+      <action name="okButton"      type="object"/>
+      <action name="applyButton"   type="object"/>
+      <action name="cancelButton"  type="object"/>
+   </model>
+   
+   <model name="ScmiWizardButtons">
+   <action name="applyButton"   type="object"/>
+   <action name="okButton"      type="object"/>
+   <action name="cancelButton"  type="object"/>
+   </model>
+
+   <model name="EditWizardButtons">
+      <action name="prevButton" type="object"/>
+      <action name="nextButton" type="object"/>
+      <action name="saveButton" type="object"/>
+      <action name="checkinButton" type="object"/>
+      <action name="editCancelButton" type="object"/>
+   </model>
+   
+   <model name="NoStepsEditWizardButtons">
+         <action name="saveButton" type="object"/>
+         <action name="checkinButton" type="object"/>
+         <action name="editCancelButton" type="object"/>
+   </model>
+
+   <model name="WizardButtonClose">
+      <action name="closeButton"  type="object"/>
+   </model>
+
+   <model name="WizardButtonCancel">
+      <action name="cancelButton" type="object"/>
+   </model>
+
+   <model name="NoStepsWizardButtons">
+       <action name="okButton"      type="object"/>
+       <action name="cancelButton"  type="object"/>
+   </model>
+
+   <model name="ChangePasswdWizardButtons">
+         <action name="okButton"      type="object"/>
+         <action name="cancelButton"  type="object"/>
+   </model>
+
+   <model name="CheckinWizardButtons">
+      <action name="okButton"      type="object"/>
+      <action name="editCancelButton"  type="object"/>
+   </model>
+
+   <model name="AuditEventPickerWizardButtons">
+      <action name="okButton"      type="object"/>
+      <action name="cancelButton"  type="object"/>
+   </model>
+
+   <model name="PreferenceWizardButtons">
+       <action name="revertButton"  type="object"/>
+       <action name="okButton"      type="object"/>
+       <action name="cancelButton"  type="object"/>
+   </model>
+   
+   <model name="EMPTY_ACTION_MODEL">
+        <description>
+            An empty model to use for showing "No Actions to Display" for the right click context menu.
+            Only used in the case where no actions menu column was defined for the table. 
+        </description>
+    </model>   
+    
+    <model name="ExportWizardButtons">
+      <action name="exportOkButton" type="object"/>
+      <action name="cancelButton" type="object"/>
+    </model>
+        
+    <model name="InfoPageMyTabActions" menufor="com.ptc.core.ui.tab.ClientTab">
+        <action name="close"      type="tab"/>
+        <action name="setprivate" type="tab"/>
+        <action name="setpublic"  type="tab"/>
+        <action name="rename"     type="tab"/>
+        <action name="showOnSubtype" type="tab"/>
+        <action name="hideOnSubtype" type="tab"/>
+    </model>
+</actionmodels>

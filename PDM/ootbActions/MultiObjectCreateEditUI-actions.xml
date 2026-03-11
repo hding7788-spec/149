@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+
+   <objecttype name="part" class="wt.part.WTPart" resourceBundle="com.ptc.windchill.enterprise.part.partResource">
+
+  <!-- MULTI PART CREATE ACTIONS - -->
+
+       <action name="createMultiPart" uicomponent="CREATE_PART" ajax="row">
+           <command class="com.ptc.windchill.enterprise.part.forms.CreateMultiPartFormProcessor" method="execute" onClick="validateCreateLocation(event)" windowType="popup" url="/netmarkets/jsp/part/createPartWizard.jsp?wizardType=multiPart"/>
+            <includeFilter name="showNewActionPreValidation"/>
+       </action>
+
+       <action name="setAttributesWizStepForCreateMultiPart" ajax="row" required="true" preloadWizardPage="false" afterVK="nameNumberValidation">
+           <command windowType="wizard_step"/>
+       </action>
+
+       <action name="addObject" ajax="row">
+           <command class="com.ptc.core.components.forms.WizardCommands" method="addObject"/>
+       </action>
+
+       <action name="addMultipleObjects" ajax="row">
+           <command class="com.ptc.core.components.forms.WizardCommands" method="addMultipleObjects"/>
+       </action>
+
+      <!-- This is an action definition for removing selected row from Set Identity Attributes step -->
+
+      <action name="remove" renderType="GENERAL" selectRequired="true">
+         <command windowType="no_content" onClick="removeRows(event)"/>
+      </action>
+
+
+     <!-- Clicking the Apply button on a New Multi Part wizard should reset the wizard to the initial step
+           Overridden the Apply button in order to redirect the user to the first step -->
+      <action name="multiPartApplyButton" id="PJL_wizard_apply" resourceBundle="com.ptc.windchill.enterprise.part.partResource">
+      <command class="" method="" windowType="page" url="javascript:onMultipartsApply();"/>
+      </action>
+
+     <!-- Clicking the Back button on a New Multi Part wizard should skip the namenumberValidation
+           Overridden the Back button -->
+     <action name="multiPartprevButton" id="PJL_wizard_previous" resourceBundle="com.ptc.windchill.enterprise.part.partResource">
+      <command class="" method="" windowType="page" url="javascript:onMultipartsBack();"/>
+      </action>
+
+<!-- MULTI PART CREATE ACTIONS END -->
+
+<!-- MULTI PART EDIT ACTIONS -->
+   <action name="editAttributesMultiPartWizStep" class="wt.part.WTPart" id="editAttributesMultiPartWizStep" multiselect="true" required="true" preloadWizardPage="false">
+         <command windowType="wizard_step"/>
+     </action>
+
+   <action name="checkinButton" id="edit_multiwizard_checkin">
+        <command onClick="onEditSubmit(&apos;checkinMultiButton&apos;)"/>
+    </action>
+
+   <action name="saveButton" id="edit_multiwizard_save" ajax="row">
+        <command onClick="onEditSubmit(&apos;saveMultiButton&apos;)"/>
+    </action>
+
+   <action name="editCancelButton" id="edit_multiwizard_cancel">
+        <command class="com.ptc.windchill.enterprise.wip.UndoCheckoutObjectFormProcessor" method="execute" onClick="editCancelPrepare()" url="?close=true"/>
+    </action>
+
+<!-- MULTI PART EDIT ACTIONS END -->
+
+   </objecttype>
+
+
+</listofactions>

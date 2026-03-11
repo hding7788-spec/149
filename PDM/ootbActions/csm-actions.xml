@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+	<objecttype name="csm" class="java.lang.Object" resourceBundle="com.ptc.windchill.csm.client.csmClientResource">
+
+		<action name="insertClfNode" ajax="row" multiselect="false" selectRequired="true">
+			<command class="com.ptc.windchill.csm.client.forms.CreateNodeFormProcessor" method="execute" windowType="lightbox"
+				url="netmarkets/jsp/csm/insertClfNode.jsp?classification=true" onClick="PTC.csm.infopage.insertNodeValidate(event, table)" />
+		</action>
+
+		<action name="insertClfNodeStep" id="insertClfNodeStep" required="false" preloadWizardPage="true">
+			<command windowType="wizard_step" />
+		</action>
+
+		<action name="insertClfNodeRow" ajax="row" multiselect="false">
+			<command class="com.ptc.windchill.csm.client.forms.CreateNodeFormProcessor" method="execute" windowType="lightbox"
+				url="netmarkets/jsp/csm/insertClfNode.jsp?classification=true" onClick="PTC.csm.infopage.insertNodeRowValidate(event, table)" />
+		</action>
+
+		<action name="insertClfNodeDetails" ajax="row" multiselect="false">
+			<command class="com.ptc.windchill.csm.client.forms.CreateNodeFormProcessor" method="execute" windowType="lightbox"
+				url="netmarkets/jsp/csm/insertClfNode.jsp?classification=true" />
+		</action>
+
+		<action name="deleteClfNode" ajax="component" multiselect="true" selectRequired="true">
+			<command class="com.ptc.windchill.csm.CSMCommands" method="deleteNode" onClick="PTC.csm.infopage.deleteConfirm()" />
+		</action>
+
+		<action name="deleteClfNodeRow" ajax="component" multiselect="false">
+			<command class="com.ptc.windchill.csm.CSMCommands" method="deleteNodeRow"
+				onClick="PTC.csm.infopage.infoPageDeleteConfirm()" />
+			<includeFilter name="hideActionsForRootNode" />
+		</action>
+
+		<action name="copyClfNode" ajax="component" multiselect="true" selectRequired="true">
+			<command class="com.ptc.netmarkets.model.NmObjectCommands" method="list_copy" onClick="PTC.csm.infopage.copyValidate()"
+				windowType="no_content" />
+		</action>
+
+		<action name="copyClfNodeRow" ajax="component" multiselect="false">
+			<command class="com.ptc.netmarkets.model.NmObjectCommands" method="copy" windowType="no_content" />
+			<includeFilter name="hideActionsForRootNode" />
+		</action>
+
+		<action name="infoPageDeleteClfNode" ajax="row">
+			<command class="com.ptc.windchill.csm.CSMCommands" method="infoPageDeleteNode" onClick="PTC.csm.infopage.infoPageDeleteConfirm()" />
+		</action>
+
+		<action name="pasteClfNode" ajax="component" selectRequired="true">
+			<command windowType="lightbox"  onClick="PTC.csm.infopage.verifyPasteActionAndValidate( event, 'pasteClfNode' )" url="netmarkets/jsp/csm/pasteConfirmation.jsp" />
+		</action>
+
+		<action name="pasteClfNodeRow" ajax="component" multiselect="false">
+			<command windowType="lightbox"   onClick="PTC.validation.AJAXPostSelectValidation( event, 'pasteClfNodeRow' )" url="netmarkets/jsp/csm/pasteConfirmation.jsp" />
+			<includeFilter name="hideActionsForRootNode" />
+		</action>
+
+		<action name="expandAllClfNode" ajax="component">
+			<command onClick="PTC.jca.expandAll (target, event, table)" />
+		</action>
+
+		<action name="collapseAllClfNode" ajax="component">
+			<command onClick="PTC.jca.collapseAll (target, event, table)" />
+		</action>
+
+		<action name="expandClfNode" ajax="component">
+			<command onClick="PTC.csm.expandNode (target, event, table)" />
+		</action>
+
+		<action name="collapseClfNode" ajax="component">
+			<command onClick="PTC.csm.collapseNode (target, event, table)" />
+		</action>
+
+		<action name="csmNodeInfo">
+			<component name="csm.lwc.type.info" windowType="page" />
+		</action>
+
+		<action name="clfNodeProperties">
+			<component name="csm.node.propertyPanel" />
+		</action>
+
+		<action name="clfNodeAutonamingProperties">
+			<component name="csm.node.autonamingPropertyPanel" />
+		</action>
+
+		<action name="clfAccessControl">
+			<command class="" method="" windowType="popup" url="netmarkets/jsp/csm/blank.jsp" />
+		</action>
+
+		<!-- Type info page third level navigation actions -->
+		<action name="node.attribute.multiedit">
+			<component windowType="popup" />
+		</action>
+
+		<action name="addAttribute" selectRequired="false" ajax="page">
+			<command class="com.ptc.windchill.csm.client.forms.CSMCreateAttributeFormProcessor" method="execute" windowType="lightbox" onClick="PTC.lwc.navigation.wrapPopUpWizard(true)"/>
+		</action>
+
+		<action name="addAttributePropStep">
+			<command windowType="wizard_step" />
+		</action>
+
+		<action name="deleteAttribute" id="deleteAttributeId" multiselect="true" selectRequired="true" ajax="page">
+			<command class="com.ptc.core.lwc.client.commands.LWCCommands" method="deleteAttribute" windowType="lightbox" url="netmarkets/jsp/lwcType/deleteConfirmation.jsp" onClick="PTC.lwc.navigation.wrapPopUpWizard(true)"/>
+		</action>
+
+		<action name="collectAttributes" id="collectAttributeToParentId" ajax="component">
+			<command class="com.ptc.windchill.csm.CSMCommands" method="collectAttributes" onClick="JCAConfirm( event, 'com.ptc.windchill.csm.client.csmClientResource.CONFIRM_COLLECT_ATTR_MSG')"/>
+		</action>
+
+		<action name="moveAttributeToParent" id="moveAttributeToParentId" ajax="component" multiselect="false" selectRequired="false">
+			<command class="com.ptc.windchill.csm.CSMCommands" method="moveAttributeToParent" onClick="PTC.csm.infopage.checkForConflicts('moveAttributeToParent', event, table)"/>
+		</action>
+
+		<action name="moveAttributeToParentRow" id="moveAttributeToParentRowId" ajax="component" multiselect="false" selectRequired="false">
+			<command class="com.ptc.windchill.csm.CSMCommands" method="moveAttributeToParent" onClick="PTC.csm.infopage.checkForConflicts('moveAttributeToParentRow', event, table)"/>
+		</action>
+
+		<!-- attribute info link -->
+		<action name="attributeInfo">
+			<component name="csm.lwc.type.attribute.info" windowType="page" onClick="PTC.lwc.navigation.infoLinkClickListener(event)" />
+		</action>
+
+		<action name="addToClfAdmin">
+			<description>Toolbar action to add a user to the clf admin role </description>
+			<command class="com.ptc.windchill.enterprise.picker.principal.PrincipalCommands" method="addPrincipal" windowType="popup"/>
+		</action>
+
+		<action name="removeFromClfAdmin" selectRequired="true">
+			<description>Toolbar action to remove a user from the Clf admin role.</description>
+			<command class="com.ptc.windchill.csm.CSMCommands" method="performRemoveFromAdmin" onClick="PTC.csm.selectRequiredAndConfirmation(event,target,table,'com.ptc.netmarkets.util.utilResource.CONFIRM_REMOVE')"/>
+		</action>
+
+		<action name="removeRowFromClfAdmin" >
+			<description>Row level action to remove a user from the Clf admin role.</description>
+			<command class="com.ptc.windchill.csm.CSMCommands" method="performRowlevelRemoveFromAdmin" onClick="PTC.csm.selectRequiredAndConfirmation(event,target,table,'com.ptc.netmarkets.util.utilResource.CONFIRM_REMOVE')" />
+		</action>
+
+		<!-- attribute properties tab -->
+		<action name="attributeProperties">
+			<component name="csm.node.attribute.propertyPanel" />
+		</action>
+        
+         <!-- attribute visibility tab -->
+        <action name="attributeVisibility">
+            <component name="csm.attribute.visibility" />
+        </action>
+
+  		<action name="newGlobalAttribute" selectRequired="false" ajax="page">
+			<command class="com.ptc.windchill.csm.CSMCommands" method="newGlobalAttribute" windowType="popup" />
+		</action>
+
+		<action name="newGlobalAttributePropStep">
+			<command windowType="wizard_step" />
+		</action>
+
+		<action name="editCSMNode">
+				<command onClick="PTC.lwc.navigation.enableEdit()"/>
+		</action>
+
+		<action name="exportToCSV">
+			<command url="netmarkets/jsp/csm/export.jsp?fileType=csv" windowType="popup"/>
+		</action>
+
+		<action name="exportToXML">
+			<command url="netmarkets/jsp/csm/export.jsp?fileType=xml" windowType="popup"/>
+			<includeFilter name="hideActionsForNonSiteAdmin" />
+		</action>
+
+		<action name="exportStep">
+			<command windowType="wizard_step" />
+		</action>
+
+		<action name="csmImport">
+			<command class="com.ptc.windchill.csm.CSMCommands" method="importClasssificationStructure" windowType="popup" onClick="JCAConfirm('com.ptc.windchill.csm.client.csmClientResource.IMPORT_CLASSIFICATION_WARNING_MSG')"/>
+			<includeFilter name="hideActionsForNonSiteAdmin" />
+		</action>
+
+		<action name="importStep">
+			<command windowType="wizard_step" />
+		</action>
+
+	</objecttype>
+
+	<objecttype name="part" class="wt.part.WTPart" resourceBundle="com.ptc.windchill.csm.client.csmClientResource">
+		<action name="setClassificationAttributesWizStep" id="setClassificationAttributesWizStep" hidden="true" required="true" preloadWizardPage="false" afterVK="classificationAttributesValidation">
+			<command url="/netmarkets/jsp/partslink/setClassificationAttributesStep.jsp" windowType="wizard_step"/>
+		</action>
+
+		<action name="setClassificationAttributesForMultiPart" id="setClassificationAttributesForMultiPart" selectRequired="false">
+			<command class="com.ptc.windchill.csm.client.forms.ClassificationAttributeForNewMultiPartFormProcessor" method="execute"
+			url="/netmarkets/jsp/csm/setClassificationAttributesForMultiPart.jsp?wizardType=multiPart" windowType="new"/>
+		</action>
+
+		<action name="selectClassificationAttributesForMultiPartWizStep" id="selectClassificationAttributesForMultiPartWizStep">
+			<component name="selectClassificationAttributePanel"/>
+			<command windowType="wizard_step" />
+		</action>
+
+	</objecttype>
+
+</listofactions>

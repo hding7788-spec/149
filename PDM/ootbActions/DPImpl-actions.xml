@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+	<objecttype name="dpimpl" resourceBundle="com.ptc.windchill.dpimpl.dpimplResource">
+
+		<action name="DP_list_delete" selectRequired="true"
+			multiselect="true">
+			<command class="com.ptc.netmarkets.model.NmObjectCommands"
+				method="list_delete"
+				onClick="JCAConfirm(event, 'com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE')" />
+		</action>
+
+		<action name="list_delete" selectRequired="true" multiselect="true">
+			<command class="com.ptc.netmarkets.model.NmObjectCommands"
+				method="list_delete"
+				onClick="JCAConfirm(event, 'com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE')" />
+		</action>
+
+		<action name="job_delete" selectRequired="true" multiselect="true">
+			<command class="com.ptc.windchill.dpimpl.commands.DPServiceCommand"
+				method="deleteDPJobs"
+				onClick="JCAConfirm(event, 'com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE')" />
+		</action>
+		<action name="schedule_delete" selectRequired="true" multiselect="true" >
+           		 <command class="com.ptc.windchill.dpimpl.commands.DPServiceCommand" method="deleteDPSchedules"
+                onClick="JCAConfirm(event, 'com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE')"/>
+                </action>
+
+		<action name="delete">
+			<command class="com.ptc.netmarkets.model.NmObjectCommands"
+				method="delete"
+				onClick="JCAConfirm(event, 'com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE')" />
+		</action>
+
+		<action name="refresh">
+			<command class="com.ptc.netmarkets.model.NmObjectCommands"
+				method="refresh" />
+		</action>
+
+		<action name="viewProcess" ajax="page">
+			<component name="netmarkets.dpimpl.processList" windowType="page" />
+		</action>
+
+		<action name="viewProcessInfoPage" ajax="page">
+			<component name="netmarkets.dpimpl.processList" windowType="page"
+				urlParams="infoPage=true" />
+		</action>
+
+		<action name="listProcess" ajax="page">
+			<component name="netmarkets.dpimpl.processList" windowType="page" />
+		</action>
+
+		<action name="createProcess">
+			<command class="com.ptc.windchill.dpimpl.forms.PublishProcessFormProcessor"
+				method="execute" url="netmarkets/jsp/dpimpl/process/createProcess.jsp"
+				windowType="popup" />
+		</action>
+
+		<action name="createProcessStep1" required="true" afterJS="validateCreateProcessStep1">		
+			 <component name="setAttributesWizStep" typeBased="true" windowType="wizard_step"/>
+		</action>
+
+		<action name="createProcessStep2" preloadWizardPage="false"
+			afterJS="validateInput" required="true">
+			<component name="netmarkets.dpimpl.createProcess.adapterDetails"                  
+         windowType="wizard_step" />
+         </action>
+
+		<action name="viewSchedules" ajax="page">
+			<component name="netmarkets.dpimpl.schedules" windowType="page" />
+		</action>
+
+		<action name="viewSchedulesInfoPage" ajax="page">
+			<component name="netmarkets.dpimpl.schedules" windowType="page"
+				urlParams="infoPage=true" />
+		</action>
+
+		<action name="listSchedules" ajax="page">
+			<component name="netmarkets.dpimpl.schedules" windowType="page" />
+		</action>
+
+		<action name="createDPJob" ajax="page"
+			resourceBundle="com.ptc.windchill.dpimpl.dpimplResource">
+			<command
+				class="com.ptc.windchill.dpimpl.forms.CreateDPImplJobFormProcessor"
+				method="execute" url="netmarkets/jsp/dpimpl/schedule/createSchedule.jsp"
+				windowType="popup" />
+		</action>
+
+		<action name="createSchedule" ajax="page"
+			resourceBundle="com.ptc.windchill.dpimpl.dpimplResource">
+			<command
+				class="com.ptc.windchill.dpimpl.forms.CreateDPImplScheduleFormProcessor"
+				method="execute" url="netmarkets/jsp/dpimpl/schedule/createSchedule.jsp"
+				windowType="popup" />
+		</action>
+
+		<action name="createScheduleStep1">
+			<component name="attributesTable" typeBased="true" windowType="wizard_step"/>
+		</action>
+		
+		<action name="createScheduleStep3" preloadWizardPage="false">
+			<command url="netmarkets/jsp/dpimpl/schedule/createScheduleStep3.jsp"
+				windowType="wizard_step" />
+		</action>
+
+		<action name="editSchedule" ajax="page">
+			<command
+				class="com.ptc.windchill.dpimpl.forms.EditDPImplScheduleFormProcessor"
+				method="execute" url="netmarkets/jsp/dpimpl/schedule/editSchedule.jsp"
+				windowType="popup" />
+		</action>
+
+		<action name="editScheduleDetails">
+			<component name="attributesTable" typeBased="true"
+                windowType="wizard_step" />
+		</action>
+		
+		<action name="editSchedulingOptions" preloadWizardPage="false">
+			<command url="netmarkets/jsp/dpimpl/schedule/editSchedulingOptions.jsp"
+				windowType="wizard_step" />
+		</action>
+
+		<action name="enableGatewaySchedule" ajax="row">
+			<command class="com.ptc.windchill.dpimpl.commands.DPServiceCommand"
+				method="enableDisableSchedule"
+				onClick="JCAConfirm(event, 'com.ptc.windchill.dpimpl.dpimplResource.CONFIRM_ENABLE_SCHEDULE')" />
+		</action>
+
+		<action name="disableGatewaySchedule" ajax="row">
+			<command class="com.ptc.windchill.dpimpl.commands.DPServiceCommand"
+				method="enableDisableSchedule"
+				onClick="JCAConfirm(event, 'com.ptc.windchill.dpimpl.dpimplResource.CONFIRM_DISABLE_SCHEDULE')" />
+		</action>
+
+		<action name="enableSchedulePage" ajax="page">
+			<command class="com.ptc.windchill.dpimpl.commands.DPServiceCommand"
+				method="enableDisableSchedule"
+				onClick="JCAConfirm(event, 'com.ptc.windchill.dpimpl.dpimplResource.CONFIRM_ENABLE_SCHEDULE')" />
+		</action>
+
+		<action name="disableSchedulePage" ajax="page">
+			<command class="com.ptc.windchill.dpimpl.commands.DPServiceCommand"
+				method="enableDisableSchedule"
+				onClick="JCAConfirm(event, 'com.ptc.windchill.dpimpl.dpimplResource.CONFIRM_DISABLE_SCHEDULE')" />
+		</action>
+
+		<action name="viewJobs" ajax="page">
+			<component name="netmarkets.dpimpl.jobs" windowType="page" />
+		</action>
+
+		<action name="viewJobsInfoPage" ajax="page">
+			<component name="netmarkets.dpimpl.jobs" windowType="page"
+				urlParams="infoPage=true" />
+		</action>
+
+		<action name="listJobs" ajax="page">
+			<component name="netmarkets.dpimpl.jobs" windowType="page" />
+		</action>
+
+		<action name="JobInfo" ajax="page">
+			<command url="netmarkets/jsp/dpimpl/job/JobInfo.jsp"
+				windowType="wizard_step" />
+		</action>
+
+		<action name="DPJobCancel">
+			<command class="com.ptc.windchill.dpimpl.commands.DPServiceCommand"
+				method="cancelDPJob"
+				onClick="JCAConfirm(event, 'com.ptc.windchill.dpimpl.dpimplResource.CONFIRM_CANCEL_JOB')" />
+		</action>
+
+		<action name="DPJobDiagnose" ajax="page"
+			resourceBundle="com.ptc.windchill.dpimpl.dpimplResource">
+			<command class="com.ptc.windchill.dpimpl.commands.DPServiceCommand"
+				method="diagnoseDPJob" />
+		</action>
+
+		<action name="DPJobResume">
+			<command class="" method=""
+				onClick="JCAConfirm(event, 'com.ptc.windchill.dpimpl.dpimplResource.CONFIRM_RESUME_JOB')" />
+		</action>
+
+		<action name="validateProcess" ajax="page"
+			resourceBundle="com.ptc.windchill.dpimpl.dpimplResource">
+			<command url="netmarkets/jsp/dpimpl/underConstruction.jsp"
+				windowType="popup" />
+		</action>
+
+		<action name="processInfo" ajax="page">
+			<command url="netmarkets/jsp/dpimpl/process/processInfo.jsp"
+				windowType="page" />
+		</action>
+
+		<action name="scheduleInfo" ajax="page">
+			<command url="netmarkets/jsp/dpimpl/schedule/scheduleInfo.jsp"
+				windowType="page" />
+		</action>
+
+		<!-- attributes component -->
+		<action name="attributes">
+			<component name="attributesTable" typeBased="true"
+				windowType="page" />
+		</action>
+
+		<!-- Primary Attributes component -->
+		<action name="primaryAttributes">
+			<component name="primaryAttributes" typeBased="true"
+				windowType="page" />
+		</action>
+
+		<action name="operationDetails" ajax="page"
+			resourceBundle="com.ptc.windchill.dpimpl.dpimplResource">
+			<component name="netmarkets.dpimpl.viewProcess.operationDetails"
+				windowType="page" urlParams="infoPage=true" />
+		</action>
+
+		<action name="operationStatus" ajax="page"
+			resourceBundle="com.ptc.windchill.dpimpl.dpimplResource">
+			<component name="netmarkets.dpimpl.viewJob.operationStatus"
+				windowType="page" urlParams="infoPage=true" />
+		</action>
+
+		<action name="jobInfoAttributes" ajax="page"
+			resourceBundle="com.ptc.windchill.dpimpl.dpimplResource">
+			<component name="dpimpljob.info.attributes" windowType="page" />
+		</action>
+		<!--
+			action name should be same as DPApplicationType. It also should match with urlParams appType
+		-->
+		<action name="foran" ajax="page">
+		  <component name="netmarkets.dpimpl.processList" urlParams="appType=foran" windowType="page"/>
+		</action> 
+
+		<action name="cocreate_mm" ajax="page" resourceBundle="com.ptc.windchill.dpimpl.dpimplResource">
+		   <component name="netmarkets.dpimpl.processList" urlParams="appType=cocreate_mm" windowType="page"/>
+		</action> 
+
+		<action name="ideas_tdm" ajax="page" resourceBundle="com.ptc.windchill.dpimpl.dpimplResource">
+		  <component name="netmarkets.dpimpl.processList" urlParams="appType=ideas_tdm" windowType="page"/>
+		</action>
+		
+	</objecttype>
+</listofactions>

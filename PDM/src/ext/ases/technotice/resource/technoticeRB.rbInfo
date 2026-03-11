@@ -1,0 +1,91 @@
+ResourceInfo.class=wt.tools.resource.StringResourceInfo
+ResourceInfo.customizable=true
+ResourceInfo.deprecated=false
+
+
+# Entry Format (values equal to default value are not included)
+# <key>.value=
+# <key>.category=
+# <key>.comment=
+# <key>.argComment<n>=
+# <key>.constant=
+# <key>.customizable=
+# <key>.deprecated=
+# <key>.abbreviatedDisplay=
+# <key>.fullDisplay=
+# <key>.shortDescription=
+# <key>.longDescription=
+
+# Entry Contents
+#Create technotice Wizard action
+technotice.create.description.value=Create Tech Notice
+technotice.create.description.comment=Create Tech Notice
+technotice.create.title.value=Create Tech Notice
+technotice.create.title.comment=Create Tech Notice
+technotice.create.tooltip.value=Create Tech Notice
+technotice.create.tooltip.comment=Create Tech Notice
+technotice.create.icon.value=newdoc.gif
+technotice.create.icon.value=Create Tech Notice
+
+technotice.technoticeObjects.description.value=Related Data
+technotice.technoticeObjects.description.comment=Related Data
+technotice.technoticeObjects.title.value=Related Data
+technotice.technoticeObjects.title.comment=Related Data
+technotice.technoticeObjects.tooltip.value=Related Data
+technotice.technoticeObjects.tooltip.comment=Related Data
+technotice.technoticeObjects.icon.value=newobj.gif
+technotice.technoticeObjects.icon.comment=Related Data
+
+technotice.relatedTechNoticeObjects.description.value=Tech Notice Related Data
+technotice.relatedTechNoticeObjects.description.comment=Tech Notice Related Data
+technotice.relatedTechNoticeObjects.title.value=Tech Notice Related Data
+technotice.relatedTechNoticeObjects.title.comment=Tech Notice Related Data
+technotice.relatedTechNoticeObjects.tooltip.value=Tech Notice Related Data
+technotice.relatedTechNoticeObjects.tooltip.comment=Tech Notice Related Data
+technotice.relatedTechNoticeObjects.icon.value=newobj.gif
+technotice.relatedTechNoticeObjects.icon.comment=Tech Notice Related Data
+
+technotice.updatetechnotice.description.value=Edit
+technotice.updatetechnotice.description.comment=Edit
+technotice.updatetechnotice.title.value=Edit
+technotice.updatetechnotice.title.comment=Edit
+technotice.updatetechnotice.tooltip.value=Edit
+technotice.updatetechnotice.tooltip.comment=Edit
+technotice.updatetechnotice.icon.value=multi_update.gif
+technotice.updatetechnotice.icon.comment=Edit
+
+technotice.deletetechnotice.description.value=Delete
+technotice.deletetechnotice.description.comment=Delete
+technotice.deletetechnotice.title.value=Delete
+technotice.deletetechnotice.title.comment=Delete
+technotice.deletetechnotice.tooltip.value=Delete
+technotice.deletetechnotice.tooltip.comment=Delete
+technotice.deletetechnotice.icon.value=delete.gif
+technotice.deletetechnotice.icon.comment=Delete
+
+technotice.downloadContents.description.value=Download contents
+technotice.downloadContents.description.comment=Download contents
+technotice.downloadContents.title.value=Download contents
+technotice.downloadContents.title.comment=Download contents
+technotice.downloadContents.tooltip.value=Download contents
+technotice.downloadContents.tooltip.comment=Download contents
+technotice.downloadContents.icon.value=export.gif
+technotice.downloadContents.icon.comment=Download contents
+
+# Create technotice Wizard labels
+technotice.create.DEFINE_ITEM_WIZ_STEP_LABEL.value=Define type
+technotice.create.DEFINE_ITEM_WIZ_STEP_LABEL.comment=Label for define item step in the Create technotice Wizard
+technotice.create.SET_ATTRIBUTES_WIZ_STEP_LABEL.value=Set Atrributes
+technotice.create.SET_ATTRIBUTES_WIZ_STEP_LABEL.comment=Label for set attributes step in the Create technotice Wizard
+technotice.create.SET_RELATEDDATA_WIZ_STEP_LABEL.value=Set Related Data
+technotice.create.SET_RELATEDDATA_WIZ_STEP_LABEL.comment=Used as the label for a wizard step
+technotice.create.ATTACHMENTS_WIZ_STEP_LABEL.value=Set Attachments
+technotice.create.ATTACHMENTS_WIZ_STEP_LABEL.comemnt=lable for Set Attachments step in the Create technotice Wizard
+technotice.create.LOCATION_LABEL.value=Location
+technotice.create.LOCATION_LABEL.comment=lable for Location in the Create technotice Wizard
+
+technotice.BEFORE_DATA_TABLE.value=Change Before Data
+technotice.BEFORE_DATA_TABLE.comment=Change Before Data
+
+technotice.AFTER_DATA_TABLE.value=Change After Data
+technotice.AFTER_DATA_TABLE.comment=Change After Data

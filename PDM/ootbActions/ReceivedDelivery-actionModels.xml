@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+<!-- define the actions on the UI components -->
+<actionmodels resourceBundle="com.ptc.windchill.rd.receivedDeliveryResource">
+
+    <model name="receivedDelivery table toolbar">
+         <!-- ReceivedDeliveryToolBar-->                     
+        <action name="delete_received_delivery_list" type="rd"/>                                      
+        <action name="uploadDeliveryFilesWizard" type="rd" shortcut="true"/>
+        <action name="preview_mapping_list" type="rd" shortcut="true"/>
+        <action name="import_received_delivery_list" type="rd" shortcut="true"/>
+        <action name="reprepare_received_delivery_list" type="rd"/>
+        <action name="multiObjManageSecurity" type="accessPermission"/>
+        <action name="createSubscription" type="subscription" shortcut="true"/>           
+    </model>
+ 
+   <!-- ReceivedDelivery actions --> 
+    <model name="received delivery actions" menufor="com.ptc.windchill.rd.ReceivedDelivery">       
+        <action name="view" type="object"/>
+        <action name="separator" type="separator"/> 
+        <action name="edit" type="rd"/>                      
+        <action name="separator" type="separator"/>
+        <action name="preview_mapping" type="rd"/>    
+        <action name="import_received_delivery" type="rd"/>   
+		<action name="reprepare_received_delivery" type="rd"/>   
+        <action name="separator" type="separator"/>     
+        <action name="setState" type="lifecycle"/>
+        <action name="delete_received_delivery"  type="rd"/>
+        <action name="reassignLC" type="lifecycle"/>             
+        <action name="separator" type="separator"/>                                  
+        <action name="multiObjManageSecurity" type="accessPermission"/>
+        <action name="createSubscriptionObjSubscr" type="subscription"/>                     
+    </model>
+
+    <!-- Upload ReceivedDelivery Files wizard toolbar actions --> 
+    <model name="upload files wizard table toolbar actions">
+        <action name="remove" type="object" shortcut="true"/>
+        <action name="separator" type="separator"/>
+        <action name="addFileAttachment" type="attachments" shortcut="true"/>
+        <action name="addEsaAttachment" type="attachments" shortcut="true"/>        
+    </model>
+   
+   <model name="rdInfoPageTabSet" resource="com.ptc.windchill.rd.receivedDeliveryResource">
+        <submodel name="rdInfoDetailsTab"/>
+        <submodel name="rdInfoAttachmentsTab"/>
+        <action name="rdChunkInfo" type="rd"/> 
+    </model>        
+    
+    <model name="rdInfoDetailsTab" resourceBundle="com.ptc.windchill.rd.receivedDeliveryResource">
+        <action name="primaryAttributes" type="object"/>
+        <action name="visualizationAndAttributes" type="object"/>
+        <action name="attributes" type="object"/>
+    </model>
+        
+     <model name="rdInfoAttachmentsTab" resourceBundle="com.ptc.windchill.rd.receivedDeliveryResource">
+     	<action name="rdAdditionalContent" type="rd"/>        <!-- Delivery Attachments-->
+        <action name="showZip" type="SoftwareBuild"/>
+        <action name="primaryContent" type="object"/>  
+        <action name="attachments" type="object"/>        
+     </model>
+     
+    <!-- Upload ReceivedDelivery Files wizard toolbar actions -->
+    <model name="third_level_nav_rd">
+        <submodel name="general"/>                            <!-- General -->                           
+        <action name="rdAdditionalContent" type="rd"/> 
+        <submodel name="collaboration"/>                      <!-- Collaboration -->
+        <submodel name="history"/>                            <!-- History -->
+    </model>
+    <model name="OKButton">
+        <action name="okButton" type="rd"/>
+    </model>
+    <model name="ImportButtonModel">
+        <action name="importButton" type="rd"/>
+        <action name="cancelButton" type="object"/>
+    </model>
+    <model name="DefaultCloseButton">        
+        <action name="closeButton" type="object"/>
+    </model>   
+   <!-- ReceivedDeliveryChunkInfoToolBar-->
+    <model name="receivedDeliveryChunkInfo table toolbar">                  
+        <action name="list_delete" type="object" shortcut="true"/>
+        <action name="viewImportLog" type="rd" shortcut="true"/> 
+    </model>
+    <model name="received delivery attachments table toolbar actions">
+        <action name="list_delete" type="object" shortcut="true"/>
+        <action name="download_selected_attachments" type="attachments" shortcut="true"/>
+    </model>	
+    <model name="received delivery additional content toolbar actions">        
+        <action name="download_selected_attachments" type="attachments" shortcut="true"/>
+    </model>
+</actionmodels>

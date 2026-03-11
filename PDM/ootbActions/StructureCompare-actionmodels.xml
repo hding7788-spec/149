@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+
+<actionmodels>
+
+    <model name="scTreeToolBarLeft">
+	  <action name="resetDualStructureCompare" type="dsb"/>
+	  <action name="separator" type="separator" />
+      <action name="prevDifference" type="dsb"/>
+      <action name="nextDifference" type="dsb"/>
+      <action name="separator" type="separator" />
+	  <action name="displayOnlyDifferences" type="dsb"/>
+	  <action name="collapseAllLevelsDSB" type="dsb"/>
+      <action name="separator" type="separator" />
+	  <action name="dsbExportActionGWT" type="dsb" />
+	  <action name="dsbExportHtmlGWT" type="dsb" />
+	  <action name="dsbExportCsvGWT" type="dsb" />
+	  <action name="dsbExportPdfGWT" type="dsb" />
+	  <action name="dsbExportTextGWT" type="dsb" />
+	  <action name="dsbExportXlsGWT" type="dsb" />
+	  <action name="dsbExportXlsxGWT" type="dsb" />
+      <action name="filterPropertiesGWT" type="ec"/>
+      <action name="scEditFilterGWT" type="structureCompare"/>
+      <action name="savedFiltersDSB" type="dsb"/>
+    </model>
+	
+	<model name="scTreeToolBarRight">
+      <action name="filterPropertiesGWT" type="ec"/>
+      <action name="scEditFilterGWT" type="structureCompare"/>
+      <action name="savedFiltersDSB" type="dsb"/>
+    </model>
+    
+    <model name="scTreeContextMenu">  
+    <!-- Make these actions work -->
+      <action name="viewInfo" type="dsb"/> 
+	  <action name="copytowindchill" type="dsb"/>
+	  <action name="collapseAllLevelsDSB" type="dsb"/>
+    </model>
+    
+    <model name="scVizToolbar">
+	  <action name="zoomAllGWT" type="cat" />
+	  <action name="zoomSelectedGWT" type="cat" />
+	  <action name="setSpinCenterGWT" type="cat" />
+	  <action name="toggleAutoSelectionSC" type="structureCompare" />
+	  <action name="toggleAutoSelectionFromStructToVIZGWT" type="cat" />
+	  <action name="toggleAutoSelectionFromVIZToStructGWT" type="cat" />
+    </model>
+    
+</actionmodels>

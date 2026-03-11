@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+
+<actionmodels resourceBundle="com.ptc.windchill.enterprise.part.alternaterep.parActionsRB">
+
+   <model name="parRelatedPartsToolBar">
+
+      <action name="editingGroupGWT" type="par"/>
+      <action name="refreshContextWithLargeIconGWT" type="par"/>
+      
+      <action name="checkInOutGroupGWT" type="par"/>
+      <action name="checkoutWithLargeIconGWT" type="par"/>
+      <action name="checkinGWT" type="par"/>
+      <action name="undoCheckoutGWT" type="par"/>
+
+      <action name="viewingGroupGWT" type="par"/>
+      <action name="configurableTableViewWithLargeIconGWT" type="cat"/>
+      <action name="configurableTableViewListGWT" type="cat"/>
+      <action name="separator" type="separator"/>
+      <action name="saveStructureViewGWT" type="cat"/>
+      <action name="configurableTableViewManagerGWT" type="cat"/>
+      <action name="displayWithLargeIconGWT" type="cat"/>
+      <action name="showExcludedNodes" type="par"/>
+      <action name="separator" type="separator"/>	  
+      <action name="expandAllLevelsGWT" type="cat"/>
+      <action name="separator" type="separator"/>
+      <action name="viewLayout2Panel" type="cat"/>
+      <action name="viewLayout3Panel" type="cat"/>
+      <action name="separator" type="separator"/>
+      <action name="refreshGWT" type="cat"/>
+      
+      <action name="newAddToGroupGWT" type="par"/>
+      <action name="newActionsGWT" type="par"/>      
+      <action name="newRepresentationGWT" type="par"/>
+
+      <action name="filterGroup" type="par"/>
+      <action name="editFilterWithLargeIconGWT" type="par"/>
+      <action name="filterPropertiesWithLargeIconGWT" type="ec"/>
+
+      <action name="designContextGroupGWT" type="par"/>      
+      <action name="newUpdateDesignContextWizardGWT" type="par"/>
+      <action name="openDesignContextInCADToolGWT" type="par"/>      
+   </model>
+
+   <model name="parRelatedPartsContextMenu">
+      <action name="checkoutGWT" type="par"/>
+      <action name="checkinWithlargeIconGWT" type="par"/>
+      <action name="undoCheckoutGWT" type="par"/>
+   </model>
+
+   <model name="parRelatedPartsTreeContextMenu">
+      <action name="viewInfoGWT" type="cat"/>
+      <action name="separator" type="separator"/>
+      <action name="expandAllLevelsGWT" type="cat"/>
+      <action name="separator" type="separator"/>
+      <action name="checkoutGWT" type="par"/>
+      <action name="checkinGWT" type="par"/>
+      <action name="undoCheckoutGWT" type="par"/>
+      <action name="editGWT" type="par"/>      
+      <action name="newRevisionGWT" type="par"/>
+      <action name="separator" type="separator"/>
+      <action name="copyToWindchillGWT" type="par"/>
+      <action name="includePartGWT" type="contextbuilder"/>
+      <action name="excludePartGWT" type="contextbuilder"/>
+      <action name="includeThisPartOnlyGWT" type="contextbuilder"/>
+      <action name="setProximityExpansionCriteriaGWT" type="par"/>
+   </model>
+
+   <!-- PAR information page Actions list -->
+   <model name="more partaltrep toolbar actions" menufor="wt.part.alternaterep.WTPartAlternateRep">
+      <action name="view" type="object"/>            <!-- View Information -->
+      <action name="separator" type="separator"/>         <!-- ===================================== -->
+       <action name="openProductView" type="wvs"/>               <!-- Open in ProductView -->
+      <action name="separator" type="separator"/>         <!-- ===================================== -->
+      <action name="checkin" type="wip"/>               <!-- Check In -->
+      <action name="checkout" type="wip"/>               <!-- Check Out -->
+      <action name="checkoutAndEdit" type="par"/>              <!-- Check Out and Edit -->
+      <action name="undocheckout" type="object"/>            <!-- Undo Checkout -->
+      <action name="edit" type="par"/>              <!-- Edit -->
+      <action name="refreshContext" type="par"/>    <!-- Refresh Context -->
+      <action name="REVISEITEMS" type="pdmObject"/>         <!-- Revise -->
+      <action name="separator" type="separator"/>         <!-- ===================================== -->
+      <!-- <submodel name="more par actions new"/> -->
+      <action name="separator" type="separator"/>         <!-- ===================================== -->            
+      <action name="copy" type="object"/>            <!-- Copy -->
+      <action name="renameObjectWizard" type="object"/>            <!-- Rename -->
+      <action name="CONTAINERMOVE" type="pdmObject"/>         <!-- Move -->
+      <action name="setState" type="lifecycle"/>         <!-- Set State -->
+      <action name="deletePAR" type="par"/>		 <!-- Delete -->
+      <action name="deleteIterations" type="object"/>	 <!-- Delete Non-latest Iterations -->
+      <action name="reassignLC" type="lifecycle"/>         <!-- Reassign Life Cycle -->
+      <action name="bookmarkIt" type="bookmark"/>          <!-- Add to Notebook -->     
+       <action name="separator" type="separator"/>         <!-- ===================================== -->
+       <action name="defineClashJobWizard" type="clashDefinition"/>   <!-- New Clash Definition -->
+       <action name="batchPrint" type="wvs"/>               <!-- Severside batchprint using WVS -->
+      <action name="ManageSecurity" type="accessPermission"/> <!-- Edit Access Control -->
+      <action name="EDITSECURITYLABELS" type="object"/>       <!-- Edit Security Labels -->
+      <action name="createSubscription" type="subscription"/>      <!-- Subscribe -->
+   </model>
+
+   <!-- ************************************************************ -->
+   
+   <model name="more par actions open">
+      <action name="openInProe" type="par"/>				 <!-- Open in Pro/ENGINEER -->
+      <action name="openProductView" type="wvs"/>               <!-- Open in ProductView -->
+   </model>
+
+   <model name="more par actions new">
+      <action name="newCADAlternateRep" type="par"/>     <!-- New Design Context -->
+   </model>
+   
+      <model name="more par actions compare">
+         <action name="launchStructureCompare" type="structureCompare"/>  <!-- BOM Structure Compare -->
+         <action name="wtObjCompare" type="ocmp"/>              <!-- Compare Information -->
+         <action name="launchP2CDSB" type="p2cdsb"/>           <!-- Compare Structure to CAD Structure -->
+   </model>
+   
+   
+   <!-- PAR information page 3rd level nav menu bar -->
+   <model name="third_level_nav_partaltrep">
+      <submodel name="general"/>                            <!-- General -->
+      <submodel name="relatedItems"/>                       <!-- Related Objects -->
+      <submodel name="history"/>                            <!-- History -->
+      <submodel name="collaboration"/>                      <!-- Collaboration -->
+   </model>
+
+   <model name="parInfoPageTabSet" resource="com.ptc.core.ui.navigationRB">
+     <submodel name="infoDetails"/>
+      <action name="parStructureGWT" type="par"/>           <!-- Structure GWT -->
+   </model>
+
+    <model name="infoDetails" resourceBundle="com.ptc.core.ui.navigationRB">
+	<action name="visualizationAndAttributes" type="object"/>
+	<action name="attributes" type="object"/>
+    </model>    
+    
+   <model name="parIndicatorActionModel">
+      <action name="replacements" type="par"/>
+   </model>  
+   
+   <!--  PAR Rules tab menu bar and context menu -->
+   <model name="parRulesToolBar">
+   	<action name="deleteRuleGWT" type="contextbuilder"/>
+   </model>
+   
+   <model name="parRulesContextMenu">
+   	<action name="deleteRuleGWT" type="contextbuilder"/>
+   </model>
+
+   <model name="parVizToolBar">
+      <action name="zoomAllGWT" type="cat"/>
+      <action name="zoomSelectedGWT" type="cat"/>
+      <action name="setSpinCenterGWT" type="cat"/>
+      <action name="toggleAutoSelectionGWT" type="cat"/>
+      <action name="toggleAutoSelectionFromStructToVIZGWT" type="cat"/>
+      <action name="toggleAutoSelectionFromVIZToStructGWT" type="cat"/>
+      
+      <action name="spatialFilter" type="structurecomponent"/>
+      <action name="setBoxSpatialFilter" type="structurecomponent"/>
+      <action name="setSphereSpatialFilter" type="structurecomponent"/>
+      <action name="setProximitySpatialFilter" type="structurecomponent"/>
+      <action name="updateSpatialFilter" type="structurecomponent"/>
+      
+    <action name="spatialRuleGWT" type="contextbuilder"/>
+    <action name="newBoxSpatialRuleGWT" type="contextbuilder"/>
+    <action name="newSphereSpatialRuleGWT" type="contextbuilder"/>
+    <action name="newProximitySpatialRuleGWT" type="contextbuilder"/>
+    <action name="updateSpatialRuleGWT" type="contextbuilder"/>
+   </model>
+</actionmodels>

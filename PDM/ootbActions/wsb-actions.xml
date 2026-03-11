@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<listofactions>
+  <objecttype name="wsb" resourceBundle="com.ptc.windchill.uwgm.cadx.wsb.wsbActionsRB">
+
+    <action name="workspaceBrowserGWT" resourceBundle="com.ptc.windchill.uwgm.cadx.wsb.wsbActionsRB">
+      <command url="netmarkets/jsp/wsb/wsb.jsp"/>
+    </action>
+
+    <action name="checkoutGWT">
+      <command class="com.ptc.cat.ui.client.action.NoAction"/>
+    </action>
+    
+    <action name="checkinGWT">
+      <command class="com.ptc.cat.ui.client.action.NoAction"/>
+    </action>
+    
+    <action name="undocheckoutGWT">
+      <command class="com.ptc.cat.ui.client.action.NoAction"/>
+    </action>
+
+    <action name="undocheckoutGWT">
+      <command class="com.ptc.cat.ui.client.action.NoAction"/>
+    </action>
+
+    <action name="renameGWT">
+      <command class="com.ptc.cat.ui.client.action.NoAction"/>
+    </action>
+
+    <action name="saveAsGWT">
+      <command class="com.ptc.cat.ui.client.action.NoAction"/>
+    </action>
+
+    <action name="updateGWT">
+      <command class="com.ptc.cat.ui.client.action.NoAction"/>
+    </action>
+
+    <action name="addGWT">
+      <command class="com.ptc.cat.ui.client.action.NoAction"/>
+    </action>
+
+    <action name="removeGWT">
+      <command class="com.ptc.cat.ui.client.action.NoAction"/>
+    </action>
+
+    <action name="newGroupGWT">
+      <command class="com.ptc.cat.ui.client.action.NoAction"/>
+    </action>
+
+    <action name="newCadDocGWT">
+      <command class="com.ptc.cat.ui.client.action.NoAction"/>
+    </action>
+
+    <action name="newDataGWT">
+      <command class="com.ptc.cat.ui.client.action.NoAction"/>
+    </action>
+
+    <action name="newGraphicsGWT">
+      <command class="com.ptc.cat.ui.client.action.NoAction"/>
+    </action>
+
+    <action name="newPartGWT">
+      <command class="com.ptc.cat.ui.client.action.NoAction"/>
+    </action>
+
+    <action name="newRevisionGWT">
+      <command class="com.ptc.cat.ui.client.action.NoAction"/>
+    </action>
+
+    <action name="openInCreoGWT">
+      <command class="com.ptc.cat.ui.client.action.NoAction"/>
+    </action>
+
+    <action name="openInCreoViewGWT">
+      <command class="com.ptc.cat.ui.client.action.NoAction"/>
+    </action>
+
+    <action name="editSplitGWT">
+      <command class="com.ptc.cat.ui.client.action.NoAction"/>
+    </action>
+
+    <action name="editAttributesGWT">
+      <command class="com.ptc.cat.ui.client.action.NoAction"/>
+    </action>
+
+    <action name="editAssociationsGWT">
+      <command class="com.ptc.cat.ui.client.action.NoAction"/>
+    </action>
+
+    <action name="autoAssociateGWT">
+      <command class="com.ptc.cat.ui.client.action.NoAction"/>
+    </action>
+
+    <action name="setStateGWT">
+      <command class="com.ptc.cat.ui.client.action.NoAction"/>
+    </action>
+
+    <action name="refreshGWT">
+      <command class="com.ptc.cat.ui.client.action.NoAction"/>
+    </action>
+
+  </objecttype>
+</listofactions>

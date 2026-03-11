@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+
+<listofactions>
+
+    <objecttype name="massUpdate" resourceBundle="com.ptc.windchill.massupdate.massupdateResource">
+    
+        <action name="launch" uicomponent="MASS_UPDATE_TOOL">
+            <command windowType="popup" class="com.ptc.windchill.massupdate.MassUpdateFormProcessor"
+                     url="/netmarkets/jsp/massupdate/massUpdateStart.jsp" />
+        </action>
+
+        <action id="attributeMassUpdate" name="attributeMassUpdate" required="true" postloadJS="enablePreview">
+            <command windowType="wizard_step" 
+                     url="/netmarkets/jsp/massupdate/massUpdateAttribute.jsp" />
+        </action>                        
+
+        <action name="launchFromInfoPage" uicomponent="MASS_UPDATE_TOOL">
+            <command windowType="popup" class="com.ptc.windchill.massupdate.MassUpdateFormProcessor"
+                     url="/netmarkets/jsp/massupdate/massUpdateStart.jsp?type=assoc" />
+        </action>
+
+        <action id="associationMassUpdate" name="associationMassUpdate" required="true" postloadJS="disableBackButton" afterJS="validateCollection" >
+            <command windowType="wizard_step" 
+                     url="/netmarkets/jsp/massupdate/massUpdateAssociation.jsp" />
+        </action>                        
+
+        <action id="associationMassUpdateNewValue" name="associationMassUpdateNewValue" required="true">
+            <command windowType="wizard_step" 
+                     url="/netmarkets/jsp/massupdate/massUpdateAssociationNewValue.jsp" />
+        </action>                        
+
+        <action name="collectRoleAObjects" renderType="GENERAL" selectRequired="true">
+            <description>Collect items representing role-A side of of a relationship with the seed item.</description>
+            <command onClick="openCollectorPicker(&apos;MassUpdateAssociation&apos;,event);return false;" windowType="no_content"/>
+        </action>
+
+        <action name="launchFromSearch" selectRequired="true" uicomponent="MASS_UPDATE_TOOL">
+            <command windowType="popup" class="com.ptc.windchill.massupdate.MassUpdateFormProcessor"
+                     url="/netmarkets/jsp/massupdate/massUpdateStart.jsp" />
+        </action>
+
+        <action name="previewButton" id="PJL_wizard_apply">
+            <command class="" method="" windowType="page" url="javascript:onPreviewClicked();"/>
+        </action>
+
+        <action name="massUpdateBackButton" id="massUpdateBackButton" resourceBundle="com.ptc.windchill.massupdate.massupdateResource">
+            <command class="" method="" windowType="page" url="javascript:onBackClicked();"/>
+        </action>
+
+    </objecttype>
+
+</listofactions>

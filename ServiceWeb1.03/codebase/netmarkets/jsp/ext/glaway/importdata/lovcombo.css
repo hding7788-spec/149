@@ -1,0 +1,15 @@
+
+
+.ux-lovcombo-icon { 
+    width:16px; 
+    height:16px; 
+    float:left; 
+    background- -1px ! important; 
+    background-repeat:no-repeat ! important; 
+} 
+.ux-lovcombo-icon-checked { 
+    background: transparent url(codebase/netmarkets/images/checkbox_checked.gif); //注意修改路径
+} 
+.ux-lovcombo-icon-unchecked { 
+    background: transparent url(codebase/netmarkets/images/checkbox_unchecked.gif); //注意修改路径
+}

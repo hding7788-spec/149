@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+<!-- Baseline Client Actions   -->
+<listofactions>
+   <objecttype name="baseline" class="wt.vc.baseline.ManagedBaseline" resourceBundle="com.ptc.windchill.enterprise.baseline.baselineActionsRB">
+      <!-- BASELINE ACTIONS -->
+	  <action name="okButton" id="PJL_wizard_ok">
+        <description>Ok button for baseline wizards</description>
+        <command class="" method="" windowType="page" url="javascript:PTC.baseline.submitAddToBaselineWizard();"/>
+      </action>	  
+      <action name="deleteBaseline" ajax="row" uicomponent="DELETE">
+          <command class="com.ptc.windchill.enterprise.object.commands.DeleteObjectCommands" method="delete" onClick="JCAConfirm(&apos;com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE&apos;)"/>
+      </action>
+      <action name="addToWorkspace">
+         <command class="com.ptc.windchill.enterprise.baseline.NmBaselineCommands" method="addToWorkspace" windowType="lightbox"/>
+      </action>
+      <action name="lockBaseline">
+         <command class="com.ptc.windchill.enterprise.baseline.NmBaselineCommands" method="lockBaseline"/>
+         <includeFilter name="disableForAdminLocked"/>
+      </action>
+      <action name="unlockBaseline">
+         <command class="com.ptc.windchill.enterprise.baseline.NmBaselineCommands" method="unlockBaseline"/>
+         <includeFilter name="disableForAdminLocked"/>
+      </action>
+
+      <!-- BASELINE MEMBERS TABLE ACTIONS -->
+      <action name="baselineObjects"/>
+      <!-- Table action to remove items from the baseline -->
+      <action name="removeMembers" selectRequired="true">
+         <command class="com.ptc.windchill.enterprise.baseline.forms.RemoveBaselineObjectsFormProcessor" method="execute"/>
+         <includeFilter name="hideForLockedBaseline"/>
+         <includeFilter name="disableModifyBaseline"/>
+         <includeFilter name="disableForAdminLocked"/>
+      </action>
+      <action name="collectMembers" ajax="component" selectRequired="true">
+         <command class="com.ptc.windchill.enterprise.baseline.NmBaselineCommands" method="addMembers" windowType="popup"/>
+      </action>  
+      <!-- Table action to add items to the baseline -->
+      <action name="addMembers" ajax="component">
+         <command class="com.ptc.windchill.enterprise.baseline.forms.AddBaselineObjectsFormProcessor" method="execute" windowType="popup"/>
+         <includeFilter name="hideForLockedBaseline"/>
+         <includeFilter name="disableModifyBaseline"/>
+         <includeFilter name="disableForAdminLocked"/>
+      </action>
+      <!-- Table action to paste valid items from the clipboard. -->
+      <action name="pasteMembers" ajax="row">
+         <command class="com.ptc.windchill.enterprise.baseline.forms.PasteBaselineObjectsFormProcessor" method="execute"/>
+         <includeFilter name="hideForLockedBaseline"/>
+         <includeFilter name="disableModifyBaseline"/>
+         <includeFilter name="disableForAdminLocked"/>
+      </action>
+      <!-- Table row action to reset the baseline&apos;s primary item -->
+      <action name="setPrimary" ajax="row">
+         <command class="com.ptc.windchill.enterprise.baseline.forms.SetPrimaryObjectFormProcessor" method="execute"/>
+      </action>
+      <action name="replaceMember" ajax="component">
+         <command class="com.ptc.windchill.enterprise.baseline.NmBaselineCommands" method="replaceMember" windowType="popup"/>
+      </action>
+      <action name="revisionTree" required="true">
+         <command windowType="wizard_step"/>
+      </action>
+      <!-- BASELINE MEMBERS (NON PERSISTENT ACTIONS) TABLE ACTIONS -->
+      <!-- Table action to remove items from the Baseline Items table -->
+      <action name="removeMembersNPA" selectRequired="true">
+         <command class="com.ptc.windchill.enterprise.baseline.NmBaselineCommands" method="removeMembersFromTable"/>
+      </action>
+      <!-- Table action to add items to the Baseline Items table -->
+      <action name="addMembersNPA" ajax="row">
+         <command class="com.ptc.windchill.enterprise.baseline.commands.AddBaselineableCommands" method="addSelectedBaselineables" windowType="popup"/>
+      </action>
+      <!-- Table action to paste valid items from the clipboard to the Baseline Items Table. -->
+      <action name="pasteMembersNPA" ajax="row">
+         <command class="com.ptc.windchill.enterprise.baseline.commands.PasteBaselineableCommands" method="pasteBaselineables"/>
+      </action>
+      <!-- Table row action to reset the baseline&apos;s primary item -->
+      <action name="setPrimaryNPA" ajax="row">
+         <command onClick="resetPrimaryObject(event)"/>
+      </action>
+      <!-- BASELINE-RELATED ACTIONS -->
+      <action name="addToBaseline" multiselect="true" selectRequired="true">
+         <command class="com.ptc.windchill.enterprise.baseline.forms.AddToBaselineFormProcessor"  method="execute" windowType="new"/>
+      </action>
+      <action name="addToBaselineSingle"> 
+         <command class="com.ptc.windchill.enterprise.baseline.forms.AddToBaselineFormProcessor"  method="execute" windowType="new"/>
+         <includeFilter name="hideForNewObjectInWorkspace"/>
+         <includeFilter name="disableForWorkingCopyWorkInProgress"/>
+         <includeFilter name="hideForChangeTemplates"/>
+         <includeFilter name="scheduledDeliverablesActionSimpleFilter"/> 
+      </action>
+      <action name="addToBaselineStep" preloadWizardPage="false" required="true">
+	     <command windowType="wizard_step"/>
+      </action>
+      <action name="createBaseline" uicomponent="CREATE_BASELINE" ajax="row">
+         <command class="com.ptc.windchill.enterprise.baseline.forms.CreateBaselineFormProcessor" method="execute" windowType="popup" onClick="validateCreateLocation(event)"/>
+      </action>
+      <action name="setBaselineAttributesStep">
+        <command class="com.ptc.windchill.enterprise.baseline.forms.ManagedBaselineFormProcessorDelegate" windowType="wizard_step" url="servlet/TypeBasedIncludeServlet?contextAction=setBaselineAttributesStep"/>
+      </action>
+      <action name="editBaselineAttributesStep">
+        <command class="com.ptc.windchill.enterprise.baseline.forms.ManagedBaselineFormProcessorDelegate" windowType="wizard_step" url="servlet/TypeBasedIncludeServlet?contextAction=editBaselineAttributesStep"/>
+      </action>
+      <action name="updateBaseline">
+      	 <command class="com.ptc.windchill.enterprise.baseline.forms.EditBaselineFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="copyBaseline" multiselect="true" selectRequired="true" uicomponent="COPY">
+      	 <command class="com.ptc.netmarkets.model.NmObjectCommands" method="list_copy" onClick="onClickValidation( event, 'list_copy' )" windowType="no_content"/>
+         <includeFilter name="hideForObjectInProject"/>
+      </action>
+      <action name="unlockFederatedObject" multiselect="true" selectRequired="true">
+      	 <command class="com.ptc.windchill.enterprise.baseline.commands.UnlockFederatedObjectCommands" method="unlockFederatedObject"/>
+      </action>
+    </objecttype>
+    
+    <objecttype name="object" class="wt.fc.Persistable" resourceBundle="com.ptc.windchill.enterprise.object.objectResource">
+      <action name="relatedBaselines" uicomponent="THIRD_LEVEL_RELATED_BASELINES">
+          <includeFilter name="hideForChangeTemplates"/> 		  		  
+          <includeFilter name="reqlActionFilter" />
+      </action>
+    </objecttype>
+</listofactions>

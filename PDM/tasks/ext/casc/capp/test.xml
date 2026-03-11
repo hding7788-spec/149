@@ -1,0 +1,37 @@
+<%@page language="java" access="http|soap"  %>
+<%@taglib uri="http://www.ptc.com/infoengine/taglib/core" prefix="ie"%>
+
+<ie:webject name="Query-Objects" type="OBJ">
+     <ie:param name="INSTANCE" data="$(@FORM[]supporting-adapter[*])" delim="!" valueSeparator="!" default="<%=com.infoengine.au.NamingService.getVMName()%>"/>
+    <ie:param name="WHERE" data="(number=PART000000012)"/>
+    <ie:param name="TYPE" data="wt.part.WTPart"/>
+    <ie:param name="ATTRIBUTE" data="name"/>
+    <ie:param name="ATTRIBUTE" data="number"/>
+    <ie:param name="ATTRIBUTE" data="versionInfo.identifier.versionId"/>
+    <ie:param name="GROUP_OUT" data="part2"/>
+</ie:webject>
+
+<ie:webject name="Sort-Group" type="GRP">
+  <ie:param name="GROUP_IN" data="part2"/>
+  <ie:param name="SORTBY" data="versionInfo.identifier.versionId"/>
+  <ie:param name="CASE_IGNORE" data="TRUE"/>
+  <ie:param name="COMPARISON" data="ALPHA"/>
+  <ie:param name="SORTED" data="DESC"/>
+  <ie:param name="GROUP_OUT" data="part"/>
+</ie:webject>
+
+<ie:webject name="Query-Tree" type="OBJ">
+     <ie:param name="INSTANCE" data="$(@FORM[]supporting-adapter[*])" delim="!" valueSeparator="!" default="<%=com.infoengine.au.NamingService.getVMName()%>"/>
+    <ie:param name="TYPE" data="wt.part.WTPartUsageLink"/>
+    <ie:param name="OBJECT_REF" data="${part[0]obid[0]}"/>
+    <ie:param name="DIRECTION" data="uses"/>
+    <ie:param name="AUTO_NAVIGATE" data="true"/>
+    <ie:param name="DEPTH" data="4"/>
+    <ie:param name="MODE" data="nested"/>
+    <!ie:param name="SELECTBY" data="LATEST"/>
+    <ie:param name="GROUP_OUT" data="queryTree"/>
+    <ie:param name="Attribute" data="quantity.amount"/>
+    <ie:param name="Attribute" data="number"/>
+    <ie:param name="Attribute" data="name"/>
+    <ie:param name="output_type" data="full"/>
+</ie:webject>

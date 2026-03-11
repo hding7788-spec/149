@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CreateQRImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strQR" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateQRImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateQRImageResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getQR_PDM">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DABH" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getQR_PDMResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getQR_PDMResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDABH_PDM">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WJBH" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MC" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LX" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MJ" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SL" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDABH_PDMResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDABH_PDMResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getQR_HH">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DABH" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getQR_HHResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getQR_HHResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDABH_HH">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WJBH" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MC" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LX" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MJ" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SL" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDABH_HHResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDABH_HHResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateQRImageSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateQRImage" />
+  </wsdl:message>
+  <wsdl:message name="CreateQRImageSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateQRImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="getQR_PDMSoapIn">
+    <wsdl:part name="parameters" element="tns:getQR_PDM" />
+  </wsdl:message>
+  <wsdl:message name="getQR_PDMSoapOut">
+    <wsdl:part name="parameters" element="tns:getQR_PDMResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDABH_PDMSoapIn">
+    <wsdl:part name="parameters" element="tns:getDABH_PDM" />
+  </wsdl:message>
+  <wsdl:message name="getDABH_PDMSoapOut">
+    <wsdl:part name="parameters" element="tns:getDABH_PDMResponse" />
+  </wsdl:message>
+  <wsdl:message name="getQR_HHSoapIn">
+    <wsdl:part name="parameters" element="tns:getQR_HH" />
+  </wsdl:message>
+  <wsdl:message name="getQR_HHSoapOut">
+    <wsdl:part name="parameters" element="tns:getQR_HHResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDABH_HHSoapIn">
+    <wsdl:part name="parameters" element="tns:getDABH_HH" />
+  </wsdl:message>
+  <wsdl:message name="getDABH_HHSoapOut">
+    <wsdl:part name="parameters" element="tns:getDABH_HHResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="CreateQRImage">
+      <wsdl:input message="tns:CreateQRImageSoapIn" />
+      <wsdl:output message="tns:CreateQRImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getQR_PDM">
+      <wsdl:input message="tns:getQR_PDMSoapIn" />
+      <wsdl:output message="tns:getQR_PDMSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDABH_PDM">
+      <wsdl:input message="tns:getDABH_PDMSoapIn" />
+      <wsdl:output message="tns:getDABH_PDMSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getQR_HH">
+      <wsdl:input message="tns:getQR_HHSoapIn" />
+      <wsdl:output message="tns:getQR_HHSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDABH_HH">
+      <wsdl:input message="tns:getDABH_HHSoapIn" />
+      <wsdl:output message="tns:getDABH_HHSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateQRImage">
+      <soap:operation soapAction="http://tempuri.org/CreateQRImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQR_PDM">
+      <soap:operation soapAction="http://tempuri.org/getQR_PDM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDABH_PDM">
+      <soap:operation soapAction="http://tempuri.org/getDABH_PDM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQR_HH">
+      <soap:operation soapAction="http://tempuri.org/getQR_HH" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDABH_HH">
+      <soap:operation soapAction="http://tempuri.org/getDABH_HH" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateQRImage">
+      <soap12:operation soapAction="http://tempuri.org/CreateQRImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQR_PDM">
+      <soap12:operation soapAction="http://tempuri.org/getQR_PDM" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDABH_PDM">
+      <soap12:operation soapAction="http://tempuri.org/getDABH_PDM" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQR_HH">
+      <soap12:operation soapAction="http://tempuri.org/getQR_HH" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDABH_HH">
+      <soap12:operation soapAction="http://tempuri.org/getDABH_HH" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
+      <soap:address location="http://10.125.192.44:8088/SpaceWMS_CreateQRCode.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
+      <soap12:address location="http://10.125.192.44:8088/SpaceWMS_CreateQRCode.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

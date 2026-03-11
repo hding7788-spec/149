@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+
+<actionmodels>
+
+<!-- ************************************************** -->
+<!-- ***   Site Utilities | View Administrator      *** -->
+<!-- ************************************************** -->
+   <model name="more View row actions"  menufor="wt.vc.views.View">
+      <action name="renameView"  type="view"/>        <!-- Rename View -->
+      <action name="moveView"    type="view"/>        <!-- Move View -->
+      <action name="insertView"  type="view"/>        <!-- Insert View -->
+      <action name="deleteView"  type="view"/>        <!-- Delete View -->
+   </model>
+   <model name="view action list">
+         <action name="createView"     type="view" shortcut="true"/>  <!-- New View -->
+         <action name="deleteViews"    type="view" shortcut="true"/>  <!-- Delete View -->
+   </model>
+   <model name="CreateViewWizardButtons">
+      <action name="okButton"      type="object"/>    <!-- OK -->
+      <action name="cancelButton"  type="object"/>    <!-- Cancel -->
+   </model>
+   <model name="RenameViewWizardButtons">
+      <action name="okButton"      type="object"/>    <!-- OK -->
+      <action name="cancelButton"  type="object"/>    <!-- Cancel -->
+   </model>
+   <model name="InsertViewWizardButtons">
+      <action name="okButton"      type="object"/>    <!-- OK -->
+      <action name="cancelButton"  type="object"/>    <!-- Cancel -->
+   </model>
+   <model name="MoveViewWizardButtons">
+      <action name="okButton"      type="object"/>    <!-- OK -->
+      <action name="cancelButton"  type="object"/>    <!-- Cancel -->
+   </model>
+
+</actionmodels>

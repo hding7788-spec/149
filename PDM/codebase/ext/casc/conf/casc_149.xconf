@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Configuration SYSTEM "xconf.dtd">
+<Configuration targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties">
+
+ <!-- Data utilities for retrieving column values from a row -->
+    <Service name="com.ptc.core.components.descriptor.DataUtility">
+		<Option serviceClass="ext.casc.process.datautility.ProAssignTaskDatautility"
+		          requestor="java.lang.Object"
+				  selector="ProAssignTaskDatautility"
+		          cardinality="singleton"/>
+    </Service>
+    <Service name="com.ptc.core.components.descriptor.DataUtility">
+    		<Option serviceClass="ext.casc.process.datautility.NewProAssignTaskDatautility"
+    		          requestor="java.lang.Object"
+    				  selector="NewProAssignTaskDatautility"
+    		          cardinality="singleton"/>
+        </Service>
+
+
+   <Property name="wt.services/svc/default/com.ptc.core.components.beans.TreeHandler/SignatureTreeHandler1/java.lang.Object/0" overridable="true"
+             targetFile="codebase/service.properties"
+             default="ext.casc.workflow.tree.SignatureTreeHandler1/duplicate"/>
+
+   <Property name="wt.services/svc/default/com.ptc.core.components.beans.TreeHandler/SignatureTreeHandler2/java.lang.Object/0" overridable="true"
+             targetFile="codebase/service.properties"
+             default="ext.casc.workflow.tree.SignatureTreeHandler2/duplicate"/>
+
+   <Property name="wt.services/svc/default/com.ptc.core.components.beans.TreeHandler/SignatureResultTreeHandler/java.lang.Object/0" overridable="true"
+             targetFile="codebase/service.properties"
+             default="ext.casc.workflow.tree.SignatureResultTreeHandler/duplicate"/>
+
+   <Property name="wt.services/svc/default/com.ptc.core.components.beans.TreeHandler/SignatureResultTreeHandler2/java.lang.Object/0" overridable="true"
+             targetFile="codebase/service.properties"
+             default="ext.casc.workflow.tree.SignatureResultTreeHandler2/duplicate"/>
+
+   <Property name="wt.services/svc/default/com.ptc.core.components.descriptor.DataUtility/SignatureTreeDataUtility1/java.lang.Object/0" overridable="true"
+             targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties"
+             default="ext.casc.workflow.tree.SignatureTreeDataUtility1/singleton" />
+
+   <Property name="wt.services/svc/default/com.ptc.core.components.descriptor.DataUtility/SignatureTreeDataUtility2/java.lang.Object/0" overridable="true"
+             targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties"
+             default="ext.casc.workflow.tree.SignatureTreeDataUtility2/singleton" />
+
+   <Property name="wt.services/svc/default/com.ptc.core.components.descriptor.DataUtility/SignatureResultDataUtility/java.lang.Object/0" overridable="true"
+             targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties"
+             default="ext.casc.workflow.tree.SignatureResultDataUtility/singleton" />
+
+   <Property name="wt.services/svc/default/com.ptc.core.components.descriptor.DataUtility/ProcessEnvelopeDataUtility/java.lang.Object/0" overridable="true"
+             targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties"
+             default="ext.ases.envelope.datautility.ProcessEnvelopeDataUtility/singleton" />
+
+   <Property name="wt.services/svc/default/com.ptc.core.htmlcomp.tableview.ConfigurableTable/envelopeMembersTable2/java.lang.Object/0" overridable="true"
+             targetFile="codebase/service.properties"
+             default="ext.ases.envelope.EnvelopeObjectsConfigurableTable/duplicate"/>
+
+   <Property name="wt.services/svc/default/com.ptc.core.components.beans.TreeHandler/envelopeTreeHandler/java.lang.Object/0" overridable="true"
+             targetFile="codebase/service.properties"
+             default="ext.ases.envelope.EnvelopeTreeHandler/duplicate"/>
+
+    <Property name="wt.services/svc/default/com.ptc.core.components.descriptor.DataUtility/PartDataUtility/java.lang.Object/0" overridable="true"
+             targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties"
+             default="ext.casc.dataUtility.PartDataUtility/singleton" />
+
+    <Service name="com.ptc.core.components.beans.TreeHandler">
+		<Option serviceClass="ext.casc.part.mvc.builder.SetPartTypeTreeHandler"
+		          requestor="java.lang.Object"
+				  selector="SetPartTypeTreeHandler"
+		          cardinality="singleton"/>
+    </Service>
+
+    <Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.casc.validator.EditPartValidator"
+				requestor="java.lang.Object"
+				selector="EditPartValidator"
+				cardinality="duplicate"/>
+	</Service>
+
+	<Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.ases.technotice.RelatedTechNoticeDataActionFilter"
+				requestor="java.lang.Object"
+				selector="relatedTechNoticeDataValidation"
+				cardinality="duplicate"/>
+	</Service>
+
+	<Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.casc.validator.CreateChangeNoticeValidator"
+				requestor="java.lang.Object"
+				selector="CreateChangeNoticeValidator"
+				cardinality="duplicate"/>
+	</Service>
+
+	<Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.ases.technotice.EditTechNoticeActionFilter"
+				requestor="java.lang.Object"
+				selector="updateTechNoticeValidation"
+				cardinality="duplicate"/>
+	</Service>
+
+   	<Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.casc.validator.CreateProcessEnvelopeValidator"
+				requestor="java.lang.Object"
+				selector="CreateProcessEnvelopeValidator"
+				cardinality="duplicate"/>
+	</Service>
+
+	<Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.casc.validator.SubmitReviewMPMPPlanValidator"
+				requestor="java.lang.Object"
+				selector="SubmitReviewMPMPPlanValidator"
+				cardinality="duplicate"/>
+	</Service>
+	
+	<Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.ases.envelope.CreateSubEnDSOFilter"
+				requestor="java.lang.Object"
+				selector="CreateSubEnDSOFilter"
+				cardinality="duplicate"/>
+	</Service>
+	
+	<Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.casc.validator.PrintRuleValidator"
+				requestor="java.lang.Object"
+				selector="PrintRuleValidator"
+				cardinality="duplicate"/>
+	</Service>
+	
+	<Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.casc.validator.RecoverRuleOfRoleValidator"
+				requestor="java.lang.Object"
+				selector="RecoverRuleOfRoleValidator"
+				cardinality="duplicate"/>
+	</Service>
+	<Property name="wt.services/svc/default/com.ptc.core.components.descriptor.DataUtility/workitem_customvariable/java.lang.Object/0" overridable="true"
+             targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties"
+             default="ext.ases.util.CustomVariablesDataUtility/singleton"/>
+
+    <Property name="com.ptc.windchill.mpml.WorkInstructionIllustrationFileExtensionAllowed" overridable="true"
+             targetFile="codebase/com/ptc/windchill/mpml/mpmlink.properties"
+             default=".jpeg,.png,.gif,.bmp,.jpg,.flv"/>
+
+    <Property name="wt.services/svc/default/com.ptc.core.components.descriptor.DataUtility/SignatureEpmsDataUtility/java.lang.Object/0" overridable="true"
+             targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties"
+             default="ext.casc.workflow.tree.SignatureEpmsDataUtility/singleton" />
+
+   <Property name="wt.services/svc/default/com.ptc.core.components.descriptor.DataUtility/ProcessTaskItemDataUtility/java.lang.Object/0" overridable="true"
+             targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties"
+             default="ext.casc.process.datautility.ProcessTaskItemDataUtility/singleton" />
+
+
+   <Property name="wt.services/svc/default/com.ptc.core.ui.validation.UIComponentValidator/deleteEnvelope/null/0" overridable="true"
+             targetFile="codebase/service.properties"
+             default="ext.ases.envelope.DeleteEnvelopeActionValidator/duplicate"/>
+  <Property name="wt.services/svc/default/com.ptc.core.ui.validation.UIComponentValidator/deletePackaged/null/0" overridable="true"
+             targetFile="codebase/service.properties"
+             default="ext.ases.changepackaged.DeletePackagedActionValidator/duplicate"/>
+
+
+   <Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		  	<Option serviceClass="ext.casc.process.validator.ProcessTaskActionsValidators"
+					requestor="java.lang.Object"
+					selector="ProcessTaskActionsValidators"
+					cardinality="duplicate"/>
+	</Service>
+
+	<!--add by hding begin-->
+     <Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+			<Option serviceClass="ext.casc.validator.DeleteSelectedRepsAndMarkupsValidator"
+				requestor="java.lang.Object"
+				selector="DeleteSelectedRepsAndMarkupsValidator"
+				cardinality="duplicate"/>
+	</Service>
+	 <Service context="default" name="com.ptc.core.ui.validation.UIComponentValidator" targetFile="codebase/service.properties">
+			<Option serviceClass="ext.casc.access.ManageSecurityStepValidator" requestor="null" selector="securityLabelStep"/>
+	</Service>
+
+	 <Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+			<Option serviceClass="ext.casc.access.SYFLValidator"
+				requestor="java.lang.Object"
+				selector="SYFLValidator"
+				cardinality="duplicate"/>
+	</Service>
+
+	 <Service context="default" name="com.ptc.core.ui.validation.UIComponentValidator" targetFile="codebase/service.properties">
+			<Option serviceClass="ext.casc.access.SanYuanFenLiValidator" requestor="null" selector="processTask navigation"/>
+	</Service>
+	 <Service context="default" name="com.ptc.core.ui.validation.UIComponentValidator" targetFile="codebase/service.properties">
+			<Option serviceClass="ext.casc.access.SanYuanFenLiValidator" requestor="null" selector="search navigation"/>
+	</Service>
+	<Service context="default" name="com.ptc.core.ui.validation.UIComponentValidator" targetFile="codebase/service.properties">
+			<Option serviceClass="ext.casc.access.SanYuanFenLiValidator" requestor="null" selector="search page action"/>
+	</Service>
+	<Service context="default" name="com.ptc.core.ui.validation.UIComponentValidator" targetFile="codebase/service.properties">
+			<Option serviceClass="ext.casc.access.SanYuanFenLiValidator" requestor="null" selector="home customization"/>
+	</Service>
+
+	<Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+			<Option serviceClass="ext.casc.validator.SignatrueReportValidator"
+				requestor="java.lang.Object"
+				selector="SignatrueReportValidator"
+				cardinality="duplicate"/>
+	</Service>
+	<Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+			<Option serviceClass="ext.casc.validator.CHGLReportValidator"
+				requestor="java.lang.Object"
+				selector="CHGLReportValidator"
+				cardinality="duplicate"/>
+	</Service>
+	<Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+			<Option serviceClass="ext.casc.validator.GYWJPrintTaskValidator"
+				requestor="java.lang.Object"
+				selector="GYWJPrintTaskValidator"
+				cardinality="duplicate"/>
+	</Service>
+
+	<Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+			<Option serviceClass="ext.casc.validator.SignatrueReportValidator"
+				requestor="java.lang.Object"
+				selector="SignatrueReportValidator"
+				cardinality="duplicate"/>
+	</Service>
+
+	<Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+			<Option serviceClass="ext.casc.validator.CHGLReportValidator"
+				requestor="java.lang.Object"
+				selector="CHGLReportValidator"
+				cardinality="duplicate"/>
+	</Service>
+	<!--add by hding end-->
+
+
+	<!--For Search Envelope-->
+
+	<Property name="PDMLink.allSearch.149" overridable="true"
+			 targetFile="codebase/com/ptc/windchill/enterprise/search/server/SearchableTypes.properties"
+			 default="ext.ases.envelope.ProcessEnvelope"/>
+
+	<Property name="com.ptc.windchill.search.refreshTypesFromProperties" overridable="true"
+			targetFile="codebase/wt.properties"
+			default="true"/>
+
+	<Property name="advancedSearch.ext.ases.envelope.ProcessEnvelope" overridable="true"
+			targetFile="codebase/com/ptc/windchill/enterprise/search/server/SearchableAttributesByType.properties"
+			default="thePersistInfo.createStamp,creatorRef,maturityState,name,number,state.state,thePersistInfo.modifyStamp,organization.id"/>
+
+	<Property name="creatorSearch.ext.ases.envelope.ProcessEnvelope" overridable="true"
+			targetFile="codebase/com/ptc/windchill/enterprise/search/server/SearchableAttributesByType.properties"
+			default="creatorRef"/>
+
+	<Property name="keywordSearch.ext.ases.envelope.ProcessEnvelope" overridable="true"
+			targetFile="codebase/com/ptc/windchill/enterprise/search/server/SearchableAttributesByType.properties"
+			default="name,number"/>
+
+	<Property name="nameSearch.ext.ases.envelope.ProcessEnvelope" overridable="true"
+			targetFile="codebase/com/ptc/windchill/enterprise/search/server/SearchableAttributesByType.properties"
+			default="name"/>
+
+	<Property name="numberSearch.ext.ases.envelope.ProcessEnvelope" overridable="true"
+			targetFile="codebase/com/ptc/windchill/enterprise/search/server/SearchableAttributesByType.properties"
+			default="number"/>
+
+	<Property name="ownerSearch.ext.ases.envelope.ProcessEnvelope" overridable="true"
+			targetFile="codebase/com/ptc/windchill/enterprise/search/server/SearchableAttributesByType.properties"
+			default="ownership.owner"/>
+
+
+	   <!--For Search ChangePackaged begin -->
+
+	 <Property name="PDMLink.allSearch.8806" overridable="true"
+             targetFile="codebase/com/ptc/windchill/enterprise/search/server/SearchableTypes.properties"
+             default="ext.ases.changepackaged.ChangePackaged"/>
+
+	   <Property name="advancedSearch.ext.ases.changepackaged.ChangePackaged" overridable="true"
+		     targetFile="codebase/com/ptc/windchill/enterprise/search/server/SearchableAttributesByType.properties"
+		     default="thePersistInfo.createStamp,creatorRef,maturityState,name,number,state.state,thePersistInfo.modifyStamp,organization.id"/>
+	   <Property name="creatorSearch.ext.ases.changepackaged.ChangePackaged" overridable="true"
+		     targetFile="codebase/com/ptc/windchill/enterprise/search/server/SearchableAttributesByType.properties"
+		     default="creatorRef"/>
+	   <Property name="keywordSearch.ext.ases.changepackaged.ChangePackaged" overridable="true"
+		     targetFile="codebase/com/ptc/windchill/enterprise/search/server/SearchableAttributesByType.properties"
+		     default="name,number"/>
+	   <Property name="nameSearch.ext.ases.changepackaged.ChangePackaged" overridable="true"
+		     targetFile="codebase/com/ptc/windchill/enterprise/search/server/SearchableAttributesByType.properties"
+		     default="name"/>
+	   <Property name="numberSearch.ext.ases.changepackaged.ChangePackaged" overridable="true"
+		     targetFile="codebase/com/ptc/windchill/enterprise/search/server/SearchableAttributesByType.properties"
+		     default="number"/>
+	   <Property name="ownerSearch.ext.ases.changepackaged.ChangePackaged" overridable="true"
+		     targetFile="codebase/com/ptc/windchill/enterprise/search/server/SearchableAttributesByType.properties"
+		     default="ownership.owner"/>
+
+	<!--For Search ChangePackaged end -->
+	<Property name="wt.services/svc/default/com.ptc.core.components.descriptor.DataUtility/AddProAssignTaskDatautility/java.lang.Object/0" overridable="true"
+             targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties"
+             default="ext.casc.process.datautility.AddProAssignTaskDatautility/singleton" />
+
+
+    <Property name="wt.access.configuration.securityLabelsConfigurationFile" overridable="true"
+             targetFile="codebase/wt.properties"
+             default="$(wt.home)/conf/securityLabelsConfiguration_149.xml" />
+
+    <Property name="wt.services/svc/default/com.ptc.core.command.server.delegate.io.AbstractAttributeHandler/MIJI/wt.access.SecurityLabeled/0" overridable="true"
+             targetFile="codebase/com/ptc/core/foundation/FoundationAttributeHandler.properties"
+             default="com.ptc.core.command.server.delegate.io.SecurityLabelAttributeHandler/singleton" />
+
+    <Property name="wt.services.service.20000" overridable="true"
+             targetFile="codebase/wt.properties" default="ext.casc.listener.CascService/ext.casc.listener.ExtStandardListenerService"/>
+
+    <Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		  	<Option serviceClass="ext.casc.importdata.validator.ImportActionValidator"
+					requestor="java.lang.Object"
+					selector="ImportActionValidator"
+					cardinality="duplicate"/>
+     </Service>
+
+     <Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		  	<Option serviceClass="ext.casc.validator.WorkflowValidator"
+					requestor="java.lang.Object"
+					selector="WorkflowValidator"
+					cardinality="duplicate"/>
+     </Service>
+
+     <Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		  	<Option serviceClass="ext.casc.validator.DownloadPrimaryContentValidator"
+					requestor="java.lang.Object"
+					selector="DownloadPrimaryContentValidator"
+					cardinality="duplicate"/>
+	 </Service>
+
+	 <Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		  	<Option serviceClass="ext.casc.validator.ProductTeamManagementValidator"
+					requestor="java.lang.Object"
+					selector="ProductTeamManagementValidator"
+					cardinality="duplicate"/>
+     </Service>
+      <Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		  	<Option serviceClass="ext.casc.validator.WorkflowPboAttachmentsValidator"
+					requestor="java.lang.Object"
+					selector="WorkflowPboAttachmentsValidator"
+					cardinality="duplicate"/>
+     </Service>
+
+     <Property name="wt.workflow.definer.variable.ShowWfEvolvableWarning" overridable="true"
+             targetFile="codebase/wt.properties" default="true"/>
+
+      <Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		  	<Option serviceClass="ext.casc.process.validator.ProcessTaskGYZZActionsValidators"
+					requestor="java.lang.Object"
+					selector="ProcessTaskGYZZActionsValidators"
+					cardinality="duplicate"/>
+	 </Service>
+	 <Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.casc.validator.CreateProcessChangeNoticeValidator"
+				requestor="java.lang.Object"
+				selector="CreateProcessChangeNoticeValidator"
+				cardinality="duplicate"/>
+	</Service>
+	 <Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.casc.validator.RecycleWorkItemValidator"
+				requestor="java.lang.Object"
+				selector="RecycleWorkItemValidator"
+				cardinality="duplicate"/>
+	</Service>
+
+	<Property name="wt.services.service.20001" overridable="true"
+             targetFile="codebase/wt.properties"
+             default="com.glaway.mpm.dwg2pdf.DwgService/com.glaway.mpm.dwg2pdf.StandardDwgService"/>
+
+    <Property name="wt.services.service.20002" overridable="true"
+             targetFile="codebase/wt.properties"
+             default="com.glaway.mpm.dwg2pdf.CustomService/com.glaway.mpm.dwg2pdf.DwgListener"/>
+ <Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.casc.validator.EditPartValidator2"
+				requestor="java.lang.Object"
+				selector="EditPartValidator2"
+				cardinality="duplicate"/>
+	</Service>
+	<Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.casc.validator.AdminValidator"
+				requestor="java.lang.Object"
+				selector="AdminValidator"
+				cardinality="duplicate"/>
+	</Service>
+	<Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.casc.validator.EditDocumentValidator"
+				requestor="java.lang.Object"
+				selector="EditDocumentValidator"
+				cardinality="duplicate"/>
+	</Service>
+	<Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.casc.validator.SetPrintStateValidator"
+				requestor="java.lang.Object"
+				selector="SetPrintStateValidator"
+				cardinality="duplicate"/>
+	</Service>
+
+<Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.casc.validator.ProcessPlanDocumentValidator"
+				requestor="java.lang.Object"
+				selector="ProcessPlanDocumentValidator"
+				cardinality="duplicate"/>
+	</Service>
+
+	 <Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.casc.validator.NewOtherTaskValidator"
+				requestor="java.lang.Object"
+				selector="NewOtherTaskValidator"
+				cardinality="duplicate"/>
+	</Service>
+		 <Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.casc.validator.ReviseProcessPlanValidator"
+				requestor="java.lang.Object"
+				selector="ReviseProcessPlanValidator"
+				cardinality="duplicate"/>
+	</Service>
+
+	<Property name="wt.services/svc/default/com.ptc.core.components.descriptor.DataUtility/AddAttriubutesDatautility/java.lang.Object/0" overridable="true"
+             targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties"
+             default="ext.casc.ecn.AddAttriubutesDatautility/singleton" />
+      <Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.casc.validator.DeleteDocValidator"
+				requestor="java.lang.Object"
+				selector="DeleteDocValidator"
+				cardinality="duplicate"/>
+	</Service>
+
+	<Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.casc.sop.validator.SopObjectValidator"
+				requestor="java.lang.Object"
+				selector="SopObjectValidator"
+				cardinality="duplicate"/>
+	</Service>
+<!--For Search TechnicsMaterial-->
+
+	<Property name="PDMLink.allSearch.20201111" overridable="true"
+			 targetFile="codebase/com/ptc/windchill/enterprise/search/server/SearchableTypes.properties"
+			 default="ext.ases.techMaterial.TechnicsMaterial"/>
+
+
+	<Property name="advancedSearch.ext.ases.techMaterial.TechnicsMaterial" overridable="true"
+			targetFile="codebase/com/ptc/windchill/enterprise/search/server/SearchableAttributesByType.properties"
+			default="thePersistInfo.createStamp,creatorRef,maturityState,name,number,state.state,thePersistInfo.modifyStamp,organization.id"/>
+
+	<Property name="creatorSearch.ext.ases.techMaterial.TechnicsMaterial" overridable="true"
+			targetFile="codebase/com/ptc/windchill/enterprise/search/server/SearchableAttributesByType.properties"
+			default="creatorRef"/>
+
+	<Property name="keywordSearch.ext.ases.techMaterial.TechnicsMaterial" overridable="true"
+			targetFile="codebase/com/ptc/windchill/enterprise/search/server/SearchableAttributesByType.properties"
+			default="name,number"/>
+
+	<Property name="nameSearch.ext.ases.techMaterial.TechnicsMaterial" overridable="true"
+			targetFile="codebase/com/ptc/windchill/enterprise/search/server/SearchableAttributesByType.properties"
+			default="name"/>
+
+	<Property name="numberSearch.ext.ases.techMaterial.TechnicsMaterial" overridable="true"
+			targetFile="codebase/com/ptc/windchill/enterprise/search/server/SearchableAttributesByType.properties"
+			default="number"/>
+
+	<Property name="ownerSearch.ext.ases.techMaterial.TechnicsMaterial" overridable="true"
+			targetFile="codebase/com/ptc/windchill/enterprise/search/server/SearchableAttributesByType.properties"
+			default="ownership.owner"/>
+			
+	<!--For Search TechnicsMaterial end -->
+	
+	<!--For Search TechnicsMaterialEntries-->
+
+	<Property name="PDMLink.allSearch.20201112" overridable="true"
+			 targetFile="codebase/com/ptc/windchill/enterprise/search/server/SearchableTypes.properties"
+			 default="ext.ases.techMaterial.TechnicsMaterialEntries"/>
+
+	<Property name="com.ptc.windchill.search.refreshTypesFromProperties" overridable="true"
+			targetFile="codebase/wt.properties"
+			default="true"/>
+
+	<Property name="advancedSearch.ext.ases.techMaterial.TechnicsMaterialEntries" overridable="true"
+			targetFile="codebase/com/ptc/windchill/enterprise/search/server/SearchableAttributesByType.properties"
+			default="thePersistInfo.createStamp,creatorRef,maturityState,name,number,state.state,thePersistInfo.modifyStamp,organization.id"/>
+
+	<Property name="creatorSearch.ext.ases.techMaterial.TechnicsMaterialEntries" overridable="true"
+			targetFile="codebase/com/ptc/windchill/enterprise/search/server/SearchableAttributesByType.properties"
+			default="creatorRef"/>
+
+	<Property name="keywordSearch.ext.ases.techMaterial.TechnicsMaterialEntries" overridable="true"
+			targetFile="codebase/com/ptc/windchill/enterprise/search/server/SearchableAttributesByType.properties"
+			default="name,number"/>
+
+	<Property name="nameSearch.ext.ases.techMaterial.TechnicsMaterialEntries" overridable="true"
+			targetFile="codebase/com/ptc/windchill/enterprise/search/server/SearchableAttributesByType.properties"
+			default="name"/>
+
+	<Property name="numberSearch.ext.ases.techMaterial.TechnicsMaterialEntries" overridable="true"
+			targetFile="codebase/com/ptc/windchill/enterprise/search/server/SearchableAttributesByType.properties"
+			default="number"/>
+
+	<Property name="ownerSearch.ext.ases.techMaterial.TechnicsMaterialEntries" overridable="true"
+			targetFile="codebase/com/ptc/windchill/enterprise/search/server/SearchableAttributesByType.properties"
+			default="ownership.owner"/>
+			
+	<Property name="com.ptc.windchill.enterprise.folder.pdmFolderBrowser.additionalClasses" targetFile="codebase/wt.properties"  default="ext.ases.techMaterial.TechnicsMaterialEntries,ext.ases.techMaterial.TechnicsMaterial"/>
+	<!--For Search TechnicsMaterialEntries end -->
+	<Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.ases.techMaterial.filter.TechnicsMaterialFilter"
+				requestor="java.lang.Object"
+				selector="TechnicsMaterialFilter"
+				cardinality="duplicate"/>
+	</Service>
+
+	<Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+    		<Option serviceClass="ext.casc.validator.E3SubmitValidator"
+    				requestor="java.lang.Object"
+    				selector="E3SubmitValidator"
+    				cardinality="duplicate"/>
+    	</Service>
+
+    <Property name="wt.services/svc/default/com.ptc.core.components.descriptor.DataUtility/SopObjectDataUtility/java.lang.Object/0" overridable="true"
+                 targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties"
+                 default="ext.casc.sop.datautility.SopObjectDataUtility/singleton" />
+    <Property name="wt.services/svc/default/com.ptc.core.components.descriptor.DataUtility/SopResourceDataUtility/java.lang.Object/0" overridable="true"
+                 targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties"
+                 default="ext.casc.sop.datautility.SopResourceDataUtility/singleton" />
+    <Property name="wt.services/svc/default/com.ptc.core.components.descriptor.DataUtility/AnalysisDataUtility/java.lang.Object/0" overridable="true"
+                 targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties"
+                 default="ext.casc.analysisActivity.dataUtility.AnalysisDataUtility/singleton" />
+    <Property name="wt.services/svc/default/com.ptc.core.components.descriptor.DataUtility/ModelInfoDatautility/java.lang.Object/0" overridable="true"
+                 targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties"
+                 default="ext.sast.center.productModel.datautility.ModelInfoDatautility/singleton" />
+    <Property name="wt.services/svc/default/com.ptc.core.components.descriptor.DataUtility/EnvelopeObjectsDataUtility/java.lang.Object/0" overridable="true"
+                 targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties"
+                 default="ext.ases.envelope.EnvelopeObjectsDataUtility/singleton" />
+    <Property name="wt.services/svc/default/com.ptc.core.components.descriptor.DataUtility/EnvelopeDataUtility/java.lang.Object/0" overridable="true"
+                 targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties"
+                 default="ext.casc.dataUtility.EnvelopeDataUtility/singleton" />
+    <Property name="wt.services/svc/default/com.ptc.core.components.descriptor.DataUtility/TechnicsTechnologyDataUtility/java.lang.Object/0" overridable="true"
+                 targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties"
+                 default="ext.casc.doc.dataUtility.TechnicsTechnologyDataUtility/singleton" />
+    <Property name="wt.services/svc/default/com.ptc.core.components.descriptor.DataUtility/PbomTechnicsReportDataUtility/java.lang.Object/0" overridable="true"
+                 targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties"
+                 default="com.glaway.mpm.pbom.datautilities.PbomTechnicsReportDataUtility/singleton" />
+    <Property name="wt.services/svc/default/com.ptc.core.components.descriptor.DataUtility/PrintDataUtility/java.lang.Object/0" overridable="true"
+                 targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties"
+                 default="com.glaway.mpm.print.datautility.PrintDataUtility/singleton" />
+
+    <Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.casc.doc.technology.CreateJishuketiValidator"
+				requestor="java.lang.Object"
+				selector="CreateJishuketiValidator"
+				cardinality="duplicate"/>
+	</Service>
+    <Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+        		<Option serviceClass="ext.casc.purge.validator.DeleteInvalidDataValidator"
+        				requestor="java.lang.Object"
+        				selector="deleteInvalidDataValidator"
+        				cardinality="duplicate"/>
+    </Service>
+</Configuration>

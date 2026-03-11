@@ -1,0 +1,612 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+   <objecttype name="requirement" class="com.ptc.windchill.enterprise.requirement.Requirement" resourceBundle="com.ptc.windchill.enterprise.requirement.requirementActionsRB">
+
+      <action name="addSpecificationMember" uicomponent="MANAGE_REQUIREMENT">
+         <command class="com.ptc.windchill.enterprise.requirement.forms.processors.AddSpecificationMemberFormProcessor" method="execute" windowType="popup"/>
+         <includeFilter name="hideForNonLatestSpecStructureFilter" /> 
+         <includeFilter name="sandboxSharingValidationSimple" />
+         <includeFilter name="disableSBHiddenFilter" />
+         <includeFilter name="reqlAuthorized" />
+         <includeFilter name="manAuthorized" />
+      </action>
+      <action name="create" ajax="row" uicomponent="MANAGE_REQUIREMENT">
+         <command class="com.ptc.windchill.enterprise.requirement.forms.processors.CreateObjectWithApply" method="execute" windowType="popup" onClick="validateCreateLocation(event)"/>
+         <includeFilter name="hideForOrgAndSite" />
+         <includeFilter name="reqlAuthorized" /> 
+      </action>
+      <action name="createAndLinkReqDocument" uicomponent="MANAGE_REQUIREMENT">
+         <command class="com.ptc.windchill.enterprise.requirement.forms.processors.CreateAndLinkSpecificationObjectFormProcessor" method="execute" windowType="popup" />         
+         <includeFilter name="hideForNonLatestSpecStructureFilter" /> 
+         <includeFilter name="hideForOrgAndSite" />
+         <includeFilter name="reqlAuthorized" />
+         <includeFilter name="manAuthorized" />
+      </action>
+      
+      <action name="createAndLinkRequirement" uicomponent="MANAGE_REQUIREMENT">
+         <command class="com.ptc.windchill.enterprise.requirement.forms.processors.CreateAndLinkRequirementObjectFormProcessor" method="execute" windowType="popup" url="/netmarkets/jsp/requirement/create.jsp" />
+         <includeFilter name="hideForNonLatestSpecStructureFilter" /> 
+         <includeFilter name="hideForOrgAndSite" />
+         <includeFilter name="reqlAuthorized" />
+         <includeFilter name="manAuthorized" />
+      </action>
+      
+      <action name="createAndLinkVerificationRequirement" uicomponent="MANAGE_REQUIREMENT">
+         <command class="com.ptc.windchill.enterprise.requirement.forms.processors.CreateAndLinkVerificationRequirementFormProcessor" method="execute" windowType="popup" url="/netmarkets/jsp/requirement/createAndLinkVerificationRequirement.jsp" />
+         <includeFilter name="hideForNonLatestSpecStructureFilter" /> 
+         <includeFilter name="hideForOrgAndSite" />
+         <includeFilter name="reqlAuthorized" />
+      </action>      
+      
+      <action name="rowBasedCreateAndLinkRequirement" uicomponent="MANAGE_REQUIREMENT">
+         <command class="com.ptc.windchill.enterprise.requirement.forms.processors.CreateAndLinkRequirementObjectFormProcessor" method="execute" windowType="popup" url="/netmarkets/jsp/requirement/create.jsp" />
+         <includeFilter name="hideForOrgAndSite" />
+         <includeFilter name="disableForNonLatestSpecStructureFilter" />
+         <includeFilter name="sandboxSharingValidationSimple" />
+         <includeFilter name="disableSBHiddenFilter" />
+         <includeFilter name="reqlAuthorized" />
+      </action>
+      
+      <action name="reqlEdit">
+          <includeFilter name="sandboxSharingValidationSimple" />
+          <includeFilter name="reqlAuthorized" />
+          <includeFilter name="disableForNonLatestSpecStructureFilter" />
+          <includeFilter name="disableSBHiddenFilter" />
+          <includeFilter name="manAuthorized" />
+         <command class="com.ptc.windchill.enterprise.requirement.forms.processors.ReqlEditFormProcessor" method="execute" windowType="popup"/>
+      </action>
+
+      <action name="importExcelXMLRequirements" selectRequired="false" checkaccess="true" ajax="component" uicomponent="MANAGE_REQUIREMENT">
+         <command class="com.ptc.windchill.enterprise.requirement.forms.processors.ExcelImportFormProcessor" method="execute" windowType="popup" url="/netmarkets/jsp/requirement/importExcelXMLRequirements.jsp" />
+         <access name="create"/>
+         <includeFilter name="hideForNonLatestSpecStructureFilter" /> 
+         <includeFilter name="hideForOrgAndSite" />
+         <includeFilter name="reqlAuthorized" />
+         <includeFilter name="manAuthorized" />
+      </action>
+
+      <action name="exportRequirementTemplateToExcelXML" selectRequired="false" ajax="component"  uicomponent="MANAGE_REQUIREMENT">
+         <command class="com.ptc.windchill.enterprise.requirement.commands.ExportImportHelper" method="exportRequirementTemplateToExcelXML" onClick="PTC.navigation.loadScript ('netmarkets/javascript/requirement/remaUtils.js'); remaUtils.exportRequirementToExcelXML(event, 'exportRequirementTemplateToExcelXML')"/>
+         <access name="read"/>
+         <includeFilter name="hideForNonLatestSpecStructureFilter" /> 
+         <includeFilter name="hideForOrgAndSite" />
+         <includeFilter name="reqlAuthorized" />
+         <includeFilter name="manAuthorized" />
+      </action>
+
+      <action name="exportRequirementToExcelXML" selectRequired="false" uicomponent="MANAGE_REQUIREMENT" >
+         <command class="com.ptc.windchill.enterprise.requirement.commands.ExportImportHelper" method="exportToExcelXML" onClick="PTC.navigation.loadScript ('netmarkets/javascript/requirement/remaUtils.js'); remaUtils.exportRequirementToExcelXML(event, 'exportRequirementToExcelXML')"/>
+         <access name="read"/>
+         <includeFilter name="hideForOrgAndSite" />
+         <includeFilter name="manAuthorized" />
+      </action>
+
+      <action name="importWordRequirements" checkaccess="true" ajax="component" uicomponent="MANAGE_REQUIREMENT">
+         <command class="com.ptc.windchill.enterprise.requirement.forms.processors.ImportWordGuidelineFormProcessor" method="execute" windowType="popup"/>
+         <access name="create"/>
+         <includeFilter name="hideForOrgAndSite" />
+         <includeFilter name="reqlAuthorized" />
+         <includeFilter name="manAuthorized" />
+      </action>
+      
+      <action name="importReqFromWord" ajax="component" uicomponent="MANAGE_REQUIREMENT">
+         <command class="com.ptc.windchill.enterprise.requirement.forms.processors.ImportReqFromWordProcessor" method="execute" windowType="popup"/>
+         <access name="create"/>
+         <includeFilter name="hideForOrgAndSite" />
+         <includeFilter name="reqlAuthorized" />         
+      </action>
+      <action name="addRelatedItems" id="addRelatedItems" ajax="component">
+         <description>Add related objects</description>
+         <command class="com.ptc.windchill.enterprise.requirement.commands.AddTraceabilityLinkCommand" method="addRows" windowType="new" onClick="remaUtils.validateTraceabilityActions(event)"/>
+      </action>
+
+      <action name="pasteRelatedItems" id="pasteRelatedItems" ajax="row" renderType="GENERAL">
+         <description>Paste related objects</description>
+         <command class="com.ptc.windchill.enterprise.requirement.commands.PasteTraceabilityCommand" method="paste" onClick="remaUtils.validateTraceabilityActions(event)"/>
+         <includeFilter name="hideForOrgAndSite" />
+         <includeFilter name="reqlAuthorized" />
+      </action>
+      
+      <action name="establishTraceability" ajax="component" selectRequired="false"  uicomponent="MANAGE_REQUIREMENT" >
+         <command windowType="popup" url="/netmarkets/jsp/requirement/trace/panels.jsp"/>
+         <includeFilter name="hideForOrgAndSite" />
+         <moreurlinfo>height=1024,width=1280</moreurlinfo>
+      </action>
+
+      <action name="createAttributesStep" required="true">
+         <command class="" method="" windowType="wizard_step"/>
+      </action>
+
+      <action name="editAttributesStep">
+         <command class="" method="" windowType="wizard_step"/>
+      </action>
+      <action name="setAttributesWizStep" id="setAttributesWizStep" preloadWizardPage="false" required="false">
+          <component name="setAttributesWizStep" typeBased="true" windowType="wizard_step"/>
+       </action>
+       
+      <action name="editAttributesWizStep" id="editAttributesWizStep" preloadWizardPage="false" required="false">
+          <component name="editAttributesWizStep" typeBased="true" windowType="wizard_step"/>
+       </action>
+
+      <action name="importExcelXMLStep" >
+         <description>Import Excel requirements wizard step</description>
+         <command class="" method="" windowType="wizard_step"/>
+      </action>
+    <action name="orphanedRequirementReport" selectRequired="false">
+        <command class="" method="" windowType="popup"/>
+    </action>
+    <action name="orphanedRequirementReportStep">
+        <command windowType="wizard_step"/>
+    </action>
+	
+    <action name="orphanedTestCasesReport" selectRequired="false">
+        <command class="" method="" windowType="popup"/>
+    </action>
+	
+	<action name="generateTraceabilityMatrixReport" selectRequired="false">
+        <command class="" method="" windowType="popup"/>
+    </action>
+    <action name="generateTraceabilityMatrixReportStep">
+        <command windowType="wizard_step"/>
+    </action>	
+	
+	<action name="requirementAttributesAndTraceabilityLinksReport" selectRequired="false">
+        <command class="" method="" windowType="popup"/>
+    </action>
+    <action name="requirementAttributesAndTraceabilityLinksReportStep">
+        <command windowType="wizard_step"/>
+    </action>		
+
+    <action name="reportOkButton" id="PJL_wizard_ok">
+        <command class="" method="" windowType="page" url="javascript:validateRequirementReportFormAndSubmit();"/>
+    </action>
+
+    <action name="reportDetailsOkButton" id="PJL_wizard_ok">
+        <command class="" method="" windowType="page" url="javascript:submitReqAttributeReportForDetailsReport();"/>
+    </action>	
+
+      <action name="createTraceabilityLinks" ajax="page" uicomponent="MANAGE_REQUIREMENT">          
+          <command class="com.ptc.windchill.enterprise.requirement.forms.processors.CreateTraceabilityLinksFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      
+      <action name="createDownStreamTraceabilityLinks" ajax="page" uicomponent="MANAGE_REQUIREMENT">          
+          <command class="com.ptc.windchill.enterprise.requirement.forms.processors.CreateTraceabilityLinksFormProcessor" method="execute" windowType="popup"/>
+      </action>      
+      
+       <action name="NewUpstreamTraceabilityLink" ajax="page" uicomponent="MANAGE_REQUIREMENT">
+          <includeFilter name="manAuthorized" />
+          <command class="com.ptc.windchill.enterprise.requirement.forms.processors.CreateTraceabilityLinksFormProcessor" method="execute" windowType="popup" url="/netmarkets/jsp/requirement/createTraceabilityLinks.jsp"/>
+      </action>
+      
+      <action name="NewDownstreamTraceabilityLink" ajax="page" uicomponent="MANAGE_REQUIREMENT">
+          <command class="com.ptc.windchill.enterprise.requirement.forms.processors.CreateTraceabilityLinksFormProcessor" method="execute" windowType="popup" url="/netmarkets/jsp/requirement/createDownStreamTraceabilityLinks.jsp"/>
+      </action>    
+   
+      <action name="SpecificationsTable">
+         <command url="/netmarkets/jsp/requirement/specificationsTable.jsp"/>
+      </action>
+            
+      <action name="removeTraceabilityLinksUpstream" ajax="page" uicomponent="MANAGE_REQUIREMENT">
+          <includeFilter name="sandboxSharingValidationSimple" />
+          <includeFilter name="disableSBHiddenFilter" />          
+          <command class="com.ptc.windchill.enterprise.requirement.forms.processors.RemoveTraceabilityLinksFormProcessor" method="execute" onClick="window.REQLProcessSelectedLinks(event, 'UpstreamTraceabilityTable')"/>
+      </action>
+
+      <action name="removeTraceabilityLinksDownstream" ajax="page" uicomponent="MANAGE_REQUIREMENT">
+          <includeFilter name="sandboxSharingValidationSimple" />
+          <includeFilter name="disableSBHiddenFilter" />          
+          <command class="com.ptc.windchill.enterprise.requirement.forms.processors.RemoveTraceabilityLinksFormProcessor" method="execute" onClick="window.REQLProcessSelectedLinks(event, 'DownstreamTraceabilityTable')"/>
+      </action>
+      
+      <action name="rowRemoveUpstreamLinks" ajax="page" uicomponent="MANAGE_REQUIREMENT">
+          <includeFilter name="sandboxSharingValidationSimple" />
+          <includeFilter name="disableSBHiddenFilter" />
+          <includeFilter name="reqlAuthorized" />
+          <command class="com.ptc.windchill.enterprise.requirement.forms.processors.RemoveTraceabilityLinksFormProcessor" method="execute" onClick="window.REQLSetHiddenInputField(event)"/>
+      </action>
+
+      <action name="rowRemoveDownstreamLinks" ajax="page" uicomponent="MANAGE_REQUIREMENT">
+          <includeFilter name="sandboxSharingValidationSimple" />
+          <includeFilter name="disableSBHiddenFilter" />
+          <includeFilter name="reqlAuthorized" />
+          <command class="com.ptc.windchill.enterprise.requirement.forms.processors.RemoveTraceabilityLinksFormProcessor" method="execute" onClick="window.REQLSetHiddenInputField(event)"/>
+      </action>
+      
+      <action name="rowRemoveSingleUpstreamLink" ajax="page" uicomponent="MANAGE_REQUIREMENT">
+          <includeFilter name="sandboxSharingValidationSimple" />
+          <includeFilter name="disableSBHiddenFilter" />
+          <includeFilter name="reqlAuthorized" />
+          <command class="com.ptc.windchill.enterprise.requirement.forms.processors.RemoveTraceabilityLinksFormProcessor" method="execute" onClick="window.REQLProcessSelectedSingleLink(event, 'singleLevelUpstreamTable')"/>
+      </action>
+      
+      <action name="rowRemoveSingleDownstreamLink" ajax="page" uicomponent="MANAGE_REQUIREMENT">
+          <includeFilter name="sandboxSharingValidationSimple" />
+          <includeFilter name="disableSBHiddenFilter" />
+          <includeFilter name="reqlAuthorized" />
+          <command class="com.ptc.windchill.enterprise.requirement.forms.processors.RemoveTraceabilityLinksFormProcessor" method="execute" onClick="window.REQLProcessSelectedSingleLink(event, 'singleLevelDownstreamTable')"/>
+      </action>
+
+      <action name="addRelatedItems_step" ajax="component" preloadWizardPage="false" uicomponent="MANAGE_REQUIREMENT">
+         <command class="" method="" windowType="wizard_step"/>
+      </action>
+      <action name="importWordSpecStep" id="importWordSpecStep" preloadWizardPage="false" required="true" afterJS="importSubmit">
+         <command windowType="wizard_step"/>
+      </action>
+      
+      <action name="importWordSectionStep" id="importWordSectionStep" preloadWizardPage="false" required="false">
+         <command windowType="wizard_step"/>
+      </action>
+      
+      <action name="importWordReqStep" id="importWordReqStep" preloadWizardPage="false" required="true">
+         <command windowType="wizard_step"/>
+      </action>     
+      
+      <action name="confirmImportWordStep" afterJS="updateStepNumber" preloadWizardPage="false" required="true">
+         <description>Save requirements from xml file to database</description>
+         <command windowType="wizard_step"/>
+      </action>
+      
+      <action name="importReqFromWordPreviewStep" afterJS="updateStepNumber" preloadWizardPage="false" required="true">
+         <description>Import word requirements wizard step</description>
+         <command windowType="wizard_step"/>
+      </action>
+	  
+      <action name="importReqFromWordSelectStep" afterJS="importReqFromWordSelectStep">
+         <description>Import word requirements wizard step</description>
+         <command windowType="wizard_step"/>
+      </action>
+      <action name="okButton" id="PJL_wizard_ok">
+          <command class="" method="" windowType="page" url="javascript:importOnSubmit()"/>
+      </action>
+
+	<action name="nextButton" id="PJL_wizard_next">
+		<command class="" method="" windowType="page" url="javascript:preGoNext();goNext();postGoNext();" />
+	</action>
+      
+      <action name="replaceButton" id="PJL_wizard_ok">
+          <command class="" method="" windowType="page" url="javascript:onSubmit()"/>
+      </action>
+      
+      <action name="cancelButton" id="PJL_wizard_cancel">
+          <command class="" method="" windowType="page" url="javascript:importOnCancel()"/>
+      </action>
+      
+      <action name="createRemaOkButton" id="PJL_wizard_ok">
+          <command class="" method="" windowType="page" url="javascript:createRemaOnFinish()"/>
+      </action>
+	  
+	  <action name="createRemaApplyButton" id="PJL_wizard_apply">
+          <command class="" method="" windowType="page" url="javascript:createRemaOnApply()"/>
+      </action>
+      
+       <action name="editRemaOkButton" id="PJL_wizard_ok">
+          <command class="" method="" windowType="page" url="javascript:editRemaOnFinish()"/>
+      </action>
+      
+      <!-- Wizardless Actions -->
+      <action name="TraceabilityLinksTable"  uicomponent="THIRD_LEVEL_REQUIREMENT_TRACEABILITY">
+         <command url="/netmarkets/jsp/requirement/TraceabilityLinksTable.jsp" windowType="page"/>
+      </action>
+
+      <action name="markLinkAsSuspect" ajax="page" uicomponent="MANAGE_REQUIREMENT">
+         <command class="com.ptc.windchill.enterprise.requirement.forms.processors.MarkLinkAsSuspectProcessor" method="execute"/>
+      </action>
+
+      <action name="clearSuspect" ajax="page" uicomponent="MANAGE_REQUIREMENT">         
+         <command class="com.ptc.windchill.enterprise.requirement.forms.processors.ClearSuspectProcessor" method="execute" onClick="window.REQLProcessSelectedLinks(event, 'UpstreamTraceabilityTable','clearSuspect')"/>
+      </action>
+      
+      <action name="rowClearSuspect" ajax="page" uicomponent="MANAGE_REQUIREMENT">
+         <command class="com.ptc.windchill.enterprise.requirement.forms.processors.ClearSuspectProcessor" method="execute" onClick="remaUtils.verifyRowClearSuspect(event)"/>
+      </action>
+      
+      <!-- refresh the whole page to show new baseline in Spec Structure View dropdown list -->
+      <action name="rowAddToBaseline" ajax="page">
+         <command class="com.ptc.windchill.enterprise.baseline.forms.AddToBaselineFormProcessor" method="execute" windowType="new" url="/netmarkets/jsp/baseline/addToBaselineSingle.jsp"/>
+         <includeFilter name="hideForNewObjectInWorkspace"/>
+         <includeFilter name="disableForWorkingCopyWorkInProgress"/>
+         <includeFilter name="hideSBHiddenFilter"/>
+      </action>
+
+    </objecttype>
+
+   <objecttype name="specification" class="com.ptc.windchill.enterprise.requirement.Specification" resourceBundle="com.ptc.windchill.enterprise.requirement.specificationActionsRB">
+
+      <action name="editAttributesMultiRequirementWizStep" class="com.ptc.windchill.enterprise.requirement.Requirement" id="editAttributesMultiReqlWizStep" multiselect="true" required="true" preloadWizardPage="false">
+        <command windowType="wizard_step"/>
+      </action>
+      
+      <action name="editMultiObjectsInSpecStructure" id="editMultiObjectsInSpecStructure" multiselect="true" selectRequired="true">
+        <command class="com.ptc.windchill.enterprise.requirement.forms.processors.EditMultiObjectsInSpecStructureFormProcessor" method="execute" windowType="popup" url="netmarkets/jsp/object/editMultiObjects.jsp"/>
+		<includeFilter name="manAuthorized" />
+      </action>
+         
+	  <action name="decomposeSpecification" ajax="component">
+		<command class="com.ptc.windchill.enterprise.requirement.forms.processors.DecomposeSpecificationFormProcessor" method="execute" />
+		<includeFilter name="hideForOrgAndSite" />
+		<includeFilter name="reqlAuthorized" />
+		<includeFilter name="hideForNonLatestSpecStructureFilter" />
+		<includeFilter name="manAuthorized" />
+	  </action>
+	  
+	  <action name="decomposeSpecToSection" ajax="component">
+        <command class="com.ptc.windchill.enterprise.requirement.forms.processors.DecomposeSpecToSectionFormProcessor" method="execute" />
+        <includeFilter name="hideForOrgAndSite" />
+        <includeFilter name="reqlAuthorized" />
+        <includeFilter name="hideForNonLatestSpecStructureFilter" />
+        <includeFilter name="manAuthorized" />
+      </action>
+     
+	  <action name="enableSpecificationTemplate"  enabledwhensuspended="true" uicomponent="MANAGE_REQUIREMENT" ajax="component">
+	    <command class="com.ptc.windchill.enterprise.requirement.forms.processors.EnableSpecificationTemplateFormProcessor" method="execute"/>
+		 <includeFilter name="canModifySpecTemplate" />
+         <includeFilter name="reqlAuthorized" />
+	  </action>
+	  
+	  <action name="disableSpecificationTemplate"  enabledwhensuspended="true" uicomponent="MANAGE_REQUIREMENT" ajax="component">
+	    <command class="com.ptc.windchill.enterprise.requirement.forms.processors.DisableSpecificationTemplateFormProcessor" method="execute"/> 
+		<includeFilter name="canModifySpecTemplate" />
+         <includeFilter name="reqlAuthorized" />
+	  </action>     
+	  
+	  <action name="showSpecificationTemplate" ajax="component">
+   			<command class="com.ptc.windchill.enterprise.requirement.commands.SpecificationTemplateCommand" method="showSpecificationTemplate"/>
+      </action>
+
+	  <action name="hideSpecificationTemplate" ajax="component">
+   			<command class="com.ptc.windchill.enterprise.requirement.commands.SpecificationTemplateCommand" method="hideSpecificationTemplate"/>
+      </action>	  
+	  <action name="createSpecificationTemplate" enabledwhensuspended="true" uicomponent="MANAGE_REQUIREMENT" ajax="component">
+         <command class="com.ptc.windchill.enterprise.requirement.forms.processors.CreateSpecificationTemplateFormProcessor" method="execute" windowType="popup" />
+      </action>
+      
+      <action name="createSpecificationTemplateStep">
+		  <command class="" method="" windowType="wizard_step"/>
+      </action>
+    	
+      <action name="editSpecificationTemplate" enabledwhensuspended="true" uicomponent="MANAGE_REQUIREMENT" ajax="component">
+         <command class="com.ptc.windchill.enterprise.requirement.forms.processors.EditSpecificationTemplateFormProcessor" method="execute" windowType="popup"/>      					 
+		  <includeFilter name="canModifySpecTemplate" />
+         <includeFilter name="reqlAuthorized" />
+      </action>
+      
+      <action name="deleteSpecificationTemplate" enabledwhensuspended="true" uicomponent="MANAGE_REQUIREMENT" ajax="component">
+         <command class="com.ptc.windchill.enterprise.requirement.commands.SpecificationTemplateCommand" method="deleteSpecificationTemplate" onClick="JCAConfirm(event,&apos;com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE&apos;)"/>      					 
+      </action>
+      
+      
+      <action name="editSpecificationTemplateStep">
+		  <command class="" method="" windowType="wizard_step"/>
+      </action>
+      <action name="attributePanel">
+          <component name="attributesTable" typeBased="true" windowType="page"/>
+      </action>
+      
+      <action name="exportSpecStructure" ajax="component" selectRequired="false"  uicomponent="MANAGE_REQUIREMENT" multiselect="false">
+         <command class="com.ptc.windchill.enterprise.requirement.forms.processors.ExportSpecificationStructureProcessor" method="execute" windowType="popup" url="/netmarkets/jsp/specification/exportSpecStructure.jsp"/>
+         <includeFilter name="hideForOrgAndSite" />
+         <includeFilter name="manAuthorized" />
+      </action>
+      
+      <action name="removeSpecificationUsageLinks" selectRequired="true" uicomponent="MANAGE_REQUIREMENT">
+         <command class="com.ptc.windchill.enterprise.requirement.forms.processors.RemoveSpecificationUsageLinksFormProcessor" method="execute"  onClick="window.REQLProcessSelectedLinks(event, 'specificationspecStructure')"/>
+         <includeFilter name="hideForNonLatestSpecStructureFilter" /> 
+         <includeFilter name="reqlAuthorized" />
+		 <includeFilter name="manAuthorized" />
+      </action>
+      
+      <action name="createSpecification" ajax="component" selectRequired="false"  uicomponent="MANAGE_REQUIREMENT">
+         <description>Create Specification action</description>
+         <command class="com.ptc.windchill.enterprise.requirement.forms.processors.CreateObjectWithApply" method="execute" windowType="popup" onClick="validateCreateLocation(event)"/>
+         <includeFilter name="hideForOrgAndSite" />
+         <includeFilter name="reqlAuthorized" />
+         <includeFilter name="manAuthorized" />
+      </action>  
+      
+      <action name="createSection" selectRequired="false"  uicomponent="MANAGE_REQUIREMENT">
+         <description>Create Section action</description>
+         <command class="com.ptc.windchill.enterprise.requirement.forms.processors.CreateObjectWithApply" method="execute" windowType="popup" url="/netmarkets/jsp/specification/createSection.jsp"/>
+         <includeFilter name="hideForOrgAndSite" />
+         <includeFilter name="reqlAuthorized" />
+      </action>  
+      
+      <action name="createSectionLinkToSpec" selectRequired="false"  uicomponent="MANAGE_REQUIREMENT">
+         <description>Create Section action and link to specification</description>
+         <command class="com.ptc.windchill.enterprise.requirement.forms.processors.CreateAndLinkSpecificationObjectFormProcessor" method="execute" windowType="popup" url="/netmarkets/jsp/specification/createSection.jsp"/>
+         <includeFilter name="hideForOrgAndSite" />
+         <includeFilter name="hideForNonLatestSpecStructureFilter" /> 
+         <includeFilter name="reqlAuthorized" />
+      </action>  
+
+      <action name="rowCreateSection" selectRequired="false"  uicomponent="MANAGE_REQUIREMENT">
+         <description>Create Section action</description>
+         <command class="com.ptc.windchill.enterprise.requirement.forms.processors.CreateAndLinkSpecificationObjectFormProcessor" method="execute" windowType="popup" url="/netmarkets/jsp/specification/createSection.jsp"/>
+         <includeFilter name="hideForOrgAndSite" />
+         <includeFilter name="disableForNonLatestSpecStructureFilter" /> 
+         <includeFilter name="sandboxSharingValidationSimple" />
+         <includeFilter name="disableSBHiddenFilter" />
+         <includeFilter name="reqlAuthorized" />
+      </action>  
+
+      <action name="convertType" ajax="component" selectRequired="false"  uicomponent="MANAGE_REQUIREMENT">
+         <description>Change Type action</description>
+         <command class="com.ptc.windchill.enterprise.requirement.forms.processors.ChangeSpecificationTypeFormProcessor" method="execute" windowType="popup"/>
+         <includeFilter name="hideForOrgAndSite" />
+         <includeFilter name="sandboxSharingValidationSimple" />
+         <includeFilter name="disableSBHiddenFilter" />
+         <includeFilter name="reqlAuthorized" />
+      </action> 
+      
+      <action name="convertTypeStep" id="convertTypeStep" preloadWizardPage="false" required="yes">
+         <command windowType="wizard_step"/>
+      </action>
+      
+      <action name="pasteToSpecification" ajax="component" selectRequired="false" multiselect="false" renderType="GENERAL">
+         <description>Paste to specification structure</description>
+         <command class="com.ptc.windchill.enterprise.requirement.commands.PasteToSpecificationCommand" method="paste" onClick="validateClipboardNotEmpty()"/> 
+         <includeFilter name="hideForNonLatestSpecStructureFilter" /> 
+         <includeFilter name="hideForOrgAndSite" />
+         <includeFilter name="reqlAuthorized" />
+		 <includeFilter name="manAuthorized" />
+      </action>
+
+      <action name="saveasSpecification">
+         <command class="com.ptc.windchill.enterprise.requirement.forms.processors.SpecificationSaveAsFormProcessor" method="execute" windowType="popup"/>
+         <includeFilter name="hideForOrgAndSite" />
+         <includeFilter name="reqlAuthorized" />
+         <includeFilter name="manAuthorized" />
+      </action>
+      
+      <action name="saveAsSpecification_step"/>
+      
+      <action name="saveAsTemplate">
+         <command class="com.ptc.windchill.enterprise.requirement.forms.processors.SpecificationSaveAsTemplateFormProcessor" method="execute" windowType="popup"/>
+         <includeFilter name="canCreateSpecTemplate" />
+         <includeFilter name="hideForOrgAndSite" />
+         <includeFilter name="reqlAuthorized" />
+      </action>
+      
+      <action name="saveAsTemplateStep">
+      	 <command windowType="wizard_step" />
+      </action>
+      <action name="exportSpecStructureStep" >
+         <description>Export Specification Structure wizard step</description>
+         <command class="" method="" windowType="wizard_step"/>
+      </action>
+      <action name="specificationPicker" id="specificationPicker">
+         <description>Specification Picker</description>
+         <command url="/netmarkets/jsp/specification/specificationPicker.jsp" windowType="popup"/>
+      </action>
+    
+      <action name="collectionPicker" id="collectionPicker">
+         <description>Collection Picker</description>
+         <command url="/netmarkets/jsp/object/collectionPicker.jsp" windowType="popup"/>
+      </action>
+      
+      <action name="assemblyPicker" id="assemblyPicker">
+         <description>Assembly Picker</description>
+         <command url="/netmarkets/jsp/object/assemblyPicker.jsp" windowType="popup"/>
+      </action>
+      
+      <action name="defineTypeWizStep">
+       <command class="" method="" windowType="wizard_step"/>
+      </action>
+   
+      <action name="specStructure" enabledwhensuspended="true">
+      </action>
+      
+      <action name="reqlEdit" dtiUpload="true">
+        <includeFilter name="sandboxSharingValidationSimple" />
+        <includeFilter name="reqlAuthorized" />
+          <includeFilter name="disableForNonLatestSpecStructureFilter" />
+          <includeFilter name="disableSBHiddenFilter" />
+        <command class="com.ptc.windchill.enterprise.requirement.forms.processors.ReqlEditFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      
+      <action name="editAttributesStep">
+         <command class="" method="" windowType="wizard_step"/>
+      </action>
+      <action name="editSoftAttributesStep" preloadWizardPage="false">
+         <component name="convertTypeSetAttributes" typeBased="false" windowType="wizard_step"/>
+      </action> 
+            
+      <action name="dndStructure" ajax="component" uicomponent="MANAGE_REQUIREMENT">
+         <command class="com.ptc.windchill.enterprise.requirement.forms.processors.DNDSpecificationStructureFormProcessor" method="execute"/>
+      </action>
+      
+      <action name="structureTree"/>
+      
+      <action name="createSpecificationForSaveAs" uicomponent="MANAGE_REQUIREMENT">
+         <description>Create Specification action for Multi Save As wizard</description>
+         <command class="com.ptc.windchill.enterprise.requirement.forms.processors.CreateSpecificationForSaveAsFormProcessor" url="/netmarkets/jsp/specification/createSpecification.jsp" method="execute" windowType="popup" />
+      </action>
+      
+       <action name="createAttributesStep" required="true">
+         <command class="" method="" windowType="wizard_step"/>
+      </action>
+	  
+	  <action name="specTemplateIterationHistory" uicomponent="PROJECT_ITERATION_HISTORY" 
+	  resourceBundle="com.ptc.windchill.enterprise.requirement.requirementResource"/>
+    </objecttype>
+    
+    <objecttype name="object" resourceBundle="com.ptc.windchill.enterprise.requirement.requirementActionsRB">
+      <action name="singleLevelTraceability" enabledwhensuspended="true">
+      </action>
+    </objecttype>
+
+    <objecttype name="reqlObject" class="com.ptc.windchill.enterprise.requirement.AbstractRemaObject" resourceBundle="com.ptc.windchill.enterprise.requirement.requirementActionsRB">
+      
+      <action name="reqlEditCommentsStep">
+         <command class="" method="" windowType="wizard_step"/>
+      </action> 
+      <action name="replaceWithLatest" ajax="component">
+         <command class="com.ptc.windchill.enterprise.requirement.forms.processors.ReplaceWithLatestFormProcessor" windowType="popup"/>
+      </action>
+      
+      <action name="replaceWithLatest_step">
+         <command class="" method="" windowType="wizard_step"/>
+      </action>
+      
+      <action name="multiSelectSaveAs" multiselect="true" selectRequired="true" uicomponent="MANAGE_REQUIREMENT">
+         <command class="com.ptc.windchill.enterprise.requirement.forms.processors.SpecificationSaveAsMultiFormProcessor" method="execute" windowType="popup"/>
+         <includeFilter name="hideForOrgAndSite" />
+         <includeFilter name="reqlAuthorized" />
+         <includeFilter name="manAuthorized" />
+      </action>
+      <action name="multiSelectSaveAsStep" preloadWizardPage="false" required="true">
+      	 <command windowType="wizard_step"/>
+      </action>
+      
+      <action name="pasteReqlObjs" ajax="row">
+         <description>Paste valid requiementslink objects from the clipboard to the Multi-Select Save As Table.</description>
+         <command class="com.ptc.windchill.enterprise.requirement.commands.PasteReqlObjsCommand" method="paste"/> 
+         <includeFilter name="hideForOrgAndSite" />
+         <includeFilter name="reqlAuthorized" />
+      </action>
+      
+      <action name="addReqlObjs" ajax="row">
+         <command class="com.ptc.windchill.enterprise.requirement.commands.AddReqlObjsCommands" method="add" windowType="popup"/>
+         <includeFilter name="hideForOrgAndSite" />
+         <includeFilter name="reqlAuthorized" />
+      </action>
+      <action name="activites" enabledwhensuspended="true" resourceBundle="com.ptc.windchill.enterprise.requirement.requirementActionsRB">
+         <component name="requirement.activity.list" windowType="page"/>         
+      </action>
+      <action name="compare">
+        <command url="/netmarkets/jsp/ocmp/common/tailoringDialog.jsp" windowType="popup"/>
+      </action>      
+      <action name="reqlQuickEdit">
+        <command url="/netmarkets/jsp/reqlObject/reqlQuickEdit.jsp" windowType="page"/>
+      </action>  
+      <action name="reqlEditInRightpane">
+        <includeFilter name="manAuthorized"/>
+        <command onClick="SPECSTRUCTURE.quickEdit();"/>
+      </action>
+      <action name="checkInOkButton">
+        <command class="" method="" windowType="page" url="javascript:okButtonHandler();"/>
+      </action>    
+      <action name="checkInCancelButton">
+        <command class="" method="" windowType="page" url="javascript:cancelButtonHandler();"/>
+      </action>     
+      
+    </objecttype>
+
+	<objecttype name="integrityRM" class="wt.fc.WTObject">
+
+		<action name="importFromIntegrity" resourceBundle="com.ptc.windchill.enterprise.requirement.integrity.importAction.ImportFromIntegrityRB">
+			<command
+				windowType="popup"
+				url="netmarkets/jsp/requirement/integrity/import.jsp"
+				class="com.ptc.windchill.enterprise.requirement.integrity.importAction.ImportFromIntegrityFormProcessor"
+			/>
+			<moreurlinfo>height=700,width=1000</moreurlinfo>
+		</action>
+
+		<action name="importFromIntegrityStep" afterJS="validateSomethingSelected" resourceBundle="com.ptc.windchill.enterprise.requirement.integrity.importAction.ImportFromIntegrityRB">
+			<command windowType="wizard_step"/>
+			<component name="rm.integrity.import.attributePanel" urlParams="typeIdForTypeLookup=com.ptc.windchill.enterprise.requirement.integrity.importAction.ImportAttributePanelBuilder"/>
+		</action>
+
+	</objecttype>
+</listofactions>

@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<listofactions>
+   <objecttype name="contextbuilder" resourceBundle="com.ptc.windchill.enterprise.object.alternaterep.contextbuildercommonActionsRB">
+      <action name="includePartGWT">
+         <command class="com.ptc.windchill.enterprise.object.alternaterep.client.action.SimpleIncludeAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotSummaryRowOrHasSummaryParentFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.object.alternaterep.client.filters.SimpleIncludeFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.object.alternaterep.client.filters.PARLatestIterationFilter"/>
+      </action>
+      <action name="excludePartGWT">
+         <command class="com.ptc.windchill.enterprise.object.alternaterep.client.action.SimpleExcludeAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotSummaryRowOrHasSummaryParentFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.object.alternaterep.client.filters.SimpleExcludeFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.object.alternaterep.client.filters.PARLatestIterationFilter"/>
+      </action>      
+      <action name="includeThisPartOnlyGWT">
+         <command class="com.ptc.windchill.enterprise.object.alternaterep.client.action.SimpleIncludeThisOnlyAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotSummaryRowOrHasSummaryParentFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.object.alternaterep.client.filters.SimpleIncludeFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.object.alternaterep.client.filters.PARLatestIterationFilter"/>
+      </action>
+      <action name="spatialRuleGWT">
+         <command class="com.ptc.cat.ui.client.action.NoAction" />
+         <includeFilter name="com.ptc.windchill.enterprise.object.alternaterep.client.filters.PARLatestIterationFilter"/>
+      </action>
+      <action name="newBoxSpatialRuleGWT">
+         <command class="com.ptc.windchill.enterprise.object.alternaterep.client.action.NewBoxSpatialRuleAction"/>
+         <includeFilter name="com.ptc.windchill.enterprise.object.alternaterep.client.filters.RootNodeNotCheckedOutByOtherFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.object.alternaterep.client.filters.PARLatestIterationFilter"/>
+      </action>
+      <action name="newSphereSpatialRuleGWT">
+         <command class="com.ptc.windchill.enterprise.object.alternaterep.client.action.NewSphereSpatialRuleAction"/>
+         <includeFilter name="com.ptc.windchill.enterprise.object.alternaterep.client.filters.RootNodeNotCheckedOutByOtherFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.object.alternaterep.client.filters.PARLatestIterationFilter"/>
+      </action>
+      <action name="newProximitySpatialRuleGWT">
+         <command class="com.ptc.windchill.enterprise.object.alternaterep.client.action.SetProximitySpatialRuleAction"/>
+         <includeFilter name="com.ptc.windchill.enterprise.object.alternaterep.client.filters.RootNodeNotCheckedOutByOtherFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.structurecomponent.client.filters.OneSelectionInPVFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.object.alternaterep.client.filters.PARLatestIterationFilter"/>
+      </action>
+      <action name="updateSpatialRuleGWT">
+         <command class="com.ptc.windchill.enterprise.object.alternaterep.client.action.UpdateSpatialRuleAction"/>
+         <includeFilter name="com.ptc.windchill.enterprise.object.alternaterep.client.filters.PARLatestIterationFilter"/>
+      </action>
+      <action name="deleteRuleGWT">
+         <command class="com.ptc.windchill.enterprise.object.alternaterep.client.action.DeleteRuleAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.object.alternaterep.client.filters.CBDeleteRuleFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.object.alternaterep.client.filters.PARLatestIterationFilter"/>
+      </action>  
+   </objecttype>
+</listofactions>

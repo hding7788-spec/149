@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+
+<actionmodels>
+
+<!-- Part Information page Classification attributes table -->
+   <model name="partClassificationAttributesTableToolBar" >
+      <action name="editPartClassificationAttrs"            type="part"/>  <!-- Edit Part -->
+      <action name="checkoutAndEditPartClassificationAttrs" type="part"/>  <!-- Check Out and Edit Part -->
+   </model>
+
+</actionmodels>

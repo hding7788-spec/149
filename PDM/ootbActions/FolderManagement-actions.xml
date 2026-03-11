@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+
+<listofactions>
+
+   <objecttype name="folder" 
+               class="wt.folder.SubFolder" 
+               resourceBundle="com.ptc.windchill.enterprise.folder.FolderActionResource">
+               
+      <!-- Override the definition of the "view" action (for folders) to include the "fbInfoPage=true" parameter in the URL -->
+               
+      <action name="view">
+         <command url="/app/#ptc1/tcomp/infoPage?fbInfoPage=true" windowType="page"/>
+      </action>
+
+
+      <!-- Create folder actions -->
+
+      <action name="create" uicomponent="PROJECT_CREATE_FOLDERS" ajax="row">
+         <command class="com.ptc.windchill.enterprise.folder.forms.CreateFolderFormProcessor"
+                  method="execute"
+                  windowType="popup"
+                  onClick="validateCreateLocation (event)" />
+         <includeFilter name="projectM4D" />
+         <includeFilter name="hideFromNonAgreementMgrs" />
+      </action>
+
+      <action name="create_folder_network" enabledwhensuspended="true" ajax="row">
+         <command class="com.ptc.windchill.enterprise.folder.forms.CreateFolderFormProcessor"
+                  method="execute"
+                  windowType="popup"
+                  onClick="checkValidCreateLocation (event)" />
+          <includeFilter name="projectM4D" />
+      </action>
+
+
+      <!-- Edit folder actions -->
+
+      <action name="edit" ajax="row" uicomponent="EDIT_FOLDER">
+         <command class="com.ptc.windchill.enterprise.folder.forms.EditFolderFormProcessor"
+                  method="execute"
+                  windowType="popup" />
+      </action>
+
+      <action name="edit_folder_network" ajax="row" uicomponent="EDIT_FOLDER">
+         <command class="com.ptc.windchill.enterprise.folder.forms.EditFolderFormProcessor"
+                  method="execute"
+                  windowType="popup" />
+      </action>
+
+      <!-- Other actions.  Are these still needed/used? -->
+
+      <action name="WFMULTICHECKOUT" multiselect="true" renderType="PDM" selectRequired="true">
+         <command windowType="popup"
+                  class="java.lang.Object"
+                  method="WFMULTICHECKOUT"
+                  onClick="validateMultiCheckoutSelection (event)" />
+      </action>
+
+      <action name="PAGERELOADINGMULTICHECKOUT" multiselect="true" renderType="PDM" selectRequired="true">
+         <command windowType="popup"
+                  class="java.lang.Object"
+                  method="PAGERELOADINGMULTICHECKOUT"
+                  onClick="validateMultiCheckoutSelection (event)" />
+         <includeFilter name="projectM4D" />
+         <includeFilter name="disableForAdminLockedBaseline"/>
+      </action>
+
+      <action name="WFMULTISAVEAS" renderType="PDM" uicomponent="SAVE_AS"  multiselect="true" selectRequired="true">
+         <command windowType="page"
+                  class="java.lang.Object"
+                  method="WFMULTISAVEAS"
+                  onClick="validateMultiSaveAsSelection (event)" />
+      </action>
+
+      <action name="MULTIRENAME" renderType="PDM" multiselect="true" selectRequired="true">
+         <command windowType="page"
+                  class="java.lang.Object"
+                  method="MULTIRENAME"
+                  onClick="validateMultiRenameSelection (event)" />
+      </action>
+
+      <action name="WFADDTOWORKSPACE" multiselect="true" renderType="PDM" selectRequired="true" uicomponent="ADD_TO_WORKSPACE">
+         <command windowType="popup"
+                  class="java.lang.Object"
+                  method="WFADDTOWORKSPACE"
+                  onClick="validateAddToWorkspaceSelection (event)" />
+         <includeFilter name="projectM4D" />
+      </action>
+
+
+      <!-- SPR 1411875: Clicking the Apply button on a New Folder wizard should reset the wizard
+           to the initial step.  I (John Dullum) had to override the Apply button in order to
+           redirect the user to the first step.  jdullum_216 should be removed once it is supported
+           by CommonComponents.
+
+           [jeclark:20091022.0951CST] I tried removing this, and the corresponding function in
+           netmarkets/jsp/folder/create.jsp, and that resulted in NO "Apply" button appearing on
+           the folder create wizard.  I was unable to get one to show up, so I just restored
+           the original files.
+      -->
+      <action name="folderApplyButton" id="PJL_wizard_apply">
+         <command class=""
+                  method=""
+                  windowType="page"
+                  url="javascript:onFolderApply();" />
+      </action>
+
+   </objecttype>
+
+</listofactions>

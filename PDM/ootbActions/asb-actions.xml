@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<listofactions>
+   <objecttype name="asb" resourceBundle="com.ptc.windchill.enterprise.associativity.asb.asbActionsRB">
+
+      <action name="filterGroupASB">
+         <command class="com.ptc.windchill.enterprise.associativity.asb.client.ASBToolbarFilterAction"/>
+      </action>
+
+      <action name="versionControlGroupASB">
+         <command class="com.ptc.windchill.enterprise.associativity.asb.client.ASBToolbarGenericControlAction"/>
+      </action>
+
+      <action name="editingGroupASB">
+         <command class="com.ptc.windchill.enterprise.associativity.asb.client.ASBToolbarGenericControlAction"/>
+      </action>
+
+      <action name="testMiddleAction">
+         <command class="com.ptc.windchill.enterprise.associativity.asb.client.action.middle.TestMiddleAction"/>
+      </action>
+
+      <action name="partCopyVizASB">
+         <command class="com.ptc.windchill.enterprise.associativity.asb.client.viz.ASBVizCopyAction"/>
+      </action>
+
+      <action name="updateEquivalenceLinkASB">
+         <command class="com.ptc.windchill.enterprise.associativity.asb.client.action.UpdateEquivalenceLinkAction"/>
+         <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.UpdateEquivalenceLinkActionFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.ASBValidOrEqualClientFilter" /> 
+      </action>
+
+      <action name="createEquivalenceLinkASB">
+         <command class="com.ptc.windchill.enterprise.associativity.asb.client.action.CreateEquivalenceLinkAction"/>
+         <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.UpstreamOneSelectionFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.DownstreamOneSelectionFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.UpstreamIsMasterFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.DownstreamIsMasterFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.MiddleASBInvalidClientFilter"/>
+      </action>
+      
+      <action name="updateStructureAssociativityASB">
+         <command class="com.ptc.windchill.enterprise.associativity.asb.client.action.UpdateStructureAssociativityAction"/>
+         <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.UpstreamOneSelectionFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.DownstreamOneSelectionFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.UpstreamIsMasterFilter"/>
+         <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.DownstreamIsMasterFilter"/>
+      </action>
+      
+      <action name="reviseWithCurrentLinkASB">
+         <command class="com.ptc.windchill.enterprise.associativity.asb.client.action.ReviseWithCurrentLinkAction"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.CheckinFilter" />
+         <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.ASBValidOrEqualClientFilter" /> 
+      </action>
+      
+      <action name="removeEquivalenceLinkASB">
+         <command class="com.ptc.windchill.enterprise.associativity.asb.client.action.RemoveEquivalenceLinkAction"/>
+         <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.action.RemoveEquivalenceLinkActionFilter"/>
+         <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+      </action>
+      
+      
+        <action name="asbCheckoutGWT">
+            <command class="com.ptc.windchill.enterprise.associativity.asb.client.action.ASBCheckoutAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.DisableForBlankStructureModelsInSelectionFilter"/>
+            <includeFilter name="disableForNewObjectInWorkspace"/>
+            <includeFilter name="disableForAdminLocked"/>
+            <includeFilter name="disableForPartToCadBuildAdminLocked"/>
+            <nonSupportedTypes>
+                <type value="wt.epm.EPMDocument"/>
+            </nonSupportedTypes>
+        </action>
+        
+        <action name="asbCheckinGWT">
+            <command class="com.ptc.windchill.enterprise.associativity.asb.client.action.ASBCheckInAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.DisableForBlankStructureModelsInSelectionFilter"/>
+            <nonSupportedTypes>
+                <type value="wt.epm.EPMDocument"/>
+            </nonSupportedTypes>
+        </action>
+        
+        <action name="asbUndoCheckoutGWT">
+            <command class="com.ptc.windchill.enterprise.associativity.asb.client.action.ASBUndoCheckoutAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.DisableForBlankStructureModelsInSelectionFilter"/>
+            <nonSupportedTypes>
+                <type value="wt.epm.EPMDocument"/>
+            </nonSupportedTypes>
+        </action>
+
+        <action name="asbNewRevisionGWT" ajax="component">
+            <command class="com.ptc.windchill.enterprise.associativity.asb.client.action.ASBNewRevisionAction" method="execute" url="/servlet/WindchillAuthGW/wt.enterprise.URLProcessor/generateForm" windowType="lightbox"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.DisableForAdminLockedFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.DisableForPartToCadBuildAdminLockedFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>        
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsEnterpriseDataFilter"/>
+        </action>     
+
+        <!-- Need to keep the name "relatedObjectsGWT", since it's hard-coded in ContextMenuBuilder -->
+        <action name="relatedObjectsGWT">
+            <command class="com.ptc.cat.gxt.client.action.RelatedObjectsAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.ShowHideRelatedInfoFilter"/>
+            <includeFilter name="enterpriseDataEnabledFilter"/>
+        </action>
+        
+        <action name="emphasizeSelectionASB">
+            <command class="com.ptc.windchill.enterprise.associativity.asb.client.action.EmphasizeSelectionAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+        </action>
+        
+        <action name="clearEmphasizeASB">
+            <command class="com.ptc.windchill.enterprise.associativity.asb.client.action.ClearEmphasizeAction"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsRootModelValidFilter"/>
+        </action>
+        
+        <action name="asbViewInfoInNewWindowGWT">
+            <command class="com.ptc.windchill.enterprise.associativity.asb.client.action.ASBViewInfoAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+        </action>
+        
+        <action name="removeViewSpecificEnterpriseDataASB">
+            <command class="com.ptc.windchill.enterprise.associativity.asb.client.action.RemoveViewSpecificEnterpriseDataAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsEnterpriseDataFilter"/>
+        </action>
+        
+        <action name="updateAlternateBOM">
+            <command class="com.ptc.windchill.enterprise.associativity.asb.client.action.UpdateAlternateBOMAction"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataVisibilityFilter"/>
+        </action>
+        
+         <action name="vizCopyActionASB">
+            <command class="com.ptc.windchill.enterprise.associativity.asb.client.viz.ASBVizCopyAction"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.action.IsPVInstanceSelected"/>
+        </action>
+        
+        <action name="vizUpstreamOptionRenderGWT">
+            <command class="com.ptc.windchill.enterprise.associativity.asb.client.action.ASBVizOptionsRendersAction" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.VizOptionRenderFilter"/>
+        </action>
+        
+        <action name="vizDownstreamOptionRenderGWT">
+            <command class="com.ptc.windchill.enterprise.associativity.asb.client.action.ASBVizOptionsRendersAction" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.VizOptionRenderFilter"/>
+       </action>
+       
+       <!-- Need to keep the name "showDefaultRelatedObjectsGWT", since it's hard-coded in ContextMenuBuilder -->
+        <action name="showDefaultRelatedObjectsGWT"  ajax="row">
+        	<command class="com.ptc.cat.gxt.client.action.ShowDefaultRelatedObjectsAction"/>
+         	<includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+           	<includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+          	<includeFilter name="com.ptc.windchill.enterprise.part.psb.client.filters.ShowHideRelatedInfoFilter"/>
+   			<includeFilter name="enterpriseDataEnabledFilter"/>
+        </action>
+    
+        <action name="refreshASBGWT">
+            <command class="com.ptc.windchill.enterprise.associativity.asb.client.action.ASBRefreshAction"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.action.RefreshActionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+        </action>
+        
+        <action name="toggleUpstreamEquivelenceOccurrenceStatusActionASBGWT">
+            <command class="com.ptc.windchill.enterprise.associativity.asb.client.action.ToggleUpstreamEquivalenceOccurrenceStatusAction"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.ToggleUpstreamEquivalenceOccurrenceStatusActionFilter"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsRootModelValidFilter"/>
+        </action>
+        
+     <action name="selectEquivalentOccurrencesGWT">
+            <command class="com.ptc.windchill.enterprise.associativity.asb.client.action.SelectEquivalentOccurrencesAction"/>            
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.SelectEquivalentItemsActionFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.ASBValidOrEqualClientFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.VizOptionRenderFilter"/>  
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OccurrenceModeFilter"/>  
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotRootNodeFilter"/>
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+            </supportedTypes>
+        </action>
+        
+        <action name="selectNonEquivalentOccurrencesGWT">
+            <command class="com.ptc.windchill.enterprise.associativity.asb.client.action.SelectOccurrencesAction"/>            
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OneOrMoreSelectionFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.IsNotUnspecifiedIterationFilter"/>
+            <includeFilter name="com.ptc.cat.ui.client.internal.action.OccurrenceModeFilter"/>  
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.IsNotLeafNodeFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.ASBValidOrEqualClientFilter" />
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.IsNotEnterpriseDataFilter"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.internal.filter.VizOptionRenderFilter"/>  
+            <supportedTypes>
+                <type value="wt.part.WTPart" />
+            </supportedTypes>
+        </action>
+        
+       <action name="updateEquivalenceOccurrenceStatusASB">
+            <command class="com.ptc.windchill.enterprise.associativity.asb.client.action.UpdateEquivalentOccurrenceStatusAction"/>
+            <includeFilter name="com.ptc.windchill.enterprise.associativity.asb.client.filter.ToggleUpstreamEquivalenceOccurrenceStatusActionFilter"/>
+            <includeFilter name="com.ptc.windchill.baseclient.client.internal.filter.IsRootModelValidFilter"/>
+        </action>
+
+        
+    </objecttype>
+</listofactions>

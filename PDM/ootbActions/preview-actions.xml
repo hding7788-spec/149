@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE listofactions SYSTEM "actions.dtd">
+<listofactions>
+
+	<objecttype name="preview" class="ext.casc.preview.Preview" resourceBundle="ext.casc.preview.previewResource">
+
+		<action name="attributes">
+			<component name="previewAttributes" windowType="page"/>
+		</action>
+
+    	<action name ="previewObjects">
+    		<command url="netmarkets/jsp/ext/casc/preview/previewObjects.jsp" />
+   	 	</action>
+
+      	<action name="updatePreview" resourceBundle="ext.casc.preview.previewResource">
+			<command url="netmarkets/jsp/ext/casc/preview/updatePreview.jsp" class="com.ptc.core.components.forms.DefaultEditFormProcessor" method="execute" windowType="popup" />
+		</action>
+
+      	<action name="deletePreview" ajax="row" uicomponent="DELETE" ajaxActionClass="netmarkets/jsp/object/delete.jsp">
+          	<command url="" class="com.ptc.windchill.enterprise.object.commands.DeleteObjectCommands" method="delete" onClick="JCAConfirm(&apos;com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE&apos;)"/>
+      	</action>
+
+	  </objecttype>
+
+</listofactions>

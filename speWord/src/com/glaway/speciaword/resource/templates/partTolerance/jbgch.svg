@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+]>
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="${total_width + imageWidth + 1}" height="25px" viewBox="0.079 1.026 ${total_width + imageWidth + 1} 25" enable-background="new 0.079 1.026 98 25"
+	 xml:space="preserve">
+<defs>
+</defs>
+
+<rect x="0.5" y="1.643" fill="none" stroke="#000000" stroke-miterlimit="10" width="${total_width + imageWidth}" height="23.767"/>
+<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="${imageWidth}" y1="1.643" x2="${imageWidth}" y2="25.409"/>
+<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="${imageWidth}" y1="13.528" x2="${total_width + imageWidth}" y2="13.528"/>
+<text transform="matrix(1 0 0 1 ${imageWidth + tolerance1_start + 2} 12.2168)" font-family="'宋体'" font-size="14">${tolerance1}</text>
+<text transform="matrix(1 0 0 1 ${imageWidth + 2} 24.1289)" font-family="'宋体'" font-size="14">${tolerance2}</text>
+<text transform="matrix(1 0 0 1 ${s_line_start + 13 } 24.1289)" font-family="'宋体'" font-size="14">${tolerance3}</text>
+<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="${s_line_start}" y1="14.666" x2="${s_line_start - 3.21}" y2="23.889"/>
+<rect x="${s_line_start + 1.743}" y="14.936" fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="8.689" height="8.686"/>
+
+<#switch model_1>
+	<#case "1">
+		<polygon stroke="#010101" stroke-miterlimit="10" points="15.1,11.964 20.258,5.757 19.416,13.271 "/>
+		<line fill="none" stroke="#010101" stroke-width="0.75" stroke-miterlimit="10" x1="17.602" y1="11.835" x2="12.66" y2="23.133"/>
+		<polygon stroke="#010101" stroke-miterlimit="10" points="6.277,11.966 11.436,5.757 10.592,13.274 "/>
+		<line fill="none" stroke="#010101" stroke-width="0.75" stroke-miterlimit="10" x1="8.779" y1="11.837" x2="3.837" y2="23.138"/>
+		<line fill="none" stroke="#010101" stroke-width="0.75" stroke-miterlimit="10" x1="3.659" y1="22.922" x2="12.945" y2="22.922"/>
+	<#break>
+	<#case "2">
+		<line fill="none" stroke="#010101" stroke-miterlimit="10" x1="11.814" y1="4.147" x2="11.814" y2="23.419"/>
+		<line fill="none" stroke="#010101" stroke-miterlimit="10" x1="21.564" y1="23.419" x2="2.693" y2="23.419"/>
+		<line fill="none" stroke="#010101" stroke-width="0.75" stroke-miterlimit="10" x1="2.002" y1="23.419" x2="3.38" y2="23.419"/>
+		<line fill="none" stroke="#010101" stroke-width="0.75" stroke-miterlimit="10" x1="20.876" y1="23.419" x2="22.254" y2="23.419"/>
+	<#break>
+	<#case "3">
+		<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="21.776" y1="13.827" x2="2.733" y2="13.827"/>
+		<line fill="none" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" x1="2.036" y1="13.827" x2="3.429" y2="13.827"/>
+		<line fill="none" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" x1="21.079" y1="13.827" x2="22.471" y2="13.827"/>
+		<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="18.179" y1="9.13" x2="6.329" y2="9.13"/>
+		<line fill="none" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" x1="5.895" y1="9.13" x2="6.762" y2="9.13"/>
+		<line fill="none" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" x1="17.749" y1="9.13" x2="18.612" y2="9.13"/>
+		<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="18.179" y1="18.527" x2="6.329" y2="18.527"/>
+		<line fill="none" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" x1="5.895" y1="18.527" x2="6.762" y2="18.527"/>
+		<line fill="none" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" x1="17.749" y1="18.527" x2="18.612" y2="18.527"/>
+	<#break>
+	<#case "4">
+		<path fill="none" stroke="#010101" stroke-miterlimit="10" d="M3.283,17.865h18.361c0,0,0.17-9.041-9.379-9.352
+		C12.265,8.513,3.793,8.4,3.283,17.865z"/>
+	<#break>
+	<#case "5">
+		<polygon fill="none" stroke="#010101" stroke-miterlimit="10" points="15.607,22.538 4.849,22.542 8.708,4.492 19.466,4.49 "/>
+	<#break>
+	<#case "6">
+		<line fill="none" stroke="#010101" stroke-miterlimit="10" x1="5.511" y1="23.044" x2="9.463" y2="3.9"/>
+		<line fill="none" stroke="#010101" stroke-miterlimit="10" x1="14.399" y1="23.044" x2="18.35" y2="3.9"/>
+	<#break>
+	<#case "7">
+		<line fill="none" stroke="#010101" stroke-miterlimit="10" x1="2.702" y1="21.891" x2="22.259" y2="21.891"/>
+		<line fill="none" stroke="#010101" stroke-miterlimit="10" x1="3.169" y1="21.631" x2="20.237" y2="4.562"/>
+	<#break>
+	<#case "8">
+		<polygon stroke="#010101" stroke-miterlimit="10" points="11.346,11.724 15.953,5.065 15.199,13.127 "/>
+		<line fill="none" stroke="#010101" stroke-width="0.5" stroke-miterlimit="10" x1="13.58" y1="11.587" x2="9.167" y2="23.71"/>
+	<#break>
+	<#case "9">
+		<circle fill="none" stroke="#010101" stroke-miterlimit="10" cx="12.423" cy="13.59" r="9.187"/>
+		<path fill="none" stroke="#010101" stroke-miterlimit="10" d="M17.719,13.588c0,2.932-2.37,5.299-5.296,5.299
+		c-2.928,0-5.296-2.369-5.296-5.299c0-2.924,2.372-5.294,5.296-5.294C15.352,8.292,17.719,10.663,17.719,13.588z"/>
+	<#break>
+	<#case "10">
+		<circle fill="none" stroke="#010101" stroke-miterlimit="10" cx="12.391" cy="13.374" r="5.686"/>
+		<line fill="none" stroke="#010101" stroke-miterlimit="10" x1="2.531" y1="13.375" x2="22.248" y2="13.375"/>
+		<line fill="none" stroke="#010101" stroke-miterlimit="10" x1="12.386" y1="3.517" x2="12.386" y2="23.23"/>
+	<#break>
+	<#case "11">
+		<path fill="none" stroke="#010101" stroke-miterlimit="10" d="M3.166,18.179c0-5.138,4.169-9.307,9.309-9.307
+		c5.143,0,9.312,4.167,9.312,9.307"/>
+	<#break>
+	<#case "12">
+		<circle fill="none" stroke="#010101" stroke-miterlimit="10" cx="12.4" cy="13.741" r="8.97"/>
+	<#break>
+	<#case "13">
+		<circle fill="none" stroke="#010101" stroke-miterlimit="10" cx="12.204" cy="13.848" r="4.581"/>
+		<line fill="none" stroke="#010101" stroke-miterlimit="10" x1="5.121" y1="23.623" x2="9.155" y2="4.073"/>
+		<line fill="none" stroke="#010101" stroke-miterlimit="10" x1="15.111" y1="23.623" x2="19.149" y2="4.073"/>
+	<#break>
+	<#case "14">
+		<line fill="none" stroke="#010101" stroke-miterlimit="10" x1="20.377" y1="13.561" x2="4.221" y2="13.561"/>
+		<line fill="none" stroke="#010101" stroke-width="0.75" stroke-miterlimit="10" x1="3.63" y1="13.561" x2="4.812" y2="13.561"/>
+		<line fill="none" stroke="#010101" stroke-width="0.75" stroke-miterlimit="10" x1="19.786" y1="13.561" x2="20.966" y2="13.561"/>
+	<#break>
+	<#case "15">
+	<#break>
+</#switch>
+</svg>

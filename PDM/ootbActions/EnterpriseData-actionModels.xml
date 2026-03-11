@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+
+<actionmodels resourceBundle="com.ptc.windchill.enterprise.data.enterpriseDataResource">
+  
+    <model name="enterpriseDataTabSet" >
+        <submodel name="infoDetails"/>
+        <submodel name="enterpriseDataInfoHistoryTab"/>
+        <submodel name="enterpriseDataInfoRelatedItemsTab"/>
+    </model>
+    
+    <model name="infoDetails" resourceBundle="com.ptc.core.ui.navigationRB">
+        <action name="attributes" type="object"/>
+    </model>
+    
+    <model name="enterpriseDataInfoHistoryTab">
+       <action name="versionHistory" type="history"/>
+       <action name="timelineHistory" type="history"/>
+    </model>
+    
+    <!-- Enterprise Data information page Actions list -->
+    <model name="more enterprise data actions" menufor="com.ptc.windchill.enterprise.data.EnterpriseData">
+        <action name="checkin" type="wip"/>                              <!-- Check In -->
+        <action name="checkout" type="wip"/>                             <!-- Check Out -->
+        <action name="checkoutAndEdit" type="enterprisedata"/>           <!-- Check Out and Edit -->
+        <action name="undocheckout" type="object"/>                      <!-- Undo Checkout -->
+        <action name="edit" type="enterprisedata"/>                      <!-- Edit -->
+        <action name="REVISEITEMS" type="pdmObject"/>                    <!-- Revise -->
+        <action name="separator" type="separator"/>
+        <submodel name="more enterprise data actions new"/>              <!-- New ==> -->
+        <action name="separator" type="separator"/>
+        <action name="SETSTATE" type="pdmObject"/>                       <!-- Set State -->
+        <action name="separator" type="separator"/> 
+        <submodel name="more enterprise data actions add"/>              <!-- Add ==> -->
+        <action name="separator" type="separator"/>
+        <action name="track_new_work" type="resourceAssignment" /><!-- Track new Work against subject of deliverable-->
+        <action name="new_plan_activity" type="planActivity" /><!-- New Plan Activity against subject -->      
+    </model>
+    
+    <model name="more enterprise data actions new">
+        <action name="create" type="changeRequest"/>                     <!-- New Change Request -->
+        <action name="create" type="promotionRequest"/>                  <!-- New Promotion Request -->
+    </model>
+    
+    <model name="more enterprise data actions add">
+        <action name="addToBaselineSingle" type="baseline"/>             <!-- Add to Baseline -->
+    </model>
+    <model name="related parts enterprise data table actions">
+		<action name="track_new_work_table" type="resourceAssignment" /><!-- Track new Work against subject of deliverable-->
+		<action name="new_plan_activity_table" type="planActivity" /><!-- New Plan Activity against subject -->      
+    </model>
+    <model name="enterpriseDataInfoRelatedItemsTab" resourceBundle="com.ptc.windchill.enterprise.data.enterpriseDataResource">
+        <action name="relatedEnterpriseDatasDocuments" type="enterprisedata"/>
+        <action name="relatedEnterpriseDatasReferences" type="enterprisedata"/>
+        <action name="relatedEnterpriseDatasCADDocuments" type="enterprisedata"/>
+        <action name="enterpriseDataAssociatedPartVersion" type="enterprisedata"/>
+        <action name="scheduledDeliverables" type="planActivity"/>             <!-- Associated PlanActivities which act as Scheduled Deliverables. -->
+
+    </model>
+    
+    <model name="EnterpriseDataRelatedDocumentDescribesToolBar">
+        <action name="ed_related_add_described" type="enterprisedata" shortcut="true"/>        <!-- Add Described By Document -->
+        <action name="related_doc_create_wizard_enterprisedata_described" type="document" shortcut="true"/>        <!-- Create and associate a described by document -->
+        <action name="ed_related_delete_described" type="enterprisedata" shortcut="true"/>        <!-- Remove Described By Document -->
+        <action name="related_copy_enterprisedata" type="enterprisedata" shortcut="true"/>        <!-- Copy to Clipboard -->
+        <action name="separator" type="separator" shortcut="true"/>   <!-- ===================================== -->
+        <action name="ed_related_paste_described" type="enterprisedata" shortcut="true"/>        <!-- Paste Described By Document from Clipboard -->
+        <action name="ed_related_paste_select_described" type="enterprisedata" shortcut="true"/>    <!-- Paste Select Described By Document from Clipboard -->
+    </model>
+    
+    <!-- Enterprise Data information page Related Documents "References Documents" table -->
+    <model name="EnterpriseDataRelatedDocumentReferencesToolBar">
+        <action name="ed_related_add_references" type="enterprisedata" shortcut="true"/>        <!-- Add References Document -->
+        <action name="related_doc_create_wizard_enterprisedata_references" type="document" shortcut="true"/>    <!-- Create and associate a references document -->
+        <action name="ed_related_delete_references" type="enterprisedata" shortcut="true"/>        <!-- Remove References Document -->
+        <action name="related_copy_enterprisedata" type="enterprisedata" shortcut="true"/>        <!-- Copy to Clipboard -->
+        <action name="separator" type="separator" shortcut="true"/>   <!-- ===================================== -->
+        <action name="ed_related_paste_references" type="enterprisedata" shortcut="true"/>        <!-- Paste References Document from Clipboard -->
+        <action name="ed_related_paste_select_references" type="enterprisedata" shortcut="true"/>      <!-- Paste Select References Document from Clipboard -->
+    </model>
+    
+    <!-- Enterprise Data information page Related Documents "References Documents" table -->
+    <model name="EnterpriseDataCADDocumentToolBar">
+        <action name="ed_related_add_epmdoc" type="enterprisedata" shortcut="true"/>        <!-- Add References Document -->
+        <action name="ed_related_delete_epmdoc" type="enterprisedata" shortcut="true"/>        <!-- Remove References Document -->
+        <action name="related_copy_enterprisedata" type="enterprisedata" shortcut="true"/>        <!-- Copy to Clipboard -->
+        <action name="separator" type="separator" shortcut="true"/>   <!-- ===================================== -->
+        <action name="ed_related_paste_epmdoc" type="enterprisedata" shortcut="true"/>        <!-- Paste References Document from Clipboard -->
+        <action name="ed_related_paste_select_epmdoc" type="enterprisedata" shortcut="true"/>      <!-- Paste Select References Document from Clipboard -->
+    </model>
+   
+</actionmodels>

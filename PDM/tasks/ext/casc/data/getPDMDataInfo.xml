@@ -1,0 +1,54 @@
+<%@page language="java" session="false" access="http|soap" contentType="text/xml"%>
+<%@taglib uri="http://www.ptc.com/infoengine/taglib/core" prefix="ie"%>
+<%@page import="java.io.*"%>
+<%@page import="java.util.*"%>
+<%@page import="ext.casc.integrate.process.ProcessService"%>
+<%@page import=" java.lang.Exception"%>
+
+<%
+String number = (String)getParam("number");
+String version = (String)getParam("version");
+String type = (String)getParam("type");
+String productNumbers = (String)getParam("productNumbers");
+String stage = (String)getParam("stage");
+String batch = (String)getParam("batch");
+String result = "";
+System.out.println("------getPDMDataInfo----------start--------");
+System.out.println("------number=" + number);
+ProcessService process = new ProcessService();
+try{
+	if(type.equals("1")){
+		result =process.getAllApprovedTechnics(number);
+	}
+	if(type.equals("2")){
+		result =process.getTechnicsPdfUrl(number, version);
+	}
+	if(type.equals("3")){
+		result =process.getTechnicsCatalogs(number,stage,batch);
+	}
+	if(type.equals("4")){
+		result =process.getChangeOrder2(number,stage,batch);
+	}
+	if(type.equals("5")){
+		result = process.getProcessNoticeByProductNum(productNumbers);
+	}
+	if(type.equals("6")){
+		result = process.getProcessPlanByProcessNumber(number);
+	}
+	if(type.equals("7")){
+		result = process.getChangeOrder2Info(number);
+	}
+}catch (Exception e) {
+	result = e.getLocalizedMessage();
+}
+System.out.println("----result----"+result);
+System.out.println("------getPDMDataInfo----------end--------");
+%>
+
+<ie:webject name="Create-Group" type="GRP">
+  <ie:param name="ELEMENT" data="<%=result%>"/>
+  <ie:param name="CLASS" data="Status"/>
+  <ie:param name="GROUP_OUT" data="${@FORM[]group_out[]}" default="output" />
+</ie:webject>
+
+

@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+
+<listofactions>
+    <objecttype name="ixb" class="com.ptc.windchill.ixb.importer.ImportJob" resourceBundle="com.ptc.windchill.ixb.importer.importerResource">
+        <!-- Import from spreadsheet -->
+        <action name="createImportJob" checkaccess="true" uicomponent="IMPORT_FROM_EXCEL">
+            <command url="/netmarkets/jsp/ixb/importer/import.jsp"
+                     class="com.ptc.windchill.ixb.importer.jca.processor.ImportFormProcessor"
+                     method="execute" 
+                     windowType="popup"/>
+        </action>
+        <action name="import_details_step" required="true">
+            <command url="/netmarkets/jsp/ixb/importer/import_details_step.jsp"
+                windowType="wizards_step" />
+        </action>
+ 
+		<action name="import_validation_step" required="true" preloadWizardPage="false" postloadJS="postValidateStepLoad">
+            <command url="/netmarkets/jsp/ixb/importer/import_validation_step.jsp"
+		                windowType="wizards_step" />
+        </action>
+        
+        <action name="import_preview_step" required="true" preloadWizardPage="false" postloadJS="postPreviewLoad">
+            <command url="/netmarkets/jsp/ixb/importer/import_preview_step.jsp" 
+            			windowType="wizards_step" />
+        </action>
+
+		<action name="importButton" id="importButton">
+        	<command onClick="PTC.ixb.spreadSheet.importParts()" />
+        </action>
+        
+        <action name="nextButton" id="import_next_button">
+        	<command onClick="PTC.ixb.spreadSheet.doNext()"/>
+        </action>
+        
+        <action name="validateSpreadsheet" id="validateSpreadsheet" ajax="row">
+        	<command onClick="PTC.ixb.spreadSheet.reValidateSheet();"/>
+        </action>
+		
+		<action name="prevButton" id="import_prev_button">
+        	<command onClick="javascript:goBack();"/>
+        </action>
+
+        <action name="delete" checkaccess="true" uicomponent="DELETE">
+            <command class="com.ptc.windchill.ixb.importer.jca.command.NmImportJobCommands" method="delete" onClick="JCAConfirm(&apos;com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE&apos;)"/>
+            <access name="full"/>
+        </action>
+
+		<action name="deleteSelectedJobs" resourceBundle="com.ptc.windchill.ixb.importJobMonitor.importJobMonitorResource" multiselect="true" selectRequired="true" ajax="row">
+         <command class="com.ptc.windchill.ixb.importJobMonitor.forms.DeleteSelectedJobsProcessor" method="execute" onClick="JCAConfirm(&apos;com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE&apos;)"/>
+        </action>
+
+
+        <action name="cancel" checkaccess="true" uicomponent="CANCEL">
+            <command class="com.ptc.windchill.ixb.importer.jca.command.NmImportJobCommands" method="cancel"/>
+            <access name="full"/>
+        </action>
+        <action name="baselineList">
+            <component name="ixb.importjob.baseline.list" windowType="page"/>
+        </action>
+        <!-- Export to spreadsheet -->
+
+	  <action name="spreadsheetExport" resourceBundle="com.ptc.windchill.ixb.exporter.exportResource" uicomponent="EXPORT_IMPORTABLE_TO_EXCEL">
+            <command windowType="popup" url="netmarkets/jsp/ixb/exporter/spreadsheetExport.jsp" 
+            		class="com.ptc.windchill.ixb.exporter.forms.XlsExportFormProcessor" method="execute"/>
+        </action>
+
+      <action name="spreadsheetExport_set_step" enabledwhensuspended="true">
+         <command class="" method="" url="netmarkets/jsp/ixb/exporter/spreadsheetExport_set_step.jsp" windowType="wizards_step"/>
+      </action>
+
+        <action name="xlsxExport" checkaccess="true" resourceBundle="com.ptc.windchill.ixb.exporter.exportResource">
+            <command class="com.ptc.windchill.ixb.exporter.jca.command.IxbExportCommands"
+                     method="ixbExport"
+                     url="netmarkets/jsp/object/exportTable.jsp?fileType=ixb.xlsx"
+                     windowType="popup"/>
+            <access name="full"/>
+        </action>
+        
+        <!-- Export to BOM Table Actions  -->
+        <action name="bomTableParentAttribute" checkaccess="true"  resourceBundle="com.ptc.windchill.ixb.exporter.exportResource" id="bomTableParentAttribute" >
+            <command url="netmarkets/jsp/ixb/exporter/setBomTableParentAttribute.jsp"  windowType="popup"/>
+        </action>
+        <action name="bomTableUsageAttribute" checkaccess="true"  resourceBundle="com.ptc.windchill.ixb.exporter.exportResource" id="bomTableUsageAttribute" >
+            <command url="netmarkets/jsp/ixb/exporter/setBomTableUsageAttribute.jsp"  windowType="popup"/>
+        </action>
+        
+        <action name="bomTableParentAttribute_set_step" enabledwhensuspended="true">
+           <command class="" method="" url="netmarkets/jsp/ixb/exporter/bomTableParentAttribute.jsp" windowType="wizards_step"/>
+        </action>
+        <action name="bomTableUsageAttribute_set_step" enabledwhensuspended="true">
+           <command class="" method="" url="netmarkets/jsp/ixb/exporter/bomTableUsageAttribute.jsp" windowType="wizards_step"/>
+        </action>
+        <action name="exportSpreadsheetSetAttributeOkButton" id="exportSpreadsheetSetAttributeOkButton" resourceBundle="com.ptc.windchill.ixb.exporter.exportResource">
+           	<command class="" method="" windowType="page" onClick="javascript:onOkClick();"/>
+	    </action>
+       
+        <!-- Import job Monitor table Actions -->
+        <action name="importJobMonitorMain" resourceBundle="com.ptc.windchill.ixb.importJobMonitor.importJobMonitorResource">
+             <command windowType="popup"/>
+       </action>
+        <action name="refreshImportJobTable" resourceBundle="com.ptc.windchill.ixb.importJobMonitor.importJobMonitorResource">
+              <command onClick="PTC.ixb.ImportJobMonitorUtils.refreshImportJobTableClickHandler(target, table)"/>
+        </action>
+    
+       <action name="autoRefreshImportJobTable" resourceBundle="com.ptc.windchill.ixb.importJobMonitor.importJobMonitorResource" id="autoRefresh_button">
+            <command  onClick="PTC.ixb.ImportJobMonitorUtils.autoRefreshImportJobTableClickHandler(target, table)"/>
+       </action>
+
+	   <action name="revalidateSpreadsheet" id="" resourceBundle="com.ptc.windchill.ixb.importer.importerResource" ajax="row">
+			<command onClick="javascript:doNext();"/>
+      </action>
+
+	   <action name="refreshDetails" resourceBundle="com.ptc.windchill.ixb.importJobMonitor.importJobMonitorResource" id="refreshDetailsButton">
+         <command onClick="PTC.ixb.ImportJobMonitorUtils.refreshDetailsClickHandler()"/>
+      </action>
+      <action name="autoRefreshDetails" resourceBundle="com.ptc.windchill.ixb.importJobMonitor.importJobMonitorResource" id="autoRefreshDetailsButton">
+         <command onClick="PTC.ixb.ImportJobMonitorUtils.autoRefreshDetailsClickHandler(target)"/>
+      </action>
+      
+         
+	  <action name="revalidateSpreadsheet" id="revalidateSpreadsheet" ajax="row">
+			<command onClick="PTC.ixb.spreadSheet.reValidateSheet();" />
+      </action>
+       
+      <action name="stopSpreadsheetValidation" checkaccess="true" >
+            <command class="com.ptc.windchill.ixb.importer.jca.command.NmImportJobCommands" method="cancel"/>
+            <access name="full"/>
+      </action>
+
+	<action name="spreadsheetExportGWT" resourceBundle="com.ptc.windchill.ixb.exporter.exportResource" ajax="component" uicomponent="EXPORT_IMPORTABLE_TO_EXCEL">
+            <command class="com.ptc.cat.ui.client.action.XlsExportAction" method="execute" url="/ptc1/ixb/exporter/spreadsheetExport" windowType="popup"/>
+           
+     </action>
+	
+	 <action name="exportSpreadsheetOkButton" id="exportSpreadsheetOkButton" resourceBundle="com.ptc.windchill.ixb.exporter.exportResource">
+           	  <command class="" method="" windowType="page" onClick="PTC.exportSpreadsheet.exportSpreadsheetUtility.doExport(target)"/>
+	 </action>
+
+	 <action name="launchIXBStructureCompareStreamlineMode">
+			<command windowType="popup"/> 
+	 </action>
+
+    </objecttype>
+</listofactions>

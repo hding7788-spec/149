@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+<listofactions>
+   <objecttype name="roleAccess" class="com.ptc.netmarkets.roleAccess.UIAccess" resourceBundle="com.ptc.netmarkets.roleAccess.roleAccessActionsRB">
+       <action name="modifyRolePrivileges" uicomponent="CONFIGURE_ROLES">
+          <command class="com.ptc.netmarkets.roleAccess.processor.ModifyRoleUIFormProcessor" method="execute" windowType="popup"/>
+          <includeFilter name="projectM4D"/>
+       </action>
+       <action name="modifyRolePrivileges_step">
+          <command windowType="wizard_step"/>
+       </action>
+       <action name="undoRolePrivileges" resourceBundle="com.ptc.netmarkets.roleAccess.roleAccessActionsRB" ajax="row">
+          <command class="com.ptc.netmarkets.roleAccess.NmRoleAccessCommands" method="undoRolePrivileges"/>
+          <includeFilter name="projectM4D"/>
+       </action>
+       <action name="memberPaste" ajax="row">
+          <command class="com.ptc.netmarkets.roleAccess.ProfileCommands" method="memberPaste"/>
+       </action>
+       <action name="pasteProfile">
+          <command class="com.ptc.netmarkets.roleAccess.ProfileCommands" method="pasteProfile"/>
+       </action>
+       <action name="profile_addMembers" ajax="row">
+          <command class="com.ptc.windchill.enterprise.picker.principal.PrincipalCommands" method="addPrincipal" windowType="popup"/>
+       </action>
+
+      <action name="view">
+              <command windowType="page" url="servlet/TypeBasedIncludeServlet?tlnAction=info&amp;tlnType=group"/>
+      </action>
+       <action name="export_profile" ajax="row">
+          <command class="com.ptc.netmarkets.roleAccess.ProfileCommands" method="exportProfile" windowType="popup"/>
+       </action>
+       <action name="export_profile_step" required="true">
+          <command windowType="wizard_step"/>
+       </action>
+       <action name="import_profile">
+          <command class="com.ptc.netmarkets.roleAccess.ProfileCommands" method="importProfile" windowType="popup"/>
+       </action>
+       <action name="import_profile_step" required="true">
+          <command windowType="wizard_step"/>
+       </action>
+       <action name="profile_create">
+          <command class="com.ptc.netmarkets.roleAccess.processor.CreateProfileFormProcessor" method="execute" windowType="popup"/>
+       </action>
+       <action name="profile_create_name_step">
+          <command windowType="wizard_step"/>
+       </action>
+       <action name="profile_create_actions_step">
+          <command windowType="wizard_step"/>
+       </action>
+       <action name="profile_create_members_step">
+          <component name="roleAccess.netmarkets.profile.members" windowType="wizard_step" /> 
+       </action>
+       <action name="profile_update" ajax="row">
+          <command class="com.ptc.netmarkets.roleAccess.processor.EditProfileFormProcessor" method="execute" windowType="popup"/>
+       </action>
+       <action name="profile_edit_name_step">
+          <command windowType="wizard_step"/>
+       </action>
+       <action name="enableProfile" ajax="row">
+          <command class="com.ptc.netmarkets.roleAccess.ProfileCommands" method="enableProfile"/>
+       </action>
+       <action name="disableProfile" ajax="row">
+          <command class="com.ptc.netmarkets.roleAccess.ProfileCommands" method="disableProfile"/>
+       </action>
+       <action name="deleteProfile" selectRequired="true" ajax="row">
+          <command class="com.ptc.netmarkets.roleAccess.ProfileCommands" method="deleteProfile" onClick="JCAConfirm(event,&apos;com.ptc.netmarkets.util.utilResource.CONFIRM_REMOVE&apos;)"/>
+       </action>
+       <action name="saveAs" ajax="row">
+          <command class="com.ptc.netmarkets.roleAccess.processor.SaveAsProfileFormProcessor" method="execute" windowType="popup"/>
+       </action>
+	   <action name="saveAsStandard" ajax="row">
+          <command class="com.ptc.netmarkets.roleAccess.processor.SaveAsProfileFormProcessor" method="execute" windowType="popup"/>
+       </action>
+       <action name="profile_saveAs_name_step">
+          <command windowType="wizard_step"/>
+       </action>
+      <action name="profile_create_attribute_step">
+         <component name="roleAccess.attribute.list" windowType="wizard_step" /> 
+      </action>
+      <action name="addAttributes">
+         <command class="com.ptc.netmarkets.roleAccess.NmRoleAccessCommands" windowType="popup"/>
+      </action>
+      <action name="profile_create_add_attributes_step" resourceBundle="com.ptc.netmarkets.roleAccess.roleAccessActionsRB">
+         <command windowType="wizard_step"/>
+      </action>
+      <action name="profileEditAttribute" ajax="row">
+         <command url="netmarkets/jsp/roleAccess/profile_update.jsp?startStep=roleAccess.profile_create_attribute_step" class="com.ptc.netmarkets.roleAccess.processor.EditProfileFormProcessor" method="execute" windowType="popup"/>
+      </action>
+      <action name="profileEditAttributeToolbar" ajax="page">
+         <description>Edit Profile Attributes from attributes table on info page of profiles.  Set to ajax=page so all updates are displayed when action is done.</description>
+         <command url="netmarkets/jsp/roleAccess/profile_update.jsp?startStep=roleAccess.profile_create_attribute_step" class="com.ptc.netmarkets.roleAccess.processor.EditProfileFormProcessor" method="execute" windowType="popup"/>
+      </action>
+   </objecttype>
+</listofactions>

@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+<listofactions>
+    <objecttype name="smb" class="java.lang.Object" resourceBundle="com.ptc.smb.smbResource">
+
+		<action name="smbWizard">
+            <command class="com.ptc.smb.forms.SMBWizardFormProcessor"
+                method="execute"
+                url="netmarkets/jsp/smb/smbWizard.jsp"
+                windowType="popup" />
+        </action>
+
+		<action name="setNumberSchemeWizStep" beforeJS="disableStandard" afterVK="setNumberSchemeWizStepValidator">
+            <command windowType="wizard_step" url="netmarkets/jsp/smb/setNumberSchemeWizStep.jsp"/>
+        </action>
+
+
+		<!-- <action name="setNumberSchemeWizStep" afterVK="setNumberSchemeWizStepValidator">
+            <component name="smb.config.NumberSchemeAttributePanel" windowType="wizard_step"/>
+        </action> -->
+
+		<action name="setPublishingWizStep" >
+            <command windowType="wizard_step" url="netmarkets/jsp/smb/setPublishingWizStep.jsp"/>
+        </action>
+
+		<action name="setVersionSchemeWizStep">
+            <command windowType="wizard_step" url="netmarkets/jsp/smb/setVersionSchemeWizStep.jsp"/>
+        </action>
+
+      <!--   <action name="setVersionSchemeWizStep">
+            <component name="smb.config.VersionSchemeAttributePanel" windowType="wizard_step"/>
+        </action> -->
+
+		<action name="setParticipantsWizStep">
+            <component name="smb.config.ParticipantsTable" windowType="wizard_step"/>
+        </action>
+
+		<action name="setLifeCycleWizStep">
+     		<command windowType="wizard_step" url="netmarkets/jsp/smb/setLifeCycleWizStep.jsp"/>
+        </action>
+
+		<action name="setAttributesWizStep">
+              <command windowType="wizard_step" url="netmarkets/jsp/smb/setAttributesWizStep.jsp"/>
+        </action>
+
+
+		<action name="setPreferencesWizStep">
+            <command windowType="wizard_step" url="netmarkets/jsp/smb/setPreferencesWizStep.jsp"/>
+        </action>
+
+		<action name="setBackupWizStep">
+            <command windowType="wizard_step" url="netmarkets/jsp/smb/setBackupWizStep.jsp"/>
+        </action>
+
+        <action name="setConfigurationWizStep">
+           <component name="smb.config.ConfigTemplateAttributePanel" windowType="wizard_step"/>
+        </action>
+
+		<!-- <action name="loadTemplateButton" ajax="row">
+            <command class="com.ptc.smb.forms.LoadTemplateFormProcessor"  method="loadXML"/>
+        </action> -->
+
+
+		<action name="loadTemplateButton" ajax="page">
+            <command class="com.ptc.smb.forms.LoadTemplateFormProcessor"
+                method="execute"
+                url="netmarkets/jsp/smb/loadTemplateClerk.jsp"
+                windowType="popup"/>
+        </action>
+
+      <!--   <action name="loadButton" ajax="page">
+            <command class="com.ptc.smb.forms.LoadTemplateFormProcessor"
+                method="execute"
+                url="netmarkets/jsp/smb/loadTemplateClerk.jsp"
+                windowType="popup"/>
+        </action>  -->
+
+        <action name="loadTemplateWizStep"  ajax="page">
+            <component name="smb.config.LoadTemplateAttributePanel" windowType="popup"/>
+        </action>
+
+        <action name="editSchemeDefinationButton">
+            <command  windowType="popup"  url="netmarkets/jsp/smb/smbEditConfigClerk.jsp"/>
+        </action>
+
+        <action name="restoreSampleSchemeButton">
+            <command  windowType="popup"  url="netmarkets/jsp/smb/smbEditConfigClerk.jsp"/>
+        </action>
+
+		<action name="addUserButton" ajax="page"  >
+            <command class="com.ptc.smb.forms.ParticipantsFormProcessor"
+                method="execute"
+                url="netmarkets/jsp/smb/userClerk.jsp?userAction=Add"
+                windowType="popup" />
+        </action>
+
+        <action name="editUserButton" ajax="page" selectRequired="true" multiselect="false">
+	        <command class="com.ptc.smb.forms.ParticipantsFormProcessor"
+                method="execute"
+                url="netmarkets/jsp/smb/userClerk.jsp?userAction=Edit"
+                windowType="popup"/>
+        </action>
+
+
+        <action name="deleteUserButton" multiselect="true" ajax="row" ajaxActionClass="netmarkets/jsp/smb/deleteUser.jsp" selectRequired="true">
+            <command class="" method="" onClick="PTC.validation.deleteObjectsValidation(event)"/>
+        </action>
+
+        <action name="editUserWizStep"  ajax="page">
+            <component name="smb.config.ParticipantsAttributePanel" windowType="popup"/>
+        </action>
+
+        <action name="addAttributeButton" ajax="page"  >
+            <command class="com.ptc.smb.forms.CadAttributesFormProcessor"
+                method="execute"
+                url="netmarkets/jsp/smb/attributesClerk.jsp?userAction=Add"
+                windowType="popup" />
+        </action>
+
+        <action name="editAttributeButton" ajax="page" selectRequired="true" multiselect="false">
+	        <command class="com.ptc.smb.forms.CadAttributesFormProcessor"
+                method="execute"
+                url="netmarkets/jsp/smb/attributesClerk.jsp?userAction=Edit"
+                windowType="popup"/>
+        </action>
+
+           <action name="deleteAttributeButton" multiselect="true" ajax="row" ajaxActionClass="netmarkets/jsp/smb/deleteAttribute.jsp" selectRequired="true">
+            <command class="" method="" onClick="PTC.validation.deleteObjectsValidation(event)"/>
+        </action>
+
+        <action name="editAttributesWizStep"  ajax="page">
+            <component name="smb.config.CadAttributesAttributePanel" windowType="popup"/>
+        </action>
+
+  </objecttype>
+</listofactions>

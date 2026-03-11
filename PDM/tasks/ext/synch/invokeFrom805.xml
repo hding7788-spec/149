@@ -1,0 +1,50 @@
+<?xml version="1.0" standalone="yes"?>
+<%@page language="java" session="false" access="http|soap" %>
+<%@taglib uri="http://www.ptc.com/infoengine/taglib/core" prefix="ie"%>
+<%@page import="wt.adapter.BasicWebjectDelegate"%>
+<%@page import="java.util.*"%>
+<%@page import="ext.casc.ixb.DataReceiveAndImport"%>
+<%@page import="java.net.MalformedURLException"%>
+<%@page import="java.net.URL"%>
+<!--com.infoengine.soap.rpc.def
+Called to Process Deliveried Data.
+@param string site
+@param string filename
+@version 1.0
+-->
+<%
+	String url_Str = (String)getParam("URL");
+	String activityOid805 = (String)getParam("activityOid805");
+	String activityOid149 = (String)getParam("activityOid149");
+	String approvedType = (String)getParam("approvedType");
+	String isFormal = (String)getParam("isFormal");
+	String result="";
+	 if(approvedType.equals("approvedCompleted")){
+            try{
+				ext.casc.workflow.CmWorkflowHelper.completeActivityBy805(activityOid149);
+            }catch(wt.util.WTException e){
+             result = e.getMessage();
+                e.printStackTrace();
+            }
+
+        }else{
+
+		try {
+			DataReceiveAndImport dr = new DataReceiveAndImport(new URL(url_Str),activityOid805,activityOid149,approvedType,isFormal);
+			result = dr.transData();
+			dr.run();
+		} catch (MalformedURLException e) {
+
+			// TODO Auto-generated catch block
+		   result = e.getMessage();
+			e.printStackTrace();
+
+		}
+	}
+%>
+
+<ie:webject name="Create-Group" type="GRP">
+    <ie:param name="GROUP_OUT" data="${@FORM[]group_out[0]}" default="output"/>
+    <ie:param name="CLASS" data="ProcessResult"/>
+  <ie:param name="GROUP_IN" data="<%=result%>"/>
+</ie:webject>

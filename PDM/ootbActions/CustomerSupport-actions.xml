@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM '../../actions.dtd'>
+<listofactions>
+
+  <!-- Site Information definitions -->
+	<!-- Table examples related entries -->
+	<objecttype name="object" class="java.lang.Object" 
+	resourceBundle="com.ptc.customersupport.customerSupportResource">
+	
+	    <action name="com.ptc.customersupport.customerSupportPage">
+	        <component windowType="page"/>
+	    </action>
+
+		<action name="gatherSaveWizard" selectRequired="true" resourceBundle="com.ptc.customersupport.customerSupportResource">
+		    <command windowType="new" url="/netmarkets/jsp/customersupport/gatherSaveWizard.jsp" class="com.ptc.customersupport.GatherSaveWizardFormProcessor" method="execute"/>
+		</action>
+		
+		<action name="gatherSaveWizardActionMenu" selectRequired="true" resourceBundle="com.ptc.customersupport.customerSupportResource">
+		    <command windowType="new" url="/netmarkets/jsp/customersupport/gatherSaveWizard.jsp?actionMenu=true" class="com.ptc.customersupport.GatherSaveWizardFormProcessor" method="execute"/>
+		</action>
+		
+		<action name="gatherSaveWizard_step" id="gatherSaveWizard_step" resourceBundle="com.ptc.customersupport.customerSupportResource">
+		    <command windowType="wizard_step" url="/netmarkets/jsp/customersupport/gatherSaveWizard_step.jsp"/>
+		</action>
+		
+		<action name="progressMonitorWizard" resourceBundle="com.ptc.customersupport.customerSupportResource">
+		    <command windowType="new" url="/netmarkets/jsp/customersupport/gatherSaveWizard.jsp?startStep=gatherSaveWizard_step2" onClick="validateAndExecute()"/>
+		</action>
+		
+		<action name="progressMonitorWizard_step" id="progressMonitorWizard_step" resourceBundle="com.ptc.customersupport.customerSupportResource">
+            <command windowType="wizard_step" url="?startStep=object.gatherSaveWizard_step2"/>
+        </action>
+		
+		<action name="createCategoryWizard" selectRequired="false" resourceBundle="com.ptc.customersupport.customerSupportResource">
+		    <command windowType="new" url="/netmarkets/jsp/customersupport/createCategoryWizard.jsp" class="com.ptc.customersupport.CreateCategoryWizardFormProcessor" method="execute"/>
+		</action>
+		
+		<action name="createCategoryWizard_step" id="createCategoryWizard_step" resourceBundle="com.ptc.customersupport.customerSupportResource" afterJS="appendHiddenInputs">
+		    <command windowType="wizard_step" url="/netmarkets/jsp/customersupport/createCategoryWizard_step.jsp"/>
+		</action>
+		
+	    <action name="createCategoryWizard_step2" id="createCategoryWizard_step2" resourceBundle="com.ptc.customersupport.customerSupportResource">
+		    <command windowType="wizard_step" url="/netmarkets/jsp/customersupport/createCategoryWizard_step2.jsp" />
+		</action>
+		
+		<action name="editCategoryWizard" selectRequired="true" resourceBundle="com.ptc.customersupport.customerSupportResource">
+		    <command windowType="new" url="/netmarkets/jsp/customersupport/editCategoryWizard.jsp" class="com.ptc.customersupport.CreateCategoryWizardFormProcessor" method="execute" />
+		</action>
+		
+		<action name="deleteCategoryAction" selectRequired="true" resourceBundle="com.ptc.customersupport.customerSupportResource">
+			<command class="com.ptc.customersupport.DeleteCategoryAction" method="delete" onClick="JCAConfirm(event,'com.ptc.core.ui.confirmationMessagesRB.DELETE')" />
+		</action>
+		
+		<action name="deleteCategoryActionMenu" selectRequired="false" resourceBundle="com.ptc.customersupport.customerSupportResource">
+			<command class="com.ptc.customersupport.DeleteCategoryAction" method="deleteActionMenu" onClick="JCAConfirm(event,'com.ptc.core.ui.confirmationMessagesRB.DELETE')" />
+		</action>
+
+	</objecttype>
+	
+</listofactions>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="11px" y="0px"
+	 width="${text_width + 30}" height="25px" viewBox="11 0 ${text_width + 30} 25" enable-background="new 11 0 ${text_width + 30} 25" xml:space="preserve">
+<text transform="matrix(1 0 0 1 10.5396 7.1729)" font-family="'宋体'" font-size="10">${upCV}</text>
+<text transform="matrix(1 0 0 1 10.5396 15.1563)" font-family="'宋体'" font-size="10">${downCV}</text>
+<text transform="matrix(1 0 0 1 40.7441 6.3977)" font-family="'宋体'" font-size="10">${upDesc}</text>
+<text transform="matrix(1 0 0 1 40.7441 14.7275)" font-family="'宋体'" font-size="10">${downDesc}</text>
+<text transform="matrix(1 0 0 1 30.0825 24.4336)" fill="#000000" font-family="'宋体'" font-size="11">${GrainType}</text>
+<#if requestCheck == "true">
+	<circle fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" cx="34.609" cy="7.631" r="3.282"/>
+</#if>
+<#if isLineShow == "true">
+	<line fill="none" stroke="#000000" stroke-width="0.8" stroke-miterlimit="10" x1="${text_width + 47.125}" y1="7.5" x2="34.688" y2="7.5"/>
+</#if>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" points="34.688,7.5 20.531,24.434 
+	12.466,16.311 27.292,16.292 "/>
+</svg>

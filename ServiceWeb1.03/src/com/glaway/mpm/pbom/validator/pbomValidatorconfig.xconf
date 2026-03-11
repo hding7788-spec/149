@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Configuration SYSTEM "xconf.dtd">
+<Configuration targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties">
+	
+	<Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="com.glaway.mpm.pbom.validator.PBOMStartFlowZJPartValidator" requestor="null" selector="isZJPartStartPBOMFlow" cardinality="duplicate"/>
+	</Service>
+	
+	
+</Configuration>

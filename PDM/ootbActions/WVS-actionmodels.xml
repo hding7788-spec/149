@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+<actionmodels>
+
+   <model name="repsAndMarkups_actions_column">
+      <action name="openProductViewRepsAndMarkups"  type="wvs"/>
+      <action name="openProductViewStructure"       type="wvs"/>
+      <action name="printProductViewRepsAndMarkups" type="wvs"/>
+      <action name="batchPrint"                     type="wvs"/>
+      <action name="defineClashJobWizard"           type="clashDefinition"/>
+      <action name="viewThumbnailRow"               type="wvs"/>
+      <action name="separator"                      type="separator"/>
+      <action name="setDefaultRep"                  type="wvs"/>
+      <action name="republishRep"                   type="wvs"/>
+      <action name="incrPublish"                    type="sispub"/>
+      <action name="republishIncrement"             type="sispub"/>
+      <action name="postPublishRep"                 type="wvs"/>
+      <action name="saveStructure"                  type="wvs"/>
+      <action name="saveRepresentation"             type="wvs"/>
+      <action name="listRepFiles"                   type="wvs"/>
+      <action name="saveMarkup"                     type="wvs"/>
+      <action name="lockMarkup"                     type="wvs"/>
+      <action name="unlockMarkup"                   type="wvs"/>
+      <action name="enableForwardMarkup"            type="wvs"/>
+      <action name="disableForwardMarkup"           type="wvs"/>
+      <action name="separator"                      type="separator"/>
+      <action name="copyRepsAndMarkups"             type="wvs"/>
+      <action name="pasteRepsAndMarkupsRow"         type="wvs"/>
+      <action name="pasteSelectRepsAndMarkupsRow"   type="wvs"/>
+      <action name="separator"                      type="separator"/>
+      <action name="deleteDefaultRepresentation"    type="wvs"/>
+      <action name="deleteNonDefaultRepresentation" type="wvs"/>
+      <action name="deleteMarkupFolder"             type="wvs"/>
+      <action name="deleteMarkup"                   type="wvs"/>
+      <action name="separator"                      type="separator"/>
+      <action name="ManageSecurity"                 type="accessPermission"/>
+      <action name="securityLabelsSingleObjJCA"     type="securityLabels"/>
+   </model>
+
+   <model name="repsAndMarkups_toolbar">
+      <action name="copySelectedRepsAndMarkups"     type="wvs" shortcut="true"/>
+      <action name="deleteSelectedRepsAndMarkups"   type="wvs"/>
+      <action name="separator"                      type="separator" shortcut="true"/>
+      <action name="pasteRepsAndMarkups"            type="wvs" shortcut="true"/>
+      <action name="pasteSelectRepsAndMarkups"      type="wvs"/>
+      <action name="decideEpmOrFile"                type="wvs" shortcut="true" />
+      <action name="publishRepresentation"          type="techPubs" shortcut="true" />
+      <action name="refreshComponent"               type="object" shortcut="true"/>
+      <action name="queueMonitorMain"               type="wvs" shortcut="true"/>
+   </model>
+
+   <model name="batchPrint_toolbar">
+      <action name="pastePrintableItems"            type="wvs" shortcut="true"/>
+      <action name="pasteSelectPrintableItems"      type="wvs" shortcut="true"/>
+      <action name="separator"                      type="separator" shortcut="true"/>
+      <action name="collectPrintableItems"          type="wvs" shortcut="true"/>
+      <action name="addPrintableItems"              type="wvs" shortcut="true"/>
+      <action name="removeItems"                    type="wvs"/>
+      <action name="separator"                      type="separator" shortcut="true"/>
+      <action name="includePrintableItems"          type="wvs"/>
+      <action name="excludePrintableItems"          type="wvs"/>
+      <action name="separator"                      type="separator" shortcut="true"/>
+      <action name="editPrintOptions"               type="wvs" shortcut="true"/>
+   </model>
+
+   <model name="BatchPrintWizardButtons">
+      <action name="batchPrintSubmitCloseButton"    type="wvs"/>
+      <action name="batchPrintSubmitButton"         type="wvs"/>
+      <action name="batchPrintCancelButton"         type="wvs"/>
+   </model>
+
+   <model name="BatchClashWizardButtons">
+      <action name="batchClashPrevButton"           type="clashDefinition"/>
+      <action name="batchClashNextButton"           type="clashDefinition"/>
+      <action name="okButton"                       type="object"/>
+      <action name="cancelButton"                   type="object"/>
+   </model>
+
+   <model name="BatchClashEditWizardButtons">
+      <action name="batchClashPrevButton"           type="clashDefinition"/>
+      <action name="batchClashNextButton"           type="clashDefinition"/>
+      <action name="saveButton"                     type="object"/>
+      <action name="checkinButton"                  type="object"/>
+      <action name="editCancelButton"               type="object"/>
+   </model>
+
+   <model name="wvsQueueMonitor_actions_column">
+      <action name="deleteSelectedJobs"             type="wvs"/>
+      <action name="resubmitSelectedJobs"           type="wvs"/>
+      <action name="prohibitPublishRow"             type="wvs"/>
+   </model>
+
+   <model name="wvsQueueMonitor_toolbar">
+      <action name="refreshJobList"                 type="wvs" shortcut="true"/>
+      <action name="autoRefreshJobList"             type="wvs" shortcut="true"/>
+      <action name="separator"                      type="separator" shortcut="true"/>
+      <action name="deleteSelectedJobs"             type="wvs" shortcut="true"/>
+      <action name="resubmitSelectedJobs"           type="wvs"/>
+      <action name="prohibitPublish"                type="wvs"/>
+      <action name="separator"                      type="separator"/>
+      <action name="publishStatistics"              type="wvs"/>
+      <action name="publishThumbnail"               type="wvs"/>
+   </model>
+
+   <model name="newRepFromFileWizardButtons">
+      <action name="prevButton"                     type="object"/>
+      <action name="nextButton"                     type="object"/>
+      <action name="submitPublishJob"               type="wvs"/>
+      <action name="cancelButton"                   type="object"/>
+   </model>
+
+   <model name="newRepFromEpmWizardButtons">
+      <action name="prevButton"                     type="object"/>
+      <action name="nextButton"                     type="object"/>
+      <action name="finishButton"                   type="wvs"/>
+      <action name="cancelButton"                   type="object"/>
+   </model>
+
+   <model name="relatedClashReports_toolbar">
+      <action name="compareClashReports"                type="clashReport" shortcut="true"/>
+      <action name="multiEditLifecycleManagedMarkups"   type="clashReport" shortcut="true"/>
+      <action name="deleteSelectedClashReports"         type="clashReport" shortcut="true"/>
+      <action name="separator"                          type="separator" shortcut="true"/>
+      <action name="refreshComponent"                   type="object" shortcut="true"/>
+   </model>
+
+   <model name="relatedClashReports_actions_column" menufor="wt.viewmarkup.LifeCycleManagedWtMarkUp">
+      <action name="openProductViewRepsAndMarkups"      type="wvs"/>
+      <action name="viewClashReport"                    type="clashReport"/>
+      <action name="editLifecycleManagedMarkups"        type="clashReport"/>
+      <action name="deleteClashReport"                  type="clashReport"/>
+      <action name="ManageSecurity"                     type="accessPermission"/>
+      <action name="securityLabelsSingleObjJCA"         type="securityLabels"/>
+   </model>
+
+   <model name="tableOfClashes_toolbar">
+      <action name="openInCreoViewMultiSelect"          type="clashReport" shortcut="true"/>
+      <action name="multiEditLifecycleManagedMarkups"   type="clashReport" shortcut="true"/>
+      <action name="separator"                          type="separator" shortcut="true"/>
+      <action name="refreshComponent"                   type="object" shortcut="true"/>
+      <action name="copySelectedRepsAndMarkups"         type="wvs" shortcut="true"/>
+      <submodel name="new_submenu_for_inteferences" />
+   </model>
+
+   <model name="partEpmClashes_toolbar">
+      <action name="openInCreoViewMultiSelect"          type="clashReport" shortcut="true"/>
+      <action name="multiEditLifecycleManagedMarkups"   type="clashReport" shortcut="true"/>
+      <action name="separator"                          type="separator" shortcut="true"/>
+      <action name="refreshClashes"                     type="clashReport" shortcut="true"/>
+      <action name="copySelectedRepsAndMarkups"         type="wvs" shortcut="true"/>
+      <submodel name="new_submenu_for_inteferences" />
+   </model>
+
+   <model name="tableOfClashes_actions_column"      menufor="wt.viewmarkup.ClashToClashReportLink">
+      <action name="openInCreoViewSingleSelect"     type="clashReport"/>
+      <action name="editLifecycleManagedMarkups"    type="clashReport"/>
+   </model>
+
+   <model name="new_submenu_for_inteferences" resourceBundle="com.ptc.windchill.enterprise.wvs.batchClash.batchClashResource">
+	  <action name="create" type="changeNotice" />
+      <action name="create" type="changeRequest" />
+	  <action name="create" type="problemReport" />
+	  <action name="create" type="variance" />
+   </model>
+</actionmodels>

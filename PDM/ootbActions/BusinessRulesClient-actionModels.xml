@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+<!-- define the actions on the UI components -->
+<actionmodels
+	resourceBundle="com.ptc.windchill.enterprise.businessRules.businessRulesClientActionsRB">
+
+	<model name="BusinessRulesResultOk">
+		<action name="okButton" type="businessRules" />
+	</model>
+
+	<model name="businessRules_results_table">
+		<description>Toolbar actions for the results table on the View
+			Conflicts link from the workflow task</description>
+		<submodel name="exportlisttofile_submenu"/>
+	</model>
+	
+	<model name="businessRules_ruleSets_table">
+		<description>Toolbar actions for the rule set table.</description>
+        <action name="explode" type="folder" shortcut="true"/>
+        <action name="implode" type="folder" shortcut="true"/>		
+		<submodel name="exportlisttofile_submenu"/>
+	</model>	
+
+</actionmodels>

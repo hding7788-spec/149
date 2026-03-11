@@ -1,0 +1,23 @@
+<%@page language="java" session="false" access="http|soap" %>
+<%@taglib uri="http://www.ptc.com/infoengine/taglib/core" prefix="ie"%>
+<%@page import="ext.casc.workflow.CmWorkflowHelper"%>
+<!--com.infoengine.soap.rpc.def
+Simple sample method.  This method generates an Info*Engine group containing
+a single element containing two attributes:
+<ul>
+  <li><strong><code>vmname</code></strong> The virtual machine name of the Info*Engine server.
+  <li><strong><code>date</code></strong> The current date and time.
+</ul>
+-->
+<%
+ String pboNumber = (String)getParam("pboNumber");
+  String pboType = (String)getParam("pboType");
+  String pboVersion = (String)getParam("pboVersion");
+  String result = CmWorkflowHelper.getProcessStatus(pboNumber,pboType,pboVersion);
+  String element = "result=" +result;
+%>
+<ie:webject name="Create-Group" type="GRP">
+  <ie:param name="ELEMENT" data="<%=element%>"/>
+  <ie:param name="CLASS" data="getProcessStatus"/>
+  <ie:param name="GROUP_OUT" data="${@FORM[]group_out[]}"/>
+</ie:webject>

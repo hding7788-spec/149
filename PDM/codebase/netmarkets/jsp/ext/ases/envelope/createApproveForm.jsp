@@ -1,0 +1,62 @@
+<%@ include file="/netmarkets/jsp/components/beginWizard.jspf"%>
+<%@ include file="/netmarkets/jsp/components/includeWizBean.jspf"%>
+<%@ taglib uri="http://www.ptc.com/windchill/taglib/components" prefix="jca"%>
+<%@ taglib uri="http://www.ptc.com/windchill/taglib/fmt" prefix="fmt"%>
+<%@ taglib prefix="attachments" uri="http://www.ptc.com/windchill/taglib/attachments" %>
+
+<%@ taglib prefix="cwiz" uri="http://www.ptc.com/windchill/taglib/changeWizards" %>
+<script language="JavaScript" src='netmarkets/javascript/util/revisionLabelPicker.js'></script>
+
+<fmt:setBundle basename="ext.ases.envelope.envelopeResource"/>
+
+<fmt:message var="defineEnvelopeWizStepLabel" key="envelope.create.DEFINE_ITEM_WIZ_STEP_LABEL" />
+<fmt:message var="setAttributesWizStepLabel" key="envelope.create.SET_ATTRIBUTES_WIZ_STEP_LABEL" />
+<fmt:message var="setRelatedDataStepLabel" key="envelope.create.SET_RELATEDDATA_WIZ_STEP_LABEL" />
+<fmt:message var="attachmentsWizStepLabel" key="envelope.create.ATTACHMENTS_WIZ_STEP_LABEL" />
+
+<jca:initializeItem operation="${createBean.create}"/>
+
+<%@include file="/netmarkets/jsp/change/changeWizardConfig.jspf" %>
+<%
+request.setCharacterEncoding("UTF-8");
+String oid = (String)request.getParameter("oid");
+String type = (String)request.getParameter("type"); 
+//System.out.println("oid is:"+ request.getParameter("oid"));
+//System.out.println("type is:"+ request.getParameter("type"));
+%>
+<c:set var="type" value="<%=type%>" />
+
+<jca:initializeItem operation="${createBean.create}" attributePopulatorClass="ext.ases.envelope.ProcessEnvelopeAttributePopulator1" 
+	                  baseTypeName="${type}" />
+
+<c:choose>
+      <c:when test='${param.showContextStep != null}'>
+         <c:set var="helpKey" value="createSharedDoc" scope="page"/>
+         <c:set var="buttonList" value="DefaultWizardButtons" scope="page"/>
+         <!-- Exclude Program contexts -->
+         <jsp:setProperty name="createBean" property="contextPickerExcludeTypes" value="WCTYPE|wt.projmgmt.admin.Project2|com.ptc.Program"/>
+      </c:when>
+      <c:otherwise>
+         <%-- Set the default doc management help --%>
+         <c:set var="helpKey" value="PartCreate_help" scope="page"/>
+         <c:set var="buttonList" value="DefaultWizardButtonsNoApply" scope="page"/>
+      </c:otherwise>
+   </c:choose>
+<%--
+<jca:initializeItem operation="${createBean.create}"/>--%>
+
+<cwiz:initializeChangeWizard changeMode="CREATE" varianceEffectivity="false" annotationUIContext="change" />
+
+<jca:wizard helpSelectorKey="${helpKey}" buttonList="${buttonList}">
+<jca:wizardStep action="setContextWizStep" type="object" />
+<jca:wizardStep action="defineItemWizStep" label="${defineEnvelopeWizStepLabel}" type="object"/>	
+<jca:wizardStep action="createEnvelopeSetAttributesWizStep" label="${setAttributesWizStepLabel}" type="envelope"/>
+
+<jca:wizardStep action="affectedSubEnvelopeDataStep" label="${setRelatedDataStepLabel}" type="envelope" />
+<%-- Set Security Label Step --%>
+<jca:wizardStep action="securityLabelStep" type="securityLabels"/>
+
+<jca:wizardStep action="attachments_step" type="attachments" />
+</jca:wizard>
+<attachments:fileSelectionAndUploadApplet/>
+<%@include file="/netmarkets/jsp/util/end.jspf"%>

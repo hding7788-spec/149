@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM '../../actionmodels.dtd'>
+<!-- Baseline Client Action Models -->
+<actionmodels>
+
+   <!-- ManagedBaseline actions -->
+   <model name="managed baseline actions" menufor="wt.vc.baseline.ManagedBaseline">
+      <action name="view" type="object"/>            <!-- View Information -->
+
+      <action name="separator" type="separator"/>
+
+      <action name="updateBaseline" type="baseline"/>
+      <action name="lockBaseline" type="baseline"/>
+      <action name="unlockBaseline" type="baseline"/>
+
+      <action name="separator" type="separator"/>
+
+      <action name="renameObjectWizard" type="object"/>
+      <action name="setState" type="lifecycle"/>  <!-- Set State -->
+      <action name="deleteBaseline" type="baseline"/>
+      <action name="reassignLC" type="lifecycle"/>  <!-- Reassign Life Cycle -->
+      <action name="resetTeam" type="team"/>
+
+      <action name="separator" type="separator"/>
+
+      <action name="addToWorkspace" type="baseline"/>
+
+      <action name="separator" type="separator"/>
+
+      <action name="wtObjCompare" type="ocmp"/>
+
+      <action name="separator" type="separator"/>
+
+      <action name="ManageSecurity" type="accessPermission"/>
+      <action name="securityLabelsSingleObjJCA" type="securityLabels"/>
+      <action name="separator" type="separator"/>
+      <action name="track_new_work" type="resourceAssignment" /><!-- Track new Work against subject of deliverable-->
+      <action name="new_plan_activity" type="planActivity" /><!-- New Plan Activity against subject -->      
+   </model>
+
+   <!-- ManagedBaseline Object 3rd Level Navigation MOdel -->
+   <model name="baseline third level nav" defaultActionName="baselineObjects" defaultActionType="baseline">
+      <submodel name="generalBaseline"/>
+      <submodel name="relatedItems"/>
+      <submodel name="history"/>
+      <submodel name="collaboration"/>
+   </model>
+
+   <model name="generalBaseline" resourceBundle="com.ptc.core.ui.navigationRB">
+      <action name="primaryAttributes" type="object"/>
+      <action name="attributes" type="object"/>
+   </model>
+
+   <!-- Baseline Objects Table - Toolbar Actions -->
+   <model name="baseline member table">
+      <action name="addMembers" type="baseline" shortcut="true"/>
+	  <action name="collectItems" type="object" shortcut="true"/>
+	  <action name="removeMembers" type="baseline" shortcut="true"/>
+	  <action name="separator" type="separator" shortcut="true"/>
+	  <action name="list_copy" type="object" shortcut="true"/>
+	  <action name="pasteMembers" type="baseline" shortcut="true"/>
+	  <action name="separator" type="separator"/>
+	  <action name="WFADDTOWORKSPACE" type="folder"/>
+      <action name="PAGERELOADINGMULTICHECKOUT" type="folder"/>
+      <action name="separator" type="separator"/>
+	  <action name="unlockFederatedObject" type="baseline"/>
+	  <action name="separator" type="separator"/>
+	  <action name="track_new_work_table" type="resourceAssignment" /><!-- Track new Work against subject -->
+      <action name="new_plan_activity_table" type="planActivity" /><!-- New Plan Activity against subject -->      
+	</model>
+
+   <!-- Baseline Items Table w/Non Persistent Actions - Toolbar Actions -->
+   <model name="baseline member table non persist actions">
+      <action name="remove" type="object" shortcut="true"/>
+      <action name="collectItems" type="object" shortcut="true"/>
+      <action name="addMembersNPA" type="baseline" shortcut="true"/>
+      <action name="pasteMembersNPA" type="baseline" shortcut="true"/>
+   </model>
+
+
+   <!-- Baseline Objects Table Row Actions -->
+   <model name="baseline member row actions">
+      <action name="OPENINPROE" type="pdmObject"/>
+      <action name="OPENINCADTOOL" type="pdmObject"/>
+      <action name="OPENINARBORTEXT" type="epmdocument"/>
+      <action name="openProductView" type="wvs"/>
+      <action name="separator" type="separator"/>
+      <action name="copy" type="object"/>
+   </model>
+
+   <model name="baselineInfoPageTabSet" resource="com.ptc.core.ui.navigationRB">
+      <submodel name="baselineInfoDetailsTab"/>
+      <submodel name="baselineInfoRelatedItemsTab"/>
+      <submodel name="baselineHistoryTab"/>
+   </model>
+
+   <model name="baselineInfoRelatedItemsTab" defaultActionType="baseline" resourceBundle="com.ptc.core.ui.navigationRB">
+      <action name="baselineObjects" type="baseline"/>
+      <action name="relatedContexts" type="object"/>              <!-- Contexts -->
+      <action name="missingObjectsTable" type="persistedCollectable" />
+   </model>
+
+   <model name="baselineInfoDetailsTab" resourceBundle="com.ptc.core.ui.navigationRB">
+      <action name="primaryAttributes"           type="object"/>
+      <action name="attributes"                  type="object"/>
+   </model>
+
+   <model name="baselineHistoryTab" resourceBundle="com.ptc.core.ui.navigationRB">
+      <action name="maturityHistory" type="history"/>
+   </model>
+   
+   <model name="AddToBaselineWizardButtons">
+      <description>Change wizard buttons, submit brings up submit now/later prompt</description>
+      <action name="okButton" type="baseline"/>
+      <action name="cancelButton" type="object"/>
+   </model>
+
+ </actionmodels>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!DOCTYPE actionmodels SYSTEM 'actionmodels.dtd'>
+
+<actionmodels>
+    <model name="DISABLED_ACTION_MODEL">
+        <description>
+            A model to use when no context menu should be shown for a right click action inside DSB applications.
+        </description>
+    </model>
+</actionmodels>

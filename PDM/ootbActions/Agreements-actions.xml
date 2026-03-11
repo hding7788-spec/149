@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<!DOCTYPE listofactions SYSTEM 'actions.dtd'>
+<listofactions>
+  <objecttype name="agreements" class="wt.access.agreement.AuthorizationAgreement" resourceBundle="com.ptc.core.agreements.agreementsResource">
+
+    <!-- New agreement wizard actions -->  
+    <action name="create" ajax="row">
+       <command class="com.ptc.core.agreements.forms.CreateAgreementFormProcessor" method="execute" windowType="popup"/>
+       <includeFilter name="hideFromNonAgreementMgrs"/>
+    </action>
+    <action name="newAgreeAuthSecurityLabelValuesStep" id="newAgreeAuthSecurityLabelValuesStep" required="false" preloadWizardPage="true">
+       <command windowType="wizard_step"/>
+    </action>
+    <action name="newAgreeAuthObjectsStep" id="newAgreeAuthObjectsStep" required="false" preloadWizardPage="true">
+       <command windowType="wizard_step"/>
+    </action>
+    <action name="newAgreeAuthRelChangesStep" id="newAgreeAuthRelChangesStep" required="false" preloadWizardPage="true" beforeJS="PTC.agreements.relatedChangesNoAccessChecked" afterJS="PTC.agreements.noTypesSelected">
+       <command windowType="wizard_step"/>
+    </action>    
+    <action name="newAgreeSelectLifecycleStatesStep" id="newAgreeSelectLifecycleStatesStep" required="false" preloadWizardPage="true" afterJS="PTC.agreements.lcsValidation">
+       <command windowType="wizard_step"/>
+    </action>
+    <action name="newAgreeAuthParticipantsStep" id="newAgreeAuthParticipantsStep" required="false" preloadWizardPage="true">
+       <command windowType="wizard_step"/>
+    </action>
+    <action name="newAgreeAuthDocStep" id="newAgreeAuthDocStep" required="false" preloadWizardPage="true">
+       <command windowType="wizard_step"/>
+    </action>
+
+    <!-- Edit agreement wizard actions -->
+    <action name="edit" ajax="row">
+       <command class="com.ptc.core.agreements.forms.EditAgreementFormProcessor" method="execute" windowType="popup"/>
+       <includeFilter name="hideFromNonAgreementMgrs"/>
+    </action>
+    <action name="editAgreeAuthSecurityLabelValuesStep" id="editAgreeAuthSecurityLabelValuesStep" required="false" preloadWizardPage="true">
+           <command windowType="wizard_step"/>
+        </action>
+    <action name="editAgreeAuthObjectsStep" id="editAgreeAuthObjectsStep" required="false" preloadWizardPage="true">
+       <command windowType="wizard_step"/>
+    </action>
+    <action name="editAgreeAuthRelChangesStep" id="editAgreeAuthRelChangesStep" required="false" preloadWizardPage="true" beforeJS="PTC.agreements.relatedChangesNoAccessChecked" afterJS="PTC.agreements.noTypesSelected">
+           <command windowType="wizard_step"/>
+    </action>
+    <action name="editAgreeSelectLifecycleStatesStep" id="editAgreeSelectLifecycleStatesStep" required="false" preloadWizardPage="true" afterJS="PTC.agreements.lcsValidation">
+       <command windowType="wizard_step"/>
+    </action>
+    <action name="editAgreeAuthParticipantsStep" id="editAgreeAuthParticipantsStep" required="false" preloadWizardPage="true">
+       <command windowType="wizard_step"/>
+    </action>
+    <action name="editAgreeAuthDocStep" id="editAgreeAuthDocStep" required="false" preloadWizardPage="true">
+       <command windowType="wizard_step"/>
+    </action>
+    <action name="checkoutAndEdit" ajax="row">
+       <command class="com.ptc.core.agreements.forms.EditAgreementFormProcessor" method="execute" url="netmarkets/jsp/agreements/edit.jsp" windowType="popup" onClick="onClickValidation(event,'checkout')"/>
+       <includeFilter name="hideFromNonAgreementMgrs"/>
+    </action>
+
+    <!-- Agreement-specific menu actions -->
+    <action name="deleteAgreementInfo" uicomponent="DELETE">
+         <command class="com.ptc.core.agreements.commands.AgreementsCommands" method="deleteAgreementInfo" onClick="JCAConfirm(event,&apos;com.ptc.netmarkets.util.utilResource.CONFIRM_DELETE&apos;)"/>
+         <includeFilter name="hideFromNonAgreementMgrs"/>
+    </action>
+
+    <!-- Action for the agreement wizard pickers -->
+    <action name="findParticipant" ajax="row">
+       <command class="com.ptc.windchill.enterprise.picker.principal.PrincipalCommands" method="addPrincipal" windowType="popup" selectRequired="false"/>
+    </action>
+    <action name="addAuthObjects" ajax="row">
+       <command class="com.ptc.core.agreements.commands.AgreementsCommands" method="addSelectedObjects" windowType="popup" selectRequired="false"/>
+    </action>  
+    
+    <action name="remove" ajax="row">
+      <description>Removes objects in the promotion request object list table</description>
+      <command windowType="no_content" onClick="PTC.agreements.removeRows(event)" selectRequired="true"/>
+    </action>     
+    
+    <action name="pasteAuthObjects" ajax="row">
+       <command class="com.ptc.core.agreements.commands.AgreementsCommands" method="pasteAuthorizedObjects"/>
+    </action>  
+    <action name="editAuthVersionsMultiObj" ajax="row" selectRequired="true" multiselect="true">
+       <command class="" windowType="popup"/>
+    </action>
+    
+    <action name="editAuthVersions" ajax="row">
+       <command class="" windowType="popup"/>
+    </action>
+
+
+
+    <!-- Edit authorized versions wizard step-->
+    <action name="editAuthorizedVersionsStep" id="editAuthorizedVersionsStep" preloadWizardPage="false" required="true" beforeJS="PTC.agreements.getRevision" afterJS="PTC.agreements.processVersionsRange">
+       <command windowType="wizard_step"/>
+    </action>
+
+    <!-- Agreement info page third level navigation actions -->
+    <action name="authObjectsTable" renderType="GENERAL">
+       <component name="security.authObjectTable" windowType="page"/>
+    </action>
+    <action name="authParticipantsTable" renderType="GENERAL">
+          <component name="security.authParticipant" windowType="page"/>
+    </action>
+    
+    <!-- Popup View Information for Participant -->
+    <action name="view" ajax="row">
+       <command class="com.ptc.core.agreements.commands.AgreementsCommands" method="viewParticipantInfo" />
+    </action>
+    
+  </objecttype>
+</listofactions>

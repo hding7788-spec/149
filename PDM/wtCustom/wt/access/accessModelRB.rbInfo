@@ -1,0 +1,113 @@
+ResourceInfo.class=wt.tools.resource.MetadataResourceInfo
+ResourceInfo.customizable=true
+ResourceInfo.deprecated=false
+ResourceInfo.UUID=dcd04559-f8a9-43b4-a768-2513b6c7f815
+
+# Entry Format (values equal to default value are not included)
+# <key>.value=
+# <key>.category=
+# <key>.comment=
+# <key>.argComment<n>=
+# <key>.constant=
+# <key>.customizable=
+# <key>.deprecated=
+# <key>.abbreviatedDisplay=
+# <key>.fullDisplay=
+# <key>.shortDescription=
+# <key>.longDescription=
+
+# Entry Contents
+
+AccessControlList.value=Access Control List
+
+AccessControlList.entry.value=Entry
+
+AccessPermission.value=Access Permission
+
+AccessPolicy.value=Access Policy
+
+AccessPolicy.policyOwnerRef.value=Policy Owner Ref
+
+AccessPolicyRule.value=Access Policy Rule
+
+AccessPolicyRule.entrySet.value=Entry Set
+
+AccessPolicyRule.selector.value=Selector
+
+AccessSelector.value=Access Selector
+
+AccessSelector.className.value=Class Name
+
+AccessSelector.ownerRef.value=Owner Ref
+
+AccessSelector.stateName.value=State Name
+
+AccessSelector.typeId.value=Type Id
+
+AccessSelectorList.value=Access Selector List
+
+AccessSelectorList.ownerRef.value=Owner Ref
+
+AccessSelectorList.selectorListType.value=Selector List Type
+
+AclEntryLink.value=Acl Entry Link
+
+AclEntryLink.acl.value=Acl
+
+AclEntryLink.entry.value=Entry
+
+AdHocAccessKey.value=Ad Hoc Access Key
+
+AdHocAcl.value=Ad Hoc Acl
+
+AdHocAcl.ownerRef.value=Owner Ref
+
+AdHocAclKey.value=Ad Hoc Acl Key
+
+AdHocAclSpec.value=Ad Hoc Acl Spec
+
+AdHocAclSpec.entrySet.value=Entry Set
+
+AdHocAclSpec.name.value=Name
+
+AdHocAclSpec.principalRef.value=Principal Ref
+
+AdHocAclSpec.role.value=Role
+
+AdHocControlled.value=Ad Hoc Controlled
+
+AdHocControlled.entrySet.value=Entry Set
+
+PolicyAcl.value=Policy Acl
+
+PolicyAcl.entrySet.value=Entry Set
+
+PolicyAcl.selector.value=Selector
+
+WTAclEntry.value=WTAcl Entry
+
+WTAclEntry.acl.value=Acl
+
+WTAclEntry.aclReference.value=Acl Reference
+
+WTAclEntry.negative.value=Negative
+WTAclEntry.negative.deprecated=true
+
+WTAclEntry.principalReference.value=Principal Reference
+
+WTPermission.value=WTPermission
+WTPermission.deprecated=true
+
+WCTYPE|wt.access.SecurityLabeled~SCA|ALL_SECURITY_LABELS.value=All Security Labels value
+WCTYPE|wt.access.SecurityLabeled~SCA|ALL_SECURITY_LABELS.dataType=com.ptc.core.meta.common.AttributeTypeIdentifierSet
+WCTYPE|wt.access.SecurityLabeled~SCA|ALL_SECURITY_LABELS.serverFunction=com.ptc.core.foundation.security.server.impl.SACFAllSecurityLabels
+WCTYPE|wt.access.SecurityLabeled~SCA|ALL_SECURITY_LABELS.serverFunction.arg1=PID{ALL_SECURITY_LABELS}
+
+
+##configure for 149
+WCTYPE|wt.access.SecurityLabeled~SCA|MIJI.value=SECRET
+WCTYPE|wt.access.SecurityLabeled~SCA|MIJI.dataType=java.lang.String
+WCTYPE|wt.access.SecurityLabeled~SCA|MIJI.serverFunction=com.ptc.core.foundation.security.server.impl.SACFSecurityLabel
+WCTYPE|wt.access.SecurityLabeled~SCA|MIJI.serverFunction.arg1=PID{MIJI}
+WCTYPE|wt.access.SecurityLabeled~SCA|MIJI.longDescription=MIJI
+

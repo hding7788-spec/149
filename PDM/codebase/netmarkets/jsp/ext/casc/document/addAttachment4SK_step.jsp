@@ -1,0 +1,16 @@
+<%@include file="/netmarkets/jsp/components/beginWizard.jspf"%>
+<%@include file="/netmarkets/jsp/components/includeWizBean.jspf"%>
+<%@taglib prefix="mvc" 	uri="http://www.ptc.com/windchill/taglib/mvc"%>
+<%@taglib prefix="fmt" 	uri="http://www.ptc.com/windchill/taglib/fmt"%>
+<%@taglib prefix="c" 	uri="http://java.sun.com/jsp/jstl/core"%>
+<fmt:setBundle basename="ext.ases.techMaterial.mvc.builder.TechnicsMaterialEntriesReourceRB" />
+<fmt:message var="filePath" key="technicsMaterialEntries.importTechnicsMaterialEntries_step.description" />
+<table>
+ 	<tr>
+		<td><B>${filePath}</B></td>
+		<td>
+			<input type="file" size="40" class="required" value="" name="skFile" id="skFile" multiple = "multiple" />
+		</td>
+	</tr>
+</table>
+<%@include file="/netmarkets/jsp/util/end.jspf" %>

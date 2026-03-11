@@ -1,0 +1,137 @@
+package com.glaway.mpm.view;
+
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Vector;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.TitledBorder;
+
+import com.glaway.mpm.model.FileTemplate;
+import com.glaway.mpm.swing.KVItem;
+import com.glaway.mpm.swing.KVJComboBox;
+
+public class TempChooseDialog extends JDialog{
+	private static final long serialVersionUID = 5035035424791967956L;
+	private JLabel fileNameLabel;
+	private JTextField fileNameField;
+	private JLabel fileTemplateLabel;
+	private KVJComboBox fileTemplateComboBox;
+	private FileTemplate fileTempalte;
+
+	private JTextField tempDescText;;
+	private JLabel tempDescLabel;
+
+
+	public TempChooseDialog(JFrame f, Vector<KVItem> items) {
+
+		super(f, true);
+		setTitle("选择模板");
+		setResizable(false);
+		setLocationRelativeTo(f);
+
+		JPanel main = new JPanel();
+		main.setLayout(new GridBagLayout());
+		fileNameLabel = new JLabel("文件名称：");
+		final GridBagConstraints gridBagConstraints = new GridBagConstraints();
+		gridBagConstraints.fill = GridBagConstraints.BOTH;
+		gridBagConstraints.gridx = 0;
+		gridBagConstraints.gridy = 0;
+		gridBagConstraints.insets = new Insets(5, 5, 0, 5);
+		main.add(fileNameLabel, gridBagConstraints);
+		fileNameField = new JTextField();
+		gridBagConstraints.gridx = 1;
+		gridBagConstraints.gridy = 0;
+		gridBagConstraints.insets = new Insets(5, 5, 0, 5);
+		fileNameField.setPreferredSize(new Dimension(150,25));
+		main.add(fileNameField, gridBagConstraints);
+
+		fileTemplateLabel = new JLabel("模板类型");
+		gridBagConstraints.gridx = 0;
+		gridBagConstraints.gridy = 1;
+		gridBagConstraints.insets = new Insets(5, 5, 0, 5);
+		main.add(fileTemplateLabel, gridBagConstraints);
+		fileTemplateComboBox = new KVJComboBox(items);
+		gridBagConstraints.gridx = 1;
+		gridBagConstraints.gridy = 1;
+		gridBagConstraints.insets = new Insets(5, 5, 0, 5);
+		main.add(fileTemplateComboBox, gridBagConstraints);
+
+		tempDescLabel = new JLabel("模板描述");
+		gridBagConstraints.gridx = 0;
+		gridBagConstraints.gridy = 2;
+		gridBagConstraints.insets = new Insets(5, 5, 0, 5);
+		main.add(tempDescLabel, gridBagConstraints);
+		tempDescText =  new JTextField();
+		gridBagConstraints.gridx = 1;
+		gridBagConstraints.gridy = 2;
+		gridBagConstraints.insets = new Insets(5, 5, 0, 5);
+		main.add(tempDescText, gridBagConstraints);
+
+
+		final JButton button = new JButton();
+		button.setText(" 确 定 ");
+		final GridBagConstraints gridBagConstraints_1 = new GridBagConstraints();
+		gridBagConstraints_1.gridx = 0;
+		gridBagConstraints_1.gridy = 3;
+		gridBagConstraints_1.gridwidth = 2;
+		gridBagConstraints_1.insets = new Insets(30, 5, 0, 5);
+		main.add(button, gridBagConstraints_1);
+		this.getContentPane().add(main);
+
+	    TitledBorder border = BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(),"选择模板类型");
+	    main.setBorder(border);
+		button.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String fileName = fileNameField.getText();
+				KVItem item = (KVItem)fileTemplateComboBox.getSelectedItem();
+				if(fileName==null||item==null||"".equals(fileName.trim())){
+					fileTempalte = null;
+					JOptionPane.showMessageDialog(TempChooseDialog.this, "请输入文件名称！");
+				}else{
+					fileTempalte = new FileTemplate();
+					fileTempalte.setDisplayName(fileName);
+					fileTempalte.setFileName(System.currentTimeMillis()+"");
+					fileTempalte.setTempId(item.getKey());
+					fileTempalte.setTempName(item.getValue());
+					fileTempalte.setDesc(tempDescText.getText());
+					TempChooseDialog.this.dispose();
+				}
+			}
+		});
+
+	}
+
+
+
+	public boolean isNumber(String str) {
+		java.util.regex.Pattern pattern = java.util.regex.Pattern
+				.compile("[0-9]*");
+		java.util.regex.Matcher match = pattern.matcher(str);
+		if (match.matches() == false) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	public FileTemplate showDialog() {
+		setSize(300, 200);
+		setVisible(true);
+		return fileTempalte;
+	}
+
+
+}

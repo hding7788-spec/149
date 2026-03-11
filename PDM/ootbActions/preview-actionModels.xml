@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE actionmodels SYSTEM "actionmodels.dtd">
+<actionmodels>
+    <model name="third_level_nav_preview" defaultActionType="preview">
+        <description>Third level nav with default action envelope data table</description>
+        <submodel name="general"/>
+        <submodel name="relatedItems"/>
+        <submodel name="history"/>
+    </model>
+
+    <model name="previewInfoPageTabSet" resource="ext.casc.preview.previewResource">
+        <action name="attributes" type="preview"/>
+        <submodel name="previewContentInfo"/>
+        <action name="previewObjects" type="preview"/>
+        <action name="processHistory" type="workflow"/>
+    </model>
+
+    <model name="previewContentInfo" resourceBundle="ext.casc.preview.previewResource">
+        <action name="primaryContent" type="object"/>
+        <action name="attachments" type="object"/>
+        <!-- place holder until defaults are provided -->
+    </model>
+
+    <model name="more preview actions" menufor="ext.casc.preview.Preview">
+        <action name="updatePreview" type="preview"/>              <!-- Edit -->
+        <action name="deletePreview" type="preview"/>         <!-- Delete -->
+    </model>
+
+</actionmodels>
